@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class Form1 : Form
+    public partial class login : Form
     {
-        public Form1()
+        public login()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            login a = new login();
-            a.Show();
         }
     }
 }
