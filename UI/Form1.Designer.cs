@@ -31,17 +31,17 @@ namespace UI
         {
             this.panelTop = new System.Windows.Forms.Panel();
             this.panelSlideMenu = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.panelContainer = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.patient = new FontAwesome.Sharp.IconButton();
             this.assistant = new FontAwesome.Sharp.IconButton();
             this.anesthetist = new FontAwesome.Sharp.IconButton();
             this.Doctors = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.panelSlideMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,55 +75,38 @@ namespace UI
             this.panelSlideMenu.Size = new System.Drawing.Size(230, 503);
             this.panelSlideMenu.TabIndex = 2;
             // 
-            // panelLogo
+            // panel4
             // 
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(230, 100);
-            this.panelLogo.TabIndex = 0;
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(230, 30);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(874, 503);
-            this.panelContainer.TabIndex = 3;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel1.Location = new System.Drawing.Point(0, 106);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 41);
-            this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel2.Location = new System.Drawing.Point(0, 153);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 41);
-            this.panel2.TabIndex = 6;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel4.Location = new System.Drawing.Point(0, 247);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 41);
+            this.panel4.TabIndex = 6;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.panel3.Location = new System.Drawing.Point(0, 200);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 41);
+            this.panel3.Size = new System.Drawing.Size(5, 41);
             this.panel3.TabIndex = 6;
             // 
-            // panel4
+            // panel2
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel4.Location = new System.Drawing.Point(0, 247);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 41);
-            this.panel4.TabIndex = 6;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel2.Location = new System.Drawing.Point(0, 153);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(5, 41);
+            this.panel2.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel1.Location = new System.Drawing.Point(0, 106);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(5, 41);
+            this.panel1.TabIndex = 5;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // patient
             // 
@@ -131,19 +114,18 @@ namespace UI
             this.patient.FlatAppearance.BorderSize = 0;
             this.patient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.patient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.patient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patient.ForeColor = System.Drawing.Color.White;
             this.patient.IconChar = FontAwesome.Sharp.IconChar.Bed;
-            this.patient.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.patient.IconColor = System.Drawing.Color.White;
             this.patient.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.patient.IconSize = 32;
+            this.patient.IconSize = 38;
             this.patient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.patient.Location = new System.Drawing.Point(3, 247);
             this.patient.Name = "patient";
             this.patient.Size = new System.Drawing.Size(227, 41);
             this.patient.TabIndex = 4;
             this.patient.Text = "Pacientes";
-            this.patient.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.patient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.patient.UseVisualStyleBackColor = false;
             this.patient.Click += new System.EventHandler(this.patient_Click);
             // 
@@ -153,19 +135,18 @@ namespace UI
             this.assistant.FlatAppearance.BorderSize = 0;
             this.assistant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.assistant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.assistant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assistant.ForeColor = System.Drawing.Color.White;
             this.assistant.IconChar = FontAwesome.Sharp.IconChar.Handshake;
-            this.assistant.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.assistant.IconColor = System.Drawing.Color.White;
             this.assistant.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.assistant.IconSize = 32;
+            this.assistant.IconSize = 38;
             this.assistant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.assistant.Location = new System.Drawing.Point(3, 200);
             this.assistant.Name = "assistant";
             this.assistant.Size = new System.Drawing.Size(227, 41);
             this.assistant.TabIndex = 3;
             this.assistant.Text = "Ayudantes";
-            this.assistant.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.assistant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.assistant.UseVisualStyleBackColor = false;
             this.assistant.Click += new System.EventHandler(this.assistant_Click);
             // 
@@ -175,19 +156,18 @@ namespace UI
             this.anesthetist.FlatAppearance.BorderSize = 0;
             this.anesthetist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.anesthetist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.anesthetist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.anesthetist.ForeColor = System.Drawing.Color.White;
             this.anesthetist.IconChar = FontAwesome.Sharp.IconChar.Syringe;
-            this.anesthetist.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.anesthetist.IconColor = System.Drawing.Color.White;
             this.anesthetist.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.anesthetist.IconSize = 32;
+            this.anesthetist.IconSize = 38;
             this.anesthetist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.anesthetist.Location = new System.Drawing.Point(3, 153);
             this.anesthetist.Name = "anesthetist";
             this.anesthetist.Size = new System.Drawing.Size(227, 41);
             this.anesthetist.TabIndex = 2;
             this.anesthetist.Text = "Anestesista";
-            this.anesthetist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.anesthetist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.anesthetist.UseVisualStyleBackColor = false;
             this.anesthetist.Click += new System.EventHandler(this.anesthetist_Click);
             // 
@@ -197,21 +177,29 @@ namespace UI
             this.Doctors.FlatAppearance.BorderSize = 0;
             this.Doctors.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.Doctors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Doctors.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Doctors.ForeColor = System.Drawing.Color.White;
             this.Doctors.IconChar = FontAwesome.Sharp.IconChar.Stethoscope;
-            this.Doctors.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.Doctors.IconColor = System.Drawing.Color.White;
             this.Doctors.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.Doctors.IconSize = 32;
+            this.Doctors.IconSize = 38;
             this.Doctors.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Doctors.Location = new System.Drawing.Point(3, 106);
             this.Doctors.Name = "Doctors";
             this.Doctors.Size = new System.Drawing.Size(227, 41);
             this.Doctors.TabIndex = 1;
             this.Doctors.Text = "Doctores";
-            this.Doctors.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Doctors.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Doctors.UseVisualStyleBackColor = false;
             this.Doctors.Click += new System.EventHandler(this.Doctors_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.pictureBox1);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(230, 100);
+            this.panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -222,6 +210,15 @@ namespace UI
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(230, 30);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(874, 503);
+            this.panelContainer.TabIndex = 3;
             // 
             // Form1
             // 
