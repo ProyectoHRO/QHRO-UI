@@ -27,7 +27,8 @@ namespace BLL
             return typeAssistants.GetDataTypeAssistant();
         }
         //Post
-        public string newAssistant(string firstName, string secondName, string thirdName, string firstLastName, string secondLastName, string email, string phone, int idType, string cui)
+        public string newAssistant(string firstName, string secondName, string thirdName, string firstLastName, string secondLastName, string email, 
+            string phone, int idType, string cui)
         {
             try
             {
@@ -49,11 +50,11 @@ namespace BLL
             }
         }
         //Put
-        public string updateAssistant(string newfirstName, string newsecondName, string newthirdName, string newfirstLastName, string newsecondLastName, string newemail, string newphone, bool newStatus, int newidType, string newcui, int idAssistant)
+        public string updateAssistant(string newFirstName, string newSecondName, string newThirdName, string newFirstLastName, string newSecondLastName, string newEmail, string newPhone, bool newStatus, int newIdType, string newCui, int idAssistant)
         {
             try
             {
-                assistants.UpdateQueryAssistant(newfirstName, newsecondName, newthirdName, newfirstLastName, newsecondLastName, newemail, newphone, newStatus, newidType, newcui, idAssistant);
+                assistants.UpdateQueryAssistant(newFirstName, newSecondName, newThirdName, newFirstLastName, newSecondLastName, newEmail, newPhone, newStatus, newIdType, newCui, idAssistant);
                 return "SE HA ACTUALIZADO EL REGISTRO";
             }
             catch (Exception error)
