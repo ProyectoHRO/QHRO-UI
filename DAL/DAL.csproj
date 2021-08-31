@@ -44,9 +44,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetPaciente.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSetPaciente.xsc">
+      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPaciente.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPaciente.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPaciente.xss">
+      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
