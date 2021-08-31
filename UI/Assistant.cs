@@ -7,14 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
 namespace UI
 {
     public partial class Assistant : Form
     {
+        private ClassAssistants assistants;
         public Assistant()
         {
             InitializeComponent();
+            assistants = new ClassAssistants();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DataTable infoAssistants = assistants.getAssistants();
+            dataGridView1.DataSource = infoAssistants;
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.Refresh();
         }
     }
 }
