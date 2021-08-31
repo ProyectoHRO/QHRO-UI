@@ -49,23 +49,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnesthetistForm.cs">
+    <Compile Include="Anesthetist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AnesthetistForm.Designer.cs">
-      <DependentUpon>AnesthetistForm.cs</DependentUpon>
+    <Compile Include="Anesthetist.Designer.cs">
+      <DependentUpon>Anesthetist.cs</DependentUpon>
     </Compile>
-    <Compile Include="AssitantForm.cs">
+    <Compile Include="Assistant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AssitantForm.Designer.cs">
-      <DependentUpon>AssitantForm.cs</DependentUpon>
+    <Compile Include="Assistant.Designer.cs">
+      <DependentUpon>Assistant.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoctorForm.cs">
+    <Compile Include="Doctors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoctorForm.Designer.cs">
-      <DependentUpon>DoctorForm.cs</DependentUpon>
+    <Compile Include="Doctors.Designer.cs">
+      <DependentUpon>Doctors.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -73,34 +73,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="Patient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PatientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PatientForm.Designer.cs">
-      <DependentUpon>PatientForm.cs</DependentUpon>
+    <Compile Include="Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AnesthetistForm.resx">
-      <DependentUpon>AnesthetistForm.cs</DependentUpon>
+    <EmbeddedResource Include="Anesthetist.resx">
+      <DependentUpon>Anesthetist.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AssitantForm.resx">
-      <DependentUpon>AssitantForm.cs</DependentUpon>
+    <EmbeddedResource Include="Assistant.resx">
+      <DependentUpon>Assistant.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoctorForm.resx">
-      <DependentUpon>DoctorForm.cs</DependentUpon>
+    <EmbeddedResource Include="Doctors.resx">
+      <DependentUpon>Doctors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PatientForm.resx">
-      <DependentUpon>PatientForm.cs</DependentUpon>
+    <EmbeddedResource Include="Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\cerrar.png" />
+    <Content Include="Resources\maxi.png" />
+    <Content Include="Resources\minimazar.png" />
+    <Content Include="Resources\res.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

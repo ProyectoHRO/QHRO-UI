@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class PatientForm : Form
+    public partial class Assistant : Form
     {
-        public PatientForm()
+        public Assistant()
         {
             InitializeComponent();
         }
