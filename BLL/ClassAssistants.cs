@@ -26,7 +26,7 @@ namespace BLL
         {
             return typeAssistants.GetDataTypeAssistant();
         }
-        //Post
+        //insert
         public string newAssistant(string firstName, string secondName, string thirdName, string firstLastName, string secondLastName, string email, 
             string phone, int idType, string cui)
         {
@@ -39,17 +39,14 @@ namespace BLL
                     return "SE HA GRABADO UN NUEVO REGISTRO";
                 }
                 else
-                {
                     return "ERROR: El asistente ya existe:  " + firstName + " "+ firstLastName;
-                }
             }
             catch (Exception error)
             {
-
                 return "ERROR: " + error.Message;
             }
         }
-        //Put
+        //update
         public string updateAssistant(string newFirstName, string newSecondName, string newThirdName, string newFirstLastName, string newSecondLastName, string newEmail, string newPhone, bool newStatus, int newIdType, string newCui, int idAssistant)
         {
             try
