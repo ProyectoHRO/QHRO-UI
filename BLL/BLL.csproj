@@ -46,6 +46,8 @@
   <ItemGroup>
     <Compile Include="ClassAnesthetist.cs" />
     <Compile Include="ClassPatient.cs" />
+    <Compile Include="ClassAssistants.cs" />
+    <Compile Include="ClassDoctor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

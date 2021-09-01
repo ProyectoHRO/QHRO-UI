@@ -55,6 +55,12 @@
       <DependentUpon>DataSetAssistants.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetPatient.Designer.cs">
+    <Compile Include="DataSetDoctors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDoctors.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPaciente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPatient.xsd</DependentUpon>
@@ -92,6 +98,19 @@
     </None>
     <None Include="DataSetPatient.xsc">
       <DependentUpon>DataSetPatient.xsd</DependentUpon>
+    <None Include="DataSetDoctors.xsc">
+      <DependentUpon>DataSetDoctors.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDoctors.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDoctors.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDoctors.xss">
+      <DependentUpon>DataSetDoctors.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPaciente.xsc">
+      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
     </None>
     <None Include="DataSetPatient.xsd">
       <SubType>Designer</SubType>
