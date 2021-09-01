@@ -44,15 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetAnesthetist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAnesthetist.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetAssistants.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetAssistants.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetPaciente.Designer.cs">
+    <Compile Include="DataSetPatient.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
+      <DependentUpon>DataSetPatient.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -63,6 +68,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="DataSetAnesthetist.xsc">
+      <DependentUpon>DataSetAnesthetist.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAnesthetist.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAnesthetist.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetAnesthetist.xss">
+      <DependentUpon>DataSetAnesthetist.xsd</DependentUpon>
+    </None>
     <None Include="DataSetAssistants.xsc">
       <DependentUpon>DataSetAssistants.xsd</DependentUpon>
     </None>
@@ -74,16 +90,16 @@
     <None Include="DataSetAssistants.xss">
       <DependentUpon>DataSetAssistants.xsd</DependentUpon>
     </None>
-    <None Include="DataSetPaciente.xsc">
-      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
+    <None Include="DataSetPatient.xsc">
+      <DependentUpon>DataSetPatient.xsd</DependentUpon>
     </None>
-    <None Include="DataSetPaciente.xsd">
+    <None Include="DataSetPatient.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetPaciente.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetPatient.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetPaciente.xss">
-      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
+    <None Include="DataSetPatient.xss">
+      <DependentUpon>DataSetPatient.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
