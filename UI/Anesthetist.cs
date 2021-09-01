@@ -23,6 +23,8 @@ namespace UI
         void list()
         {
             dataGridView1.DataSource = anes.listAnesthetist();
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.AutoResizeColumns();
             dataGridView1.Refresh();
         }
 
@@ -134,6 +136,80 @@ namespace UI
             iconButtonSave.Enabled = false;
             iconButtonUpdate.Enabled = false;
             groupBox1.Enabled = false;
+            dataGridView1.EnableHeadersVisualStyles = false;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonNew_MouseHover(object sender, EventArgs e)
+        {
+            iconButtonNew.IconColor = Color.White;
+            iconButtonNew.ForeColor = Color.White;
+        }
+
+        private void iconButtonNew_MouseLeave(object sender, EventArgs e)
+        {
+            iconButtonNew.IconColor = ColorTranslator.FromHtml("#001578");
+            iconButtonNew.ForeColor = Color.Black;
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonUpdate_MouseHover(object sender, EventArgs e)
+        {
+            iconButtonUpdate.IconColor = Color.White;
+            iconButtonUpdate.ForeColor = Color.White;
+        }
+
+        private void iconButtonUpdate_MouseLeave(object sender, EventArgs e)
+        {
+            iconButtonUpdate.IconColor = ColorTranslator.FromHtml("#001578");
+            iconButtonUpdate.ForeColor = Color.Black;
+        }
+
+        private void iconButtonSave_MouseHover(object sender, EventArgs e)
+        {
+            iconButtonSave.IconColor = Color.White;
+            iconButtonSave.ForeColor = Color.White;
+        }
+
+        private void iconButtonSave_MouseLeave_1(object sender, EventArgs e)
+        {
+            iconButtonSave.IconColor = ColorTranslator.FromHtml("#001578");
+            iconButtonSave.ForeColor = Color.Black;
+        }
+
+        private void iconButtonList_MouseHover_2(object sender, EventArgs e)
+        {
+            iconButtonList.IconColor = Color.White;
+            iconButtonList.ForeColor = Color.White;
+        }
+
+        private void iconButtonList_MouseLeave_1(object sender, EventArgs e)
+        {
+            iconButtonList.IconColor = ColorTranslator.FromHtml("#001578");
+            iconButtonList.ForeColor = Color.Black;
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
