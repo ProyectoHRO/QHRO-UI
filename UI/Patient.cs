@@ -23,6 +23,8 @@ namespace UI
         void list()
         {
             dataGridView1.DataSource = pat.listPatients();
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.AutoResizeColumns();
             dataGridView1.Refresh();
         }
 
@@ -48,40 +50,6 @@ namespace UI
             iconButtonSave.Enabled = false;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButtonList_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void iconButtonNew_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void iconButtonSave_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-        }
-
-        private void iconButtonUpdate_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void iconButtonList_Click_1(object sender, EventArgs e)
         {
             list();
@@ -89,6 +57,7 @@ namespace UI
             iconButtonSave.Enabled = false;
             iconButtonUpdate.Enabled = false;
             groupBox1.Enabled = false;
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void iconButtonNew_Click_1(object sender, EventArgs e)
