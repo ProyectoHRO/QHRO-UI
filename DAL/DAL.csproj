@@ -44,17 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetAnesthetist.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetAnesthetist.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSetAssistants.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetAssistants.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetPatient.Designer.cs">
     <Compile Include="DataSetDoctors.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -63,7 +57,7 @@
     <Compile Include="DataSetPaciente.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetPatient.xsd</DependentUpon>
+      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -74,17 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DataSetAnesthetist.xsc">
-      <DependentUpon>DataSetAnesthetist.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetAnesthetist.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetAnesthetist.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSetAnesthetist.xss">
-      <DependentUpon>DataSetAnesthetist.xsd</DependentUpon>
-    </None>
     <None Include="DataSetAssistants.xsc">
       <DependentUpon>DataSetAssistants.xsd</DependentUpon>
     </None>
@@ -96,8 +79,6 @@
     <None Include="DataSetAssistants.xss">
       <DependentUpon>DataSetAssistants.xsd</DependentUpon>
     </None>
-    <None Include="DataSetPatient.xsc">
-      <DependentUpon>DataSetPatient.xsd</DependentUpon>
     <None Include="DataSetDoctors.xsc">
       <DependentUpon>DataSetDoctors.xsd</DependentUpon>
     </None>
@@ -112,13 +93,13 @@
     <None Include="DataSetPaciente.xsc">
       <DependentUpon>DataSetPaciente.xsd</DependentUpon>
     </None>
-    <None Include="DataSetPatient.xsd">
+    <None Include="DataSetPaciente.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetPatient.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetPaciente.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetPatient.xss">
-      <DependentUpon>DataSetPatient.xsd</DependentUpon>
+    <None Include="DataSetPaciente.xss">
+      <DependentUpon>DataSetPaciente.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
