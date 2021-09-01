@@ -48,6 +48,8 @@ namespace UI
             groupBox1.Enabled = false;
             iconButtonUpdate.Enabled = false;
             iconButtonSave.Enabled = false;
+            label10.Visible = false;
+            comboBox2.Visible = false;
         }
 
         private void iconButtonList_Click_1(object sender, EventArgs e)
@@ -66,6 +68,8 @@ namespace UI
             iconButtonUpdate.Enabled = false;
             clearText();
             iconButtonNew.Enabled = false;
+            label10.Visible = false;
+            comboBox2.Visible = false;
         }
 
         private void iconButtonSave_Click_1(object sender, EventArgs e)
@@ -73,7 +77,7 @@ namespace UI
             string resp;
             resp = pat.newPatient(textBox1.Text, textBoxFirstName.Text, textBox3.Text, textBox4.Text, textBox5.Text,
             textBox6.Text, Convert.ToInt16(textBox7.Text), textBox8.Text, comboBox1.SelectedItem.ToString(),
-            Convert.ToBoolean(comboBox2.SelectedItem));
+            true);
             if (resp.ToUpper().Contains("ERROR"))
             {
                 MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -90,28 +94,46 @@ namespace UI
 
         private void dataGridView1_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
-            groupBox1.Enabled = true;
-            iconButtonUpdate.Enabled = true;
-            iconButtonSave.Enabled = false;
-            ID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBoxFirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-            textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-            textBox6.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-            textBox7.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-            textBox8.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-            comboBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-            comboBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+            try
+            {
+                label10.Visible = true;
+                comboBox2.Visible = true;
+                groupBox1.Enabled = true;
+                iconButtonUpdate.Enabled = true;
+                iconButtonSave.Enabled = false;
+                ID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBoxFirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textBox5.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textBox6.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textBox7.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textBox8.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                comboBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+                if (dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() == "True")
+                    comboBox2.Text = "Activo";
+                else if (dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() == "False")
+                    comboBox2.Text = "Inactivo";
+            }
+            catch (Exception)
+            {
+            }
         }
 
         private void iconButtonUpdate_Click_1(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(ID.Text);
+            bool status = false;
+            if (comboBox2.SelectedIndex == 0)
+                status = true;
+            else if (comboBox2.SelectedIndex == 1)
+            {
+                status = false;
+            }
             string resp = pat.editPatient(textBox1.Text, textBoxFirstName.Text, textBox3.Text, textBox4.Text, textBox5.Text,
             textBox6.Text, Convert.ToInt16(textBox7.Text), textBox8.Text, comboBox1.SelectedItem.ToString(),
-            Convert.ToBoolean(comboBox2.SelectedItem), id);
+            status, id);
             if (resp.ToUpper().Contains("ERROR"))
             {
                 MessageBox.Show(resp, "Error al actualizar datos del paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
