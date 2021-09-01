@@ -119,8 +119,12 @@ namespace UI
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.ToString());
             }
+        }
+
+        private void Doctors_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

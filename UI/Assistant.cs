@@ -108,7 +108,6 @@ namespace UI
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.ToString());
             }
         }
 

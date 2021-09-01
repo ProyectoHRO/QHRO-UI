@@ -125,7 +125,6 @@ namespace UI
             }
             catch (Exception)
             {
-                MessageBox.Show("Seleccione una columna valida");
             }
 
         }
