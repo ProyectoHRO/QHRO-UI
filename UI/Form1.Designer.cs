@@ -45,6 +45,7 @@ namespace UI
             this.iconButtonDoctors = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaximized)).BeginInit();
@@ -61,11 +62,12 @@ namespace UI
             this.panelTop.Controls.Add(this.pictureBoxMaximized);
             this.panelTop.Controls.Add(this.pictureBoxNormal);
             this.panelTop.Controls.Add(this.pictureBox2);
+            this.panelTop.Controls.Add(this.label1);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1892, 62);
+            this.panelTop.Size = new System.Drawing.Size(1500, 62);
             this.panelTop.TabIndex = 0;
             this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             this.panelTop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseDown);
@@ -74,7 +76,7 @@ namespace UI
             // 
             this.pictureBoxMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMinimized.Image = global::UI.Properties.Resources.minimazar;
-            this.pictureBoxMinimized.Location = new System.Drawing.Point(1760, 15);
+            this.pictureBoxMinimized.Location = new System.Drawing.Point(1368, 15);
             this.pictureBoxMinimized.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxMinimized.Name = "pictureBoxMinimized";
             this.pictureBoxMinimized.Size = new System.Drawing.Size(33, 31);
@@ -87,7 +89,7 @@ namespace UI
             // 
             this.pictureBoxMaximized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMaximized.Image = global::UI.Properties.Resources.maxi;
-            this.pictureBoxMaximized.Location = new System.Drawing.Point(1801, 15);
+            this.pictureBoxMaximized.Location = new System.Drawing.Point(1409, 15);
             this.pictureBoxMaximized.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxMaximized.Name = "pictureBoxMaximized";
             this.pictureBoxMaximized.Size = new System.Drawing.Size(33, 31);
@@ -100,7 +102,7 @@ namespace UI
             // 
             this.pictureBoxNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxNormal.Image = global::UI.Properties.Resources.res;
-            this.pictureBoxNormal.Location = new System.Drawing.Point(1801, 15);
+            this.pictureBoxNormal.Location = new System.Drawing.Point(1409, 15);
             this.pictureBoxNormal.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxNormal.Name = "pictureBoxNormal";
             this.pictureBoxNormal.Size = new System.Drawing.Size(33, 31);
@@ -113,7 +115,7 @@ namespace UI
             // 
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::UI.Properties.Resources.cerrar;
-            this.pictureBox2.Location = new System.Drawing.Point(1843, 15);
+            this.pictureBox2.Location = new System.Drawing.Point(1451, 15);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 31);
@@ -138,7 +140,7 @@ namespace UI
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 62);
             this.panelSlideMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelSlideMenu.Name = "panelSlideMenu";
-            this.panelSlideMenu.Size = new System.Drawing.Size(333, 995);
+            this.panelSlideMenu.Size = new System.Drawing.Size(333, 838);
             this.panelSlideMenu.TabIndex = 1;
             // 
             // pictureBox1
@@ -274,18 +276,31 @@ namespace UI
             // 
             // panelContainer
             // 
+            this.panelContainer.BackColor = System.Drawing.Color.White;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(333, 62);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(4);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1559, 995);
+            this.panelContainer.Size = new System.Drawing.Size(1167, 838);
             this.panelContainer.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(605, 32);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Quirófanos, Hospital Regional de Occidente";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1892, 1057);
+            this.ClientSize = new System.Drawing.Size(1500, 900);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panelSlideMenu);
             this.Controls.Add(this.panelTop);
@@ -296,6 +311,7 @@ namespace UI
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaximized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNormal)).EndInit();
@@ -324,5 +340,6 @@ namespace UI
         private System.Windows.Forms.PictureBox pictureBoxMinimized;
         private System.Windows.Forms.PictureBox pictureBoxMaximized;
         private System.Windows.Forms.PictureBox pictureBoxNormal;
+        private System.Windows.Forms.Label label1;
     }
 }
