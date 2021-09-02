@@ -117,7 +117,7 @@ namespace UI
                 else
                     comboStatus.SelectedIndex = 2;
             }
-            catch (Exception error)
+            catch (Exception)
             {
             }
         }
