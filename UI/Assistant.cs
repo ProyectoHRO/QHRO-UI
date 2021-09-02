@@ -106,7 +106,7 @@ namespace UI
                 comboTypeAssistant.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[9].Value;
                 textCui.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
             }
-            catch (Exception error)
+            catch (Exception)
             {
             }
         }
