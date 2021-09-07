@@ -135,9 +135,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cerrar.png" />
+    <None Include="Resources\check.jpg" />
     <Content Include="Resources\maxi.png" />
     <Content Include="Resources\minimazar.png" />
     <Content Include="Resources\res.png" />
+    <None Include="Resources\x.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
