@@ -29,20 +29,19 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBoxanesthetistData = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.boxValidateMail = new System.Windows.Forms.PictureBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.labelfirstSurname = new System.Windows.Forms.Label();
             this.labelsecondName = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.labelfirstName = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelthirdName = new System.Windows.Forms.Label();
             this.textBoxphoneNumber = new System.Windows.Forms.TextBox();
             this.labelsecondSurname = new System.Windows.Forms.Label();
@@ -58,6 +57,9 @@ namespace UI
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelDPI = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelfirstName = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
             this.iconButtonList = new FontAwesome.Sharp.IconButton();
             this.iconButtonSave = new FontAwesome.Sharp.IconButton();
@@ -66,9 +68,11 @@ namespace UI
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBoxanesthetistData.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.boxValidateMail)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -79,27 +83,27 @@ namespace UI
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 366);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 428);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1143, 462);
+            this.dataGridView1.Size = new System.Drawing.Size(1143, 399);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick_1);
             // 
@@ -123,15 +127,14 @@ namespace UI
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.04762F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.73016F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.15873F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.38095F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.625F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.9375F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Controls.Add(this.comboBoxStatus, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.labelsecondName, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxEmail, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelthirdName, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBoxphoneNumber, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelsecondSurname, 2, 0);
@@ -145,7 +148,8 @@ namespace UI
             this.tableLayoutPanel1.Controls.Add(this.textBoxsecondName, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelStatus, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(19, 31);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 31);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -154,7 +158,7 @@ namespace UI
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(840, 226);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(853, 226);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // comboBoxStatus
@@ -165,21 +169,56 @@ namespace UI
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.comboBoxStatus.Location = new System.Drawing.Point(570, 141);
+            this.comboBoxStatus.Location = new System.Drawing.Point(600, 141);
             this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxStatus.Name = "comboBoxStatus";
-            this.comboBoxStatus.Size = new System.Drawing.Size(267, 33);
+            this.comboBoxStatus.Size = new System.Drawing.Size(250, 33);
             this.comboBoxStatus.TabIndex = 17;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.boxValidateMail);
+            this.panel4.Controls.Add(this.textBoxEmail);
+            this.panel4.Location = new System.Drawing.Point(601, 94);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(248, 37);
+            this.panel4.TabIndex = 23;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // boxValidateMail
+            // 
+            this.boxValidateMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.boxValidateMail.Location = new System.Drawing.Point(211, 1);
+            this.boxValidateMail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.boxValidateMail.Name = "boxValidateMail";
+            this.boxValidateMail.Size = new System.Drawing.Size(29, 28);
+            this.boxValidateMail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.boxValidateMail.TabIndex = 0;
+            this.boxValidateMail.TabStop = false;
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(3, 1);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxEmail.MaxLength = 25;
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(200, 30);
+            this.textBoxEmail.TabIndex = 16;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.labelfirstSurname);
-            this.panel3.Location = new System.Drawing.Point(3, 183);
+            this.panel3.Location = new System.Drawing.Point(70, 183);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(153, 39);
+            this.panel3.Size = new System.Drawing.Size(171, 39);
             this.panel3.TabIndex = 23;
             // 
             // label12
@@ -198,7 +237,7 @@ namespace UI
             this.labelfirstSurname.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelfirstSurname.AutoSize = true;
             this.labelfirstSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelfirstSurname.Location = new System.Drawing.Point(19, 5);
+            this.labelfirstSurname.Location = new System.Drawing.Point(24, 5);
             this.labelfirstSurname.Name = "labelfirstSurname";
             this.labelfirstSurname.Size = new System.Drawing.Size(140, 25);
             this.labelfirstSurname.TabIndex = 4;
@@ -209,63 +248,19 @@ namespace UI
             this.labelsecondName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelsecondName.AutoSize = true;
             this.labelsecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelsecondName.Location = new System.Drawing.Point(59, 90);
+            this.labelsecondName.Location = new System.Drawing.Point(78, 100);
             this.labelsecondName.Name = "labelsecondName";
-            this.labelsecondName.Size = new System.Drawing.Size(97, 45);
+            this.labelsecondName.Size = new System.Drawing.Size(163, 25);
             this.labelsecondName.TabIndex = 2;
             this.labelsecondName.Text = "Segundo nombre";
             this.labelsecondName.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.labelfirstName);
-            this.panel2.Location = new System.Drawing.Point(3, 48);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(153, 39);
-            this.panel2.TabIndex = 23;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(4, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 24);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "*";
-            // 
-            // labelfirstName
-            // 
-            this.labelfirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelfirstName.AutoSize = true;
-            this.labelfirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelfirstName.Location = new System.Drawing.Point(20, 7);
-            this.labelfirstName.Name = "labelfirstName";
-            this.labelfirstName.Size = new System.Drawing.Size(139, 25);
-            this.labelfirstName.TabIndex = 1;
-            this.labelfirstName.Text = "Primer nombre";
-            this.labelfirstName.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(570, 97);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(267, 30);
-            this.textBoxEmail.TabIndex = 16;
             // 
             // labelthirdName
             // 
             this.labelthirdName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelthirdName.AutoSize = true;
             this.labelthirdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelthirdName.Location = new System.Drawing.Point(16, 145);
+            this.labelthirdName.Location = new System.Drawing.Point(101, 145);
             this.labelthirdName.Name = "labelthirdName";
             this.labelthirdName.Size = new System.Drawing.Size(140, 25);
             this.labelthirdName.TabIndex = 3;
@@ -275,20 +270,22 @@ namespace UI
             // 
             this.textBoxphoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxphoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxphoneNumber.Location = new System.Drawing.Point(570, 52);
+            this.textBoxphoneNumber.Location = new System.Drawing.Point(600, 52);
             this.textBoxphoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxphoneNumber.MaxLength = 8;
             this.textBoxphoneNumber.Name = "textBoxphoneNumber";
-            this.textBoxphoneNumber.Size = new System.Drawing.Size(267, 30);
+            this.textBoxphoneNumber.Size = new System.Drawing.Size(250, 30);
             this.textBoxphoneNumber.TabIndex = 15;
+            this.textBoxphoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxphoneNumber_KeyPress);
             // 
             // labelsecondSurname
             // 
             this.labelsecondSurname.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelsecondSurname.AutoSize = true;
             this.labelsecondSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelsecondSurname.Location = new System.Drawing.Point(467, 0);
+            this.labelsecondSurname.Location = new System.Drawing.Point(430, 10);
             this.labelsecondSurname.Name = "labelsecondSurname";
-            this.labelsecondSurname.Size = new System.Drawing.Size(97, 45);
+            this.labelsecondSurname.Size = new System.Drawing.Size(164, 25);
             this.labelsecondSurname.TabIndex = 5;
             this.labelsecondSurname.Text = "Segundo apellido";
             // 
@@ -297,9 +294,9 @@ namespace UI
             this.labelphoneNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelphoneNumber.AutoSize = true;
             this.labelphoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelphoneNumber.Location = new System.Drawing.Point(451, 45);
+            this.labelphoneNumber.Location = new System.Drawing.Point(424, 55);
             this.labelphoneNumber.Name = "labelphoneNumber";
-            this.labelphoneNumber.Size = new System.Drawing.Size(113, 45);
+            this.labelphoneNumber.Size = new System.Drawing.Size(170, 25);
             this.labelphoneNumber.TabIndex = 6;
             this.labelphoneNumber.Text = "Número de celular";
             // 
@@ -307,18 +304,20 @@ namespace UI
             // 
             this.textBoxsecondSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxsecondSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsecondSurname.Location = new System.Drawing.Point(570, 7);
+            this.textBoxsecondSurname.Location = new System.Drawing.Point(600, 7);
             this.textBoxsecondSurname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxsecondSurname.MaxLength = 30;
             this.textBoxsecondSurname.Name = "textBoxsecondSurname";
-            this.textBoxsecondSurname.Size = new System.Drawing.Size(267, 30);
+            this.textBoxsecondSurname.Size = new System.Drawing.Size(250, 30);
             this.textBoxsecondSurname.TabIndex = 14;
+            this.textBoxsecondSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxsecondSurname_KeyPress);
             // 
             // labelEmail
             // 
             this.labelEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(492, 100);
+            this.labelEmail.Location = new System.Drawing.Point(522, 100);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(72, 25);
             this.labelEmail.TabIndex = 7;
@@ -328,58 +327,67 @@ namespace UI
             // 
             this.textBoxfirstSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxfirstSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxfirstSurname.Location = new System.Drawing.Point(162, 188);
+            this.textBoxfirstSurname.Location = new System.Drawing.Point(247, 188);
             this.textBoxfirstSurname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxfirstSurname.MaxLength = 30;
             this.textBoxfirstSurname.Name = "textBoxfirstSurname";
-            this.textBoxfirstSurname.Size = new System.Drawing.Size(234, 30);
+            this.textBoxfirstSurname.Size = new System.Drawing.Size(169, 30);
             this.textBoxfirstSurname.TabIndex = 13;
+            this.textBoxfirstSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxfirstSurname_KeyPress);
             // 
             // textBoxDPI
             // 
             this.textBoxDPI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDPI.Location = new System.Drawing.Point(162, 7);
+            this.textBoxDPI.Location = new System.Drawing.Point(247, 7);
             this.textBoxDPI.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxDPI.MaxLength = 13;
             this.textBoxDPI.Name = "textBoxDPI";
-            this.textBoxDPI.Size = new System.Drawing.Size(234, 30);
+            this.textBoxDPI.Size = new System.Drawing.Size(169, 30);
             this.textBoxDPI.TabIndex = 9;
             // 
             // textBoxfirstName
             // 
             this.textBoxfirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxfirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxfirstName.Location = new System.Drawing.Point(162, 52);
+            this.textBoxfirstName.Location = new System.Drawing.Point(247, 52);
             this.textBoxfirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxfirstName.MaxLength = 30;
             this.textBoxfirstName.Name = "textBoxfirstName";
-            this.textBoxfirstName.Size = new System.Drawing.Size(234, 30);
+            this.textBoxfirstName.Size = new System.Drawing.Size(169, 30);
             this.textBoxfirstName.TabIndex = 10;
+            this.textBoxfirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxfirstName_KeyPress);
             // 
             // textBoxthirdName
             // 
             this.textBoxthirdName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxthirdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxthirdName.Location = new System.Drawing.Point(162, 142);
+            this.textBoxthirdName.Location = new System.Drawing.Point(247, 142);
             this.textBoxthirdName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxthirdName.MaxLength = 30;
             this.textBoxthirdName.Name = "textBoxthirdName";
-            this.textBoxthirdName.Size = new System.Drawing.Size(234, 30);
+            this.textBoxthirdName.Size = new System.Drawing.Size(169, 30);
             this.textBoxthirdName.TabIndex = 12;
+            this.textBoxthirdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxthirdName_KeyPress);
             // 
             // textBoxsecondName
             // 
             this.textBoxsecondName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxsecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsecondName.Location = new System.Drawing.Point(162, 97);
+            this.textBoxsecondName.Location = new System.Drawing.Point(247, 97);
             this.textBoxsecondName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxsecondName.MaxLength = 30;
             this.textBoxsecondName.Name = "textBoxsecondName";
-            this.textBoxsecondName.Size = new System.Drawing.Size(234, 30);
+            this.textBoxsecondName.Size = new System.Drawing.Size(169, 30);
             this.textBoxsecondName.TabIndex = 11;
+            this.textBoxsecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxsecondName_KeyPress);
             // 
             // labelStatus
             // 
             this.labelStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(491, 145);
+            this.labelStatus.Location = new System.Drawing.Point(521, 145);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(73, 25);
             this.labelStatus.TabIndex = 8;
@@ -390,7 +398,7 @@ namespace UI
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.labelDPI);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(88, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(153, 39);
@@ -401,7 +409,7 @@ namespace UI
             this.labelDPI.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelDPI.AutoSize = true;
             this.labelDPI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDPI.Location = new System.Drawing.Point(112, 7);
+            this.labelDPI.Location = new System.Drawing.Point(103, 7);
             this.labelDPI.Name = "labelDPI";
             this.labelDPI.Size = new System.Drawing.Size(44, 25);
             this.labelDPI.TabIndex = 0;
@@ -420,12 +428,46 @@ namespace UI
             this.label10.Text = "*";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.labelfirstName);
+            this.panel2.Location = new System.Drawing.Point(70, 48);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(171, 39);
+            this.panel2.TabIndex = 23;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(4, 9);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(18, 24);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "*";
+            // 
+            // labelfirstName
+            // 
+            this.labelfirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelfirstName.AutoSize = true;
+            this.labelfirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelfirstName.Location = new System.Drawing.Point(17, 7);
+            this.labelfirstName.Name = "labelfirstName";
+            this.labelfirstName.Size = new System.Drawing.Size(139, 25);
+            this.labelfirstName.TabIndex = 1;
+            this.labelfirstName.Text = "Primer nombre";
+            this.labelfirstName.Click += new System.EventHandler(this.label2_Click);
+            // 
             // ID
             // 
             this.ID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(795, 260);
+            this.ID.Location = new System.Drawing.Point(5, 260);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(54, 17);
             this.ID.TabIndex = 18;
@@ -446,7 +488,7 @@ namespace UI
             this.iconButtonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonList.IconSize = 30;
             this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonList.Location = new System.Drawing.Point(983, 252);
+            this.iconButtonList.Location = new System.Drawing.Point(983, 226);
             this.iconButtonList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButtonList.Name = "iconButtonList";
             this.iconButtonList.Size = new System.Drawing.Size(160, 49);
@@ -472,7 +514,7 @@ namespace UI
             this.iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSave.IconSize = 30;
             this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSave.Location = new System.Drawing.Point(983, 191);
+            this.iconButtonSave.Location = new System.Drawing.Point(983, 165);
             this.iconButtonSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButtonSave.Name = "iconButtonSave";
             this.iconButtonSave.Size = new System.Drawing.Size(160, 47);
@@ -498,7 +540,7 @@ namespace UI
             this.iconButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonUpdate.IconSize = 30;
             this.iconButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonUpdate.Location = new System.Drawing.Point(983, 129);
+            this.iconButtonUpdate.Location = new System.Drawing.Point(983, 103);
             this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButtonUpdate.Name = "iconButtonUpdate";
             this.iconButtonUpdate.Size = new System.Drawing.Size(160, 49);
@@ -524,7 +566,7 @@ namespace UI
             this.iconButtonNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonNew.IconSize = 30;
             this.iconButtonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNew.Location = new System.Drawing.Point(983, 63);
+            this.iconButtonNew.Location = new System.Drawing.Point(983, 37);
             this.iconButtonNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButtonNew.Name = "iconButtonNew";
             this.iconButtonNew.Size = new System.Drawing.Size(160, 49);
@@ -558,12 +600,15 @@ namespace UI
             this.groupBoxanesthetistData.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.boxValidateMail)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -602,5 +647,7 @@ namespace UI
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox boxValidateMail;
     }
 }

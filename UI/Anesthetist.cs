@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using BLL;
 
 namespace UI
@@ -82,21 +83,28 @@ namespace UI
 
         private void iconButtonSave_Click_1(object sender, EventArgs e)
         {
-            string resp;
-            resp = anes.newAnesthetist(textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text, 
-                textBoxfirstSurname.Text, textBoxsecondSurname.Text, textBoxphoneNumber.Text, textBoxEmail.Text, true);
-            if (resp.ToUpper().Contains("ERROR"))
+            if ((boxValidateMail.Image== Properties.Resources.check))
             {
-                MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                string resp;
+                resp = anes.newAnesthetist(textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text,
+                    textBoxfirstSurname.Text, textBoxsecondSurname.Text, textBoxphoneNumber.Text, textBoxEmail.Text, true);
+                if (resp.ToUpper().Contains("ERROR"))
+                {
+                    MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
+                else
+                {
+                    MessageBox.Show(resp, "Nuevo anestesista añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    list();
+                }
+
+                iconButtonNew.Enabled = true;
+            }
             else
             {
-                MessageBox.Show(resp, "Nuevo anestesista añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                list();
+                MessageBox.Show("Datos incompletos o erroneos. Por Favor revisar la informacion");
             }
-
-            iconButtonNew.Enabled = true;
         }
 
         private void dataGridView1_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
@@ -234,6 +242,99 @@ namespace UI
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        public void regeXp(string re, TextBox tb, PictureBox pc)
+        {
+            Regex regex = new Regex(re);
+            if (regex.IsMatch(tb.Text))
+            {
+                pc.Image = Properties.Resources.check;
+            }
+            else
+            {
+                pc.Image = Properties.Resources.x;
+            }
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            regeXp(@"^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", textBoxEmail, boxValidateMail);
+        }
+
+        private void textBoxphoneNumber_KeyPress(object sender,
+          KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxfirstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void textBoxsecondName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void textBoxthirdName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void textBoxfirstSurname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void textBoxsecondSurname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
