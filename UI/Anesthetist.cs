@@ -83,7 +83,12 @@ namespace UI
 
         private void iconButtonSave_Click_1(object sender, EventArgs e)
         {
-            if ((boxValidateMail.Image== Properties.Resources.check))
+            int state = 0;
+            if (label1.Text == "v" || textBoxEmail.Text == "")
+            {
+                state = 1;
+            }
+            if (state == 1)
             {
                 string resp;
                 resp = anes.newAnesthetist(textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text,
@@ -97,6 +102,7 @@ namespace UI
                 {
                     MessageBox.Show(resp, "Nuevo anestesista añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     list();
+                    state = 0;
                 }
 
                 iconButtonNew.Enabled = true;
@@ -139,25 +145,38 @@ namespace UI
 
         private void iconButtonUpdate_Click_1(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(ID.Text);
-            bool status = false;
-            if (comboBoxStatus.SelectedIndex == 0)
-                status = true;
-            else if (comboBoxStatus.SelectedIndex == 1)
+            int state = 0;
+            if (label1.Text == "v" || textBoxEmail.Text == "")
             {
-                status = false;
+                state = 1;
             }
-            string resp = anes.editAnesthetist(textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text, 
-                textBoxfirstSurname.Text, textBoxsecondSurname.Text, textBoxphoneNumber.Text, textBoxEmail.Text, status, id);
-            if (resp.ToUpper().Contains("ERROR"))
+            if (state == 1)
             {
-                MessageBox.Show(resp, "Error al actualizar datos del paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                int id = Convert.ToInt32(ID.Text);
+                bool status = false;
+                if (comboBoxStatus.SelectedIndex == 0)
+                    status = true;
+                else if (comboBoxStatus.SelectedIndex == 1)
+                {
+                    status = false;
+                }
+                string resp = anes.editAnesthetist(textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text,
+                    textBoxfirstSurname.Text, textBoxsecondSurname.Text, textBoxphoneNumber.Text, textBoxEmail.Text, status, id);
+                if (resp.ToUpper().Contains("ERROR"))
+                {
+                    MessageBox.Show(resp, "Error al actualizar datos del paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
+                else
+                {
+                    MessageBox.Show(resp, "Datos del anestesista actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    list();
+                    state = 0;
+                }
+            }
             else
             {
-                MessageBox.Show(resp, "Datos del anestesista actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                list();
+                MessageBox.Show("Datos incompletos o erroneos. Por Favor revisar la informacion");
             }
         }
 
@@ -255,10 +274,12 @@ namespace UI
             if (regex.IsMatch(tb.Text))
             {
                 pc.Image = Properties.Resources.check;
+                label1.Text = "v";
             }
             else
             {
                 pc.Image = Properties.Resources.x;
+                label1.Text = "f";
             }
         }
 

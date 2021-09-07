@@ -29,368 +29,628 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonNew = new FontAwesome.Sharp.IconButton();
-            this.buttonSave = new FontAwesome.Sharp.IconButton();
-            this.buttonUpdate = new FontAwesome.Sharp.IconButton();
-            this.buttonList = new FontAwesome.Sharp.IconButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelID = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.comboStatus = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.textCui = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textPhone = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.textEmail = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.textSecondLastName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.textFirstLastName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textThirdName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.textSecondName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.textFirstName = new System.Windows.Forms.TextBox();
+            this.groupBoxDoctorsData = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.boxValidateMail = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.labelfirstSurname = new System.Windows.Forms.Label();
+            this.labelsecondName = new System.Windows.Forms.Label();
+            this.labelthirdName = new System.Windows.Forms.Label();
+            this.labelsecondSurname = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelDPI = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.labelfirstName = new System.Windows.Forms.Label();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.iconButtonList = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSave = new FontAwesome.Sharp.IconButton();
+            this.iconButtonUpdate = new FontAwesome.Sharp.IconButton();
+            this.iconButtonNew = new FontAwesome.Sharp.IconButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBoxDoctorsData.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.boxValidateMail)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 498);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1527, 447);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // buttonNew
-            // 
-            this.buttonNew.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.buttonNew.IconColor = System.Drawing.Color.Black;
-            this.buttonNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonNew.Location = new System.Drawing.Point(320, 364);
-            this.buttonNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(180, 87);
-            this.buttonNew.TabIndex = 17;
-            this.buttonNew.Text = "Nuevo";
-            this.buttonNew.UseVisualStyleBackColor = true;
-            this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Enabled = false;
-            this.buttonSave.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.buttonSave.IconColor = System.Drawing.Color.Black;
-            this.buttonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonSave.Location = new System.Drawing.Point(571, 364);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(180, 87);
-            this.buttonSave.TabIndex = 16;
-            this.buttonSave.Text = "Guardar";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Enabled = false;
-            this.buttonUpdate.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.buttonUpdate.IconColor = System.Drawing.Color.Black;
-            this.buttonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonUpdate.Location = new System.Drawing.Point(840, 364);
-            this.buttonUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(180, 87);
-            this.buttonUpdate.TabIndex = 15;
-            this.buttonUpdate.Text = "Editar";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
-            // 
-            // buttonList
-            // 
-            this.buttonList.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.buttonList.IconColor = System.Drawing.Color.Black;
-            this.buttonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.buttonList.Location = new System.Drawing.Point(1120, 364);
-            this.buttonList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonList.Name = "buttonList";
-            this.buttonList.Size = new System.Drawing.Size(180, 87);
-            this.buttonList.TabIndex = 14;
-            this.buttonList.Text = "Listar";
-            this.buttonList.UseVisualStyleBackColor = true;
-            this.buttonList.Click += new System.EventHandler(this.buttonList_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.labelID);
-            this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textCui);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textPhone);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textEmail);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textSecondLastName);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textFirstLastName);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textThirdName);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textSecondName);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textFirstName);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(37, 46);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1445, 261);
-            this.groupBox1.TabIndex = 13;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
             // 
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(12, 238);
-            this.labelID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelID.Location = new System.Drawing.Point(5, 218);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(54, 17);
+            this.labelID.Size = new System.Drawing.Size(52, 20);
             this.labelID.TabIndex = 19;
             this.labelID.Text = "label10";
             this.labelID.Visible = false;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.comboStatus);
-            this.groupBox2.Location = new System.Drawing.Point(1159, 119);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(267, 123);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Estado";
-            this.groupBox2.Visible = false;
-            // 
             // comboStatus
             // 
+            this.comboStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboStatus.FormattingEnabled = true;
             this.comboStatus.Items.AddRange(new object[] {
             "",
             "Activo",
             "Inactivo"});
-            this.comboStatus.Location = new System.Drawing.Point(31, 55);
-            this.comboStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboStatus.Location = new System.Drawing.Point(485, 112);
             this.comboStatus.Name = "comboStatus";
-            this.comboStatus.Size = new System.Drawing.Size(208, 24);
+            this.comboStatus.Size = new System.Drawing.Size(202, 28);
             this.comboStatus.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(483, 100);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(28, 17);
-            this.label9.TabIndex = 16;
-            this.label9.Text = "Cui";
+            this.comboStatus.Visible = false;
             // 
             // textCui
             // 
-            this.textCui.Location = new System.Drawing.Point(487, 119);
-            this.textCui.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textCui.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textCui.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCui.Location = new System.Drawing.Point(139, 5);
+            this.textCui.MaxLength = 15;
             this.textCui.Name = "textCui";
-            this.textCui.Size = new System.Drawing.Size(211, 22);
+            this.textCui.Size = new System.Drawing.Size(217, 26);
             this.textCui.TabIndex = 15;
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(247, 100);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(418, 44);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 17);
+            this.label7.Size = new System.Drawing.Size(61, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "Telefono";
             // 
             // textPhone
             // 
-            this.textPhone.Location = new System.Drawing.Point(251, 119);
-            this.textPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPhone.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPhone.Location = new System.Drawing.Point(485, 41);
+            this.textPhone.MaxLength = 8;
             this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(211, 22);
+            this.textPhone.Size = new System.Drawing.Size(202, 26);
             this.textPhone.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(8, 100);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Correo";
+            this.textPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPhone_KeyPress);
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(12, 119);
-            this.textEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textEmail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEmail.Location = new System.Drawing.Point(3, 2);
+            this.textEmail.MaxLength = 25;
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(211, 22);
+            this.textEmail.Size = new System.Drawing.Size(169, 26);
             this.textEmail.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(947, 37);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Segundo Apellido";
+            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // textSecondLastName
             // 
-            this.textSecondLastName.Location = new System.Drawing.Point(951, 57);
-            this.textSecondLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textSecondLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textSecondLastName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSecondLastName.Location = new System.Drawing.Point(485, 5);
+            this.textSecondLastName.MaxLength = 30;
             this.textSecondLastName.Name = "textSecondLastName";
-            this.textSecondLastName.Size = new System.Drawing.Size(211, 22);
+            this.textSecondLastName.Size = new System.Drawing.Size(202, 26);
             this.textSecondLastName.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(715, 37);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 17);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Primer Apellido";
+            this.textSecondLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSecondLastName_KeyPress);
             // 
             // textFirstLastName
             // 
-            this.textFirstLastName.Location = new System.Drawing.Point(719, 57);
-            this.textFirstLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textFirstLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textFirstLastName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textFirstLastName.Location = new System.Drawing.Point(139, 151);
+            this.textFirstLastName.MaxLength = 30;
             this.textFirstLastName.Name = "textFirstLastName";
-            this.textFirstLastName.Size = new System.Drawing.Size(211, 22);
+            this.textFirstLastName.Size = new System.Drawing.Size(217, 26);
             this.textFirstLastName.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(483, 37);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Tercer Nombre";
+            this.textFirstLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textFirstLastName_KeyPress);
             // 
             // textThirdName
             // 
-            this.textThirdName.Location = new System.Drawing.Point(487, 57);
-            this.textThirdName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textThirdName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textThirdName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textThirdName.Location = new System.Drawing.Point(139, 113);
+            this.textThirdName.MaxLength = 30;
             this.textThirdName.Name = "textThirdName";
-            this.textThirdName.Size = new System.Drawing.Size(211, 22);
+            this.textThirdName.Size = new System.Drawing.Size(217, 26);
             this.textThirdName.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(247, 37);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Segundo Nombre";
+            this.textThirdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textThirdName_KeyPress);
             // 
             // textSecondName
             // 
-            this.textSecondName.Location = new System.Drawing.Point(251, 57);
-            this.textSecondName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textSecondName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textSecondName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSecondName.Location = new System.Drawing.Point(139, 77);
+            this.textSecondName.MaxLength = 30;
             this.textSecondName.Name = "textSecondName";
-            this.textSecondName.Size = new System.Drawing.Size(211, 22);
+            this.textSecondName.Size = new System.Drawing.Size(217, 26);
             this.textSecondName.TabIndex = 2;
+            this.textSecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textSecondName_KeyPress);
+            // 
+            // textFirstName
+            // 
+            this.textFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textFirstName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textFirstName.Location = new System.Drawing.Point(139, 41);
+            this.textFirstName.MaxLength = 30;
+            this.textFirstName.Name = "textFirstName";
+            this.textFirstName.Size = new System.Drawing.Size(217, 26);
+            this.textFirstName.TabIndex = 0;
+            this.textFirstName.TextChanged += new System.EventHandler(this.textFirstName_TextChanged);
+            this.textFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textFirstName_KeyPress);
+            // 
+            // groupBoxDoctorsData
+            // 
+            this.groupBoxDoctorsData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxDoctorsData.Controls.Add(this.labelID);
+            this.groupBoxDoctorsData.Controls.Add(this.tableLayoutPanel1);
+            this.groupBoxDoctorsData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxDoctorsData.Location = new System.Drawing.Point(31, 21);
+            this.groupBoxDoctorsData.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBoxDoctorsData.Name = "groupBoxDoctorsData";
+            this.groupBoxDoctorsData.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxDoctorsData.Size = new System.Drawing.Size(708, 242);
+            this.groupBoxDoctorsData.TabIndex = 29;
+            this.groupBoxDoctorsData.TabStop = false;
+            this.groupBoxDoctorsData.Text = "Datos del doctor";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.71014F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.31884F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.82609F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label7, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textCui, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textPhone, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelsecondName, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.labelthirdName, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.labelsecondSurname, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textSecondLastName, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.labelEmail, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textFirstLastName, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.textThirdName, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textSecondName, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textFirstName, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.labelStatus, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.comboStatus, 3, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 29);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(690, 184);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.boxValidateMail);
+            this.panel4.Controls.Add(this.textEmail);
+            this.panel4.Location = new System.Drawing.Point(485, 75);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(202, 30);
+            this.panel4.TabIndex = 23;
+            // 
+            // boxValidateMail
+            // 
+            this.boxValidateMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.boxValidateMail.Location = new System.Drawing.Point(178, 3);
+            this.boxValidateMail.Name = "boxValidateMail";
+            this.boxValidateMail.Size = new System.Drawing.Size(22, 23);
+            this.boxValidateMail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.boxValidateMail.TabIndex = 0;
+            this.boxValidateMail.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.labelfirstSurname);
+            this.panel3.Location = new System.Drawing.Point(6, 148);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(128, 32);
+            this.panel3.TabIndex = 23;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(4, 6);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(15, 19);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "*";
+            // 
+            // labelfirstSurname
+            // 
+            this.labelfirstSurname.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelfirstSurname.AutoSize = true;
+            this.labelfirstSurname.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelfirstSurname.Location = new System.Drawing.Point(18, 4);
+            this.labelfirstSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelfirstSurname.Name = "labelfirstSurname";
+            this.labelfirstSurname.Size = new System.Drawing.Size(100, 20);
+            this.labelfirstSurname.TabIndex = 4;
+            this.labelfirstSurname.Text = "Primer apellido";
+            // 
+            // labelsecondName
+            // 
+            this.labelsecondName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelsecondName.AutoSize = true;
+            this.labelsecondName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelsecondName.Location = new System.Drawing.Point(20, 80);
+            this.labelsecondName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelsecondName.Name = "labelsecondName";
+            this.labelsecondName.Size = new System.Drawing.Size(114, 20);
+            this.labelsecondName.TabIndex = 2;
+            this.labelsecondName.Text = "Segundo nombre";
+            // 
+            // labelthirdName
+            // 
+            this.labelthirdName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelthirdName.AutoSize = true;
+            this.labelthirdName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelthirdName.Location = new System.Drawing.Point(37, 116);
+            this.labelthirdName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelthirdName.Name = "labelthirdName";
+            this.labelthirdName.Size = new System.Drawing.Size(97, 20);
+            this.labelthirdName.TabIndex = 3;
+            this.labelthirdName.Text = "Tercer nombre";
+            // 
+            // labelsecondSurname
+            // 
+            this.labelsecondSurname.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelsecondSurname.AutoSize = true;
+            this.labelsecondSurname.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelsecondSurname.Location = new System.Drawing.Point(364, 8);
+            this.labelsecondSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelsecondSurname.Name = "labelsecondSurname";
+            this.labelsecondSurname.Size = new System.Drawing.Size(116, 20);
+            this.labelsecondSurname.TabIndex = 5;
+            this.labelsecondSurname.Text = "Segundo apellido";
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmail.Location = new System.Drawing.Point(430, 80);
+            this.labelEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(50, 20);
+            this.labelEmail.TabIndex = 7;
+            this.labelEmail.Text = "Correo";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel1.Controls.Add(this.labelDPI);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Location = new System.Drawing.Point(19, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(115, 32);
+            this.panel1.TabIndex = 23;
+            // 
+            // labelDPI
+            // 
+            this.labelDPI.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelDPI.AutoSize = true;
+            this.labelDPI.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDPI.Location = new System.Drawing.Point(77, 6);
+            this.labelDPI.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelDPI.Name = "labelDPI";
+            this.labelDPI.Size = new System.Drawing.Size(30, 20);
+            this.labelDPI.TabIndex = 0;
+            this.labelDPI.Text = "DPI";
+            this.labelDPI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(61, 6);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(15, 19);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "*";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.labelfirstName);
+            this.panel2.Location = new System.Drawing.Point(6, 38);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(128, 32);
+            this.panel2.TabIndex = 23;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(9, 7);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(15, 19);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "*";
+            // 
+            // labelfirstName
+            // 
+            this.labelfirstName.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelfirstName.AutoSize = true;
+            this.labelfirstName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelfirstName.Location = new System.Drawing.Point(28, 6);
+            this.labelfirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelfirstName.Name = "labelfirstName";
+            this.labelfirstName.Size = new System.Drawing.Size(98, 20);
+            this.labelfirstName.TabIndex = 1;
+            this.labelfirstName.Text = "Primer nombre";
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.Location = new System.Drawing.Point(429, 116);
+            this.labelStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(51, 20);
+            this.labelStatus.TabIndex = 24;
+            this.labelStatus.Text = "Estado";
+            this.labelStatus.Visible = false;
+            // 
+            // iconButtonList
+            // 
+            this.iconButtonList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonList.BackColor = System.Drawing.Color.White;
+            this.iconButtonList.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonList.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonList.IconChar = FontAwesome.Sharp.IconChar.List;
+            this.iconButtonList.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonList.IconSize = 30;
+            this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonList.Location = new System.Drawing.Point(743, 175);
+            this.iconButtonList.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonList.Name = "iconButtonList";
+            this.iconButtonList.Size = new System.Drawing.Size(120, 40);
+            this.iconButtonList.TabIndex = 33;
+            this.iconButtonList.Text = "Listar";
+            this.iconButtonList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonList.UseVisualStyleBackColor = false;
+            this.iconButtonList.Click += new System.EventHandler(this.iconButtonList_Click);
+            // 
+            // iconButtonSave
+            // 
+            this.iconButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonSave.BackColor = System.Drawing.Color.White;
+            this.iconButtonSave.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonSave.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSave.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.iconButtonSave.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSave.IconSize = 30;
+            this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonSave.Location = new System.Drawing.Point(743, 125);
+            this.iconButtonSave.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonSave.Name = "iconButtonSave";
+            this.iconButtonSave.Size = new System.Drawing.Size(120, 38);
+            this.iconButtonSave.TabIndex = 32;
+            this.iconButtonSave.Text = "Guardar";
+            this.iconButtonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonSave.UseVisualStyleBackColor = false;
+            this.iconButtonSave.Click += new System.EventHandler(this.iconButtonSave_Click);
+            // 
+            // iconButtonUpdate
+            // 
+            this.iconButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonUpdate.BackColor = System.Drawing.Color.White;
+            this.iconButtonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonUpdate.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.Retweet;
+            this.iconButtonUpdate.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonUpdate.IconSize = 30;
+            this.iconButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonUpdate.Location = new System.Drawing.Point(743, 75);
+            this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonUpdate.Name = "iconButtonUpdate";
+            this.iconButtonUpdate.Size = new System.Drawing.Size(120, 40);
+            this.iconButtonUpdate.TabIndex = 31;
+            this.iconButtonUpdate.Text = "Actualizar";
+            this.iconButtonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonUpdate.UseVisualStyleBackColor = false;
+            this.iconButtonUpdate.Click += new System.EventHandler(this.iconButtonUpdate_Click);
+            // 
+            // iconButtonNew
+            // 
+            this.iconButtonNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonNew.BackColor = System.Drawing.Color.White;
+            this.iconButtonNew.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonNew.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonNew.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButtonNew.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonNew.IconSize = 30;
+            this.iconButtonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonNew.Location = new System.Drawing.Point(743, 21);
+            this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonNew.Name = "iconButtonNew";
+            this.iconButtonNew.Size = new System.Drawing.Size(120, 40);
+            this.iconButtonNew.TabIndex = 30;
+            this.iconButtonNew.Text = "Nuevo";
+            this.iconButtonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonNew.UseVisualStyleBackColor = false;
+            this.iconButtonNew.Click += new System.EventHandler(this.iconButtonNew_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 267);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(857, 403);
+            this.dataGridView1.TabIndex = 34;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(744, 221);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Primer Nombre";
-            // 
-            // textFirstName
-            // 
-            this.textFirstName.Location = new System.Drawing.Point(12, 57);
-            this.textFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textFirstName.Name = "textFirstName";
-            this.textFirstName.Size = new System.Drawing.Size(211, 22);
-            this.textFirstName.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
             // Doctors
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1559, 996);
-            this.Controls.Add(this.buttonNew);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.buttonUpdate);
-            this.Controls.Add(this.buttonList);
-            this.Controls.Add(this.groupBox1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(875, 681);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.iconButtonList);
+            this.Controls.Add(this.iconButtonSave);
+            this.Controls.Add(this.iconButtonUpdate);
+            this.Controls.Add(this.iconButtonNew);
+            this.Controls.Add(this.groupBoxDoctorsData);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Doctors";
             this.Text = "Doctors";
             this.Load += new System.EventHandler(this.Doctors_Load);
+            this.groupBoxDoctorsData.ResumeLayout(false);
+            this.groupBoxDoctorsData.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.boxValidateMail)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private FontAwesome.Sharp.IconButton buttonNew;
-        private FontAwesome.Sharp.IconButton buttonSave;
-        private FontAwesome.Sharp.IconButton buttonUpdate;
-        private FontAwesome.Sharp.IconButton buttonList;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelID;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboStatus;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textCui;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textPhone;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textEmail;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textSecondLastName;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textFirstLastName;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textThirdName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textSecondName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textFirstName;
+        private System.Windows.Forms.GroupBox groupBoxDoctorsData;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox boxValidateMail;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelfirstSurname;
+        private System.Windows.Forms.Label labelsecondName;
+        private System.Windows.Forms.Label labelthirdName;
+        private System.Windows.Forms.Label labelsecondSurname;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelDPI;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelfirstName;
+        private System.Windows.Forms.Label labelStatus;
+        private FontAwesome.Sharp.IconButton iconButtonList;
+        private FontAwesome.Sharp.IconButton iconButtonSave;
+        private FontAwesome.Sharp.IconButton iconButtonUpdate;
+        private FontAwesome.Sharp.IconButton iconButtonNew;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
     }
 }
