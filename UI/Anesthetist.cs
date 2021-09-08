@@ -21,11 +21,22 @@ namespace UI
             anes = new ClassAnesthetist();
         }
 
-        void list()
+        void listAnesthetists()
         {
             dataGridView1.DataSource = anes.listAnesthetist();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoResizeRows();
+            dataGridView1.Columns[1].HeaderText = "CUI";
+            dataGridView1.Columns[2].HeaderText = "Primer nombre";
+            dataGridView1.Columns[3].HeaderText = "Segundo nombre";
+            dataGridView1.Columns[4].HeaderText = "Tercer nombre";
+            dataGridView1.Columns[5].HeaderText = "Primer apellido";
+            dataGridView1.Columns[6].HeaderText = "Segundo apellido";
+            dataGridView1.Columns[7].HeaderText = "Telefono";
+            dataGridView1.Columns[8].HeaderText = "Correo";
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
             dataGridView1.Refresh();
         }
 
@@ -101,7 +112,7 @@ namespace UI
                 else
                 {
                     MessageBox.Show(resp, "Nuevo anestesista añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    list();
+                    listAnesthetists();
                     state = 0;
                 }
 
@@ -170,7 +181,7 @@ namespace UI
                 else
                 {
                     MessageBox.Show(resp, "Datos del anestesista actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    list();
+                    listAnesthetists();
                     state = 0;
                 }
             }
@@ -182,7 +193,7 @@ namespace UI
 
         private void iconButtonList_Click_1(object sender, EventArgs e)
         {
-            list();
+            listAnesthetists();
             iconButtonNew.Enabled = true;
             iconButtonSave.Enabled = false;
             iconButtonUpdate.Enabled = false;
@@ -356,6 +367,11 @@ namespace UI
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void Anesthetist_Resize(object sender, EventArgs e)
+        {
+            listAnesthetists();
         }
     }
 }

@@ -20,11 +20,21 @@ namespace UI
             patients = new ClassPatient();
         }
 
-        void list()
+        void listPatients()
         {
             dataGridView1.DataSource = patients.listPatients();
-            dataGridView1.Columns[0].Visible = false;
             dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoResizeRows();
+            dataGridView1.Columns[1].HeaderText = "Numero de historia";
+            dataGridView1.Columns[2].HeaderText = "Primer nombre";
+            dataGridView1.Columns[3].HeaderText = "Segundo nombre";
+            dataGridView1.Columns[4].HeaderText = "Tercer nombre";
+            dataGridView1.Columns[5].HeaderText = "Primer apellido";
+            dataGridView1.Columns[6].HeaderText = "Segundo apellido";
+            dataGridView1.Columns[7].HeaderText = "Edad";
+            dataGridView1.Columns[8].HeaderText = "Genero";
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
             dataGridView1.Refresh();
         }
 
@@ -54,7 +64,7 @@ namespace UI
 
         private void iconButtonList_Click_1(object sender, EventArgs e)
         {
-            list();
+            listPatients();
             iconButtonNew.Enabled = true;
             iconButtonSave.Enabled = false;
             iconButtonUpdate.Enabled = false;
@@ -86,7 +96,7 @@ namespace UI
             else
             {
                 MessageBox.Show(resp, "Nuevo paciente añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                list();
+                listPatients();
             }
 
             iconButtonNew.Enabled = true;
@@ -109,11 +119,10 @@ namespace UI
                 textBoxfirstSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
                 textBoxsecondSurname.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                 textBoxAge.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                textBoxDiagnosis.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-                comboBoxGender.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-                if (dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() == "True")
+                comboBoxGender.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                if (dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() == "True")
                     comboBoxStatus.Text = "Activo";
-                else if (dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() == "False")
+                else if (dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() == "False")
                     comboBoxStatus.Text = "Inactivo";
             }
             catch (Exception)
@@ -143,7 +152,7 @@ namespace UI
             else
             {
                 MessageBox.Show(resp, "Datos del paciente actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                list();
+                listPatients();
             }
         }
 
@@ -224,6 +233,16 @@ namespace UI
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Patient_Resize(object sender, EventArgs e)
+        {
+            listPatients();
         }
     }
 }
