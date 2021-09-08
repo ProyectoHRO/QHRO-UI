@@ -77,8 +77,7 @@ namespace UI
             string resp;
             resp = patients.newPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
                 textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
-                comboBoxGender.SelectedItem.ToString(),
-            true);
+                comboBoxGender.SelectedItem.ToString());
             if (resp.ToUpper().Contains("ERROR"))
             {
                 MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);

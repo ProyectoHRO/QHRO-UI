@@ -281,7 +281,7 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnidanestesia;
             
-            private global::System.Data.DataColumn columndpi;
+            private global::System.Data.DataColumn columndpi_anestesista;
             
             private global::System.Data.DataColumn columnprimer_nombre;
             
@@ -342,9 +342,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dpiColumn {
+            public global::System.Data.DataColumn dpi_anestesistaColumn {
                 get {
-                    return this.columndpi;
+                    return this.columndpi_anestesista;
                 }
             }
             
@@ -449,11 +449,11 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public anestesiaRow AddanestesiaRow(string dpi, string primer_nombre, string segundo_nombre, string tercer_nombre, string primer_apellido, string segundo_apellido, string numero, string correo, bool estado) {
+            public anestesiaRow AddanestesiaRow(string dpi_anestesista, string primer_nombre, string segundo_nombre, string tercer_nombre, string primer_apellido, string segundo_apellido, string numero, string correo, bool estado) {
                 anestesiaRow rowanestesiaRow = ((anestesiaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        dpi,
+                        dpi_anestesista,
                         primer_nombre,
                         segundo_nombre,
                         tercer_nombre,
@@ -469,9 +469,9 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public anestesiaRow FindByidanestesia(int idanestesia) {
+            public anestesiaRow FindBydpi_anestesista(string dpi_anestesista) {
                 return ((anestesiaRow)(this.Rows.Find(new object[] {
-                            idanestesia})));
+                            dpi_anestesista})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,7 +492,7 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnidanestesia = base.Columns["idanestesia"];
-                this.columndpi = base.Columns["dpi"];
+                this.columndpi_anestesista = base.Columns["dpi_anestesista"];
                 this.columnprimer_nombre = base.Columns["primer_nombre"];
                 this.columnsegundo_nombre = base.Columns["segundo_nombre"];
                 this.columntercer_nombre = base.Columns["tercer_nombre"];
@@ -508,8 +508,8 @@ namespace DAL {
             private void InitClass() {
                 this.columnidanestesia = new global::System.Data.DataColumn("idanestesia", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidanestesia);
-                this.columndpi = new global::System.Data.DataColumn("dpi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndpi);
+                this.columndpi_anestesista = new global::System.Data.DataColumn("dpi_anestesista", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndpi_anestesista);
                 this.columnprimer_nombre = new global::System.Data.DataColumn("primer_nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprimer_nombre);
                 this.columnsegundo_nombre = new global::System.Data.DataColumn("segundo_nombre", typeof(string), null, global::System.Data.MappingType.Element);
@@ -527,15 +527,15 @@ namespace DAL {
                 this.columnestado = new global::System.Data.DataColumn("estado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestado);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidanestesia}, true));
+                                this.columndpi_anestesista}, true));
                 this.columnidanestesia.AutoIncrement = true;
                 this.columnidanestesia.AutoIncrementSeed = -1;
                 this.columnidanestesia.AutoIncrementStep = -1;
                 this.columnidanestesia.AllowDBNull = false;
                 this.columnidanestesia.ReadOnly = true;
-                this.columnidanestesia.Unique = true;
-                this.columndpi.AllowDBNull = false;
-                this.columndpi.MaxLength = 15;
+                this.columndpi_anestesista.AllowDBNull = false;
+                this.columndpi_anestesista.Unique = true;
+                this.columndpi_anestesista.MaxLength = 15;
                 this.columnprimer_nombre.AllowDBNull = false;
                 this.columnprimer_nombre.MaxLength = 30;
                 this.columnsegundo_nombre.MaxLength = 30;
@@ -699,12 +699,12 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string dpi {
+            public string dpi_anestesista {
                 get {
-                    return ((string)(this[this.tableanestesia.dpiColumn]));
+                    return ((string)(this[this.tableanestesia.dpi_anestesistaColumn]));
                 }
                 set {
-                    this[this.tableanestesia.dpiColumn] = value;
+                    this[this.tableanestesia.dpi_anestesistaColumn] = value;
                 }
             }
             
@@ -1042,7 +1042,7 @@ namespace DAL.DataSetAnesthetistTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "anestesia";
             tableMapping.ColumnMappings.Add("idanestesia", "idanestesia");
-            tableMapping.ColumnMappings.Add("dpi", "dpi");
+            tableMapping.ColumnMappings.Add("dpi_anestesista", "dpi_anestesista");
             tableMapping.ColumnMappings.Add("primer_nombre", "primer_nombre");
             tableMapping.ColumnMappings.Add("segundo_nombre", "segundo_nombre");
             tableMapping.ColumnMappings.Add("tercer_nombre", "tercer_nombre");
@@ -1067,15 +1067,15 @@ namespace DAL.DataSetAnesthetistTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT anestesia.*\r\nFROM     anestesia";
+            this._commandCollection[0].CommandText = "SELECT        anestesia.*\r\nFROM            anestesia";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"INSERT INTO anestesia
-                  (dpi, primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, numero, correo, estado)
-VALUES (@dpi,@firstName,@secondName,@thirdName,@firstSurname,@secondSurname,@phoneNumber,@email,@status)";
+                         (dpi_anestesista, primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, numero, correo)
+VALUES        (@dpi,@firstName,@secondName,@thirdName,@firstSurname,@secondSurname,@phoneNumber,@email)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi_anestesista", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firstName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "primer_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@secondName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "segundo_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@thirdName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tercer_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1083,15 +1083,14 @@ VALUES (@dpi,@firstName,@secondName,@thirdName,@firstSurname,@secondSurname,@pho
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@secondSurname", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "segundo_apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@phoneNumber", global::System.Data.SqlDbType.NVarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "numero", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@email", global::System.Data.SqlDbType.NVarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "correo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@status", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 0, 0, "estado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"UPDATE anestesia
-SET          dpi = @dpi, primer_nombre = @firstName, segundo_nombre = @secondName, tercer_nombre = @thirdName, primer_apellido = @firstSurname, segundo_apellido = @secondSurname, numero = @phoneNumber, correo = @email, 
-                  estado = @status
-WHERE  (idanestesia = @idAnesthetist)";
+            this._commandCollection[2].CommandText = @"UPDATE       anestesia
+SET                dpi_anestesista = @dpi, primer_nombre = @firstName, segundo_nombre = @secondName, tercer_nombre = @thirdName, primer_apellido = @firstSurname, segundo_apellido = @secondSurname, numero = @phoneNumber, 
+                         correo = @email, estado = @status
+WHERE        (idanestesia = @idAnesthetist)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi_anestesista", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firstName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "primer_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@secondName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "segundo_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@thirdName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tercer_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1118,7 +1117,7 @@ WHERE  (idanestesia = @idAnesthetist)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQueryNewAnesthetist(string dpi, string firstName, string secondName, string thirdName, string firstSurname, string secondSurname, string phoneNumber, string email, bool status) {
+        public virtual int InsertQueryNewAnesthetist(string dpi, string firstName, string secondName, string thirdName, string firstSurname, string secondSurname, string phoneNumber, string email) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((dpi == null)) {
                 throw new global::System.ArgumentNullException("dpi");
@@ -1168,7 +1167,6 @@ WHERE  (idanestesia = @idAnesthetist)";
             else {
                 command.Parameters[7].Value = ((string)(email));
             }
-            command.Parameters[8].Value = ((bool)(status));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -92,7 +92,7 @@ namespace UI
             {
                 string resp;
                 resp = anes.newAnesthetist(textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text,
-                    textBoxfirstSurname.Text, textBoxsecondSurname.Text, textBoxphoneNumber.Text, textBoxEmail.Text, true);
+                    textBoxfirstSurname.Text, textBoxsecondSurname.Text, textBoxphoneNumber.Text, textBoxEmail.Text);
                 if (resp.ToUpper().Contains("ERROR"))
                 {
                     MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
