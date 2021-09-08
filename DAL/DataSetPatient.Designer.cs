@@ -1714,7 +1714,7 @@ WHERE        (idpaciente = @idPatient)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetPatient.pacientesDataTable GetDataPacients() {
+        public virtual DataSetPatient.pacientesDataTable GetDataPatients() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             DataSetPatient.pacientesDataTable dataTable = new DataSetPatient.pacientesDataTable();
             this.Adapter.Fill(dataTable);

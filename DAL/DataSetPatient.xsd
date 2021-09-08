@@ -29,7 +29,7 @@ FROM            diagnosticos</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pacientesTableAdapter" GeneratorDataComponentClassName="pacientesTableAdapter" Name="pacientes" UserDataComponentName="pacientesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="HROBDConnectionString (Settings)" DbObjectName="HROBD.dbo.pacientes" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataPacients" GetMethodModifier="Public" GetMethodName="GetDataPacients" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataPacients" UserSourceName="GetDataPacients">
+              <DbSource ConnectionRef="HROBDConnectionString (Settings)" DbObjectName="HROBD.dbo.pacientes" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataPatients" GetMethodModifier="Public" GetMethodName="GetDataPatients" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataPatients" UserSourceName="GetDataPatients">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        pacientes.*
@@ -103,7 +103,7 @@ WHERE        (idpaciente = @idPatient)</CommandText>
   <xs:element name="DataSetPatient" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetPatient" msprop:Generator_UserDSName="DataSetPatient">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="diagnosticos" msprop:Generator_TableClassName="diagnosticosDataTable" msprop:Generator_TableVarName="tablediagnosticos" msprop:Generator_RowChangedName="diagnosticosRowChanged" msprop:Generator_TablePropName="diagnosticos" msprop:Generator_RowDeletingName="diagnosticosRowDeleting" msprop:Generator_RowChangingName="diagnosticosRowChanging" msprop:Generator_RowEvHandlerName="diagnosticosRowChangeEventHandler" msprop:Generator_RowDeletedName="diagnosticosRowDeleted" msprop:Generator_RowClassName="diagnosticosRow" msprop:Generator_UserTableName="diagnosticos" msprop:Generator_RowEvArgName="diagnosticosRowChangeEvent">
+        <xs:element name="diagnosticos" msprop:Generator_TableClassName="diagnosticosDataTable" msprop:Generator_TableVarName="tablediagnosticos" msprop:Generator_TablePropName="diagnosticos" msprop:Generator_RowDeletingName="diagnosticosRowDeleting" msprop:Generator_RowChangingName="diagnosticosRowChanging" msprop:Generator_RowEvHandlerName="diagnosticosRowChangeEventHandler" msprop:Generator_RowDeletedName="diagnosticosRowDeleted" msprop:Generator_UserTableName="diagnosticos" msprop:Generator_RowChangedName="diagnosticosRowChanged" msprop:Generator_RowEvArgName="diagnosticosRowChangeEvent" msprop:Generator_RowClassName="diagnosticosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_diagnostico" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_diagnostico" msprop:Generator_ColumnPropNameInRow="id_diagnostico" msprop:Generator_ColumnPropNameInTable="id_diagnosticoColumn" msprop:Generator_UserColumnName="id_diagnostico" type="xs:int" />
@@ -119,7 +119,7 @@ WHERE        (idpaciente = @idPatient)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="pacientes" msprop:Generator_TableClassName="pacientesDataTable" msprop:Generator_TableVarName="tablepacientes" msprop:Generator_TablePropName="pacientes" msprop:Generator_RowDeletingName="pacientesRowDeleting" msprop:Generator_RowChangingName="pacientesRowChanging" msprop:Generator_RowEvHandlerName="pacientesRowChangeEventHandler" msprop:Generator_RowDeletedName="pacientesRowDeleted" msprop:Generator_UserTableName="pacientes" msprop:Generator_RowChangedName="pacientesRowChanged" msprop:Generator_RowEvArgName="pacientesRowChangeEvent" msprop:Generator_RowClassName="pacientesRow">
+        <xs:element name="pacientes" msprop:Generator_TableClassName="pacientesDataTable" msprop:Generator_TableVarName="tablepacientes" msprop:Generator_RowChangedName="pacientesRowChanged" msprop:Generator_TablePropName="pacientes" msprop:Generator_RowDeletingName="pacientesRowDeleting" msprop:Generator_RowChangingName="pacientesRowChanging" msprop:Generator_RowEvHandlerName="pacientesRowChangeEventHandler" msprop:Generator_RowDeletedName="pacientesRowDeleted" msprop:Generator_RowClassName="pacientesRow" msprop:Generator_UserTableName="pacientes" msprop:Generator_RowEvArgName="pacientesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idpaciente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidpaciente" msprop:Generator_ColumnPropNameInRow="idpaciente" msprop:Generator_ColumnPropNameInTable="idpacienteColumn" msprop:Generator_UserColumnName="idpaciente" type="xs:int" />
@@ -190,7 +190,7 @@ WHERE        (idpaciente = @idPatient)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Relationship16" msdata:parent="pacientes" msdata:child="diagnosticos" msdata:parentkey="idpaciente" msdata:childkey="idpaciente" msprop:Generator_UserChildTable="diagnosticos" msprop:Generator_ChildPropName="GetdiagnosticosRows" msprop:Generator_UserRelationName="Relationship16" msprop:Generator_RelationVarName="relationRelationship16" msprop:Generator_UserParentTable="pacientes" msprop:Generator_ParentPropName="pacientesRow" />
+      <msdata:Relationship name="Relationship16" msdata:parent="pacientes" msdata:child="diagnosticos" msdata:parentkey="idpaciente" msdata:childkey="idpaciente" msprop:Generator_UserChildTable="diagnosticos" msprop:Generator_ChildPropName="GetdiagnosticosRows" msprop:Generator_UserRelationName="Relationship16" msprop:Generator_ParentPropName="pacientesRow" msprop:Generator_RelationVarName="relationRelationship16" msprop:Generator_UserParentTable="pacientes" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

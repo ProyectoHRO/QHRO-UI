@@ -19,7 +19,7 @@ namespace BLL
 
         public DataTable listPatients()
         {
-            return PATIENT.GetDataPacients();
+            return PATIENT.GetDataPatients();
         }
 
         public string newPatient(string historyNumber, string firstName, string secondName,
