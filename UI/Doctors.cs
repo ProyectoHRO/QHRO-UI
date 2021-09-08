@@ -19,12 +19,29 @@ namespace UI
             InitializeComponent();
             doctors = new ClassDoctor();
         }
-
+        void listDoctors()
+        {
+            DataTable infoDoctors = doctors.getDoctors();
+            dataGridView1.DataSource = infoDoctors;
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoResizeRows();
+            dataGridView1.Columns[1].HeaderText = "Primer nombre";
+            dataGridView1.Columns[2].HeaderText = "Segundo nombre";
+            dataGridView1.Columns[3].HeaderText = "Tercer nombre";
+            dataGridView1.Columns[4].HeaderText = "Primer apellido";
+            dataGridView1.Columns[5].HeaderText = "Segundo apellido";
+            dataGridView1.Columns[6].HeaderText = "Telefono";
+            dataGridView1.Columns[7].HeaderText = "Correo";
+            dataGridView1.Columns[9].HeaderText = "CUI";
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Refresh();
+        }
         private void buttonList_Click(object sender, EventArgs e)
         {
             
         }
-
+        
         private void buttonNew_Click(object sender, EventArgs e)
         {
             groupBoxDoctorsData.Enabled = true;
@@ -64,15 +81,15 @@ namespace UI
             try
             {
                 labelID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textCui.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textFirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textSecondName.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                textThirdName.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                textFirstLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textSecondLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textPhone.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                textEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-                status = (bool)dataGridView1.Rows[e.RowIndex].Cells[9].Value;
+                textCui.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
+                textFirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textSecondName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textThirdName.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textFirstLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textSecondLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textPhone.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                status = (bool)dataGridView1.Rows[e.RowIndex].Cells[8].Value;
                 if (status == true)
                     comboStatus.SelectedIndex = 1;
                 else
@@ -192,9 +209,7 @@ namespace UI
         {
             int state = 0;
             if (label1.Text == "v" || textEmail.Text == "")
-            {
                 state = 1;
-            }
             if (state == 1)
             {
                 bool status = false;
@@ -220,7 +235,7 @@ namespace UI
                     textEmail.Clear();
                     textPhone.Clear();
                     textCui.Clear();
-                    dataGridView1.Refresh();
+                    listDoctors();
                     iconButtonUpdate.Enabled = false;
                     comboStatus.SelectedIndex = 0;
                     iconButtonSave.Enabled = false;
@@ -230,22 +245,16 @@ namespace UI
                     state = 0;
                 }
                 else
-                {
                     MessageBox.Show("Porfavor eleccione un estado (Activo/Inactivo)");
-                }
             }
             else
-            {
                 MessageBox.Show("Datos incompletos o erroneos. Por Favor revisar la informacion");
-            }
         }
 
         private void iconButtonList_Click(object sender, EventArgs e)
         {
-            DataTable infoDoctors = doctors.getDoctors();
-            dataGridView1.DataSource = infoDoctors;
-            dataGridView1.AutoResizeColumns();
-            dataGridView1.Refresh();
+            listDoctors();
+            listDoctors();
         }
 
         private void textFirstName_TextChanged(object sender, EventArgs e)
@@ -301,6 +310,16 @@ namespace UI
                 e.Handled = true;
                 return;
             }
+        }
+
+        private void Doctors_Resize(object sender, EventArgs e)
+        {
+            listDoctors();
+        }
+
+        private void comboStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

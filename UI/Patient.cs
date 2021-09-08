@@ -77,7 +77,7 @@ namespace UI
             string resp;
             resp = patients.newPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
                 textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
-                textBoxDiagnosis.Text, comboBoxGender.SelectedItem.ToString(),
+                comboBoxGender.SelectedItem.ToString(),
             true);
             if (resp.ToUpper().Contains("ERROR"))
             {
@@ -133,8 +133,8 @@ namespace UI
                 status = false;
             }
             string resp = patients.editPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
-                textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text), 
-                textBoxDiagnosis.Text, comboBoxGender.SelectedItem.ToString(),
+                textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
+                comboBoxGender.SelectedItem.ToString(),
             status, id);
             if (resp.ToUpper().Contains("ERROR"))
             {

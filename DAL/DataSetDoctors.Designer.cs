@@ -281,8 +281,6 @@ namespace DAL {
             
             private global::System.Data.DataColumn columniddoctor;
             
-            private global::System.Data.DataColumn columndpi;
-            
             private global::System.Data.DataColumn columnprimer_nombre;
             
             private global::System.Data.DataColumn columnsegundo_nombre;
@@ -298,6 +296,8 @@ namespace DAL {
             private global::System.Data.DataColumn columncorreo;
             
             private global::System.Data.DataColumn columnestado;
+            
+            private global::System.Data.DataColumn columndpi_doctores;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -337,14 +337,6 @@ namespace DAL {
             public global::System.Data.DataColumn iddoctorColumn {
                 get {
                     return this.columniddoctor;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn dpiColumn {
-                get {
-                    return this.columndpi;
                 }
             }
             
@@ -414,6 +406,14 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn dpi_doctoresColumn {
+                get {
+                    return this.columndpi_doctores;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -449,11 +449,10 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public doctoresRow AdddoctoresRow(string dpi, string primer_nombre, string segundo_nombre, string tercer_nombre, string primer_apellido, string segundo_apellido, string numero, string correo, bool estado) {
+            public doctoresRow AdddoctoresRow(string primer_nombre, string segundo_nombre, string tercer_nombre, string primer_apellido, string segundo_apellido, string numero, string correo, bool estado, string dpi_doctores) {
                 doctoresRow rowdoctoresRow = ((doctoresRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        dpi,
                         primer_nombre,
                         segundo_nombre,
                         tercer_nombre,
@@ -461,7 +460,8 @@ namespace DAL {
                         segundo_apellido,
                         numero,
                         correo,
-                        estado};
+                        estado,
+                        dpi_doctores};
                 rowdoctoresRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdoctoresRow);
                 return rowdoctoresRow;
@@ -492,7 +492,6 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columniddoctor = base.Columns["iddoctor"];
-                this.columndpi = base.Columns["dpi"];
                 this.columnprimer_nombre = base.Columns["primer_nombre"];
                 this.columnsegundo_nombre = base.Columns["segundo_nombre"];
                 this.columntercer_nombre = base.Columns["tercer_nombre"];
@@ -501,6 +500,7 @@ namespace DAL {
                 this.columnnumero = base.Columns["numero"];
                 this.columncorreo = base.Columns["correo"];
                 this.columnestado = base.Columns["estado"];
+                this.columndpi_doctores = base.Columns["dpi_doctores"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -508,8 +508,6 @@ namespace DAL {
             private void InitClass() {
                 this.columniddoctor = new global::System.Data.DataColumn("iddoctor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columniddoctor);
-                this.columndpi = new global::System.Data.DataColumn("dpi", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndpi);
                 this.columnprimer_nombre = new global::System.Data.DataColumn("primer_nombre", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprimer_nombre);
                 this.columnsegundo_nombre = new global::System.Data.DataColumn("segundo_nombre", typeof(string), null, global::System.Data.MappingType.Element);
@@ -526,16 +524,18 @@ namespace DAL {
                 base.Columns.Add(this.columncorreo);
                 this.columnestado = new global::System.Data.DataColumn("estado", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnestado);
+                this.columndpi_doctores = new global::System.Data.DataColumn("dpi_doctores", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndpi_doctores);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columniddoctor}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columndpi_doctores}, false));
                 this.columniddoctor.AutoIncrement = true;
                 this.columniddoctor.AutoIncrementSeed = -1;
                 this.columniddoctor.AutoIncrementStep = -1;
                 this.columniddoctor.AllowDBNull = false;
                 this.columniddoctor.ReadOnly = true;
                 this.columniddoctor.Unique = true;
-                this.columndpi.AllowDBNull = false;
-                this.columndpi.MaxLength = 15;
                 this.columnprimer_nombre.AllowDBNull = false;
                 this.columnprimer_nombre.MaxLength = 30;
                 this.columnsegundo_nombre.MaxLength = 30;
@@ -546,6 +546,9 @@ namespace DAL {
                 this.columnnumero.MaxLength = 8;
                 this.columncorreo.MaxLength = 25;
                 this.columnestado.AllowDBNull = false;
+                this.columndpi_doctores.AllowDBNull = false;
+                this.columndpi_doctores.Unique = true;
+                this.columndpi_doctores.MaxLength = 15;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -699,17 +702,6 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string dpi {
-                get {
-                    return ((string)(this[this.tabledoctores.dpiColumn]));
-                }
-                set {
-                    this[this.tabledoctores.dpiColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string primer_nombre {
                 get {
                     return ((string)(this[this.tabledoctores.primer_nombreColumn]));
@@ -818,6 +810,17 @@ namespace DAL {
                 }
                 set {
                     this[this.tabledoctores.estadoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string dpi_doctores {
+                get {
+                    return ((string)(this[this.tabledoctores.dpi_doctoresColumn]));
+                }
+                set {
+                    this[this.tabledoctores.dpi_doctoresColumn] = value;
                 }
             }
             
@@ -1042,7 +1045,6 @@ namespace DAL.DataSetDoctorsTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "doctores";
             tableMapping.ColumnMappings.Add("iddoctor", "iddoctor");
-            tableMapping.ColumnMappings.Add("dpi", "dpi");
             tableMapping.ColumnMappings.Add("primer_nombre", "primer_nombre");
             tableMapping.ColumnMappings.Add("segundo_nombre", "segundo_nombre");
             tableMapping.ColumnMappings.Add("tercer_nombre", "tercer_nombre");
@@ -1051,6 +1053,7 @@ namespace DAL.DataSetDoctorsTableAdapters {
             tableMapping.ColumnMappings.Add("numero", "numero");
             tableMapping.ColumnMappings.Add("correo", "correo");
             tableMapping.ColumnMappings.Add("estado", "estado");
+            tableMapping.ColumnMappings.Add("dpi_doctores", "dpi_doctores");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1067,22 +1070,23 @@ namespace DAL.DataSetDoctorsTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        doctores.*\r\nFROM            doctores";
+            this._commandCollection[0].CommandText = "SELECT iddoctor, dpi_doctores, primer_nombre, segundo_nombre, tercer_nombre, prim" +
+                "er_apellido, segundo_apellido, numero, correo, estado FROM doctores";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        iddoctor, dpi, primer_nombre, segundo_nombre, tercer_nombre, primer" +
-                "_apellido, segundo_apellido, numero, correo, estado\r\nFROM            doctores\r\nW" +
-                "HERE        (dpi = @dpi)";
+            this._commandCollection[1].CommandText = "SELECT correo, dpi_doctores, estado, iddoctor, numero, primer_apellido, primer_no" +
+                "mbre, segundo_apellido, segundo_nombre, tercer_nombre FROM doctores WHERE (dpi_d" +
+                "octores = @dpi)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi_doctores", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = @"INSERT INTO doctores
-                         (dpi, primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, numero, correo)
+                         (dpi_doctores, primer_nombre, segundo_nombre, tercer_nombre, primer_apellido, segundo_apellido, numero, correo)
 VALUES        (@dpi,@firstName,@secondName,@thirdName,@firstLastName,@secondLastName,@phoneNumber,@email)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi_doctores", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firstName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "primer_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@secondName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "segundo_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@thirdName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tercer_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1093,11 +1097,11 @@ VALUES        (@dpi,@firstName,@secondName,@thirdName,@firstLastName,@secondLast
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = @"UPDATE       doctores
-SET                dpi = @dpi, primer_nombre = @newFirstName, segundo_nombre = @newSecondName, tercer_nombre = @newThirdName, primer_apellido = @newFirstLastName, segundo_apellido = @newSecondLastName, 
+SET                dpi_doctores = @dpi, primer_nombre = @newFirstName, segundo_nombre = @newSecondName, tercer_nombre = @newThirdName, primer_apellido = @newFirstLastName, segundo_apellido = @newSecondLastName, 
                          numero = @newPhoneNumber, correo = @newEmail, estado = @newStatus
 WHERE        (iddoctor = @idDoctor)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dpi", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "dpi_doctores", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newFirstName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "primer_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newSecondName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "segundo_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@newThirdName", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "tercer_nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
