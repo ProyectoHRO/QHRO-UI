@@ -13,11 +13,10 @@ namespace UI
 {
     public partial class Doctors : Form
     {
-        private ClassDoctor doctors;
+        private ClassDoctor doctors = new ClassDoctor();
         public Doctors()
         {
             InitializeComponent();
-            doctors = new ClassDoctor();
         }
         void listDoctors()
         {

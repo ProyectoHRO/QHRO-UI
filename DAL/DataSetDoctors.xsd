@@ -92,7 +92,7 @@ WHERE        (iddoctor = @idDoctor)</CommandText>
   <xs:element name="DataSetDoctors" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetDoctors" msprop:Generator_UserDSName="DataSetDoctors">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="doctores" msprop:Generator_TableClassName="doctoresDataTable" msprop:Generator_TableVarName="tabledoctores" msprop:Generator_TablePropName="doctores" msprop:Generator_RowDeletingName="doctoresRowDeleting" msprop:Generator_RowChangingName="doctoresRowChanging" msprop:Generator_RowEvHandlerName="doctoresRowChangeEventHandler" msprop:Generator_RowDeletedName="doctoresRowDeleted" msprop:Generator_UserTableName="doctores" msprop:Generator_RowChangedName="doctoresRowChanged" msprop:Generator_RowEvArgName="doctoresRowChangeEvent" msprop:Generator_RowClassName="doctoresRow">
+        <xs:element name="doctores" msprop:Generator_TableClassName="doctoresDataTable" msprop:Generator_TableVarName="tabledoctores" msprop:Generator_RowChangedName="doctoresRowChanged" msprop:Generator_TablePropName="doctores" msprop:Generator_RowDeletingName="doctoresRowDeleting" msprop:Generator_RowChangingName="doctoresRowChanging" msprop:Generator_RowEvHandlerName="doctoresRowChangeEventHandler" msprop:Generator_RowDeletedName="doctoresRowDeleted" msprop:Generator_RowClassName="doctoresRow" msprop:Generator_UserTableName="doctores" msprop:Generator_RowEvArgName="doctoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="iddoctor" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columniddoctor" msprop:Generator_ColumnPropNameInRow="iddoctor" msprop:Generator_ColumnPropNameInTable="iddoctorColumn" msprop:Generator_UserColumnName="iddoctor" type="xs:int" />
@@ -161,10 +161,6 @@ WHERE        (iddoctor = @idDoctor)</CommandText>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:doctores" />
       <xs:field xpath="mstns:iddoctor" />
-    </xs:unique>
-    <xs:unique name="Constraint2">
-      <xs:selector xpath=".//mstns:doctores" />
-      <xs:field xpath="mstns:dpi_doctores" />
     </xs:unique>
   </xs:element>
 </xs:schema>

@@ -881,6 +881,7 @@ namespace DAL {
                 this.columncorreo.MaxLength = 25;
                 this.columntelefono.MaxLength = 8;
                 this.columnestado.AllowDBNull = false;
+                this.columncui.AllowDBNull = false;
                 this.columncui.MaxLength = 13;
             }
             
@@ -1214,12 +1215,7 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string cui {
                 get {
-                    try {
-                        return ((string)(this[this.tableayudante.cuiColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cui\' de la tabla \'ayudante\' es DBNull.", e);
-                    }
+                    return ((string)(this[this.tableayudante.cuiColumn]));
                 }
                 set {
                     this[this.tableayudante.cuiColumn] = value;
@@ -1307,18 +1303,6 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setid_tipoNull() {
                 this[this.tableayudante.id_tipoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IscuiNull() {
-                return this.IsNull(this.tableayudante.cuiColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetcuiNull() {
-                this[this.tableayudante.cuiColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1773,9 +1757,9 @@ namespace DAL.DataSetAssistantsTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        id_ayudante, primer_nombre, segundo_nombre, tercer_nombre, primer_a" +
-                "pellido, segundo_apellido, correo, telefono, estado, id_tipo, cui\r\nFROM         " +
-                "   ayudante\r\nWHERE        (cui = @cui)";
+            this._commandCollection[1].CommandText = "SELECT correo, cui, estado, id_ayudante, id_tipo, primer_apellido, primer_nombre," +
+                " segundo_apellido, segundo_nombre, telefono, tercer_nombre FROM ayudante WHERE (" +
+                "cui = @cui)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cui", global::System.Data.SqlDbType.NVarChar, 13, global::System.Data.ParameterDirection.Input, 0, 0, "cui", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -1831,7 +1815,7 @@ WHERE        (id_ayudante = @idAssistant)";
         public virtual DataSetAssistants.ayudanteDataTable GetDataByCui(string cui) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((cui == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("cui");
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cui));
@@ -1896,7 +1880,7 @@ WHERE        (id_ayudante = @idAssistant)";
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((cui == null)) {
-                command.Parameters[8].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("cui");
             }
             else {
                 command.Parameters[8].Value = ((string)(cui));
@@ -1974,7 +1958,7 @@ WHERE        (id_ayudante = @idAssistant)";
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((cui == null)) {
-                command.Parameters[9].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("cui");
             }
             else {
                 command.Parameters[9].Value = ((string)(cui));

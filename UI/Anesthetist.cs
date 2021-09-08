@@ -14,11 +14,11 @@ namespace UI
 {
     public partial class Anesthetist : Form
     {
-        private ClassAnesthetist anes;
+        private ClassAnesthetist anes = new ClassAnesthetist();
         public Anesthetist()
         {
             InitializeComponent();
-            anes = new ClassAnesthetist();
+            
         }
 
         void listAnesthetists()

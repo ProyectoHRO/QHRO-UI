@@ -528,8 +528,6 @@ namespace DAL {
                 base.Columns.Add(this.columndpi_doctores);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columniddoctor}, true));
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
-                                this.columndpi_doctores}, false));
                 this.columniddoctor.AutoIncrement = true;
                 this.columniddoctor.AutoIncrementSeed = -1;
                 this.columniddoctor.AutoIncrementStep = -1;
@@ -547,7 +545,6 @@ namespace DAL {
                 this.columncorreo.MaxLength = 25;
                 this.columnestado.AllowDBNull = false;
                 this.columndpi_doctores.AllowDBNull = false;
-                this.columndpi_doctores.Unique = true;
                 this.columndpi_doctores.MaxLength = 15;
             }
             

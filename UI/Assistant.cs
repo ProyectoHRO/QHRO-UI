@@ -13,11 +13,10 @@ namespace UI
 {
     public partial class Assistant : Form
     {
-        private ClassAssistants assistants;
+        private ClassAssistants assistants = new ClassAssistants();
         public Assistant()
         {
             InitializeComponent();
-            assistants = new ClassAssistants();
         }
 
         void listAsistants()
