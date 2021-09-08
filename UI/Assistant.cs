@@ -20,6 +20,25 @@ namespace UI
             assistants = new ClassAssistants();
         }
 
+        void listAsistants()
+        {
+            DataTable infoAssistants = assistants.getAssistants();
+            dataGridView2.DataSource = infoAssistants;
+            dataGridView2.AutoResizeColumns();
+            dataGridView2.AutoResizeRows();
+            dataGridView2.Columns[1].HeaderText = "Primer nombre";
+            dataGridView2.Columns[2].HeaderText = "Segundo nombre";
+            dataGridView2.Columns[3].HeaderText = "Tercer nombre";
+            dataGridView2.Columns[4].HeaderText = "Primer apellido";
+            dataGridView2.Columns[5].HeaderText = "Segundo apellido";
+            dataGridView2.Columns[6].HeaderText = "Correo";
+            dataGridView2.Columns[7].HeaderText = "Telefono";
+            dataGridView2.Columns[10].HeaderText = "CUI";
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[8].Visible = false;
+            dataGridView2.Columns[9].Visible = false;
+            dataGridView2.Refresh();
+        }
         private void iconButton1_Click(object sender, EventArgs e)
         {
             DataTable infoAssistants = assistants.getAssistants();
@@ -163,27 +182,57 @@ namespace UI
 
         private void iconButtonUpdate_Click(object sender, EventArgs e)
         {
-            bool status = false;
-            if (comboStatus.SelectedIndex != 0)
+            int state = 0;
+            if (label1.Text == "v" || textEmail.Text == "")
+                state = 1;
+            if (state==1)
             {
-                if (comboStatus.SelectedIndex == 1)
-                    status = true;
-                else if (comboStatus.SelectedIndex == 2)
-                    status = false;
-                string resp = assistants.updateAssistant(textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text, textSecondLastName.Text, textEmail.Text,
-                    textPhone.Text, status, Convert.ToInt32(comboTypeAssistant.SelectedValue), textCui.Text, Convert.ToInt32(labelID.Text));
-                if (resp.ToUpper().Contains("ERROR"))
-                    MessageBox.Show(resp, "Error al Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bool status = false;
+                if (comboStatus.SelectedIndex != 0)
+                {
+                    if (comboStatus.SelectedIndex == 1)
+                        status = true;
+                    else if (comboStatus.SelectedIndex == 2)
+                        status = false;
+                    string resp = assistants.updateAssistant(textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text, textSecondLastName.Text, textEmail.Text,
+                        textPhone.Text, status, Convert.ToInt32(comboTypeAssistant.SelectedValue), textCui.Text, Convert.ToInt32(labelID.Text));
+                    if (resp.ToUpper().Contains("ERROR"))
+                        MessageBox.Show(resp, "Error al Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                        MessageBox.Show(resp, "Registro Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    groupBoxAssistantData.Enabled = false;
+                    textFirstName.Clear();
+                    textSecondName.Clear();
+                    textThirdName.Clear();
+                    textFirstLastName.Clear();
+                    textSecondLastName.Clear();
+                    textEmail.Clear();
+                    textPhone.Clear();
+                    textCui.Clear();
+                    listAsistants();
+                    iconButtonUpdate.Enabled = false;
+                    comboStatus.SelectedIndex = 0;
+                    iconButtonSave.Enabled = false;
+                    iconButtonNew.Enabled = true;
+                    labelStatus.Visible = false;
+                    comboStatus.Visible = false;
+                    state = 0;
+                }
                 else
-                    MessageBox.Show(resp, "Registro Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Porfavor eleccione un estado (Activo/Inactivo)");
             }
             else
-                MessageBox.Show("Porfavor eleccione un estado (Activo/Inactivo)");
+                MessageBox.Show("Datos incompletos o erroneos. Por Favor revisar la informacion");
         }
 
         private void iconButtonSave_Click(object sender, EventArgs e)
         {
-            if ((boxValidateMail.Image == Properties.Resources.check))
+            int state = 0;
+            if (label1.Text == "v" || textEmail.Text == "")
+            {
+                state = 1;
+            }
+            if (state == 1)
             {
                 if (textFirstName.Text != null && textFirstLastName.Text != null && textCui.Text != null && textEmail.Text != null && textPhone.Text != null)
                 {
@@ -209,6 +258,7 @@ namespace UI
                 comboStatus.SelectedIndex = 0;
                 iconButtonSave.Enabled = true;
                 iconButtonNew.Enabled = false;
+                state = 0;
             }
             else
             {
@@ -219,10 +269,8 @@ namespace UI
 
         private void iconButtonList_Click(object sender, EventArgs e)
         {
-            DataTable infoAssistants = assistants.getAssistants();
-            dataGridView2.DataSource = infoAssistants;
-            dataGridView2.AutoResizeColumns();
-            dataGridView2.Refresh();
+            listAsistants();
+            listAsistants();
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -232,6 +280,7 @@ namespace UI
             iconButtonNew.Enabled = true;
             iconButtonSave.Enabled = false;
             iconButtonUpdate.Enabled = true;
+            labelStatus.Visible = true;
             bool status;
             try
             {
@@ -262,10 +311,12 @@ namespace UI
             if (regex.IsMatch(tb.Text))
             {
                 pc.Image = Properties.Resources.check;
+                label1.Text = "v";
             }
             else
             {
                 pc.Image = Properties.Resources.x;
+                label1.Text = "f";
             }
         }
 
@@ -389,6 +440,11 @@ namespace UI
         {
             iconButtonUpdate.IconColor = ColorTranslator.FromHtml("#001578");
             iconButtonUpdate.ForeColor = Color.Black;
+        }
+
+        private void Assistant_Resize(object sender, EventArgs e)
+        {
+            listAsistants();
         }
     }
 }

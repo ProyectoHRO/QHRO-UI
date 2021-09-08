@@ -23,13 +23,13 @@ namespace BLL
         }
 
         public string newPatient(string historyNumber, string firstName, string secondName,
-        string thirdName, string firstSurname, string secondSurname, short age, string diagnosis,
+        string thirdName, string firstSurname, string secondSurname, short age,
         string gender, bool status)
         {
             try
             {
                 PATIENT.InsertQueryNewPatient(historyNumber, firstName, secondName, thirdName,
-                    firstSurname, secondSurname, age, diagnosis, gender, status);
+                    firstSurname, secondSurname, age, gender, status);
                 return "Nuevo paciente agregado";
             }
             catch (Exception error)
@@ -39,13 +39,13 @@ namespace BLL
         }
 
         public string editPatient(string historyNumber, string firstName, string secondName,
-        string thirdName, string firstSurname, string secondSurname, short age, string diagnosis,
+        string thirdName, string firstSurname, string secondSurname, short age,
         string gender, bool status, int idPatient)
         {
             try
             {
                 PATIENT.UpdateQueryEditPatient(historyNumber, firstName, secondName, thirdName,
-                    firstSurname, secondSurname, age, diagnosis, gender, status, idPatient);
+                    firstSurname, secondSurname, age, gender, status, idPatient);
                 return "Se actualizaron los datos del paciente";
             }
             catch (Exception error)
