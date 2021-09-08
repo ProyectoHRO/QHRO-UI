@@ -23,12 +23,12 @@ namespace BLL
         }
 
         public string newAnesthetist(string dpi, string firstName, string secondName,
-            string thirdName, string firstSurname, string secondSurname, string phoneNumber, string email, bool status)
+            string thirdName, string firstSurname, string secondSurname, string phoneNumber, string email)
         {
             try
             {
                 ANESTHETIST.InsertQueryNewAnesthetist(dpi, firstName, secondName, thirdName,
-                    firstSurname, secondSurname, phoneNumber, email, status);
+                    firstSurname, secondSurname, phoneNumber, email);
                 return "Nuevo anestesista agregado";
             }
             catch (Exception error)

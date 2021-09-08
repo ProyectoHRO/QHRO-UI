@@ -19,17 +19,17 @@ namespace BLL
 
         public DataTable listPatients()
         {
-            return PATIENT.GetDataPatient();
+            return PATIENT.GetDataPacients();
         }
 
         public string newPatient(string historyNumber, string firstName, string secondName,
         string thirdName, string firstSurname, string secondSurname, short age,
-        string gender, bool status)
+        string gender)
         {
             try
             {
                 PATIENT.InsertQueryNewPatient(historyNumber, firstName, secondName, thirdName,
-                    firstSurname, secondSurname, age, gender, status);
+                    firstSurname, secondSurname, age, gender);
                 return "Nuevo paciente agregado";
             }
             catch (Exception error)
