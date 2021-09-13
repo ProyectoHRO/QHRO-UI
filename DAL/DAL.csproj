@@ -72,6 +72,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPatient.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetServices.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetServices.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -135,6 +140,17 @@
     </None>
     <None Include="DataSetPatient.xss">
       <DependentUpon>DataSetPatient.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetServices.xsc">
+      <DependentUpon>DataSetServices.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetServices.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetServices.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetServices.xss">
+      <DependentUpon>DataSetServices.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

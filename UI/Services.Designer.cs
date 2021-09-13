@@ -29,9 +29,11 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxServices = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxNameService = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelServiceName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -40,38 +42,65 @@ namespace UI
             this.iconButtonSave = new FontAwesome.Sharp.IconButton();
             this.iconButtonUpdate = new FontAwesome.Sharp.IconButton();
             this.iconButtonNew = new FontAwesome.Sharp.IconButton();
-            this.textBoxNameService = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxServices.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOperatingRooms)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxServices
             // 
             this.groupBoxServices.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxServices.Controls.Add(this.labelID);
             this.groupBoxServices.Controls.Add(this.tableLayoutPanel2);
+            this.groupBoxServices.Enabled = false;
             this.groupBoxServices.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxServices.Location = new System.Drawing.Point(16, -2);
-            this.groupBoxServices.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxServices.Location = new System.Drawing.Point(12, -2);
             this.groupBoxServices.Name = "groupBoxServices";
-            this.groupBoxServices.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxServices.Size = new System.Drawing.Size(759, 191);
+            this.groupBoxServices.Size = new System.Drawing.Size(569, 155);
             this.groupBoxServices.TabIndex = 38;
             this.groupBoxServices.TabStop = false;
             this.groupBoxServices.Text = "Datos del Servico";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.textBoxNameService, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 40);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(542, 81);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // textBoxNameService
+            // 
+            this.textBoxNameService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxNameService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNameService.Location = new System.Drawing.Point(274, 27);
+            this.textBoxNameService.MaxLength = 40;
+            this.textBoxNameService.Name = "textBoxNameService";
+            this.textBoxNameService.Size = new System.Drawing.Size(265, 26);
+            this.textBoxNameService.TabIndex = 15;
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.labelServiceName);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(10, 30);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(8, 24);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(348, 39);
+            this.panel1.Size = new System.Drawing.Size(261, 32);
             this.panel1.TabIndex = 23;
             // 
             // labelServiceName
@@ -79,9 +108,10 @@ namespace UI
             this.labelServiceName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelServiceName.AutoSize = true;
             this.labelServiceName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelServiceName.Location = new System.Drawing.Point(150, 7);
+            this.labelServiceName.Location = new System.Drawing.Point(112, 6);
+            this.labelServiceName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelServiceName.Name = "labelServiceName";
-            this.labelServiceName.Size = new System.Drawing.Size(154, 24);
+            this.labelServiceName.Size = new System.Drawing.Size(130, 20);
             this.labelServiceName.TabIndex = 0;
             this.labelServiceName.Text = "Nombre de Servicio";
             this.labelServiceName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -91,9 +121,10 @@ namespace UI
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(129, 7);
+            this.label11.Location = new System.Drawing.Point(97, 6);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 24);
+            this.label11.Size = new System.Drawing.Size(15, 19);
             this.label11.TabIndex = 23;
             this.label11.Text = "*";
             // 
@@ -105,29 +136,30 @@ namespace UI
             this.dataGridViewOperatingRooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOperatingRooms.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewOperatingRooms.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOperatingRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOperatingRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewOperatingRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOperatingRooms.EnableHeadersVisualStyles = false;
             this.dataGridViewOperatingRooms.GridColor = System.Drawing.Color.White;
-            this.dataGridViewOperatingRooms.Location = new System.Drawing.Point(3, 308);
-            this.dataGridViewOperatingRooms.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewOperatingRooms.Location = new System.Drawing.Point(2, 250);
+            this.dataGridViewOperatingRooms.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewOperatingRooms.Name = "dataGridViewOperatingRooms";
             this.dataGridViewOperatingRooms.RowHeadersVisible = false;
             this.dataGridViewOperatingRooms.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            this.dataGridViewOperatingRooms.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            this.dataGridViewOperatingRooms.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewOperatingRooms.RowTemplate.Height = 24;
-            this.dataGridViewOperatingRooms.Size = new System.Drawing.Size(1143, 485);
+            this.dataGridViewOperatingRooms.Size = new System.Drawing.Size(857, 394);
             this.dataGridViewOperatingRooms.TabIndex = 37;
+            this.dataGridViewOperatingRooms.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOperatingRooms_CellClick);
             // 
             // iconButtonList
             // 
@@ -143,19 +175,21 @@ namespace UI
             this.iconButtonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonList.IconSize = 30;
             this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonList.Location = new System.Drawing.Point(805, 169);
-            this.iconButtonList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButtonList.Location = new System.Drawing.Point(604, 137);
+            this.iconButtonList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButtonList.Name = "iconButtonList";
-            this.iconButtonList.Size = new System.Drawing.Size(304, 49);
+            this.iconButtonList.Size = new System.Drawing.Size(228, 40);
             this.iconButtonList.TabIndex = 36;
             this.iconButtonList.Text = "Ver servicios";
             this.iconButtonList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonList.UseVisualStyleBackColor = false;
+            this.iconButtonList.Click += new System.EventHandler(this.iconButtonList_Click);
             // 
             // iconButtonSave
             // 
             this.iconButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonSave.BackColor = System.Drawing.Color.White;
+            this.iconButtonSave.Enabled = false;
             this.iconButtonSave.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -166,19 +200,21 @@ namespace UI
             this.iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSave.IconSize = 30;
             this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSave.Location = new System.Drawing.Point(805, 63);
-            this.iconButtonSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButtonSave.Location = new System.Drawing.Point(604, 51);
+            this.iconButtonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButtonSave.Name = "iconButtonSave";
-            this.iconButtonSave.Size = new System.Drawing.Size(304, 47);
+            this.iconButtonSave.Size = new System.Drawing.Size(228, 38);
             this.iconButtonSave.TabIndex = 35;
             this.iconButtonSave.Text = "Guardar";
             this.iconButtonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonSave.UseVisualStyleBackColor = false;
+            this.iconButtonSave.Click += new System.EventHandler(this.iconButtonSave_Click);
             // 
             // iconButtonUpdate
             // 
             this.iconButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonUpdate.BackColor = System.Drawing.Color.White;
+            this.iconButtonUpdate.Enabled = false;
             this.iconButtonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -189,14 +225,15 @@ namespace UI
             this.iconButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonUpdate.IconSize = 30;
             this.iconButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonUpdate.Location = new System.Drawing.Point(805, 114);
-            this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButtonUpdate.Location = new System.Drawing.Point(604, 93);
+            this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButtonUpdate.Name = "iconButtonUpdate";
-            this.iconButtonUpdate.Size = new System.Drawing.Size(304, 49);
+            this.iconButtonUpdate.Size = new System.Drawing.Size(228, 40);
             this.iconButtonUpdate.TabIndex = 34;
             this.iconButtonUpdate.Text = "Actualizar Servicio";
             this.iconButtonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonUpdate.UseVisualStyleBackColor = false;
+            this.iconButtonUpdate.Click += new System.EventHandler(this.iconButtonUpdate_Click);
             // 
             // iconButtonNew
             // 
@@ -212,48 +249,43 @@ namespace UI
             this.iconButtonNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonNew.IconSize = 30;
             this.iconButtonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNew.Location = new System.Drawing.Point(805, 9);
-            this.iconButtonNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButtonNew.Location = new System.Drawing.Point(604, 7);
+            this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButtonNew.Name = "iconButtonNew";
-            this.iconButtonNew.Size = new System.Drawing.Size(304, 49);
+            this.iconButtonNew.Size = new System.Drawing.Size(228, 40);
             this.iconButtonNew.TabIndex = 33;
             this.iconButtonNew.Text = "Agregar nuevo Servicio";
             this.iconButtonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonNew.UseVisualStyleBackColor = false;
+            this.iconButtonNew.Click += new System.EventHandler(this.iconButtonNew_Click);
             // 
-            // textBoxNameService
+            // labelID
             // 
-            this.textBoxNameService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxNameService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNameService.Location = new System.Drawing.Point(365, 35);
-            this.textBoxNameService.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxNameService.MaxLength = 40;
-            this.textBoxNameService.Name = "textBoxNameService";
-            this.textBoxNameService.Size = new System.Drawing.Size(353, 30);
-            this.textBoxNameService.TabIndex = 15;
+            this.labelID.AutoSize = true;
+            this.labelID.Location = new System.Drawing.Point(9, 123);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(52, 20);
+            this.labelID.TabIndex = 20;
+            this.labelID.Text = "label10";
+            this.labelID.Visible = false;
             // 
-            // tableLayoutPanel2
+            // label1
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.textBoxNameService, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 49);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(722, 100);
-            this.tableLayoutPanel2.TabIndex = 2;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(601, 179);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
             // Services
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1149, 791);
+            this.ClientSize = new System.Drawing.Size(862, 643);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxServices);
             this.Controls.Add(this.dataGridViewOperatingRooms);
             this.Controls.Add(this.iconButtonList);
@@ -261,15 +293,19 @@ namespace UI
             this.Controls.Add(this.iconButtonUpdate);
             this.Controls.Add(this.iconButtonNew);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Services";
             this.Text = "Services";
+            this.Resize += new System.EventHandler(this.Services_Resize);
             this.groupBoxServices.ResumeLayout(false);
+            this.groupBoxServices.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOperatingRooms)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -286,5 +322,7 @@ namespace UI
         private FontAwesome.Sharp.IconButton iconButtonNew;
         private System.Windows.Forms.TextBox textBoxNameService;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.Label label1;
     }
 }
