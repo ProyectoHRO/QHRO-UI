@@ -143,7 +143,7 @@ namespace UI
             string resp = patients.editPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
                 textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
                 comboBoxGender.SelectedItem.ToString(),
-            status, id);
+                status, id);
             if (resp.ToUpper().Contains("ERROR"))
             {
                 MessageBox.Show(resp, "Error al actualizar datos del paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
