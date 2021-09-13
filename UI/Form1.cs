@@ -107,5 +107,10 @@ namespace UI
         {
             openChildForm(new OperatingRooms());
         }
+
+        private void iconButtonServices_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Services());
+        }
     }
 }
