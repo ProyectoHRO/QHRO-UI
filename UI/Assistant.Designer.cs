@@ -229,6 +229,7 @@ namespace UI
             // 
             this.iconButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonSave.BackColor = System.Drawing.Color.White;
+            this.iconButtonSave.Enabled = false;
             this.iconButtonSave.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -255,6 +256,7 @@ namespace UI
             // 
             this.iconButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonUpdate.BackColor = System.Drawing.Color.White;
+            this.iconButtonUpdate.Enabled = false;
             this.iconButtonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -309,6 +311,7 @@ namespace UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxAssistantData.Controls.Add(this.tableLayoutPanel1);
             this.groupBoxAssistantData.Controls.Add(this.labelID);
+            this.groupBoxAssistantData.Enabled = false;
             this.groupBoxAssistantData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAssistantData.Location = new System.Drawing.Point(11, 39);
             this.groupBoxAssistantData.Margin = new System.Windows.Forms.Padding(2);

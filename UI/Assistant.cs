@@ -258,6 +258,7 @@ namespace UI
                 iconButtonSave.Enabled = true;
                 iconButtonNew.Enabled = false;
                 state = 0;
+                listAsistants();
             }
             else
             {
