@@ -59,6 +59,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetDoctors.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetOperatingRooms.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetOperatingRooms.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPatient.cs">
+      <DependentUpon>DataSetPatient.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetPatient.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,6 +113,17 @@
     </None>
     <None Include="DataSetDoctors.xss">
       <DependentUpon>DataSetDoctors.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOperatingRooms.xsc">
+      <DependentUpon>DataSetOperatingRooms.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetOperatingRooms.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetOperatingRooms.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetOperatingRooms.xss">
+      <DependentUpon>DataSetOperatingRooms.xsd</DependentUpon>
     </None>
     <None Include="DataSetPatient.xsc">
       <DependentUpon>DataSetPatient.xsd</DependentUpon>

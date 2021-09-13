@@ -47,6 +47,7 @@
     <Compile Include="ClassAnesthetist.cs" />
     <Compile Include="ClassAssistants.cs" />
     <Compile Include="ClassDoctor.cs" />
+    <Compile Include="ClassOperatingRoom.cs" />
     <Compile Include="ClassPatient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
