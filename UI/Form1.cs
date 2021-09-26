@@ -112,5 +112,10 @@ namespace UI
         {
             openChildForm(new Services());
         }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new RequestSurgery());
+        }
     }
 }
