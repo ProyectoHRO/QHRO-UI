@@ -105,6 +105,12 @@
     <Compile Include="RequestSurgery.Designer.cs">
       <DependentUpon>RequestSurgery.cs</DependentUpon>
     </Compile>
+    <Compile Include="searchName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="searchName.Designer.cs">
+      <DependentUpon>searchName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Services.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="RequestSurgery.resx">
       <DependentUpon>RequestSurgery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="searchName.resx">
+      <DependentUpon>searchName.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Services.resx">
       <DependentUpon>Services.cs</DependentUpon>

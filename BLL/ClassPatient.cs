@@ -22,6 +22,11 @@ namespace BLL
             return PATIENT.GetDataPatients();
         }
 
+        public DataTable getPatientsByHistoryNumber(string historyNumber)
+        {
+            return PATIENT.GetDataByHistoryNumber(historyNumber);
+        }
+
         public string newPatient(string historyNumber, string firstName, string secondName,
         string thirdName, string firstSurname, string secondSurname, short age,
         string gender)
