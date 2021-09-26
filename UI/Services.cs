@@ -35,7 +35,7 @@ namespace UI
         private void Services_Resize(object sender, EventArgs e)
         {
             ListServices();
-        }
+        } //added
 
         private void iconButtonNew_Click(object sender, EventArgs e)
         {
