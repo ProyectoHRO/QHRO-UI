@@ -43,6 +43,7 @@ namespace UI
             this.textSecondName = new System.Windows.Forms.TextBox();
             this.textFirstName = new System.Windows.Forms.TextBox();
             this.groupBoxDoctorsData = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.boxValidateMail = new System.Windows.Forms.PictureBox();
@@ -65,7 +66,6 @@ namespace UI
             this.iconButtonUpdate = new FontAwesome.Sharp.IconButton();
             this.iconButtonNew = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxDoctorsData.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -95,7 +95,7 @@ namespace UI
             "",
             "Activo",
             "Inactivo"});
-            this.comboStatus.Location = new System.Drawing.Point(576, 112);
+            this.comboStatus.Location = new System.Drawing.Point(576, 115);
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(242, 28);
             this.comboStatus.TabIndex = 19;
@@ -210,14 +210,24 @@ namespace UI
             this.groupBoxDoctorsData.Controls.Add(this.tableLayoutPanel1);
             this.groupBoxDoctorsData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDoctorsData.Location = new System.Drawing.Point(31, 21);
-            this.groupBoxDoctorsData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDoctorsData.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxDoctorsData.Name = "groupBoxDoctorsData";
-            this.groupBoxDoctorsData.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxDoctorsData.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxDoctorsData.Size = new System.Drawing.Size(839, 242);
             this.groupBoxDoctorsData.TabIndex = 29;
             this.groupBoxDoctorsData.TabStop = false;
             this.groupBoxDoctorsData.Text = "Datos del doctor";
             this.groupBoxDoctorsData.Enter += new System.EventHandler(this.groupBoxDoctorsData_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(746, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -246,7 +256,7 @@ namespace UI
             this.tableLayoutPanel1.Controls.Add(this.labelStatus, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboStatus, 3, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 29);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -283,7 +293,7 @@ namespace UI
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.labelfirstSurname);
             this.panel3.Location = new System.Drawing.Point(32, 148);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(128, 32);
             this.panel3.TabIndex = 23;
@@ -366,7 +376,7 @@ namespace UI
             this.panel1.Controls.Add(this.labelDPI);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(158, 32);
             this.panel1.TabIndex = 23;
@@ -402,7 +412,7 @@ namespace UI
             this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.labelfirstName);
             this.panel2.Location = new System.Drawing.Point(2, 38);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(158, 32);
             this.panel2.TabIndex = 23;
@@ -459,7 +469,7 @@ namespace UI
             this.iconButtonList.IconSize = 30;
             this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonList.Location = new System.Drawing.Point(874, 175);
-            this.iconButtonList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonList.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonList.Name = "iconButtonList";
             this.iconButtonList.Size = new System.Drawing.Size(120, 40);
             this.iconButtonList.TabIndex = 33;
@@ -483,7 +493,7 @@ namespace UI
             this.iconButtonSave.IconSize = 30;
             this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonSave.Location = new System.Drawing.Point(874, 125);
-            this.iconButtonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonSave.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonSave.Name = "iconButtonSave";
             this.iconButtonSave.Size = new System.Drawing.Size(120, 38);
             this.iconButtonSave.TabIndex = 32;
@@ -507,7 +517,7 @@ namespace UI
             this.iconButtonUpdate.IconSize = 30;
             this.iconButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonUpdate.Location = new System.Drawing.Point(874, 75);
-            this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonUpdate.Name = "iconButtonUpdate";
             this.iconButtonUpdate.Size = new System.Drawing.Size(120, 40);
             this.iconButtonUpdate.TabIndex = 31;
@@ -531,7 +541,7 @@ namespace UI
             this.iconButtonNew.IconSize = 30;
             this.iconButtonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonNew.Location = new System.Drawing.Point(874, 21);
-            this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonNew.Name = "iconButtonNew";
             this.iconButtonNew.Size = new System.Drawing.Size(120, 40);
             this.iconButtonNew.TabIndex = 30;
@@ -560,7 +570,7 @@ namespace UI
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(6, 267);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -573,16 +583,6 @@ namespace UI
             this.dataGridView1.TabIndex = 34;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(746, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "label1";
-            this.label1.Visible = false;
             // 
             // Doctors
             // 
