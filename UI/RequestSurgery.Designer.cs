@@ -1,7 +1,7 @@
 ﻿
 namespace UI
 {
-    partial class Patient
+    partial class RequestSurgery
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,20 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.iconButtonList = new FontAwesome.Sharp.IconButton();
-            this.iconButtonSave = new FontAwesome.Sharp.IconButton();
-            this.iconButtonUpdate = new FontAwesome.Sharp.IconButton();
-            this.iconButtonNew = new FontAwesome.Sharp.IconButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.comboBoxFilters = new System.Windows.Forms.ComboBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.groupBoxpatientData = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.textBoxDiagnosis = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelthirdName = new System.Windows.Forms.Label();
             this.labelsecondSurname = new System.Windows.Forms.Label();
             this.labelAge = new System.Windows.Forms.Label();
@@ -68,162 +68,112 @@ namespace UI
             this.labelStatus = new System.Windows.Forms.Label();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.labelID = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.iconButtonRequest = new FontAwesome.Sharp.IconButton();
+            this.iconButtonCreateAndRequest = new FontAwesome.Sharp.IconButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.groupBoxpatientData.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // iconButtonList
+            // tableLayoutPanel1
             // 
-            this.iconButtonList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonList.BackColor = System.Drawing.Color.White;
-            this.iconButtonList.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonList.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonList.IconChar = FontAwesome.Sharp.IconChar.List;
-            this.iconButtonList.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonList.IconSize = 30;
-            this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonList.Location = new System.Drawing.Point(869, 192);
-            this.iconButtonList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButtonList.Name = "iconButtonList";
-            this.iconButtonList.Size = new System.Drawing.Size(119, 40);
-            this.iconButtonList.TabIndex = 28;
-            this.iconButtonList.Text = "Listar";
-            this.iconButtonList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonList.UseVisualStyleBackColor = false;
-            this.iconButtonList.Click += new System.EventHandler(this.iconButtonList_Click_1);
-            // 
-            // iconButtonSave
-            // 
-            this.iconButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonSave.BackColor = System.Drawing.Color.White;
-            this.iconButtonSave.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonSave.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonSave.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.iconButtonSave.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSave.IconSize = 30;
-            this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSave.Location = new System.Drawing.Point(869, 142);
-            this.iconButtonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButtonSave.Name = "iconButtonSave";
-            this.iconButtonSave.Size = new System.Drawing.Size(119, 38);
-            this.iconButtonSave.TabIndex = 27;
-            this.iconButtonSave.Text = "Guardar";
-            this.iconButtonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonSave.UseVisualStyleBackColor = false;
-            this.iconButtonSave.Click += new System.EventHandler(this.iconButtonSave_Click_1);
-            // 
-            // iconButtonUpdate
-            // 
-            this.iconButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonUpdate.BackColor = System.Drawing.Color.White;
-            this.iconButtonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonUpdate.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonUpdate.IconChar = FontAwesome.Sharp.IconChar.Retweet;
-            this.iconButtonUpdate.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonUpdate.IconSize = 30;
-            this.iconButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonUpdate.Location = new System.Drawing.Point(869, 92);
-            this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButtonUpdate.Name = "iconButtonUpdate";
-            this.iconButtonUpdate.Size = new System.Drawing.Size(119, 40);
-            this.iconButtonUpdate.TabIndex = 26;
-            this.iconButtonUpdate.Text = "Actualizar";
-            this.iconButtonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonUpdate.UseVisualStyleBackColor = false;
-            this.iconButtonUpdate.Click += new System.EventHandler(this.iconButtonUpdate_Click_1);
-            // 
-            // iconButtonNew
-            // 
-            this.iconButtonNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonNew.BackColor = System.Drawing.Color.White;
-            this.iconButtonNew.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonNew.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonNew.IconChar = FontAwesome.Sharp.IconChar.Plus;
-            this.iconButtonNew.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonNew.IconSize = 30;
-            this.iconButtonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNew.Location = new System.Drawing.Point(869, 41);
-            this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButtonNew.Name = "iconButtonNew";
-            this.iconButtonNew.Size = new System.Drawing.Size(119, 40);
-            this.iconButtonNew.TabIndex = 25;
-            this.iconButtonNew.Text = "Nuevo";
-            this.iconButtonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonNew.UseVisualStyleBackColor = false;
-            this.iconButtonNew.Click += new System.EventHandler(this.iconButtonNew_Click_1);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 351);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(988, 386);
-            this.dataGridView1.TabIndex = 24;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick_1);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.27596F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.72404F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 177F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.Controls.Add(this.iconPictureBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.iconPictureBox2, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxFilters, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textBoxSearch, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(211, 17);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(552, 36);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 30;
+            this.iconPictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(31, 30);
+            this.iconPictureBox1.TabIndex = 0;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconPictureBox2.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Filter;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 30;
+            this.iconPictureBox2.Location = new System.Drawing.Point(516, 3);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(33, 30);
+            this.iconPictureBox2.TabIndex = 1;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // comboBoxFilters
+            // 
+            this.comboBoxFilters.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxFilters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilters.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFilters.FormattingEnabled = true;
+            this.comboBoxFilters.Location = new System.Drawing.Point(339, 4);
+            this.comboBoxFilters.Name = "comboBoxFilters";
+            this.comboBoxFilters.Size = new System.Drawing.Size(171, 27);
+            this.comboBoxFilters.TabIndex = 3;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Location = new System.Drawing.Point(40, 5);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(293, 26);
+            this.textBoxSearch.TabIndex = 2;
+            this.textBoxSearch.Text = "Buscar paciente";
+            this.textBoxSearch.Enter += new System.EventHandler(this.textBoxSearch_Enter);
+            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // groupBoxpatientData
             // 
-            this.groupBoxpatientData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBoxpatientData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxpatientData.Controls.Add(this.tableLayoutPanel2);
-            this.groupBoxpatientData.Controls.Add(this.tableLayoutPanel1);
-            this.groupBoxpatientData.Controls.Add(this.labelID);
+            this.groupBoxpatientData.Controls.Add(this.tableLayoutPanel3);
             this.groupBoxpatientData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxpatientData.Location = new System.Drawing.Point(31, 22);
-            this.groupBoxpatientData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxpatientData.Location = new System.Drawing.Point(11, 352);
+            this.groupBoxpatientData.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxpatientData.Name = "groupBoxpatientData";
-            this.groupBoxpatientData.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBoxpatientData.Size = new System.Drawing.Size(814, 325);
-            this.groupBoxpatientData.TabIndex = 23;
+            this.groupBoxpatientData.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBoxpatientData.Size = new System.Drawing.Size(814, 226);
+            this.groupBoxpatientData.TabIndex = 24;
             this.groupBoxpatientData.TabStop = false;
             this.groupBoxpatientData.Text = "Datos del paciente";
-            this.groupBoxpatientData.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // tableLayoutPanel2
             // 
@@ -234,11 +184,11 @@ namespace UI
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.4382F));
             this.tableLayoutPanel2.Controls.Add(this.panel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.textBoxDiagnosis, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(20, 232);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(16, 14);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(576, 82);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(783, 81);
             this.tableLayoutPanel2.TabIndex = 19;
             // 
             // panel4
@@ -246,8 +196,8 @@ namespace UI
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label24);
-            this.panel4.Location = new System.Drawing.Point(68, 2);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Location = new System.Drawing.Point(131, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(106, 32);
             this.panel4.TabIndex = 29;
@@ -280,52 +230,52 @@ namespace UI
             // 
             this.textBoxDiagnosis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiagnosis.Location = new System.Drawing.Point(178, 2);
-            this.textBoxDiagnosis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDiagnosis.Location = new System.Drawing.Point(241, 2);
+            this.textBoxDiagnosis.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDiagnosis.MaxLength = 150;
             this.textBoxDiagnosis.Multiline = true;
             this.textBoxDiagnosis.Name = "textBoxDiagnosis";
-            this.textBoxDiagnosis.Size = new System.Drawing.Size(396, 78);
+            this.textBoxDiagnosis.Size = new System.Drawing.Size(540, 77);
             this.textBoxDiagnosis.TabIndex = 7;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel3
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.18349F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.75841F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.65443F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.09786F));
-            this.tableLayoutPanel1.Controls.Add(this.labelthirdName, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.labelsecondSurname, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.labelAge, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxAge, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxhistoryNumber, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxsecondSurname, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxfirstName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxsecondName, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxthirdName, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxfirstSurname, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.labelsecondName, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.labelGender, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxGender, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.labelStatus, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxStatus, 3, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 34);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(785, 193);
-            this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.18349F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.75841F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.65443F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.09786F));
+            this.tableLayoutPanel3.Controls.Add(this.labelthirdName, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.labelID, 3, 4);
+            this.tableLayoutPanel3.Controls.Add(this.labelsecondSurname, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.labelAge, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxAge, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxhistoryNumber, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxsecondSurname, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxfirstName, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxsecondName, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxthirdName, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.textBoxfirstSurname, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.labelsecondName, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.panel2, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.labelGender, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxGender, 3, 2);
+            this.tableLayoutPanel3.Controls.Add(this.labelStatus, 2, 3);
+            this.tableLayoutPanel3.Controls.Add(this.comboBoxStatus, 3, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(14, 24);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 5;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(785, 193);
+            this.tableLayoutPanel3.TabIndex = 0;
             // 
             // labelthirdName
             // 
@@ -368,12 +318,11 @@ namespace UI
             this.textBoxAge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAge.Location = new System.Drawing.Point(516, 44);
-            this.textBoxAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxAge.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAge.MaxLength = 3;
             this.textBoxAge.Name = "textBoxAge";
             this.textBoxAge.Size = new System.Drawing.Size(267, 26);
             this.textBoxAge.TabIndex = 6;
-            this.textBoxAge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAge_KeyPress);
             // 
             // panel1
             // 
@@ -381,7 +330,7 @@ namespace UI
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.labelhistoryNumber);
             this.panel1.Location = new System.Drawing.Point(2, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 32);
             this.panel1.TabIndex = 23;
@@ -415,7 +364,7 @@ namespace UI
             this.textBoxhistoryNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxhistoryNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxhistoryNumber.Location = new System.Drawing.Point(160, 6);
-            this.textBoxhistoryNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxhistoryNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxhistoryNumber.MaxLength = 20;
             this.textBoxhistoryNumber.Name = "textBoxhistoryNumber";
             this.textBoxhistoryNumber.Size = new System.Drawing.Size(206, 26);
@@ -426,60 +375,55 @@ namespace UI
             this.textBoxsecondSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxsecondSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxsecondSurname.Location = new System.Drawing.Point(516, 6);
-            this.textBoxsecondSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxsecondSurname.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxsecondSurname.MaxLength = 20;
             this.textBoxsecondSurname.Name = "textBoxsecondSurname";
             this.textBoxsecondSurname.Size = new System.Drawing.Size(267, 26);
             this.textBoxsecondSurname.TabIndex = 5;
-            this.textBoxsecondSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxsecondSurname_KeyPress);
             // 
             // textBoxfirstName
             // 
             this.textBoxfirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxfirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxfirstName.Location = new System.Drawing.Point(160, 44);
-            this.textBoxfirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxfirstName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxfirstName.MaxLength = 20;
             this.textBoxfirstName.Name = "textBoxfirstName";
             this.textBoxfirstName.Size = new System.Drawing.Size(206, 26);
             this.textBoxfirstName.TabIndex = 1;
-            this.textBoxfirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxfirstName_KeyPress);
             // 
             // textBoxsecondName
             // 
             this.textBoxsecondName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxsecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxsecondName.Location = new System.Drawing.Point(160, 82);
-            this.textBoxsecondName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxsecondName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxsecondName.MaxLength = 20;
             this.textBoxsecondName.Name = "textBoxsecondName";
             this.textBoxsecondName.Size = new System.Drawing.Size(206, 26);
             this.textBoxsecondName.TabIndex = 2;
-            this.textBoxsecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxsecondName_KeyPress);
             // 
             // textBoxthirdName
             // 
             this.textBoxthirdName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxthirdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxthirdName.Location = new System.Drawing.Point(160, 120);
-            this.textBoxthirdName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxthirdName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxthirdName.MaxLength = 20;
             this.textBoxthirdName.Name = "textBoxthirdName";
             this.textBoxthirdName.Size = new System.Drawing.Size(206, 26);
             this.textBoxthirdName.TabIndex = 3;
-            this.textBoxthirdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxthirdName_KeyPress);
             // 
             // textBoxfirstSurname
             // 
             this.textBoxfirstSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxfirstSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxfirstSurname.Location = new System.Drawing.Point(160, 159);
-            this.textBoxfirstSurname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxfirstSurname.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxfirstSurname.MaxLength = 20;
             this.textBoxfirstSurname.Name = "textBoxfirstSurname";
             this.textBoxfirstSurname.Size = new System.Drawing.Size(206, 26);
             this.textBoxfirstSurname.TabIndex = 4;
-            this.textBoxfirstSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxfirstSurname_KeyPress);
             // 
             // labelsecondName
             // 
@@ -499,7 +443,7 @@ namespace UI
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.labelfirstName);
             this.panel2.Location = new System.Drawing.Point(2, 41);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(154, 32);
             this.panel2.TabIndex = 23;
@@ -534,7 +478,7 @@ namespace UI
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.labelfirstSurname);
             this.panel3.Location = new System.Drawing.Point(28, 156);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(128, 32);
             this.panel3.TabIndex = 23;
@@ -584,7 +528,7 @@ namespace UI
             "Masculino",
             "Femenino"});
             this.comboBoxGender.Location = new System.Drawing.Point(516, 81);
-            this.comboBoxGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxGender.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(267, 28);
             this.comboBoxGender.TabIndex = 11;
@@ -610,7 +554,7 @@ namespace UI
             "Activo",
             "Inactivo"});
             this.comboBoxStatus.Location = new System.Drawing.Point(516, 119);
-            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(267, 28);
             this.comboBoxStatus.TabIndex = 20;
@@ -620,66 +564,156 @@ namespace UI
             this.labelID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(620, 232);
+            this.labelID.Location = new System.Drawing.Point(516, 152);
             this.labelID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(60, 20);
+            this.labelID.Size = new System.Drawing.Size(267, 20);
             this.labelID.TabIndex = 18;
             this.labelID.Text = "label10";
             this.labelID.Visible = false;
             // 
-            // Patient
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(11, 58);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(988, 290);
+            this.dataGridView1.TabIndex = 25;
+            // 
+            // iconButtonRequest
+            // 
+            this.iconButtonRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonRequest.BackColor = System.Drawing.Color.White;
+            this.iconButtonRequest.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonRequest.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonRequest.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButtonRequest.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonRequest.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonRequest.IconSize = 30;
+            this.iconButtonRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonRequest.Location = new System.Drawing.Point(829, 521);
+            this.iconButtonRequest.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonRequest.Name = "iconButtonRequest";
+            this.iconButtonRequest.Size = new System.Drawing.Size(166, 40);
+            this.iconButtonRequest.TabIndex = 28;
+            this.iconButtonRequest.Text = "Solicitar cirugía";
+            this.iconButtonRequest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonRequest.UseVisualStyleBackColor = false;
+            // 
+            // iconButtonCreateAndRequest
+            // 
+            this.iconButtonCreateAndRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonCreateAndRequest.BackColor = System.Drawing.Color.White;
+            this.iconButtonCreateAndRequest.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonCreateAndRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonCreateAndRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCreateAndRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonCreateAndRequest.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonCreateAndRequest.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButtonCreateAndRequest.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonCreateAndRequest.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCreateAndRequest.IconSize = 30;
+            this.iconButtonCreateAndRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCreateAndRequest.Location = new System.Drawing.Point(829, 474);
+            this.iconButtonCreateAndRequest.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonCreateAndRequest.Name = "iconButtonCreateAndRequest";
+            this.iconButtonCreateAndRequest.Size = new System.Drawing.Size(166, 40);
+            this.iconButtonCreateAndRequest.TabIndex = 27;
+            this.iconButtonCreateAndRequest.Text = "Crear y solicitar";
+            this.iconButtonCreateAndRequest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCreateAndRequest.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.tableLayoutPanel2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 583);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(814, 105);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            // 
+            // RequestSurgery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1006, 752);
-            this.Controls.Add(this.iconButtonList);
-            this.Controls.Add(this.iconButtonSave);
-            this.Controls.Add(this.iconButtonUpdate);
-            this.Controls.Add(this.iconButtonNew);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.iconButtonRequest);
+            this.Controls.Add(this.iconButtonCreateAndRequest);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBoxpatientData);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Patient";
-            this.Text = "Patient";
-            this.Load += new System.EventHandler(this.Patient_Load);
-            this.Resize += new System.EventHandler(this.Patient_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "RequestSurgery";
+            this.Text = "RequestSurgery";
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.groupBoxpatientData.ResumeLayout(false);
-            this.groupBoxpatientData.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private FontAwesome.Sharp.IconButton iconButtonList;
-        private FontAwesome.Sharp.IconButton iconButtonSave;
-        private FontAwesome.Sharp.IconButton iconButtonUpdate;
-        private FontAwesome.Sharp.IconButton iconButtonNew;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBoxpatientData;
-        private System.Windows.Forms.Label labelID;
+
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox comboBoxStatus;
-        private System.Windows.Forms.Label labelStatus;
-        private System.Windows.Forms.ComboBox comboBoxGender;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private System.Windows.Forms.ComboBox comboBoxFilters;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.GroupBox groupBoxpatientData;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox textBoxDiagnosis;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label labelthirdName;
         private System.Windows.Forms.Label labelsecondSurname;
-        private System.Windows.Forms.Label labelGender;
-        private System.Windows.Forms.TextBox textBoxDiagnosis;
         private System.Windows.Forms.Label labelAge;
         private System.Windows.Forms.TextBox textBoxAge;
         private System.Windows.Forms.Panel panel1;
@@ -691,9 +725,6 @@ namespace UI
         private System.Windows.Forms.TextBox textBoxsecondName;
         private System.Windows.Forms.TextBox textBoxthirdName;
         private System.Windows.Forms.TextBox textBoxfirstSurname;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label labelsecondName;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label14;
@@ -701,6 +732,14 @@ namespace UI
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelfirstSurname;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label labelGender;
+        private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private FontAwesome.Sharp.IconButton iconButtonRequest;
+        private FontAwesome.Sharp.IconButton iconButtonCreateAndRequest;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
