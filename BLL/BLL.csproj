@@ -51,6 +51,7 @@
     <Compile Include="ClassPatient.cs" />
     <Compile Include="ClassRequestSurgery.cs" />
     <Compile Include="ClassServices.cs" />
+    <Compile Include="ClassUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
