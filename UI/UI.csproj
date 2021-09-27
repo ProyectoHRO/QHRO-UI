@@ -55,6 +55,12 @@
     <Compile Include="Anesthetist.Designer.cs">
       <DependentUpon>Anesthetist.cs</DependentUpon>
     </Compile>
+    <Compile Include="assignSurgery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="assignSurgery.Designer.cs">
+      <DependentUpon>assignSurgery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Assistant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,11 +111,11 @@
     <Compile Include="RequestSurgery.Designer.cs">
       <DependentUpon>RequestSurgery.cs</DependentUpon>
     </Compile>
-    <Compile Include="searchName.cs">
+    <Compile Include="selectPerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="searchName.Designer.cs">
-      <DependentUpon>searchName.cs</DependentUpon>
+    <Compile Include="selectPerson.Designer.cs">
+      <DependentUpon>selectPerson.cs</DependentUpon>
     </Compile>
     <Compile Include="Services.cs">
       <SubType>Form</SubType>
@@ -119,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="Anesthetist.resx">
       <DependentUpon>Anesthetist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="assignSurgery.resx">
+      <DependentUpon>assignSurgery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Assistant.resx">
       <DependentUpon>Assistant.cs</DependentUpon>
@@ -154,8 +163,8 @@
     <EmbeddedResource Include="RequestSurgery.resx">
       <DependentUpon>RequestSurgery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="searchName.resx">
-      <DependentUpon>searchName.cs</DependentUpon>
+    <EmbeddedResource Include="selectPerson.resx">
+      <DependentUpon>selectPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Services.resx">
       <DependentUpon>Services.cs</DependentUpon>
