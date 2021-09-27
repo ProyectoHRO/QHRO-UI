@@ -23,8 +23,6 @@ namespace UI
         {
             DataTable infoAssistants = assistants.getAssistants();
             dataGridView2.DataSource = infoAssistants;
-            dataGridView2.AutoResizeColumns();
-            dataGridView2.AutoResizeRows();
             dataGridView2.Columns[1].HeaderText = "Primer nombre";
             dataGridView2.Columns[2].HeaderText = "Segundo nombre";
             dataGridView2.Columns[3].HeaderText = "Tercer nombre";
@@ -36,6 +34,8 @@ namespace UI
             dataGridView2.Columns[0].Visible = false;
             dataGridView2.Columns[8].Visible = false;
             dataGridView2.Columns[9].Visible = false;
+            dataGridView2.AutoResizeColumns();
+            dataGridView2.AutoResizeRows();
             dataGridView2.Refresh();
         }
         private void iconButton1_Click(object sender, EventArgs e)
