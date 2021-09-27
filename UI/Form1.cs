@@ -117,5 +117,10 @@ namespace UI
         {
             openChildForm(new RequestSurgery());
         }
+
+        private void iconButton2_Click_1(object sender, EventArgs e)
+        {
+            openChildForm(new assignSurgery());
+        }
     }
 }

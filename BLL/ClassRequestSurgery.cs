@@ -10,12 +10,17 @@ namespace BLL
     public class ClassRequestSurgery
     {
         private programacionesTableAdapter surgeryRequests;
+        private requestSurgeryViewTableAdapter requestedSurgeries;
         public ClassRequestSurgery()
         {
             surgeryRequests = new programacionesTableAdapter();
+            requestedSurgeries = new requestSurgeryViewTableAdapter();
         }
 
-
+        public DataTable getRequestedSurgeries()
+        {
+            return requestedSurgeries.GetDataRequestedSurgeries();
+        }
         public string makeSurgeryRequest(string interventionDetail, int patientId, int serviceId)
         {
             string response = "";
