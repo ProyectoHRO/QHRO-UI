@@ -16,7 +16,16 @@ namespace BLL
         {
             ANESTHETIST = new anestesiaTableAdapter();
         }
+        
+        public DataTable getAnesthetistByDpi(string dpi)
+        {
+            return ANESTHETIST.GetDataByAnesthetistDpi(dpi);
+        }
 
+        public DataTable getAnesthetistByName(string firstName, string secondName,string thirdName, string firstSurname, string secondSurname)
+        {
+            return ANESTHETIST.GetDataByAnesthetistName(firstName,secondName,thirdName,firstSurname,secondSurname);
+        }
         public DataTable listAnesthetist()
         {
             return ANESTHETIST.GetDataAnesthetist();

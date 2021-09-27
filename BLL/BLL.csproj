@@ -47,12 +47,14 @@
     <Compile Include="ClassAnesthetist.cs" />
     <Compile Include="ClassAssistants.cs" />
     <Compile Include="ClassDoctor.cs" />
+    <Compile Include="ClassDtoAssistants.cs" />
     <Compile Include="ClassOperatingRoom.cs" />
     <Compile Include="ClassPatient.cs" />
     <Compile Include="ClassRequestSurgery.cs" />
     <Compile Include="ClassServices.cs" />
     <Compile Include="ClassUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Surgeries.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

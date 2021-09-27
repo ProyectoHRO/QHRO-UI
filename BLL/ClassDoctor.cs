@@ -16,6 +16,14 @@ namespace BLL
         }
         //Methods
         //get
+        public DataTable getDoctorByDpi(string dpi)
+        {
+            return doctors.GetDataByDoctorsDpi(dpi);
+        }
+        public DataTable getDoctorByName(string firstName, string secondName, string thirdName, string firstSurname, string secondSurname)
+        {
+            return doctors.GetDataByDoctorName(firstName, secondName, thirdName, firstSurname, secondSurname);
+        }
         public DataTable getDoctors()
         {
             return doctors.GetDataDoctors();

@@ -18,6 +18,15 @@ namespace BLL
         }
         //Methods
         //get
+
+        public DataTable getAssistantByDpi(string dpi)
+        {
+            return assistants.GetDataByAssistantDpi(dpi);
+        }
+        public DataTable getAssistantByName(string firstName, string secondName, string thirdName, string firstSurname, string secondSurname)
+        {
+            return assistants.GetDataByAssistantName(firstName, secondName, thirdName, firstSurname, secondSurname);
+        }
         public DataTable getAssistants()
         {
             return assistants.GetDataAssistant();

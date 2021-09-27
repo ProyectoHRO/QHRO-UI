@@ -14,6 +14,7 @@ namespace UI
     {
         private ClassRequestSurgery surgeries = new ClassRequestSurgery();
         private ClassOperatingRoom operatingRooms = new ClassOperatingRoom();
+        private Surgeries surgeriesLogic = new Surgeries();
         public assignSurgery()
         {
             InitializeComponent();
@@ -57,18 +58,48 @@ namespace UI
         {
             selectPerson selectP = new selectPerson(1);
             selectP.ShowDialog();
+            textBoxAnestethistName.Text = selectP.name;
+            labelIdAnesthetist.Text = selectP.id.ToString();
         }
 
         private void iconButtonAddDoctor_Click(object sender, EventArgs e)
         {
             selectPerson selectP = new selectPerson(2);
             selectP.ShowDialog();
+            textBoxDoctorName.Text = selectP.name;
+            labelIdDoctor.Text = selectP.id.ToString();
         }
 
         private void iconButtonAddAssistant_Click(object sender, EventArgs e)
         {
             selectPerson selectP = new selectPerson(3);
             selectP.ShowDialog();
+            listBoxIds.Items.Add(selectP.id);
+            ListViewItem item = new ListViewItem(selectP.name.ToString());
+            item.SubItems.Add(selectP.assistantType.ToString());
+            listViewAssistants.Items.Add(item);
+        }
+
+        private void groupBoxpatientData_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonConfirm_Click(object sender, EventArgs e)
+        {
+            List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
+            ClassDtoAssistants assistant;
+            for (int i = 0; i < listBoxIds.Items.Count; i++)
+            {
+                listBoxIds.SelectedIndex = i;
+                assistant = new ClassDtoAssistants();
+                assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
+                assistantsList.Add(assistant);
+            }
+            string response = surgeriesLogic.assignSurgery(comboBoxAnesthesiaType.Text,comboBoxSurgeryType.Text,dateTimeSurgeryDate.Value,
+                Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),Convert.ToInt32(labelIdDoctor.Text),Convert.ToInt32(labelIdAnesthetist.Text),Convert.ToInt32(labelID.Text),
+                assistantsList);
+            MessageBox.Show(response);
         }
     }
 }
