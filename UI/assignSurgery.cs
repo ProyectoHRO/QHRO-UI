@@ -32,9 +32,6 @@ namespace UI
             comboBoxOperatingRooms.ValueMember = "idquirofano";
             comboBoxOperatingRooms.DisplayMember = "no_quirofano";
             comboBoxOperatingRooms.DataSource = infoOperatingRooms;
-
-
-
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -47,7 +44,10 @@ namespace UI
             try
             {
                 labelID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-              
+                textBoxHistory.Text= dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textBoxName.Text= dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textBoxLastName.Text= dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textBoxDiagnosis.Text= dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             }
             catch (Exception)
             {
@@ -100,6 +100,23 @@ namespace UI
                 Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),Convert.ToInt32(labelIdDoctor.Text),Convert.ToInt32(labelIdAnesthetist.Text),Convert.ToInt32(labelID.Text),
                 assistantsList);
             MessageBox.Show(response);
+        }
+
+        private void iconButtonDeleteAll_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void listViewAssistants_Resize(object sender, EventArgs e)
+        {
+            listViewAssistants.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
+            listViewAssistants.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
+            listViewAssistants.Refresh();
         }
     }
 }
