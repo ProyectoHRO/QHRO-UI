@@ -65,31 +65,6 @@ FROM            programaciones</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="requestSurgeryViewTableAdapter" GeneratorDataComponentClassName="requestSurgeryViewTableAdapter" Name="requestSurgeryView" UserDataComponentName="requestSurgeryViewTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="HROBDConnectionString (Settings)" DbObjectName="HROBD.dbo.requestSurgeryView" DbObjectType="Function" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataRequestedSurgeries" GetMethodModifier="Public" GetMethodName="GetDataRequestedSurgeries" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataRequestedSurgeries" UserSourceName="GetDataRequestedSurgeries">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        requestSurgeryView_1.*
-FROM            dbo.requestSurgeryView() AS requestSurgeryView_1</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="id_programaciones" DataSetColumn="id_programaciones" />
-              <Mapping SourceColumn="Fecha Programacion" DataSetColumn="Fecha Programacion" />
-              <Mapping SourceColumn="Diagnostico" DataSetColumn="Diagnostico" />
-              <Mapping SourceColumn="No. Historia" DataSetColumn="No_ Historia" />
-              <Mapping SourceColumn="Primer Nombre" DataSetColumn="Primer Nombre" />
-              <Mapping SourceColumn="Segundo Nombre" DataSetColumn="Segundo Nombre" />
-              <Mapping SourceColumn="Tercer Nombre" DataSetColumn="Tercer Nombre" />
-              <Mapping SourceColumn="Primer Apellido" DataSetColumn="Primer Apellido" />
-              <Mapping SourceColumn="Segundo Apellido" DataSetColumn="Segundo Apellido" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="cirugiasTableAdapter" GeneratorDataComponentClassName="cirugiasTableAdapter" Name="cirugias" UserDataComponentName="cirugiasTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="HROBDConnectionString (Settings)" DbObjectName="HROBD.dbo.cirugias" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataSurgeries" GetMethodModifier="Public" GetMethodName="GetDataSurgeries" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataSurgeries" UserSourceName="GetDataSurgeries">
@@ -137,6 +112,31 @@ FROM            cirugias</CommandText>
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="requestSurgeryViewTableAdapter" GeneratorDataComponentClassName="requestSurgeryViewTableAdapter" Name="requestSurgeryView" UserDataComponentName="requestSurgeryViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HROBDConnectionString (Settings)" DbObjectName="HROBD.dbo.requestSurgeryView" DbObjectType="Function" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetDataRequestedSurgeries" GetMethodModifier="Public" GetMethodName="GetDataRequestedSurgeries" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataRequestedSurgeries" UserSourceName="GetDataRequestedSurgeries">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        requestSurgeryView_1.*
+FROM            dbo.requestSurgeryView() AS requestSurgeryView_1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_programaciones" DataSetColumn="id_programaciones" />
+              <Mapping SourceColumn="Fecha Programacion" DataSetColumn="Fecha Programacion" />
+              <Mapping SourceColumn="Diagnostico" DataSetColumn="Diagnostico" />
+              <Mapping SourceColumn="No Historia" DataSetColumn="No Historia" />
+              <Mapping SourceColumn="Primer Nombre" DataSetColumn="Primer Nombre" />
+              <Mapping SourceColumn="Segundo Nombre" DataSetColumn="Segundo Nombre" />
+              <Mapping SourceColumn="Tercer Nombre" DataSetColumn="Tercer Nombre" />
+              <Mapping SourceColumn="Primer Apellido" DataSetColumn="Primer Apellido" />
+              <Mapping SourceColumn="Segundo Apellido" DataSetColumn="Segundo Apellido" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -145,7 +145,7 @@ FROM            cirugias</CommandText>
   <xs:element name="DataSetSurgery" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetSurgery" msprop:Generator_UserDSName="DataSetSurgery">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="programaciones" msprop:Generator_TableClassName="programacionesDataTable" msprop:Generator_TableVarName="tableprogramaciones" msprop:Generator_TablePropName="programaciones" msprop:Generator_RowDeletingName="programacionesRowDeleting" msprop:Generator_RowChangingName="programacionesRowChanging" msprop:Generator_RowEvHandlerName="programacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="programacionesRowDeleted" msprop:Generator_UserTableName="programaciones" msprop:Generator_RowChangedName="programacionesRowChanged" msprop:Generator_RowEvArgName="programacionesRowChangeEvent" msprop:Generator_RowClassName="programacionesRow">
+        <xs:element name="programaciones" msprop:Generator_TableClassName="programacionesDataTable" msprop:Generator_TableVarName="tableprogramaciones" msprop:Generator_RowChangedName="programacionesRowChanged" msprop:Generator_TablePropName="programaciones" msprop:Generator_RowDeletingName="programacionesRowDeleting" msprop:Generator_RowChangingName="programacionesRowChanging" msprop:Generator_RowEvHandlerName="programacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="programacionesRowDeleted" msprop:Generator_RowClassName="programacionesRow" msprop:Generator_UserTableName="programaciones" msprop:Generator_RowEvArgName="programacionesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_programaciones" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_programaciones" msprop:Generator_ColumnPropNameInRow="id_programaciones" msprop:Generator_ColumnPropNameInTable="id_programacionesColumn" msprop:Generator_UserColumnName="id_programaciones" type="xs:int" />
@@ -163,7 +163,42 @@ FROM            cirugias</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="requestSurgeryView" msprop:Generator_TableClassName="requestSurgeryViewDataTable" msprop:Generator_TableVarName="tablerequestSurgeryView" msprop:Generator_RowChangedName="requestSurgeryViewRowChanged" msprop:Generator_TablePropName="requestSurgeryView" msprop:Generator_RowDeletingName="requestSurgeryViewRowDeleting" msprop:Generator_RowChangingName="requestSurgeryViewRowChanging" msprop:Generator_RowEvHandlerName="requestSurgeryViewRowChangeEventHandler" msprop:Generator_RowDeletedName="requestSurgeryViewRowDeleted" msprop:Generator_RowClassName="requestSurgeryViewRow" msprop:Generator_UserTableName="requestSurgeryView" msprop:Generator_RowEvArgName="requestSurgeryViewRowChangeEvent">
+        <xs:element name="cirugias" msprop:Generator_TableClassName="cirugiasDataTable" msprop:Generator_TableVarName="tablecirugias" msprop:Generator_RowChangedName="cirugiasRowChanged" msprop:Generator_TablePropName="cirugias" msprop:Generator_RowDeletingName="cirugiasRowDeleting" msprop:Generator_RowChangingName="cirugiasRowChanging" msprop:Generator_RowEvHandlerName="cirugiasRowChangeEventHandler" msprop:Generator_RowDeletedName="cirugiasRowDeleted" msprop:Generator_RowClassName="cirugiasRow" msprop:Generator_UserTableName="cirugias" msprop:Generator_RowEvArgName="cirugiasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idcirugia" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidcirugia" msprop:Generator_ColumnPropNameInRow="idcirugia" msprop:Generator_ColumnPropNameInTable="idcirugiaColumn" msprop:Generator_UserColumnName="idcirugia" type="xs:int" />
+              <xs:element name="tipo_anestesia" msprop:Generator_ColumnVarNameInTable="columntipo_anestesia" msprop:Generator_ColumnPropNameInRow="tipo_anestesia" msprop:Generator_ColumnPropNameInTable="tipo_anestesiaColumn" msprop:Generator_UserColumnName="tipo_anestesia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipo_cirugia" msprop:Generator_ColumnVarNameInTable="columntipo_cirugia" msprop:Generator_ColumnPropNameInRow="tipo_cirugia" msprop:Generator_ColumnPropNameInTable="tipo_cirugiaColumn" msprop:Generator_UserColumnName="tipo_cirugia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_cirugia" msprop:Generator_ColumnVarNameInTable="columnfecha_cirugia" msprop:Generator_ColumnPropNameInRow="fecha_cirugia" msprop:Generator_ColumnPropNameInTable="fecha_cirugiaColumn" msprop:Generator_UserColumnName="fecha_cirugia" type="xs:dateTime" />
+              <xs:element name="estado_diferido" msprop:Generator_ColumnVarNameInTable="columnestado_diferido" msprop:Generator_ColumnPropNameInRow="estado_diferido" msprop:Generator_ColumnPropNameInTable="estado_diferidoColumn" msprop:Generator_UserColumnName="estado_diferido" type="xs:boolean" />
+              <xs:element name="motivo_diferido" msprop:Generator_ColumnVarNameInTable="columnmotivo_diferido" msprop:Generator_ColumnPropNameInRow="motivo_diferido" msprop:Generator_ColumnPropNameInTable="motivo_diferidoColumn" msprop:Generator_UserColumnName="motivo_diferido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:boolean" />
+              <xs:element name="idquirofano" msprop:Generator_ColumnVarNameInTable="columnidquirofano" msprop:Generator_ColumnPropNameInRow="idquirofano" msprop:Generator_ColumnPropNameInTable="idquirofanoColumn" msprop:Generator_UserColumnName="idquirofano" type="xs:int" minOccurs="0" />
+              <xs:element name="iddoctor" msprop:Generator_ColumnVarNameInTable="columniddoctor" msprop:Generator_ColumnPropNameInRow="iddoctor" msprop:Generator_ColumnPropNameInTable="iddoctorColumn" msprop:Generator_UserColumnName="iddoctor" type="xs:int" minOccurs="0" />
+              <xs:element name="idanestesia" msprop:Generator_ColumnVarNameInTable="columnidanestesia" msprop:Generator_ColumnPropNameInRow="idanestesia" msprop:Generator_ColumnPropNameInTable="idanestesiaColumn" msprop:Generator_UserColumnName="idanestesia" type="xs:int" minOccurs="0" />
+              <xs:element name="id_programaciones" msprop:Generator_ColumnVarNameInTable="columnid_programaciones" msprop:Generator_ColumnPropNameInRow="id_programaciones" msprop:Generator_ColumnPropNameInTable="id_programacionesColumn" msprop:Generator_UserColumnName="id_programaciones" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="requestSurgeryView" msprop:Generator_TableClassName="requestSurgeryViewDataTable" msprop:Generator_TableVarName="tablerequestSurgeryView" msprop:Generator_TablePropName="requestSurgeryView" msprop:Generator_RowDeletingName="requestSurgeryViewRowDeleting" msprop:Generator_RowChangingName="requestSurgeryViewRowChanging" msprop:Generator_RowEvHandlerName="requestSurgeryViewRowChangeEventHandler" msprop:Generator_RowDeletedName="requestSurgeryViewRowDeleted" msprop:Generator_UserTableName="requestSurgeryView" msprop:Generator_RowChangedName="requestSurgeryViewRowChanged" msprop:Generator_RowEvArgName="requestSurgeryViewRowChangeEvent" msprop:Generator_RowClassName="requestSurgeryViewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_programaciones" msprop:Generator_ColumnVarNameInTable="columnid_programaciones" msprop:Generator_ColumnPropNameInRow="id_programaciones" msprop:Generator_ColumnPropNameInTable="id_programacionesColumn" msprop:Generator_UserColumnName="id_programaciones" type="xs:int" />
@@ -175,7 +210,7 @@ FROM            cirugias</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="No__x0020_Historia" msdata:Caption="No. Historia" msprop:Generator_ColumnVarNameInTable="columnNo__Historia" msprop:Generator_ColumnPropNameInRow="No__Historia" msprop:Generator_ColumnPropNameInTable="No__HistoriaColumn" msprop:Generator_UserColumnName="No_ Historia">
+              <xs:element name="No_x0020_Historia" msprop:Generator_ColumnVarNameInTable="columnNo_Historia" msprop:Generator_ColumnPropNameInRow="No_Historia" msprop:Generator_ColumnPropNameInTable="No_HistoriaColumn" msprop:Generator_UserColumnName="No Historia">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
@@ -220,60 +255,25 @@ FROM            cirugias</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="cirugias" msprop:Generator_TableClassName="cirugiasDataTable" msprop:Generator_TableVarName="tablecirugias" msprop:Generator_TablePropName="cirugias" msprop:Generator_RowDeletingName="cirugiasRowDeleting" msprop:Generator_RowChangingName="cirugiasRowChanging" msprop:Generator_RowEvHandlerName="cirugiasRowChangeEventHandler" msprop:Generator_RowDeletedName="cirugiasRowDeleted" msprop:Generator_UserTableName="cirugias" msprop:Generator_RowChangedName="cirugiasRowChanged" msprop:Generator_RowEvArgName="cirugiasRowChangeEvent" msprop:Generator_RowClassName="cirugiasRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="idcirugia" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidcirugia" msprop:Generator_ColumnPropNameInRow="idcirugia" msprop:Generator_ColumnPropNameInTable="idcirugiaColumn" msprop:Generator_UserColumnName="idcirugia" type="xs:int" />
-              <xs:element name="tipo_anestesia" msprop:Generator_ColumnVarNameInTable="columntipo_anestesia" msprop:Generator_ColumnPropNameInRow="tipo_anestesia" msprop:Generator_ColumnPropNameInTable="tipo_anestesiaColumn" msprop:Generator_UserColumnName="tipo_anestesia">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="9" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="tipo_cirugia" msprop:Generator_ColumnVarNameInTable="columntipo_cirugia" msprop:Generator_ColumnPropNameInRow="tipo_cirugia" msprop:Generator_ColumnPropNameInTable="tipo_cirugiaColumn" msprop:Generator_UserColumnName="tipo_cirugia">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="fecha_cirugia" msprop:Generator_ColumnVarNameInTable="columnfecha_cirugia" msprop:Generator_ColumnPropNameInRow="fecha_cirugia" msprop:Generator_ColumnPropNameInTable="fecha_cirugiaColumn" msprop:Generator_UserColumnName="fecha_cirugia" type="xs:dateTime" />
-              <xs:element name="estado_diferido" msprop:Generator_ColumnVarNameInTable="columnestado_diferido" msprop:Generator_ColumnPropNameInRow="estado_diferido" msprop:Generator_ColumnPropNameInTable="estado_diferidoColumn" msprop:Generator_UserColumnName="estado_diferido" type="xs:boolean" />
-              <xs:element name="motivo_diferido" msprop:Generator_ColumnVarNameInTable="columnmotivo_diferido" msprop:Generator_ColumnPropNameInRow="motivo_diferido" msprop:Generator_ColumnPropNameInTable="motivo_diferidoColumn" msprop:Generator_UserColumnName="motivo_diferido" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="500" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" type="xs:boolean" />
-              <xs:element name="idquirofano" msprop:Generator_ColumnVarNameInTable="columnidquirofano" msprop:Generator_ColumnPropNameInRow="idquirofano" msprop:Generator_ColumnPropNameInTable="idquirofanoColumn" msprop:Generator_UserColumnName="idquirofano" type="xs:int" minOccurs="0" />
-              <xs:element name="iddoctor" msprop:Generator_ColumnVarNameInTable="columniddoctor" msprop:Generator_ColumnPropNameInRow="iddoctor" msprop:Generator_ColumnPropNameInTable="iddoctorColumn" msprop:Generator_UserColumnName="iddoctor" type="xs:int" minOccurs="0" />
-              <xs:element name="idanestesia" msprop:Generator_ColumnVarNameInTable="columnidanestesia" msprop:Generator_ColumnPropNameInRow="idanestesia" msprop:Generator_ColumnPropNameInTable="idanestesiaColumn" msprop:Generator_UserColumnName="idanestesia" type="xs:int" minOccurs="0" />
-              <xs:element name="id_programaciones" msprop:Generator_ColumnVarNameInTable="columnid_programaciones" msprop:Generator_ColumnPropNameInRow="id_programaciones" msprop:Generator_ColumnPropNameInTable="id_programacionesColumn" msprop:Generator_UserColumnName="id_programaciones" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:programaciones" />
       <xs:field xpath="mstns:id_programaciones" />
     </xs:unique>
-    <xs:unique name="requestSurgeryView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:requestSurgeryView" />
-      <xs:field xpath="mstns:id_programaciones" />
-      <xs:field xpath="mstns:No__x0020_Historia" />
-    </xs:unique>
     <xs:unique name="cirugias_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:cirugias" />
       <xs:field xpath="mstns:idcirugia" />
     </xs:unique>
+    <xs:unique name="requestSurgeryView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:requestSurgeryView" />
+      <xs:field xpath="mstns:id_programaciones" />
+      <xs:field xpath="mstns:No_x0020_Historia" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Relationship11" msdata:parent="programaciones" msdata:child="cirugias" msdata:parentkey="id_programaciones" msdata:childkey="id_programaciones" msprop:Generator_UserChildTable="cirugias" msprop:Generator_ChildPropName="GetcirugiasRows" msprop:Generator_UserRelationName="Relationship11" msprop:Generator_ParentPropName="programacionesRow" msprop:Generator_RelationVarName="relationRelationship11" msprop:Generator_UserParentTable="programaciones" />
+      <msdata:Relationship name="Relationship11" msdata:parent="programaciones" msdata:child="cirugias" msdata:parentkey="id_programaciones" msdata:childkey="id_programaciones" msprop:Generator_UserChildTable="cirugias" msprop:Generator_ChildPropName="GetcirugiasRows" msprop:Generator_UserRelationName="Relationship11" msprop:Generator_RelationVarName="relationRelationship11" msprop:Generator_UserParentTable="programaciones" msprop:Generator_ParentPropName="programacionesRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
