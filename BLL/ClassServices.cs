@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.DataSetServicesTableAdapters;
+using DAL;
 using System.Data;
 namespace BLL
 {
     public class ClassServices
     {
-        private servicioTableAdapter services;
+        private Services services;
         public ClassServices()
         {
-            services=new servicioTableAdapter();
+            services=new Services();
         }
 
         //methods
         //get
         public DataTable getServices()
         {
-            return services.GetDataServices();
+            return services.GetServices();
         }
         //insert
         public string newService(string serviceName)
         {
             try
             {
-                DataTable service = services.GetDataByServiceName(serviceName);
-                if (service.Rows.Count < 1)
+                DataTable service = services.GetServicesByName(serviceName);
+                if (service.Rows.Count <1)
                 {
-                    services.InsertQueryServiceName(serviceName);
+                    services.InsertService(serviceName);
                     return "SE HA GRABADO UN NUEVO REGISTRO";
                 }
                 else
@@ -45,7 +45,7 @@ namespace BLL
         {
             try
             {
-                services.UpdateQueryServiceName(serviceName,serviceId);
+                services.UpdateService(serviceName,serviceId);
                 return "SE HA ACTUALIZADO EL REGISTRO";
             }
             catch (Exception error)

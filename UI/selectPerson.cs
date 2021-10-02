@@ -145,10 +145,10 @@ namespace UI
                 getNames getSearchNames = new getNames();
                 getSearchNames.ShowDialog();
                 textBoxSearch.Enabled = false;
-                if (typePerson == 1)
-                    listAnesthetist(anesthetist.getAnesthetistByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                else if (typePerson == 2)
+                //if (typePerson == 1)
+                    //listAnesthetist(anesthetist.getAnesthetistByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
+                    //    getSearchNames.firstSurname, getSearchNames.secondSurname));
+                if (typePerson == 2)
                     listDoctors(doctor.getDoctorByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
                         getSearchNames.firstSurname, getSearchNames.secondSurname));
                 else
@@ -169,10 +169,10 @@ namespace UI
                 getNames getSearchNames = new getNames();
                 getSearchNames.ShowDialog();
                 textBoxSearch.Enabled = false;
-                if (typePerson == 1)
-                    listAnesthetist(anesthetist.getAnesthetistByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                else if (typePerson == 2)
+                //if (typePerson == 1)
+                //    listAnesthetist(anesthetist.getAnesthetistByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
+                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
+                if (typePerson == 2)
                     listDoctors(doctor.getDoctorByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
                         getSearchNames.firstSurname, getSearchNames.secondSurname));
                 else

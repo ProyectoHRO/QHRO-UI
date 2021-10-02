@@ -3,32 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.DataSetAnesthetistTableAdapters;
+using DAL;
 using System.Data;
 
 namespace BLL
 {
     public class ClassAnesthetist
     {
-        private anestesiaTableAdapter ANESTHETIST;
+        private Anesthetist ANESTHETIST;
 
         public ClassAnesthetist()
         {
-            ANESTHETIST = new anestesiaTableAdapter();
+            ANESTHETIST = new Anesthetist();
         }
         
         public DataTable getAnesthetistByDpi(string dpi)
         {
-            return ANESTHETIST.GetDataByAnesthetistDpi(dpi);
+            return ANESTHETIST.GetAnesthetistByCui(dpi);
         }
 
-        public DataTable getAnesthetistByName(string firstName, string secondName,string thirdName, string firstSurname, string secondSurname)
-        {
-            return ANESTHETIST.GetDataByAnesthetistName(firstName,secondName,thirdName,firstSurname,secondSurname);
-        }
+        //public DataTable getAnesthetistByName(string firstName, string secondName,string thirdName, string firstSurname, string secondSurname)
+        //{
+        //    return ANESTHETIST.GetDataByAnesthetistName(firstName,secondName,thirdName,firstSurname,secondSurname);
+        //}
         public DataTable listAnesthetist()
         {
-            return ANESTHETIST.GetDataAnesthetist();
+            return ANESTHETIST.GetAnesthetist();
         }
 
         public string newAnesthetist(string dpi, string firstName, string secondName,
@@ -36,7 +36,7 @@ namespace BLL
         {
             try
             {
-                ANESTHETIST.InsertQueryNewAnesthetist(dpi, firstName, secondName, thirdName,
+                ANESTHETIST.InsertAnesthetist(dpi, firstName, secondName, thirdName,
                     firstSurname, secondSurname, phoneNumber, email);
                 return "Nuevo anestesista agregado";
             }
@@ -48,12 +48,12 @@ namespace BLL
 
         public string editAnesthetist(string dpi, string firstName, string secondName,
             string thirdName, string firstSurname, string secondSurname, string phoneNumber, string email,
-            bool status, int idPatient)
+            bool status, int idAnesthetist)
         {
             try
             {
-                ANESTHETIST.UpdateQueryEditAnesthetist(dpi, firstName, secondName, thirdName, firstSurname,
-                    secondSurname, phoneNumber, email, status, idPatient);
+                ANESTHETIST.UpdateAnesthetist(dpi, firstName, secondName, thirdName, firstSurname,
+                    secondSurname, phoneNumber, email, status, idAnesthetist);
                 return "Se actualizaron los datos del anestesista";
             }
             catch (Exception error)
