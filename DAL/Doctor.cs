@@ -19,7 +19,7 @@ namespace DAL
         {
             tableData = new DataTable();
             command.Connection = connection.OpenConnection();
-            command.CommandText = "MostrarDoctor";
+            command.CommandText = "MostrarDoctores";
             command.CommandType = CommandType.StoredProcedure;
             read = command.ExecuteReader();
             tableData.Load(read);
@@ -49,13 +49,14 @@ namespace DAL
             string firstSurname,
             string secondSurname,
             string number,
-            string email
+            string email,
+            string specialty
             )
         {
             command.Connection = connection.OpenConnection();
             command.CommandText = "InsertarDoctor";
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@dpi_doctor", doctorDpi);
+            command.Parameters.AddWithValue("@dpi_doctores", doctorDpi);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
             command.Parameters.AddWithValue("@segundo_nombre", secondName);
             command.Parameters.AddWithValue("@tercer_nombre", thirdName);
@@ -63,6 +64,7 @@ namespace DAL
             command.Parameters.AddWithValue("@segundo_apellido", secondSurname);
             command.Parameters.AddWithValue("@numero", number);
             command.Parameters.AddWithValue("@correo", email);
+            command.Parameters.AddWithValue("@especialidad",specialty);
             command.ExecuteNonQuery();
             command.Parameters.Clear();
             connection.CloseConnection();
@@ -78,13 +80,14 @@ namespace DAL
             string number,
             string email,
             bool status,
+            string specialty,
             int id
             )
         {
             command.Connection = connection.OpenConnection();
             command.CommandText = "EditarDoctor";
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@dpi_doctor", doctorDpi);
+            command.Parameters.AddWithValue("@dpi_doctores", doctorDpi);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
             command.Parameters.AddWithValue("@segundo_nombre", secondName);
             command.Parameters.AddWithValue("@tercer_nombre", thirdName);
@@ -93,6 +96,7 @@ namespace DAL
             command.Parameters.AddWithValue("@numero", number);
             command.Parameters.AddWithValue("@correo", email);
             command.Parameters.AddWithValue("@estado", status);
+            command.Parameters.AddWithValue("@especialidad", specialty);
             command.Parameters.AddWithValue("@id", id);
             command.ExecuteNonQuery();
             command.Parameters.Clear();

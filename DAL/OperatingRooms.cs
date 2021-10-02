@@ -46,7 +46,7 @@ namespace DAL
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@no_quirofano", operatingRoomNumber);
             command.Parameters.AddWithValue("@estado_actual", actualStatus);
-            command.Parameters.AddWithValue("@status", status);
+            command.Parameters.AddWithValue("@estado", status);
             command.Parameters.AddWithValue("@id", id);
             command.ExecuteNonQuery();
             command.Parameters.Clear();

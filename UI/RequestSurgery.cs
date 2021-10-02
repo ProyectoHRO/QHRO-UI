@@ -43,6 +43,8 @@ namespace UI
                 if(MessageBox.Show("No existe ningun paciente con ese numero de historia, desea crearlo?","No se encuentra", MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
                 {
                     ClearTexts();
+                    textBoxhistoryNumber.Text = textBoxSearch.Text;
+                    
                     groupBoxpatientData.Enabled = true;
                     iconButtonCreateAndRequest.Visible = true;
                 }
@@ -125,7 +127,7 @@ namespace UI
             if (textBoxhistoryNumber.Text != "" && textBoxfirstName.Text != "" && textBoxfirstSurname.Text != "" && textBoxDiagnosis.Text != "")
             {
                 string response = requestSurgery.makeSurgeryRequestAndPatient(textBoxDiagnosis.Text,3,textBoxhistoryNumber.Text,textBoxfirstName.Text,textBoxsecondName.Text,textBoxthirdName.Text,
-                    textBoxfirstSurname.Text, textBoxsecondSurname.Text,Convert.ToInt16(textBoxAge.Text), comboBoxGender.SelectedItem.ToString());
+                    textBoxfirstSurname.Text, textBoxsecondSurname.Text,Convert.ToInt16(textBoxAge.Text), comboBoxGender.Text);
                 MessageBox.Show(response);
                 iconButtonRequest.Enabled = false;
                 iconButtonRequest.Visible = false;

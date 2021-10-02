@@ -36,9 +36,15 @@ namespace BLL
         {
             try
             {
-                ANESTHETIST.InsertAnesthetist(dpi, firstName, secondName, thirdName,
+                DataTable anestethist = ANESTHETIST.GetAnesthetistByCui(dpi);
+                if (anestethist.Rows.Count < 1)
+                {
+                    ANESTHETIST.InsertAnesthetist(dpi, firstName, secondName, thirdName,
                     firstSurname, secondSurname, phoneNumber, email);
-                return "Nuevo anestesista agregado";
+                    return "Nuevo registro agregado";
+                }
+                else
+                    return "Ya existe la persona con dpi: "+dpi;
             }
             catch (Exception error)
             {

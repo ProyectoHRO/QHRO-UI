@@ -81,7 +81,7 @@ namespace DAL
             )
         {
             command.Connection = connection.OpenConnection();
-            command.CommandText = "EditarAsistente";
+            command.CommandText = "EditarPaciente";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@no_historia", historyNumber);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
@@ -92,7 +92,7 @@ namespace DAL
             command.Parameters.AddWithValue("@edad", age);
             command.Parameters.AddWithValue("@genero", gender);
             command.Parameters.AddWithValue("@estado", status);
-            command.Parameters.AddWithValue("@idpaciente", idPatient);
+            command.Parameters.AddWithValue("@id", idPatient);
             command.ExecuteNonQuery();
             command.Parameters.Clear();
             connection.CloseConnection();

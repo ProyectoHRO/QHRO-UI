@@ -20,7 +20,7 @@ namespace UI
             InitializeComponent();
         }
 
-        private void assignSurgery_Load(object sender, EventArgs e)
+        void ListRequestedSugreries()
         {
             DataTable infoSurgeries = surgeries.getRequestedSurgeries();
             dataGridView1.DataSource = infoSurgeries;
@@ -28,6 +28,11 @@ namespace UI
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
             dataGridView1.Refresh();
+        }
+        private void assignSurgery_Load(object sender, EventArgs e)
+        {
+            ListRequestedSugreries();
+            ListRequestedSugreries();
 
             DataTable infoOperatingRooms = operatingRooms.listoperatingRooms();
             comboBoxOperatingRooms.ValueMember = "idquirofano";
@@ -107,6 +112,7 @@ namespace UI
                 Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),Convert.ToInt32(labelIdDoctor.Text),Convert.ToInt32(labelIdAnesthetist.Text),Convert.ToInt32(labelID.Text),
                 assistantsList);
             MessageBox.Show(response);
+            ListRequestedSugreries();
         }
 
         private void iconButtonDeleteAll_Click(object sender, EventArgs e)

@@ -19,10 +19,10 @@ namespace DAL
         {
             tableData = new DataTable();
             command.Connection = connection.OpenConnection();
-            command.CommandText = "MostrarPacientePorNoHistoria";
+            command.CommandText = "IniciarSesion";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@usuario", user);
-            command.Parameters.AddWithValue("@usuario", password);
+            command.Parameters.AddWithValue("@contra", password);
             read = command.ExecuteReader();
             tableData.Load(read);
             command.Parameters.Clear();
