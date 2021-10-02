@@ -25,8 +25,6 @@ namespace UI
         {
             dataGridView1.DataSource = anes.listAnesthetist();
             dataGridView1.Columns[0].Visible = false;
-            dataGridView1.AutoResizeColumns();
-            dataGridView1.AutoResizeRows();
             dataGridView1.Columns[1].HeaderText = "CUI";
             dataGridView1.Columns[2].HeaderText = "Primer nombre";
             dataGridView1.Columns[3].HeaderText = "Segundo nombre";
@@ -37,6 +35,8 @@ namespace UI
             dataGridView1.Columns[8].HeaderText = "Correo";
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[9].Visible = false;
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoResizeRows();
             dataGridView1.Refresh();
         }
 

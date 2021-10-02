@@ -62,16 +62,21 @@ namespace UI
                     if (resp.ToUpper().Contains("ERROR"))
                         MessageBox.Show(resp, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
+                    {
                         MessageBox.Show(resp, "Registro Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        groupBoxServices.Enabled = false;
+                        textBoxNameService.Clear();
+                        iconButtonSave.Enabled = true;
+                        iconButtonNew.Enabled = false;
+                        ListServices();
+                    }
+                       
                 }
                 else
                     MessageBox.Show("Porfavor llena los campos");
-                groupBoxServices.Enabled = false;
-                textBoxNameService.Clear();
-                iconButtonSave.Enabled = true;
-                iconButtonNew.Enabled = false;
-                //state = 0;
-                ListServices();
+             
+            //state = 0;
+
             //}
             //else
             //{

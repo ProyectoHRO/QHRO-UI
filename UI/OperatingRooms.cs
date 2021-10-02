@@ -21,14 +21,16 @@ namespace UI
 
         void listoperatingRooms()
         {
-            dataGridViewOperatingRooms.DataSource = operatingroom.listoperatingRooms();
-            dataGridViewOperatingRooms.AutoResizeColumns();
-            dataGridViewOperatingRooms.AutoResizeRows();
-            dataGridViewOperatingRooms.Columns[1].HeaderText = "Numero de quirofano";
-            dataGridViewOperatingRooms.Columns[2].HeaderText = "Estado Actual";
-            dataGridViewOperatingRooms.Columns[0].Visible = false;
-            dataGridViewOperatingRooms.Columns[3].Visible = false;
-            dataGridViewOperatingRooms.Refresh();
+       
+                dataGridViewOperatingRooms.DataSource = operatingroom.listoperatingRooms();
+                dataGridViewOperatingRooms.Columns[1].HeaderText = "Numero de quirofano";
+                dataGridViewOperatingRooms.Columns[2].HeaderText = "Estado Actual";
+                dataGridViewOperatingRooms.Columns[0].Visible = false;
+                dataGridViewOperatingRooms.Columns[3].Visible = false;
+                dataGridViewOperatingRooms.AutoResizeColumns();
+                dataGridViewOperatingRooms.AutoResizeRows();
+                dataGridViewOperatingRooms.Refresh();
+    
         }
 
         void clearText()
@@ -125,6 +127,7 @@ namespace UI
 
         private void iconButtonList_Click(object sender, EventArgs e)
         {
+           
             listoperatingRooms();
             iconButtonNew.Enabled = true;
             iconButtonSave.Enabled = false;
