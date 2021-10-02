@@ -75,10 +75,16 @@ namespace UI
         {
             selectPerson selectP = new selectPerson(3);
             selectP.ShowDialog();
-            listBoxIds.Items.Add(selectP.id);
-            ListViewItem item = new ListViewItem(selectP.name.ToString());
-            item.SubItems.Add(selectP.assistantType.ToString());
-            listViewAssistants.Items.Add(item);
+            if (selectP.id!=0)
+            {
+                listBoxIds.Items.Add(selectP.id);
+                ListViewItem item = new ListViewItem(selectP.name.ToString());
+                item.SubItems.Add(selectP.assistantType.ToString());
+                listViewAssistants.Items.Add(item);
+            }
+            else { 
+            
+            }
         }
 
         private void groupBoxpatientData_Enter(object sender, EventArgs e)
@@ -105,8 +111,18 @@ namespace UI
 
         private void iconButtonDeleteAll_Click(object sender, EventArgs e)
         {
-            if (listViewAssistants.Items.Count > 0)
-                listViewAssistants.Items.Remove(listViewAssistants.SelectedItems[0]);
+            if(MessageBox.Show("¿Desea elimiar?","Confirmar",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MessageBox.Show("Eliminado");
+                if (listViewAssistants.Items.Count > 0)
+                    listViewAssistants.Items.Remove(listViewAssistants.SelectedItems[0]);
+            }
+            else
+            {
+                MessageBox.Show("Cancelado");
+            }
+          
         }
 
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)

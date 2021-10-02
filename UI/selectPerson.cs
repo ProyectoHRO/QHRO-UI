@@ -49,7 +49,7 @@ namespace UI
                     else
                         assistantType = "Circulante";
                 }
-                this.Close();
+               
             }
             else
                 this.Close();
@@ -124,6 +124,7 @@ namespace UI
             dataGridViewSearchPerson.AutoResizeRows();
             dataGridViewSearchPerson.Refresh();
             comboBoxFilter.SelectedIndex = 0;
+
         }
 
         private void selectPerson_Load(object sender, EventArgs e)
@@ -234,7 +235,29 @@ namespace UI
 
         private void iconButtonContinue_Click(object sender, EventArgs e)
         {
-            confirmPerson();
+                confirmPerson();
+        }
+
+        private void textBoxSearch_Enter(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text == "BUSCAR")
+                textBoxSearch.Text = "";
+        }
+
+        private void textBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text == "")
+                textBoxSearch.Text = "BUSCAR";
+        }
+
+        private void textBoxSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar != (char)Keys.Back && !char.IsSeparator(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsDigit(e.KeyChar);
+        }
+
+        private void iconButtonCancel_Click(object sender, EventArgs e)
+        {
+              this.Close();
         }
     }
 }
