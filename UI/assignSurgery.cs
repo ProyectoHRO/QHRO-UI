@@ -24,6 +24,7 @@ namespace UI
         {
             DataTable infoSurgeries = surgeries.getRequestedSurgeries();
             dataGridView1.DataSource = infoSurgeries;
+            dataGridView1.Columns[0].Visible = false;
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
             dataGridView1.Refresh();
@@ -104,7 +105,8 @@ namespace UI
 
         private void iconButtonDeleteAll_Click(object sender, EventArgs e)
         {
-
+            if (listViewAssistants.Items.Count > 0)
+                listViewAssistants.Items.Remove(listViewAssistants.SelectedItems[0]);
         }
 
         private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)

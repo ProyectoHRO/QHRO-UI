@@ -23,6 +23,37 @@ namespace UI
 
         int typePerson;
 
+        void confirmPerson()
+        {
+            if (dataGridViewSearchPerson.Rows.Count < 2)
+            {
+                id = Convert.ToInt32(dataGridViewSearchPerson.Rows[0].Cells[0].Value);
+                if (typePerson == 1)
+                {
+                    name = dataGridViewSearchPerson.Rows[0].Cells[2].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[3].Value.ToString() + ' ' +
+                  dataGridViewSearchPerson.Rows[0].Cells[4].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[5].Value.ToString() + ' ' +
+                      dataGridViewSearchPerson.Rows[0].Cells[6].Value.ToString();
+                }
+                if (typePerson != 1)
+                {
+                    name = dataGridViewSearchPerson.Rows[0].Cells[1].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[2].Value.ToString() + ' ' +
+                  dataGridViewSearchPerson.Rows[0].Cells[3].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[4].Value.ToString() + ' ' +
+                      dataGridViewSearchPerson.Rows[0].Cells[5].Value.ToString();
+                }
+
+                if (typePerson != 1 && typePerson != 2)
+                {
+                    int type = Convert.ToInt32(dataGridViewSearchPerson.Rows[0].Cells[9].Value);
+                    if (type == 1)
+                        assistantType = "Instrumentista";
+                    else
+                        assistantType = "Circulante";
+                }
+                this.Close();
+            }
+            else
+                this.Close();
+        }
         void listAnesthetist(DataTable anesthetist)
         {
             dataGridViewSearchPerson.DataSource = anesthetist;
@@ -203,35 +234,7 @@ namespace UI
 
         private void iconButtonContinue_Click(object sender, EventArgs e)
         {
-            if (dataGridViewSearchPerson.Rows.Count < 2)
-            {
-                id = Convert.ToInt32(dataGridViewSearchPerson.Rows[0].Cells[0].Value);
-                if (typePerson == 1)
-                {
-                    name = dataGridViewSearchPerson.Rows[0].Cells[2].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[3].Value.ToString() + ' ' +
-                  dataGridViewSearchPerson.Rows[0].Cells[4].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[5].Value.ToString() + ' ' +
-                      dataGridViewSearchPerson.Rows[0].Cells[6].Value.ToString();
-                }
-                if (typePerson != 1)
-                {
-                    name = dataGridViewSearchPerson.Rows[0].Cells[1].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[2].Value.ToString() + ' ' +
-                  dataGridViewSearchPerson.Rows[0].Cells[3].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[4].Value.ToString() + ' ' +
-                      dataGridViewSearchPerson.Rows[0].Cells[5].Value.ToString();
-                }
-
-                if (typePerson != 1 && typePerson != 2)
-                {
-                    int type = Convert.ToInt32(dataGridViewSearchPerson.Rows[0].Cells[9].Value);
-                    if (type == 1)
-                        assistantType = "Instrumentista";
-                    else
-                        assistantType = "Circulante";
-                }
-                this.Close();
-            }
-            else
-                this.Close();
-
+            confirmPerson();
         }
     }
 }
