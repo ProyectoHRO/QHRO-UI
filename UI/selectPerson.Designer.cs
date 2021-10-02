@@ -29,41 +29,56 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.dataGridViewSearchPerson = new System.Windows.Forms.DataGridView();
-            this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
             this.iconButtonContinue = new FontAwesome.Sharp.IconButton();
+            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
+            this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchPerson)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(320, 33);
+            this.label1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(432, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(83, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(51, 49);
+            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearch.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Location = new System.Drawing.Point(178, 65);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(304, 20);
+            this.textBoxSearch.Size = new System.Drawing.Size(255, 19);
             this.textBoxSearch.TabIndex = 1;
+            this.textBoxSearch.Text = "BUSCAR";
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxSearch.Enter += new System.EventHandler(this.textBoxSearch_Enter);
+            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
+            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
             // comboBoxFilter
             // 
             this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilter.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Location = new System.Drawing.Point(361, 48);
+            this.comboBoxFilter.Location = new System.Drawing.Point(484, 62);
+            this.comboBoxFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxFilter.Name = "comboBoxFilter";
-            this.comboBoxFilter.Size = new System.Drawing.Size(145, 21);
+            this.comboBoxFilter.Size = new System.Drawing.Size(145, 28);
             this.comboBoxFilter.TabIndex = 2;
             this.comboBoxFilter.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilter_SelectedIndexChanged);
             // 
@@ -75,74 +90,158 @@ namespace UI
             this.dataGridViewSearchPerson.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSearchPerson.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewSearchPerson.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSearchPerson.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSearchPerson.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewSearchPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSearchPerson.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewSearchPerson.EnableHeadersVisualStyles = false;
             this.dataGridViewSearchPerson.GridColor = System.Drawing.Color.White;
-            this.dataGridViewSearchPerson.Location = new System.Drawing.Point(24, 75);
-            this.dataGridViewSearchPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSearchPerson.Location = new System.Drawing.Point(11, 101);
+            this.dataGridViewSearchPerson.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewSearchPerson.Name = "dataGridViewSearchPerson";
+            this.dataGridViewSearchPerson.ReadOnly = true;
             this.dataGridViewSearchPerson.RowHeadersVisible = false;
             this.dataGridViewSearchPerson.RowHeadersWidth = 51;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            this.dataGridViewSearchPerson.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            this.dataGridViewSearchPerson.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewSearchPerson.RowTemplate.Height = 24;
-            this.dataGridViewSearchPerson.Size = new System.Drawing.Size(765, 212);
+            this.dataGridViewSearchPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewSearchPerson.Size = new System.Drawing.Size(981, 272);
             this.dataGridViewSearchPerson.TabIndex = 30;
             this.dataGridViewSearchPerson.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSearchPerson_CellClick);
             // 
-            // iconButtonSearch
-            // 
-            this.iconButtonSearch.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonSearch.IconColor = System.Drawing.Color.Black;
-            this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSearch.Location = new System.Drawing.Point(512, 47);
-            this.iconButtonSearch.Name = "iconButtonSearch";
-            this.iconButtonSearch.Size = new System.Drawing.Size(75, 23);
-            this.iconButtonSearch.TabIndex = 31;
-            this.iconButtonSearch.Text = "Buscar";
-            this.iconButtonSearch.UseVisualStyleBackColor = true;
-            this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
-            // 
             // iconButtonContinue
             // 
-            this.iconButtonContinue.Enabled = false;
-            this.iconButtonContinue.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonContinue.IconColor = System.Drawing.Color.Black;
+            this.iconButtonContinue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonContinue.BackColor = System.Drawing.Color.White;
+            this.iconButtonContinue.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonContinue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonContinue.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonContinue.IconChar = FontAwesome.Sharp.IconChar.ArrowRight;
+            this.iconButtonContinue.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.iconButtonContinue.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonContinue.Location = new System.Drawing.Point(714, 292);
+            this.iconButtonContinue.IconSize = 30;
+            this.iconButtonContinue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonContinue.Location = new System.Drawing.Point(873, 377);
+            this.iconButtonContinue.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonContinue.Name = "iconButtonContinue";
-            this.iconButtonContinue.Size = new System.Drawing.Size(75, 23);
-            this.iconButtonContinue.TabIndex = 32;
+            this.iconButtonContinue.Size = new System.Drawing.Size(119, 40);
+            this.iconButtonContinue.TabIndex = 34;
             this.iconButtonContinue.Text = "Continuar";
-            this.iconButtonContinue.UseVisualStyleBackColor = true;
+            this.iconButtonContinue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonContinue.UseVisualStyleBackColor = false;
             this.iconButtonContinue.Click += new System.EventHandler(this.iconButtonContinue_Click);
+            // 
+            // iconButtonCancel
+            // 
+            this.iconButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonCancel.BackColor = System.Drawing.Color.White;
+            this.iconButtonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonCancel.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Ban;
+            this.iconButtonCancel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCancel.IconSize = 30;
+            this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonCancel.Location = new System.Drawing.Point(11, 377);
+            this.iconButtonCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonCancel.Name = "iconButtonCancel";
+            this.iconButtonCancel.Size = new System.Drawing.Size(119, 40);
+            this.iconButtonCancel.TabIndex = 35;
+            this.iconButtonCancel.Text = "Cancelar";
+            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
+            // 
+            // iconButtonSearch
+            // 
+            this.iconButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonSearch.BackColor = System.Drawing.Color.White;
+            this.iconButtonSearch.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonSearch.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSearch.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonSearch.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSearch.IconSize = 30;
+            this.iconButtonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonSearch.Location = new System.Drawing.Point(662, 55);
+            this.iconButtonSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonSearch.Name = "iconButtonSearch";
+            this.iconButtonSearch.Size = new System.Drawing.Size(119, 40);
+            this.iconButtonSearch.TabIndex = 36;
+            this.iconButtonSearch.Text = "Buscar";
+            this.iconButtonSearch.UseVisualStyleBackColor = false;
+            this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel3.Location = new System.Drawing.Point(178, 86);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(255, 1);
+            this.panel3.TabIndex = 37;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 29;
+            this.iconPictureBox1.Location = new System.Drawing.Point(144, 62);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 29);
+            this.iconPictureBox1.TabIndex = 38;
+            this.iconPictureBox1.TabStop = false;
             // 
             // selectPerson
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 330);
-            this.Controls.Add(this.iconButtonContinue);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1003, 424);
+            this.Controls.Add(this.iconPictureBox1);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.iconButtonSearch);
+            this.Controls.Add(this.iconButtonCancel);
+            this.Controls.Add(this.iconButtonContinue);
             this.Controls.Add(this.dataGridViewSearchPerson);
             this.Controls.Add(this.comboBoxFilter);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "selectPerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "selectPerson";
             this.Load += new System.EventHandler(this.selectPerson_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchPerson)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,7 +253,10 @@ namespace UI
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.ComboBox comboBoxFilter;
         private System.Windows.Forms.DataGridView dataGridViewSearchPerson;
-        private FontAwesome.Sharp.IconButton iconButtonSearch;
         private FontAwesome.Sharp.IconButton iconButtonContinue;
+        private FontAwesome.Sharp.IconButton iconButtonCancel;
+        private FontAwesome.Sharp.IconButton iconButtonSearch;
+        private System.Windows.Forms.Panel panel3;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }
