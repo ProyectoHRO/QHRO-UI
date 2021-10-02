@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.DataSetPatientTableAdapters;
+using DAL;
 using System.Data;
 
 namespace BLL
 {
     public class ClassPatient
     {
-        private pacientesTableAdapter PATIENT;
+        private Patient patient;
 
         public ClassPatient()
         {
-            PATIENT = new pacientesTableAdapter();
+            patient = new Patient();
         }
 
         public DataTable listPatients()
         {
-            return PATIENT.GetDataPatients();
+            return patient.GetPatients();
         }
 
         public DataTable getPatientsByHistoryNumber(string historyNumber)
         {
-            return PATIENT.GetDataByHistoryNumber(historyNumber);
+            return patient.GetPatientByHistoryNumber(historyNumber);
         }
 
         public string newPatient(string historyNumber, string firstName, string secondName,
@@ -33,7 +33,7 @@ namespace BLL
         {
             try
             {
-                PATIENT.InsertQueryNewPatient(historyNumber, firstName, secondName, thirdName,
+                patient.InsertPatient(historyNumber, firstName, secondName, thirdName,
                     firstSurname, secondSurname, age, gender);
                 return "Nuevo paciente agregado";
             }
@@ -49,7 +49,7 @@ namespace BLL
         {
             try
             {
-                PATIENT.UpdateQueryEditPatient(historyNumber, firstName, secondName, thirdName,
+                patient.UpdatePatient(historyNumber, firstName, secondName, thirdName,
                     firstSurname, secondSurname, age, gender, status, idPatient);
                 return "Se actualizaron los datos del paciente";
             }

@@ -3,30 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.DataSetDoctorsTableAdapters;
+using DAL;
 using System.Data;
 namespace BLL
 {
     public class ClassDoctor
     {
-        private doctoresTableAdapter doctors;
+        private Doctor doctors;
         public ClassDoctor()
         {
-            doctors = new doctoresTableAdapter();
+            doctors = new Doctor();
         }
         //Methods
         //get
         public DataTable getDoctorByDpi(string dpi)
         {
-            return doctors.GetDataByDoctorsDpi(dpi);
+            return doctors.GetDoctorByDpi(dpi);
         }
-        public DataTable getDoctorByName(string firstName, string secondName, string thirdName, string firstSurname, string secondSurname)
-        {
-            return doctors.GetDataByDoctorName(firstName, secondName, thirdName, firstSurname, secondSurname);
-        }
+        //public DataTable getDoctorByName(string firstName, string secondName, string thirdName, string firstSurname, string secondSurname)
+        //{
+        //    return doctors.GetDataByDoctorName(firstName, secondName, thirdName, firstSurname, secondSurname);
+        //}
         public DataTable getDoctors()
         {
-            return doctors.GetDataDoctors();
+            return doctors.GetDoctors();
         }
         //insert
         public string newDoctor(string dpi, string firstName, string secondName, string thirdName, string firstLastName, string secondLastName,
@@ -34,10 +34,10 @@ namespace BLL
         {
             try
             {
-                DataTable doctor = doctors.GetDataByDpiDoctor(dpi);
+                DataTable doctor = doctors.GetDoctorByDpi(dpi);
                 if (doctor.Rows.Count<1)
                 {
-                    doctors.InsertQueryDoctors(dpi,firstName,secondName,thirdName,firstLastName,secondLastName,phoneNumber,email);
+                    doctors.InsertDoctor(dpi,firstName,secondName,thirdName,firstLastName,secondLastName,phoneNumber,email);
                     return "SE HA GRABADO UN NUEVO REGISTRO";
                 }
                 else
@@ -54,7 +54,7 @@ namespace BLL
         {
             try
             {
-                doctors.UpdateQueryDoctor(newDpi,newFirstName,newSecondName,newThirdName,newFirstLastName,newSecondLastName,newPhoneNumber,newEmail,newStatus,
+                doctors.UpdateDoctor(newDpi,newFirstName,newSecondName,newThirdName,newFirstLastName,newSecondLastName,newPhoneNumber,newEmail,newStatus,
                     idDoctor);
                 return "SE HA ACTUALIZADO EL REGISTRO";
             }

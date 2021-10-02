@@ -148,12 +148,12 @@ namespace UI
                 //if (typePerson == 1)
                     //listAnesthetist(anesthetist.getAnesthetistByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
                     //    getSearchNames.firstSurname, getSearchNames.secondSurname));
-                if (typePerson == 2)
-                    listDoctors(doctor.getDoctorByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                else
-                    listAssistants(assistant.getAssistantByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                        getSearchNames.firstSurname, getSearchNames.secondSurname));
+                //if (typePerson == 2)
+                //    listDoctors(doctor.getDoctorByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
+                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
+                //else
+                //    listAssistants(assistant.getAssistantByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
+                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
                
             }
             else
@@ -172,12 +172,12 @@ namespace UI
                 //if (typePerson == 1)
                 //    listAnesthetist(anesthetist.getAnesthetistByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
                 //        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                if (typePerson == 2)
-                    listDoctors(doctor.getDoctorByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                else
-                    listAssistants(assistant.getAssistantByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                        getSearchNames.firstSurname, getSearchNames.secondSurname));
+                //if (typePerson == 2)
+                //    listDoctors(doctor.getDoctorByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
+                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
+                //else
+                //    listAssistants(assistant.getAssistantByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
+                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
                 if (dataGridViewSearchPerson.Rows.Count < 2)
                 {
                     iconButtonContinue.Enabled = true;

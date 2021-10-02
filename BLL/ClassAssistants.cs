@@ -3,37 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL.DataSetAssistantsTableAdapters;
+using DAL;
 using System.Data;
 namespace BLL
 {
     public class ClassAssistants
     {
-        private Tipo_ayudanteTableAdapter typeAssistants;
-        private ayudanteTableAdapter assistants;
+        private Assistant assistants;
         public ClassAssistants()
         {
-            typeAssistants = new Tipo_ayudanteTableAdapter();
-            assistants = new ayudanteTableAdapter();
+            assistants = new Assistant();
         }
         //Methods
         //get
 
         public DataTable getAssistantByDpi(string dpi)
         {
-            return assistants.GetDataByAssistantDpi(dpi);
+            return assistants.GetAssistantByDPI(dpi);
         }
-        public DataTable getAssistantByName(string firstName, string secondName, string thirdName, string firstSurname, string secondSurname)
-        {
-            return assistants.GetDataByAssistantName(firstName, secondName, thirdName, firstSurname, secondSurname);
-        }
+        //public DataTable getAssistantByName(string firstName, string secondName, string thirdName, string firstSurname, string secondSurname)
+        //{
+        //    return assistants.GetDataByAssistantName(firstName, secondName, thirdName, firstSurname, secondSurname);
+        //}
         public DataTable getAssistants()
         {
-            return assistants.GetDataAssistant();
+            return assistants.GetAssistants();
         }
         public DataTable getTypeAssistants()
         {
-            return typeAssistants.GetDataTypeAssistant();
+            return assistants.GetTypeAssistant();
         }
         //insert
         public string newAssistant(string firstName, string secondName, string thirdName, string firstLastName, string secondLastName, string email, 
@@ -41,10 +39,10 @@ namespace BLL
         {
             try
             {
-                DataTable assistant = assistants.GetDataByCui(cui);
+                DataTable assistant = assistants.GetAssistantByDPI(cui);
                 if (assistant.Rows.Count < 1)
                 {
-                    assistants.InsertQueryAssistant(firstName,secondName,thirdName,firstLastName,secondLastName,email,phone,idType,cui);
+                    assistants.InsertAssistant(firstName,secondName,thirdName,firstLastName,secondLastName,email,phone,idType,cui);
                     return "SE HA GRABADO UN NUEVO REGISTRO";
                 }
                 else
@@ -60,7 +58,7 @@ namespace BLL
         {
             try
             {
-                assistants.UpdateQueryAssistant(newFirstName, newSecondName, newThirdName, newFirstLastName, newSecondLastName, newEmail, newPhone, newStatus, newIdType, newCui, idAssistant);
+                assistants.UpdateAssistant(newFirstName, newSecondName, newThirdName, newFirstLastName, newSecondLastName, newEmail, newPhone, newStatus, newIdType, newCui, idAssistant);
                 return "SE HA ACTUALIZADO EL REGISTRO";
             }
             catch (Exception error)
