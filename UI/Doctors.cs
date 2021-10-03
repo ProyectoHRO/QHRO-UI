@@ -22,19 +22,20 @@ namespace UI
         {
             DataTable infoDoctors = doctors.getDoctors();
             dataGridView1.DataSource = infoDoctors;
+            dataGridView1.Columns[1].HeaderText = "CUI";
+            dataGridView1.Columns[2].HeaderText = "Primer nombre";
+            dataGridView1.Columns[3].HeaderText = "Segundo nombre";
+            dataGridView1.Columns[4].HeaderText = "Tercer nombre";
+            dataGridView1.Columns[5].HeaderText = "Primer apellido";
+            dataGridView1.Columns[6].HeaderText = "Segundo apellido";
+            dataGridView1.Columns[7].HeaderText = "Telefono";
+            dataGridView1.Columns[8].HeaderText = "Correo";
+            dataGridView1.Columns[10].HeaderText = "Especialidad";
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
+            dataGridView1.Refresh();
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
-            dataGridView1.Columns[1].HeaderText = "Primer nombre";
-            dataGridView1.Columns[2].HeaderText = "Segundo nombre";
-            dataGridView1.Columns[3].HeaderText = "Tercer nombre";
-            dataGridView1.Columns[4].HeaderText = "Primer apellido";
-            dataGridView1.Columns[5].HeaderText = "Segundo apellido";
-            dataGridView1.Columns[6].HeaderText = "Telefono";
-            dataGridView1.Columns[7].HeaderText = "Correo";
-            dataGridView1.Columns[9].HeaderText = "CUI";
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.Columns[8].Visible = false;
-            dataGridView1.Refresh();
         }
         private void buttonList_Click(object sender, EventArgs e)
         {
@@ -80,19 +81,20 @@ namespace UI
             try
             {
                 labelID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textCui.Text = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString();
-                textFirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textSecondName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textThirdName.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                textFirstLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                textSecondLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textPhone.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                status = (bool)dataGridView1.Rows[e.RowIndex].Cells[8].Value;
+                textCui.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textFirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textSecondName.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textThirdName.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textFirstLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textSecondLastName.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textPhone.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textEmail.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                status = (bool)dataGridView1.Rows[e.RowIndex].Cells[9].Value;
                 if (status == true)
                     comboStatus.SelectedIndex = 1;
                 else
                     comboStatus.SelectedIndex = 2;
+                comboBoxSpecialty.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
             }
             catch (Exception)
             {
@@ -173,7 +175,7 @@ namespace UI
                 {
                     string resp;
                     resp = doctors.newDoctor(textCui.Text, textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text, textSecondLastName.Text,
-                        textPhone.Text, textEmail.Text);
+                        textPhone.Text, textEmail.Text,comboBoxSpecialty.Text);
                     if (resp.ToUpper().Contains("ERROR"))
                         MessageBox.Show(resp, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
@@ -219,7 +221,7 @@ namespace UI
                     else if (comboStatus.SelectedIndex == 2)
                         status = false;
                     string resp = doctors.updateDoctor(textCui.Text, textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text,
-                        textSecondLastName.Text, textPhone.Text, textEmail.Text, status, Convert.ToInt32(labelID.Text));
+                        textSecondLastName.Text, textPhone.Text, textEmail.Text, status, comboBoxSpecialty.Text,Convert.ToInt32(labelID.Text));
                     if (resp.ToUpper().Contains("ERROR"))
                         MessageBox.Show(resp, "Error al Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else

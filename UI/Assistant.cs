@@ -23,17 +23,17 @@ namespace UI
         {
             DataTable infoAssistants = assistants.getAssistants();
             dataGridView2.DataSource = infoAssistants;
-            dataGridView2.Columns[1].HeaderText = "Primer nombre";
-            dataGridView2.Columns[2].HeaderText = "Segundo nombre";
-            dataGridView2.Columns[3].HeaderText = "Tercer nombre";
-            dataGridView2.Columns[4].HeaderText = "Primer apellido";
-            dataGridView2.Columns[5].HeaderText = "Segundo apellido";
-            dataGridView2.Columns[6].HeaderText = "Correo";
-            dataGridView2.Columns[7].HeaderText = "Telefono";
-            dataGridView2.Columns[10].HeaderText = "CUI";
+            dataGridView2.Columns[1].HeaderText = "CUI";
+            dataGridView2.Columns[2].HeaderText = "Primer nombre";
+            dataGridView2.Columns[3].HeaderText = "Segundo nombre";
+            dataGridView2.Columns[4].HeaderText = "Tercer nombre";
+            dataGridView2.Columns[5].HeaderText = "Primer apellido";
+            dataGridView2.Columns[6].HeaderText = "Segundo apellido";
+            dataGridView2.Columns[7].HeaderText = "Correo";
+            dataGridView2.Columns[8].HeaderText = "Telefono";
             dataGridView2.Columns[0].Visible = false;
-            dataGridView2.Columns[8].Visible = false;
             dataGridView2.Columns[9].Visible = false;
+            dataGridView2.Columns[10].Visible = false;
             dataGridView2.AutoResizeColumns();
             dataGridView2.AutoResizeRows();
             dataGridView2.Refresh();
@@ -98,6 +98,7 @@ namespace UI
             comboTypeAssistant.ValueMember = "id_tipo";
             comboTypeAssistant.DisplayMember = "nombre_tipo";
             comboTypeAssistant.DataSource = infoTypeAssistant;
+
             comboStatus.Visible = false;
             groupBoxAssistantData.Enabled = false;
             labelStatus.Visible = false;
@@ -107,6 +108,7 @@ namespace UI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            labelStatus.Visible = true;
             comboStatus.Visible = true;
             groupBoxAssistantData.Enabled = true;
             iconButtonNew.Enabled = true;
@@ -116,20 +118,20 @@ namespace UI
             try
             {
                 labelID.Text = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
-                textFirstName.Text= dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textSecondName.Text = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
-                textThirdName.Text = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
-                textFirstLastName.Text = dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
-                textSecondLastName.Text = dataGridView2.Rows[e.RowIndex].Cells[5].Value.ToString();
-                textEmail.Text = dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString();
-                textPhone.Text = dataGridView2.Rows[e.RowIndex].Cells[7].Value.ToString();
-                status= (bool)dataGridView2.Rows[e.RowIndex].Cells[8].Value;
+                textFirstName.Text= dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textSecondName.Text = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
+                textThirdName.Text = dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
+                textFirstLastName.Text = dataGridView2.Rows[e.RowIndex].Cells[5].Value.ToString();
+                textSecondLastName.Text = dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString();
+                textEmail.Text = dataGridView2.Rows[e.RowIndex].Cells[7].Value.ToString();
+                textPhone.Text = dataGridView2.Rows[e.RowIndex].Cells[8].Value.ToString();
+                status= (bool)dataGridView2.Rows[e.RowIndex].Cells[9].Value;
                 if (status == true)
                     comboStatus.SelectedIndex = 1;
                 else
                     comboStatus.SelectedIndex = 2;
-                comboTypeAssistant.SelectedValue = dataGridView2.Rows[e.RowIndex].Cells[9].Value;
-                textCui.Text = dataGridView2.Rows[e.RowIndex].Cells[10].Value.ToString();
+                comboTypeAssistant.SelectedValue = dataGridView2.Rows[e.RowIndex].Cells[10].Value;
+                textCui.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
             catch (Exception)
             {

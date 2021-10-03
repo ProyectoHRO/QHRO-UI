@@ -23,8 +23,6 @@ namespace UI
         void listPatients()
         {
             dataGridView1.DataSource = patients.listPatients();
-            dataGridView1.AutoResizeColumns();
-            dataGridView1.AutoResizeRows();
             dataGridView1.Columns[1].HeaderText = "Numero de historia";
             dataGridView1.Columns[2].HeaderText = "Primer nombre";
             dataGridView1.Columns[3].HeaderText = "Segundo nombre";
@@ -35,6 +33,8 @@ namespace UI
             dataGridView1.Columns[8].HeaderText = "Genero";
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[9].Visible = false;
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoResizeRows();
             dataGridView1.Refresh();
         }
 
@@ -48,7 +48,6 @@ namespace UI
             textBoxfirstSurname.Text = "";
             textBoxsecondSurname.Text = "";
             textBoxAge.Text = "";
-            textBoxDiagnosis.Text = "";
             comboBoxGender.Text = "";
             comboBoxStatus.Text = "";
         }

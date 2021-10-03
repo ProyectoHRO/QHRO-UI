@@ -50,8 +50,8 @@ namespace DAL
             command.Parameters.AddWithValue("@anesthetistId", anesthetistId);
             command.Parameters.AddWithValue("@programationId", programationId);
             command.Parameters.AddWithValue("@detalle", detail);
-            command.Parameters.AddWithValue("@message", message);
-            command.ExecuteScalar();
+            command.Parameters.AddWithValue("@mensaje", message);
+            command.ExecuteNonQuery();
             command.Parameters.Clear();
             connection.CloseConnection();
         }
@@ -64,13 +64,13 @@ namespace DAL
             ref string response)
         {
             command.Connection = connection.OpenConnection();
-            command.CommandText = "sp_requestSurgery";
+            command.CommandText = "sp_solicitar_cirugia";
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@anesthesiaType", interventionDetail);
-            command.Parameters.AddWithValue("@surgeryType", patientId);
-            command.Parameters.AddWithValue("@surgeryDate", serviceId);
-            command.Parameters.AddWithValue("@message", response);
-            command.ExecuteScalar();
+            command.Parameters.AddWithValue("@diagnostico", interventionDetail);
+            command.Parameters.AddWithValue("@idpaciente", patientId);
+            command.Parameters.AddWithValue("@idservicio", serviceId);
+            command.Parameters.AddWithValue("@mensaje", response);
+            command.ExecuteNonQuery();
             command.Parameters.Clear();
             connection.CloseConnection();
         }
@@ -89,20 +89,20 @@ namespace DAL
             ref string response)
         {
             command.Connection = connection.OpenConnection();
-            command.CommandText = "sp_requestSurgery";
+            command.CommandText = "sp_solicitar_cirugia_paciente";
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@anesthesiaType", interventionDetail);
-            command.Parameters.AddWithValue("@surgeryType", historyNumber);
-            command.Parameters.AddWithValue("@surgeryDate", serviceId);
-            command.Parameters.AddWithValue("@surgeryDate", firstName);
-            command.Parameters.AddWithValue("@surgeryDate", secondName);
-            command.Parameters.AddWithValue("@surgeryDate", thirdName);
-            command.Parameters.AddWithValue("@surgeryDate", firstSurname);
-            command.Parameters.AddWithValue("@surgeryDate", secondSurname);
-            command.Parameters.AddWithValue("@surgeryDate", age);
-            command.Parameters.AddWithValue("@surgeryDate", gender);
-            command.Parameters.AddWithValue("@message", response);
-            command.ExecuteScalar();
+            command.Parameters.AddWithValue("@diagnostico", interventionDetail);
+            command.Parameters.AddWithValue("@idservicio", serviceId);
+            command.Parameters.AddWithValue("@no_historia", historyNumber);
+            command.Parameters.AddWithValue("@primerNombre", firstName);
+            command.Parameters.AddWithValue("@segundoNombre", secondName);
+            command.Parameters.AddWithValue("@tecerNombre", thirdName);
+            command.Parameters.AddWithValue("@primerApellido", firstSurname);
+            command.Parameters.AddWithValue("@segundoApellido", secondSurname);
+            command.Parameters.AddWithValue("@edad", age);
+            command.Parameters.AddWithValue("@genero", gender);
+            command.Parameters.AddWithValue("@mensaje", response);
+            command.ExecuteNonQuery();
             command.Parameters.Clear();
             connection.CloseConnection();
         }
