@@ -64,25 +64,28 @@ namespace DAL
         }
 
 
-        public void requestSurgery(
+        public string requestSurgery(
             string interventionDetail,
             int patientId,
-            int serviceId,
-            ref string response)
+            int serviceId)
         {
+            string response="";
             command.Connection = connection.OpenConnection();
             command.CommandText = "sp_solicitar_cirugia";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@diagnostico", interventionDetail);
             command.Parameters.AddWithValue("@idpaciente", patientId);
             command.Parameters.AddWithValue("@idservicio", serviceId);
-            command.Parameters.AddWithValue("@mensaje", response);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
             command.Parameters.Clear();
             connection.CloseConnection();
+            return response;
         }
 
-        public void requestSurgeryAndPatient(
+        public string requestSurgeryAndPatient(
             string interventionDetail,
             int serviceId,
             string historyNumber,
@@ -92,9 +95,10 @@ namespace DAL
             string firstSurname,
             string secondSurname,
             short age,
-            string gender,
-            ref string response)
+            string gender
+            )
         {
+            string response = "";
             command.Connection = connection.OpenConnection();
             command.CommandText = "sp_solicitar_cirugia_paciente";
             command.CommandType = CommandType.StoredProcedure;
@@ -108,10 +112,13 @@ namespace DAL
             command.Parameters.AddWithValue("@segundoApellido", secondSurname);
             command.Parameters.AddWithValue("@edad", age);
             command.Parameters.AddWithValue("@genero", gender);
-            command.Parameters.AddWithValue("@mensaje", response);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
             command.Parameters.Clear();
             connection.CloseConnection();
+            return response;
         }
 
     }

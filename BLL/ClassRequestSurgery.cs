@@ -23,14 +23,14 @@ namespace BLL
         public string makeSurgeryRequest(string interventionDetail, int patientId, int serviceId)
         {
             string response = "";
-            surgeries.requestSurgery( interventionDetail,patientId,serviceId,ref response);
+            response=surgeries.requestSurgery( interventionDetail,patientId,serviceId);
             return response;
         }
         public string makeSurgeryRequestAndPatient(string interventionDetail, int serviceId,string historyNumber, string firstName, string secondName, string thirdName, string firstSurname
             ,string secondSurname, short age, string gender)
         {
             string response = "";
-            surgeries.requestSurgeryAndPatient(interventionDetail, serviceId,historyNumber,firstName,secondName,thirdName,firstSurname,secondSurname,age,gender, ref response);
+            response=surgeries.requestSurgeryAndPatient(interventionDetail, serviceId,historyNumber,firstName,secondName,thirdName,firstSurname,secondSurname,age,gender);
             return response;
         }
     }
