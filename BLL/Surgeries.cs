@@ -15,17 +15,34 @@ namespace BLL
             surgeries = new Surgery();
         }
 
-        public string assignSurgery(string anesthesiaType, string surgeryType, DateTime surgeryDate, int opRoomId, int doctorId, 
-            int anesthetistId, int programationId,List<ClassDtoAssistants> assistantsList)
+        public string assignSurgery(string anesthesiaType, string surgeryType, DateTime surgeryDate, int opRoomId, 
+            int anesthetistId, int programationId,string relevance,string interventionDetail,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
         {
             string response = "";
-            DataTable data = new DataTable() { Columns = { "assistantId" } };
-            foreach (ClassDtoAssistants item in assistantsList)
-            {
-                data.Rows.Add(item.AssistandId);
-            }
-            surgeries.AssignSurgery(anesthesiaType,surgeryType,surgeryDate,opRoomId,doctorId,anesthetistId,programationId,data,ref response);
-            return response;
+                DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
+                foreach (ClassDtoAssistants item in assistantsList)
+                {
+                    dataAssistants.Rows.Add(item.AssistandId);
+                }
+                DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
+                foreach (ClassDtoDoctors item in doctorsList)
+                {
+                    dataDoctors.Rows.Add(item.DoctorId);
+                }
+                response= surgeries.AssignSurgery(
+                    anesthesiaType,
+                    surgeryType,
+                    surgeryDate,
+                    opRoomId,
+                    anesthetistId,
+                    programationId,
+                    relevance,
+                    interventionDetail,
+                    dataAssistants,
+                    dataDoctors
+                    );
+                return response;
+            
         }
     }
 }

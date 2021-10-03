@@ -28,19 +28,11 @@ namespace UI
             if (dataGridViewSearchPerson.Rows.Count < 2)
             {
                 id = Convert.ToInt32(dataGridViewSearchPerson.Rows[0].Cells[0].Value);
-                if (typePerson == 1)
-                {
+              
                     name = dataGridViewSearchPerson.Rows[0].Cells[2].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[3].Value.ToString() + ' ' +
                   dataGridViewSearchPerson.Rows[0].Cells[4].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[5].Value.ToString() + ' ' +
                       dataGridViewSearchPerson.Rows[0].Cells[6].Value.ToString();
-                }
-                if (typePerson != 1)
-                {
-                    name = dataGridViewSearchPerson.Rows[0].Cells[1].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[2].Value.ToString() + ' ' +
-                  dataGridViewSearchPerson.Rows[0].Cells[3].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[4].Value.ToString() + ' ' +
-                      dataGridViewSearchPerson.Rows[0].Cells[5].Value.ToString();
-                }
-
+              
                 if (typePerson != 1 && typePerson != 2)
                 {
                     int type = Convert.ToInt32(dataGridViewSearchPerson.Rows[0].Cells[9].Value);
@@ -68,36 +60,45 @@ namespace UI
             dataGridViewSearchPerson.Columns[8].HeaderText = "Correo";
             dataGridViewSearchPerson.Columns[0].Visible = false;
             dataGridViewSearchPerson.Columns[9].Visible = false;
-         
+            dataGridViewSearchPerson.AutoResizeColumns();
+            dataGridViewSearchPerson.AutoResizeRows();
+            dataGridViewSearchPerson.Refresh();
+
         }
         void listDoctors(DataTable doctor)
         {
             dataGridViewSearchPerson.DataSource = doctor;
-            dataGridViewSearchPerson.Columns[1].HeaderText = "Primer nombre";
-            dataGridViewSearchPerson.Columns[2].HeaderText = "Segundo nombre";
-            dataGridViewSearchPerson.Columns[3].HeaderText = "Tercer nombre";
-            dataGridViewSearchPerson.Columns[4].HeaderText = "Primer apellido";
-            dataGridViewSearchPerson.Columns[5].HeaderText = "Segundo apellido";
-            dataGridViewSearchPerson.Columns[6].HeaderText = "Telefono";
-            dataGridViewSearchPerson.Columns[7].HeaderText = "Correo";
-            dataGridViewSearchPerson.Columns[9].HeaderText = "CUI";
+            dataGridViewSearchPerson.Columns[1].HeaderText = "CUI";
+            dataGridViewSearchPerson.Columns[2].HeaderText = "Primer nombre";
+            dataGridViewSearchPerson.Columns[3].HeaderText = "Segundo nombre";
+            dataGridViewSearchPerson.Columns[4].HeaderText = "Tercer nombre";
+            dataGridViewSearchPerson.Columns[5].HeaderText = "Primer apellido";
+            dataGridViewSearchPerson.Columns[6].HeaderText = "Segundo apellido";
+            dataGridViewSearchPerson.Columns[7].HeaderText = "Telefono";
+            dataGridViewSearchPerson.Columns[10].HeaderText = "Especialidad";
             dataGridViewSearchPerson.Columns[0].Visible = false;
-            dataGridViewSearchPerson.Columns[8].Visible = false;
+            dataGridViewSearchPerson.Columns[9].Visible = false;
+            dataGridViewSearchPerson.Refresh();
+            dataGridViewSearchPerson.AutoResizeColumns();
+            dataGridViewSearchPerson.AutoResizeRows();
         }
         void listAssistants(DataTable assistant)
         {
             dataGridViewSearchPerson.DataSource = assistant;
-            dataGridViewSearchPerson.Columns[1].HeaderText = "Primer nombre";
-            dataGridViewSearchPerson.Columns[2].HeaderText = "Segundo nombre";
-            dataGridViewSearchPerson.Columns[3].HeaderText = "Tercer nombre";
-            dataGridViewSearchPerson.Columns[4].HeaderText = "Primer apellido";
-            dataGridViewSearchPerson.Columns[5].HeaderText = "Segundo apellido";
-            dataGridViewSearchPerson.Columns[6].HeaderText = "Correo";
-            dataGridViewSearchPerson.Columns[7].HeaderText = "Telefono";
-            dataGridViewSearchPerson.Columns[10].HeaderText = "CUI";
+            dataGridViewSearchPerson.Columns[1].HeaderText = "CUI";
+            dataGridViewSearchPerson.Columns[2].HeaderText = "Primer nombre";
+            dataGridViewSearchPerson.Columns[3].HeaderText = "Segundo nombre";
+            dataGridViewSearchPerson.Columns[4].HeaderText = "Tercer nombre";
+            dataGridViewSearchPerson.Columns[5].HeaderText = "Primer apellido";
+            dataGridViewSearchPerson.Columns[6].HeaderText = "Segundo apellido";
+            dataGridViewSearchPerson.Columns[7].HeaderText = "Correo";
+            dataGridViewSearchPerson.Columns[8].HeaderText = "Telefono";
             dataGridViewSearchPerson.Columns[0].Visible = false;
-            dataGridViewSearchPerson.Columns[8].Visible = false;
             dataGridViewSearchPerson.Columns[9].Visible = false;
+            dataGridViewSearchPerson.Columns[10].Visible = false;
+            dataGridViewSearchPerson.AutoResizeColumns();
+            dataGridViewSearchPerson.AutoResizeRows();
+            dataGridViewSearchPerson.Refresh();
         }
         public selectPerson(int type)
         {
@@ -204,19 +205,11 @@ namespace UI
             try
             {
                 id = Convert.ToInt32(dataGridViewSearchPerson.Rows[e.RowIndex].Cells[0].Value);
-                if (typePerson== 1)
-                {
+              
                     name = dataGridViewSearchPerson.Rows[e.RowIndex].Cells[2].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[e.RowIndex].Cells[3].Value.ToString() + ' ' +
                   dataGridViewSearchPerson.Rows[e.RowIndex].Cells[4].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[e.RowIndex].Cells[5].Value.ToString() + ' ' +
                       dataGridViewSearchPerson.Rows[e.RowIndex].Cells[6].Value.ToString();
-                }
-                if (typePerson!=1)
-                {
-                    name = dataGridViewSearchPerson.Rows[e.RowIndex].Cells[1].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[e.RowIndex].Cells[2].Value.ToString() + ' ' +
-                  dataGridViewSearchPerson.Rows[e.RowIndex].Cells[3].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[e.RowIndex].Cells[4].Value.ToString() + ' ' +
-                      dataGridViewSearchPerson.Rows[e.RowIndex].Cells[5].Value.ToString();
-                }
-
+             
                 if(typePerson!=1 && typePerson!=2)
                 {
                     int type = Convert.ToInt32(dataGridViewSearchPerson.Rows[e.RowIndex].Cells[9].Value);
@@ -258,6 +251,11 @@ namespace UI
         private void iconButtonCancel_Click(object sender, EventArgs e)
         {
               this.Close();
+        }
+
+        private void dataGridViewSearchPerson_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

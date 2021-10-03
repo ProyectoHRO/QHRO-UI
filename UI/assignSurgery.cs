@@ -22,8 +22,7 @@ namespace UI
 
         void ListRequestedSugreries()
         {
-            DataTable infoSurgeries = surgeries.getRequestedSurgeries();
-            dataGridView1.DataSource = infoSurgeries;
+            dataGridView1.DataSource = surgeries.getRequestedSurgeries();
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
@@ -32,8 +31,6 @@ namespace UI
         private void assignSurgery_Load(object sender, EventArgs e)
         {
             ListRequestedSugreries();
-            ListRequestedSugreries();
-
             DataTable infoOperatingRooms = operatingRooms.listoperatingRooms();
             comboBoxOperatingRooms.ValueMember = "idquirofano";
             comboBoxOperatingRooms.DisplayMember = "no_quirofano";
@@ -53,7 +50,7 @@ namespace UI
                 textBoxHistory.Text= dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 textBoxName.Text= dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                 textBoxLastName.Text= dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                textBoxDiagnosis.Text= dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                
             }
             catch (Exception)
             {
@@ -72,8 +69,16 @@ namespace UI
         {
             selectPerson selectP = new selectPerson(2);
             selectP.ShowDialog();
-            textBoxDoctorName.Text = selectP.name;
-            labelIdDoctor.Text = selectP.id.ToString();
+            if (selectP.id != 0)
+            {
+                listBoxDocId.Items.Add(selectP.id);
+                ListViewItem item = new ListViewItem(selectP.name.ToString());
+                listView1.Items.Add(item);
+            }
+            else
+            {
+
+            }
         }
 
         private void iconButtonAddAssistant_Click(object sender, EventArgs e)
@@ -108,11 +113,30 @@ namespace UI
                 assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
                 assistantsList.Add(assistant);
             }
-            string response = surgeriesLogic.assignSurgery(comboBoxAnesthesiaType.Text,comboBoxSurgeryType.Text,dateTimeSurgeryDate.Value,
-                Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),Convert.ToInt32(labelIdDoctor.Text),Convert.ToInt32(labelIdAnesthetist.Text),Convert.ToInt32(labelID.Text),
-                assistantsList);
+
+            List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+            ClassDtoDoctors doctors;
+            for (int i = 0; i < listBoxDocId.Items.Count; i++)
+            {
+                listBoxDocId.SelectedIndex = i;
+                doctors = new ClassDtoDoctors();
+                doctors.DoctorId = Convert.ToInt32(listBoxDocId.SelectedItem);
+                doctorsList.Add(doctors);
+            }
+
+
+            string response = surgeriesLogic.assignSurgery(
+                comboBoxAnesthesiaType.Text,
+                comboBoxSurgeryType.Text,
+                dateTimeSurgeryDate.Value,
+                Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
+                Convert.ToInt32(labelIdAnesthetist.Text),
+                Convert.ToInt32(labelID.Text),
+                comboBoxRelevance.Text,
+                textBoxDiagnosis.Text,
+                assistantsList,
+                doctorsList);
             MessageBox.Show(response);
-            ListRequestedSugreries();
         }
 
         private void iconButtonDeleteAll_Click(object sender, EventArgs e)
