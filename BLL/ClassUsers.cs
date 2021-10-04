@@ -40,5 +40,24 @@ namespace BLL
 
         }
 
+        public DataTable getDataUser(string userName, string password)
+        {
+            return users.GetDataUsers(userName, password);
+        }
+
+        public string addLoginCount(int iduser,int logCount, DateTime lastConnection)
+        {
+            try
+            {
+                users.addLoginCount(iduser,logCount, lastConnection);
+                return "EXITO";
+            }
+            catch (Exception error)
+            {
+
+                return "ERROR: " + error.Message;
+            }
+        }
+
     }
 }

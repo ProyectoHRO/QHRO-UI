@@ -13,10 +13,14 @@ namespace UI
     public partial class FormWelcome : Form
     {
         string userLogin;
-        public FormWelcome(string userLog)
+        int getRole;
+        int getServiceId;
+        public FormWelcome(string userLog,int role,int serviceId)
         {
             InitializeComponent();
             userLogin = userLog;
+            getRole = role;
+            getServiceId = serviceId;
         }
         int cont = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -38,7 +42,7 @@ namespace UI
             {
                 timer2.Stop();
                 this.Hide();
-                Form1 fI = new Form1(userLogin);
+                Form1 fI = new Form1(userLogin, getRole, getServiceId);
                 fI.ShowDialog();
             }
         }
