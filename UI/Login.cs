@@ -19,6 +19,14 @@ namespace UI
         string queryResult;
         string hash = "@HR0";
         private ClassUsers user;
+        int logCount;
+        bool confirmation;
+        DateTime lastConnection;
+        int idUser;
+        int role;
+
+
+        int serviceId;
         public Login()
         {
             InitializeComponent();
@@ -129,10 +137,31 @@ namespace UI
             else
 
             {
-                this.Hide();
-                FormWelcome fW = new FormWelcome(txtUser.Text);
-                fW.labelUser.Text = txtUser.Text;
-                fW.ShowDialog();
+                DataTable userData = user.getDataUser(txtUser.Text, password);
+          
+                foreach (DataRow item in userData.Rows)
+                {
+                    idUser = Convert.ToInt32(item.Field<int>(0));
+                    role = Convert.ToInt32(item.Field<int>(5));
+                    lastConnection = Convert.ToDateTime(item.Field<System.DateTime>(8));
+                    confirmation = item.Field<bool>(9);
+                    logCount = Convert.ToInt32(item.Field<int>(10));
+                    serviceId = Convert.ToInt32(item.Field<int>(11));
+                }
+                if (confirmation == false)
+                {
+                    MessageBox.Show("Usuario no confirmado");
+                }
+                else
+                {
+                    logCount++;
+                    user.addLoginCount(idUser, logCount, lastConnection);
+                    this.Hide();
+                    FormWelcome fW = new FormWelcome(txtUser.Text,role,serviceId);
+                    fW.labelUser.Text = txtUser.Text;
+                    fW.ShowDialog();
+                }
+              
             }
 
         }

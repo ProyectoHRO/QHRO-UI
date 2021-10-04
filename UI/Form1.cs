@@ -18,7 +18,7 @@ namespace UI
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
      
-        public Form1(string userLog)
+        public Form1(string userLog, int role, int serviceId)
         {
             InitializeComponent();
             labelUserLog.Text = userLog;

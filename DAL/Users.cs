@@ -29,5 +29,19 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+
+        public void addLoginCount(int iduser, int logCount, DateTime lastConnection) 
+        {
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ActualizarLogueo";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", iduser);
+            command.Parameters.AddWithValue("@contadorLogueos", logCount);
+            command.Parameters.AddWithValue("@ultima_conexion", lastConnection);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            connection.CloseConnection();
+        }
+
     }
 }
