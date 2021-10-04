@@ -12,9 +12,11 @@ namespace UI
 {
     public partial class FormWelcome : Form
     {
-        public FormWelcome()
+        string userLogin;
+        public FormWelcome(string userLog)
         {
             InitializeComponent();
+            userLogin = userLog;
         }
         int cont = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -36,7 +38,7 @@ namespace UI
             {
                 timer2.Stop();
                 this.Hide();
-                Form1 fI = new Form1();
+                Form1 fI = new Form1(userLogin);
                 fI.ShowDialog();
             }
         }
@@ -48,6 +50,12 @@ namespace UI
             progressBarEnter.Minimum = 0;
             progressBarEnter.Maximum = 100;
             timer1.Start();
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            labelTime.Text = DateTime.Now.ToString("hh:mm:ss");
+            labelDate.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

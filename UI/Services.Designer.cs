@@ -29,8 +29,9 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxServices = new System.Windows.Forms.GroupBox();
             this.labelID = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -79,27 +80,27 @@ namespace UI
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.48397F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.51603F));
             this.tableLayoutPanel2.Controls.Add(this.textBoxNameService, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(5, 40);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(93, 40);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(686, 81);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(470, 81);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // textBoxNameService
             // 
             this.textBoxNameService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxNameService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNameService.Location = new System.Drawing.Point(346, 27);
+            this.textBoxNameService.Location = new System.Drawing.Point(183, 27);
             this.textBoxNameService.MaxLength = 40;
             this.textBoxNameService.Name = "textBoxNameService";
-            this.textBoxNameService.Size = new System.Drawing.Size(337, 26);
+            this.textBoxNameService.Size = new System.Drawing.Size(284, 26);
             this.textBoxNameService.TabIndex = 15;
             // 
             // panel1
@@ -107,10 +108,10 @@ namespace UI
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.labelServiceName);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(80, 24);
+            this.panel1.Location = new System.Drawing.Point(2, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 32);
+            this.panel1.Size = new System.Drawing.Size(176, 32);
             this.panel1.TabIndex = 23;
             // 
             // labelServiceName
@@ -118,7 +119,7 @@ namespace UI
             this.labelServiceName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelServiceName.AutoSize = true;
             this.labelServiceName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelServiceName.Location = new System.Drawing.Point(112, 6);
+            this.labelServiceName.Location = new System.Drawing.Point(27, 6);
             this.labelServiceName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelServiceName.Name = "labelServiceName";
             this.labelServiceName.Size = new System.Drawing.Size(130, 20);
@@ -131,7 +132,7 @@ namespace UI
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(97, 6);
+            this.label11.Location = new System.Drawing.Point(2, 6);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(15, 19);
@@ -146,27 +147,38 @@ namespace UI
             this.dataGridViewOperatingRooms.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewOperatingRooms.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewOperatingRooms.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewOperatingRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewOperatingRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewOperatingRooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewOperatingRooms.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewOperatingRooms.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewOperatingRooms.EnableHeadersVisualStyles = false;
             this.dataGridViewOperatingRooms.GridColor = System.Drawing.Color.White;
             this.dataGridViewOperatingRooms.Location = new System.Drawing.Point(2, 250);
             this.dataGridViewOperatingRooms.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewOperatingRooms.Name = "dataGridViewOperatingRooms";
+            this.dataGridViewOperatingRooms.ReadOnly = true;
             this.dataGridViewOperatingRooms.RowHeadersVisible = false;
             this.dataGridViewOperatingRooms.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.dataGridViewOperatingRooms.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.dataGridViewOperatingRooms.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewOperatingRooms.RowTemplate.Height = 24;
+            this.dataGridViewOperatingRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewOperatingRooms.Size = new System.Drawing.Size(1001, 503);
             this.dataGridViewOperatingRooms.TabIndex = 37;
             this.dataGridViewOperatingRooms.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOperatingRooms_CellClick);
@@ -185,7 +197,7 @@ namespace UI
             this.iconButtonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonList.IconSize = 30;
             this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonList.Location = new System.Drawing.Point(748, 137);
+            this.iconButtonList.Location = new System.Drawing.Point(973, 137);
             this.iconButtonList.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonList.Name = "iconButtonList";
             this.iconButtonList.Size = new System.Drawing.Size(228, 40);
@@ -193,12 +205,14 @@ namespace UI
             this.iconButtonList.Text = "Ver servicios";
             this.iconButtonList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonList.UseVisualStyleBackColor = false;
+            this.iconButtonList.Visible = false;
             this.iconButtonList.Click += new System.EventHandler(this.iconButtonList_Click);
             // 
             // iconButtonSave
             // 
             this.iconButtonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonSave.BackColor = System.Drawing.Color.White;
+            this.iconButtonSave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonSave.Enabled = false;
             this.iconButtonSave.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonSave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
@@ -224,6 +238,7 @@ namespace UI
             // 
             this.iconButtonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonUpdate.BackColor = System.Drawing.Color.White;
+            this.iconButtonUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonUpdate.Enabled = false;
             this.iconButtonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
@@ -249,6 +264,7 @@ namespace UI
             // 
             this.iconButtonNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonNew.BackColor = System.Drawing.Color.White;
+            this.iconButtonNew.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonNew.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonNew.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -296,6 +312,7 @@ namespace UI
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Services";
             this.Text = "Services";
+            this.Load += new System.EventHandler(this.Services_Load);
             this.Resize += new System.EventHandler(this.Services_Resize);
             this.groupBoxServices.ResumeLayout(false);
             this.groupBoxServices.PerformLayout();

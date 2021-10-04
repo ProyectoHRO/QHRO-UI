@@ -30,6 +30,8 @@ namespace UI
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.iconButtonSearchNames = new FontAwesome.Sharp.IconButton();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.groupBoxpatientData = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,9 +66,8 @@ namespace UI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.iconButtonRequest = new FontAwesome.Sharp.IconButton();
             this.iconButtonCreateAndRequest = new FontAwesome.Sharp.IconButton();
-            this.iconButtonSearchNames = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.groupBoxpatientData.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,7 +76,6 @@ namespace UI
             this.tableLayoutPanel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -86,11 +86,11 @@ namespace UI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.27596F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.72404F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 213F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
             this.tableLayoutPanel1.Controls.Add(this.iconButtonSearchNames, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.iconPictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSearch, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(229, 189);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(229, 172);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -98,13 +98,51 @@ namespace UI
             this.tableLayoutPanel1.Size = new System.Drawing.Size(552, 36);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // iconButtonSearchNames
+            // 
+            this.iconButtonSearchNames.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonSearchNames.BackColor = System.Drawing.Color.White;
+            this.iconButtonSearchNames.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonSearchNames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonSearchNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearchNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonSearchNames.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSearchNames.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonSearchNames.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonSearchNames.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSearchNames.IconSize = 30;
+            this.iconButtonSearchNames.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonSearchNames.Location = new System.Drawing.Point(339, 2);
+            this.iconButtonSearchNames.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonSearchNames.Name = "iconButtonSearchNames";
+            this.iconButtonSearchNames.Size = new System.Drawing.Size(211, 32);
+            this.iconButtonSearchNames.TabIndex = 30;
+            this.iconButtonSearchNames.Text = "Buscar";
+            this.iconButtonSearchNames.UseVisualStyleBackColor = false;
+            this.iconButtonSearchNames.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 30;
+            this.iconPictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(31, 30);
+            this.iconPictureBox1.TabIndex = 0;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // textBoxSearch
             // 
             this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearch.Location = new System.Drawing.Point(40, 5);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(287, 26);
+            this.textBoxSearch.Size = new System.Drawing.Size(286, 26);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.Text = "Buscar paciente por No. Historia";
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
@@ -118,7 +156,7 @@ namespace UI
             this.groupBoxpatientData.Controls.Add(this.tableLayoutPanel3);
             this.groupBoxpatientData.Enabled = false;
             this.groupBoxpatientData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxpatientData.Location = new System.Drawing.Point(11, 256);
+            this.groupBoxpatientData.Location = new System.Drawing.Point(11, 239);
             this.groupBoxpatientData.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxpatientData.Name = "groupBoxpatientData";
             this.groupBoxpatientData.Padding = new System.Windows.Forms.Padding(2);
@@ -502,7 +540,7 @@ namespace UI
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 487);
+            this.groupBox1.Location = new System.Drawing.Point(12, 470);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(814, 105);
             this.groupBox1.TabIndex = 29;
@@ -512,6 +550,7 @@ namespace UI
             // 
             this.iconButtonRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonRequest.BackColor = System.Drawing.Color.White;
+            this.iconButtonRequest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonRequest.Enabled = false;
             this.iconButtonRequest.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
@@ -523,7 +562,7 @@ namespace UI
             this.iconButtonRequest.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonRequest.IconSize = 30;
             this.iconButtonRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonRequest.Location = new System.Drawing.Point(829, 439);
+            this.iconButtonRequest.Location = new System.Drawing.Point(829, 422);
             this.iconButtonRequest.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonRequest.Name = "iconButtonRequest";
             this.iconButtonRequest.Size = new System.Drawing.Size(166, 40);
@@ -538,6 +577,7 @@ namespace UI
             // 
             this.iconButtonCreateAndRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonCreateAndRequest.BackColor = System.Drawing.Color.White;
+            this.iconButtonCreateAndRequest.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonCreateAndRequest.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonCreateAndRequest.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonCreateAndRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -548,7 +588,7 @@ namespace UI
             this.iconButtonCreateAndRequest.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCreateAndRequest.IconSize = 30;
             this.iconButtonCreateAndRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCreateAndRequest.Location = new System.Drawing.Point(829, 378);
+            this.iconButtonCreateAndRequest.Location = new System.Drawing.Point(829, 361);
             this.iconButtonCreateAndRequest.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonCreateAndRequest.Name = "iconButtonCreateAndRequest";
             this.iconButtonCreateAndRequest.Size = new System.Drawing.Size(166, 40);
@@ -558,44 +598,6 @@ namespace UI
             this.iconButtonCreateAndRequest.UseVisualStyleBackColor = false;
             this.iconButtonCreateAndRequest.Visible = false;
             this.iconButtonCreateAndRequest.Click += new System.EventHandler(this.iconButtonCreateAndRequest_Click);
-            // 
-            // iconButtonSearchNames
-            // 
-            this.iconButtonSearchNames.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButtonSearchNames.BackColor = System.Drawing.Color.White;
-            this.iconButtonSearchNames.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonSearchNames.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonSearchNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonSearchNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonSearchNames.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonSearchNames.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonSearchNames.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonSearchNames.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSearchNames.IconSize = 30;
-            this.iconButtonSearchNames.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSearchNames.Location = new System.Drawing.Point(340, 2);
-            this.iconButtonSearchNames.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButtonSearchNames.Name = "iconButtonSearchNames";
-            this.iconButtonSearchNames.Size = new System.Drawing.Size(210, 32);
-            this.iconButtonSearchNames.TabIndex = 30;
-            this.iconButtonSearchNames.Text = "Buscar";
-            this.iconButtonSearchNames.UseVisualStyleBackColor = false;
-            this.iconButtonSearchNames.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 30;
-            this.iconPictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(31, 30);
-            this.iconPictureBox1.TabIndex = 0;
-            this.iconPictureBox1.TabStop = false;
             // 
             // RequestSurgery
             // 
@@ -613,6 +615,7 @@ namespace UI
             this.Text = "RequestSurgery";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.groupBoxpatientData.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -627,7 +630,6 @@ namespace UI
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

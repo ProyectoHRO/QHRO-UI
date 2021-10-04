@@ -104,6 +104,9 @@ namespace UI
             labelStatus.Visible = false;
             iconButtonUpdate.Enabled = false;
             iconButtonSave.Enabled = false;
+
+            listAsistants();
+            listAsistants();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

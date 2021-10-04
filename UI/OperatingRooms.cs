@@ -48,6 +48,13 @@ namespace UI
             iconButtonSave.Enabled = false;
             labelStatus.Visible = false;
             comboStatus.Visible = false;
+
+            listoperatingRooms();
+            iconButtonNew.Enabled = true;
+            iconButtonSave.Enabled = false;
+            iconButtonUpdate.Enabled = false;
+            groupBoxoperatingroomData.Enabled = false;
+            dataGridViewOperatingRooms.EnableHeadersVisualStyles = false;
         }
 
         private void iconButtonNew_Click(object sender, EventArgs e)
