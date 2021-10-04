@@ -16,7 +16,10 @@ namespace BLL
             users = new Users();
         }
 
-
+        public DataTable GetRoles()
+        {
+            return users.GetRoles();
+        }
         public string Login(string userName, string password)
         {
 
@@ -51,6 +54,20 @@ namespace BLL
             {
                 users.addLoginCount(iduser,logCount, lastConnection);
                 return "EXITO";
+            }
+            catch (Exception error)
+            {
+
+                return "ERROR: " + error.Message;
+            }
+        }
+
+        public string addUser(string email, int roleId, int serviceId)
+        {
+            try
+            {
+                string response =users.makeUser(email,roleId, serviceId);
+                return response;
             }
             catch (Exception error)
             {

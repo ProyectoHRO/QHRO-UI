@@ -241,8 +241,16 @@ namespace UI
                 if (textFirstName.Text != null && textFirstLastName.Text != null && textCui.Text != null && textEmail.Text != null && textPhone.Text != null)
                 {
                     string resp;
-                    resp = assistants.newAssistant(textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text, textSecondLastName.Text, textEmail.Text,
-                        textPhone.Text, Convert.ToInt32(comboTypeAssistant.SelectedValue), textCui.Text);
+                    resp = assistants.newAssistant(
+                        textFirstName.Text,
+                        textSecondName.Text,
+                        textThirdName.Text, 
+                        textFirstLastName.Text,
+                        textSecondLastName.Text,
+                        textEmail.Text,
+                        textPhone.Text,
+                        Convert.ToInt32(comboTypeAssistant.SelectedValue),
+                        textCui.Text);
                     if (resp.ToUpper().Contains("ERROR"))
                         MessageBox.Show(resp, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
