@@ -61,6 +61,13 @@ namespace UI
             iconButtonSave.Enabled = false;
             labelStatus.Visible = false;
             comboBoxStatus.Visible = false;
+
+            listAnesthetists();
+            iconButtonNew.Enabled = true;
+            iconButtonSave.Enabled = false;
+            iconButtonUpdate.Enabled = false;
+            groupBoxanesthetistData.Enabled = false;
+            dataGridView1.EnableHeadersVisualStyles = false;
         }
 
         private void iconButtonNew_Click(object sender, EventArgs e)

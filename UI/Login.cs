@@ -130,7 +130,7 @@ namespace UI
 
             {
                 this.Hide();
-                FormWelcome fW = new FormWelcome();
+                FormWelcome fW = new FormWelcome(txtUser.Text);
                 fW.labelUser.Text = txtUser.Text;
                 fW.ShowDialog();
             }

@@ -125,5 +125,11 @@ namespace UI
             {
             }
         }
+
+        private void Services_Load(object sender, EventArgs e)
+        {
+            ListServices();
+            ListServices();
+        }
     }
 }

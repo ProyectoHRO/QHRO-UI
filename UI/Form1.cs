@@ -17,10 +17,11 @@ namespace UI
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-        public Form1()
+     
+        public Form1(string userLog)
         {
             InitializeComponent();
+            labelUserLog.Text = userLog;
         }
         private Form activeForm = null;
         private void openChildForm(object formChild)
@@ -45,6 +46,8 @@ namespace UI
         private void iconButton1_Click(object sender, EventArgs e)
         {
             openChildForm(new Doctors());
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -74,16 +77,22 @@ namespace UI
         private void iconButton2_Click(object sender, EventArgs e)
         {
             openChildForm(new Anesthetist());
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
         }
 
         private void iconButton3_Click(object sender, EventArgs e)
         {
             openChildForm(new Assistant());
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
         }
 
         private void iconButtonPatient_Click(object sender, EventArgs e)
         {
             openChildForm(new Patient());
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
         }
 
         private void panelTop_Paint(object sender, PaintEventArgs e)
@@ -106,21 +115,47 @@ namespace UI
         private void iconButtonOperatingRooms_Click(object sender, EventArgs e)
         {
             openChildForm(new OperatingRooms());
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
         }
 
         private void iconButtonServices_Click(object sender, EventArgs e)
         {
             openChildForm(new Services());
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
         }
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
             openChildForm(new RequestSurgery());
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
         }
 
         private void iconButton2_Click_1(object sender, EventArgs e)
         {
             openChildForm(new assignSurgery());
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
+        }
+        int statePanel = 0;
+        private void iconButtonReports_Click(object sender, EventArgs e)
+        {
+            panelReportsMenu.Visible = true;
+            statePanel++;
+            if (statePanel==2)
+            {
+                statePanel = 0;
+                panelReportsMenu.Visible = false;
+            }
+
+        }
+
+        private void iconButtonSurgerys_Click(object sender, EventArgs e)
+        {
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
         }
     }
 }

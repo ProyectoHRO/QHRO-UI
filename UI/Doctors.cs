@@ -106,6 +106,8 @@ namespace UI
             groupBoxDoctorsData.Enabled = false;
             iconButtonSave.Enabled = false;
             iconButtonUpdate.Enabled = false;
+            listDoctors();
+            listDoctors();
         }
         public void regeXp(string re, TextBox tb, PictureBox pc)
         {

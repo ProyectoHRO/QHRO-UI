@@ -99,11 +99,12 @@ namespace UI
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewSearchPerson.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewSearchPerson.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSearchPerson.Cursor = System.Windows.Forms.Cursors.Hand;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridViewSearchPerson.DefaultCellStyle = dataGridViewCellStyle2;
@@ -130,6 +131,7 @@ namespace UI
             // 
             this.iconButtonContinue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonContinue.BackColor = System.Drawing.Color.White;
+            this.iconButtonContinue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonContinue.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonContinue.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -154,6 +156,7 @@ namespace UI
             // 
             this.iconButtonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonCancel.BackColor = System.Drawing.Color.White;
+            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -178,6 +181,7 @@ namespace UI
             // 
             this.iconButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconButtonSearch.BackColor = System.Drawing.Color.White;
+            this.iconButtonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconButtonSearch.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
