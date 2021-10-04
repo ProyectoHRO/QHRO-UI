@@ -86,7 +86,7 @@ namespace UI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.27596F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.72404F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 215F));
             this.tableLayoutPanel1.Controls.Add(this.iconButtonSearchNames, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.iconPictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSearch, 1, 0);
@@ -95,7 +95,7 @@ namespace UI
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(552, 36);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(832, 36);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // iconButtonSearchNames
@@ -112,10 +112,10 @@ namespace UI
             this.iconButtonSearchNames.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearchNames.IconSize = 30;
             this.iconButtonSearchNames.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSearchNames.Location = new System.Drawing.Point(339, 2);
+            this.iconButtonSearchNames.Location = new System.Drawing.Point(618, 2);
             this.iconButtonSearchNames.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonSearchNames.Name = "iconButtonSearchNames";
-            this.iconButtonSearchNames.Size = new System.Drawing.Size(211, 32);
+            this.iconButtonSearchNames.Size = new System.Drawing.Size(212, 32);
             this.iconButtonSearchNames.TabIndex = 30;
             this.iconButtonSearchNames.Text = "Buscar";
             this.iconButtonSearchNames.UseVisualStyleBackColor = false;
@@ -130,7 +130,7 @@ namespace UI
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 30;
-            this.iconPictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.iconPictureBox1.Location = new System.Drawing.Point(34, 3);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(31, 30);
             this.iconPictureBox1.TabIndex = 0;
@@ -140,9 +140,9 @@ namespace UI
             // 
             this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(40, 5);
+            this.textBoxSearch.Location = new System.Drawing.Point(71, 5);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(286, 26);
+            this.textBoxSearch.Size = new System.Drawing.Size(534, 26);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.Text = "Buscar paciente por No. Historia";
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
@@ -160,7 +160,7 @@ namespace UI
             this.groupBoxpatientData.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxpatientData.Name = "groupBoxpatientData";
             this.groupBoxpatientData.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBoxpatientData.Size = new System.Drawing.Size(814, 226);
+            this.groupBoxpatientData.Size = new System.Drawing.Size(1094, 226);
             this.groupBoxpatientData.TabIndex = 24;
             this.groupBoxpatientData.TabStop = false;
             this.groupBoxpatientData.Text = "Datos del paciente";
@@ -171,10 +171,9 @@ namespace UI
             this.tableLayoutPanel3.ColumnCount = 4;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.18349F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.75841F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.65443F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.09786F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.09756F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.17073F));
             this.tableLayoutPanel3.Controls.Add(this.labelthirdName, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.labelID, 3, 4);
             this.tableLayoutPanel3.Controls.Add(this.labelsecondSurname, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelAge, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.textBoxAge, 3, 1);
@@ -190,7 +189,8 @@ namespace UI
             this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.labelGender, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxGender, 3, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(14, 24);
+            this.tableLayoutPanel3.Controls.Add(this.labelID, 3, 4);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(35, 24);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
@@ -199,7 +199,7 @@ namespace UI
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(785, 193);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1025, 193);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // labelthirdName
@@ -207,7 +207,7 @@ namespace UI
             this.labelthirdName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelthirdName.AutoSize = true;
             this.labelthirdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelthirdName.Location = new System.Drawing.Point(44, 123);
+            this.labelthirdName.Location = new System.Drawing.Point(92, 123);
             this.labelthirdName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelthirdName.Name = "labelthirdName";
             this.labelthirdName.Size = new System.Drawing.Size(112, 20);
@@ -219,10 +219,10 @@ namespace UI
             this.labelID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(516, 152);
+            this.labelID.Location = new System.Drawing.Point(645, 152);
             this.labelID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(267, 20);
+            this.labelID.Size = new System.Drawing.Size(378, 20);
             this.labelID.TabIndex = 18;
             this.labelID.Text = "label10";
             this.labelID.Visible = false;
@@ -232,7 +232,7 @@ namespace UI
             this.labelsecondSurname.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelsecondSurname.AutoSize = true;
             this.labelsecondSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelsecondSurname.Location = new System.Drawing.Point(380, 9);
+            this.labelsecondSurname.Location = new System.Drawing.Point(509, 9);
             this.labelsecondSurname.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelsecondSurname.Name = "labelsecondSurname";
             this.labelsecondSurname.Size = new System.Drawing.Size(132, 20);
@@ -244,7 +244,7 @@ namespace UI
             this.labelAge.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelAge.AutoSize = true;
             this.labelAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAge.Location = new System.Drawing.Point(465, 47);
+            this.labelAge.Location = new System.Drawing.Point(594, 47);
             this.labelAge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAge.Name = "labelAge";
             this.labelAge.Size = new System.Drawing.Size(47, 20);
@@ -255,11 +255,11 @@ namespace UI
             // 
             this.textBoxAge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAge.Location = new System.Drawing.Point(516, 44);
+            this.textBoxAge.Location = new System.Drawing.Point(645, 44);
             this.textBoxAge.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxAge.MaxLength = 3;
             this.textBoxAge.Name = "textBoxAge";
-            this.textBoxAge.Size = new System.Drawing.Size(267, 26);
+            this.textBoxAge.Size = new System.Drawing.Size(378, 26);
             this.textBoxAge.TabIndex = 6;
             // 
             // panel1
@@ -267,7 +267,7 @@ namespace UI
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.labelhistoryNumber);
-            this.panel1.Location = new System.Drawing.Point(2, 3);
+            this.panel1.Location = new System.Drawing.Point(50, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 32);
@@ -301,66 +301,66 @@ namespace UI
             // 
             this.textBoxhistoryNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxhistoryNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxhistoryNumber.Location = new System.Drawing.Point(160, 6);
+            this.textBoxhistoryNumber.Location = new System.Drawing.Point(208, 6);
             this.textBoxhistoryNumber.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxhistoryNumber.MaxLength = 20;
             this.textBoxhistoryNumber.Name = "textBoxhistoryNumber";
-            this.textBoxhistoryNumber.Size = new System.Drawing.Size(206, 26);
+            this.textBoxhistoryNumber.Size = new System.Drawing.Size(269, 26);
             this.textBoxhistoryNumber.TabIndex = 0;
             // 
             // textBoxsecondSurname
             // 
             this.textBoxsecondSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxsecondSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsecondSurname.Location = new System.Drawing.Point(516, 6);
+            this.textBoxsecondSurname.Location = new System.Drawing.Point(645, 6);
             this.textBoxsecondSurname.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxsecondSurname.MaxLength = 20;
             this.textBoxsecondSurname.Name = "textBoxsecondSurname";
-            this.textBoxsecondSurname.Size = new System.Drawing.Size(267, 26);
+            this.textBoxsecondSurname.Size = new System.Drawing.Size(378, 26);
             this.textBoxsecondSurname.TabIndex = 5;
             // 
             // textBoxfirstName
             // 
             this.textBoxfirstName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxfirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxfirstName.Location = new System.Drawing.Point(160, 44);
+            this.textBoxfirstName.Location = new System.Drawing.Point(208, 44);
             this.textBoxfirstName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxfirstName.MaxLength = 20;
             this.textBoxfirstName.Name = "textBoxfirstName";
-            this.textBoxfirstName.Size = new System.Drawing.Size(206, 26);
+            this.textBoxfirstName.Size = new System.Drawing.Size(269, 26);
             this.textBoxfirstName.TabIndex = 1;
             // 
             // textBoxsecondName
             // 
             this.textBoxsecondName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxsecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsecondName.Location = new System.Drawing.Point(160, 82);
+            this.textBoxsecondName.Location = new System.Drawing.Point(208, 82);
             this.textBoxsecondName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxsecondName.MaxLength = 20;
             this.textBoxsecondName.Name = "textBoxsecondName";
-            this.textBoxsecondName.Size = new System.Drawing.Size(206, 26);
+            this.textBoxsecondName.Size = new System.Drawing.Size(269, 26);
             this.textBoxsecondName.TabIndex = 2;
             // 
             // textBoxthirdName
             // 
             this.textBoxthirdName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxthirdName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxthirdName.Location = new System.Drawing.Point(160, 120);
+            this.textBoxthirdName.Location = new System.Drawing.Point(208, 120);
             this.textBoxthirdName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxthirdName.MaxLength = 20;
             this.textBoxthirdName.Name = "textBoxthirdName";
-            this.textBoxthirdName.Size = new System.Drawing.Size(206, 26);
+            this.textBoxthirdName.Size = new System.Drawing.Size(269, 26);
             this.textBoxthirdName.TabIndex = 3;
             // 
             // textBoxfirstSurname
             // 
             this.textBoxfirstSurname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxfirstSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxfirstSurname.Location = new System.Drawing.Point(160, 159);
+            this.textBoxfirstSurname.Location = new System.Drawing.Point(208, 159);
             this.textBoxfirstSurname.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxfirstSurname.MaxLength = 20;
             this.textBoxfirstSurname.Name = "textBoxfirstSurname";
-            this.textBoxfirstSurname.Size = new System.Drawing.Size(206, 26);
+            this.textBoxfirstSurname.Size = new System.Drawing.Size(269, 26);
             this.textBoxfirstSurname.TabIndex = 4;
             // 
             // labelsecondName
@@ -368,7 +368,7 @@ namespace UI
             this.labelsecondName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelsecondName.AutoSize = true;
             this.labelsecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelsecondName.Location = new System.Drawing.Point(24, 85);
+            this.labelsecondName.Location = new System.Drawing.Point(72, 85);
             this.labelsecondName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelsecondName.Name = "labelsecondName";
             this.labelsecondName.Size = new System.Drawing.Size(132, 20);
@@ -380,7 +380,7 @@ namespace UI
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.labelfirstName);
-            this.panel2.Location = new System.Drawing.Point(2, 41);
+            this.panel2.Location = new System.Drawing.Point(50, 41);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(154, 32);
@@ -415,7 +415,7 @@ namespace UI
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.labelfirstSurname);
-            this.panel3.Location = new System.Drawing.Point(28, 156);
+            this.panel3.Location = new System.Drawing.Point(76, 156);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(128, 32);
@@ -450,7 +450,7 @@ namespace UI
             this.labelGender.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelGender.AutoSize = true;
             this.labelGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGender.Location = new System.Drawing.Point(449, 85);
+            this.labelGender.Location = new System.Drawing.Point(578, 85);
             this.labelGender.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGender.Name = "labelGender";
             this.labelGender.Size = new System.Drawing.Size(63, 20);
@@ -465,10 +465,10 @@ namespace UI
             this.comboBoxGender.Items.AddRange(new object[] {
             "Masculino",
             "Femenino"});
-            this.comboBoxGender.Location = new System.Drawing.Point(516, 81);
+            this.comboBoxGender.Location = new System.Drawing.Point(645, 81);
             this.comboBoxGender.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxGender.Name = "comboBoxGender";
-            this.comboBoxGender.Size = new System.Drawing.Size(267, 28);
+            this.comboBoxGender.Size = new System.Drawing.Size(378, 28);
             this.comboBoxGender.TabIndex = 11;
             // 
             // tableLayoutPanel2
@@ -484,7 +484,7 @@ namespace UI
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(783, 81);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1063, 81);
             this.tableLayoutPanel2.TabIndex = 19;
             // 
             // panel4
@@ -492,7 +492,7 @@ namespace UI
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label24);
-            this.panel4.Location = new System.Drawing.Point(131, 2);
+            this.panel4.Location = new System.Drawing.Point(216, 2);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(106, 32);
@@ -526,12 +526,12 @@ namespace UI
             // 
             this.textBoxDiagnosis.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiagnosis.Location = new System.Drawing.Point(241, 2);
+            this.textBoxDiagnosis.Location = new System.Drawing.Point(326, 2);
             this.textBoxDiagnosis.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDiagnosis.MaxLength = 150;
             this.textBoxDiagnosis.Multiline = true;
             this.textBoxDiagnosis.Name = "textBoxDiagnosis";
-            this.textBoxDiagnosis.Size = new System.Drawing.Size(540, 77);
+            this.textBoxDiagnosis.Size = new System.Drawing.Size(735, 77);
             this.textBoxDiagnosis.TabIndex = 7;
             this.textBoxDiagnosis.TextChanged += new System.EventHandler(this.textBoxDiagnosis_TextChanged);
             // 
@@ -542,7 +542,7 @@ namespace UI
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Location = new System.Drawing.Point(12, 470);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(814, 105);
+            this.groupBox1.Size = new System.Drawing.Size(1094, 105);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             // 
@@ -562,7 +562,7 @@ namespace UI
             this.iconButtonRequest.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonRequest.IconSize = 30;
             this.iconButtonRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonRequest.Location = new System.Drawing.Point(829, 422);
+            this.iconButtonRequest.Location = new System.Drawing.Point(1109, 422);
             this.iconButtonRequest.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonRequest.Name = "iconButtonRequest";
             this.iconButtonRequest.Size = new System.Drawing.Size(166, 40);
@@ -588,7 +588,7 @@ namespace UI
             this.iconButtonCreateAndRequest.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCreateAndRequest.IconSize = 30;
             this.iconButtonCreateAndRequest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCreateAndRequest.Location = new System.Drawing.Point(829, 361);
+            this.iconButtonCreateAndRequest.Location = new System.Drawing.Point(1109, 361);
             this.iconButtonCreateAndRequest.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonCreateAndRequest.Name = "iconButtonCreateAndRequest";
             this.iconButtonCreateAndRequest.Size = new System.Drawing.Size(166, 40);
@@ -604,7 +604,7 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1006, 752);
+            this.ClientSize = new System.Drawing.Size(1286, 947);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.iconButtonRequest);
             this.Controls.Add(this.iconButtonCreateAndRequest);

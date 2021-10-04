@@ -49,7 +49,7 @@ namespace UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(432, 9);
+            this.label1.Location = new System.Drawing.Point(528, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 30);
             this.label1.TabIndex = 0;
@@ -57,9 +57,10 @@ namespace UI
             // 
             // textBoxSearch
             // 
+            this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSearch.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(178, 65);
+            this.textBoxSearch.Location = new System.Drawing.Point(274, 65);
             this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(255, 19);
@@ -75,10 +76,10 @@ namespace UI
             this.comboBoxFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilter.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxFilter.FormattingEnabled = true;
-            this.comboBoxFilter.Location = new System.Drawing.Point(484, 62);
+            this.comboBoxFilter.Location = new System.Drawing.Point(580, 62);
             this.comboBoxFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxFilter.Name = "comboBoxFilter";
-            this.comboBoxFilter.Size = new System.Drawing.Size(145, 28);
+            this.comboBoxFilter.Size = new System.Drawing.Size(229, 28);
             this.comboBoxFilter.TabIndex = 2;
             this.comboBoxFilter.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilter_SelectedIndexChanged);
             // 
@@ -88,7 +89,7 @@ namespace UI
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewSearchPerson.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewSearchPerson.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewSearchPerson.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.dataGridViewSearchPerson.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
@@ -122,7 +123,7 @@ namespace UI
             this.dataGridViewSearchPerson.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewSearchPerson.RowTemplate.Height = 24;
             this.dataGridViewSearchPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSearchPerson.Size = new System.Drawing.Size(981, 272);
+            this.dataGridViewSearchPerson.Size = new System.Drawing.Size(1168, 272);
             this.dataGridViewSearchPerson.TabIndex = 30;
             this.dataGridViewSearchPerson.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSearchPerson_CellClick);
             this.dataGridViewSearchPerson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSearchPerson_CellContentClick);
@@ -142,7 +143,7 @@ namespace UI
             this.iconButtonContinue.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonContinue.IconSize = 30;
             this.iconButtonContinue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonContinue.Location = new System.Drawing.Point(873, 377);
+            this.iconButtonContinue.Location = new System.Drawing.Point(1060, 377);
             this.iconButtonContinue.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonContinue.Name = "iconButtonContinue";
             this.iconButtonContinue.Size = new System.Drawing.Size(119, 40);
@@ -167,7 +168,7 @@ namespace UI
             this.iconButtonCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCancel.IconSize = 30;
             this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.Location = new System.Drawing.Point(11, 377);
+            this.iconButtonCancel.Location = new System.Drawing.Point(11, 373);
             this.iconButtonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonCancel.Name = "iconButtonCancel";
             this.iconButtonCancel.Size = new System.Drawing.Size(119, 40);
@@ -192,7 +193,7 @@ namespace UI
             this.iconButtonSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearch.IconSize = 30;
             this.iconButtonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSearch.Location = new System.Drawing.Point(662, 55);
+            this.iconButtonSearch.Location = new System.Drawing.Point(847, 55);
             this.iconButtonSearch.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonSearch.Name = "iconButtonSearch";
             this.iconButtonSearch.Size = new System.Drawing.Size(119, 40);
@@ -204,20 +205,20 @@ namespace UI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel3.Location = new System.Drawing.Point(178, 86);
+            this.panel3.Location = new System.Drawing.Point(274, 86);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(255, 1);
             this.panel3.TabIndex = 37;
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
             this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 29;
-            this.iconPictureBox1.Location = new System.Drawing.Point(144, 62);
+            this.iconPictureBox1.Location = new System.Drawing.Point(240, 62);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(32, 29);
             this.iconPictureBox1.TabIndex = 38;
@@ -227,8 +228,8 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1003, 424);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
+            this.ClientSize = new System.Drawing.Size(1190, 424);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.iconButtonSearch);
@@ -243,7 +244,7 @@ namespace UI
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "selectPerson";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "selectPerson";
+            this.Text = "Seleccionar";
             this.Load += new System.EventHandler(this.selectPerson_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchPerson)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();

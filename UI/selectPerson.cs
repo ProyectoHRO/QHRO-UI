@@ -250,6 +250,7 @@ namespace UI
 
         private void iconButtonCancel_Click(object sender, EventArgs e)
         {
+            id = 0;
               this.Close();
         }
 
