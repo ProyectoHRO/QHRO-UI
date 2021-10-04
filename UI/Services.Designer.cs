@@ -59,9 +59,9 @@ namespace UI
             this.groupBoxServices.Controls.Add(this.tableLayoutPanel2);
             this.groupBoxServices.Enabled = false;
             this.groupBoxServices.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxServices.Location = new System.Drawing.Point(12, 18);
+            this.groupBoxServices.Location = new System.Drawing.Point(116, 21);
             this.groupBoxServices.Name = "groupBoxServices";
-            this.groupBoxServices.Size = new System.Drawing.Size(713, 155);
+            this.groupBoxServices.Size = new System.Drawing.Size(854, 155);
             this.groupBoxServices.TabIndex = 38;
             this.groupBoxServices.TabStop = false;
             this.groupBoxServices.Text = "Datos del Servico";
@@ -90,17 +90,17 @@ namespace UI
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(470, 81);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(653, 81);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // textBoxNameService
             // 
             this.textBoxNameService.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxNameService.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNameService.Location = new System.Drawing.Point(183, 27);
+            this.textBoxNameService.Location = new System.Drawing.Point(254, 27);
             this.textBoxNameService.MaxLength = 40;
             this.textBoxNameService.Name = "textBoxNameService";
-            this.textBoxNameService.Size = new System.Drawing.Size(284, 26);
+            this.textBoxNameService.Size = new System.Drawing.Size(396, 26);
             this.textBoxNameService.TabIndex = 15;
             // 
             // panel1
@@ -108,7 +108,7 @@ namespace UI
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.labelServiceName);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(2, 24);
+            this.panel1.Location = new System.Drawing.Point(73, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 32);
@@ -179,7 +179,7 @@ namespace UI
             this.dataGridViewOperatingRooms.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewOperatingRooms.RowTemplate.Height = 24;
             this.dataGridViewOperatingRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewOperatingRooms.Size = new System.Drawing.Size(1001, 503);
+            this.dataGridViewOperatingRooms.Size = new System.Drawing.Size(1281, 698);
             this.dataGridViewOperatingRooms.TabIndex = 37;
             this.dataGridViewOperatingRooms.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewOperatingRooms_CellClick);
             // 
@@ -197,7 +197,7 @@ namespace UI
             this.iconButtonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonList.IconSize = 30;
             this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonList.Location = new System.Drawing.Point(973, 137);
+            this.iconButtonList.Location = new System.Drawing.Point(1253, 157);
             this.iconButtonList.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonList.Name = "iconButtonList";
             this.iconButtonList.Size = new System.Drawing.Size(228, 40);
@@ -224,7 +224,7 @@ namespace UI
             this.iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSave.IconSize = 30;
             this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSave.Location = new System.Drawing.Point(748, 51);
+            this.iconButtonSave.Location = new System.Drawing.Point(1028, 71);
             this.iconButtonSave.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonSave.Name = "iconButtonSave";
             this.iconButtonSave.Size = new System.Drawing.Size(228, 38);
@@ -250,7 +250,7 @@ namespace UI
             this.iconButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonUpdate.IconSize = 30;
             this.iconButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonUpdate.Location = new System.Drawing.Point(748, 93);
+            this.iconButtonUpdate.Location = new System.Drawing.Point(1028, 113);
             this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonUpdate.Name = "iconButtonUpdate";
             this.iconButtonUpdate.Size = new System.Drawing.Size(228, 40);
@@ -275,7 +275,7 @@ namespace UI
             this.iconButtonNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonNew.IconSize = 30;
             this.iconButtonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNew.Location = new System.Drawing.Point(748, 7);
+            this.iconButtonNew.Location = new System.Drawing.Point(1028, 27);
             this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonNew.Name = "iconButtonNew";
             this.iconButtonNew.Size = new System.Drawing.Size(228, 40);
@@ -300,7 +300,7 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1006, 752);
+            this.ClientSize = new System.Drawing.Size(1286, 947);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxServices);
             this.Controls.Add(this.dataGridViewOperatingRooms);

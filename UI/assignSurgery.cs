@@ -73,7 +73,7 @@ namespace UI
             {
                 listBoxDocId.Items.Add(selectP.id);
                 ListViewItem item = new ListViewItem(selectP.name.ToString());
-                listView1.Items.Add(item);
+                listViewDoctors.Items.Add(item);
             }
             else
             {
@@ -141,10 +141,10 @@ namespace UI
 
         private void iconButtonDeleteAll_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Desea elimiar?","Confirmar",
+            if(MessageBox.Show("¿Desea eliminar al ayudante?","Confirmar",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show("Eliminado");
+                MessageBox.Show("Ayudante eliminado");
                 if (listViewAssistants.Items.Count > 0)
                     listViewAssistants.Items.Remove(listViewAssistants.SelectedItems[0]);
             }
@@ -165,6 +165,21 @@ namespace UI
             listViewAssistants.AutoResizeColumn(0, ColumnHeaderAutoResizeStyle.HeaderSize);
             listViewAssistants.AutoResizeColumn(1, ColumnHeaderAutoResizeStyle.HeaderSize);
             listViewAssistants.Refresh();
+        }
+
+        private void iconButtonDeleteDoctor_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea eliminar al doctor?", "Confirmar",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MessageBox.Show("Doctor eliminado");
+                if (listViewDoctors.Items.Count > 0)
+                    listViewDoctors.Items.Remove(listViewDoctors.SelectedItems[0]);
+            }
+            else
+            {
+                MessageBox.Show("Cancelado");
+            }
         }
     }
 }

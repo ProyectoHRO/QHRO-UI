@@ -129,6 +129,12 @@
     <Compile Include="Services.Designer.cs">
       <DependentUpon>Services.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Anesthetist.resx">
       <DependentUpon>Anesthetist.cs</DependentUpon>
     </EmbeddedResource>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Services.resx">
       <DependentUpon>Services.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -47,11 +47,6 @@
     <Compile Include="Anesthetist.cs" />
     <Compile Include="Assistant.cs" />
     <Compile Include="Connection.cs" />
-    <Compile Include="DataSetSurgeries.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetSurgeries.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Doctor.cs" />
     <Compile Include="OperatingRooms.cs" />
     <Compile Include="Patient.cs" />
@@ -67,17 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DataSetSurgeries.xsc">
-      <DependentUpon>DataSetSurgeries.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetSurgeries.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetSurgeries.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSetSurgeries.xss">
-      <DependentUpon>DataSetSurgeries.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

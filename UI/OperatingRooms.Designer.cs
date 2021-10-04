@@ -68,7 +68,7 @@ namespace UI
             this.iconButtonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonList.IconSize = 30;
             this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonList.Location = new System.Drawing.Point(969, 163);
+            this.iconButtonList.Location = new System.Drawing.Point(1249, 163);
             this.iconButtonList.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonList.Name = "iconButtonList";
             this.iconButtonList.Size = new System.Drawing.Size(228, 40);
@@ -94,7 +94,7 @@ namespace UI
             this.iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSave.IconSize = 30;
             this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSave.Location = new System.Drawing.Point(744, 77);
+            this.iconButtonSave.Location = new System.Drawing.Point(1024, 77);
             this.iconButtonSave.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonSave.Name = "iconButtonSave";
             this.iconButtonSave.Size = new System.Drawing.Size(228, 38);
@@ -119,7 +119,7 @@ namespace UI
             this.iconButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonUpdate.IconSize = 30;
             this.iconButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonUpdate.Location = new System.Drawing.Point(744, 119);
+            this.iconButtonUpdate.Location = new System.Drawing.Point(1024, 119);
             this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonUpdate.Name = "iconButtonUpdate";
             this.iconButtonUpdate.Size = new System.Drawing.Size(228, 40);
@@ -144,7 +144,7 @@ namespace UI
             this.iconButtonNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonNew.IconSize = 30;
             this.iconButtonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNew.Location = new System.Drawing.Point(744, 33);
+            this.iconButtonNew.Location = new System.Drawing.Point(1024, 33);
             this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonNew.Name = "iconButtonNew";
             this.iconButtonNew.Size = new System.Drawing.Size(228, 40);
@@ -194,7 +194,7 @@ namespace UI
             this.dataGridViewOperatingRooms.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewOperatingRooms.RowTemplate.Height = 24;
             this.dataGridViewOperatingRooms.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewOperatingRooms.Size = new System.Drawing.Size(988, 465);
+            this.dataGridViewOperatingRooms.Size = new System.Drawing.Size(1268, 660);
             this.dataGridViewOperatingRooms.TabIndex = 31;
             this.dataGridViewOperatingRooms.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridViewOperatingRooms_CellMouseClick);
             // 
@@ -206,7 +206,7 @@ namespace UI
             this.groupBoxoperatingroomData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxoperatingroomData.Location = new System.Drawing.Point(21, 24);
             this.groupBoxoperatingroomData.Name = "groupBoxoperatingroomData";
-            this.groupBoxoperatingroomData.Size = new System.Drawing.Size(692, 236);
+            this.groupBoxoperatingroomData.Size = new System.Drawing.Size(972, 236);
             this.groupBoxoperatingroomData.TabIndex = 32;
             this.groupBoxoperatingroomData.TabStop = false;
             this.groupBoxoperatingroomData.Text = "Datos del quirofano";
@@ -215,10 +215,10 @@ namespace UI
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.16128F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.80242F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.90368F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.13262F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.68607F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.87318F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.30561F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.34304F));
             this.tableLayoutPanel1.Controls.Add(this.textBoxNumber, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.labelStatus, 2, 0);
@@ -226,23 +226,23 @@ namespace UI
             this.tableLayoutPanel1.Controls.Add(this.textBoxCurrentState, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.labelID, 3, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 51);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(83, 51);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(682, 180);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(786, 149);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // textBoxNumber
             // 
             this.textBoxNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumber.Location = new System.Drawing.Point(188, 32);
+            this.textBoxNumber.Location = new System.Drawing.Point(165, 24);
             this.textBoxNumber.MaxLength = 13;
             this.textBoxNumber.Name = "textBoxNumber";
-            this.textBoxNumber.Size = new System.Drawing.Size(210, 26);
+            this.textBoxNumber.Size = new System.Drawing.Size(236, 26);
             this.textBoxNumber.TabIndex = 15;
             // 
             // panel1
@@ -250,7 +250,7 @@ namespace UI
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.labelNumber);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(38, 29);
+            this.panel1.Location = new System.Drawing.Point(15, 21);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(145, 32);
@@ -286,7 +286,7 @@ namespace UI
             this.labelStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelStatus.AutoSize = true;
             this.labelStatus.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStatus.Location = new System.Drawing.Point(422, 35);
+            this.labelStatus.Location = new System.Drawing.Point(455, 27);
             this.labelStatus.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(51, 20);
@@ -303,19 +303,19 @@ namespace UI
             this.comboStatus.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.comboStatus.Location = new System.Drawing.Point(478, 31);
+            this.comboStatus.Location = new System.Drawing.Point(511, 23);
             this.comboStatus.Name = "comboStatus";
-            this.comboStatus.Size = new System.Drawing.Size(201, 28);
+            this.comboStatus.Size = new System.Drawing.Size(272, 28);
             this.comboStatus.TabIndex = 19;
             // 
             // textBoxCurrentState
             // 
             this.textBoxCurrentState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxCurrentState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCurrentState.Location = new System.Drawing.Point(188, 122);
+            this.textBoxCurrentState.Location = new System.Drawing.Point(165, 98);
             this.textBoxCurrentState.MaxLength = 13;
             this.textBoxCurrentState.Name = "textBoxCurrentState";
-            this.textBoxCurrentState.Size = new System.Drawing.Size(210, 26);
+            this.textBoxCurrentState.Size = new System.Drawing.Size(236, 26);
             this.textBoxCurrentState.TabIndex = 26;
             // 
             // label1
@@ -323,7 +323,7 @@ namespace UI
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(94, 125);
+            this.label1.Location = new System.Drawing.Point(71, 101);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
@@ -335,7 +335,7 @@ namespace UI
             this.labelID.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelID.AutoSize = true;
             this.labelID.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.Location = new System.Drawing.Point(659, 125);
+            this.labelID.Location = new System.Drawing.Point(763, 101);
             this.labelID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelID.Name = "labelID";
             this.labelID.Size = new System.Drawing.Size(21, 20);
@@ -348,7 +348,7 @@ namespace UI
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1006, 752);
+            this.ClientSize = new System.Drawing.Size(1286, 947);
             this.Controls.Add(this.groupBoxoperatingroomData);
             this.Controls.Add(this.dataGridViewOperatingRooms);
             this.Controls.Add(this.iconButtonList);
