@@ -77,5 +77,68 @@ namespace DAL
             return response;
         }
 
+        public void makeUserPass(
+           int userId,
+           string pass)
+        {
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "CrearContraUsuario";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idUsuario", userId);
+            command.Parameters.AddWithValue("@contra", pass);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            connection.CloseConnection();
+        }
+
+        public void confirmUser(
+          int userId,
+          string userName,
+          string pass,
+          DateTime lastConnection)
+        {
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ConfirmarUsuario";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idUsuario", userId);
+            command.Parameters.AddWithValue("@usuario", userName);
+            command.Parameters.AddWithValue("@contra", pass);
+            command.Parameters.AddWithValue("@ultima_conexion", lastConnection);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            connection.CloseConnection();
+        }
+
+        
+
+        public void restartPasswordUser(
+          int userId,
+          string userName,
+          string pass)
+        {
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "RestablecerUsuario";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@usuario", userName);
+            command.Parameters.AddWithValue("@contraseña", pass);
+            command.Parameters.AddWithValue("@idUsuario", userId);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            connection.CloseConnection();
+        }
+
+        public DataTable getUserMail(string email)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerCorreo";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@correo", email);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
     }
 }

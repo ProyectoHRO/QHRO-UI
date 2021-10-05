@@ -188,6 +188,7 @@ namespace UI
             this.Name = "FormWelcome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormWelcome";
+            this.Activated += new System.EventHandler(this.FormWelcome_Activated);
             this.Load += new System.EventHandler(this.FormWelcome_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

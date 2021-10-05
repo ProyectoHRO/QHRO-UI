@@ -14,11 +14,13 @@ namespace UI
     {
         string userLogin;
         int getRole;
+        bool activate = false;
         int getServiceId;
         public FormWelcome(string userLog,int role,int serviceId)
         {
             InitializeComponent();
             userLogin = userLog;
+            activate = false;
             getRole = role;
             getServiceId = serviceId;
         }
@@ -44,6 +46,7 @@ namespace UI
                 this.Hide();
                 Form1 fI = new Form1(userLogin, getRole, getServiceId);
                 fI.ShowDialog();
+                activate = true;
             }
         }
 
@@ -60,6 +63,15 @@ namespace UI
         {
             labelTime.Text = DateTime.Now.ToString("hh:mm:ss");
             labelDate.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void FormWelcome_Activated(object sender, EventArgs e)
+        {
+            if (activate==true)
+            {
+                this.Close();
+            }
+            
         }
     }
 }

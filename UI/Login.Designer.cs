@@ -242,6 +242,7 @@ namespace UI
             this.label2.Size = new System.Drawing.Size(153, 20);
             this.label2.TabIndex = 25;
             this.label2.Text = "¿Olvidaste tu contraseña?";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Login
             // 
@@ -265,6 +266,7 @@ namespace UI
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Activated += new System.EventHandler(this.Login_Activated);
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

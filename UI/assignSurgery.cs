@@ -35,6 +35,9 @@ namespace UI
             comboBoxOperatingRooms.ValueMember = "idquirofano";
             comboBoxOperatingRooms.DisplayMember = "no_quirofano";
             comboBoxOperatingRooms.DataSource = infoOperatingRooms;
+
+            dateTimeSurgeryDate.Format = DateTimePickerFormat.Custom;
+            dateTimeSurgeryDate.CustomFormat = "dd-MM-yyyy hh:mm";
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)

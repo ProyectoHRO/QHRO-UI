@@ -67,6 +67,12 @@
     <Compile Include="Assistant.Designer.cs">
       <DependentUpon>Assistant.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmUser.Designer.cs">
+      <DependentUpon>ConfirmUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctors.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForgotPassword.Designer.cs">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -150,11 +162,17 @@
     <EmbeddedResource Include="Assistant.resx">
       <DependentUpon>Assistant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmUser.resx">
+      <DependentUpon>ConfirmUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctors.resx">
       <DependentUpon>Doctors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormForgotPassword.resx">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

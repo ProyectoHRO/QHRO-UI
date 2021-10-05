@@ -43,6 +43,11 @@ namespace BLL
 
         }
 
+        public DataTable getUserByEmail(string email)
+        {
+            return users.getUserMail(email);
+        }
+
         public DataTable getDataUser(string userName, string password)
         {
             return users.GetDataUsers(userName, password);
@@ -62,12 +67,63 @@ namespace BLL
             }
         }
 
+        public string makeUserPass(int idUser, string pass)
+        {
+            try
+            {
+                users.makeUserPass(idUser,pass);
+                return " ";
+            }
+            catch (Exception error)
+            {
+
+                return "ERROR: " + error.Message;
+            }
+        }
+
+        public string restoreUserPass(int idUser, string userName,string pass)
+        {
+            try
+            {
+                users.restartPasswordUser(idUser, userName, pass);
+                return "Usuario restablecido con exito por favor revisar correo";
+            }
+            catch (Exception error)
+            {
+
+                return "ERROR: " + error.Message;
+            }
+        }
+
         public string addUser(string email, int roleId, int serviceId)
         {
             try
             {
-                string response =users.makeUser(email,roleId, serviceId);
-                return response;
+
+                DataTable getuser = users.getUserMail(email);
+                if (getuser.Rows.Count < 1)
+                {
+                    string response = users.makeUser(email, roleId, serviceId);
+                    return response;
+                }
+                else
+                    return "ERROR: El correo ya esta registrado:  ";
+
+              
+            }
+            catch (Exception error)
+            {
+
+                return "ERROR: " + error.Message;
+            }
+        }
+
+        public string ConfirmUser(int idUser, string userName, string pass, DateTime lastConnection)
+        {
+            try
+            {
+                users.confirmUser(idUser, userName, pass, lastConnection);
+                return "Usuario confirmado correctamente!";
             }
             catch (Exception error)
             {

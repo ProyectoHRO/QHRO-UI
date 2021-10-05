@@ -150,7 +150,11 @@ namespace UI
                 }
                 if (confirmation == false)
                 {
-                    MessageBox.Show("Usuario no confirmado");
+                    if (MessageBox.Show("Usuario no confirmado, desea confirmarlo ahora?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ConfirmUser confirmForm = new ConfirmUser(idUser,lastConnection);
+                        confirmForm.ShowDialog();
+                    }
                 }
                 else
                 {
@@ -164,6 +168,17 @@ namespace UI
               
             }
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            FormForgotPassword formForgot = new FormForgotPassword();
+            formForgot.ShowDialog();
+        }
+
+        private void Login_Activated(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +17,7 @@ namespace UI
         private ClassUsers users = new ClassUsers();
 
         string userName;
-
+        string hash = "@HR0";
         private ClassServices services = new ClassServices();
         public Users()
         {
@@ -52,12 +54,30 @@ namespace UI
             }
             else
             {
+                string password = "";
+                char delimiter = ':';
+                string[] newphrase = userName.Split(delimiter);
+
+                byte[] data = UTF8Encoding.UTF8.GetBytes("QUIROFANOSHRO"+newphrase[1]);
+                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                {
+                    byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                    using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                    {
+                        ICryptoTransform transform = tripleDES.CreateEncryptor();
+                        byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                        password = Convert.ToBase64String(results, 0, results.Length);
+                    }
+                }
+
+                users.makeUserPass(Convert.ToInt32(newphrase[1]), password);
+                
                 System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
                 msg.To.Add(textBoxEmail.Text);
                 msg.Subject = "INFORMACIÓN DE USUARIO";
                 msg.SubjectEncoding = System.Text.Encoding.UTF8;
 
-                msg.Body = "NOMBRE DE USUARIO: " + userName + "\nCONTRASEÑA: QUIROFANOSHRO ";
+                msg.Body = "NOMBRE DE USUARIO: " + newphrase[0] + "\nCONTRASEÑA: QUIROFANOSHRO" + newphrase[1];
                 msg.BodyEncoding = System.Text.Encoding.UTF8;
 
                 msg.From = new System.Net.Mail.MailAddress("peltzjr11@gmail.com");
@@ -73,6 +93,7 @@ namespace UI
                 try
                 {
                     client.Send(msg);
+                    MessageBox.Show("Usuario creado correctamente, porfavor verificar correo ");
                 }
                 catch (Exception)
                 {

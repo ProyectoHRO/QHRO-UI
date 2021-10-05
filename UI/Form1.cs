@@ -17,6 +17,8 @@ namespace UI
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        public bool Activate { get; set; }
      
         public Form1(string userLog, int role, int serviceId)
         {
@@ -52,6 +54,7 @@ namespace UI
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            Activate = true;
             this.Close();
         }
 
