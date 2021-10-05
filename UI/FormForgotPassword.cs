@@ -71,11 +71,10 @@ namespace UI
 
                         msg.Body = "NOMBRE DE USUARIO: " + userName + "\nCONTRASEÑA: QUIROFANOSHRO" + id.ToString();
                         msg.BodyEncoding = System.Text.Encoding.UTF8;
-
-                        msg.From = new System.Net.Mail.MailAddress("peltzjr11@gmail.com");
+                        msg.From = new System.Net.Mail.MailAddress("quirofanoshro@gmail.com");
 
                         System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
-                        client.Credentials = new System.Net.NetworkCredential("peltzjr11@gmail.com", "clinshesh32");
+                        client.Credentials = new System.Net.NetworkCredential("quirofanoshro@gmail.com", "QuirofanosHROGT");
 
                         client.Port = 587;
                         client.EnableSsl = true;

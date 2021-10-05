@@ -49,6 +49,7 @@
     <Compile Include="ClassDoctor.cs" />
     <Compile Include="ClassDtoAssistants.cs" />
     <Compile Include="ClassDtoDoctors.cs" />
+    <Compile Include="ClassDtoPermits.cs" />
     <Compile Include="ClassOperatingRoom.cs" />
     <Compile Include="ClassPatient.cs" />
     <Compile Include="ClassRequestSurgery.cs" />

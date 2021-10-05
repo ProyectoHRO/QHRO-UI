@@ -15,7 +15,7 @@ namespace DAL
         SqlDataReader read;
         DataTable tableData;
         SqlCommand command = new SqlCommand();
-
+       
         public DataTable GetDataUsers(string user, string password)
         {
             tableData = new DataTable();
@@ -30,6 +30,34 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+
+        public DataTable GetDataUsersByUserName(string userName)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerUsuarioPorNombre";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@nombre", userName);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
+
+        public DataTable GetPermits()
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarPermisos";
+            command.CommandType = CommandType.StoredProcedure;
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            connection.CloseConnection();
+            return tableData;
+        }
+
 
         public DataTable GetRoles()
         {
@@ -109,7 +137,24 @@ namespace DAL
             connection.CloseConnection();
         }
 
-        
+        public string assignPermits(
+            DataTable permitsDetail
+            )
+        {
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "sp_assignPermits";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@detalle", permitsDetail);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
+        }
+
 
         public void restartPasswordUser(
           int userId,
@@ -140,5 +185,20 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+
+        public DataTable getPermitsByUser(int idUser)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerPermisosPorUsuario";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", idUser);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
     }
 }
