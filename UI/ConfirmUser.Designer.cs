@@ -41,17 +41,25 @@ namespace UI
             this.iconPictureEye = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxMinimized = new System.Windows.Forms.PictureBox();
+            this.pictureClose = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(82, 189);
+            this.panel3.Location = new System.Drawing.Point(94, 204);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(255, 1);
             this.panel3.TabIndex = 28;
@@ -59,7 +67,7 @@ namespace UI
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(82, 248);
+            this.panel4.Location = new System.Drawing.Point(94, 263);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(255, 1);
             this.panel4.TabIndex = 27;
@@ -70,13 +78,15 @@ namespace UI
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(82, 223);
+            this.txtPassword.Location = new System.Drawing.Point(94, 238);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.MaxLength = 100;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(215, 19);
             this.txtPassword.TabIndex = 26;
             this.txtPassword.Text = "CONTRASEÑA";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtUser
             // 
@@ -84,18 +94,20 @@ namespace UI
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.ForeColor = System.Drawing.Color.White;
-            this.txtUser.Location = new System.Drawing.Point(82, 164);
+            this.txtUser.Location = new System.Drawing.Point(94, 179);
             this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.MaxLength = 50;
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(255, 19);
             this.txtUser.TabIndex = 25;
             this.txtUser.Text = "USUARIO";
+            this.txtUser.Enter += new System.EventHandler(this.txtUser_Enter);
+            this.txtUser.Leave += new System.EventHandler(this.txtUser_Leave);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(82, 314);
+            this.panel1.Location = new System.Drawing.Point(94, 329);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 1);
             this.panel1.TabIndex = 33;
@@ -106,13 +118,15 @@ namespace UI
             this.textConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textConfirmPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textConfirmPassword.ForeColor = System.Drawing.Color.White;
-            this.textConfirmPassword.Location = new System.Drawing.Point(82, 289);
+            this.textConfirmPassword.Location = new System.Drawing.Point(94, 304);
             this.textConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textConfirmPassword.MaxLength = 100;
             this.textConfirmPassword.Name = "textConfirmPassword";
             this.textConfirmPassword.Size = new System.Drawing.Size(215, 19);
             this.textConfirmPassword.TabIndex = 32;
             this.textConfirmPassword.Text = "CONFIRMAR CONTRASEÑA";
+            this.textConfirmPassword.Enter += new System.EventHandler(this.textConfirmPassword_Enter);
+            this.textConfirmPassword.Leave += new System.EventHandler(this.textConfirmPassword_Leave);
             // 
             // iconButton1
             // 
@@ -122,11 +136,11 @@ namespace UI
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Check;
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(70, 453);
+            this.iconButton1.Location = new System.Drawing.Point(79, 395);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(239, 63);
             this.iconButton1.TabIndex = 36;
@@ -142,7 +156,7 @@ namespace UI
             this.iconPictureBox3.IconColor = System.Drawing.Color.White;
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.IconSize = 40;
-            this.iconPictureBox3.Location = new System.Drawing.Point(303, 274);
+            this.iconPictureBox3.Location = new System.Drawing.Point(315, 289);
             this.iconPictureBox3.Name = "iconPictureBox3";
             this.iconPictureBox3.Size = new System.Drawing.Size(40, 40);
             this.iconPictureBox3.TabIndex = 35;
@@ -155,7 +169,7 @@ namespace UI
             this.iconPictureBox4.IconColor = System.Drawing.Color.White;
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox4.IconSize = 50;
-            this.iconPictureBox4.Location = new System.Drawing.Point(27, 265);
+            this.iconPictureBox4.Location = new System.Drawing.Point(39, 280);
             this.iconPictureBox4.Name = "iconPictureBox4";
             this.iconPictureBox4.Size = new System.Drawing.Size(50, 50);
             this.iconPictureBox4.TabIndex = 34;
@@ -169,7 +183,7 @@ namespace UI
             this.iconPictureEye.IconColor = System.Drawing.Color.White;
             this.iconPictureEye.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureEye.IconSize = 40;
-            this.iconPictureEye.Location = new System.Drawing.Point(303, 208);
+            this.iconPictureEye.Location = new System.Drawing.Point(315, 223);
             this.iconPictureEye.Name = "iconPictureEye";
             this.iconPictureEye.Size = new System.Drawing.Size(40, 40);
             this.iconPictureEye.TabIndex = 31;
@@ -182,7 +196,7 @@ namespace UI
             this.iconPictureBox2.IconColor = System.Drawing.Color.White;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 50;
-            this.iconPictureBox2.Location = new System.Drawing.Point(27, 199);
+            this.iconPictureBox2.Location = new System.Drawing.Point(39, 214);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(50, 50);
             this.iconPictureBox2.TabIndex = 30;
@@ -195,11 +209,69 @@ namespace UI
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 50;
-            this.iconPictureBox1.Location = new System.Drawing.Point(27, 140);
+            this.iconPictureBox1.Location = new System.Drawing.Point(39, 155);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(50, 50);
             this.iconPictureBox1.TabIndex = 29;
             this.iconPictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.pictureBoxMinimized);
+            this.panel2.Controls.Add(this.pictureClose);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(399, 50);
+            this.panel2.TabIndex = 37;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(235, 24);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "CONFIRMAR USUARIO";
+            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            // 
+            // pictureBoxMinimized
+            // 
+            this.pictureBoxMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxMinimized.Image = global::UI.Properties.Resources.minimazar;
+            this.pictureBoxMinimized.Location = new System.Drawing.Point(331, 12);
+            this.pictureBoxMinimized.Name = "pictureBoxMinimized";
+            this.pictureBoxMinimized.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMinimized.TabIndex = 4;
+            this.pictureBoxMinimized.TabStop = false;
+            this.pictureBoxMinimized.Click += new System.EventHandler(this.pictureBoxMinimized_Click);
+            // 
+            // pictureClose
+            // 
+            this.pictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureClose.Image = global::UI.Properties.Resources.cerrar;
+            this.pictureClose.Location = new System.Drawing.Point(362, 12);
+            this.pictureClose.Name = "pictureClose";
+            this.pictureClose.Size = new System.Drawing.Size(25, 25);
+            this.pictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureClose.TabIndex = 3;
+            this.pictureClose.TabStop = false;
+            this.pictureClose.Click += new System.EventHandler(this.pictureClose_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel5.Location = new System.Drawing.Point(0, 666);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(399, 15);
+            this.panel5.TabIndex = 38;
             // 
             // ConfirmUser
             // 
@@ -207,6 +279,8 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(399, 681);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.iconPictureBox3);
             this.Controls.Add(this.iconPictureBox4);
@@ -221,12 +295,17 @@ namespace UI
             this.Controls.Add(this.txtUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConfirmUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfirmUser";
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,5 +325,10 @@ namespace UI
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textConfirmPassword;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBoxMinimized;
+        private System.Windows.Forms.PictureBox pictureClose;
+        private System.Windows.Forms.Panel panel5;
     }
 }
