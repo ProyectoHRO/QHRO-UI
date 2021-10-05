@@ -43,6 +43,7 @@ namespace UI
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
@@ -212,7 +213,7 @@ namespace UI
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(86, 466);
+            this.iconButton1.Location = new System.Drawing.Point(86, 497);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(239, 63);
             this.iconButton1.TabIndex = 3;
@@ -223,12 +224,24 @@ namespace UI
             // pictureBox1
             // 
             this.pictureBox1.Image = global::UI.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(155, 56);
+            this.pictureBox1.Location = new System.Drawing.Point(155, 78);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(103, 108);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(196, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(153, 20);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "¿Olvidaste tu contraseña?";
             // 
             // Login
             // 
@@ -236,6 +249,7 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(415, 720);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.iconPictureEye);
             this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.iconPictureBox1);
@@ -281,5 +295,6 @@ namespace UI
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureEye;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
