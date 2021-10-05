@@ -30,33 +30,34 @@ namespace UI
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
-            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.comboBoxFilter = new System.Windows.Forms.ComboBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkedListBoxPermits = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelId = new System.Windows.Forms.Label();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.labelCorreo = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxUser = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.textBoxCorreo = new System.Windows.Forms.TextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.labelCorreo = new System.Windows.Forms.Label();
+            this.labelId = new System.Windows.Forms.Label();
             this.iconButtonGrant = new FontAwesome.Sharp.IconButton();
             this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.listBoxIdPermits = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,30 +81,6 @@ namespace UI
             this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 100);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 29;
-            this.iconPictureBox1.Location = new System.Drawing.Point(39, 35);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(32, 29);
-            this.iconPictureBox1.TabIndex = 44;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel3.Location = new System.Drawing.Point(3, 34);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(337, 1);
-            this.panel3.TabIndex = 43;
-            // 
             // iconButtonSearch
             // 
             this.iconButtonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -126,6 +103,41 @@ namespace UI
             this.iconButtonSearch.TabIndex = 42;
             this.iconButtonSearch.Text = "Buscar";
             this.iconButtonSearch.UseVisualStyleBackColor = false;
+            this.iconButtonSearch.Click += new System.EventHandler(this.iconButtonSearch_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.textBoxSearch);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Location = new System.Drawing.Point(77, 29);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(340, 42);
+            this.panel1.TabIndex = 44;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSearch.BackColor = System.Drawing.Color.White;
+            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearch.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.Location = new System.Drawing.Point(3, 13);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(337, 19);
+            this.textBoxSearch.TabIndex = 40;
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            this.textBoxSearch.Enter += new System.EventHandler(this.textBoxSearch_Enter);
+            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel3.Location = new System.Drawing.Point(3, 34);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(337, 1);
+            this.panel3.TabIndex = 43;
             // 
             // comboBoxFilter
             // 
@@ -143,19 +155,20 @@ namespace UI
             this.comboBoxFilter.TabIndex = 41;
             this.comboBoxFilter.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilter_SelectedIndexChanged);
             // 
-            // textBoxSearch
+            // iconPictureBox1
             // 
-            this.textBoxSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxSearch.BackColor = System.Drawing.Color.White;
-            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSearch.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.Location = new System.Drawing.Point(3, 13);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(337, 19);
-            this.textBoxSearch.TabIndex = 40;
-            this.textBoxSearch.Enter += new System.EventHandler(this.textBoxSearch_Enter);
-            this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
+            this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.iconPictureBox1.BackColor = System.Drawing.Color.White;
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 29;
+            this.iconPictureBox1.Location = new System.Drawing.Point(39, 35);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 29);
+            this.iconPictureBox1.TabIndex = 44;
+            this.iconPictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -167,37 +180,15 @@ namespace UI
             this.label1.TabIndex = 39;
             this.label1.Text = "Buscar usuario";
             // 
-            // panel1
+            // checkedListBoxPermits
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.textBoxSearch);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(77, 29);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 42);
-            this.panel1.TabIndex = 44;
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Añadir/Modificar Doctores",
-            "Añadir/Modificar Anestesista",
-            "Añadir/Modificar Paciente",
-            "Añadir/Modificar Ayudantes(Circulantes/Instrumentistas)",
-            "Añadir/Modificar Quirófanos",
-            "Añadir/Modificar Servicios",
-            "Solicitar cirugía",
-            "Programar cirugía",
-            "Crear usuarios",
-            "Otorgar permisos a usuarios  ",
-            "Busquedas",
-            "Reportes"});
-            this.checkedListBox1.Location = new System.Drawing.Point(429, 6);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(420, 184);
-            this.checkedListBox1.TabIndex = 40;
+            this.checkedListBoxPermits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkedListBoxPermits.FormattingEnabled = true;
+            this.checkedListBoxPermits.Location = new System.Drawing.Point(429, 6);
+            this.checkedListBoxPermits.Name = "checkedListBoxPermits";
+            this.checkedListBoxPermits.Size = new System.Drawing.Size(420, 184);
+            this.checkedListBoxPermits.TabIndex = 40;
+            this.checkedListBoxPermits.SelectedIndexChanged += new System.EventHandler(this.checkedListBoxPermits_SelectedIndexChanged);
             // 
             // tableLayoutPanel2
             // 
@@ -217,42 +208,36 @@ namespace UI
             this.tableLayoutPanel2.Size = new System.Drawing.Size(420, 100);
             this.tableLayoutPanel2.TabIndex = 41;
             // 
-            // labelId
+            // panel5
             // 
-            this.labelId.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelId.AutoSize = true;
-            this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.Location = new System.Drawing.Point(210, 167);
-            this.labelId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(26, 20);
-            this.labelId.TabIndex = 42;
-            this.labelId.Text = "ID";
-            this.labelId.Visible = false;
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.textBoxEmail);
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Location = new System.Drawing.Point(106, 54);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(311, 42);
+            this.panel5.TabIndex = 45;
             // 
-            // labelUser
+            // textBoxEmail
             // 
-            this.labelUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelUser.AutoSize = true;
-            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.Location = new System.Drawing.Point(33, 15);
-            this.labelUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(68, 20);
-            this.labelUser.TabIndex = 43;
-            this.labelUser.Text = "Usuario:";
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEmail.BackColor = System.Drawing.Color.White;
+            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxEmail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(6, 12);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(308, 19);
+            this.textBoxEmail.TabIndex = 40;
             // 
-            // labelCorreo
+            // panel6
             // 
-            this.labelCorreo.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelCorreo.AutoSize = true;
-            this.labelCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCorreo.Location = new System.Drawing.Point(40, 65);
-            this.labelCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelCorreo.Name = "labelCorreo";
-            this.labelCorreo.Size = new System.Drawing.Size(61, 20);
-            this.labelCorreo.TabIndex = 44;
-            this.labelCorreo.Text = "Correo:";
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel6.Location = new System.Drawing.Point(3, 34);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(308, 1);
+            this.panel6.TabIndex = 43;
             // 
             // panel2
             // 
@@ -285,36 +270,42 @@ namespace UI
             this.panel4.Size = new System.Drawing.Size(308, 1);
             this.panel4.TabIndex = 43;
             // 
-            // panel5
+            // labelUser
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.Controls.Add(this.textBoxCorreo);
-            this.panel5.Controls.Add(this.panel6);
-            this.panel5.Location = new System.Drawing.Point(106, 54);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 42);
-            this.panel5.TabIndex = 45;
+            this.labelUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelUser.AutoSize = true;
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(33, 15);
+            this.labelUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(68, 20);
+            this.labelUser.TabIndex = 43;
+            this.labelUser.Text = "Usuario:";
             // 
-            // textBoxCorreo
+            // labelCorreo
             // 
-            this.textBoxCorreo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxCorreo.BackColor = System.Drawing.Color.White;
-            this.textBoxCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCorreo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCorreo.Location = new System.Drawing.Point(3, 13);
-            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxCorreo.Name = "textBoxCorreo";
-            this.textBoxCorreo.Size = new System.Drawing.Size(308, 19);
-            this.textBoxCorreo.TabIndex = 40;
+            this.labelCorreo.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelCorreo.AutoSize = true;
+            this.labelCorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCorreo.Location = new System.Drawing.Point(40, 65);
+            this.labelCorreo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelCorreo.Name = "labelCorreo";
+            this.labelCorreo.Size = new System.Drawing.Size(61, 20);
+            this.labelCorreo.TabIndex = 44;
+            this.labelCorreo.Text = "Correo:";
             // 
-            // panel6
+            // labelId
             // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel6.Location = new System.Drawing.Point(3, 34);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(308, 1);
-            this.panel6.TabIndex = 43;
+            this.labelId.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelId.AutoSize = true;
+            this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.Location = new System.Drawing.Point(210, 167);
+            this.labelId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelId.Name = "labelId";
+            this.labelId.Size = new System.Drawing.Size(26, 20);
+            this.labelId.TabIndex = 42;
+            this.labelId.Text = "ID";
+            this.labelId.Visible = false;
             // 
             // iconButtonGrant
             // 
@@ -339,6 +330,7 @@ namespace UI
             this.iconButtonGrant.Text = "Otorgar permisos";
             this.iconButtonGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonGrant.UseVisualStyleBackColor = false;
+            this.iconButtonGrant.Click += new System.EventHandler(this.iconButtonGrant_Click);
             // 
             // iconButtonCancel
             // 
@@ -371,7 +363,7 @@ namespace UI
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.checkedListBox1, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.checkedListBoxPermits, 1, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(214, 190);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -379,12 +371,22 @@ namespace UI
             this.tableLayoutPanel3.Size = new System.Drawing.Size(852, 197);
             this.tableLayoutPanel3.TabIndex = 45;
             // 
+            // listBoxIdPermits
+            // 
+            this.listBoxIdPermits.FormattingEnabled = true;
+            this.listBoxIdPermits.Location = new System.Drawing.Point(1130, 196);
+            this.listBoxIdPermits.Name = "listBoxIdPermits";
+            this.listBoxIdPermits.Size = new System.Drawing.Size(96, 134);
+            this.listBoxIdPermits.TabIndex = 46;
+            this.listBoxIdPermits.Visible = false;
+            // 
             // FormUserPermits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1286, 947);
+            this.Controls.Add(this.listBoxIdPermits);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.iconButtonCancel);
             this.Controls.Add(this.iconButtonGrant);
@@ -396,15 +398,15 @@ namespace UI
             this.Text = "FormUserPermits";
             this.Load += new System.EventHandler(this.FormUserPermits_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -420,10 +422,10 @@ namespace UI
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedListBoxPermits;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBoxCorreo;
+        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBoxUser;
@@ -434,5 +436,6 @@ namespace UI
         private FontAwesome.Sharp.IconButton iconButtonGrant;
         private FontAwesome.Sharp.IconButton iconButtonCancel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.ListBox listBoxIdPermits;
     }
 }

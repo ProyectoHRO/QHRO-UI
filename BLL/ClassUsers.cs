@@ -16,10 +16,19 @@ namespace BLL
             users = new Users();
         }
 
+        public DataTable GetPermits()
+        {
+            return users.GetPermits();
+        }
         public DataTable GetRoles()
         {
             return users.GetRoles();
         }
+        public DataTable GetUserByUserName(string userName)
+        {
+            return users.GetDataUsersByUserName(userName);
+        }
+
         public string Login(string userName, string password)
         {
 
@@ -47,6 +56,12 @@ namespace BLL
         {
             return users.getUserMail(email);
         }
+
+        public DataTable getPermitsByUserId(int userId)
+        {
+            return users.getPermitsByUser(userId);
+        }
+
 
         public DataTable getDataUser(string userName, string password)
         {
@@ -130,6 +145,20 @@ namespace BLL
 
                 return "ERROR: " + error.Message;
             }
+        }
+
+
+        public string assignPermits(List<ClassDtoPermits> permitsList)
+        {
+            string response = "";
+            DataTable dataPermits = new DataTable() { Columns = { "idPermit", "idUser" } };
+            foreach (ClassDtoPermits item in permitsList)
+            {
+                dataPermits.Rows.Add(item.IdPermit,item.IdUser);
+            }
+            response = users.assignPermits(dataPermits);
+            return response;
+
         }
 
     }
