@@ -167,5 +167,12 @@ namespace UI
             statePanel = 0;
             openChildForm(new Users());
         }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
+            openChildForm(new FormUserPermits());
+        }
     }
 }
