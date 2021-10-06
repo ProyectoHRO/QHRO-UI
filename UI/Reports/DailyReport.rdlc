@@ -112,7 +112,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.73438in</Height>
+                  <Height>0.41667in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -447,7 +447,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.73438in</Height>
+                  <Height>0.41667in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -809,9 +809,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetDailyReport</DataSetName>
-            <Top>0.905in</Top>
-            <Left>0.12186in</Left>
-            <Height>1.46876in</Height>
+            <Top>0.17583in</Top>
+            <Left>0.15973in</Left>
+            <Height>0.83334in</Height>
             <Width>12.5521in</Width>
             <Style>
               <Border>
@@ -919,21 +919,6 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Image Name="HroLogo">
-              <Source>Embedded</Source>
-              <Value>pablo</Value>
-              <Sizing>FitProportional</Sizing>
-              <Top>0.13417in</Top>
-              <Left>0.73833in</Left>
-              <Height>0.90056in</Height>
-              <Width>1.29167in</Width>
-              <ZIndex>3</ZIndex>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-              </Style>
-            </Image>
           </ReportItems>
           <Style>
             <Border>

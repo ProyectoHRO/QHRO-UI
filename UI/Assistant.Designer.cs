@@ -48,6 +48,7 @@ namespace UI
             this.iconButtonUpdate = new FontAwesome.Sharp.IconButton();
             this.iconButtonNew = new FontAwesome.Sharp.IconButton();
             this.groupBoxAssistantData = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
@@ -70,7 +71,6 @@ namespace UI
             this.labelfirstName = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBoxAssistantData.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -214,7 +214,7 @@ namespace UI
             this.iconButtonList.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonList.IconSize = 30;
             this.iconButtonList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonList.Location = new System.Drawing.Point(1261, 196);
+            this.iconButtonList.Location = new System.Drawing.Point(1142, 196);
             this.iconButtonList.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonList.Name = "iconButtonList";
             this.iconButtonList.Size = new System.Drawing.Size(120, 40);
@@ -327,6 +327,16 @@ namespace UI
             this.groupBoxAssistantData.TabIndex = 28;
             this.groupBoxAssistantData.TabStop = false;
             this.groupBoxAssistantData.Text = "Datos del asistente";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1065, 210);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
             // tableLayoutPanel1
             // 
@@ -646,16 +656,6 @@ namespace UI
             this.dataGridView2.Size = new System.Drawing.Size(1268, 660);
             this.dataGridView2.TabIndex = 29;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1065, 210);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 20);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "label1";
-            this.label1.Visible = false;
             // 
             // Assistant
             // 

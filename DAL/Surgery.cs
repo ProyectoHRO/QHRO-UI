@@ -15,6 +15,19 @@ namespace DAL
         DataTable tableData;
         SqlCommand command = new SqlCommand();
 
+        public DataTable GetDailySurgeries()
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "VerCirugiasDiarias";
+            command.CommandType = CommandType.StoredProcedure;
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            connection.CloseConnection();
+            return tableData;
+        }
+
+
         public DataTable GetRequestedSurgeries()
         {
             tableData = new DataTable();
@@ -41,6 +54,49 @@ namespace DAL
             return tableData;
         }
 
+        public DataTable reScheduleSurgerie(int surgerieId, DateTime date)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ReprogramarCirugia";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha", date);
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
+        public DataTable diffSurgerie(int surgerieId, string reason)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "DiferirCirugia";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@motivo", reason);
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+        public DataTable getAssistantsBySurgerie(int surgerieId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerAyudantesPorCirugias";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
         public DataTable getDailyReport(DateTime surgeryDate)
         {
             tableData = new DataTable();
@@ -54,7 +110,19 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
-        
+        public DataTable getDailyDiff(DateTime surgeryDate)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarIntervencionesDiferidas";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha", surgeryDate);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
         public string AssignSurgery(
             string anesthesiaType,
             string surgeryType,
