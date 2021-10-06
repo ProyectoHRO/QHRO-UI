@@ -30,14 +30,16 @@ namespace UI
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.labelDiff = new System.Windows.Forms.Label();
+            this.textBoxDetail = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.iconButtonContinue = new FontAwesome.Sharp.IconButton();
             this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
+            this.NewDate = new System.Windows.Forms.Label();
+            this.dateTimePickerNewDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -50,24 +52,26 @@ namespace UI
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // label2
+            // labelDiff
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(329, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Motivo";
+            this.labelDiff.AutoSize = true;
+            this.labelDiff.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDiff.Location = new System.Drawing.Point(329, 151);
+            this.labelDiff.Name = "labelDiff";
+            this.labelDiff.Size = new System.Drawing.Size(49, 20);
+            this.labelDiff.TabIndex = 1;
+            this.labelDiff.Text = "Motivo";
+            this.labelDiff.Visible = false;
             // 
-            // textBox1
+            // textBoxDetail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(396, 151);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(403, 150);
-            this.textBox1.TabIndex = 2;
+            this.textBoxDetail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDetail.Location = new System.Drawing.Point(396, 151);
+            this.textBoxDetail.Multiline = true;
+            this.textBoxDetail.Name = "textBoxDetail";
+            this.textBoxDetail.Size = new System.Drawing.Size(403, 150);
+            this.textBoxDetail.TabIndex = 2;
+            this.textBoxDetail.Visible = false;
             // 
             // label3
             // 
@@ -79,13 +83,13 @@ namespace UI
             this.label3.TabIndex = 3;
             this.label3.Text = "Paciente";
             // 
-            // textBox2
+            // textBoxName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(396, 119);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(403, 26);
-            this.textBox2.TabIndex = 4;
+            this.textBoxName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxName.Location = new System.Drawing.Point(396, 119);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(403, 26);
+            this.textBoxName.TabIndex = 4;
             // 
             // iconButtonContinue
             // 
@@ -110,6 +114,7 @@ namespace UI
             this.iconButtonContinue.Text = "Continuar";
             this.iconButtonContinue.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonContinue.UseVisualStyleBackColor = false;
+            this.iconButtonContinue.Click += new System.EventHandler(this.iconButtonContinue_Click);
             // 
             // iconButtonCancel
             // 
@@ -135,23 +140,45 @@ namespace UI
             this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonCancel.UseVisualStyleBackColor = false;
             // 
-            // label4
+            // NewDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(307, 313);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 20);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Nueva fecha";
+            this.NewDate.AutoSize = true;
+            this.NewDate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NewDate.Location = new System.Drawing.Point(307, 313);
+            this.NewDate.Name = "NewDate";
+            this.NewDate.Size = new System.Drawing.Size(83, 20);
+            this.NewDate.TabIndex = 37;
+            this.NewDate.Text = "Nueva fecha";
+            this.NewDate.Visible = false;
+            // 
+            // dateTimePickerNewDate
+            // 
+            this.dateTimePickerNewDate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerNewDate.Location = new System.Drawing.Point(396, 313);
+            this.dateTimePickerNewDate.Name = "dateTimePickerNewDate";
+            this.dateTimePickerNewDate.Size = new System.Drawing.Size(403, 26);
+            this.dateTimePickerNewDate.TabIndex = 38;
+            this.dateTimePickerNewDate.Visible = false;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(396, 313);
+            this.dateTimePicker1.Location = new System.Drawing.Point(396, 345);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(403, 26);
-            this.dateTimePicker1.TabIndex = 38;
+            this.dateTimePicker1.TabIndex = 40;
+            this.dateTimePicker1.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(307, 345);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Nueva hora";
+            this.label4.Visible = false;
             // 
             // FormDiffers
             // 
@@ -160,17 +187,20 @@ namespace UI
             this.ClientSize = new System.Drawing.Size(1190, 424);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.dateTimePickerNewDate);
+            this.Controls.Add(this.NewDate);
             this.Controls.Add(this.iconButtonCancel);
             this.Controls.Add(this.iconButtonContinue);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxDetail);
+            this.Controls.Add(this.labelDiff);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormDiffers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDiffers";
+            this.Load += new System.EventHandler(this.FormDiffers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,13 +209,15 @@ namespace UI
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label labelDiff;
+        private System.Windows.Forms.TextBox textBoxDetail;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxName;
         private FontAwesome.Sharp.IconButton iconButtonContinue;
         private FontAwesome.Sharp.IconButton iconButtonCancel;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label NewDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNewDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label4;
     }
 }

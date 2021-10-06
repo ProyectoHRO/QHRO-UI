@@ -46,7 +46,9 @@
   <ItemGroup>
     <Compile Include="ClassAnesthetist.cs" />
     <Compile Include="ClassAssistants.cs" />
+    <Compile Include="ClassDailyDiff.cs" />
     <Compile Include="ClassDailyReport.cs" />
+    <Compile Include="ClassDailySurgeries.cs" />
     <Compile Include="ClassDiagnosis.cs" />
     <Compile Include="ClassDoctor.cs" />
     <Compile Include="ClassDtoAssistants.cs" />

@@ -19,9 +19,53 @@ namespace BLL
             return surgeries.getDailyReport(date);
         }
 
+        public DataTable getDailyDiff(DateTime date)
+        {
+            return surgeries.getDailyDiff(date);
+        }
+        public DataTable getDailySurgeries()
+        {
+            return surgeries.GetDailySurgeries();
+        }
+
         public DataTable getDoctorsByIdSurgerie(int id)
         {
             return surgeries.getDoctorsBySurgeries(id);
+        }
+        public DataTable getAssistantsBySurgerie(int id)
+        {
+            return surgeries.getAssistantsBySurgerie(id);
+        }
+
+
+        public string reSchedule(int idSurgerie, DateTime date)
+        {
+
+            try
+            {
+                surgeries.reScheduleSurgerie(idSurgerie, date);
+                return "Cirugia reprogramada con exito";
+            }
+            catch (Exception error)
+            {
+
+                return "ERROR: " + error.Message;
+            }
+        }
+
+        public string diffSurgerie(int idSurgerie, string reason)
+        {
+
+            try
+            {
+                surgeries.diffSurgerie(idSurgerie, reason);
+                return "Cirugia diferida con exito";
+            }
+            catch (Exception error)
+            {
+
+                return "ERROR: " + error.Message;
+            }
         }
 
         public string assignSurgery(string anesthesiaType, string surgeryType, DateTime surgeryDate, int opRoomId, 

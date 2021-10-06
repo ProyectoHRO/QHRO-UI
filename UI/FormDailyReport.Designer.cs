@@ -31,12 +31,16 @@ namespace UI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.reportViewerDailies = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePickerReport = new System.Windows.Forms.DateTimePicker();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.reportViewerDiff = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dateTimePickerDiff = new System.Windows.Forms.DateTimePicker();
+            this.iconButtonDiff = new FontAwesome.Sharp.IconButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -61,16 +65,6 @@ namespace UI
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Operaciones Realizadas";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1254, 897);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Diferidas";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // reportViewerDailies
             // 
@@ -100,6 +94,47 @@ namespace UI
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.reportViewerDiff);
+            this.tabPage2.Controls.Add(this.dateTimePickerDiff);
+            this.tabPage2.Controls.Add(this.iconButtonDiff);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1254, 897);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Diferidas";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // reportViewerDiff
+            // 
+            this.reportViewerDiff.Location = new System.Drawing.Point(1, 38);
+            this.reportViewerDiff.Name = "reportViewerDiff";
+            this.reportViewerDiff.ServerReport.BearerToken = null;
+            this.reportViewerDiff.Size = new System.Drawing.Size(1252, 856);
+            this.reportViewerDiff.TabIndex = 9;
+            // 
+            // dateTimePickerDiff
+            // 
+            this.dateTimePickerDiff.Location = new System.Drawing.Point(366, 2);
+            this.dateTimePickerDiff.Name = "dateTimePickerDiff";
+            this.dateTimePickerDiff.Size = new System.Drawing.Size(265, 20);
+            this.dateTimePickerDiff.TabIndex = 8;
+            // 
+            // iconButtonDiff
+            // 
+            this.iconButtonDiff.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonDiff.IconColor = System.Drawing.Color.Black;
+            this.iconButtonDiff.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonDiff.Location = new System.Drawing.Point(682, 2);
+            this.iconButtonDiff.Name = "iconButtonDiff";
+            this.iconButtonDiff.Size = new System.Drawing.Size(75, 23);
+            this.iconButtonDiff.TabIndex = 7;
+            this.iconButtonDiff.Text = "iconButton2";
+            this.iconButtonDiff.UseVisualStyleBackColor = true;
+            this.iconButtonDiff.Click += new System.EventHandler(this.iconButtonDiff_Click);
+            // 
             // FormDailyReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,6 +147,7 @@ namespace UI
             this.Load += new System.EventHandler(this.FormDailyReport_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -124,5 +160,8 @@ namespace UI
         private System.Windows.Forms.DateTimePicker dateTimePickerReport;
         private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.TabPage tabPage2;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerDiff;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDiff;
+        private FontAwesome.Sharp.IconButton iconButtonDiff;
     }
 }

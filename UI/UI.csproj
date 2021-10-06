@@ -269,6 +269,7 @@
     <EmbeddedResource Include="Reports\DailyReport.rdlc" />
     <EmbeddedResource Include="Reports\ReportAnesthetist.rdlc" />
     <EmbeddedResource Include="Reports\ReportAssistant.rdlc" />
+    <EmbeddedResource Include="Reports\ReportDiff.rdlc" />
     <EmbeddedResource Include="Reports\ReportDoctor.rdlc" />
     <EmbeddedResource Include="Reports\ReportPacientDiagnosis.rdlc" />
     <EmbeddedResource Include="RequestSurgery.resx">
@@ -284,6 +285,7 @@
       <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BLL.ClassDailyDiff.datasource" />
     <None Include="Properties\DataSources\BLL.ClassDailyReport.datasource" />
     <None Include="Properties\DataSources\BLL.ClassDiagnosis.datasource" />
     <None Include="Properties\DataSources\DAL.Diagnosis.datasource" />
