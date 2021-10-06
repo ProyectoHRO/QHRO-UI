@@ -109,6 +109,12 @@
     <Compile Include="FormDailyReport.Designer.cs">
       <DependentUpon>FormDailyReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDiffers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDiffers.Designer.cs">
+      <DependentUpon>FormDiffers.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="FormSearch.Designer.cs">
       <DependentUpon>FormSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsSchedules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsSchedules.Designer.cs">
+      <DependentUpon>FormsSchedules.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUserPermits.cs">
       <SubType>Form</SubType>
@@ -211,6 +223,9 @@
     <EmbeddedResource Include="FormDailyReport.resx">
       <DependentUpon>FormDailyReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDiffers.resx">
+      <DependentUpon>FormDiffers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsSchedules.resx">
+      <DependentUpon>FormsSchedules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUserPermits.resx">
       <DependentUpon>FormUserPermits.cs</DependentUpon>

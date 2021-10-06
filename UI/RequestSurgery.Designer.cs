@@ -66,6 +66,7 @@ namespace UI
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.iconButtonRequest = new FontAwesome.Sharp.IconButton();
             this.iconButtonCreateAndRequest = new FontAwesome.Sharp.IconButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.groupBoxpatientData.SuspendLayout();
@@ -86,7 +87,7 @@ namespace UI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.27596F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.72404F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 216F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 217F));
             this.tableLayoutPanel1.Controls.Add(this.iconButtonSearchNames, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.iconPictureBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBoxSearch, 1, 0);
@@ -112,10 +113,10 @@ namespace UI
             this.iconButtonSearchNames.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearchNames.IconSize = 30;
             this.iconButtonSearchNames.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSearchNames.Location = new System.Drawing.Point(617, 2);
+            this.iconButtonSearchNames.Location = new System.Drawing.Point(616, 2);
             this.iconButtonSearchNames.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonSearchNames.Name = "iconButtonSearchNames";
-            this.iconButtonSearchNames.Size = new System.Drawing.Size(213, 32);
+            this.iconButtonSearchNames.Size = new System.Drawing.Size(214, 32);
             this.iconButtonSearchNames.TabIndex = 30;
             this.iconButtonSearchNames.Text = "Buscar";
             this.iconButtonSearchNames.UseVisualStyleBackColor = false;
@@ -142,7 +143,7 @@ namespace UI
             this.textBoxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearch.Location = new System.Drawing.Point(71, 5);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(533, 26);
+            this.textBoxSearch.Size = new System.Drawing.Size(532, 26);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.Text = "Buscar paciente por No. Historia";
             this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
@@ -674,5 +675,6 @@ namespace UI
         private FontAwesome.Sharp.IconButton iconButtonCreateAndRequest;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton iconButtonSearchNames;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
