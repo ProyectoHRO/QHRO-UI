@@ -31,6 +31,12 @@ namespace BLL
             return ANESTHETIST.GetAnesthetist();
         }
 
+
+        public DataTable getAnesthetistByname(string name)
+        {
+            return ANESTHETIST.GetAnesthetistByName(name);
+        }
+
         public string newAnesthetist(string dpi, string firstName, string secondName,
             string thirdName, string firstSurname, string secondSurname, string phoneNumber, string email)
         {

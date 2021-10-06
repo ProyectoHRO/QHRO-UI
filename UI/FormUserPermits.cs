@@ -14,6 +14,7 @@ namespace UI
     {
   
         private ClassUsers users = new ClassUsers();
+        bool hasPermits;
         public FormUserPermits()
         {
             InitializeComponent();
@@ -78,10 +79,11 @@ namespace UI
             DataTable infoPermits=users.getPermitsByUserId(Convert.ToInt32(idUser));
             if (infoPermits.Rows.Count<1)
             {
-                MessageBox.Show("No tiene permisos");
+                hasPermits = false;
             }
             else
             {
+                hasPermits = true;
                 List<int> listUserPermits = new List<int>();
                 foreach (DataRow item in infoPermits.Rows)
                 {
@@ -156,23 +158,47 @@ namespace UI
 
         private void iconButtonGrant_Click(object sender, EventArgs e)
         {
-            List<ClassDtoPermits> permitsList = new List<ClassDtoPermits>();
-            ClassDtoPermits permit;
-
-            for (int i = 0; i < checkedListBoxPermits.Items.Count; i++)
+            if (hasPermits==false)
             {
-                listBoxIdPermits.SelectedIndex = i;
-                if (checkedListBoxPermits.GetItemChecked(i))
+                List<ClassDtoPermits> permitsList = new List<ClassDtoPermits>();
+                ClassDtoPermits permit;
+
+                for (int i = 0; i < checkedListBoxPermits.Items.Count; i++)
                 {
-                    permit = new ClassDtoPermits();
-                    permit.IdPermit = Convert.ToInt32(listBoxIdPermits.SelectedItem);
-                    permit.IdUser = Convert.ToInt32(labelId.Text);
-                    permitsList.Add(permit);
+                    listBoxIdPermits.SelectedIndex = i;
+                    if (checkedListBoxPermits.GetItemChecked(i))
+                    {
+                        permit = new ClassDtoPermits();
+                        permit.IdPermit = Convert.ToInt32(listBoxIdPermits.SelectedItem);
+                        permit.IdUser = Convert.ToInt32(labelId.Text);
+                        permitsList.Add(permit);
+                    }
                 }
+                string response = users.assignPermits(
+                  permitsList);
+                MessageBox.Show(response);
             }
-            string response = users.assignPermits(
-              permitsList);
-            MessageBox.Show(response);
+            else
+            {
+                List<ClassDtoPermits> permitsList = new List<ClassDtoPermits>();
+                ClassDtoPermits permit;
+
+                for (int i = 0; i < checkedListBoxPermits.Items.Count; i++)
+                {
+                    listBoxIdPermits.SelectedIndex = i;
+                    if (checkedListBoxPermits.GetItemChecked(i))
+                    {
+                        permit = new ClassDtoPermits();
+                        permit.IdPermit = Convert.ToInt32(listBoxIdPermits.SelectedItem);
+                        permit.IdUser = Convert.ToInt32(labelId.Text);
+                        permitsList.Add(permit);
+                    }
+                }
+                string response = users.modifyPermits(
+                   Convert.ToInt32(labelId.Text),
+                  permitsList);
+                MessageBox.Show(response);
+            }
 
         }
     }

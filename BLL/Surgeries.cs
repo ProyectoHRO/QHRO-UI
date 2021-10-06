@@ -14,6 +14,15 @@ namespace BLL
         {
             surgeries = new Surgery();
         }
+        public DataTable getDailyReport(DateTime date)
+        {
+            return surgeries.getDailyReport(date);
+        }
+
+        public DataTable getDoctorsByIdSurgerie(int id)
+        {
+            return surgeries.getDoctorsBySurgeries(id);
+        }
 
         public string assignSurgery(string anesthesiaType, string surgeryType, DateTime surgeryDate, int opRoomId, 
             int anesthetistId, int programationId,string relevance,string interventionDetail,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)

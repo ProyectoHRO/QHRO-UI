@@ -40,6 +40,19 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+        public DataTable GetDoctorByName(string name)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "BuscarDocPorNombre";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@nombre", name);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
 
         public void InsertDoctor(
             string doctorDpi,

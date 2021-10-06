@@ -143,19 +143,7 @@ namespace UI
             textBoxSearch.Clear();
             if (comboBoxFilter.Text=="Nombre")
             {
-                getNames getSearchNames = new getNames();
-                getSearchNames.ShowDialog();
-                textBoxSearch.Enabled = false;
-                //if (typePerson == 1)
-                    //listAnesthetist(anesthetist.getAnesthetistByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                    //    getSearchNames.firstSurname, getSearchNames.secondSurname));
-                //if (typePerson == 2)
-                //    listDoctors(doctor.getDoctorByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                //else
-                //    listAssistants(assistant.getAssistantByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
-               
+                textBoxSearch.Enabled = true;
             }
             else
             {
@@ -165,38 +153,60 @@ namespace UI
 
         private void iconButtonSearch_Click(object sender, EventArgs e)
         {
-             if (comboBoxFilter.Text=="Nombre")
+            if (textBoxSearch.Text== "BUSCAR")
             {
-                getNames getSearchNames = new getNames();
-                getSearchNames.ShowDialog();
-                textBoxSearch.Enabled = false;
-                //if (typePerson == 1)
-                //    listAnesthetist(anesthetist.getAnesthetistByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                //if (typePerson == 2)
-                //    listDoctors(doctor.getDoctorByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                //else
-                //    listAssistants(assistant.getAssistantByName(getSearchNames.firstName, getSearchNames.secondName, getSearchNames.thirdName,
-                //        getSearchNames.firstSurname, getSearchNames.secondSurname));
-                if (dataGridViewSearchPerson.Rows.Count < 2)
+                if (typePerson == 1)
                 {
-                    iconButtonContinue.Enabled = true;
+                    label1.Text = "Anestesista";
+                    listAnesthetist(anesthetist.listAnesthetist());
                 }
+                else if (typePerson == 2)
+                {
+                    label1.Text = "Doctor";
+                    listDoctors(doctor.getDoctors());
+                }
+                else
+                {
+                    label1.Text = "Ayudante";
+                    listAssistants(assistant.getAssistants());
+                }
+                dataGridViewSearchPerson.AutoResizeColumns();
+                dataGridViewSearchPerson.AutoResizeRows();
+                dataGridViewSearchPerson.Refresh();
+                comboBoxFilter.SelectedIndex = 0;
+
             }
             else
             {
-                if (typePerson == 1)
-                    listAnesthetist(anesthetist.getAnesthetistByDpi(textBoxSearch.Text));
-                else if (typePerson == 2)
-                    listDoctors(doctor.getDoctorByDpi(textBoxSearch.Text));
-                else
-                    listAssistants(assistant.getAssistantByDpi(textBoxSearch.Text));
-                if (dataGridViewSearchPerson.Rows.Count < 2)
+                if (comboBoxFilter.Text == "Nombre")
                 {
-                    iconButtonContinue.Enabled = true;
+                    if (typePerson == 1)
+                        listAnesthetist(anesthetist.getAnesthetistByname(textBoxSearch.Text));
+                    else if (typePerson == 2)
+                        listDoctors(doctor.getDoctorByName(textBoxSearch.Text));
+                    else
+                        listAssistants(assistant.getAssistantByName(textBoxSearch.Text));
+
+                    if (dataGridViewSearchPerson.Rows.Count < 2)
+                    {
+                        iconButtonContinue.Enabled = true;
+                    }
+                }
+                else
+                {
+                    if (typePerson == 1)
+                        listAnesthetist(anesthetist.getAnesthetistByDpi(textBoxSearch.Text));
+                    else if (typePerson == 2)
+                        listDoctors(doctor.getDoctorByDpi(textBoxSearch.Text));
+                    else
+                        listAssistants(assistant.getAssistantByDpi(textBoxSearch.Text));
+                    if (dataGridViewSearchPerson.Rows.Count < 2)
+                    {
+                        iconButtonContinue.Enabled = true;
+                    }
                 }
             }
+            
         }
 
         private void dataGridViewSearchPerson_CellClick(object sender, DataGridViewCellEventArgs e)

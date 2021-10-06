@@ -27,6 +27,20 @@ namespace DAL
                 return tableData;
         }
 
+        public DataTable GetServicesById(int serviceId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarServicioPorId";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idservicio", serviceId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
         public DataTable GetServicesByName(string serviceName)
         {
             tableData = new DataTable();

@@ -37,7 +37,32 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
-
+        public DataTable GetTypeAssistantById(int id)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarAyudantePorId";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idservicio", id);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+        public DataTable GetAssistantByName(string name)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "BuscarAyudantePorNombre";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@nombre", name);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
         public DataTable GetAssistantByDPI(string dpi)
         {
             tableData = new DataTable();

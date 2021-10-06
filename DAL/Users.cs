@@ -156,6 +156,26 @@ namespace DAL
         }
 
 
+        public string modifyPermits(
+            int userId,
+            DataTable permitsDetail
+            )
+        {
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "sp_modifyPermits";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
+            command.Parameters.AddWithValue("@detalle", permitsDetail);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
+        }
+
         public void restartPasswordUser(
           int userId,
           string userName,

@@ -24,6 +24,11 @@ namespace BLL
         //{
         //    return doctors.GetDataByDoctorName(firstName, secondName, thirdName, firstSurname, secondSurname);
         //}
+
+        public DataTable getDoctorByName(string name)
+        {
+            return doctors.GetDoctorByName(name);
+        }
         public DataTable getDoctors()
         {
             return doctors.GetDoctors();

@@ -161,5 +161,18 @@ namespace BLL
 
         }
 
+        public string modifyPermits(int userId,List<ClassDtoPermits> permitsList)
+        {
+            string response = "";
+            DataTable dataPermits = new DataTable() { Columns = { "idPermit", "idUser" } };
+            foreach (ClassDtoPermits item in permitsList)
+            {
+                dataPermits.Rows.Add(item.IdPermit, item.IdUser);
+            }
+            response = users.modifyPermits(userId,dataPermits);
+            return response;
+
+        }
+
     }
 }

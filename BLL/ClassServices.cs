@@ -21,6 +21,13 @@ namespace BLL
         {
             return services.GetServices();
         }
+
+    
+
+        public DataTable getServicesById(int id)
+        {
+            return services.GetServicesById(id);
+        }
         //insert
         public string newService(string serviceName)
         {

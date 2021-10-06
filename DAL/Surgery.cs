@@ -26,7 +26,35 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+        
+        public DataTable getDoctorsBySurgeries(int surgerieId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerDoctoresPorCirugia";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
 
+        public DataTable getDailyReport(DateTime surgeryDate)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarIntervencionesReporte";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha", surgeryDate);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+        
         public string AssignSurgery(
             string anesthesiaType,
             string surgeryType,

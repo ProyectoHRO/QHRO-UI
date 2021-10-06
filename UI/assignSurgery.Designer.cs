@@ -842,7 +842,7 @@ namespace UI
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.71257F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.28743F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
             this.tableLayoutPanel8.Controls.Add(this.iconButtonAddAnesthetist, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.textBoxAnestethistName, 1, 0);
@@ -893,7 +893,7 @@ namespace UI
             this.textBoxAnestethistName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAnestethistName.Location = new System.Drawing.Point(208, 10);
             this.textBoxAnestethistName.Name = "textBoxAnestethistName";
-            this.textBoxAnestethistName.Size = new System.Drawing.Size(259, 26);
+            this.textBoxAnestethistName.Size = new System.Drawing.Size(257, 26);
             this.textBoxAnestethistName.TabIndex = 4;
             // 
             // labelIdAnesthetist

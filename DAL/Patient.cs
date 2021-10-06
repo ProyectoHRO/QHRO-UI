@@ -15,6 +15,20 @@ namespace DAL
         DataTable tableData;
         SqlCommand command = new SqlCommand();
 
+
+        public DataTable GetDiagnosis(int id)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarDiagnosticos";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idpaciente", id);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
         public DataTable GetPatients()
         {
             tableData = new DataTable();
@@ -40,6 +54,33 @@ namespace DAL
             return tableData;
         }
 
+        public DataTable GetPatientByName(string name)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "BuscarPacientePorNombre";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@nombre", name);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+        
+        public DataTable GetDiagnosisByPatient(int id)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarDiagnosticos";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idpaciente", id);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
         public void InsertPatient(
             string historyNumber,
             string firstName,

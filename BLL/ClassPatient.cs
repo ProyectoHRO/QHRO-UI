@@ -22,9 +22,17 @@ namespace BLL
             return patient.GetPatients();
         }
 
+        public DataTable getDiagnosisByPatient(int id)
+        {
+            return patient.GetDiagnosisByPatient(id);
+        }
         public DataTable getPatientsByHistoryNumber(string historyNumber)
         {
             return patient.GetPatientByHistoryNumber(historyNumber);
+        }
+        public DataTable getPatientsByName(string name)
+        {
+            return patient.GetPatientByName(name);
         }
 
         public string newPatient(string historyNumber, string firstName, string secondName,
