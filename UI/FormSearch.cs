@@ -294,19 +294,20 @@ namespace UI
                 List<ClassDiagnosis> diagnosisList = new List<ClassDiagnosis>();
                 DataTable infoPatients= patients.getDiagnosisByPatient(idPacient);
                 ClassDiagnosis diagosis ;
-                DateTime date;
+                string date;
                 string format;
                 foreach (DataRow item in infoPatients.Rows)
                 {
                     diagosis = new ClassDiagnosis();
                     diagosis.id_diagnostico = Convert.ToInt32(item.Field<int>(0));
                     diagosis.diagnostico = item.Field<string>(1).ToString();
-                    //OBTENGO LA FECHA
-                    date = Convert.ToDateTime(item.Field<System.DateTime>(2));
+                   //OBTENGO LA FECHA
+                   // date = Convert.ToDateTime(item.Field<string>(2));
+                    date = item.Field<string>(2);
                     //INTENTO DE DAT FORMATO
-                    format = date.ToShortDateString();
+                    //format = date.ToShortDateString();
                     //ENVIO LA FECHA
-                    diagosis.fecha_diagnostico = Convert.ToDateTime(format);
+                    diagosis.fecha_diagnostico = date;
                     diagosis.idpaciente = Convert.ToInt32(item.Field<int>(3));
                     diagnosisList.Add(diagosis);    
                 }

@@ -842,7 +842,7 @@ namespace UI
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.71257F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.28743F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
             this.tableLayoutPanel8.Controls.Add(this.iconButtonAddAnesthetist, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.textBoxAnestethistName, 1, 0);
@@ -882,7 +882,7 @@ namespace UI
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(38, 14);
+            this.label2.Location = new System.Drawing.Point(37, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 18);
             this.label2.TabIndex = 5;
@@ -891,9 +891,9 @@ namespace UI
             // textBoxAnestethistName
             // 
             this.textBoxAnestethistName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAnestethistName.Location = new System.Drawing.Point(208, 10);
+            this.textBoxAnestethistName.Location = new System.Drawing.Point(207, 10);
             this.textBoxAnestethistName.Name = "textBoxAnestethistName";
-            this.textBoxAnestethistName.Size = new System.Drawing.Size(257, 26);
+            this.textBoxAnestethistName.Size = new System.Drawing.Size(256, 26);
             this.textBoxAnestethistName.TabIndex = 4;
             // 
             // labelIdAnesthetist

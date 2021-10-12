@@ -45,7 +45,7 @@ namespace DAL
             return tableData;
         }
 
-
+        
         public DataTable GetPermits()
         {
             tableData = new DataTable();

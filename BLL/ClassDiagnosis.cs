@@ -12,7 +12,7 @@ namespace BLL
 
         public string diagnostico { get; set; }
 
-        public DateTime fecha_diagnostico { get; set; }
+        public string fecha_diagnostico { get; set; }
 
         public int idpaciente { get; set; }
     }
