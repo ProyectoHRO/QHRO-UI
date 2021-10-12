@@ -15,9 +15,11 @@ namespace UI
     public partial class FormForgotPassword : Form
     {
         string hash = "@HR0";
+        string user;
         int id;
         string password;
         private ClassUsers users = new ClassUsers();
+        private ClassMail mails = new ClassMail();
         public FormForgotPassword()
         {
             InitializeComponent();
@@ -43,6 +45,7 @@ namespace UI
                     foreach (DataRow item in getuser.Rows)
                     {
                         id = Convert.ToInt32(item.Field<int>(0));
+                        user = item.Field<string>(1).ToString();
                     }
 
                     byte[] data = UTF8Encoding.UTF8.GetBytes("QUIROFANOSHRO" + id.ToString());
@@ -56,7 +59,7 @@ namespace UI
                             password = Convert.ToBase64String(results, 0, results.Length);
                         }
                     }
-                    string userName = "QHRO" + id.ToString();
+                    string userName = user;
                     string response = users.restoreUserPass(id, userName, password);
                     if (response.ToUpper().Contains("ERROR"))
                     {
@@ -64,33 +67,7 @@ namespace UI
                     }
                     else
                     {
-                        System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
-                        msg.To.Add(textBoxEmail.Text);
-                        msg.Subject = "SOLICITUD DE RESTABLECIMIENTO DE USUARIO";
-                        msg.SubjectEncoding = System.Text.Encoding.UTF8;
-
-                        msg.Body = "NOMBRE DE USUARIO: " + userName + "\nCONTRASEÑA: QUIROFANOSHRO" + id.ToString();
-                        msg.BodyEncoding = System.Text.Encoding.UTF8;
-                        msg.From = new System.Net.Mail.MailAddress("quirofanoshro@gmail.com");
-
-                        System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
-                        client.Credentials = new System.Net.NetworkCredential("quirofanoshro@gmail.com", "QuirofanosHROGT");
-
-                        client.Port = 587;
-                        client.EnableSsl = true;
-
-                        client.Host = "smtp.gmail.com";
-
-                        try
-                        {
-                            client.Send(msg);
-                            MessageBox.Show(response);
-                        }
-                        catch (Exception)
-                        {
-
-                            MessageBox.Show("Error al enviar");
-                        }
+                        MessageBox.Show(mails.MakeMail(textBoxEmail.Text, "NOMBRE DE USUARIO: " + userName + "\nCONTRASEÑA: QUIROFANOSHRO" + id.ToString(), "SOLICITUD DE RESTABLECIMIENTO DE CONTRASEÑA", response));  
                     }
 
                 }

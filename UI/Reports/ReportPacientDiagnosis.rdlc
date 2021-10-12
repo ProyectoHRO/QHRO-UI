@@ -430,7 +430,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!fecha_diagnostico.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>"dddd, dd MMMM yyyy"</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -474,7 +476,7 @@
             <Top>1.89458in</Top>
             <Left>0.655in</Left>
             <Height>2.26042in</Height>
-            <Width>5.01389in</Width>
+            <Width>5.01388in</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -486,7 +488,7 @@
         <Height>4.67708in</Height>
         <Style />
       </Body>
-      <Width>6.58333in</Width>
+      <Width>8.33208in</Width>
       <Page>
         <PageHeader>
           <Height>1in</Height>

@@ -19,11 +19,13 @@ namespace UI
         string queryResult;
         string hash = "@HR0";
         private ClassUsers user;
+        private ClassMail mails = new ClassMail();
         int logCount;
         bool confirmation;
         DateTime lastConnection;
         int idUser;
         int role;
+        string mail;
 
 
         int serviceId;
@@ -147,23 +149,30 @@ namespace UI
                     confirmation = item.Field<bool>(9);
                     logCount = Convert.ToInt32(item.Field<int>(10));
                     serviceId = Convert.ToInt32(item.Field<int>(11));
+                    mail = item.Field<string>(12).ToString();
                 }
                 if (confirmation == false)
                 {
                     if (MessageBox.Show("Usuario no confirmado, desea confirmarlo ahora?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        ConfirmUser confirmForm = new ConfirmUser(idUser,lastConnection);
+                        ConfirmUser confirmForm = new ConfirmUser(idUser,lastConnection, txtUser.Text);
                         confirmForm.ShowDialog();
                     }
                 }
                 else
                 {
-                    logCount++;
-                    user.addLoginCount(idUser, logCount, lastConnection);
-                    this.Hide();
-                    FormWelcome fW = new FormWelcome(txtUser.Text,role,serviceId);
-                    fW.labelUser.Text = txtUser.Text;
-                    fW.ShowDialog();
+                    if (logCount==0)
+                    {
+                        mails.MakeMail(mail,"Has iniciado sesión por primera vez en el sistema de quirófanos. \n Con el usuario: "+ txtUser.Text +" \n A las: "+ DateTime.Now.ToString(),"PRIMER INICIO DE SESIÓN SISTEMA DE QUIRÓFANOS","");
+                    }
+                    
+                        logCount++;
+                        user.addLoginCount(idUser, logCount, lastConnection);
+                        this.Hide();
+                        FormWelcome fW = new FormWelcome(txtUser.Text, role, serviceId);
+                        fW.labelUser.Text = txtUser.Text;
+                        fW.ShowDialog();
+                    
                 }
               
             }

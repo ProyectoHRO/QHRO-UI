@@ -20,10 +20,11 @@ namespace UI
         string password;
         string hash = "@HR0";
         private ClassUsers users = new ClassUsers();
-        public ConfirmUser(int idUser, DateTime last)
+        public ConfirmUser(int idUser, DateTime last, string userName)
         {
             InitializeComponent();
             id = idUser;
+            txtUser.Text = userName;
             lastConnection = last;
         }
 

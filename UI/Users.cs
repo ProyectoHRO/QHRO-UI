@@ -15,6 +15,7 @@ namespace UI
     public partial class Users : Form
     {
         private ClassUsers users = new ClassUsers();
+        private ClassMail mail = new ClassMail();
 
         string userName;
         string hash = "@HR0";
@@ -71,35 +72,8 @@ namespace UI
                 }
 
                 users.makeUserPass(Convert.ToInt32(newphrase[1]), password);
-                
-                System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
-                msg.To.Add(textBoxEmail.Text);
-                msg.Subject = "INFORMACIÓN DE USUARIO";
-                msg.SubjectEncoding = System.Text.Encoding.UTF8;
 
-                msg.Body = "NOMBRE DE USUARIO: " + newphrase[0] + "\nCONTRASEÑA: QUIROFANOSHRO" + newphrase[1];
-                msg.BodyEncoding = System.Text.Encoding.UTF8;
-
-                msg.From = new System.Net.Mail.MailAddress("quirofanoshro@gmail.com");
-
-                System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient();
-                client.Credentials = new System.Net.NetworkCredential("quirofanoshro@gmail.com", "QuirofanosHROGT");
-
-                client.Port = 587;
-                client.EnableSsl = true;
-
-                client.Host = "smtp.gmail.com";
-
-                try
-                {
-                    client.Send(msg);
-                    MessageBox.Show("Usuario creado correctamente, porfavor verificar correo ");
-                }
-                catch (Exception)
-                {
-
-                    MessageBox.Show("Error al enviar");
-                }
+                MessageBox.Show(mail.MakeMail(textBoxEmail.Text, "NOMBRE DE USUARIO: " + newphrase[0] + "\nCONTRASEÑA: QUIROFANOSHRO" + newphrase[1], "INFORMACIÓN DE USUARIO", "Usuario creado correctamente, porfavor verificar correo "));
             }
             
         }
