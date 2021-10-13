@@ -59,7 +59,7 @@ namespace UI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(94, 204);
+            this.panel3.Location = new System.Drawing.Point(103, 251);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(255, 1);
             this.panel3.TabIndex = 28;
@@ -67,18 +67,18 @@ namespace UI
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(94, 263);
+            this.panel4.Location = new System.Drawing.Point(103, 310);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(255, 1);
             this.panel4.TabIndex = 27;
             // 
             // txtPassword
             // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
-            this.txtPassword.Location = new System.Drawing.Point(94, 238);
+            this.txtPassword.Location = new System.Drawing.Point(103, 285);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.MaxLength = 100;
             this.txtPassword.Name = "txtPassword";
@@ -90,11 +90,11 @@ namespace UI
             // 
             // txtUser
             // 
-            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.txtUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.txtUser.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUser.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUser.ForeColor = System.Drawing.Color.White;
-            this.txtUser.Location = new System.Drawing.Point(94, 179);
+            this.txtUser.Location = new System.Drawing.Point(103, 226);
             this.txtUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtUser.MaxLength = 50;
             this.txtUser.Name = "txtUser";
@@ -107,18 +107,18 @@ namespace UI
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(94, 329);
+            this.panel1.Location = new System.Drawing.Point(103, 376);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(255, 1);
             this.panel1.TabIndex = 33;
             // 
             // textConfirmPassword
             // 
-            this.textConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.textConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.textConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textConfirmPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textConfirmPassword.ForeColor = System.Drawing.Color.White;
-            this.textConfirmPassword.Location = new System.Drawing.Point(94, 304);
+            this.textConfirmPassword.Location = new System.Drawing.Point(103, 351);
             this.textConfirmPassword.Margin = new System.Windows.Forms.Padding(2);
             this.textConfirmPassword.MaxLength = 100;
             this.textConfirmPassword.Name = "textConfirmPassword";
@@ -140,7 +140,7 @@ namespace UI
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(79, 395);
+            this.iconButton1.Location = new System.Drawing.Point(88, 442);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(239, 63);
             this.iconButton1.TabIndex = 36;
@@ -150,13 +150,13 @@ namespace UI
             // 
             // iconPictureBox3
             // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.iconPictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.iconPictureBox3.IconColor = System.Drawing.Color.White;
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.IconSize = 40;
-            this.iconPictureBox3.Location = new System.Drawing.Point(315, 289);
+            this.iconPictureBox3.Location = new System.Drawing.Point(324, 336);
             this.iconPictureBox3.Name = "iconPictureBox3";
             this.iconPictureBox3.Size = new System.Drawing.Size(40, 40);
             this.iconPictureBox3.TabIndex = 35;
@@ -164,12 +164,12 @@ namespace UI
             // 
             // iconPictureBox4
             // 
-            this.iconPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.iconPictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Lock;
             this.iconPictureBox4.IconColor = System.Drawing.Color.White;
             this.iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox4.IconSize = 50;
-            this.iconPictureBox4.Location = new System.Drawing.Point(39, 280);
+            this.iconPictureBox4.Location = new System.Drawing.Point(48, 327);
             this.iconPictureBox4.Name = "iconPictureBox4";
             this.iconPictureBox4.Size = new System.Drawing.Size(50, 50);
             this.iconPictureBox4.TabIndex = 34;
@@ -177,13 +177,13 @@ namespace UI
             // 
             // iconPictureEye
             // 
-            this.iconPictureEye.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.iconPictureEye.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.iconPictureEye.Cursor = System.Windows.Forms.Cursors.Hand;
             this.iconPictureEye.IconChar = FontAwesome.Sharp.IconChar.Eye;
             this.iconPictureEye.IconColor = System.Drawing.Color.White;
             this.iconPictureEye.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureEye.IconSize = 40;
-            this.iconPictureEye.Location = new System.Drawing.Point(315, 223);
+            this.iconPictureEye.Location = new System.Drawing.Point(324, 270);
             this.iconPictureEye.Name = "iconPictureEye";
             this.iconPictureEye.Size = new System.Drawing.Size(40, 40);
             this.iconPictureEye.TabIndex = 31;
@@ -191,12 +191,12 @@ namespace UI
             // 
             // iconPictureBox2
             // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Lock;
             this.iconPictureBox2.IconColor = System.Drawing.Color.White;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox2.IconSize = 50;
-            this.iconPictureBox2.Location = new System.Drawing.Point(39, 214);
+            this.iconPictureBox2.Location = new System.Drawing.Point(48, 261);
             this.iconPictureBox2.Name = "iconPictureBox2";
             this.iconPictureBox2.Size = new System.Drawing.Size(50, 50);
             this.iconPictureBox2.TabIndex = 30;
@@ -204,12 +204,12 @@ namespace UI
             // 
             // iconPictureBox1
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconPictureBox1.IconColor = System.Drawing.Color.White;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 50;
-            this.iconPictureBox1.Location = new System.Drawing.Point(39, 155);
+            this.iconPictureBox1.Location = new System.Drawing.Point(48, 202);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(50, 50);
             this.iconPictureBox1.TabIndex = 29;
@@ -224,7 +224,7 @@ namespace UI
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(399, 50);
+            this.panel2.Size = new System.Drawing.Size(415, 50);
             this.panel2.TabIndex = 37;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
@@ -244,7 +244,7 @@ namespace UI
             // 
             this.pictureBoxMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxMinimized.Image = global::UI.Properties.Resources.minimazar;
-            this.pictureBoxMinimized.Location = new System.Drawing.Point(331, 12);
+            this.pictureBoxMinimized.Location = new System.Drawing.Point(347, 12);
             this.pictureBoxMinimized.Name = "pictureBoxMinimized";
             this.pictureBoxMinimized.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -256,7 +256,7 @@ namespace UI
             // 
             this.pictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureClose.Image = global::UI.Properties.Resources.cerrar;
-            this.pictureClose.Location = new System.Drawing.Point(362, 12);
+            this.pictureClose.Location = new System.Drawing.Point(378, 12);
             this.pictureClose.Name = "pictureClose";
             this.pictureClose.Size = new System.Drawing.Size(25, 25);
             this.pictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -268,17 +268,17 @@ namespace UI
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 666);
+            this.panel5.Location = new System.Drawing.Point(0, 705);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(399, 15);
+            this.panel5.Size = new System.Drawing.Size(415, 15);
             this.panel5.TabIndex = 38;
             // 
             // ConfirmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(399, 681);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.ClientSize = new System.Drawing.Size(415, 720);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.iconButton1);

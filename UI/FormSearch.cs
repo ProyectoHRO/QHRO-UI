@@ -394,5 +394,10 @@ namespace UI
                 insertPersonData(dataPatient, 4);
             }
         }
+
+        private void reportViewerPacientDiagnosis_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

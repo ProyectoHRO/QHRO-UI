@@ -159,6 +159,7 @@ namespace UI
         {
             panelReportsMenu.Visible = false;
             statePanel = 0;
+            openChildForm(new FormViewInterventions());
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
@@ -194,6 +195,13 @@ namespace UI
             panelReportsMenu.Visible = false;
             statePanel = 0;
             openChildForm(new FormsSchedules());
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
+            openChildForm(new FormViweOperatingRooms());
         }
     }
 }

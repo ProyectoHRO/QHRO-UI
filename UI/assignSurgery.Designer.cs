@@ -32,6 +32,7 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxpatientData = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -354,7 +355,7 @@ namespace UI
             this.comboBoxAnesthesiaType.Items.AddRange(new object[] {
             "General",
             "Epidural"});
-            this.comboBoxAnesthesiaType.Location = new System.Drawing.Point(590, 83);
+            this.comboBoxAnesthesiaType.Location = new System.Drawing.Point(590, 79);
             this.comboBoxAnesthesiaType.Name = "comboBoxAnesthesiaType";
             this.comboBoxAnesthesiaType.Size = new System.Drawing.Size(315, 28);
             this.comboBoxAnesthesiaType.TabIndex = 26;
@@ -367,7 +368,7 @@ namespace UI
             this.comboBoxSurgeryType.Items.AddRange(new object[] {
             "Selectiva",
             "Emergencia"});
-            this.comboBoxSurgeryType.Location = new System.Drawing.Point(590, 45);
+            this.comboBoxSurgeryType.Location = new System.Drawing.Point(590, 41);
             this.comboBoxSurgeryType.Name = "comboBoxSurgeryType";
             this.comboBoxSurgeryType.Size = new System.Drawing.Size(315, 28);
             this.comboBoxSurgeryType.TabIndex = 25;
@@ -412,7 +413,7 @@ namespace UI
             this.comboBoxRelevance.Items.AddRange(new object[] {
             "Mayor",
             "Menor"});
-            this.comboBoxRelevance.Location = new System.Drawing.Point(124, 96);
+            this.comboBoxRelevance.Location = new System.Drawing.Point(124, 92);
             this.comboBoxRelevance.Name = "comboBoxRelevance";
             this.comboBoxRelevance.Size = new System.Drawing.Size(206, 28);
             this.comboBoxRelevance.TabIndex = 35;
@@ -590,7 +591,7 @@ namespace UI
             this.comboBoxOperatingRooms.Items.AddRange(new object[] {
             "General",
             "Epidural"});
-            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(174, 9);
+            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(174, 12);
             this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
             this.comboBoxOperatingRooms.Size = new System.Drawing.Size(166, 28);
             this.comboBoxOperatingRooms.TabIndex = 27;
@@ -842,7 +843,7 @@ namespace UI
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.71257F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.28743F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel8.Controls.Add(this.iconButtonAddAnesthetist, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.textBoxAnestethistName, 1, 0);
@@ -882,7 +883,7 @@ namespace UI
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 14);
+            this.label2.Location = new System.Drawing.Point(36, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 18);
             this.label2.TabIndex = 5;
@@ -891,7 +892,7 @@ namespace UI
             // textBoxAnestethistName
             // 
             this.textBoxAnestethistName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAnestethistName.Location = new System.Drawing.Point(207, 10);
+            this.textBoxAnestethistName.Location = new System.Drawing.Point(206, 10);
             this.textBoxAnestethistName.Name = "textBoxAnestethistName";
             this.textBoxAnestethistName.Size = new System.Drawing.Size(256, 26);
             this.textBoxAnestethistName.TabIndex = 4;
@@ -937,12 +938,20 @@ namespace UI
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1264, 214);

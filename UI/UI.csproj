@@ -145,6 +145,18 @@
     <Compile Include="FormUserPermits.Designer.cs">
       <DependentUpon>FormUserPermits.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormViewInterventions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewInterventions.Designer.cs">
+      <DependentUpon>FormViewInterventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViweOperatingRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViweOperatingRooms.Designer.cs">
+      <DependentUpon>FormViweOperatingRooms.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +253,12 @@
     <EmbeddedResource Include="FormUserPermits.resx">
       <DependentUpon>FormUserPermits.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormViewInterventions.resx">
+      <DependentUpon>FormViewInterventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViweOperatingRooms.resx">
+      <DependentUpon>FormViweOperatingRooms.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </EmbeddedResource>
@@ -331,6 +349,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\Logo Hospital Regional de Occidente blanco.png" />
+    <None Include="Resources\Logo.png" />
+    <None Include="Resources\Logo Hospital Regional de Occidente.png" />
     <None Include="Resources\check.jpg" />
     <Content Include="Resources\maxi.png" />
     <Content Include="Resources\minimazar.png" />
