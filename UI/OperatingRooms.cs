@@ -21,16 +21,16 @@ namespace UI
 
         void listoperatingRooms()
         {
-       
-                dataGridViewOperatingRooms.DataSource = operatingroom.listoperatingRooms();
-                dataGridViewOperatingRooms.Columns[1].HeaderText = "Numero de quirofano";
-                dataGridViewOperatingRooms.Columns[2].HeaderText = "Estado Actual";
-                dataGridViewOperatingRooms.Columns[0].Visible = false;
-                dataGridViewOperatingRooms.Columns[3].Visible = false;
-                dataGridViewOperatingRooms.AutoResizeColumns();
-                dataGridViewOperatingRooms.AutoResizeRows();
-                dataGridViewOperatingRooms.Refresh();
-    
+            dataGridViewOperatingRooms.DataSource = operatingroom.listoperatingRooms();
+            dataGridViewOperatingRooms.Columns[1].HeaderText = "Numero de quirofano";
+            dataGridViewOperatingRooms.Columns[2].HeaderText = "Estado Actual";
+            dataGridViewOperatingRooms.Columns[0].Visible = false;
+            dataGridViewOperatingRooms.Columns[3].Visible = false;
+            dataGridViewOperatingRooms.RowHeadersWidth = 50;
+            //dataGridViewOperatingRooms.AutoResizeColumns();
+            //dataGridViewOperatingRooms.AutoResizeColumnHeadersHeight();
+            //dataGridViewOperatingRooms.AutoResizeRows();
+            dataGridViewOperatingRooms.Refresh();
         }
 
         void clearText()
