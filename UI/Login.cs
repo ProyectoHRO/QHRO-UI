@@ -157,6 +157,7 @@ namespace UI
                     {
                         ConfirmUser confirmForm = new ConfirmUser(idUser,lastConnection, txtUser.Text);
                         confirmForm.ShowDialog();
+                        flag = 1;
                     }
                 }
                 else
@@ -185,9 +186,17 @@ namespace UI
             formForgot.ShowDialog();
         }
 
+        int flag = 0;
+
         private void Login_Activated(object sender, EventArgs e)
         {
-            
+            if (flag==1)
+            {
+                txtUser.Text = "USUARIO";
+                txtPassword.Text = "CONTRASEÑA";
+                txtPassword.UseSystemPasswordChar = false;
+            }
+
         }
     }
 }

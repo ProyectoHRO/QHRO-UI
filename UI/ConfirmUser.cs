@@ -105,26 +105,79 @@ namespace UI
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "CONTRASEÑA")
-                txtUser.Text = "";
+            if (txtPassword.Text == "CONTRASEÑA")
+            {
+                txtPassword.Text = "";
+                txtPassword.UseSystemPasswordChar = true;
+            }
+                
         }
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "")
-                txtUser.Text = "CONTRASEÑA";
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "CONTRASEÑA";
+                txtPassword.UseSystemPasswordChar = false;
+            }
+               
         }
 
         private void textConfirmPassword_Enter(object sender, EventArgs e)
         {
-            if (txtUser.Text == "CONTRASEÑA")
-                txtUser.Text = "";
+            if (textConfirmPassword.Text == "CONFIRMAR CONTRASEÑA")
+            {
+                textConfirmPassword.Text = "";
+                textConfirmPassword.UseSystemPasswordChar = true;
+            }
         }
 
         private void textConfirmPassword_Leave(object sender, EventArgs e)
         {
-            if (txtUser.Text == "")
-                txtUser.Text = "CONTRASEÑA";
+            if (textConfirmPassword.Text == "")
+            {
+                textConfirmPassword.Text = "CONFIRMAR CONTRASEÑA";
+                textConfirmPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        int state = 1;
+        private void iconPictureEye_Click(object sender, EventArgs e)
+        {
+            if (state == 0)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                iconPictureEye.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                state = 1;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+                iconPictureEye.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                state = 0;
+            }
+        }
+
+        int state1 = 1;
+        private void iconPictureBox3_Click(object sender, EventArgs e)
+        {
+            if (state1 == 0)
+            {
+                textConfirmPassword.UseSystemPasswordChar = true;
+                iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                state1 = 1;
+            }
+            else
+            {
+                textConfirmPassword.UseSystemPasswordChar = false;
+                iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                state1 = 0;
+            }
+        }
+
+        private void ConfirmUser_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

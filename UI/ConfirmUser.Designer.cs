@@ -161,6 +161,7 @@ namespace UI
             this.iconPictureBox3.Size = new System.Drawing.Size(40, 40);
             this.iconPictureBox3.TabIndex = 35;
             this.iconPictureBox3.TabStop = false;
+            this.iconPictureBox3.Click += new System.EventHandler(this.iconPictureBox3_Click);
             // 
             // iconPictureBox4
             // 
@@ -188,6 +189,7 @@ namespace UI
             this.iconPictureEye.Size = new System.Drawing.Size(40, 40);
             this.iconPictureEye.TabIndex = 31;
             this.iconPictureEye.TabStop = false;
+            this.iconPictureEye.Click += new System.EventHandler(this.iconPictureEye_Click);
             // 
             // iconPictureBox2
             // 
@@ -297,6 +299,7 @@ namespace UI
             this.Name = "ConfirmUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfirmUser";
+            this.Load += new System.EventHandler(this.ConfirmUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureEye)).EndInit();
