@@ -31,13 +31,13 @@ namespace UI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.reportViewerDailies = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePickerReport = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.iconButtonDiff = new FontAwesome.Sharp.IconButton();
             this.reportViewerDiff = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePickerDiff = new System.Windows.Forms.DateTimePicker();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButtonDiff = new FontAwesome.Sharp.IconButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -45,6 +45,9 @@ namespace UI
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,6 +69,22 @@ namespace UI
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Operaciones Realizadas";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 32;
+            this.iconButton1.Location = new System.Drawing.Point(674, 32);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(134, 43);
+            this.iconButton1.TabIndex = 24;
+            this.iconButton1.Text = "Generar";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // reportViewerDailies
             // 
@@ -99,6 +118,22 @@ namespace UI
             this.tabPage2.Text = "Diferidas";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // iconButtonDiff
+            // 
+            this.iconButtonDiff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonDiff.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.iconButtonDiff.IconColor = System.Drawing.Color.Black;
+            this.iconButtonDiff.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonDiff.IconSize = 32;
+            this.iconButtonDiff.Location = new System.Drawing.Point(674, 32);
+            this.iconButtonDiff.Name = "iconButtonDiff";
+            this.iconButtonDiff.Size = new System.Drawing.Size(134, 43);
+            this.iconButtonDiff.TabIndex = 25;
+            this.iconButtonDiff.Text = "Generar";
+            this.iconButtonDiff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonDiff.UseVisualStyleBackColor = true;
+            this.iconButtonDiff.Click += new System.EventHandler(this.iconButtonDiff_Click);
+            // 
             // reportViewerDiff
             // 
             this.reportViewerDiff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -117,38 +152,6 @@ namespace UI
             this.dateTimePickerDiff.Name = "dateTimePickerDiff";
             this.dateTimePickerDiff.Size = new System.Drawing.Size(265, 26);
             this.dateTimePickerDiff.TabIndex = 8;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 32;
-            this.iconButton1.Location = new System.Drawing.Point(674, 32);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(134, 43);
-            this.iconButton1.TabIndex = 24;
-            this.iconButton1.Text = "Generar";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
-            // 
-            // iconButtonDiff
-            // 
-            this.iconButtonDiff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonDiff.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButtonDiff.IconColor = System.Drawing.Color.Black;
-            this.iconButtonDiff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonDiff.IconSize = 32;
-            this.iconButtonDiff.Location = new System.Drawing.Point(674, 32);
-            this.iconButtonDiff.Name = "iconButtonDiff";
-            this.iconButtonDiff.Size = new System.Drawing.Size(134, 43);
-            this.iconButtonDiff.TabIndex = 25;
-            this.iconButtonDiff.Text = "Generar";
-            this.iconButtonDiff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonDiff.UseVisualStyleBackColor = true;
-            this.iconButtonDiff.Click += new System.EventHandler(this.iconButtonDiff_Click);
             // 
             // FormDailyReport
             // 

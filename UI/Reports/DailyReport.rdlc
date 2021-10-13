@@ -77,37 +77,37 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>1.17424in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>1.81345in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>0.57009in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>0.47253in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>1.17424in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>0.6594in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>1.88258in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>1.05966in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>1.84091in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>1.15341in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.1411in</Width>
+                  <Width>0.90341in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -127,7 +127,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -157,7 +159,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -187,7 +191,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -217,7 +223,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox15</rd:DefaultName>
@@ -247,7 +255,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -277,7 +287,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox19</rd:DefaultName>
@@ -307,7 +319,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox21</rd:DefaultName>
@@ -337,7 +351,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox23</rd:DefaultName>
@@ -367,7 +383,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox25</rd:DefaultName>
@@ -397,7 +415,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox27</rd:DefaultName>
@@ -427,7 +447,9 @@
                                   <Style />
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox29</rd:DefaultName>
@@ -810,9 +832,9 @@
             </TablixRowHierarchy>
             <DataSetName>DataSetDailyReport</DataSetName>
             <Top>0.17583in</Top>
-            <Left>0.15973in</Left>
+            <Left>0.12659in</Left>
             <Height>0.83334in</Height>
-            <Width>12.5521in</Width>
+            <Width>12.70392in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -820,10 +842,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>4.82292in</Height>
+        <Height>8in</Height>
         <Style />
       </Body>
-      <Width>13.08333in</Width>
+      <Width>13.64205in</Width>
       <Page>
         <PageHeader>
           <Height>1.10417in</Height>
