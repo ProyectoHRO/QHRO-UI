@@ -59,6 +59,15 @@ namespace UI
             if (textBoxnewPassword.Enabled==false)
             {
                 string response = users.modifyUserData(textBoxUser.Text, textBoxEmail.Text, "n", Convert.ToInt32(labelId.Text));
+                if (response.ToUpper().Contains("ERROR"))
+                {
+                    MessageBox.Show(response);
+                }
+                else
+                {
+                    MessageBox.Show(response);
+                    this.Close();
+                }
             }
 
             else if (textBoxnewPassword.Text == textBoxnewPasswordConfirm.Text)
@@ -86,6 +95,8 @@ namespace UI
                     this.Close();
                 }
             }
+
+            Application.Restart();
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
