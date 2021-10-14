@@ -176,6 +176,20 @@ namespace DAL
             return response;
         }
 
+        public void ModifyUserData(string user, string email, string password, int id)
+        {
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "UpdateUserData";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@usuario", user);
+            command.Parameters.AddWithValue("@correo", email);
+            command.Parameters.AddWithValue("@contraseña", password);
+            command.Parameters.AddWithValue("@idusuario", id);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            connection.CloseConnection();
+        }
+
         public void restartPasswordUser(
           int userId,
           string userName,
