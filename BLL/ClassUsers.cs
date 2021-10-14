@@ -177,5 +177,18 @@ namespace BLL
 
         }
 
+        public string modifyUserData(string newUser, string newEmail, string newPassword, int idUser)
+        {
+            try
+            {
+                users.ModifyUserData(newUser, newEmail, newPassword, idUser);
+                return "SE HA ACTUALIZARON LOS DATOS";
+            }
+            catch (Exception error)
+            {
+                return "ERROR: " + error.Message;
+            }
+        }
+
     }
 }

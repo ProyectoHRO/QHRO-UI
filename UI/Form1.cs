@@ -203,5 +203,12 @@ namespace UI
             statePanel = 0;
             openChildForm(new FormViweOperatingRooms());
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
+            openChildForm(new FormProfile(labelUserLog.Text));
+        }
     }
 }
