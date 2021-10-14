@@ -16,5 +16,11 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void FormViewInterventions_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewerSurgeriesBdates.RefreshReport();
+        }
     }
 }

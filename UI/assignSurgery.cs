@@ -22,11 +22,20 @@ namespace UI
 
         void ListRequestedSugreries()
         {
-            dataGridView1.DataSource = surgeries.getRequestedSurgeries();
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.AutoResizeColumns();
-            dataGridView1.AutoResizeRows();
-            dataGridView1.Refresh();
+            DataTable surgeriesInfo = surgeries.getRequestedSurgeries();
+         
+            if (surgeriesInfo.Rows.Count<1)
+            {
+               
+            }
+            else
+            {
+                dataGridView1.DataSource = surgeries.getRequestedSurgeries();
+                dataGridView1.Columns[0].Visible = false;
+                dataGridView1.AutoResizeColumns();
+                dataGridView1.AutoResizeRows();
+                dataGridView1.Refresh();
+            }
         }
         private void assignSurgery_Load(object sender, EventArgs e)
         {
@@ -53,7 +62,12 @@ namespace UI
                 textBoxHistory.Text= dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
                 textBoxName.Text= dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
                 textBoxLastName.Text= dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                
+                groupBoxpatientData.Enabled = true;
+                groupBoxDocsData.Enabled = true;
+                groupBoxAssistantsData.Enabled = true;
+                groupBoxAnesthetistData.Enabled = true;
+                groupBoxQuirfonanoData.Enabled = true;
+                iconButtonConfirm.Enabled = true;
             }
             catch (Exception)
             {
@@ -137,9 +151,11 @@ namespace UI
                 Convert.ToInt32(labelID.Text),
                 comboBoxRelevance.Text,
                 textBoxDiagnosis.Text,
+                textBoxTime.Text,
                 assistantsList,
                 doctorsList);
             MessageBox.Show(response);
+            this.Close();
         }
 
         private void iconButtonDeleteAll_Click(object sender, EventArgs e)

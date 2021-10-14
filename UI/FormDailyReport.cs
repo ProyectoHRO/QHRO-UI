@@ -89,7 +89,8 @@ namespace UI
 
         private void iconButtonDiff_Click(object sender, EventArgs e)
         {
-            DataTable infoReport = surgeries.getDailyDiff(dateTimePickerReport.Value);
+        
+            DataTable infoReport = surgeries.getDailyDiff(dateTimePickerDiff.Value);
             List<ClassDailyDiff> listDiffs = new List<ClassDailyDiff>();
             ClassDailyDiff diffs;
 

@@ -69,7 +69,7 @@ namespace BLL
         }
 
         public string assignSurgery(string anesthesiaType, string surgeryType, DateTime surgeryDate, int opRoomId, 
-            int anesthetistId, int programationId,string relevance,string interventionDetail,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
+            int anesthetistId, int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
         {
             string response = "";
                 DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
@@ -91,6 +91,7 @@ namespace BLL
                     programationId,
                     relevance,
                     interventionDetail,
+                    time,
                     dataAssistants,
                     dataDoctors
                     );

@@ -132,6 +132,7 @@ namespace DAL
             int programationId,
             string relevance,
             string interventionDetail,
+            string time,
             DataTable assistantDetail,
             DataTable doctorDetail
             )
@@ -148,6 +149,7 @@ namespace DAL
             command.Parameters.AddWithValue("@id_programaciones", programationId);
             command.Parameters.AddWithValue("@relevancia", relevance);
             command.Parameters.AddWithValue("@detalleIntervencion", interventionDetail);
+            command.Parameters.AddWithValue("@hora", time);
             command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
             command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar,250);

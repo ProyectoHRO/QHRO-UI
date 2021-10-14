@@ -29,6 +29,7 @@ namespace UI
         {
             FormDiffers fDiffers = new FormDiffers(2, surgerieId,pacientName);
             fDiffers.Show();
+            this.Close();
         }
 
         private void FormsSchedules_Load(object sender, EventArgs e)
@@ -44,13 +45,13 @@ namespace UI
                 string assistantName = "";
                 surgerie = new ClassDailySurgeries();
                 surgerie.IdCirugia = Convert.ToInt32(item.Field<int>(0));
-                surgerie.Hora = "7AM";
-                surgerie.Qx = item.Field<string>(1).ToString();
-                surgerie.No_Historia = item.Field<string>(2).ToString();
-                surgerie.Nombre = item.Field<string>(3).ToString();
-                surgerie.Edad = Convert.ToInt16(item.Field<short>(4));
-                surgerie.Procedimiento= item.Field<string>(5).ToString();
-                surgerie.Servicio= item.Field<string>(6).ToString();
+                surgerie.Hora = item.Field<string>(1).ToString();
+                surgerie.Qx = item.Field<string>(2).ToString();
+                surgerie.No_Historia = item.Field<string>(3).ToString();
+                surgerie.Nombre = item.Field<string>(4).ToString();
+                surgerie.Edad = Convert.ToInt16(item.Field<short>(5));
+                surgerie.Procedimiento= item.Field<string>(6).ToString();
+                surgerie.Servicio= item.Field<string>(7).ToString();
                 DataTable infoDoctor = surgeries.getDoctorsByIdSurgerie(surgerie.IdCirugia);
                 if (infoDoctor.Rows.Count < 2)
                 {
@@ -63,12 +64,12 @@ namespace UI
                 {
                     foreach (DataRow itemDoc in infoDoctor.Rows)
                     {
-                        docName = docName + itemDoc.Field<string>(1).ToString() + '/';
+                        docName = ' '+ docName + itemDoc.Field<string>(1).ToString() + " / ";
                     }
-                    surgerie.Cirujano = docName.TrimEnd('/');
-               
+                    surgerie.Cirujano = docName.TrimEnd(' ');
+                    surgerie.Cirujano = surgerie.Cirujano.TrimEnd('/');
                 }
-                surgerie.Anestesista= item.Field<string>(7).ToString();
+                surgerie.Anestesista= item.Field<string>(8).ToString();
                 DataTable infoAssistants = surgeries.getAssistantsBySurgerie(surgerie.IdCirugia);
                 if (infoAssistants.Rows.Count<2)
                 {
@@ -112,6 +113,7 @@ namespace UI
         {
             FormDiffers fDiffers = new FormDiffers(1, surgerieId, pacientName);
             fDiffers.Show();
+            this.Close();
         }
     }
 }
