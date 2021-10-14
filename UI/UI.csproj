@@ -169,6 +169,12 @@
     <Compile Include="FormWelcome.Designer.cs">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </Compile>
+    <Compile Include="getDates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="getDates.Designer.cs">
+      <DependentUpon>getDates.cs</DependentUpon>
+    </Compile>
     <Compile Include="getNames.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,9 @@
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="getDates.resx">
+      <DependentUpon>getDates.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="getNames.resx">
       <DependentUpon>getNames.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,11 +303,15 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\DailyReport.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSurgeriesByHistoryNumber.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSurgeriesQBdate.rdlc" />
     <EmbeddedResource Include="Reports\ReportAnesthetist.rdlc" />
     <EmbeddedResource Include="Reports\ReportAssistant.rdlc" />
     <EmbeddedResource Include="Reports\ReportDiff.rdlc" />
     <EmbeddedResource Include="Reports\ReportDoctor.rdlc" />
     <EmbeddedResource Include="Reports\ReportPacientDiagnosis.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSurgeriesBdate.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSurgeriesServicesBdate.rdlc" />
     <EmbeddedResource Include="RequestSurgery.resx">
       <DependentUpon>RequestSurgery.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +328,8 @@
     <None Include="Properties\DataSources\BLL.ClassDailyDiff.datasource" />
     <None Include="Properties\DataSources\BLL.ClassDailyReport.datasource" />
     <None Include="Properties\DataSources\BLL.ClassDiagnosis.datasource" />
+    <None Include="Properties\DataSources\BLL.ClassQuiReport.datasource" />
+    <None Include="Properties\DataSources\BLL.ClassReportByPatient.datasource" />
     <None Include="Properties\DataSources\DAL.Diagnosis.datasource" />
     <None Include="Properties\DataSources\DAL.Patient.datasource" />
     <None Include="Properties\Settings.settings">

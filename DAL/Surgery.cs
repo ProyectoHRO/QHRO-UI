@@ -53,6 +53,68 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+       
+        public DataTable getSurgeriesByServiceByDates(DateTime firstDate, DateTime secondDate, string serviceName)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarIntervencionesPorServicioEntreDosFechas";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha1", firstDate);
+            command.Parameters.AddWithValue("@fecha2 ", secondDate);
+            command.Parameters.AddWithValue("@nombreServicio", serviceName);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
+        public DataTable getSurgeriesByHistoryNumber(string historyNumber)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarIntervencionPorNoHistoria";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@numeroHistoria", historyNumber);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+        public DataTable getSurgeriesByQuiByDates(DateTime firstDate, DateTime secondDate, string quiNumber)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarIntervencionesPorQuirofanoEntreDosFechas";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha1", firstDate);
+            command.Parameters.AddWithValue("@fecha2 ", secondDate);
+            command.Parameters.AddWithValue("@noquirofano", quiNumber);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
+        public DataTable getSurgeriesByDates(DateTime firstDate, DateTime secondDate)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarIntervencionesEntreDosFechas";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha1", firstDate);
+            command.Parameters.AddWithValue("@fecha2 ", secondDate);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
+
 
         public DataTable reScheduleSurgerie(int surgerieId, DateTime date)
         {

@@ -22,6 +22,10 @@ namespace BLL
             return services.GetServices();
         }
 
+        public DataTable getServicesByName(string serviceName)
+        {
+            return services.GetServicesByNameReport(serviceName);
+        }
     
 
         public DataTable getServicesById(int id)

@@ -19,6 +19,23 @@ namespace BLL
             return surgeries.getDailyReport(date);
         }
 
+        public DataTable getSurgeriesByHistoryNumber(string historyNumber)
+        {
+            return surgeries.getSurgeriesByHistoryNumber(historyNumber);
+        }
+
+        public DataTable getSurgeriesByDates(DateTime firstDate, DateTime secondDate)
+        {
+            return surgeries.getSurgeriesByDates(firstDate,secondDate);
+        }
+        public DataTable getSurgeriesByServiceByDates(DateTime firstDate, DateTime secondDate, string serviceName)
+        {
+            return surgeries.getSurgeriesByServiceByDates(firstDate, secondDate, serviceName);
+        }
+        public DataTable getSurgeriesByQuiByDates(DateTime firstDate, DateTime secondDate, string quiNumber)
+        {
+            return surgeries.getSurgeriesByQuiByDates(firstDate, secondDate,quiNumber);
+        }
         public DataTable getDailyDiff(DateTime date)
         {
             return surgeries.getDailyDiff(date);

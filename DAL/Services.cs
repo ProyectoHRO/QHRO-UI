@@ -55,6 +55,21 @@ namespace DAL
             return tableData;
         }
 
+        public DataTable GetServicesByNameReport(string serviceName)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarServicioPorNombreReport";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@nombreServicio", serviceName);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
+
         public void InsertService(string serviceName)
         {
             command.Connection = connection.OpenConnection();
