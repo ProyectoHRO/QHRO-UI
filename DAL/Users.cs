@@ -45,7 +45,19 @@ namespace DAL
             return tableData;
         }
 
-        
+        public DataTable GetPermitsById(int idPermit)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerPermisosPorId";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idservicio", idPermit);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
         public DataTable GetPermits()
         {
             tableData = new DataTable();

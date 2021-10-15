@@ -170,7 +170,7 @@ namespace UI
                         logCount++;
                         user.addLoginCount(idUser, logCount, lastConnection);
                         this.Hide();
-                        FormWelcome fW = new FormWelcome(txtUser.Text, role, serviceId);
+                        FormWelcome fW = new FormWelcome(txtUser.Text, role, serviceId, idUser);
                         fW.labelUser.Text = txtUser.Text;
                         fW.ShowDialog();
                     
