@@ -16,12 +16,14 @@ namespace UI
         int getRole;
         bool activate = false;
         int getServiceId;
-        public FormWelcome(string userLog,int role,int serviceId)
+        int idUser;
+        public FormWelcome(string userLog, int role, int serviceId, int userId)
         {
             InitializeComponent();
             userLogin = userLog;
             activate = false;
             getRole = role;
+            idUser = userId;
             getServiceId = serviceId;
         }
         int cont = 0;
@@ -44,7 +46,7 @@ namespace UI
             {
                 timer2.Stop();
                 this.Hide();
-                Form1 fI = new Form1(userLogin, getRole, getServiceId);
+                Form1 fI = new Form1(userLogin, getRole, getServiceId, idUser);
                 fI.ShowDialog();
                 activate = true;
             }

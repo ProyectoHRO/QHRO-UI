@@ -20,6 +20,12 @@ namespace BLL
         {
             return users.GetPermits();
         }
+
+
+        public DataTable GetPermitsById(int id)
+        {
+            return users.GetPermitsById(id);
+        }
         public DataTable GetRoles()
         {
             return users.GetRoles();

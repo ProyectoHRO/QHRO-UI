@@ -27,5 +27,10 @@ namespace UI
             labelTime.Text = DateTime.Now.ToString("hh:mm:ss");
             labelDate.Text = DateTime.Now.ToLongDateString();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
