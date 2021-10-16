@@ -5,11 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using DAL.Properties;
+using System.Configuration;
 namespace DAL
 {
     public class Connection
     {
-        private SqlConnection connection = new SqlConnection("Server=25.12.40.132;DataBase=HROBD;User=hroadmin;Password=database123");
+        private static string getString()
+        {
+            return Settings.Default.HROBDConnectionString;
+        }
+        private SqlConnection connection = new SqlConnection(getString());
 
         public SqlConnection OpenConnection()
         {
