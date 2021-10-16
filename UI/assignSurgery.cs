@@ -15,6 +15,8 @@ namespace UI
         private ClassRequestSurgery surgeries = new ClassRequestSurgery();
         private ClassOperatingRoom operatingRooms = new ClassOperatingRoom();
         private Surgeries surgeriesLogic = new Surgeries();
+        private ClassMail mail = new ClassMail();
+        private ClassDoctor doctorss = new ClassDoctor();
         public assignSurgery()
         {
             InitializeComponent();
@@ -154,7 +156,23 @@ namespace UI
                 textBoxTime.Text,
                 assistantsList,
                 doctorsList);
-            MessageBox.Show(response);
+            if (response== "Se ha asignado la cirugía con éxito!")
+            {
+                for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                {
+                    listBoxDocId.SelectedIndex = i;
+                    string getMail = doctorss.getDoctorsById(Convert.ToInt32(listBoxDocId.SelectedItem));
+                    response= mail.MakeMail(getMail,
+                        "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.ToString() + " a las: " + textBoxTime.Text
+                       + " \n Del paciente: " + textBoxName.Text + " " + textBoxLastName.Text + " con numero de historia: "+ textBoxHistory.Text,"Intervención", "Se ha asignado la cirugía con éxito!");
+                }
+                MessageBox.Show(response);
+            }
+            else
+            {
+                MessageBox.Show(response);
+            }
+          
             this.Close();
         }
 

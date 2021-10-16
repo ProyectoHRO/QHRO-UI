@@ -89,6 +89,9 @@ namespace BLL
             int anesthetistId, int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
         {
             string response = "";
+            DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, time, opRoomId);
+            if (infoSurgeries.Rows.Count<1)
+            {
                 DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
                 foreach (ClassDtoAssistants item in assistantsList)
                 {
@@ -99,7 +102,7 @@ namespace BLL
                 {
                     dataDoctors.Rows.Add(item.DoctorId);
                 }
-                response= surgeries.AssignSurgery(
+                response = surgeries.AssignSurgery(
                     anesthesiaType,
                     surgeryType,
                     surgeryDate,
@@ -112,7 +115,14 @@ namespace BLL
                     dataAssistants,
                     dataDoctors
                     );
-                return response;
+            }
+            else
+            {
+                response = "Ya se encuentra asignada una intervención a las: " + time + " en el quirófano: " + opRoomId;
+
+            }
+
+            return response;
             
         }
     }

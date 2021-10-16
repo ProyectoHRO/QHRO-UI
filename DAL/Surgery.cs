@@ -54,6 +54,36 @@ namespace DAL
             return tableData;
         }
        
+        public DataTable getSurgeriesByHour(DateTime surgeryDate, string hour, int opRoomId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "BuscarCirugiasPorHora";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
+            command.Parameters.AddWithValue("@hora", hour);
+            command.Parameters.AddWithValue("@idquirofano", opRoomId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
+        public DataTable getSurgeriesByDoctor(DateTime surgeryDate, string hour)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "BuscarCirugiasPorDoctor";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
+            command.Parameters.AddWithValue("@hora", hour);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
         public DataTable getSurgeriesByServiceByDates(DateTime firstDate, DateTime secondDate, string serviceName)
         {
             tableData = new DataTable();

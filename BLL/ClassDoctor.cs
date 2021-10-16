@@ -33,6 +33,12 @@ namespace BLL
         {
             return doctors.GetDoctors();
         }
+
+        public string getDoctorsById(int id)
+        {
+            return doctors.GetDoctorById(id);
+        }
+
         //insert
         public string newDoctor(string dpi, string firstName, string secondName, string thirdName, string firstLastName, string secondLastName,
             string phoneNumber,string email, string specialty)

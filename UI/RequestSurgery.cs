@@ -37,6 +37,7 @@ namespace UI
                     textBoxAge.Text = item.Field<short>(7).ToString();
                     comboBoxGender.Text = item.Field<string>(8);
                 }
+               
             }
             else
             {

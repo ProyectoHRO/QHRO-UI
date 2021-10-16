@@ -26,7 +26,21 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
-
+        public string GetDoctorById(int doctorId)
+        {
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarDoctoresPorDpi";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@iddoctor", doctorId);
+            command.Parameters.Add("@correo", SqlDbType.NVarChar, 250);
+            command.Parameters["@correo"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@correo"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
+        }
         public DataTable GetDoctorByDpi(string dpi)
         {
             tableData = new DataTable();
