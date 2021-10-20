@@ -290,6 +290,7 @@ namespace UI
         int statePanel = 0;
         private void iconButtonReports_Click(object sender, EventArgs e)
         {
+            activateButton(sender);
             panelReportsMenu.Visible = true;
             statePanel++;
             if (statePanel==2)
