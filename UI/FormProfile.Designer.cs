@@ -44,34 +44,40 @@ namespace UI
             // 
             // textBoxUser
             // 
-            this.textBoxUser.Location = new System.Drawing.Point(341, 88);
+            this.textBoxUser.Location = new System.Drawing.Point(256, 72);
+            this.textBoxUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(188, 22);
+            this.textBoxUser.Size = new System.Drawing.Size(142, 20);
             this.textBoxUser.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(193, 93);
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(145, 76);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 17);
+            this.label1.Size = new System.Drawing.Size(54, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(193, 157);
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(145, 128);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 17);
+            this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 3;
             this.label3.Text = "Correo";
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(341, 152);
+            this.textBoxEmail.Location = new System.Drawing.Point(256, 124);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(188, 22);
+            this.textBoxEmail.Size = new System.Drawing.Size(142, 20);
             this.textBoxEmail.TabIndex = 5;
             // 
             // iconButton1
@@ -79,9 +85,10 @@ namespace UI
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(325, 329);
+            this.iconButton1.Location = new System.Drawing.Point(244, 267);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(215, 41);
+            this.iconButton1.Size = new System.Drawing.Size(161, 33);
             this.iconButton1.TabIndex = 6;
             this.iconButton1.Text = "Actualizar Datos";
             this.iconButton1.UseVisualStyleBackColor = true;
@@ -90,43 +97,50 @@ namespace UI
             // labelUserName
             // 
             this.labelUserName.AutoSize = true;
-            this.labelUserName.Location = new System.Drawing.Point(796, 93);
+            this.labelUserName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUserName.Location = new System.Drawing.Point(597, 76);
+            this.labelUserName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(57, 17);
+            this.labelUserName.Size = new System.Drawing.Size(54, 20);
             this.labelUserName.TabIndex = 7;
             this.labelUserName.Text = "Usuario";
             // 
             // labelId
             // 
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(807, 157);
+            this.labelId.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelId.Location = new System.Drawing.Point(605, 128);
+            this.labelId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelId.Name = "labelId";
-            this.labelId.Size = new System.Drawing.Size(46, 17);
+            this.labelId.Size = new System.Drawing.Size(45, 20);
             this.labelId.TabIndex = 8;
             this.labelId.Text = "label2";
             this.labelId.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxnewPassword
             // 
-            this.textBoxnewPassword.Location = new System.Drawing.Point(341, 225);
+            this.textBoxnewPassword.Location = new System.Drawing.Point(256, 183);
+            this.textBoxnewPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxnewPassword.Name = "textBoxnewPassword";
-            this.textBoxnewPassword.Size = new System.Drawing.Size(188, 22);
+            this.textBoxnewPassword.Size = new System.Drawing.Size(142, 20);
             this.textBoxnewPassword.TabIndex = 9;
             // 
             // textBoxnewPasswordConfirm
             // 
-            this.textBoxnewPasswordConfirm.Location = new System.Drawing.Point(341, 276);
+            this.textBoxnewPasswordConfirm.Location = new System.Drawing.Point(256, 224);
+            this.textBoxnewPasswordConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxnewPasswordConfirm.Name = "textBoxnewPasswordConfirm";
-            this.textBoxnewPasswordConfirm.Size = new System.Drawing.Size(188, 22);
+            this.textBoxnewPasswordConfirm.Size = new System.Drawing.Size(142, 20);
             this.textBoxnewPasswordConfirm.TabIndex = 10;
             // 
             // labelEdit
             // 
             this.labelEdit.AutoSize = true;
-            this.labelEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEdit.Location = new System.Drawing.Point(578, 93);
+            this.labelEdit.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEdit.Location = new System.Drawing.Point(434, 76);
+            this.labelEdit.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEdit.Name = "labelEdit";
-            this.labelEdit.Size = new System.Drawing.Size(45, 17);
+            this.labelEdit.Size = new System.Drawing.Size(43, 20);
             this.labelEdit.TabIndex = 12;
             this.labelEdit.Text = "Editar";
             this.labelEdit.Click += new System.EventHandler(this.labelEdit_Click);
@@ -134,19 +148,20 @@ namespace UI
             // labelEditPassword
             // 
             this.labelEditPassword.AutoSize = true;
-            this.labelEditPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEditPassword.Location = new System.Drawing.Point(589, 225);
+            this.labelEditPassword.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEditPassword.Location = new System.Drawing.Point(442, 183);
+            this.labelEditPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEditPassword.Name = "labelEditPassword";
-            this.labelEditPassword.Size = new System.Drawing.Size(137, 17);
+            this.labelEditPassword.Size = new System.Drawing.Size(129, 20);
             this.labelEditPassword.TabIndex = 13;
             this.labelEditPassword.Text = "Cambiar Contraseña";
             this.labelEditPassword.Click += new System.EventHandler(this.labelEditPassword_Click);
             // 
             // FormProfile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1697, 1119);
+            this.ClientSize = new System.Drawing.Size(1273, 894);
             this.Controls.Add(this.labelEditPassword);
             this.Controls.Add(this.labelEdit);
             this.Controls.Add(this.textBoxnewPasswordConfirm);
@@ -159,6 +174,7 @@ namespace UI
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxUser);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormProfile";
             this.Text = "FormProfile";
             this.Load += new System.EventHandler(this.FormProfile_Load);

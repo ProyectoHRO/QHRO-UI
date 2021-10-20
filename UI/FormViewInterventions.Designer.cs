@@ -31,20 +31,21 @@ namespace UI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.iconButtonSurgeriesBdates = new FontAwesome.Sharp.IconButton();
             this.reportViewerSurgeriesBdates = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBoxServiceName = new System.Windows.Forms.TextBox();
+            this.iconButtonSurgeriesServicesBdates = new FontAwesome.Sharp.IconButton();
             this.reportViewerSurgeriesServiceBdates = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.reportViewerSurgeriesQBdates = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.iconButtonSurgeriesBdates = new FontAwesome.Sharp.IconButton();
-            this.iconButtonSurgeriesServicesBdates = new FontAwesome.Sharp.IconButton();
-            this.iconButtonSurgeriesQBdates = new FontAwesome.Sharp.IconButton();
-            this.textBoxServiceName = new System.Windows.Forms.TextBox();
             this.comboBoxOperatingRooms = new System.Windows.Forms.ComboBox();
+            this.iconButtonSurgeriesQBdates = new FontAwesome.Sharp.IconButton();
+            this.reportViewerSurgeriesQBdates = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.textBoxSurgeriesByPatient = new System.Windows.Forms.TextBox();
             this.iconButtonSurgeriesByPatient = new FontAwesome.Sharp.IconButton();
             this.reportViewerSurgeriesByPatient = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -54,10 +55,14 @@ namespace UI
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-2, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -68,41 +73,86 @@ namespace UI
             // 
             this.tabPage1.Controls.Add(this.iconButtonSurgeriesBdates);
             this.tabPage1.Controls.Add(this.reportViewerSurgeriesBdates);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1282, 922);
+            this.tabPage1.Size = new System.Drawing.Size(1282, 915);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Intervenciones entre dos fechas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // iconButtonSurgeriesBdates
+            // 
+            this.iconButtonSurgeriesBdates.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSurgeriesBdates.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
+            this.iconButtonSurgeriesBdates.IconColor = System.Drawing.Color.Black;
+            this.iconButtonSurgeriesBdates.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSurgeriesBdates.IconSize = 32;
+            this.iconButtonSurgeriesBdates.Location = new System.Drawing.Point(514, 11);
+            this.iconButtonSurgeriesBdates.Name = "iconButtonSurgeriesBdates";
+            this.iconButtonSurgeriesBdates.Size = new System.Drawing.Size(191, 49);
+            this.iconButtonSurgeriesBdates.TabIndex = 1;
+            this.iconButtonSurgeriesBdates.Text = "Establecer fechas";
+            this.iconButtonSurgeriesBdates.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonSurgeriesBdates.UseVisualStyleBackColor = true;
+            this.iconButtonSurgeriesBdates.Click += new System.EventHandler(this.iconButtonSurgeriesBdates_Click);
+            // 
             // reportViewerSurgeriesBdates
             // 
-            this.reportViewerSurgeriesBdates.Location = new System.Drawing.Point(3, 48);
+            this.reportViewerSurgeriesBdates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViewerSurgeriesBdates.Location = new System.Drawing.Point(10, 63);
             this.reportViewerSurgeriesBdates.Name = "reportViewerSurgeriesBdates";
             this.reportViewerSurgeriesBdates.ServerReport.BearerToken = null;
-            this.reportViewerSurgeriesBdates.Size = new System.Drawing.Size(1276, 864);
+            this.reportViewerSurgeriesBdates.Size = new System.Drawing.Size(1262, 842);
             this.reportViewerSurgeriesBdates.TabIndex = 0;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.textBoxServiceName);
             this.tabPage2.Controls.Add(this.iconButtonSurgeriesServicesBdates);
             this.tabPage2.Controls.Add(this.reportViewerSurgeriesServiceBdates);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1282, 922);
+            this.tabPage2.Size = new System.Drawing.Size(1282, 915);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Intervenciones por servicio entre dos fechas";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // textBoxServiceName
+            // 
+            this.textBoxServiceName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBoxServiceName.Location = new System.Drawing.Point(427, 19);
+            this.textBoxServiceName.Name = "textBoxServiceName";
+            this.textBoxServiceName.Size = new System.Drawing.Size(207, 26);
+            this.textBoxServiceName.TabIndex = 3;
+            // 
+            // iconButtonSurgeriesServicesBdates
+            // 
+            this.iconButtonSurgeriesServicesBdates.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSurgeriesServicesBdates.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButtonSurgeriesServicesBdates.IconColor = System.Drawing.Color.Black;
+            this.iconButtonSurgeriesServicesBdates.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSurgeriesServicesBdates.Location = new System.Drawing.Point(640, 14);
+            this.iconButtonSurgeriesServicesBdates.Name = "iconButtonSurgeriesServicesBdates";
+            this.iconButtonSurgeriesServicesBdates.Size = new System.Drawing.Size(186, 36);
+            this.iconButtonSurgeriesServicesBdates.TabIndex = 2;
+            this.iconButtonSurgeriesServicesBdates.Text = "iconButton2";
+            this.iconButtonSurgeriesServicesBdates.UseVisualStyleBackColor = true;
+            this.iconButtonSurgeriesServicesBdates.Click += new System.EventHandler(this.iconButtonSurgeriesServicesBdates_Click);
+            // 
             // reportViewerSurgeriesServiceBdates
             // 
-            this.reportViewerSurgeriesServiceBdates.Location = new System.Drawing.Point(0, 48);
+            this.reportViewerSurgeriesServiceBdates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViewerSurgeriesServiceBdates.Location = new System.Drawing.Point(10, 63);
             this.reportViewerSurgeriesServiceBdates.Name = "reportViewerSurgeriesServiceBdates";
             this.reportViewerSurgeriesServiceBdates.ServerReport.BearerToken = null;
-            this.reportViewerSurgeriesServiceBdates.Size = new System.Drawing.Size(1276, 864);
+            this.reportViewerSurgeriesServiceBdates.Size = new System.Drawing.Size(1262, 842);
             this.reportViewerSurgeriesServiceBdates.TabIndex = 1;
             // 
             // tabPage3
@@ -110,47 +160,22 @@ namespace UI
             this.tabPage3.Controls.Add(this.comboBoxOperatingRooms);
             this.tabPage3.Controls.Add(this.iconButtonSurgeriesQBdates);
             this.tabPage3.Controls.Add(this.reportViewerSurgeriesQBdates);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1282, 922);
+            this.tabPage3.Size = new System.Drawing.Size(1282, 915);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Intervenciones por quirófano entre dos fechas";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // reportViewerSurgeriesQBdates
+            // comboBoxOperatingRooms
             // 
-            this.reportViewerSurgeriesQBdates.Location = new System.Drawing.Point(10, 52);
-            this.reportViewerSurgeriesQBdates.Name = "reportViewerSurgeriesQBdates";
-            this.reportViewerSurgeriesQBdates.ServerReport.BearerToken = null;
-            this.reportViewerSurgeriesQBdates.Size = new System.Drawing.Size(1276, 864);
-            this.reportViewerSurgeriesQBdates.TabIndex = 1;
-            // 
-            // iconButtonSurgeriesBdates
-            // 
-            this.iconButtonSurgeriesBdates.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonSurgeriesBdates.IconColor = System.Drawing.Color.Black;
-            this.iconButtonSurgeriesBdates.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSurgeriesBdates.Location = new System.Drawing.Point(479, 6);
-            this.iconButtonSurgeriesBdates.Name = "iconButtonSurgeriesBdates";
-            this.iconButtonSurgeriesBdates.Size = new System.Drawing.Size(179, 36);
-            this.iconButtonSurgeriesBdates.TabIndex = 1;
-            this.iconButtonSurgeriesBdates.Text = "iconButton2";
-            this.iconButtonSurgeriesBdates.UseVisualStyleBackColor = true;
-            this.iconButtonSurgeriesBdates.Click += new System.EventHandler(this.iconButtonSurgeriesBdates_Click);
-            // 
-            // iconButtonSurgeriesServicesBdates
-            // 
-            this.iconButtonSurgeriesServicesBdates.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButtonSurgeriesServicesBdates.IconColor = System.Drawing.Color.Black;
-            this.iconButtonSurgeriesServicesBdates.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSurgeriesServicesBdates.Location = new System.Drawing.Point(428, 6);
-            this.iconButtonSurgeriesServicesBdates.Name = "iconButtonSurgeriesServicesBdates";
-            this.iconButtonSurgeriesServicesBdates.Size = new System.Drawing.Size(186, 36);
-            this.iconButtonSurgeriesServicesBdates.TabIndex = 2;
-            this.iconButtonSurgeriesServicesBdates.Text = "iconButton2";
-            this.iconButtonSurgeriesServicesBdates.UseVisualStyleBackColor = true;
-            this.iconButtonSurgeriesServicesBdates.Click += new System.EventHandler(this.iconButtonSurgeriesServicesBdates_Click);
+            this.comboBoxOperatingRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOperatingRooms.FormattingEnabled = true;
+            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(344, 17);
+            this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
+            this.comboBoxOperatingRooms.Size = new System.Drawing.Size(221, 28);
+            this.comboBoxOperatingRooms.TabIndex = 3;
             // 
             // iconButtonSurgeriesQBdates
             // 
@@ -165,31 +190,23 @@ namespace UI
             this.iconButtonSurgeriesQBdates.UseVisualStyleBackColor = true;
             this.iconButtonSurgeriesQBdates.Click += new System.EventHandler(this.iconButtonSurgeriesQBdates_Click);
             // 
-            // textBoxServiceName
+            // reportViewerSurgeriesQBdates
             // 
-            this.textBoxServiceName.Location = new System.Drawing.Point(215, 15);
-            this.textBoxServiceName.Name = "textBoxServiceName";
-            this.textBoxServiceName.Size = new System.Drawing.Size(207, 20);
-            this.textBoxServiceName.TabIndex = 3;
-            // 
-            // comboBoxOperatingRooms
-            // 
-            this.comboBoxOperatingRooms.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxOperatingRooms.FormattingEnabled = true;
-            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(344, 17);
-            this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
-            this.comboBoxOperatingRooms.Size = new System.Drawing.Size(221, 21);
-            this.comboBoxOperatingRooms.TabIndex = 3;
+            this.reportViewerSurgeriesQBdates.Location = new System.Drawing.Point(10, 63);
+            this.reportViewerSurgeriesQBdates.Name = "reportViewerSurgeriesQBdates";
+            this.reportViewerSurgeriesQBdates.ServerReport.BearerToken = null;
+            this.reportViewerSurgeriesQBdates.Size = new System.Drawing.Size(1262, 842);
+            this.reportViewerSurgeriesQBdates.TabIndex = 1;
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.textBoxSurgeriesByPatient);
             this.tabPage4.Controls.Add(this.iconButtonSurgeriesByPatient);
             this.tabPage4.Controls.Add(this.reportViewerSurgeriesByPatient);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1282, 922);
+            this.tabPage4.Size = new System.Drawing.Size(1282, 915);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Intervenciones por paciente";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -198,7 +215,7 @@ namespace UI
             // 
             this.textBoxSurgeriesByPatient.Location = new System.Drawing.Point(241, 17);
             this.textBoxSurgeriesByPatient.Name = "textBoxSurgeriesByPatient";
-            this.textBoxSurgeriesByPatient.Size = new System.Drawing.Size(207, 20);
+            this.textBoxSurgeriesByPatient.Size = new System.Drawing.Size(207, 26);
             this.textBoxSurgeriesByPatient.TabIndex = 6;
             // 
             // iconButtonSurgeriesByPatient
@@ -216,11 +233,22 @@ namespace UI
             // 
             // reportViewerSurgeriesByPatient
             // 
-            this.reportViewerSurgeriesByPatient.Location = new System.Drawing.Point(3, 50);
+            this.reportViewerSurgeriesByPatient.Location = new System.Drawing.Point(10, 63);
             this.reportViewerSurgeriesByPatient.Name = "reportViewerSurgeriesByPatient";
             this.reportViewerSurgeriesByPatient.ServerReport.BearerToken = null;
-            this.reportViewerSurgeriesByPatient.Size = new System.Drawing.Size(1276, 864);
+            this.reportViewerSurgeriesByPatient.Size = new System.Drawing.Size(1262, 842);
             this.reportViewerSurgeriesByPatient.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(358, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Servicio:";
             // 
             // FormViewInterventions
             // 
@@ -261,5 +289,6 @@ namespace UI
         private System.Windows.Forms.TextBox textBoxSurgeriesByPatient;
         private FontAwesome.Sharp.IconButton iconButtonSurgeriesByPatient;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerSurgeriesByPatient;
+        private System.Windows.Forms.Label label1;
     }
 }

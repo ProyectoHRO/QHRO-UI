@@ -23,6 +23,12 @@ namespace UI
         {
             this.firstDate = dateTimePickerFirstDate.Value;
             this.secondDate = dateTimePickerSecondDate.Value;
+            this.Close();
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

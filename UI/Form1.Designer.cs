@@ -38,8 +38,15 @@ namespace UI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelSlideMenu = new System.Windows.Forms.Panel();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.iconButtonAbout = new FontAwesome.Sharp.IconButton();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -62,25 +69,18 @@ namespace UI
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaximized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSlideMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel17.SuspendLayout();
-            this.panelReportsMenu.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panelReportsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTop
@@ -219,6 +219,41 @@ namespace UI
             this.panelSlideMenu.Size = new System.Drawing.Size(250, 844);
             this.panelSlideMenu.TabIndex = 1;
             // 
+            // panel20
+            // 
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel20.Controls.Add(this.panel21);
+            this.panel20.Controls.Add(this.panel23);
+            this.panel20.Location = new System.Drawing.Point(0, 740);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(3, 45);
+            this.panel20.TabIndex = 29;
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel21.Controls.Add(this.panel22);
+            this.panel21.Location = new System.Drawing.Point(14, 0);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(3, 45);
+            this.panel21.TabIndex = 30;
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel22.Location = new System.Drawing.Point(9, 31);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(3, 45);
+            this.panel22.TabIndex = 29;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel23.Location = new System.Drawing.Point(9, 31);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(3, 45);
+            this.panel23.TabIndex = 29;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -240,6 +275,31 @@ namespace UI
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(3, 45);
             this.panel17.TabIndex = 28;
+            // 
+            // panel18
+            // 
+            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel18.Controls.Add(this.panel19);
+            this.panel18.Location = new System.Drawing.Point(14, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(3, 45);
+            this.panel18.TabIndex = 30;
+            // 
+            // panel19
+            // 
+            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel19.Location = new System.Drawing.Point(9, 31);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(3, 45);
+            this.panel19.TabIndex = 29;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.panel9.Location = new System.Drawing.Point(9, 31);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(3, 45);
+            this.panel9.TabIndex = 29;
             // 
             // panel16
             // 
@@ -494,66 +554,6 @@ namespace UI
             this.panelContainer.Size = new System.Drawing.Size(1286, 844);
             this.panelContainer.TabIndex = 2;
             // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel9.Location = new System.Drawing.Point(9, 31);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(3, 45);
-            this.panel9.TabIndex = 29;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel18.Controls.Add(this.panel19);
-            this.panel18.Location = new System.Drawing.Point(14, 0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(3, 45);
-            this.panel18.TabIndex = 30;
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel19.Location = new System.Drawing.Point(9, 31);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(3, 45);
-            this.panel19.TabIndex = 29;
-            // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel20.Controls.Add(this.panel21);
-            this.panel20.Controls.Add(this.panel23);
-            this.panel20.Location = new System.Drawing.Point(0, 740);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(3, 45);
-            this.panel20.TabIndex = 29;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel21.Controls.Add(this.panel22);
-            this.panel21.Location = new System.Drawing.Point(14, 0);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(3, 45);
-            this.panel21.TabIndex = 30;
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel22.Location = new System.Drawing.Point(9, 31);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(3, 45);
-            this.panel22.TabIndex = 29;
-            // 
-            // panel23
-            // 
-            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel23.Location = new System.Drawing.Point(9, 31);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(3, 45);
-            this.panel23.TabIndex = 29;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -575,12 +575,12 @@ namespace UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSlideMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel17.ResumeLayout(false);
-            this.panelReportsMenu.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel17.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
+            this.panelReportsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

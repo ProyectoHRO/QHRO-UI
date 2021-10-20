@@ -52,6 +52,7 @@ namespace UI
             this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.listBoxIdPermits = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -74,7 +75,7 @@ namespace UI
             this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxFilter, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.iconPictureBox1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(214, 42);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(214, 229);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -172,9 +173,10 @@ namespace UI
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(565, 9);
+            this.label1.Location = new System.Drawing.Point(565, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(185, 30);
             this.label1.TabIndex = 39;
@@ -299,7 +301,7 @@ namespace UI
             this.labelId.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelId.AutoSize = true;
             this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.Location = new System.Drawing.Point(210, 167);
+            this.labelId.Location = new System.Drawing.Point(210, 366);
             this.labelId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(26, 20);
@@ -315,19 +317,19 @@ namespace UI
             this.iconButtonGrant.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonGrant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonGrant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonGrant.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonGrant.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonGrant.ForeColor = System.Drawing.Color.Black;
             this.iconButtonGrant.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.iconButtonGrant.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.iconButtonGrant.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonGrant.IconSize = 30;
-            this.iconButtonGrant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonGrant.Location = new System.Drawing.Point(886, 431);
+            this.iconButtonGrant.Location = new System.Drawing.Point(886, 630);
             this.iconButtonGrant.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonGrant.Name = "iconButtonGrant";
-            this.iconButtonGrant.Size = new System.Drawing.Size(180, 38);
+            this.iconButtonGrant.Size = new System.Drawing.Size(242, 100);
             this.iconButtonGrant.TabIndex = 43;
             this.iconButtonGrant.Text = "Otorgar permisos";
+            this.iconButtonGrant.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonGrant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonGrant.UseVisualStyleBackColor = false;
             this.iconButtonGrant.Click += new System.EventHandler(this.iconButtonGrant_Click);
@@ -339,21 +341,22 @@ namespace UI
             this.iconButtonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.iconButtonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
             this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iconButtonCancel.ForeColor = System.Drawing.Color.Black;
             this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Ban;
             this.iconButtonCancel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.iconButtonCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonCancel.IconSize = 30;
-            this.iconButtonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonCancel.Location = new System.Drawing.Point(214, 431);
+            this.iconButtonCancel.Location = new System.Drawing.Point(214, 630);
             this.iconButtonCancel.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonCancel.Name = "iconButtonCancel";
-            this.iconButtonCancel.Size = new System.Drawing.Size(120, 38);
+            this.iconButtonCancel.Size = new System.Drawing.Size(242, 100);
             this.iconButtonCancel.TabIndex = 44;
             this.iconButtonCancel.Text = "Cancelar";
+            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -364,7 +367,7 @@ namespace UI
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.checkedListBoxPermits, 1, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(214, 190);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(214, 389);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -374,11 +377,22 @@ namespace UI
             // listBoxIdPermits
             // 
             this.listBoxIdPermits.FormattingEnabled = true;
-            this.listBoxIdPermits.Location = new System.Drawing.Point(1130, 196);
+            this.listBoxIdPermits.Location = new System.Drawing.Point(1072, 389);
             this.listBoxIdPermits.Name = "listBoxIdPermits";
-            this.listBoxIdPermits.Size = new System.Drawing.Size(96, 134);
+            this.listBoxIdPermits.Size = new System.Drawing.Size(96, 199);
             this.listBoxIdPermits.TabIndex = 46;
             this.listBoxIdPermits.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(553, 356);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(214, 30);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "Otorgar permisos";
             // 
             // FormUserPermits
             // 
@@ -386,6 +400,7 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1286, 947);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxIdPermits);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.iconButtonCancel);
@@ -437,5 +452,6 @@ namespace UI
         private FontAwesome.Sharp.IconButton iconButtonCancel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ListBox listBoxIdPermits;
+        private System.Windows.Forms.Label label2;
     }
 }

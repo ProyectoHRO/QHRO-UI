@@ -32,16 +32,96 @@ namespace UI
             IconButton btn = new IconButton();
             btn.Text = text;
             btn.Name = name;
+            if (text == "Doctores")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+            }
+            else if(text=="Anestesistas")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.Syringe;
+            }
+            else if (text == "Pacientes")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.Bed;
+            }
+            else if (text == "Ayudantes")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.UserNurse;
+            }
+            else if (text == "Quirofanos")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.Hospital;
+            }
+            else if (text == "Servicios")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.BookMedical;
+            }
+            else if (text == "Solicitar cirugía")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.PenSquare;
+            }
+            else if (text == "Programar cirugía")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.CalendarTimes;
+            }
+            else if (text == "Usuarios")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.Users;
+            }
+            else if (text == "Permisos")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            }
+            else if (text == "Busquedas")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.Search;
+            }
+            else if (text == "Programaciones")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            }
+            
+            btn.IconSize = 38;
+            btn.IconColor = Color.White;
+            btn.Font = new Font("Arial", 12f);
+            btn.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn.ImageAlign = ContentAlignment.MiddleLeft;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
             btn.Size=new Size(247, 45);
             btn.Location = new System.Drawing.Point(initx, inity+50);
             btn.ForeColor = System.Drawing.Color.White;
             btn.Click += new EventHandler(this.buttonClick);
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
             inity = inity + 50;
             return btn;
         }
-
+        private IconButton currentButton;
+        private void activateButton(object btnSender)
+        {
+            if (btnSender != null)
+            {
+                if(currentButton!=(IconButton)btnSender)
+                {
+                    disableButton();
+                    currentButton = (IconButton)btnSender;
+                    currentButton.BackColor = System.Drawing.ColorTranslator.FromHtml("#305D76");
+                }
+            }
+        }
+        private void disableButton()
+        {
+            foreach(Control previousBtn in panelSlideMenu.Controls)
+            {
+                if( previousBtn.GetType() == typeof(IconButton))
+                {
+                    previousBtn.BackColor = Color.FromArgb(69, 133, 170);
+                }
+            }
+        }
         void buttonClick(object sender, EventArgs e)
         {
+            activateButton(sender);
             IconButton btn = sender as IconButton;
             panelReportsMenu.Visible = false;
             statePanel = 0;

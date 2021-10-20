@@ -134,8 +134,10 @@ namespace UI
             // 
             this.groupBoxanesthetistData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxanesthetistData.Controls.Add(this.label1);
             this.groupBoxanesthetistData.Controls.Add(this.tableLayoutPanel1);
             this.groupBoxanesthetistData.Controls.Add(this.ID);
+            this.groupBoxanesthetistData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxanesthetistData.Location = new System.Drawing.Point(56, 35);
             this.groupBoxanesthetistData.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxanesthetistData.Name = "groupBoxanesthetistData";
@@ -172,7 +174,7 @@ namespace UI
             this.tableLayoutPanel1.Controls.Add(this.labelStatus, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(53, 25);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(59, 29);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -503,7 +505,7 @@ namespace UI
             this.ID.Location = new System.Drawing.Point(4, 211);
             this.ID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(41, 13);
+            this.ID.Size = new System.Drawing.Size(52, 20);
             this.ID.TabIndex = 18;
             this.ID.Text = "label10";
             this.ID.Visible = false;
@@ -619,9 +621,9 @@ namespace UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(734, 246);
+            this.label1.Location = new System.Drawing.Point(695, 215);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(45, 20);
             this.label1.TabIndex = 23;
             this.label1.Text = "label1";
             this.label1.Visible = false;
@@ -632,7 +634,6 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1286, 947);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButtonList);
             this.Controls.Add(this.iconButtonSave);
             this.Controls.Add(this.iconButtonUpdate);
@@ -660,7 +661,6 @@ namespace UI
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
