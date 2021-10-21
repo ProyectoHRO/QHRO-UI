@@ -24,7 +24,7 @@ namespace UI
         {
             InitializeComponent();
         }
-
+       
         private void Users_Load(object sender, EventArgs e)
         {
             DataTable infoRoles = users.GetRoles();
@@ -36,6 +36,13 @@ namespace UI
             comboBoxServices.ValueMember = "idservicio";
             comboBoxServices.DisplayMember = "nombreservicio";
             comboBoxServices.DataSource = infoServices;
+
+            DataTable infoPermits = users.GetPermits();
+            foreach (DataRow item in infoPermits.Rows)
+            {
+                listBoxIdPermits.Items.Add(Convert.ToInt32(item.Field<int>(0)));
+                checkedListBoxPermits.Items.Add(item.Field<string>(1).ToString());
+            }
         }
 
         private void iconButtonCreateAndRequest_Click(object sender, EventArgs e)
@@ -74,8 +81,66 @@ namespace UI
                 users.makeUserPass(Convert.ToInt32(newphrase[1]), password);
 
                 MessageBox.Show(mail.MakeMail(textBoxEmail.Text, "NOMBRE DE USUARIO: " + newphrase[0] + "\nCONTRASEÑA: QUIROFANOSHRO" + newphrase[1], "INFORMACIÓN DE USUARIO", "Usuario creado correctamente, porfavor verificar correo "));
+                if (MessageBox.Show("¿Desea asignar permisos?", "Asignar permisos",
+               MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    groupBoxAssignPermits.Visible = true;
+                    DataTable getuser = users.getUserByEmail(textBoxEmail.Text);
+                    if (getuser.Rows.Count < 1)
+                    {
+                        MessageBox.Show("El correo no esta registrado");
+                    }
+                    else
+                    {
+                        foreach (DataRow item in getuser.Rows)
+                        {
+                            labelId.Text = item.Field<int>(0).ToString();
+                            textBoxUser.Text = item.Field<string>(1).ToString();
+                            textBoxMail.Text = item.Field<string>(12).ToString();
+                            textBoxMail.Enabled = false;
+                            textBoxUser.Enabled = false;
+                        }
+                      
+                    }
+                }
+               
             }
             
+        }
+
+        private void comboBoxRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(comboBoxRole.SelectedValue)==4)
+            {
+                comboBoxServices.Visible = true;
+                label3.Visible = true;
+            }
+            else
+            {
+                comboBoxServices.Visible = false;
+                label3.Visible = false;
+            }
+        }
+
+        private void iconButtonGrant_Click(object sender, EventArgs e)
+        {
+            List<ClassDtoPermits> permitsList = new List<ClassDtoPermits>();
+            ClassDtoPermits permit;
+
+            for (int i = 0; i < checkedListBoxPermits.Items.Count; i++)
+            {
+                listBoxIdPermits.SelectedIndex = i;
+                if (checkedListBoxPermits.GetItemChecked(i))
+                {
+                    permit = new ClassDtoPermits();
+                    permit.IdPermit = Convert.ToInt32(listBoxIdPermits.SelectedItem);
+                    permit.IdUser = Convert.ToInt32(labelId.Text);
+                    permitsList.Add(permit);
+                }
+            }
+            string response = users.assignPermits(
+              permitsList);
+            MessageBox.Show(response);
         }
     }
 }

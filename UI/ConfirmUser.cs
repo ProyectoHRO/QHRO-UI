@@ -52,7 +52,7 @@ namespace UI
                 else
                 {
                     MessageBox.Show(response);
-                    this.Close();
+                    Application.Restart();
                 }
 
             }

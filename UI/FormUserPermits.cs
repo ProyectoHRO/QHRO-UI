@@ -141,6 +141,7 @@ namespace UI
                 {
                     foreach (DataRow item in getuser.Rows)
                     {
+                        labelId.Text = item.Field<int>(0).ToString();
                         textBoxUser.Text = item.Field<string>(1).ToString();
                         textBoxEmail.Text = item.Field<string>(12).ToString();
                         textBoxEmail.Enabled = false;

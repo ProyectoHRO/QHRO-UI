@@ -301,7 +301,7 @@ namespace UI
             this.labelId.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.labelId.AutoSize = true;
             this.labelId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelId.Location = new System.Drawing.Point(210, 366);
+            this.labelId.Location = new System.Drawing.Point(167, 395);
             this.labelId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(26, 20);

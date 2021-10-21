@@ -55,8 +55,6 @@ namespace UI
             this.panelReportsMenu = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.iconButtonSurgerys = new FontAwesome.Sharp.IconButton();
             this.panel11 = new System.Windows.Forms.Panel();
             this.iconButtonReports = new FontAwesome.Sharp.IconButton();
@@ -361,8 +359,6 @@ namespace UI
             this.panelReportsMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panelReportsMenu.Controls.Add(this.iconButton3);
             this.panelReportsMenu.Controls.Add(this.panel10);
-            this.panelReportsMenu.Controls.Add(this.iconButton5);
-            this.panelReportsMenu.Controls.Add(this.panel12);
             this.panelReportsMenu.Controls.Add(this.iconButtonSurgerys);
             this.panelReportsMenu.Controls.Add(this.panel11);
             this.panelReportsMenu.Location = new System.Drawing.Point(30, 180);
@@ -399,35 +395,6 @@ namespace UI
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(10, 45);
             this.panel10.TabIndex = 23;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.Color.White;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton5.IconColor = System.Drawing.Color.White;
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 38;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(3, 54);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(216, 45);
-            this.iconButton5.TabIndex = 22;
-            this.iconButton5.Text = "Quirófanos";
-            this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel12.Location = new System.Drawing.Point(0, 54);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(10, 45);
-            this.panel12.TabIndex = 21;
             // 
             // iconButtonSurgerys
             // 
@@ -605,8 +572,6 @@ namespace UI
         private System.Windows.Forms.Panel panel8;
         private FontAwesome.Sharp.IconButton iconButtonReports;
         private System.Windows.Forms.Panel panelReportsMenu;
-        private FontAwesome.Sharp.IconButton iconButton5;
-        private System.Windows.Forms.Panel panel12;
         private FontAwesome.Sharp.IconButton iconButtonSurgerys;
         private System.Windows.Forms.Panel panel11;
         private FontAwesome.Sharp.IconButton iconButton3;
