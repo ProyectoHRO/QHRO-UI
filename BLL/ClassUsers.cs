@@ -183,11 +183,11 @@ namespace BLL
 
         }
 
-        public string modifyUserData(string newUser, string newEmail, string newPassword, int idUser)
+        public string modifyUserData(string newUser, string newEmail, string newPassword, DateTime newModifyDate, int idUser)
         {
             try
             {
-                users.ModifyUserData(newUser, newEmail, newPassword, idUser);
+                users.ModifyUserData(newUser, newEmail, newPassword, newModifyDate, idUser);
                 return "SE ACTUALIZARON LOS DATOS";
             }
             catch (Exception error)
