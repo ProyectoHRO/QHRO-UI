@@ -17,6 +17,9 @@ namespace UI
     {
         string getuserName;
         string password;
+        string lastUser;
+        string lastPassword;
+        string lastEmail;
         string hash = "@HR0";
         private ClassUsers users = new ClassUsers();
         public FormProfile(string userName)
@@ -27,12 +30,13 @@ namespace UI
 
         private void FormProfile_Load(object sender, EventArgs e)
         {
+            btnUpdate.Enabled = false;
             textBoxUser.Enabled = false;
             textBoxEmail.Enabled = false;
             textBoxnewPassword.Enabled = false;
             textBoxnewPasswordConfirm.Enabled = false;
-            labelUserName.Text = getuserName;
-            DataTable userData = users.GetUserByUserName(labelUserName.Text);
+            textBoxUser.Text = getuserName;
+            DataTable userData = users.GetUserByUserName(getuserName);
             if (userData.Rows.Count < 1)
             {
                 MessageBox.Show("El usuario no esta registrado");
@@ -44,6 +48,9 @@ namespace UI
                     labelId.Text = item.Field<int>(0).ToString();
                     textBoxUser.Text = item.Field<string>(1).ToString();
                     textBoxEmail.Text = item.Field<string>(12).ToString();
+                    lastUser = item.Field<string>(1).ToString();
+                    lastPassword = item.Field<string>(2).ToString();
+                    lastEmail = item.Field<string>(12).ToString();
                 }
             }
         }
@@ -55,65 +62,110 @@ namespace UI
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-
-            if (textBoxnewPassword.Enabled==false)
+            
+            if ((textBoxUser.Enabled == true) && (textBoxnewPassword.Enabled == false))
             {
-                string response = users.modifyUserData(textBoxUser.Text, textBoxEmail.Text, "n", Convert.ToInt32(labelId.Text));
-                if (response.ToUpper().Contains("ERROR"))
+                if ((textBoxUser.Text == lastUser) && (textBoxEmail.Text == lastEmail))
                 {
-                    MessageBox.Show(response);
+                    MessageBox.Show("No hay cambios por guardar");
                 }
+
                 else
                 {
-                    MessageBox.Show(response);
-                    this.Close();
+                    string response = users.modifyUserData(textBoxUser.Text, textBoxEmail.Text, "n", DateTime.Now, Convert.ToInt32(labelId.Text));
+                    if (response.ToUpper().Contains("ERROR"))
+                    {
+                        MessageBox.Show(response);
+                    }
+                    else
+                    {
+                        MessageBox.Show(response);
+                        this.Close();
+                    }
+                    Application.Restart();
                 }
             }
 
-            else if (textBoxnewPassword.Text == textBoxnewPasswordConfirm.Text)
+            if ((textBoxnewPassword.Enabled == true) && (textBoxUser.Enabled == false))
             {
-                byte[] data = UTF8Encoding.UTF8.GetBytes(textBoxnewPasswordConfirm.Text);
-                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                if (textBoxnewPassword.Text=="")
                 {
-                    byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
-                    using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                    MessageBox.Show("La contraseña nueva no es valida");
+                }
+
+                else
+                {
+                    if (textBoxnewPassword.Text == textBoxnewPasswordConfirm.Text)
                     {
-                        ICryptoTransform transform = tripleDES.CreateEncryptor();
-                        byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
-                        password = Convert.ToBase64String(results, 0, results.Length);
+                        byte[] data = UTF8Encoding.UTF8.GetBytes(textBoxnewPasswordConfirm.Text);
+                        using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                        {
+                            byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                            using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                            {
+                                ICryptoTransform transform = tripleDES.CreateEncryptor();
+                                byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                                password = Convert.ToBase64String(results, 0, results.Length);
+                            }
+                        }
+
+                        if(password == lastPassword)
+                        {
+                            MessageBox.Show("La contraseña es igual a la anterior");
+                        }
+
+                        else
+                        {
+                            string response = users.modifyUserData(textBoxUser.Text, textBoxEmail.Text, password, DateTime.Now, Convert.ToInt32(labelId.Text));
+                            if (response.ToUpper().Contains("ERROR"))
+                            {
+                                MessageBox.Show(response);
+                            }
+                            else
+                            {
+                                MessageBox.Show(response);
+                                this.Close();
+                            }
+                            Application.Restart();
+                        }
+                    }
+
+                    else if (textBoxnewPassword.Text != textBoxnewPasswordConfirm.Text)
+                    {
+                        MessageBox.Show("Las contraseñas no coinciden");
                     }
                 }
+            }
 
-                string response = users.modifyUserData(textBoxUser.Text, textBoxEmail.Text,password, Convert.ToInt32(labelId.Text));
-                if (response.ToUpper().Contains("ERROR"))
+            if ((textBoxnewPassword.Enabled == true) && (textBoxUser.Enabled == true))
+            {
+                if (textBoxnewPassword.Text == "")
                 {
-                    MessageBox.Show(response);
-                }
-                else
-                {
-                    MessageBox.Show(response);
-                    this.Close();
+                    MessageBox.Show("La contraseña nueva no es valida");
                 }
             }
 
-            Application.Restart();
+            else if ((textBoxUser.Text == lastUser) && (textBoxEmail.Text == lastEmail) && (textBoxnewPassword.Enabled == false))
+            {
+                MessageBox.Show("No hay cambios por guardar");
+            }
+
         }
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
-            textBoxEmail.Enabled = false;
-            textBoxUser.Enabled = false;
-
         }
 
         private void labelEdit_Click(object sender, EventArgs e)
         {
+            btnUpdate.Enabled = true;
             textBoxUser.Enabled = true;
             textBoxEmail.Enabled = true;
         }
 
         private void labelEditPassword_Click(object sender, EventArgs e)
         {
+            btnUpdate.Enabled = true;
             textBoxnewPassword.Enabled = true;
             textBoxnewPasswordConfirm.Enabled = true;
         }

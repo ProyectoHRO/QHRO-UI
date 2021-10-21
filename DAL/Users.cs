@@ -188,7 +188,7 @@ namespace DAL
             return response;
         }
 
-        public void ModifyUserData(string user, string email, string password, int id)
+        public void ModifyUserData(string user, string email, string password, DateTime fecha_modificacion, int id)
         {
             command.Connection = connection.OpenConnection();
             command.CommandText = "UpdateUserData";
@@ -196,6 +196,7 @@ namespace DAL
             command.Parameters.AddWithValue("@usuario", user);
             command.Parameters.AddWithValue("@correo", email);
             command.Parameters.AddWithValue("@contraseña", password);
+            command.Parameters.AddWithValue("@fecha_modificacion", fecha_modificacion);
             command.Parameters.AddWithValue("@idusuario", id);
             command.ExecuteNonQuery();
             command.Parameters.Clear();
