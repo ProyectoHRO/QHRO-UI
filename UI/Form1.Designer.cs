@@ -363,7 +363,7 @@ namespace UI
             this.panelReportsMenu.Controls.Add(this.panel11);
             this.panelReportsMenu.Location = new System.Drawing.Point(30, 180);
             this.panelReportsMenu.Name = "panelReportsMenu";
-            this.panelReportsMenu.Size = new System.Drawing.Size(221, 158);
+            this.panelReportsMenu.Size = new System.Drawing.Size(221, 105);
             this.panelReportsMenu.TabIndex = 19;
             this.panelReportsMenu.Visible = false;
             // 
@@ -379,7 +379,7 @@ namespace UI
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 38;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton3.Location = new System.Drawing.Point(3, 105);
+            this.iconButton3.Location = new System.Drawing.Point(3, 54);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(216, 45);
             this.iconButton3.TabIndex = 24;
@@ -391,7 +391,7 @@ namespace UI
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel10.Location = new System.Drawing.Point(0, 105);
+            this.panel10.Location = new System.Drawing.Point(0, 54);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(10, 45);
             this.panel10.TabIndex = 23;

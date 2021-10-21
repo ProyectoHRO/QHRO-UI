@@ -144,5 +144,10 @@ namespace UI
             this.reportViewerDiff.LocalReport.DataSources.Add(Report);
             this.reportViewerDiff.RefreshReport();
         }
+
+        private void reportViewerDailies_Load(object sender, EventArgs e)
+        {
+            reportViewerDailies.PrinterSettings.DefaultPageSettings.Margins = new System.Drawing.Printing.Margins(5, 5, 10, 10);
+        }
     }
 }
