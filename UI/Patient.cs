@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
@@ -90,22 +91,29 @@ namespace UI
 
         private void iconButtonSave_Click_1(object sender, EventArgs e)
         {
-            string resp;
-            resp = patients.newPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
-                textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
-                comboBoxGender.SelectedItem.ToString());
-            if (resp.ToUpper().Contains("ERROR"))
+            int state = 0;
+            if (label1.Text == "v")
+                state = 1;
+            if (state == 1)
             {
-                MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                string resp;
+                resp = patients.newPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
+                    textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
+                    comboBoxGender.SelectedItem.ToString());
+                if (resp.ToUpper().Contains("ERROR"))
+                {
+                    MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-            else
-            {
-                MessageBox.Show(resp, "Nuevo paciente añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                listPatients();
-            }
+                else
+                {
+                    MessageBox.Show(resp, "Nuevo paciente añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    listPatients();
+                }
 
-            iconButtonNew.Enabled = true;
+                iconButtonNew.Enabled = true;
+            }
+           
         }
 
         private void dataGridView1_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
@@ -249,6 +257,24 @@ namespace UI
         private void Patient_Resize(object sender, EventArgs e)
         {
             listPatients();
+        }
+
+        private void textBoxhistoryNumber_TextChanged(object sender, EventArgs e)
+        {
+            regeXp("[A-Za-z0-9-]+", textBoxhistoryNumber);
+        }
+
+        public void regeXp(string re, TextBox tb)
+        {
+            Regex regex = new Regex(re);
+            if (regex.IsMatch(tb.Text))
+            {
+                label1.Text = "v";
+            }
+            else
+            {
+                label1.Text = "f";
+            }
         }
     }
 }

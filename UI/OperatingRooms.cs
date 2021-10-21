@@ -37,7 +37,7 @@ namespace UI
         {
             groupBoxoperatingroomData.Enabled = true;
             textBoxNumber.Text = "";
-            textBoxCurrentState.Text = "";
+            comboBoxCurrentState.SelectedIndex = 0;
             comboStatus.Text = "";
         }
 
@@ -49,8 +49,8 @@ namespace UI
             labelStatus.Visible = false;
             comboStatus.Visible = false;
 
-            listoperatingRooms();
             iconButtonNew.Enabled = true;
+            listoperatingRooms();
             iconButtonSave.Enabled = false;
             iconButtonUpdate.Enabled = false;
             groupBoxoperatingroomData.Enabled = false;
@@ -70,7 +70,7 @@ namespace UI
         private void iconButtonSave_Click(object sender, EventArgs e)
         {
             string resp;
-            resp = operatingroom.newoperatingRoom(textBoxNumber.Text, textBoxCurrentState.Text);
+            resp = operatingroom.newoperatingRoom(textBoxNumber.Text, comboBoxCurrentState.Text);
             if (resp.ToUpper().Contains("ERROR"))
             {
                 MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,7 +96,7 @@ namespace UI
                 iconButtonSave.Enabled = false;
                 labelID.Text = dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textBoxNumber.Text = dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[1].Value.ToString();
-                textBoxCurrentState.Text = dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[2].Value.ToString();
+                comboBoxCurrentState.Text = dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[2].Value.ToString();
 
                 if (dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[3].Value.ToString() == "True")
                     comboStatus.Text = "Activo";
@@ -119,7 +119,7 @@ namespace UI
             else if (comboStatus.SelectedIndex == 1)
                 status = false;
 
-            string resp = operatingroom.editoperatingRoom(textBoxNumber.Text, textBoxCurrentState.Text, status, id);
+            string resp = operatingroom.editoperatingRoom(textBoxNumber.Text, comboBoxCurrentState.Text, status, id);
             if (resp.ToUpper().Contains("ERROR"))
             {
                 MessageBox.Show(resp, "Error al actualizar datos del paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);

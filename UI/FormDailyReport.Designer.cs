@@ -96,6 +96,7 @@ namespace UI
             this.reportViewerDailies.ServerReport.BearerToken = null;
             this.reportViewerDailies.Size = new System.Drawing.Size(1242, 771);
             this.reportViewerDailies.TabIndex = 6;
+            this.reportViewerDailies.Load += new System.EventHandler(this.reportViewerDailies_Load);
             // 
             // dateTimePickerReport
             // 
