@@ -15,10 +15,11 @@ namespace UI
     public partial class Anesthetist : Form
     {
         private ClassAnesthetist anes = new ClassAnesthetist();
-        public Anesthetist()
+        int userId;
+        public Anesthetist(int idUser)
         {
             InitializeComponent();
-            
+            userId = idUser;
         }
 
         void listAnesthetists()
@@ -109,7 +110,7 @@ namespace UI
             if (state == 1)
             {
                 string resp;
-                resp = anes.newAnesthetist(textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text,
+                resp = anes.newAnesthetist(userId,textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text,
                     textBoxfirstSurname.Text, textBoxsecondSurname.Text, textBoxphoneNumber.Text, textBoxEmail.Text);
                 if (resp.ToUpper().Contains("ERROR"))
                 {
@@ -178,7 +179,7 @@ namespace UI
                 {
                     status = false;
                 }
-                string resp = anes.editAnesthetist(textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text,
+                string resp = anes.editAnesthetist(userId,textBoxDPI.Text, textBoxfirstName.Text, textBoxsecondName.Text, textBoxthirdName.Text,
                     textBoxfirstSurname.Text, textBoxsecondSurname.Text, textBoxphoneNumber.Text, textBoxEmail.Text, status, id);
                 if (resp.ToUpper().Contains("ERROR"))
                 {
@@ -303,7 +304,7 @@ namespace UI
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
-            regeXp(@"^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", textBoxEmail, boxValidateMail);
+            regeXp(@"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", textBoxEmail, boxValidateMail);
         }
 
         private void textBoxphoneNumber_KeyPress(object sender,

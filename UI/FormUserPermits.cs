@@ -14,10 +14,12 @@ namespace UI
     {
   
         private ClassUsers users = new ClassUsers();
+        int userId;
         bool hasPermits;
-        public FormUserPermits()
+        public FormUserPermits(int idUser)
         {
             InitializeComponent();
+            userId = idUser;
         }
 
         private void FormUserPermits_Load(object sender, EventArgs e)
@@ -175,7 +177,7 @@ namespace UI
                         permitsList.Add(permit);
                     }
                 }
-                string response = users.assignPermits(
+                string response = users.assignPermits( userId, Convert.ToInt32(labelId.Text),
                   permitsList);
                 MessageBox.Show(response);
             }
@@ -195,8 +197,8 @@ namespace UI
                         permitsList.Add(permit);
                     }
                 }
-                string response = users.modifyPermits(
-                   Convert.ToInt32(labelId.Text),
+                string response = users.modifyPermits(userId,
+                Convert.ToInt32(labelId.Text),
                   permitsList);
                 MessageBox.Show(response);
             }
@@ -206,6 +208,11 @@ namespace UI
         private void iconButtonCancel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            //expresion regular ^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$
         }
     }
 }

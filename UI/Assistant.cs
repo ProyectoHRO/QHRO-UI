@@ -14,9 +14,11 @@ namespace UI
     public partial class Assistant : Form
     {
         private ClassAssistants assistants = new ClassAssistants();
-        public Assistant()
+        int userId;
+        public Assistant(int idUser)
         {
             InitializeComponent();
+            userId = idUser;
         }
 
         void listAsistants()
@@ -64,33 +66,7 @@ namespace UI
             iconButtonUpdate.Enabled = false;
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-            if (textFirstName.Text != null && textFirstLastName.Text != null && textCui.Text != null && textEmail.Text != null && textPhone.Text != null)
-            {
-                string resp;
-                resp = assistants.newAssistant(textFirstName.Text,textSecondName.Text,textThirdName.Text,textFirstLastName.Text,textSecondLastName.Text,textEmail.Text,
-                    textPhone.Text,Convert.ToInt32(comboTypeAssistant.SelectedValue),textCui.Text);
-                if (resp.ToUpper().Contains("ERROR"))
-                    MessageBox.Show(resp, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show(resp, "Registro Guardado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                MessageBox.Show("Porfavor llena los campos");
-            groupBoxAssistantData.Enabled = false;
-            textFirstName.Clear();
-            textSecondName.Clear();
-            textThirdName.Clear();
-            textFirstLastName.Clear();
-            textSecondLastName.Clear();
-            textEmail.Clear();
-            textPhone.Clear();
-            textCui.Clear();
-            comboStatus.SelectedIndex = 0;
-            iconButtonSave.Enabled = true;
-            iconButtonNew.Enabled = false;
-        }
+      
 
         private void Assistant_Load(object sender, EventArgs e)
         {
@@ -141,25 +117,6 @@ namespace UI
             }
         }
 
-        private void buttonUpdate_Click(object sender, EventArgs e)
-        {
-            bool status=false;
-            if (comboStatus.SelectedIndex != 0)
-            {
-                if (comboStatus.SelectedIndex == 1)
-                    status = true;
-                else if (comboStatus.SelectedIndex == 2)
-                    status = false;
-                string resp = assistants.updateAssistant(textFirstName.Text,textSecondName.Text,textThirdName.Text,textFirstLastName.Text,textSecondLastName.Text,textEmail.Text,
-                    textPhone.Text, status, Convert.ToInt32(comboTypeAssistant.SelectedValue),textCui.Text,Convert.ToInt32(labelID.Text));
-                if (resp.ToUpper().Contains("ERROR"))
-                    MessageBox.Show(resp, "Error al Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                else
-                    MessageBox.Show(resp, "Registro Actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-                MessageBox.Show("Porfavor eleccione un estado (Activo/Inactivo)");
-        }
 
         private void textCui_TextChanged(object sender, EventArgs e)
         {
@@ -168,6 +125,7 @@ namespace UI
 
         private void iconButtonNew_Click(object sender, EventArgs e)
         {
+            labelStatus.Visible = false;
             comboStatus.Visible = false;
             groupBoxAssistantData.Enabled = true;
             textFirstName.Clear();
@@ -198,7 +156,7 @@ namespace UI
                         status = true;
                     else if (comboStatus.SelectedIndex == 2)
                         status = false;
-                    string resp = assistants.updateAssistant(textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text, textSecondLastName.Text, textEmail.Text,
+                    string resp = assistants.updateAssistant(userId,textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text, textSecondLastName.Text, textEmail.Text,
                         textPhone.Text, status, Convert.ToInt32(comboTypeAssistant.SelectedValue), textCui.Text, Convert.ToInt32(labelID.Text));
                     if (resp.ToUpper().Contains("ERROR"))
                         MessageBox.Show(resp, "Error al Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -242,6 +200,7 @@ namespace UI
                 {
                     string resp;
                     resp = assistants.newAssistant(
+                        userId,
                         textFirstName.Text,
                         textSecondName.Text,
                         textThirdName.Text, 
@@ -335,7 +294,7 @@ namespace UI
 
         private void textEmail_TextChanged(object sender, EventArgs e)
         {
-            regeXp(@"^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", textEmail, boxValidateMail);
+            regeXp(@"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", textEmail, boxValidateMail);
         }
 
         private void textPhone_KeyPress(object sender, KeyPressEventArgs e)

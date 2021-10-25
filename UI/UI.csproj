@@ -157,12 +157,6 @@
     <Compile Include="FormViewInterventions.Designer.cs">
       <DependentUpon>FormViewInterventions.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormViweOperatingRooms.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormViweOperatingRooms.Designer.cs">
-      <DependentUpon>FormViweOperatingRooms.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,9 +264,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewInterventions.resx">
       <DependentUpon>FormViewInterventions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormViweOperatingRooms.resx">
-      <DependentUpon>FormViweOperatingRooms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.cs</DependentUpon>

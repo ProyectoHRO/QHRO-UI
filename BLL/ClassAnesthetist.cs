@@ -37,7 +37,7 @@ namespace BLL
             return ANESTHETIST.GetAnesthetistByName(name);
         }
 
-        public string newAnesthetist(string dpi, string firstName, string secondName,
+        public string newAnesthetist(int userId,string dpi, string firstName, string secondName,
             string thirdName, string firstSurname, string secondSurname, string phoneNumber, string email)
         {
             try
@@ -45,7 +45,7 @@ namespace BLL
                 DataTable anestethist = ANESTHETIST.GetAnesthetistByCui(dpi);
                 if (anestethist.Rows.Count < 1)
                 {
-                    ANESTHETIST.InsertAnesthetist(dpi, firstName, secondName, thirdName,
+                    ANESTHETIST.InsertAnesthetist(userId,dpi, firstName, secondName, thirdName,
                     firstSurname, secondSurname, phoneNumber, email);
                     return "Nuevo registro agregado";
                 }
@@ -58,13 +58,13 @@ namespace BLL
             }
         }
 
-        public string editAnesthetist(string dpi, string firstName, string secondName,
+        public string editAnesthetist(int userId,string dpi, string firstName, string secondName,
             string thirdName, string firstSurname, string secondSurname, string phoneNumber, string email,
             bool status, int idAnesthetist)
         {
             try
             {
-                ANESTHETIST.UpdateAnesthetist(dpi, firstName, secondName, thirdName, firstSurname,
+                ANESTHETIST.UpdateAnesthetist(userId,dpi, firstName, secondName, thirdName, firstSurname,
                     secondSurname, phoneNumber, email, status, idAnesthetist);
                 return "Se actualizaron los datos del anestesista";
             }

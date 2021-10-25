@@ -78,6 +78,7 @@ namespace DAL
         }
 
         public void InsertAssistant(
+            int userId,
             string firstName,
             string secondName,
             string thirdName,
@@ -92,6 +93,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "InsertarAsistente";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@dpi", cui);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
             command.Parameters.AddWithValue("@segundo_nombre", secondName);
@@ -107,6 +109,7 @@ namespace DAL
         }
 
         public void UpdateAssistant(
+            int userId,
             string firstName,
             string secondName,
             string thirdName,
@@ -123,6 +126,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "EditarAsistente";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@dpi", cui);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
             command.Parameters.AddWithValue("@segundo_nombre", secondName);

@@ -157,7 +157,7 @@ namespace BLL
         }
 
 
-        public string assignPermits(List<ClassDtoPermits> permitsList)
+        public string assignPermits(int userId,int userIdToAssign,List<ClassDtoPermits> permitsList)
         {
             string response = "";
             DataTable dataPermits = new DataTable() { Columns = { "idPermit", "idUser" } };
@@ -165,12 +165,12 @@ namespace BLL
             {
                 dataPermits.Rows.Add(item.IdPermit,item.IdUser);
             }
-            response = users.assignPermits(dataPermits);
+            response = users.assignPermits(userId,userIdToAssign,dataPermits);
             return response;
 
         }
 
-        public string modifyPermits(int userId,List<ClassDtoPermits> permitsList)
+        public string modifyPermits(int userThatAssign, int userId,List<ClassDtoPermits> permitsList)
         {
             string response = "";
             DataTable dataPermits = new DataTable() { Columns = { "idPermit", "idUser" } };
@@ -178,7 +178,7 @@ namespace BLL
             {
                 dataPermits.Rows.Add(item.IdPermit, item.IdUser);
             }
-            response = users.modifyPermits(userId,dataPermits);
+            response = users.modifyPermits(userThatAssign,userId,dataPermits);
             return response;
 
         }

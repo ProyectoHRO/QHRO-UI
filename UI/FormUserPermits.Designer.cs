@@ -49,10 +49,10 @@ namespace UI
             this.labelCorreo = new System.Windows.Forms.Label();
             this.labelId = new System.Windows.Forms.Label();
             this.iconButtonGrant = new FontAwesome.Sharp.IconButton();
-            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.listBoxIdPermits = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -115,6 +115,7 @@ namespace UI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(340, 42);
             this.panel1.TabIndex = 44;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBoxSearch
             // 
@@ -334,30 +335,6 @@ namespace UI
             this.iconButtonGrant.UseVisualStyleBackColor = false;
             this.iconButtonGrant.Click += new System.EventHandler(this.iconButtonGrant_Click);
             // 
-            // iconButtonCancel
-            // 
-            this.iconButtonCancel.BackColor = System.Drawing.Color.White;
-            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButtonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonCancel.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Ban;
-            this.iconButtonCancel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonCancel.IconSize = 30;
-            this.iconButtonCancel.Location = new System.Drawing.Point(214, 630);
-            this.iconButtonCancel.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButtonCancel.Name = "iconButtonCancel";
-            this.iconButtonCancel.Size = new System.Drawing.Size(242, 100);
-            this.iconButtonCancel.TabIndex = 44;
-            this.iconButtonCancel.Text = "Cancelar";
-            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonCancel.UseVisualStyleBackColor = false;
-            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -393,6 +370,30 @@ namespace UI
             this.label2.Size = new System.Drawing.Size(214, 30);
             this.label2.TabIndex = 47;
             this.label2.Text = "Otorgar permisos";
+            // 
+            // iconButtonCancel
+            // 
+            this.iconButtonCancel.BackColor = System.Drawing.Color.White;
+            this.iconButtonCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonCancel.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonCancel.IconChar = FontAwesome.Sharp.IconChar.Ban;
+            this.iconButtonCancel.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonCancel.IconSize = 30;
+            this.iconButtonCancel.Location = new System.Drawing.Point(214, 630);
+            this.iconButtonCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonCancel.Name = "iconButtonCancel";
+            this.iconButtonCancel.Size = new System.Drawing.Size(242, 100);
+            this.iconButtonCancel.TabIndex = 44;
+            this.iconButtonCancel.Text = "Cancelar";
+            this.iconButtonCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
             // 
             // FormUserPermits
             // 
@@ -449,9 +450,9 @@ namespace UI
         private System.Windows.Forms.Label labelCorreo;
         private System.Windows.Forms.Label labelId;
         private FontAwesome.Sharp.IconButton iconButtonGrant;
-        private FontAwesome.Sharp.IconButton iconButtonCancel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.ListBox listBoxIdPermits;
         private System.Windows.Forms.Label label2;
+        private FontAwesome.Sharp.IconButton iconButtonCancel;
     }
 }

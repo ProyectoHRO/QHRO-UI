@@ -128,6 +128,7 @@ namespace UI
             this.textBoxEmail.Size = new System.Drawing.Size(255, 19);
             this.textBoxEmail.TabIndex = 26;
             this.textBoxEmail.Text = "CORREO";
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             this.textBoxEmail.Enter += new System.EventHandler(this.textBoxEmail_Enter);
             this.textBoxEmail.Leave += new System.EventHandler(this.textBoxEmail_Leave);
             // 

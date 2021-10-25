@@ -123,5 +123,10 @@ namespace UI
         {
             
         }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            //^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$ EXPRESION REGULAR
+        }
     }
 }

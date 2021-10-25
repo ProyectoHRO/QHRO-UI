@@ -56,6 +56,7 @@ namespace DAL
         }
 
         public void InsertAnesthetist(
+            int userId,
             string anesthetistDpi,
             string firstName,
             string secondName,
@@ -69,6 +70,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "InsertarAnestesista";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@dpi_anestesista", anesthetistDpi);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
             command.Parameters.AddWithValue("@segundo_nombre", secondName);
@@ -83,6 +85,7 @@ namespace DAL
         }
 
         public void UpdateAnesthetist(
+            int userId,
             string anesthetistDpi,
             string firstName,
             string secondName,
@@ -98,6 +101,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "EditarAnestesista";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@dpi_anestesista", anesthetistDpi);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
             command.Parameters.AddWithValue("@segundo_nombre", secondName);

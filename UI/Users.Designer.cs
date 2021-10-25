@@ -153,6 +153,7 @@ namespace UI
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(294, 26);
             this.textBoxEmail.TabIndex = 0;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // label2
             // 

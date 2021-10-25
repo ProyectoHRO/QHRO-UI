@@ -14,9 +14,16 @@ namespace UI
     {
         private ClassPatient patients=new ClassPatient();
         private ClassRequestSurgery requestSurgery = new ClassRequestSurgery();
-        public RequestSurgery()
+        int serviceId;
+        int userId;
+        public RequestSurgery(int idService, int idUser)
         {
             InitializeComponent();
+            userId = idUser;
+            if (idService > 0)
+                serviceId = idService;
+            else
+                serviceId = 22;    
         }
         void listPatients(string param)
         {
@@ -105,7 +112,7 @@ namespace UI
         {
             if (textBoxDiagnosis.Text!="")
             {
-                string response = requestSurgery.makeSurgeryRequest(textBoxDiagnosis.Text, Convert.ToInt32(labelID.Text), 3);
+                string response = requestSurgery.makeSurgeryRequest(userId,textBoxDiagnosis.Text, Convert.ToInt32(labelID.Text), serviceId);
                 MessageBox.Show(response);
                 iconButtonRequest.Enabled = false;
                 iconButtonRequest.Visible = false;
@@ -127,7 +134,7 @@ namespace UI
         {
             if (textBoxhistoryNumber.Text != "" && textBoxfirstName.Text != "" && textBoxfirstSurname.Text != "" && textBoxDiagnosis.Text != "")
             {
-                string response = requestSurgery.makeSurgeryRequestAndPatient(textBoxDiagnosis.Text,3,textBoxhistoryNumber.Text,textBoxfirstName.Text,textBoxsecondName.Text,textBoxthirdName.Text,
+                string response = requestSurgery.makeSurgeryRequestAndPatient(userId,textBoxDiagnosis.Text,3,textBoxhistoryNumber.Text,textBoxfirstName.Text,textBoxsecondName.Text,textBoxthirdName.Text,
                     textBoxfirstSurname.Text, textBoxsecondSurname.Text,Convert.ToInt16(textBoxAge.Text), comboBoxGender.Text);
                 MessageBox.Show(response);
                 iconButtonRequest.Enabled = false;

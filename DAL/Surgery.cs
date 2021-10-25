@@ -175,6 +175,23 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+
+        public string finishSurgerie(int surgerieId)
+        {
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "FinalizarCirugia";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
+        }
+
         public DataTable getAssistantsBySurgerie(int surgerieId)
         {
             tableData = new DataTable();
@@ -216,6 +233,7 @@ namespace DAL
             return tableData;
         }
         public string AssignSurgery(
+            int userId,
             string anesthesiaType,
             string surgeryType,
             DateTime surgeryDate,
@@ -233,6 +251,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "sp_assignSurgery";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@tipo_anestesia", anesthesiaType);
             command.Parameters.AddWithValue("@tipo_cirugia", surgeryType);
             command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
@@ -255,6 +274,7 @@ namespace DAL
 
 
         public string requestSurgery(
+            int userId,
             string interventionDetail,
             int patientId,
             int serviceId)
@@ -263,6 +283,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "sp_solicitar_cirugia";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@diagnostico", interventionDetail);
             command.Parameters.AddWithValue("@idpaciente", patientId);
             command.Parameters.AddWithValue("@idservicio", serviceId);
@@ -276,6 +297,7 @@ namespace DAL
         }
 
         public string requestSurgeryAndPatient(
+            int userId,
             string interventionDetail,
             int serviceId,
             string historyNumber,
@@ -292,6 +314,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "sp_solicitar_cirugia_paciente";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@diagnostico", interventionDetail);
             command.Parameters.AddWithValue("@idservicio", serviceId);
             command.Parameters.AddWithValue("@no_historia", historyNumber);

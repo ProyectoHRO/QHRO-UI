@@ -40,6 +40,7 @@ namespace UI
             this.dataGridViewSchedule = new System.Windows.Forms.DataGridView();
             this.iconButtonReSchedule = new FontAwesome.Sharp.IconButton();
             this.iconButtonDiffer = new FontAwesome.Sharp.IconButton();
+            this.iconButtonFinish = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSchedule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -175,12 +176,38 @@ namespace UI
             this.iconButtonDiffer.UseVisualStyleBackColor = false;
             this.iconButtonDiffer.Click += new System.EventHandler(this.iconButtonDiffer_Click);
             // 
+            // iconButtonFinish
+            // 
+            this.iconButtonFinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonFinish.BackColor = System.Drawing.Color.White;
+            this.iconButtonFinish.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonFinish.Enabled = false;
+            this.iconButtonFinish.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonFinish.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonFinish.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonFinish.Font = new System.Drawing.Font("Arial", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonFinish.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonFinish.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
+            this.iconButtonFinish.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonFinish.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonFinish.IconSize = 60;
+            this.iconButtonFinish.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonFinish.Location = new System.Drawing.Point(504, 842);
+            this.iconButtonFinish.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonFinish.Name = "iconButtonFinish";
+            this.iconButtonFinish.Size = new System.Drawing.Size(331, 94);
+            this.iconButtonFinish.TabIndex = 38;
+            this.iconButtonFinish.Text = "Finalizar cirugía";
+            this.iconButtonFinish.UseVisualStyleBackColor = false;
+            this.iconButtonFinish.Click += new System.EventHandler(this.iconButtonFinish_Click);
+            // 
             // FormsSchedules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1286, 947);
+            this.Controls.Add(this.iconButtonFinish);
             this.Controls.Add(this.iconButtonReSchedule);
             this.Controls.Add(this.iconButtonDiffer);
             this.Controls.Add(this.dataGridViewSchedule);
@@ -204,5 +231,6 @@ namespace UI
         private System.Windows.Forms.DataGridView dataGridViewSchedule;
         private FontAwesome.Sharp.IconButton iconButtonDiffer;
         private FontAwesome.Sharp.IconButton iconButtonReSchedule;
+        private FontAwesome.Sharp.IconButton iconButtonFinish;
     }
 }

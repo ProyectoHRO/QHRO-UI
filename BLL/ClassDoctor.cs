@@ -40,7 +40,7 @@ namespace BLL
         }
 
         //insert
-        public string newDoctor(string dpi, string firstName, string secondName, string thirdName, string firstLastName, string secondLastName,
+        public string newDoctor(int userId,string dpi, string firstName, string secondName, string thirdName, string firstLastName, string secondLastName,
             string phoneNumber,string email, string specialty)
         {
             try
@@ -48,7 +48,7 @@ namespace BLL
                 DataTable doctor = doctors.GetDoctorByDpi(dpi);
                 if (doctor.Rows.Count<1)
                 {
-                    doctors.InsertDoctor(dpi,firstName,secondName,thirdName,firstLastName,secondLastName,phoneNumber,email,specialty);
+                    doctors.InsertDoctor(userId,dpi,firstName,secondName,thirdName,firstLastName,secondLastName,phoneNumber,email,specialty);
                     return "SE HA GRABADO UN NUEVO REGISTRO";
                 }
                 else
@@ -60,12 +60,12 @@ namespace BLL
             }
         }
         //update
-        public string updateDoctor(string newDpi, string newFirstName, string newSecondName, string newThirdName, string newFirstLastName,
+        public string updateDoctor(int userId,string newDpi, string newFirstName, string newSecondName, string newThirdName, string newFirstLastName,
             string newSecondLastName, string newPhoneNumber, string newEmail, bool newStatus, string specialty, int idDoctor)
         {
             try
             {
-                doctors.UpdateDoctor(newDpi,newFirstName,newSecondName,newThirdName,newFirstLastName,newSecondLastName,newPhoneNumber,newEmail,newStatus, specialty,
+                doctors.UpdateDoctor(userId,newDpi,newFirstName,newSecondName,newThirdName,newFirstLastName,newSecondLastName,newPhoneNumber,newEmail,newStatus, specialty,
                     idDoctor);
                 return "SE HA ACTUALIZADO EL REGISTRO";
             }

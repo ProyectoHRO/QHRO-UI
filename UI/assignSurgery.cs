@@ -17,9 +17,11 @@ namespace UI
         private Surgeries surgeriesLogic = new Surgeries();
         private ClassMail mail = new ClassMail();
         private ClassDoctor doctorss = new ClassDoctor();
-        public assignSurgery()
+        int userId;
+        public assignSurgery(int idUser)
         {
             InitializeComponent();
+            userId = idUser;
         }
 
         void ListRequestedSugreries()
@@ -145,15 +147,17 @@ namespace UI
 
 
             string response = surgeriesLogic.assignSurgery(
+                userId,
                 comboBoxAnesthesiaType.Text,
                 comboBoxSurgeryType.Text,
                 dateTimeSurgeryDate.Value,
+                comboBoxHour.Text + ' ' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
                 Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
                 Convert.ToInt32(labelIdAnesthetist.Text),
                 Convert.ToInt32(labelID.Text),
                 comboBoxRelevance.Text,
                 textBoxDiagnosis.Text,
-                textBoxTime.Text,
+               comboBoxHour.Text,
                 assistantsList,
                 doctorsList);
             if (response== "Se ha asignado la cirugía con éxito!")
@@ -163,7 +167,7 @@ namespace UI
                     listBoxDocId.SelectedIndex = i;
                     string getMail = doctorss.getDoctorsById(Convert.ToInt32(listBoxDocId.SelectedItem));
                     response= mail.MakeMail(getMail,
-                        "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.ToString() + " a las: " + textBoxTime.Text
+                        "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.Day.ToString() + "/" + dateTimeSurgeryDate.Value.Month.ToString() + "/" + dateTimeSurgeryDate.Value.Year.ToString() + " a las: " + comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text
                        + " \n Del paciente: " + textBoxName.Text + " " + textBoxLastName.Text + " con numero de historia: "+ textBoxHistory.Text,"Intervención", "Se ha asignado la cirugía con éxito!");
                 }
                 MessageBox.Show(response);

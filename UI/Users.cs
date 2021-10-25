@@ -18,11 +18,13 @@ namespace UI
         private ClassMail mail = new ClassMail();
 
         string userName;
+        int userId;
         string hash = "@HR0";
         private ClassServices services = new ClassServices();
-        public Users()
+        public Users(int idUser)
         {
             InitializeComponent();
+            userId = idUser;
         }
        
         private void Users_Load(object sender, EventArgs e)
@@ -138,9 +140,14 @@ namespace UI
                     permitsList.Add(permit);
                 }
             }
-            string response = users.assignPermits(
+            string response = users.assignPermits( userId, Convert.ToInt32(labelId.Text),
               permitsList);
             MessageBox.Show(response);
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            //expresion regular ^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$
         }
     }
 }

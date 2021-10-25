@@ -44,7 +44,7 @@ namespace BLL
             return assistants.GetTypeAssistant();
         }
         //insert
-        public string newAssistant(string firstName, string secondName, string thirdName, string firstLastName, string secondLastName, string email, 
+        public string newAssistant(int userId,string firstName, string secondName, string thirdName, string firstLastName, string secondLastName, string email, 
             string phone, int idType, string cui)
         {
             try
@@ -52,7 +52,7 @@ namespace BLL
                 DataTable assistant = assistants.GetAssistantByDPI(cui);
                 if (assistant.Rows.Count < 1)
                 {
-                    assistants.InsertAssistant(firstName,secondName,thirdName,firstLastName,secondLastName,email,phone,idType,cui);
+                    assistants.InsertAssistant(userId,firstName,secondName,thirdName,firstLastName,secondLastName,email,phone,idType,cui);
                     return "SE HA GRABADO UN NUEVO REGISTRO";
                 }
                 else
@@ -64,11 +64,11 @@ namespace BLL
             }
         }
         //update
-        public string updateAssistant(string newFirstName, string newSecondName, string newThirdName, string newFirstLastName, string newSecondLastName, string newEmail, string newPhone, bool newStatus, int newIdType, string newCui, int idAssistant)
+        public string updateAssistant(int userId,string newFirstName, string newSecondName, string newThirdName, string newFirstLastName, string newSecondLastName, string newEmail, string newPhone, bool newStatus, int newIdType, string newCui, int idAssistant)
         {
             try
             {
-                assistants.UpdateAssistant(newFirstName, newSecondName, newThirdName, newFirstLastName, newSecondLastName, newEmail, newPhone, newStatus, newIdType, newCui, idAssistant);
+                assistants.UpdateAssistant(userId,newFirstName, newSecondName, newThirdName, newFirstLastName, newSecondLastName, newEmail, newPhone, newStatus, newIdType, newCui, idAssistant);
                 return "SE HA ACTUALIZADO EL REGISTRO";
             }
             catch (Exception error)

@@ -20,25 +20,13 @@ namespace UI
             InitializeComponent();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            labelDate.Text = DateTime.Now.ToLongDateString();
-        }
-
-        private void iconButtonDiffer_Click(object sender, EventArgs e)
-        {
-            FormDiffers fDiffers = new FormDiffers(2, surgerieId,pacientName);
-            fDiffers.Show();
-            this.Close();
-        }
-
-        private void FormsSchedules_Load(object sender, EventArgs e)
+        void loadData()
         {
             List<ClassDailySurgeries> surgeriesList = new List<ClassDailySurgeries>();
-            ClassDailySurgeries surgerie  = new ClassDailySurgeries(); ;
+            ClassDailySurgeries surgerie = new ClassDailySurgeries(); ;
             DataTable surgeriesData = surgeries.getDailySurgeries();
-          
-    
+
+
             foreach (DataRow item in surgeriesData.Rows)
             {
                 string docName = "";
@@ -50,8 +38,8 @@ namespace UI
                 surgerie.No_Historia = item.Field<string>(3).ToString();
                 surgerie.Nombre = item.Field<string>(4).ToString();
                 surgerie.Edad = Convert.ToInt16(item.Field<short>(5));
-                surgerie.Procedimiento= item.Field<string>(6).ToString();
-                surgerie.Servicio= item.Field<string>(7).ToString();
+                surgerie.Procedimiento = item.Field<string>(6).ToString();
+                surgerie.Servicio = item.Field<string>(7).ToString();
                 DataTable infoDoctor = surgeries.getDoctorsByIdSurgerie(surgerie.IdCirugia);
                 if (infoDoctor.Rows.Count < 2)
                 {
@@ -64,14 +52,14 @@ namespace UI
                 {
                     foreach (DataRow itemDoc in infoDoctor.Rows)
                     {
-                        docName = ' '+ docName + itemDoc.Field<string>(1).ToString() + " / ";
+                        docName = ' ' + docName + itemDoc.Field<string>(1).ToString() + " / ";
                     }
                     surgerie.Cirujano = docName.TrimEnd(' ');
                     surgerie.Cirujano = surgerie.Cirujano.TrimEnd('/');
                 }
-                surgerie.Anestesista= item.Field<string>(8).ToString();
+                surgerie.Anestesista = item.Field<string>(8).ToString();
                 DataTable infoAssistants = surgeries.getAssistantsBySurgerie(surgerie.IdCirugia);
-                if (infoAssistants.Rows.Count<2)
+                if (infoAssistants.Rows.Count < 2)
                 {
                     foreach (DataRow itemAssistant in infoAssistants.Rows)
                     {
@@ -96,6 +84,23 @@ namespace UI
             dataGridViewSchedule.Refresh();
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelDate.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void iconButtonDiffer_Click(object sender, EventArgs e)
+        {
+            FormDiffers fDiffers = new FormDiffers(2, surgerieId,pacientName);
+            fDiffers.Show();
+            loadData();
+        }
+
+        private void FormsSchedules_Load(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -105,6 +110,7 @@ namespace UI
         {
             iconButtonDiffer.Enabled = true;
             iconButtonReSchedule.Enabled = true;
+            iconButtonFinish.Enabled = true;
             surgerieId = Convert.ToInt32(dataGridViewSchedule.Rows[e.RowIndex].Cells[0].Value);
             pacientName = dataGridViewSchedule.Rows[e.RowIndex].Cells[4].Value.ToString();
         }
@@ -113,7 +119,13 @@ namespace UI
         {
             FormDiffers fDiffers = new FormDiffers(1, surgerieId, pacientName);
             fDiffers.Show();
-            this.Close();
+            loadData();
+        }
+
+        private void iconButtonFinish_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(surgeries.finishSurgerie(surgerieId));
+            loadData();
         }
     }
 }

@@ -84,8 +84,11 @@ namespace BLL
                 return "ERROR: " + error.Message;
             }
         }
-
-        public string assignSurgery(string anesthesiaType, string surgeryType, DateTime surgeryDate, int opRoomId, 
+        public string finishSurgerie(int idSurgerie)
+        {
+            return surgeries.finishSurgerie(idSurgerie);
+        }
+        public string assignSurgery(int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate,string surgeryTime, int opRoomId, 
             int anesthetistId, int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
         {
             string response = "";
@@ -103,6 +106,7 @@ namespace BLL
                     dataDoctors.Rows.Add(item.DoctorId);
                 }
                 response = surgeries.AssignSurgery(
+                    userId,
                     anesthesiaType,
                     surgeryType,
                     surgeryDate,
@@ -111,7 +115,7 @@ namespace BLL
                     programationId,
                     relevance,
                     interventionDetail,
-                    time,
+                    surgeryTime,
                     dataAssistants,
                     dataDoctors
                     );

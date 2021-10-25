@@ -14,9 +14,11 @@ namespace UI
     public partial class Doctors : Form
     {
         private ClassDoctor doctors = new ClassDoctor();
-        public Doctors()
+        int userId;
+        public Doctors(int idUser)
         {
             InitializeComponent();
+            userId = idUser;
         }
         void listDoctors()
         {
@@ -125,7 +127,7 @@ namespace UI
         }
         private void textEmail_TextChanged(object sender, EventArgs e)
         {
-            regeXp(@"^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$", textEmail, boxValidateMail);
+            regeXp(@"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", textEmail, boxValidateMail);
         }
 
         private void textPhone_KeyPress(object sender, KeyPressEventArgs e)
@@ -176,7 +178,7 @@ namespace UI
                 if (textFirstName.Text != null && textFirstLastName.Text != null && textCui.Text != null && textEmail.Text != null && textPhone.Text != null)
                 {
                     string resp;
-                    resp = doctors.newDoctor(textCui.Text, textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text, textSecondLastName.Text,
+                    resp = doctors.newDoctor(userId,textCui.Text, textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text, textSecondLastName.Text,
                         textPhone.Text, textEmail.Text,comboBoxSpecialty.Text);
                     if (resp.ToUpper().Contains("ERROR"))
                         MessageBox.Show(resp, "Error al Guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -222,7 +224,7 @@ namespace UI
                         status = true;
                     else if (comboStatus.SelectedIndex == 2)
                         status = false;
-                    string resp = doctors.updateDoctor(textCui.Text, textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text,
+                    string resp = doctors.updateDoctor(userId,textCui.Text, textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text,
                         textSecondLastName.Text, textPhone.Text, textEmail.Text, status, comboBoxSpecialty.Text,Convert.ToInt32(labelID.Text));
                     if (resp.ToUpper().Contains("ERROR"))
                         MessageBox.Show(resp, "Error al Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -16,6 +16,7 @@ namespace UI
     {
         int userId;
         int roleId;
+        int idService;
         private ClassUsers users = new ClassUsers();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -127,11 +128,11 @@ namespace UI
             statePanel = 0;
             if (btn.Name== "iconButtonDoctores")
             {
-                openChildForm(new Doctors());
+                openChildForm(new Doctors(userId));
             }
             if (btn.Name == "iconButtonAnestesistas")
             {
-                openChildForm(new Anesthetist());
+                openChildForm(new Anesthetist(userId));
             }
             if (btn.Name == "iconButtonPacientes")
             {
@@ -139,7 +140,7 @@ namespace UI
             }
             if (btn.Name == "iconButtonAyudantes")
             {
-                openChildForm(new Assistant());
+                openChildForm(new Assistant(userId));
             }
             if (btn.Name == "iconButtonQuirofanos")
             {
@@ -151,19 +152,19 @@ namespace UI
             }
             if (btn.Name == "iconButtonSolicitar cirugía")
             {
-                openChildForm(new RequestSurgery());
+                openChildForm(new RequestSurgery(idService,userId));
             }
             if (btn.Name == "iconButtonProgramar cirugía")
             {
-                openChildForm(new assignSurgery());
+                openChildForm(new assignSurgery(userId));
             }
             if (btn.Name == "iconButtonUsuarios")
             {
-                openChildForm(new Users());
+                openChildForm(new Users(userId));
             }
             if (btn.Name == "iconButtonPermisos")
             {
-                openChildForm(new FormUserPermits());
+                openChildForm(new FormUserPermits(userId));
             }
             if (btn.Name == "iconButtonBusquedas")
             {
@@ -179,6 +180,7 @@ namespace UI
             InitializeComponent();
             roleId = role;
             labelUserLog.Text = userLog;
+            idService = serviceId;
             userId = idUser;
         }
         private Form activeForm = null;
@@ -316,14 +318,6 @@ namespace UI
             openChildForm(new FormDailyReport());
         }
 
-    
-
-        private void iconButton5_Click(object sender, EventArgs e)
-        {
-            panelReportsMenu.Visible = false;
-            statePanel = 0;
-            openChildForm(new FormViweOperatingRooms());
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {

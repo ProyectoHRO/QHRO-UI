@@ -150,6 +150,8 @@ namespace DAL
         }
 
         public string assignPermits(
+            int userId,
+            int idUserToAssign,
             DataTable permitsDetail
             )
         {
@@ -157,6 +159,8 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "sp_assignPermits";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@usuario", userId);
+            command.Parameters.AddWithValue("@idUsuario", idUserToAssign);
             command.Parameters.AddWithValue("@detalle", permitsDetail);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
@@ -169,6 +173,7 @@ namespace DAL
 
 
         public string modifyPermits(
+            int userThatAssign,
             int userId,
             DataTable permitsDetail
             )
@@ -177,6 +182,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "sp_modifyPermits";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@usuario", userThatAssign);
             command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@detalle", permitsDetail);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);

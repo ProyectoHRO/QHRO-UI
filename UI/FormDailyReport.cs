@@ -14,6 +14,7 @@ namespace UI
     public partial class FormDailyReport : Form
     {
         private Surgeries surgeries = new Surgeries();
+        private ClassGetStrings stringsClass = new ClassGetStrings();
         public FormDailyReport()
         {
             InitializeComponent();
@@ -31,20 +32,23 @@ namespace UI
             DataTable infoReport = surgeries.getDailyReport(dateTimePickerReport.Value);
             List<ClassDailyReport> listDailies = new List<ClassDailyReport>();
             ClassDailyReport dailie;
-    
-           
+
             foreach (DataRow item in infoReport.Rows)
             {
                 int idSurgery = 0;
                 string docName = "";
                 string specialties = "";
+                string initHour = "";
+                string initMin = "";
+                string finalHour = "";
+                string finalMin = "";
+                string[] response;
                 dailie = new ClassDailyReport();
                 idSurgery = Convert.ToInt32(item.Field<int>(0));
                 dailie.No_Historia = item.Field<string>(1).ToString();
                 dailie.Nombre = item.Field<string>(2).ToString();
                 dailie.Sexo = item.Field<string>(3).ToString();
                 dailie.Edad = Convert.ToInt16(item.Field<short>(4));
-                dailie.Tiempo = "1 hora";
                 dailie.Servicio = item.Field<string>(5).ToString();
                 dailie.Operacion_Realizada = item.Field<string>(6).ToString();
                 dailie.Tipo_Anestesia = item.Field<string>(7).ToString();
@@ -61,15 +65,43 @@ namespace UI
                 {
                     foreach (DataRow itemDoc in getSurgeries.Rows)
                     {
-                        docName=docName + itemDoc.Field<string>(1).ToString() + '/';
+                        docName = docName + itemDoc.Field<string>(1).ToString() + '/';
                         specialties = specialties + itemDoc.Field<string>(2).ToString() + '/';
                     }
                     dailie.Cirujano = docName.TrimEnd('/');
                     dailie.Especialidad = specialties.TrimEnd('/');
                 }
                 dailie.Tipo_Cirugia = item.Field<string>(8).ToString();
+                initHour = item.Field<string>(9).ToString();
+                finalHour = item.Field<string>(10).ToString();
+                response = stringsClass.getStrings(initHour, new char[] { ':', ' ', 'P', 'A', '.', 'M' });
+                initHour= ((Convert.ToInt32(response[0]) % 12) + 12).ToString();
+                initMin=response[1];
+                response = stringsClass.getStrings(finalHour, new char[] { ':' });
+                finalHour=response[0];
+                finalMin=response[1];
+                int minHours = Convert.ToInt16(finalHour) - Convert.ToInt16(initHour);
+                int minMin= Convert.ToInt16(finalMin) - Convert.ToInt16(initMin);
+                if (minHours > 0)
+                {
+                    if (minHours == 1)
+                    {
+                        dailie.Tiempo= minHours + "hora con" + minMin +" minutos";
+                    }
+                    else
+                    {
+                        dailie.Tiempo = minHours + " horas con " + minMin + " minutos";
+                    }
+             
+                }
+                else
+                {
+                    dailie.Tiempo = minMin + " minutos";
+                }
+                
                 listDailies.Add(dailie);
             }
+
             ReportDataSource Report;
             Report = new ReportDataSource("DataSetDailyReport", listDailies);
             this.reportViewerDailies.ProcessingMode = ProcessingMode.Local;

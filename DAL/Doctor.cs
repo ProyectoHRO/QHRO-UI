@@ -69,6 +69,7 @@ namespace DAL
         }
 
         public void InsertDoctor(
+            int userId,
             string doctorDpi,
             string firstName,
             string secondName,
@@ -83,6 +84,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "InsertarDoctor";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@dpi_doctores", doctorDpi);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
             command.Parameters.AddWithValue("@segundo_nombre", secondName);
@@ -98,6 +100,7 @@ namespace DAL
         }
 
         public void UpdateDoctor(
+            int userId,
             string doctorDpi,
             string firstName,
             string secondName,
@@ -114,6 +117,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "EditarDoctor";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@dpi_doctores", doctorDpi);
             command.Parameters.AddWithValue("@primer_nombre", firstName);
             command.Parameters.AddWithValue("@segundo_nombre", secondName);
