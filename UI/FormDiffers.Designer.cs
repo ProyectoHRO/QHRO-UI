@@ -139,6 +139,7 @@ namespace UI
             this.iconButtonCancel.Text = "Cancelar";
             this.iconButtonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonCancel.UseVisualStyleBackColor = false;
+            this.iconButtonCancel.Click += new System.EventHandler(this.iconButtonCancel_Click);
             // 
             // NewDate
             // 

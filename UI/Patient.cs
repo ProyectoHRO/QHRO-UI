@@ -96,22 +96,29 @@ namespace UI
                 state = 1;
             if (state == 1)
             {
-                string resp;
-                resp = patients.newPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
-                    textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
-                    comboBoxGender.SelectedItem.ToString());
-                if (resp.ToUpper().Contains("ERROR"))
+                if (Convert.ToInt32(textBoxAge.Text)>149)
                 {
-                    MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ingrese una edad valida", "Advertencia", MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
-
                 else
                 {
-                    MessageBox.Show(resp, "Nuevo paciente añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    listPatients();
-                }
+                    string resp;
+                    resp = patients.newPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
+                        textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
+                        comboBoxGender.Text);
+                    if (resp.ToUpper().Contains("ERROR"))
+                    {
+                        MessageBox.Show(resp, "Error al grabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
-                iconButtonNew.Enabled = true;
+                    else
+                    {
+                        MessageBox.Show(resp, "Nuevo paciente añadido ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        listPatients();
+                    }
+
+                    iconButtonNew.Enabled = true;
+                }
             }
            
         }
@@ -154,20 +161,29 @@ namespace UI
             {
                 status = false;
             }
-            string resp = patients.editPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
-                textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
-                comboBoxGender.SelectedItem.ToString(),
-                status, id);
-            if (resp.ToUpper().Contains("ERROR"))
+
+            if (Convert.ToInt32(textBoxAge.Text) > 149)
             {
-                MessageBox.Show(resp, "Error al actualizar datos del paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ingrese una edad valida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             else
             {
-                MessageBox.Show(resp, "Datos del paciente actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                listPatients();
-            }
+                string resp = patients.editPatient(textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
+                textBoxthirdName.Text, textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text),
+                comboBoxGender.Text,
+                status, id);
+                if (resp.ToUpper().Contains("ERROR"))
+                {
+                    MessageBox.Show(resp, "Error al actualizar datos del paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                else
+                {
+                    MessageBox.Show(resp, "Datos del paciente actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    listPatients();
+                }
+            }           
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
