@@ -146,8 +146,17 @@ namespace BLL
         {
             try
             {
-                users.confirmUser(idUser, userName, pass, lastConnection);
-                return "Usuario confirmado correctamente!";
+                DataTable infoUser = users.GetDataUsersByUserName(userName);
+                if (infoUser.Rows.Count<1)
+                {
+                    users.confirmUser(idUser, userName, pass, lastConnection);
+                    return "Usuario confirmado correctamente!";
+                }
+                else
+                {
+                    return "ERROR: El usuario ya esta registrado: ";
+                }
+              
             }
             catch (Exception error)
             {
