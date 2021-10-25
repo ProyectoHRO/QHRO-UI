@@ -24,16 +24,20 @@ namespace UI
 
         private void FormUserPermits_Load(object sender, EventArgs e)
         {
+            listPermits();
+        }
+
+        void listPermits()
+        {
             DataTable infoPermits = users.GetPermits();
             foreach (DataRow item in infoPermits.Rows)
             {
                 listBoxIdPermits.Items.Add(Convert.ToInt32(item.Field<int>(0)));
                 checkedListBoxPermits.Items.Add(item.Field<string>(1).ToString());
             }
-            
+
             comboBoxFilter.SelectedIndex = 1;
         }
-
         private void comboBoxFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBoxFilter.SelectedIndex == 0)
@@ -43,6 +47,15 @@ namespace UI
             {
                 textBoxSearch.Text = "BUSCAR POR CORREO";
             }
+        }
+
+        private void UncheckAndClear()
+        {
+            while (checkedListBoxPermits.CheckedIndices.Count > 0)
+                checkedListBoxPermits.SetItemChecked(checkedListBoxPermits.CheckedIndices[0], false);
+            textBoxSearch.Clear();
+            textBoxUser.Clear();
+            textBoxEmail.Clear();
         }
 
         private void textBoxSearch_Enter(object sender, EventArgs e)
@@ -202,12 +215,12 @@ namespace UI
                   permitsList);
                 MessageBox.Show(response);
             }
-
+            UncheckAndClear();
         }
 
         private void iconButtonCancel_Click(object sender, EventArgs e)
         {
-
+            UncheckAndClear();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

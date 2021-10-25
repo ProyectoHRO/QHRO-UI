@@ -14,13 +14,14 @@ namespace UI
     {
         private Surgeries surgeries = new Surgeries();
         string pacientName = "";
+        int formClosed;
         int surgerieId;
         public FormsSchedules()
         {
             InitializeComponent();
         }
 
-        void loadData()
+        public void loadData()
         {
             List<ClassDailySurgeries> surgeriesList = new List<ClassDailySurgeries>();
             ClassDailySurgeries surgerie = new ClassDailySurgeries(); ;
@@ -93,7 +94,6 @@ namespace UI
         {
             FormDiffers fDiffers = new FormDiffers(2, surgerieId,pacientName);
             fDiffers.Show();
-            loadData();
         }
 
         private void FormsSchedules_Load(object sender, EventArgs e)
@@ -126,6 +126,11 @@ namespace UI
         {
             MessageBox.Show(surgeries.finishSurgerie(surgerieId));
             loadData();
+        }
+
+        private void FormsSchedules_Activated(object sender, EventArgs e)
+        {
+           
         }
     }
 }

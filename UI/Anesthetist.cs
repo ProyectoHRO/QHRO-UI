@@ -304,7 +304,7 @@ namespace UI
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
-            regeXp(@"^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$", textBoxEmail, boxValidateMail);
+            regeXp(@"^[aA-zZ0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[aA-zZ0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[aA-zZ0-9](?:[aA-zZ0-9-]*[aA-zZ0-9])?\.)+[aA-zZ0-9](?:[aA-zZ0-9-]*[aA-zZ0-9])?$", textBoxEmail, boxValidateMail);
         }
 
         private void textBoxphoneNumber_KeyPress(object sender,

@@ -52,6 +52,11 @@ namespace UI
             }
         }
 
+        private void iconButtonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void FormDiffers_Load(object sender, EventArgs e)
         {
 
