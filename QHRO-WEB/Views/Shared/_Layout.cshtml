@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title Quirófanos HRO</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Iconbutton -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/572c61a0b7.js" crossorigin="anonymous"></script>
+
+    <link href="@Url.Content("~/Content/css/icons.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/css.css")" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+    <div class="sidebars">
+        <div class="logo-details">
+            <i class='bx bx-plus-medical icon'></i>
+            <div class="logo_name">Quirófanos</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-lista">
+            <li>
+                <a href="#">
+                    <i class='bx bxs-calendar'></i>
+                    <span class="links_name">Intervenciones</span>
+                </a>
+                <span class="tooltip">Intervenciones</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-edit'></i>
+                    <span class="links_name">Solicitar cirugía</span>
+                </a>
+
+                <span class="tooltip">Solicitar cirugía</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-institution'></i>
+                    <span class="links_name">Quirófanos</span>
+                </a>
+                <span class="tooltip">Quirófanos</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-info-circle'></i>
+                    <span class="links_name">A cerca de</span>
+                </a>
+
+                <span class="tooltip">A cerca de</span>
+            </li>
+            <li class="profile">
+                <i class='bx bx-log-out' id="log_out"></i>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let sidebars = document.querySelector(".sidebars");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebars.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // sidebars open when you click on the search iocn
+            sidebars.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebars button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+            }
+        }
+    </script>
+
+    <div class="container body-content" style="left:20px;">
+        @RenderBody()
+        <hr />
+        
+    </div>
+</body>
+</html>
