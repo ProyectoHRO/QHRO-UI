@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{3EC4EFE1-7150-4C64-85A7-9399469584C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QHRO-WEB", "QHRO-WEB\QHRO-WEB.csproj", "{98B80B0A-EE69-43D0-A11D-5DDB76EDB954}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{3EC4EFE1-7150-4C64-85A7-9399469584C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC4EFE1-7150-4C64-85A7-9399469584C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC4EFE1-7150-4C64-85A7-9399469584C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98B80B0A-EE69-43D0-A11D-5DDB76EDB954}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98B80B0A-EE69-43D0-A11D-5DDB76EDB954}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98B80B0A-EE69-43D0-A11D-5DDB76EDB954}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98B80B0A-EE69-43D0-A11D-5DDB76EDB954}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
