@@ -38,6 +38,8 @@ namespace UI
             this.iconButtonDiff = new FontAwesome.Sharp.IconButton();
             this.reportViewerDiff = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePickerDiff = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -59,6 +61,7 @@ namespace UI
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.iconButton1);
             this.tabPage1.Controls.Add(this.reportViewerDailies);
             this.tabPage1.Controls.Add(this.dateTimePickerReport);
@@ -77,7 +80,7 @@ namespace UI
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 32;
-            this.iconButton1.Location = new System.Drawing.Point(674, 32);
+            this.iconButton1.Location = new System.Drawing.Point(674, 61);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(134, 43);
             this.iconButton1.TabIndex = 24;
@@ -101,13 +104,14 @@ namespace UI
             // dateTimePickerReport
             // 
             this.dateTimePickerReport.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePickerReport.Location = new System.Drawing.Point(387, 38);
+            this.dateTimePickerReport.Location = new System.Drawing.Point(387, 67);
             this.dateTimePickerReport.Name = "dateTimePickerReport";
             this.dateTimePickerReport.Size = new System.Drawing.Size(265, 26);
             this.dateTimePickerReport.TabIndex = 5;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.iconButtonDiff);
             this.tabPage2.Controls.Add(this.reportViewerDiff);
             this.tabPage2.Controls.Add(this.dateTimePickerDiff);
@@ -126,7 +130,7 @@ namespace UI
             this.iconButtonDiff.IconColor = System.Drawing.Color.Black;
             this.iconButtonDiff.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonDiff.IconSize = 32;
-            this.iconButtonDiff.Location = new System.Drawing.Point(674, 32);
+            this.iconButtonDiff.Location = new System.Drawing.Point(674, 61);
             this.iconButtonDiff.Name = "iconButtonDiff";
             this.iconButtonDiff.Size = new System.Drawing.Size(134, 43);
             this.iconButtonDiff.TabIndex = 25;
@@ -149,10 +153,31 @@ namespace UI
             // dateTimePickerDiff
             // 
             this.dateTimePickerDiff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePickerDiff.Location = new System.Drawing.Point(387, 38);
+            this.dateTimePickerDiff.Location = new System.Drawing.Point(387, 67);
             this.dateTimePickerDiff.Name = "dateTimePickerDiff";
             this.dateTimePickerDiff.Size = new System.Drawing.Size(265, 26);
             this.dateTimePickerDiff.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(523, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 23);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Operaciones realizadas";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(523, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 23);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Operaciones diferidas";
             // 
             // FormDailyReport
             // 
@@ -166,7 +191,9 @@ namespace UI
             this.Load += new System.EventHandler(this.FormDailyReport_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +209,7 @@ namespace UI
         private System.Windows.Forms.DateTimePicker dateTimePickerDiff;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButtonDiff;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -181,5 +181,10 @@ namespace UI
         {
             reportViewerDailies.PrinterSettings.DefaultPageSettings.Margins = new System.Drawing.Printing.Margins(5, 5, 10, 10);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
