@@ -48,14 +48,18 @@ namespace UI
             }
             else
             {
-                if(MessageBox.Show("No existe ningun paciente con ese numero de historia, desea crearlo?","No se encuentra", MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
+                if (textBoxSearch.Text != "Buscar paciente por No. Historia")
                 {
-                    ClearTexts();
-                    textBoxhistoryNumber.Text = textBoxSearch.Text;
-                    
-                    groupBoxpatientData.Enabled = true;
-                    iconButtonCreateAndRequest.Visible = true;
+                    if (MessageBox.Show("No existe ningun paciente con ese numero de historia, desea crearlo?", "No se encuentra", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        ClearTexts();
+                        textBoxhistoryNumber.Text = textBoxSearch.Text;
+
+                        groupBoxpatientData.Enabled = true;
+                        iconButtonCreateAndRequest.Visible = true;
+                    }
                 }
+              
             }
         }
 

@@ -108,9 +108,9 @@ namespace UI
             selectP.ShowDialog();
             if (selectP.id!=0)
             {
-                listBoxIds.Items.Add(selectP.id);
-                ListViewItem item = new ListViewItem(selectP.name.ToString());
-                item.SubItems.Add(selectP.assistantType.ToString());
+                listBoxIds.Items.Add(selectP.id); 
+                ListViewItem item = new ListViewItem(selectP.assistantType.ToString());
+                item.SubItems.Add(selectP.name.ToString());
                 listViewAssistants.Items.Add(item);
             }
             else { 

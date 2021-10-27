@@ -25,307 +25,314 @@ namespace UI
 
         void insertPersonData(DataTable dataPerson, int typePerson)
         {
-            string name="";
-            string secondName = "";
-            string thirdName = "";
-            string firstSurname = "";
-            string secondSurname = "";
-            string cui = "";
-            string number = "";
-            string email = "";
-            if (typePerson == 1)
+            if (dataPerson.Rows.Count < 1)
             {
-                string specialty = "";
-                foreach (DataRow item in dataPerson.Rows)
+                MessageBox.Show("No se pudo encontrar el registro");
+            }
+            else
+            {
+                string name = "";
+                string secondName = "";
+                string thirdName = "";
+                string firstSurname = "";
+                string secondSurname = "";
+                string cui = "";
+                string number = "";
+                string email = "";
+                if (typePerson == 1)
                 {
-                    cui = item.Field<string>(1).ToString();
-                    try
+                    string specialty = "";
+                    foreach (DataRow item in dataPerson.Rows)
                     {
-                        name = item.Field<string>(2).ToString();
-                        firstSurname = item.Field<string>(5).ToString();
-                        if (item.Field<string>(6) != null)
+                        cui = item.Field<string>(1).ToString();
+                        try
                         {
-                            secondSurname = item.Field<string>(6).ToString();
-                        }
-                        if (item.Field<string>(3) != null)
-                        {
-                            secondName = item.Field<string>(3).ToString();
-                        }
-                        if (item.Field<string>(4) != null)
-                        {
-                            thirdName = item.Field<string>(4).ToString();
-                        }
+                            name = item.Field<string>(2).ToString();
+                            firstSurname = item.Field<string>(5).ToString();
+                            if (item.Field<string>(6) != null)
+                            {
+                                secondSurname = item.Field<string>(6).ToString();
+                            }
+                            if (item.Field<string>(3) != null)
+                            {
+                                secondName = item.Field<string>(3).ToString();
+                            }
+                            if (item.Field<string>(4) != null)
+                            {
+                                thirdName = item.Field<string>(4).ToString();
+                            }
 
 
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+
+                        number = item.Field<string>(7).ToString();
+                        email = item.Field<string>(8).ToString();
+                        specialty = item.Field<string>(10).ToString();
                     }
-                    catch (Exception)
+                    if (secondName != "")
                     {
-
+                        name = name + ' ' + secondName;
                     }
 
-                    number = item.Field<string>(7).ToString();
-                    email = item.Field<string>(8).ToString();
-                    specialty = item.Field<string>(10).ToString();
-                }
-                if (secondName != "")
-                {
-                    name = name + ' ' + secondName;
-                }
+                    if (thirdName != "")
+                    {
+                        name = name + ' ' + thirdName;
+                    }
+                    name = name + ' ' + firstSurname;
+                    if (secondSurname != "")
+                    {
+                        name = name + ' ' + secondSurname;
+                    }
 
-                if (thirdName != "")
-                {
-                    name = name + ' ' + thirdName;
-                }
-                name = name + ' ' + firstSurname;
-                if (secondSurname != "")
-                {
-                    name = name + ' ' + secondSurname;
-                }
-                
-                ReportDataSource Report;
-                Report = new ReportDataSource();
-                this.reportViewerDoctor.ProcessingMode = ProcessingMode.Local;
-                this.reportViewerDoctor.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportDoctor.rdlc";
-                this.reportViewerDoctor.LocalReport.DataSources.Clear();
-                Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
-                {
+                    ReportDataSource Report;
+                    Report = new ReportDataSource();
+                    this.reportViewerDoctor.ProcessingMode = ProcessingMode.Local;
+                    this.reportViewerDoctor.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportDoctor.rdlc";
+                    this.reportViewerDoctor.LocalReport.DataSources.Clear();
+                    Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                    {
                 new Microsoft.Reporting.WinForms.ReportParameter("nombreDoctor",name),
                 new Microsoft.Reporting.WinForms.ReportParameter("cui",cui),
                 new Microsoft.Reporting.WinForms.ReportParameter("numero",number),
                 new Microsoft.Reporting.WinForms.ReportParameter("correo",email),
                 new Microsoft.Reporting.WinForms.ReportParameter("especialidad",specialty)
-                };
-                this.reportViewerDoctor.LocalReport.SetParameters(rParams);
-                this.reportViewerDoctor.LocalReport.DataSources.Add(Report);
-                this.reportViewerDoctor.RefreshReport();
-            }
-            else if (typePerson == 2)
-            {
-                foreach (DataRow item in dataPerson.Rows)
+                    };
+                    this.reportViewerDoctor.LocalReport.SetParameters(rParams);
+                    this.reportViewerDoctor.LocalReport.DataSources.Add(Report);
+                    this.reportViewerDoctor.RefreshReport();
+                }
+                else if (typePerson == 2)
                 {
-                    cui = item.Field<string>(1).ToString();
-                    try
+                    foreach (DataRow item in dataPerson.Rows)
                     {
-                        name = item.Field<string>(2).ToString();
-                        firstSurname = item.Field<string>(5).ToString();
-                        if (item.Field<string>(6) != null)
+                        cui = item.Field<string>(1).ToString();
+                        try
                         {
-                            secondSurname = item.Field<string>(6).ToString();
-                        }
-                        if (item.Field<string>(3) != null)
-                        {
-                            secondName = item.Field<string>(3).ToString();
-                        }
-                        if (item.Field<string>(4) != null)
-                        {
-                            thirdName = item.Field<string>(4).ToString();
-                        }
+                            name = item.Field<string>(2).ToString();
+                            firstSurname = item.Field<string>(5).ToString();
+                            if (item.Field<string>(6) != null)
+                            {
+                                secondSurname = item.Field<string>(6).ToString();
+                            }
+                            if (item.Field<string>(3) != null)
+                            {
+                                secondName = item.Field<string>(3).ToString();
+                            }
+                            if (item.Field<string>(4) != null)
+                            {
+                                thirdName = item.Field<string>(4).ToString();
+                            }
 
 
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+
+                        number = item.Field<string>(7).ToString();
+                        email = item.Field<string>(8).ToString();
                     }
-                    catch (Exception)
+                    if (secondName != "")
                     {
-
+                        name = name + ' ' + secondName;
                     }
 
-                    number = item.Field<string>(7).ToString();
-                    email = item.Field<string>(8).ToString();
-                }
-                if (secondName != "")
-                {
-                    name = name + ' ' + secondName;
-                }
+                    if (thirdName != "")
+                    {
+                        name = name + ' ' + thirdName;
+                    }
+                    name = name + ' ' + firstSurname;
+                    if (secondSurname != "")
+                    {
+                        name = name + ' ' + secondSurname;
+                    }
 
-                if (thirdName != "")
-                {
-                    name = name + ' ' + thirdName;
-                }
-                name = name + ' ' + firstSurname;
-                if (secondSurname != "")
-                {
-                    name = name + ' ' + secondSurname;
-                }
-         
-                ReportDataSource Report;
-                Report = new ReportDataSource();
-                this.reportViewerAnesthetist.ProcessingMode = ProcessingMode.Local;
-                this.reportViewerAnesthetist.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportAnesthetist.rdlc";
-                this.reportViewerAnesthetist.LocalReport.DataSources.Clear();
-                Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
-                {
+                    ReportDataSource Report;
+                    Report = new ReportDataSource();
+                    this.reportViewerAnesthetist.ProcessingMode = ProcessingMode.Local;
+                    this.reportViewerAnesthetist.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportAnesthetist.rdlc";
+                    this.reportViewerAnesthetist.LocalReport.DataSources.Clear();
+                    Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                    {
                 new Microsoft.Reporting.WinForms.ReportParameter("nombreAnestesista",name),
                 new Microsoft.Reporting.WinForms.ReportParameter("cui",cui),
                 new Microsoft.Reporting.WinForms.ReportParameter("numero",number),
                 new Microsoft.Reporting.WinForms.ReportParameter("correo",email)
-                };
-                this.reportViewerAnesthetist.LocalReport.SetParameters(rParams);
-                this.reportViewerAnesthetist.LocalReport.DataSources.Add(Report);
-                this.reportViewerAnesthetist.RefreshReport();
-            }
-            else if (typePerson == 3)
-            {
-                int idAssistant=0;
-                int typeAssistant = 0;
-                string typeAssistantName="";
-                foreach (DataRow item in dataPerson.Rows)
+                    };
+                    this.reportViewerAnesthetist.LocalReport.SetParameters(rParams);
+                    this.reportViewerAnesthetist.LocalReport.DataSources.Add(Report);
+                    this.reportViewerAnesthetist.RefreshReport();
+                }
+                else if (typePerson == 3)
                 {
-                    cui = item.Field<string>(1).ToString();
-                    try
+                    int idAssistant = 0;
+                    int typeAssistant = 0;
+                    string typeAssistantName = "";
+                    foreach (DataRow item in dataPerson.Rows)
                     {
-                        idAssistant = Convert.ToInt32(item.Field<int>(0));
-                        name = item.Field<string>(2).ToString();
-                        firstSurname = item.Field<string>(5).ToString();
-                        if (item.Field<string>(6) != null)
+                        cui = item.Field<string>(1).ToString();
+                        try
                         {
-                            secondSurname = item.Field<string>(6).ToString();
-                        }
-                        if (item.Field<string>(3) != null)
-                        {
-                            secondName = item.Field<string>(3).ToString();
-                        }
-                        if (item.Field<string>(4) != null)
-                        {
-                            thirdName = item.Field<string>(4).ToString();
-                        }
+                            idAssistant = Convert.ToInt32(item.Field<int>(0));
+                            name = item.Field<string>(2).ToString();
+                            firstSurname = item.Field<string>(5).ToString();
+                            if (item.Field<string>(6) != null)
+                            {
+                                secondSurname = item.Field<string>(6).ToString();
+                            }
+                            if (item.Field<string>(3) != null)
+                            {
+                                secondName = item.Field<string>(3).ToString();
+                            }
+                            if (item.Field<string>(4) != null)
+                            {
+                                thirdName = item.Field<string>(4).ToString();
+                            }
 
 
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+
+                        number = item.Field<string>(8).ToString();
+                        email = item.Field<string>(7).ToString();
+                        typeAssistant = Convert.ToInt32(item.Field<int>(10));
                     }
-                    catch (Exception)
+                    if (secondName != "")
                     {
-
+                        name = name + ' ' + secondName;
                     }
 
-                    number = item.Field<string>(8).ToString();
-                    email = item.Field<string>(7).ToString();
-                    typeAssistant= Convert.ToInt32(item.Field<int>(10));
-                }
-                if (secondName != "")
-                {
-                    name = name + ' ' + secondName;
-                }
+                    if (thirdName != "")
+                    {
+                        name = name + ' ' + thirdName;
+                    }
+                    name = name + ' ' + firstSurname;
+                    if (secondSurname != "")
+                    {
+                        name = name + ' ' + secondSurname;
+                    }
 
-                if (thirdName != "")
-                {
-                    name = name + ' ' + thirdName;
-                }
-                name = name + ' ' + firstSurname;
-                if (secondSurname != "")
-                {
-                    name = name + ' ' + secondSurname;
-                }
-
-                DataTable typeAssistantsInfo = assistants.getTypeAssistantById(typeAssistant);
-                foreach (DataRow item in typeAssistantsInfo.Rows)
-                {
-                    typeAssistantName = item.Field<string>(1).ToString();
-                }
+                    DataTable typeAssistantsInfo = assistants.getTypeAssistantById(typeAssistant);
+                    foreach (DataRow item in typeAssistantsInfo.Rows)
+                    {
+                        typeAssistantName = item.Field<string>(1).ToString();
+                    }
 
 
-                ReportDataSource Report;
-                Report = new ReportDataSource();
-                this.reportViewerAssistant.ProcessingMode = ProcessingMode.Local;
-                this.reportViewerAssistant.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportAssistant.rdlc";
-                this.reportViewerAssistant.LocalReport.DataSources.Clear();
-                Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
-                {
+                    ReportDataSource Report;
+                    Report = new ReportDataSource();
+                    this.reportViewerAssistant.ProcessingMode = ProcessingMode.Local;
+                    this.reportViewerAssistant.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportAssistant.rdlc";
+                    this.reportViewerAssistant.LocalReport.DataSources.Clear();
+                    Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                    {
                 new Microsoft.Reporting.WinForms.ReportParameter("nombreAsistente",name),
                 new Microsoft.Reporting.WinForms.ReportParameter("cui",cui),
                 new Microsoft.Reporting.WinForms.ReportParameter("numero",number),
                 new Microsoft.Reporting.WinForms.ReportParameter("correo",email),
                 new Microsoft.Reporting.WinForms.ReportParameter("nombreTipoAsistente",typeAssistantName)
-                };
-                this.reportViewerAssistant.LocalReport.SetParameters(rParams);
-                this.reportViewerAssistant.LocalReport.DataSources.Add(Report);
-                this.reportViewerAssistant.RefreshReport();
-            }
-            else if (typePerson==4)
-            {
-                int idPacient=0;
-                string historyNumber = "";
-                short age = 0;
-                string gender = "";
-
-                foreach (DataRow item in dataPerson.Rows)
+                    };
+                    this.reportViewerAssistant.LocalReport.SetParameters(rParams);
+                    this.reportViewerAssistant.LocalReport.DataSources.Add(Report);
+                    this.reportViewerAssistant.RefreshReport();
+                }
+                else if (typePerson == 4)
                 {
-                    idPacient = Convert.ToInt32(item.Field<int>(0));
-                    historyNumber = item.Field<string>(1).ToString();
-                    try
+                    int idPacient = 0;
+                    string historyNumber = "";
+                    short age = 0;
+                    string gender = "";
+
+                    foreach (DataRow item in dataPerson.Rows)
                     {
-                        name = item.Field<string>(2).ToString();
-                        firstSurname = item.Field<string>(5).ToString();
-                        if (item.Field<string>(6) != null)
+                        idPacient = Convert.ToInt32(item.Field<int>(0));
+                        historyNumber = item.Field<string>(1).ToString();
+                        try
                         {
-                            secondSurname = item.Field<string>(6).ToString();
+                            name = item.Field<string>(2).ToString();
+                            firstSurname = item.Field<string>(5).ToString();
+                            if (item.Field<string>(6) != null)
+                            {
+                                secondSurname = item.Field<string>(6).ToString();
+                            }
+                            if (item.Field<string>(3) != null)
+                            {
+                                secondName = item.Field<string>(3).ToString();
+                            }
+                            if (item.Field<string>(4) != null)
+                            {
+                                thirdName = item.Field<string>(4).ToString();
+                            }
+
+
                         }
-                        if (item.Field<string>(3) != null)
+                        catch (Exception)
                         {
-                            secondName = item.Field<string>(3).ToString();
-                        }
-                        if (item.Field<string>(4) != null)
-                        {
-                            thirdName = item.Field<string>(4).ToString();
+
                         }
 
+                        age = Convert.ToInt16(item.Field<short>(7));
+                        gender = item.Field<string>(8).ToString();
 
                     }
-                    catch (Exception)
+                    if (secondName != "")
                     {
-
+                        name = name + ' ' + secondName;
                     }
 
-                    age = Convert.ToInt16(item.Field<short>(7));
-                    gender = item.Field<string>(8).ToString();
-                  
-                }
-                if (secondName != "")
-                {
-                    name = name + ' ' + secondName;
-                }
-
-                if (thirdName != "")
-                {
-                    name = name + ' ' + thirdName;
-                }
-                name = name + ' ' + firstSurname;
-                if (secondSurname != "")
-                {
-                    name = name + ' ' + secondSurname;
-                }
-                List<ClassDiagnosis> diagnosisList = new List<ClassDiagnosis>();
-                DataTable infoPatients= patients.getDiagnosisByPatient(idPacient);
-                ClassDiagnosis diagosis ;
-                string date;
-                string format;
-                foreach (DataRow item in infoPatients.Rows)
-                {
-                    diagosis = new ClassDiagnosis();
-                    diagosis.id_diagnostico = Convert.ToInt32(item.Field<int>(0));
-                    diagosis.diagnostico = item.Field<string>(1).ToString();
-                   //OBTENGO LA FECHA
-                   // date = Convert.ToDateTime(item.Field<string>(2));
-                    date = item.Field<string>(2);
-                    //INTENTO DE DAT FORMATO
-                    //format = date.ToShortDateString();
-                    //ENVIO LA FECHA
-                    diagosis.fecha_diagnostico = date;
-                    diagosis.idpaciente = Convert.ToInt32(item.Field<int>(3));
-                    diagnosisList.Add(diagosis);    
-                }
-                ReportDataSource Report;
-                Report = new ReportDataSource("DataSetDiagnosis", diagnosisList);
-                this.reportViewerPacientDiagnosis.ProcessingMode = ProcessingMode.Local;
-                this.reportViewerPacientDiagnosis.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportPacientDiagnosis.rdlc";
-                this.reportViewerPacientDiagnosis.LocalReport.DataSources.Clear();
-                Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
-                {
+                    if (thirdName != "")
+                    {
+                        name = name + ' ' + thirdName;
+                    }
+                    name = name + ' ' + firstSurname;
+                    if (secondSurname != "")
+                    {
+                        name = name + ' ' + secondSurname;
+                    }
+                    List<ClassDiagnosis> diagnosisList = new List<ClassDiagnosis>();
+                    DataTable infoPatients = patients.getDiagnosisByPatient(idPacient);
+                    ClassDiagnosis diagosis;
+                    string date;
+                    string format;
+                    foreach (DataRow item in infoPatients.Rows)
+                    {
+                        diagosis = new ClassDiagnosis();
+                        diagosis.id_diagnostico = Convert.ToInt32(item.Field<int>(0));
+                        diagosis.diagnostico = item.Field<string>(1).ToString();
+                        //OBTENGO LA FECHA
+                        // date = Convert.ToDateTime(item.Field<string>(2));
+                        date = item.Field<string>(2);
+                        //INTENTO DE DAT FORMATO
+                        //format = date.ToShortDateString();
+                        //ENVIO LA FECHA
+                        diagosis.fecha_diagnostico = date;
+                        diagosis.idpaciente = Convert.ToInt32(item.Field<int>(3));
+                        diagnosisList.Add(diagosis);
+                    }
+                    ReportDataSource Report;
+                    Report = new ReportDataSource("DataSetDiagnosis", diagnosisList);
+                    this.reportViewerPacientDiagnosis.ProcessingMode = ProcessingMode.Local;
+                    this.reportViewerPacientDiagnosis.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportPacientDiagnosis.rdlc";
+                    this.reportViewerPacientDiagnosis.LocalReport.DataSources.Clear();
+                    Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                    {
                 new Microsoft.Reporting.WinForms.ReportParameter("noHistoria",historyNumber),
                 new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
                 new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
-                };
-                this.reportViewerPacientDiagnosis.LocalReport.SetParameters(rParams);
-                this.reportViewerPacientDiagnosis.LocalReport.DataSources.Add(Report);
-                this.reportViewerPacientDiagnosis.RefreshReport();
+                    };
+                    this.reportViewerPacientDiagnosis.LocalReport.SetParameters(rParams);
+                    this.reportViewerPacientDiagnosis.LocalReport.DataSources.Add(Report);
+                    this.reportViewerPacientDiagnosis.RefreshReport();
+                }
             }
         }
 
@@ -344,6 +351,7 @@ namespace UI
             if (comboBoxFilterDoctor.Text=="DPI")
             {
                 DataTable dataDoctor = doctors.getDoctorByDpi(textBoxSearchDoctor.Text);
+               
                 insertPersonData(dataDoctor,1);
             }
             else

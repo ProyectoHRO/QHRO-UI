@@ -45,7 +45,7 @@ namespace UI
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.Bed;
             }
-            else if (text == "Ayudantes")
+            else if (text == "Asistentes")
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.UserNurse;
             }
@@ -138,7 +138,7 @@ namespace UI
             {
                 openChildForm(new Patient());
             }
-            if (btn.Name == "iconButtonAyudantes")
+            if (btn.Name == "iconButtonAsistentes")
             {
                 openChildForm(new Assistant(userId));
             }

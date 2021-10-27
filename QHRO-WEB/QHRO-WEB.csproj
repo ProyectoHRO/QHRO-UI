@@ -184,11 +184,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\QHRO-UI\BLL\BLL.csproj">
+    <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{6924089e-9b69-4ba4-91cf-940b32818809}</Project>
       <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\QHRO-UI\DAL\DAL.csproj">
+    <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{ecf5bf5c-becf-471b-815c-4c8c6b9ebe51}</Project>
       <Name>DAL</Name>
     </ProjectReference>
