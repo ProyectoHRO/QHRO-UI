@@ -1,222 +1,101 @@
-﻿
+﻿@model IEnumerable<BLL.ClassStatusOperatingRooms>
 @{
     ViewBag.Title = "Estados";
 }
 
 @*Vista Cartas en vivo*@
 
+@*<div class="container">
+        <div class="row mb-3">
+            <div class="col-1">
+
+            </div>
+            <div class="col-11">
+                <div class="text-center">
+                </div>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Qx</th>
+                            <th scope="col">Paciente</th>
+                            <th scope="col">Cirugia</th>
+                            <th scope="col">Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Qx</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.Procedimiento</td>
+                                <td>@item.estado_actual</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>*@
+@{
+    string color1 = "";
+}
+
 <div class="container">
     <div class="row mb-3">
         <div class="col-sm-1">
         </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q1</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color:green"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q2</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color:red"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q3</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color:#efb810"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q4</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color:green"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q5</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color:red"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-1">
+        @foreach (var item in Model)
+        {
+            string numbenQ = item.Qx;
+            string nameQ = item.Nombre;
+            string procQ = item.Procedimiento;
+            string statusQ = item.estado_actual;
+            string colorQ = "";
+            switch(statusQ)
+            {
+                case "Disponible":
+                    colorQ = "green";
+                    nameQ = " ";
+                    procQ = " ";
+                    break;
 
-        </div>
-    </div>
+                case "Mantenimiento":
+                    colorQ = "yellow";
+                    nameQ = " ";
+                    procQ = " ";
+                    break;
 
-    <div class="row mb-3">
-        <div class="col-sm-1">
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q6</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color: #efb810"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q7</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color:green"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
+                case "Ocupado":
+                    colorQ = "red";
+                    nameQ = item.Nombre;
+                    procQ = item.Procedimiento;
+                    break;
+
+                default: break;
+            }
+
+            <div class="col-sm-2">
+                <div class="card">
+                    <div class="text-center">
+                        <h3 class="card-title">@numbenQ</h3>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-procedures fa-5x" style="color:@colorQ"></i>
+                    </div>
+                    <div class="text-center">
+                        <h5 class="card-title">Estado: @statusQ </h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">@nameQ</li>
+                            <li class="list-group-item">@procQ</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q8</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color:red"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q9</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color: #efb810"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="card">
-                <div class="text-center">
-                    <h3 class="card-title">Q10</h3>
-                </div>
-                <div class="text-center">
-                    <i class="fas fa-procedures fa-5x" style="color:green"></i>
-                </div>
-                <div class="text-center">
-                    <h5 class="card-title">Estado Quirofano</h5>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Estado Quirofano</li>
-                        <li class="list-group-item">Paciente</li>
-                        <li class="list-group-item">Cirugia</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        }
         <div class="col-sm-1">
 
         </div>
