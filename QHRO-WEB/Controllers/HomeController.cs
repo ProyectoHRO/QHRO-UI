@@ -14,7 +14,7 @@ namespace QHRO_WEB.Controllers
         }
 
 
-        public ActionResult SearchHistory()
+        public ActionResult Nuevo()
         {
             return View();
         }
