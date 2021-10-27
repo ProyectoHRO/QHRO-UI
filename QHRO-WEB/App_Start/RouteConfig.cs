@@ -18,6 +18,24 @@ namespace QHRO_WEB
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+            routes.MapRoute(
+                name: "Solicitar Cirugia Paciente",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Quirofanos", action = "Solicitar", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Estado de quirofanos",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Quirofanos", action = "Estado", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Programaciones",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Quirofanos", action = "Programaciones", id = UrlParameter.Optional }
+            );
         }
     }
 }
