@@ -57,6 +57,7 @@
     <Compile Include="ClassPatient.cs" />
     <Compile Include="ClassQuiReport.cs" />
     <Compile Include="ClassReportByPatient.cs" />
+    <Compile Include="ClassReports.cs" />
     <Compile Include="ClassRequestSurgery.cs" />
     <Compile Include="ClassServices.cs" />
     <Compile Include="ClassUsers.cs" />

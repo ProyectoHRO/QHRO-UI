@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<BLL.ClassDailySurgeries>
 @{
     ViewBag.Title = "Programaciones";
 }
@@ -30,204 +30,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th scope="row">@item.Hora</th>
+                            <td>@item.Qx</td>
+                            <td>@item.No_Historia</td>
+                            <td>@item.Nombre</td>
+                            <td>@item.Edad</td>
+                            <td>@item.Procedimiento</td>
+                            <td>@item.Servicio</td>
+                            <td>@item.Cirujano</td>
+                            <td>@item.Anestesista</td>
+                            <td>@item.Asistentes</td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
-    <div class="row mb-3">
-        <div class="col-1">
-
-        </div>
-        <div class="col-11">
-            <div class="text-center">
-                <h1>Emergencias</h1>
-            </div>
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Qx</th>
-                        <th scope="col">No_Historia</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Procedimiento</th>
-                        <th scope="col">Servicio</th>
-                        <th scope="col">Cirujano</th>
-                        <th scope="col">Anestesista</th>
-                        <th scope="col">Asistentes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                        <td>20 años</td>
-                        <td>Colocar pierna</td>
-                        <td>Traumatologia</td>
-                        <td>DR.Alejandro Morales</td>
-                        <td>Sergio Cifuentes</td>
-                        <td>Pablo Lopez</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+  
 </div>

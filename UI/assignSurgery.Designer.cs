@@ -52,7 +52,6 @@ namespace UI
             this.comboBoxAnesthesiaType = new System.Windows.Forms.ComboBox();
             this.comboBoxSurgeryType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.dateTimeSurgeryDate = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxTime = new System.Windows.Forms.ComboBox();
             this.comboBoxMin = new System.Windows.Forms.ComboBox();
@@ -97,6 +96,7 @@ namespace UI
             this.textBoxAnestethistName = new System.Windows.Forms.TextBox();
             this.labelIdAnesthetist = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimeSurgeryDate = new System.Windows.Forms.DateTimePicker();
             this.groupBoxpatientData.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -340,7 +340,7 @@ namespace UI
             this.comboBoxAnesthesiaType.Items.AddRange(new object[] {
             "General",
             "Epidural"});
-            this.comboBoxAnesthesiaType.Location = new System.Drawing.Point(508, 97);
+            this.comboBoxAnesthesiaType.Location = new System.Drawing.Point(508, 100);
             this.comboBoxAnesthesiaType.Name = "comboBoxAnesthesiaType";
             this.comboBoxAnesthesiaType.Size = new System.Drawing.Size(397, 28);
             this.comboBoxAnesthesiaType.TabIndex = 26;
@@ -353,7 +353,7 @@ namespace UI
             this.comboBoxSurgeryType.Items.AddRange(new object[] {
             "Selectiva",
             "Emergencia"});
-            this.comboBoxSurgeryType.Location = new System.Drawing.Point(508, 61);
+            this.comboBoxSurgeryType.Location = new System.Drawing.Point(508, 65);
             this.comboBoxSurgeryType.Name = "comboBoxSurgeryType";
             this.comboBoxSurgeryType.Size = new System.Drawing.Size(397, 28);
             this.comboBoxSurgeryType.TabIndex = 25;
@@ -366,8 +366,8 @@ namespace UI
             this.tableLayoutPanel10.ColumnCount = 2;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.26984F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 58.73016F));
-            this.tableLayoutPanel10.Controls.Add(this.dateTimeSurgeryDate, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.tableLayoutPanel11, 1, 0);
+            this.tableLayoutPanel10.Controls.Add(this.dateTimeSurgeryDate, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(508, 3);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
@@ -375,18 +375,6 @@ namespace UI
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tableLayoutPanel10.Size = new System.Drawing.Size(397, 52);
             this.tableLayoutPanel10.TabIndex = 37;
-            // 
-            // dateTimeSurgeryDate
-            // 
-            this.dateTimeSurgeryDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimeSurgeryDate.CustomFormat = "dddd,dd-MMMM-yyyy";
-            this.dateTimeSurgeryDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimeSurgeryDate.Location = new System.Drawing.Point(3, 13);
-            this.dateTimeSurgeryDate.MinDate = new System.DateTime(2021, 10, 4, 0, 0, 0, 0);
-            this.dateTimeSurgeryDate.Name = "dateTimeSurgeryDate";
-            this.dateTimeSurgeryDate.Size = new System.Drawing.Size(157, 26);
-            this.dateTimeSurgeryDate.TabIndex = 24;
-            this.dateTimeSurgeryDate.Value = new System.DateTime(2021, 10, 21, 0, 0, 0, 0);
             // 
             // tableLayoutPanel11
             // 
@@ -419,7 +407,7 @@ namespace UI
             this.comboBoxTime.Items.AddRange(new object[] {
             "A.M",
             "P.M"});
-            this.comboBoxTime.Location = new System.Drawing.Point(170, 9);
+            this.comboBoxTime.Location = new System.Drawing.Point(170, 12);
             this.comboBoxTime.Name = "comboBoxTime";
             this.comboBoxTime.Size = new System.Drawing.Size(55, 28);
             this.comboBoxTime.TabIndex = 3;
@@ -490,7 +478,7 @@ namespace UI
             "57",
             "58",
             "59"});
-            this.comboBoxMin.Location = new System.Drawing.Point(113, 9);
+            this.comboBoxMin.Location = new System.Drawing.Point(113, 12);
             this.comboBoxMin.Name = "comboBoxMin";
             this.comboBoxMin.Size = new System.Drawing.Size(51, 28);
             this.comboBoxMin.TabIndex = 2;
@@ -525,7 +513,7 @@ namespace UI
             "10",
             "11",
             "12"});
-            this.comboBoxHour.Location = new System.Drawing.Point(50, 9);
+            this.comboBoxHour.Location = new System.Drawing.Point(50, 12);
             this.comboBoxHour.Name = "comboBoxHour";
             this.comboBoxHour.Size = new System.Drawing.Size(40, 28);
             this.comboBoxHour.TabIndex = 0;
@@ -580,7 +568,7 @@ namespace UI
             this.comboBoxRelevance.Items.AddRange(new object[] {
             "Mayor",
             "Menor"});
-            this.comboBoxRelevance.Location = new System.Drawing.Point(124, 96);
+            this.comboBoxRelevance.Location = new System.Drawing.Point(124, 92);
             this.comboBoxRelevance.Name = "comboBoxRelevance";
             this.comboBoxRelevance.Size = new System.Drawing.Size(206, 28);
             this.comboBoxRelevance.TabIndex = 35;
@@ -762,7 +750,7 @@ namespace UI
             this.comboBoxOperatingRooms.Items.AddRange(new object[] {
             "General",
             "Epidural"});
-            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(174, 12);
+            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(174, 9);
             this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
             this.comboBoxOperatingRooms.Size = new System.Drawing.Size(166, 28);
             this.comboBoxOperatingRooms.TabIndex = 27;
@@ -1018,7 +1006,7 @@ namespace UI
             this.tableLayoutPanel8.ColumnCount = 3;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.71257F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.28743F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 147F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 148F));
             this.tableLayoutPanel8.Controls.Add(this.iconButtonAddAnesthetist, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.textBoxAnestethistName, 1, 0);
@@ -1058,7 +1046,7 @@ namespace UI
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(32, 14);
+            this.label2.Location = new System.Drawing.Point(31, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 18);
             this.label2.TabIndex = 5;
@@ -1067,7 +1055,7 @@ namespace UI
             // textBoxAnestethistName
             // 
             this.textBoxAnestethistName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAnestethistName.Location = new System.Drawing.Point(202, 10);
+            this.textBoxAnestethistName.Location = new System.Drawing.Point(201, 10);
             this.textBoxAnestethistName.Name = "textBoxAnestethistName";
             this.textBoxAnestethistName.ReadOnly = true;
             this.textBoxAnestethistName.Size = new System.Drawing.Size(250, 26);
@@ -1134,6 +1122,13 @@ namespace UI
             this.dataGridView1.TabIndex = 25;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // dateTimeSurgeryDate
+            // 
+            this.dateTimeSurgeryDate.Location = new System.Drawing.Point(3, 3);
+            this.dateTimeSurgeryDate.Name = "dateTimeSurgeryDate";
+            this.dateTimeSurgeryDate.Size = new System.Drawing.Size(157, 26);
+            this.dateTimeSurgeryDate.TabIndex = 26;
+            // 
             // assignSurgery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1192,7 +1187,6 @@ namespace UI
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label labelfirstName;
-        private System.Windows.Forms.DateTimePicker dateTimeSurgeryDate;
         private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.ComboBox comboBoxSurgeryType;
         private System.Windows.Forms.ComboBox comboBoxAnesthesiaType;
@@ -1247,5 +1241,6 @@ namespace UI
         private System.Windows.Forms.ComboBox comboBoxHour;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker dateTimeSurgeryDate;
     }
 }
