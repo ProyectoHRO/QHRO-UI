@@ -9,6 +9,8 @@ namespace BLL
     public class ClassReports
     {
         private Surgeries surgeries = new Surgeries();
+        private ClassOperatingRoom Operatigrooms = new ClassOperatingRoom();
+
         public List<ClassDailySurgeries> dailySchedule() {
 
             List<ClassDailySurgeries> surgeriesList = new List<ClassDailySurgeries>();
@@ -66,6 +68,31 @@ namespace BLL
                 surgeriesList.Add(surgerie);
             }
             return surgeriesList;
+        }
+
+        public List<ClassStatusOperatingRooms> StatusOperatingRooms()
+        {
+            List<ClassStatusOperatingRooms> ORList = new List<ClassStatusOperatingRooms>();
+            ClassStatusOperatingRooms Rooms = new ClassStatusOperatingRooms();
+            DataTable surgeriesData = surgeries.getDailySurgeries();
+
+            DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
+            foreach (DataRow item in infoOperatingRooms.Rows)
+            {
+                Rooms = new ClassStatusOperatingRooms();
+
+                    foreach (DataRow item2 in surgeriesData.Rows)
+                    {
+                        Rooms.Qx = item2.Field<string>(2).ToString();
+                        Rooms.Nombre = item2.Field<string>(4).ToString();
+                        Rooms.Procedimiento = item2.Field<string>(6).ToString();
+                        Rooms.estado_actual = item.Field<string>(2).ToString();
+                        ORList.Add(Rooms);
+                    }
+                
+            }
+
+            return ORList;
         }
     }
 }

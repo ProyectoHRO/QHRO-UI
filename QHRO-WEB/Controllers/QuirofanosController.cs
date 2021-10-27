@@ -12,7 +12,8 @@ namespace QHRO_WEB.Controllers
         // GET: Quirofanos
         public ActionResult Estado()
         {
-            return View();
+            var Status = reports.StatusOperatingRooms();
+            return View(Status.ToList());
         }
 
         public ActionResult Programaciones()
