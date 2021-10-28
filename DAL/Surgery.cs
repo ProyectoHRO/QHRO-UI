@@ -239,7 +239,7 @@ namespace DAL
             command.Connection = connection.OpenConnection();
             command.CommandText = "MostrarIntervencionesDiferidas";
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@fecha", surgeryDate);
+            command.Parameters.AddWithValue("@fecha", surgeryDate.Date);
             read = command.ExecuteReader();
             tableData.Load(read);
             command.Parameters.Clear();

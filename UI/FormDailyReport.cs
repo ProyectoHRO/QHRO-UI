@@ -74,31 +74,28 @@ namespace UI
                 dailie.Tipo_Cirugia = item.Field<string>(8).ToString();
                 initHour = item.Field<string>(9).ToString();
                 finalHour = item.Field<string>(10).ToString();
-                response = stringsClass.getStrings(initHour, new char[] { ':', ' ', 'P', 'A', '.', 'M' });
-                initHour= ((Convert.ToInt32(response[0]) % 12) + 12).ToString();
-                initMin=response[1];
+               
+                if (initHour.Contains("P"))
+                {
+                    response = stringsClass.getStrings(initHour, new char[] { ':', ' ', 'P', 'A', '.', 'M' });
+                    initHour = ((Convert.ToInt32(response[0]) % 12) + 12).ToString();
+                    initMin = response[1];
+                }
+                if (initHour.Contains("A"))
+                {
+                    response = stringsClass.getStrings(initHour, new char[] { ':',' ', 'P', 'A', '.', 'M' });
+                    initHour = response[0];
+                    initMin = response[1];
+                }
+
                 response = stringsClass.getStrings(finalHour, new char[] { ':' });
-                finalHour=response[0];
-                finalMin=response[1];
-                int minHours = Convert.ToInt16(finalHour) - Convert.ToInt16(initHour);
-                int minMin= Convert.ToInt16(finalMin) - Convert.ToInt16(initMin);
-                if (minHours > 0)
-                {
-                    if (minHours == 1)
-                    {
-                        dailie.Tiempo= minHours + "hora con" + minMin +" minutos";
-                    }
-                    else
-                    {
-                        dailie.Tiempo = minHours + " horas con " + minMin + " minutos";
-                    }
-             
-                }
-                else
-                {
-                    dailie.Tiempo = minMin + " minutos";
-                }
-                
+                finalHour = response[0];
+                finalMin = response[1];
+                DateTime f1 = Convert.ToDateTime(initHour +":" + initMin + ":00");
+                DateTime f2 = Convert.ToDateTime(finalHour+":"+finalMin+":00");
+                Double hours = Convert.ToDouble(f2.Subtract(f1).TotalHours);
+                dailie.Tiempo = Convert.ToString(hours+" Horas");
+
                 listDailies.Add(dailie);
             }
 

@@ -14,9 +14,12 @@ namespace UI
     {
         private ClassReports reports =new ClassReports();
         private Surgeries surgeries = new Surgeries();
+        private ClassGetStrings stringsClass = new ClassGetStrings();
+        private 
         string pacientName = "";
         int formClosed;
         int surgerieId;
+        string hour;
         public FormsSchedules()
         {
             InitializeComponent();
@@ -59,6 +62,8 @@ namespace UI
             iconButtonFinish.Enabled = true;
             surgerieId = Convert.ToInt32(dataGridViewSchedule.Rows[e.RowIndex].Cells[0].Value);
             pacientName = dataGridViewSchedule.Rows[e.RowIndex].Cells[4].Value.ToString();
+            hour = dataGridViewSchedule.Rows[e.RowIndex].Cells[1].Value.ToString();
+            label2.Text = hour.ToString();
         }
 
         private void iconButtonReSchedule_Click(object sender, EventArgs e)
@@ -70,8 +75,46 @@ namespace UI
 
         private void iconButtonFinish_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(surgeries.finishSurgerie(surgerieId));
-            loadData();
+            string[] response;
+            string initHour="";
+            string initMin="";
+            if (hour.Contains("P"))
+            {
+                response = stringsClass.getStrings(hour, new char[] { ':', ' ', 'P', 'A', '.', 'M' });
+                initHour = ((Convert.ToInt32(response[0]) % 12) + 12).ToString();
+                initMin = response[1];
+            }
+            if (hour.Contains("A"))
+            {
+                response = stringsClass.getStrings(hour, new char[] { ':', ' ', 'P', 'A', '.', 'M' });
+                initHour = response[0];
+                initMin = response[1];
+            }
+
+            DateTime f1 = Convert.ToDateTime(initHour + ":" + initMin + ":00");
+            DateTime f2 = Convert.ToDateTime(DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString()+ ":00");
+
+            if (f2.Hour > f1.Hour)
+            {
+                MessageBox.Show(surgeries.finishSurgerie(surgerieId));
+                loadData();
+            }
+            else if(f2.Hour== f1.Hour)
+            {
+                if (f2.Minute > f1.Minute)
+                {
+                    MessageBox.Show(surgeries.finishSurgerie(surgerieId));
+                    loadData();
+                }
+                else
+                {
+                    MessageBox.Show("No puedes finalizar una cirugía que aun no ha comenzado.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No puedes finalizar una cirugía que aun no ha comenzado.");
+            }
         }
 
         private void FormsSchedules_Activated(object sender, EventArgs e)

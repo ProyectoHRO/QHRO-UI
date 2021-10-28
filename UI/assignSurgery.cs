@@ -49,8 +49,6 @@ namespace UI
             comboBoxOperatingRooms.DisplayMember = "no_quirofano";
             comboBoxOperatingRooms.DataSource = infoOperatingRooms;
 
-            dateTimeSurgeryDate.Format = DateTimePickerFormat.Custom;
-            dateTimeSurgeryDate.CustomFormat = "dd-MM-yyyy hh:mm";
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -150,8 +148,8 @@ namespace UI
                 userId,
                 comboBoxAnesthesiaType.Text,
                 comboBoxSurgeryType.Text,
-                dateTimeSurgeryDate.Value,
-                comboBoxHour.Text + ' ' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
+                dateTimeSurgeryDate.Value.Date,
+                comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
                 Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
                 Convert.ToInt32(labelIdAnesthetist.Text),
                 Convert.ToInt32(labelID.Text),

@@ -114,7 +114,7 @@ namespace BLL
                     userId,
                     anesthesiaType,
                     surgeryType,
-                    surgeryDate,
+                    surgeryDate.Date,
                     opRoomId,
                     anesthetistId,
                     programationId,

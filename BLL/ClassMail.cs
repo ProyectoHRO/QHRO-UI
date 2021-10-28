@@ -34,7 +34,7 @@ namespace BLL
             }
             catch (Exception)
             {
-                return "Error al enviar";
+                return response;
             }
         }
     }
