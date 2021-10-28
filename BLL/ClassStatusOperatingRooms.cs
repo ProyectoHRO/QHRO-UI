@@ -8,6 +8,8 @@ namespace BLL
 {
     public class ClassStatusOperatingRooms
     {
+        public int IdQ { get; set; }
+
         public string Qx { get; set; }
 
         public string Nombre { get; set; }

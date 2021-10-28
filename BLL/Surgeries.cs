@@ -45,6 +45,11 @@ namespace BLL
             return surgeries.GetDailySurgeries();
         }
 
+        public DataTable getDialySurgeriesByOperatingRoom(int id)
+        {
+            return surgeries.GetDailySurgeriesByRoom(id);
+        }
+
         public DataTable getDoctorsByIdSurgerie(int id)
         {
             return surgeries.getDoctorsBySurgeries(id);

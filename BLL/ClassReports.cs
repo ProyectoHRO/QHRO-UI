@@ -16,8 +16,6 @@ namespace BLL
             List<ClassDailySurgeries> surgeriesList = new List<ClassDailySurgeries>();
             ClassDailySurgeries surgerie = new ClassDailySurgeries();
             DataTable surgeriesData = surgeries.getDailySurgeries();
-
-
             foreach (DataRow item in surgeriesData.Rows)
             {
                 string docName = "";
@@ -74,24 +72,33 @@ namespace BLL
         {
             List<ClassStatusOperatingRooms> ORList = new List<ClassStatusOperatingRooms>();
             ClassStatusOperatingRooms Rooms = new ClassStatusOperatingRooms();
-            DataTable surgeriesData = surgeries.getDailySurgeries();
-
             DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
+
             foreach (DataRow item in infoOperatingRooms.Rows)
             {
                 Rooms = new ClassStatusOperatingRooms();
-
+                Rooms.IdQ = Convert.ToInt32(item.Field<int>(0));
+                Rooms.Qx = item.Field<string>(1).ToString();
+                Rooms.estado_actual = item.Field<string>(2).ToString();
+                DataTable surgeriesData = surgeries.getDialySurgeriesByOperatingRoom(Rooms.IdQ);
+                if (surgeriesData.Rows.Count > 0)
+                {
                     foreach (DataRow item2 in surgeriesData.Rows)
                     {
-                        Rooms.Qx = item2.Field<string>(2).ToString();
                         Rooms.Nombre = item2.Field<string>(4).ToString();
                         Rooms.Procedimiento = item2.Field<string>(6).ToString();
-                        Rooms.estado_actual = item.Field<string>(2).ToString();
-                        ORList.Add(Rooms);
                     }
-                
+                }
+                else
+                {
+                    foreach (DataRow item2 in surgeriesData.Rows)
+                    {
+                        Rooms.Nombre = " ";
+                        Rooms.Procedimiento = " ";
+                    }
+                }
+                ORList.Add(Rooms);
             }
-
             return ORList;
         }
     }

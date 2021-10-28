@@ -5,7 +5,21 @@
 
 @*Vista cirugias programadas y emergencia*@
 
-<div class="container">
+<div class="container" id="reloadContent">
+    <script>
+        function reloadData() {
+            $(document).ready(function () {
+                $('#reloadContent').load('/Quirofanos/Programaciones');
+            })
+        }
+
+        $(document).ready(function () {
+            var refreshId = setInterval(function () {
+                $('#reloadContent').load('/Quirofanos/Programaciones');
+            }, 5000);
+        });
+    </script>
+
     <div class="row mb-3">
         <div class="col-1">
 
@@ -47,7 +61,8 @@
                     }
                 </tbody>
             </table>
+            <button type="button" class="btn btn-outline-success" onclick="reloadData()">Reload</button>
         </div>
     </div>
-  
+
 </div>

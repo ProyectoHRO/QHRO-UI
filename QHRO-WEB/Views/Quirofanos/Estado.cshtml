@@ -4,48 +4,32 @@
 }
 
 @*Vista Cartas en vivo*@
-
-@*<div class="container">
-        <div class="row mb-3">
-            <div class="col-1">
-
-            </div>
-            <div class="col-11">
-                <div class="text-center">
-                </div>
-                <table class="table table-bordered">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Qx</th>
-                            <th scope="col">Paciente</th>
-                            <th scope="col">Cirugia</th>
-                            <th scope="col">Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td>@item.Qx</td>
-                                <td>@item.Nombre</td>
-                                <td>@item.Procedimiento</td>
-                                <td>@item.estado_actual</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-    </div>*@
-@{
-    string color1 = "";
-}
-
-<div class="container">
+<head>
+    <script 
+     src="https://code.jquery.com/jquery-3.6.0.js" 
+     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+     crossorigin="anonymous">
+    </script>
+</head>
+<div class="container" id="reloadContent">
     <div class="row mb-3">
         <div class="col-sm-1">
         </div>
+        <script>
+            function reloadData() {
+                $(document).ready(function () {
+                    $('#reloadContent').load('/Quirofanos/Estado');
+                })
+            }
+
+            $(document).ready(function () {
+                var refreshId = setInterval(function () {
+                    $('#reloadContent').load('/Quirofanos/Estado');
+                }, 60000);
+            });
+
+        </script>
+
         @foreach (var item in Model)
         {
             string numbenQ = item.Qx;
@@ -53,24 +37,18 @@
             string procQ = item.Procedimiento;
             string statusQ = item.estado_actual;
             string colorQ = "";
-            switch(statusQ)
+            switch (statusQ)
             {
                 case "Disponible":
                     colorQ = "green";
-                    nameQ = " ";
-                    procQ = " ";
                     break;
 
                 case "Mantenimiento":
                     colorQ = "yellow";
-                    nameQ = " ";
-                    procQ = " ";
                     break;
 
                 case "Ocupado":
                     colorQ = "red";
-                    nameQ = item.Nombre;
-                    procQ = item.Procedimiento;
                     break;
 
                 default: break;
@@ -79,26 +57,26 @@
             <div class="col-sm-2">
                 <div class="card">
                     <div class="text-center">
-                        <h3 class="card-title">@numbenQ</h3>
+                        <h3 class="card-title">@item.Qx</h3>
                     </div>
                     <div class="text-center">
                         <i class="fas fa-procedures fa-5x" style="color:@colorQ"></i>
                     </div>
                     <div class="text-center">
-                        <h5 class="card-title">Estado: @statusQ </h5>
+                        <h5 class="card-title">Estado:@item.estado_actual </h5>
                     </div>
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">@nameQ</li>
-                            <li class="list-group-item">@procQ</li>
+                            <li class="list-group-item">@item.Nombre</li>
+                            <li class="list-group-item">@item.Procedimiento</li>
                         </ul>
                     </div>
                 </div>
             </div>
         }
         <div class="col-sm-1">
-
+            <br><br />
         </div>
+        <button type="button" class="btn btn-outline-success" onclick="reloadData()">Reload</button>
     </div>
-
 </div>
