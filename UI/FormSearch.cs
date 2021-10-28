@@ -338,7 +338,6 @@ namespace UI
 
         private void FormSearch_Load(object sender, EventArgs e)
         {
-
             this.reportViewerDoctor.RefreshReport();
             comboBoxFilterDoctor.SelectedIndex = 0;
             comboBoxAnesthetist.SelectedIndex = 0;
@@ -406,6 +405,157 @@ namespace UI
         private void reportViewerPacientDiagnosis_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxSearchDoctor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (comboBoxFilterDoctor.SelectedIndex == 0)
+            {
+                label1.Location = new Point(498, 36);
+                textBoxSearchDoctor.Location = new Point(555, 33);
+                textBoxSearchDoctor.Size = new System.Drawing.Size(275, 26);
+                textBoxSearchDoctor.MaxLength = 13;
+                //Para obligar a que sólo se introduzcan números
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                  if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
+            else if (comboBoxFilterDoctor.SelectedIndex == 1)
+            {
+                label1.Location = new Point(17, 36);
+                textBoxSearchDoctor.Location = new Point(77, 33);
+                textBoxSearchDoctor.Size = new System.Drawing.Size(700, 26);
+                textBoxSearchDoctor.MaxLength = 250;
+                if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+                {
+                    MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+        private void textBoxAnesthethist_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (comboBoxAnesthetist.SelectedIndex == 0)
+            {
+                label2.Location = new Point(498, 36);
+                textBoxAnesthethist.Location = new Point(555, 33);
+                textBoxAnesthethist.Size = new System.Drawing.Size(275, 26);
+                textBoxAnesthethist.MaxLength = 13;
+                //Para obligar a que sólo se introduzcan números
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                  if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
+            else if (comboBoxAnesthetist.SelectedIndex == 1)
+            {
+                label2.Location = new Point(17, 36);
+                textBoxAnesthethist.Location = new Point(77, 33);
+                textBoxAnesthethist.Size = new System.Drawing.Size(700, 26);
+                textBoxAnesthethist.MaxLength = 250;
+                if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+                {
+                    MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+        private void textBoxAssistant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (comboBoxAssistant.SelectedIndex == 0)
+            {
+                label3.Location = new Point(498, 36);
+                textBoxAssistant.Location = new Point(555, 33);
+                textBoxAssistant.Size = new System.Drawing.Size(275, 26);
+                textBoxAssistant.MaxLength = 13;
+                //Para obligar a que sólo se introduzcan números
+                if (Char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                  if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    //el resto de teclas pulsadas se desactivan
+                    e.Handled = true;
+                }
+            }
+            else if (comboBoxAssistant.SelectedIndex == 1)
+            {
+                label3.Location = new Point(17, 36);
+                textBoxAssistant.Location = new Point(77, 33);
+                textBoxAssistant.Size = new System.Drawing.Size(700, 26);
+                textBoxAssistant.MaxLength = 250;
+                if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+                {
+                    MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+        private void textBoxPacient_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (comboBoxPatient.SelectedIndex == 0)
+            {
+                label4.Location = new Point(498, 36);
+                textBoxPacient.Location = new Point(555, 33);
+                textBoxPacient.Size = new System.Drawing.Size(275, 26);
+                textBoxPacient.MaxLength = 250;
+                if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space) && !(char.IsDigit(e.KeyChar)))
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+            else if (comboBoxPatient.SelectedIndex == 1)
+            {
+                label4.Location = new Point(17, 36);
+                textBoxPacient.Location = new Point(77,33);
+                textBoxPacient.Size = new System.Drawing.Size(700, 26);
+                textBoxPacient.MaxLength = 250;
+                if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && (e.KeyChar != (char)Keys.Space))
+                {
+                    MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
+        }
+
+        private void comboBoxPatient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

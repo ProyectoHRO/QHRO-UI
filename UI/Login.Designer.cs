@@ -31,6 +31,8 @@ namespace UI
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxMinimized = new System.Windows.Forms.PictureBox();
+            this.pictureClose = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -42,15 +44,13 @@ namespace UI
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMinimized = new System.Windows.Forms.PictureBox();
-            this.pictureClose = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureEye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -77,6 +77,30 @@ namespace UI
             this.label1.TabIndex = 5;
             this.label1.Text = "QUIRÓFANOS HRO";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
+            // 
+            // pictureBoxMinimized
+            // 
+            this.pictureBoxMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBoxMinimized.Image = global::UI.Properties.Resources.minimazar;
+            this.pictureBoxMinimized.Location = new System.Drawing.Point(347, 12);
+            this.pictureBoxMinimized.Name = "pictureBoxMinimized";
+            this.pictureBoxMinimized.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxMinimized.TabIndex = 4;
+            this.pictureBoxMinimized.TabStop = false;
+            this.pictureBoxMinimized.Click += new System.EventHandler(this.pictureBoxMinimized_Click);
+            // 
+            // pictureClose
+            // 
+            this.pictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureClose.Image = global::UI.Properties.Resources.cerrar;
+            this.pictureClose.Location = new System.Drawing.Point(378, 12);
+            this.pictureClose.Name = "pictureClose";
+            this.pictureClose.Size = new System.Drawing.Size(25, 25);
+            this.pictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureClose.TabIndex = 3;
+            this.pictureClose.TabStop = false;
+            this.pictureClose.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // panel2
             // 
@@ -118,6 +142,7 @@ namespace UI
             this.txtPassword.TabIndex = 19;
             this.txtPassword.Text = "CONTRASEÑA";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // txtUser
@@ -220,30 +245,6 @@ namespace UI
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBoxMinimized
-            // 
-            this.pictureBoxMinimized.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBoxMinimized.Image = global::UI.Properties.Resources.minimazar;
-            this.pictureBoxMinimized.Location = new System.Drawing.Point(347, 12);
-            this.pictureBoxMinimized.Name = "pictureBoxMinimized";
-            this.pictureBoxMinimized.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxMinimized.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxMinimized.TabIndex = 4;
-            this.pictureBoxMinimized.TabStop = false;
-            this.pictureBoxMinimized.Click += new System.EventHandler(this.pictureBoxMinimized_Click);
-            // 
-            // pictureClose
-            // 
-            this.pictureClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureClose.Image = global::UI.Properties.Resources.cerrar;
-            this.pictureClose.Location = new System.Drawing.Point(378, 12);
-            this.pictureClose.Name = "pictureClose";
-            this.pictureClose.Size = new System.Drawing.Size(25, 25);
-            this.pictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureClose.TabIndex = 3;
-            this.pictureClose.TabStop = false;
-            this.pictureClose.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,12 +271,12 @@ namespace UI
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureEye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

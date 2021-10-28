@@ -31,29 +31,29 @@ namespace UI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageDoctor = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.reportViewerDoctor = new Microsoft.Reporting.WinForms.ReportViewer();
             this.iconButtonSearchDoctor = new FontAwesome.Sharp.IconButton();
             this.comboBoxFilterDoctor = new System.Windows.Forms.ComboBox();
             this.textBoxSearchDoctor = new System.Windows.Forms.TextBox();
             this.tabPageAnesthetist = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.iconButtonSearchAnesthetist = new FontAwesome.Sharp.IconButton();
             this.reportViewerAnesthetist = new Microsoft.Reporting.WinForms.ReportViewer();
             this.comboBoxAnesthetist = new System.Windows.Forms.ComboBox();
             this.textBoxAnesthethist = new System.Windows.Forms.TextBox();
             this.tabPageAssistant = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.iconButtonAssistant = new FontAwesome.Sharp.IconButton();
             this.reportViewerAssistant = new Microsoft.Reporting.WinForms.ReportViewer();
             this.comboBoxAssistant = new System.Windows.Forms.ComboBox();
             this.textBoxAssistant = new System.Windows.Forms.TextBox();
             this.tabPagePacient = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.iconButtonPatient = new FontAwesome.Sharp.IconButton();
             this.comboBoxPatient = new System.Windows.Forms.ComboBox();
             this.textBoxPacient = new System.Windows.Forms.TextBox();
             this.reportViewerPacientDiagnosis = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.iconButtonSearchAnesthetist = new FontAwesome.Sharp.IconButton();
-            this.iconButtonAssistant = new FontAwesome.Sharp.IconButton();
-            this.iconButtonPatient = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPageDoctor.SuspendLayout();
             this.tabPageAnesthetist.SuspendLayout();
@@ -92,6 +92,16 @@ namespace UI
             this.tabPageDoctor.Text = "Buscar Doctor";
             this.tabPageDoctor.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(306, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Buscar:";
+            // 
             // reportViewerDoctor
             // 
             this.reportViewerDoctor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -106,8 +116,12 @@ namespace UI
             // iconButtonSearchDoctor
             // 
             this.iconButtonSearchDoctor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSearchDoctor.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonSearchDoctor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonSearchDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearchDoctor.ForeColor = System.Drawing.Color.Black;
             this.iconButtonSearchDoctor.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButtonSearchDoctor.IconColor = System.Drawing.Color.Black;
+            this.iconButtonSearchDoctor.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.iconButtonSearchDoctor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearchDoctor.IconSize = 32;
             this.iconButtonSearchDoctor.Location = new System.Drawing.Point(787, 23);
@@ -138,6 +152,7 @@ namespace UI
             this.textBoxSearchDoctor.Name = "textBoxSearchDoctor";
             this.textBoxSearchDoctor.Size = new System.Drawing.Size(275, 26);
             this.textBoxSearchDoctor.TabIndex = 0;
+            this.textBoxSearchDoctor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchDoctor_KeyPress);
             // 
             // tabPageAnesthetist
             // 
@@ -153,6 +168,36 @@ namespace UI
             this.tabPageAnesthetist.TabIndex = 1;
             this.tabPageAnesthetist.Text = "Buscar Anestesista";
             this.tabPageAnesthetist.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(306, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Buscar:";
+            // 
+            // iconButtonSearchAnesthetist
+            // 
+            this.iconButtonSearchAnesthetist.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSearchAnesthetist.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonSearchAnesthetist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonSearchAnesthetist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSearchAnesthetist.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSearchAnesthetist.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.iconButtonSearchAnesthetist.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonSearchAnesthetist.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSearchAnesthetist.IconSize = 32;
+            this.iconButtonSearchAnesthetist.Location = new System.Drawing.Point(787, 23);
+            this.iconButtonSearchAnesthetist.Name = "iconButtonSearchAnesthetist";
+            this.iconButtonSearchAnesthetist.Size = new System.Drawing.Size(134, 43);
+            this.iconButtonSearchAnesthetist.TabIndex = 8;
+            this.iconButtonSearchAnesthetist.Text = "Generar";
+            this.iconButtonSearchAnesthetist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonSearchAnesthetist.UseVisualStyleBackColor = true;
+            this.iconButtonSearchAnesthetist.Click += new System.EventHandler(this.iconButtonSearchAnesthetist_Click);
             // 
             // reportViewerAnesthetist
             // 
@@ -184,6 +229,7 @@ namespace UI
             this.textBoxAnesthethist.Name = "textBoxAnesthethist";
             this.textBoxAnesthethist.Size = new System.Drawing.Size(275, 26);
             this.textBoxAnesthethist.TabIndex = 4;
+            this.textBoxAnesthethist.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAnesthethist_KeyPress);
             // 
             // tabPageAssistant
             // 
@@ -199,6 +245,35 @@ namespace UI
             this.tabPageAssistant.TabIndex = 2;
             this.tabPageAssistant.Text = "Buscar Asistente";
             this.tabPageAssistant.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(306, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Buscar:";
+            // 
+            // iconButtonAssistant
+            // 
+            this.iconButtonAssistant.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonAssistant.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonAssistant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonAssistant.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonAssistant.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.iconButtonAssistant.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonAssistant.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonAssistant.IconSize = 32;
+            this.iconButtonAssistant.Location = new System.Drawing.Point(787, 23);
+            this.iconButtonAssistant.Name = "iconButtonAssistant";
+            this.iconButtonAssistant.Size = new System.Drawing.Size(134, 43);
+            this.iconButtonAssistant.TabIndex = 9;
+            this.iconButtonAssistant.Text = "Generar";
+            this.iconButtonAssistant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonAssistant.UseVisualStyleBackColor = true;
+            this.iconButtonAssistant.Click += new System.EventHandler(this.iconButtonAssistant_Click);
             // 
             // reportViewerAssistant
             // 
@@ -230,6 +305,7 @@ namespace UI
             this.textBoxAssistant.Name = "textBoxAssistant";
             this.textBoxAssistant.Size = new System.Drawing.Size(275, 26);
             this.textBoxAssistant.TabIndex = 4;
+            this.textBoxAssistant.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAssistant_KeyPress);
             // 
             // tabPagePacient
             // 
@@ -245,6 +321,35 @@ namespace UI
             this.tabPagePacient.TabIndex = 3;
             this.tabPagePacient.Text = "Buscar Paciente";
             this.tabPagePacient.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(306, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Buscar:";
+            // 
+            // iconButtonPatient
+            // 
+            this.iconButtonPatient.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonPatient.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonPatient.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonPatient.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.iconButtonPatient.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonPatient.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonPatient.IconSize = 32;
+            this.iconButtonPatient.Location = new System.Drawing.Point(787, 23);
+            this.iconButtonPatient.Name = "iconButtonPatient";
+            this.iconButtonPatient.Size = new System.Drawing.Size(134, 43);
+            this.iconButtonPatient.TabIndex = 23;
+            this.iconButtonPatient.Text = "Generar";
+            this.iconButtonPatient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonPatient.UseVisualStyleBackColor = true;
+            this.iconButtonPatient.Click += new System.EventHandler(this.iconButtonPatient_Click_2);
             // 
             // comboBoxPatient
             // 
@@ -265,6 +370,7 @@ namespace UI
             this.textBoxPacient.Name = "textBoxPacient";
             this.textBoxPacient.Size = new System.Drawing.Size(275, 26);
             this.textBoxPacient.TabIndex = 20;
+            this.textBoxPacient.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPacient_KeyPress);
             // 
             // reportViewerPacientDiagnosis
             // 
@@ -277,94 +383,6 @@ namespace UI
             this.reportViewerPacientDiagnosis.Size = new System.Drawing.Size(1226, 771);
             this.reportViewerPacientDiagnosis.TabIndex = 19;
             this.reportViewerPacientDiagnosis.Load += new System.EventHandler(this.reportViewerPacientDiagnosis_Load);
-            // 
-            // iconButtonSearchAnesthetist
-            // 
-            this.iconButtonSearchAnesthetist.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonSearchAnesthetist.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButtonSearchAnesthetist.IconColor = System.Drawing.Color.Black;
-            this.iconButtonSearchAnesthetist.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonSearchAnesthetist.IconSize = 32;
-            this.iconButtonSearchAnesthetist.Location = new System.Drawing.Point(787, 23);
-            this.iconButtonSearchAnesthetist.Name = "iconButtonSearchAnesthetist";
-            this.iconButtonSearchAnesthetist.Size = new System.Drawing.Size(134, 43);
-            this.iconButtonSearchAnesthetist.TabIndex = 8;
-            this.iconButtonSearchAnesthetist.Text = "Generar";
-            this.iconButtonSearchAnesthetist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonSearchAnesthetist.UseVisualStyleBackColor = true;
-            this.iconButtonSearchAnesthetist.Click += new System.EventHandler(this.iconButtonSearchAnesthetist_Click);
-            // 
-            // iconButtonAssistant
-            // 
-            this.iconButtonAssistant.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonAssistant.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButtonAssistant.IconColor = System.Drawing.Color.Black;
-            this.iconButtonAssistant.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonAssistant.IconSize = 32;
-            this.iconButtonAssistant.Location = new System.Drawing.Point(787, 23);
-            this.iconButtonAssistant.Name = "iconButtonAssistant";
-            this.iconButtonAssistant.Size = new System.Drawing.Size(134, 43);
-            this.iconButtonAssistant.TabIndex = 9;
-            this.iconButtonAssistant.Text = "Generar";
-            this.iconButtonAssistant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonAssistant.UseVisualStyleBackColor = true;
-            this.iconButtonAssistant.Click += new System.EventHandler(this.iconButtonAssistant_Click);
-            // 
-            // iconButtonPatient
-            // 
-            this.iconButtonPatient.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonPatient.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButtonPatient.IconColor = System.Drawing.Color.Black;
-            this.iconButtonPatient.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonPatient.IconSize = 32;
-            this.iconButtonPatient.Location = new System.Drawing.Point(787, 23);
-            this.iconButtonPatient.Name = "iconButtonPatient";
-            this.iconButtonPatient.Size = new System.Drawing.Size(134, 43);
-            this.iconButtonPatient.TabIndex = 23;
-            this.iconButtonPatient.Text = "Generar";
-            this.iconButtonPatient.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonPatient.UseVisualStyleBackColor = true;
-            this.iconButtonPatient.Click += new System.EventHandler(this.iconButtonPatient_Click_2);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(306, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Buscar:";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(306, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 20);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Buscar:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(306, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Buscar:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(306, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 20);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Buscar:";
             // 
             // FormSearch
             // 

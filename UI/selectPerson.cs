@@ -268,5 +268,10 @@ namespace UI
         {
 
         }
+
+        private void dataGridViewSearchPerson_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            confirmPerson();
+        }
     }
 }

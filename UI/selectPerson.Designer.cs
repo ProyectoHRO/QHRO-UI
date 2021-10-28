@@ -127,6 +127,7 @@ namespace UI
             this.dataGridViewSearchPerson.TabIndex = 30;
             this.dataGridViewSearchPerson.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSearchPerson_CellClick);
             this.dataGridViewSearchPerson.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSearchPerson_CellContentClick);
+            this.dataGridViewSearchPerson.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSearchPerson_CellContentDoubleClick);
             // 
             // iconButtonContinue
             // 

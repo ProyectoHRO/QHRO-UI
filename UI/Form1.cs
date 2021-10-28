@@ -249,7 +249,12 @@ namespace UI
        
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            DialogResult result = MessageBox.Show("¿Desea cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                Application.Restart();
+            }
+            
         }
 
         private void pictureBoxMinimized_Click(object sender, EventArgs e)
@@ -321,9 +326,26 @@ namespace UI
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void iconPictureBox1_Click(object sender, EventArgs e)
+        {
             panelReportsMenu.Visible = false;
             statePanel = 0;
             openChildForm(new FormProfile(labelUserLog.Text));
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
+            openChildForm(new FormProfile(labelUserLog.Text));
+        }
+
+        private void panelContainer_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

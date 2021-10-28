@@ -262,11 +262,6 @@ namespace UI
             listDoctors();
         }
 
-        private void textFirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textFirstName_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
