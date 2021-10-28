@@ -31,15 +31,15 @@ namespace UI
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.reportViewerDailies = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePickerReport = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.iconButtonDiff = new FontAwesome.Sharp.IconButton();
             this.reportViewerDiff = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dateTimePickerDiff = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -73,11 +73,26 @@ namespace UI
             this.tabPage1.Text = "Operaciones Realizadas";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(523, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(188, 23);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Operaciones realizadas";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // iconButton1
             // 
             this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.ForeColor = System.Drawing.Color.Black;
             this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 32;
             this.iconButton1.Location = new System.Drawing.Point(674, 61);
@@ -123,11 +138,25 @@ namespace UI
             this.tabPage2.Text = "Diferidas";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(523, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 23);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Operaciones diferidas";
+            // 
             // iconButtonDiff
             // 
             this.iconButtonDiff.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonDiff.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonDiff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonDiff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonDiff.ForeColor = System.Drawing.Color.Black;
             this.iconButtonDiff.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButtonDiff.IconColor = System.Drawing.Color.Black;
+            this.iconButtonDiff.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
             this.iconButtonDiff.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonDiff.IconSize = 32;
             this.iconButtonDiff.Location = new System.Drawing.Point(674, 61);
@@ -157,27 +186,6 @@ namespace UI
             this.dateTimePickerDiff.Name = "dateTimePickerDiff";
             this.dateTimePickerDiff.Size = new System.Drawing.Size(265, 26);
             this.dateTimePickerDiff.TabIndex = 8;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(523, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 23);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Operaciones realizadas";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(523, 17);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(177, 23);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Operaciones diferidas";
             // 
             // FormDailyReport
             // 

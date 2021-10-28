@@ -198,5 +198,72 @@ namespace UI
             }
 
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                byte[] data = UTF8Encoding.UTF8.GetBytes(txtPassword.Text);
+                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                {
+                    byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                    using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                    {
+                        ICryptoTransform transform = tripleDES.CreateEncryptor();
+                        byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                        password = Convert.ToBase64String(results, 0, results.Length);
+                    }
+                }
+
+
+                queryResult = user.Login(txtUser.Text, password);
+                if (queryResult.Contains("incorrectos"))
+                {
+                    MessageBox.Show(queryResult, "Inicio de sesión no valido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+
+                else
+
+                {
+                    DataTable userData = user.getDataUser(txtUser.Text, password);
+
+                    foreach (DataRow item in userData.Rows)
+                    {
+                        idUser = Convert.ToInt32(item.Field<int>(0));
+                        role = Convert.ToInt32(item.Field<int>(5));
+                        lastConnection = Convert.ToDateTime(item.Field<System.DateTime>(8));
+                        confirmation = item.Field<bool>(9);
+                        logCount = Convert.ToInt32(item.Field<int>(10));
+                        serviceId = Convert.ToInt32(item.Field<int>(11));
+                        mail = item.Field<string>(12).ToString();
+                    }
+                    if (confirmation == false)
+                    {
+                        if (MessageBox.Show("Usuario no confirmado, desea confirmarlo ahora?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            ConfirmUser confirmForm = new ConfirmUser(idUser, lastConnection, txtUser.Text);
+                            confirmForm.ShowDialog();
+                            flag = 1;
+                        }
+                    }
+                    else
+                    {
+                        if (logCount == 0)
+                        {
+                            mails.MakeMail(mail, "Has iniciado sesión por primera vez en el sistema de quirófanos. \n Con el usuario: " + txtUser.Text + " \n A las: " + DateTime.Now.ToString(), "PRIMER INICIO DE SESIÓN SISTEMA DE QUIRÓFANOS", "");
+                        }
+
+                        logCount++;
+                        user.addLoginCount(idUser, logCount, lastConnection);
+                        this.Hide();
+                        FormWelcome fW = new FormWelcome(txtUser.Text, role, serviceId, idUser);
+                        fW.labelUser.Text = txtUser.Text;
+                        fW.ShowDialog();
+
+                    }
+
+                }
+            }
+        }
     }
 }

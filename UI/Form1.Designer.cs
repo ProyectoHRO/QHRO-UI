@@ -38,11 +38,12 @@ namespace UI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelSlideMenu = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -73,9 +74,9 @@ namespace UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSlideMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel20.SuspendLayout();
             this.panel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel17.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panelReportsMenu.SuspendLayout();
@@ -131,7 +132,7 @@ namespace UI
             this.labelUserLog.AutoSize = true;
             this.labelUserLog.Font = new System.Drawing.Font("Arial", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUserLog.ForeColor = System.Drawing.Color.White;
-            this.labelUserLog.Location = new System.Drawing.Point(1258, 11);
+            this.labelUserLog.Location = new System.Drawing.Point(593, 11);
             this.labelUserLog.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUserLog.Name = "labelUserLog";
             this.labelUserLog.Size = new System.Drawing.Size(100, 25);
@@ -144,7 +145,7 @@ namespace UI
             this.labelUser.AutoSize = true;
             this.labelUser.Font = new System.Drawing.Font("Arial", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUser.ForeColor = System.Drawing.Color.White;
-            this.labelUser.Location = new System.Drawing.Point(1154, 11);
+            this.labelUser.Location = new System.Drawing.Point(489, 11);
             this.labelUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(100, 25);
@@ -193,8 +194,9 @@ namespace UI
             // panelSlideMenu
             // 
             this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.panelSlideMenu.Controls.Add(this.label2);
+            this.panelSlideMenu.Controls.Add(this.iconPictureBox1);
             this.panelSlideMenu.Controls.Add(this.panel20);
-            this.panelSlideMenu.Controls.Add(this.pictureBox1);
             this.panelSlideMenu.Controls.Add(this.panel17);
             this.panelSlideMenu.Controls.Add(this.panel16);
             this.panelSlideMenu.Controls.Add(this.iconButtonAbout);
@@ -216,6 +218,32 @@ namespace UI
             this.panelSlideMenu.Name = "panelSlideMenu";
             this.panelSlideMenu.Size = new System.Drawing.Size(250, 844);
             this.panelSlideMenu.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(123, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 37);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Mi perfil";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.IdCard;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 111;
+            this.iconPictureBox1.Location = new System.Drawing.Point(4, 6);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(113, 111);
+            this.iconPictureBox1.TabIndex = 0;
+            this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // panel20
             // 
@@ -251,18 +279,6 @@ namespace UI
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(3, 45);
             this.panel23.TabIndex = 29;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::UI.Properties.Resources.Logo_Hospital_Regional_de_Occidente_blanco;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(228, 134);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel17
             // 
@@ -520,6 +536,7 @@ namespace UI
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1286, 844);
             this.panelContainer.TabIndex = 2;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // Form1
             // 
@@ -542,9 +559,10 @@ namespace UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSlideMenu.ResumeLayout(false);
+            this.panelSlideMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel18.ResumeLayout(false);
             this.panelReportsMenu.ResumeLayout(false);
@@ -584,7 +602,6 @@ namespace UI
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel22;
@@ -592,5 +609,7 @@ namespace UI
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel9;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
