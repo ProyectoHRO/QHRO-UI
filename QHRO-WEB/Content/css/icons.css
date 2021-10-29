@@ -7,3 +7,16 @@
     background-color: #001578;
 }
 
+.card.quiro{
+    background-color: white;
+    color: black;
+    width:200px;
+}
+
+.btn-outline-success{
+    color:white;
+}
+
+.col-sm-2.move{
+    left:100px;
+}

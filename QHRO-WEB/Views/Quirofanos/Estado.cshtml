@@ -11,72 +11,74 @@
      crossorigin="anonymous">
     </script>
 </head>
-<div class="container" id="reloadContent">
+<div class="container" id="reloadContent" style="padding-top:25px">
+
     <div class="row mb-3">
+        <div class="col-sm-11"></div>
         <div class="col-sm-1">
+            <button type="button" class="btn btn btn-success" onclick="reloadData()"><i class="fas fa-redo-alt"></i></button>
         </div>
-        <script>
-            function reloadData() {
-                $(document).ready(function () {
-                    $('#reloadContent').load('/Quirofanos/Estado');
-                })
-            }
 
+    </div>
+    <script>
+        function reloadData() {
             $(document).ready(function () {
-                var refreshId = setInterval(function () {
-                    $('#reloadContent').load('/Quirofanos/Estado');
-                }, 60000);
-            });
+                $('#reloadContent').load('/Quirofanos/Estado');
+            })
+        }
 
-        </script>
+        $(document).ready(function () {
+            var refreshId = setInterval(function () {
+                $('#reloadContent').load('/Quirofanos/Estado');
+            }, 60000);
+        });
 
-        @foreach (var item in Model)
-        {
-            string numbenQ = item.Qx;
-            string nameQ = item.Nombre;
-            string procQ = item.Procedimiento;
-            string statusQ = item.estado_actual;
-            string colorQ = "";
-            switch (statusQ)
+    </script>
+    <v class="row mb-3">
+        <div class="row row-cols-1 row-cols-md-8 g-4">
+
+            @foreach (var item in Model)
             {
-                case "Disponible":
-                    colorQ = "green";
-                    break;
+                string numbenQ = item.Qx;
+                string nameQ = item.Nombre;
+                string procQ = item.Procedimiento;
+                string statusQ = item.estado_actual;
+                string colorQ = "";
+                switch (statusQ)
+                {
+                    case "Disponible":
+                        colorQ = "#78f712";
+                        break;
 
-                case "Mantenimiento":
-                    colorQ = "yellow";
-                    break;
+                    case "Mantenimiento":
+                        colorQ = "#EE9A12";
+                        break;
 
-                case "Ocupado":
-                    colorQ = "red";
-                    break;
+                    case "Ocupado":
+                        colorQ = "red";
+                        break;
 
-                default: break;
-            }
-
-            <div class="col-sm-2">
-                <div class="card">
-                    <div class="text-center">
-                        <h3 class="card-title">@item.Qx</h3>
-                    </div>
-                    <div class="text-center">
-                        <i class="fas fa-procedures fa-5x" style="color:@colorQ"></i>
-                    </div>
-                    <div class="text-center">
-                        <h5 class="card-title">Estado:@item.estado_actual </h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">@item.Nombre</li>
-                            <li class="list-group-item">@item.Procedimiento</li>
-                        </ul>
+                    default: break;
+                }
+                <div class="col-md-3">
+                    <div class="card quiro border border-dark rounded">
+                        <div class="text-center">
+                            <h3 class="card-title">@item.Qx</h3>
+                        </div>
+                        <div class="text-center">
+                            <i class="fas fa-procedures fa-5x" style="color:@colorQ"></i>
+                        </div>
+                        <div class="text-center">
+                            <h5 class="card-title">Estado:@item.estado_actual </h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">@item.Nombre</li>
+                                <li class="list-group-item">@item.Procedimiento</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
-        <div class="col-sm-1">
-            <br><br />
+            }
         </div>
-        <button type="button" class="btn btn-outline-success" onclick="reloadData()">Reload</button>
-    </div>
 </div>
