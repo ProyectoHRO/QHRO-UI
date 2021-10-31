@@ -29,7 +29,6 @@ namespace UI
         private void iconButtonList_Click(object sender, EventArgs e)
         {
             ListServices();
-            ListServices();
         }
 
         private void Services_Resize(object sender, EventArgs e)
@@ -73,7 +72,7 @@ namespace UI
                        
                 }
                 else
-                    MessageBox.Show("Porfavor llena los campos");
+                    MessageBox.Show("Por favor llena los campos");
              
             //state = 0;
 
@@ -128,7 +127,6 @@ namespace UI
 
         private void Services_Load(object sender, EventArgs e)
         {
-            ListServices();
             ListServices();
         }
     }
