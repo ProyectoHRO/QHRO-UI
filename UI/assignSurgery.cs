@@ -147,7 +147,7 @@ namespace UI
                     }
                     else
                     {
-                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + " - ";
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "-";
                     }
                 }
                 labelAnesthesiaTypesAsigned.Text = allTypes;

@@ -70,12 +70,11 @@ namespace UI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.7347F));
             this.tableLayoutPanel1.Controls.Add(this.dataGridTypesAnesthesia, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(73, 166);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(55, 135);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1568, 706);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1176, 574);
             this.tableLayoutPanel1.TabIndex = 42;
             // 
             // dataGridTypesAnesthesia
@@ -106,8 +105,8 @@ namespace UI
             this.dataGridTypesAnesthesia.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridTypesAnesthesia.EnableHeadersVisualStyles = false;
             this.dataGridTypesAnesthesia.GridColor = System.Drawing.Color.White;
-            this.dataGridTypesAnesthesia.Location = new System.Drawing.Point(3, 2);
-            this.dataGridTypesAnesthesia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridTypesAnesthesia.Location = new System.Drawing.Point(2, 2);
+            this.dataGridTypesAnesthesia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridTypesAnesthesia.Name = "dataGridTypesAnesthesia";
             this.dataGridTypesAnesthesia.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -127,7 +126,7 @@ namespace UI
             this.dataGridTypesAnesthesia.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridTypesAnesthesia.RowTemplate.Height = 24;
             this.dataGridTypesAnesthesia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridTypesAnesthesia.Size = new System.Drawing.Size(593, 702);
+            this.dataGridTypesAnesthesia.Size = new System.Drawing.Size(445, 570);
             this.dataGridTypesAnesthesia.TabIndex = 31;
             this.dataGridTypesAnesthesia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridTypesAnesthesia_CellClick);
             // 
@@ -140,13 +139,12 @@ namespace UI
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.groupBoxAnesthesia, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(603, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(452, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(961, 698);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(721, 568);
             this.tableLayoutPanel2.TabIndex = 32;
             // 
             // groupBoxAnesthesia
@@ -158,11 +156,9 @@ namespace UI
             this.groupBoxAnesthesia.Controls.Add(this.labelID);
             this.groupBoxAnesthesia.Enabled = false;
             this.groupBoxAnesthesia.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAnesthesia.Location = new System.Drawing.Point(4, 4);
-            this.groupBoxAnesthesia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxAnesthesia.Location = new System.Drawing.Point(3, 3);
             this.groupBoxAnesthesia.Name = "groupBoxAnesthesia";
-            this.groupBoxAnesthesia.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBoxAnesthesia.Size = new System.Drawing.Size(953, 341);
+            this.groupBoxAnesthesia.Size = new System.Drawing.Size(715, 278);
             this.groupBoxAnesthesia.TabIndex = 38;
             this.groupBoxAnesthesia.TabStop = false;
             this.groupBoxAnesthesia.Text = "Datos de anestesia";
@@ -173,28 +169,27 @@ namespace UI
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.66667F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.33333F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.textBoxNameAnesthesia, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 1, 1);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(227, 90);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(170, 73);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.01408F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.98592F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(572, 161);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(429, 131);
             this.tableLayoutPanel3.TabIndex = 32;
             // 
             // textBoxNameAnesthesia
             // 
             this.textBoxNameAnesthesia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxNameAnesthesia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNameAnesthesia.Location = new System.Drawing.Point(248, 40);
-            this.textBoxNameAnesthesia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNameAnesthesia.Location = new System.Drawing.Point(186, 32);
             this.textBoxNameAnesthesia.MaxLength = 100;
             this.textBoxNameAnesthesia.Name = "textBoxNameAnesthesia";
-            this.textBoxNameAnesthesia.Size = new System.Drawing.Size(320, 30);
+            this.textBoxNameAnesthesia.Size = new System.Drawing.Size(240, 26);
             this.textBoxNameAnesthesia.TabIndex = 15;
             // 
             // panel1
@@ -202,10 +197,10 @@ namespace UI
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.Controls.Add(this.labelAnesthesiaName);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(6, 36);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(5, 29);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(235, 39);
+            this.panel1.Size = new System.Drawing.Size(176, 32);
             this.panel1.TabIndex = 23;
             // 
             // labelAnesthesiaName
@@ -213,9 +208,10 @@ namespace UI
             this.labelAnesthesiaName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAnesthesiaName.AutoSize = true;
             this.labelAnesthesiaName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnesthesiaName.Location = new System.Drawing.Point(36, 7);
+            this.labelAnesthesiaName.Location = new System.Drawing.Point(27, 6);
+            this.labelAnesthesiaName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelAnesthesiaName.Name = "labelAnesthesiaName";
-            this.labelAnesthesiaName.Size = new System.Drawing.Size(166, 24);
+            this.labelAnesthesiaName.Size = new System.Drawing.Size(138, 20);
             this.labelAnesthesiaName.TabIndex = 0;
             this.labelAnesthesiaName.Text = "Nombre de anestesia";
             this.labelAnesthesiaName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +221,10 @@ namespace UI
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(17, 7);
+            this.label11.Location = new System.Drawing.Point(13, 6);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(18, 24);
+            this.label11.Size = new System.Drawing.Size(15, 19);
             this.label11.TabIndex = 23;
             this.label11.Text = "*";
             // 
@@ -236,9 +233,10 @@ namespace UI
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(542, 124);
+            this.label4.Location = new System.Drawing.Point(406, 100);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 24);
+            this.label4.Size = new System.Drawing.Size(21, 20);
             this.label4.TabIndex = 27;
             this.label4.Text = "ID";
             this.label4.Visible = false;
@@ -246,10 +244,9 @@ namespace UI
             // labelID
             // 
             this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(57, 574);
-            this.labelID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelID.Location = new System.Drawing.Point(43, 466);
             this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(61, 24);
+            this.labelID.Size = new System.Drawing.Size(52, 20);
             this.labelID.TabIndex = 20;
             this.labelID.Text = "label10";
             this.labelID.Visible = false;
@@ -263,12 +260,11 @@ namespace UI
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel4, 1, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(4, 353);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 287);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(953, 341);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(715, 278);
             this.tableLayoutPanel5.TabIndex = 39;
             // 
             // tableLayoutPanel4
@@ -281,14 +277,13 @@ namespace UI
             this.tableLayoutPanel4.Controls.Add(this.iconButtonNew, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.iconButtonSave, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.iconButtonUpdate, 0, 2);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(480, 4);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(360, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 114F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(469, 333);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(352, 272);
             this.tableLayoutPanel4.TabIndex = 34;
             // 
             // iconButtonNew
@@ -306,10 +301,10 @@ namespace UI
             this.iconButtonNew.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonNew.IconSize = 30;
             this.iconButtonNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonNew.Location = new System.Drawing.Point(162, 17);
-            this.iconButtonNew.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButtonNew.Location = new System.Drawing.Point(122, 14);
+            this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButtonNew.Name = "iconButtonNew";
-            this.iconButtonNew.Size = new System.Drawing.Size(304, 75);
+            this.iconButtonNew.Size = new System.Drawing.Size(228, 61);
             this.iconButtonNew.TabIndex = 33;
             this.iconButtonNew.Text = "Agregar nuevo tipo";
             this.iconButtonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -332,10 +327,10 @@ namespace UI
             this.iconButtonSave.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSave.IconSize = 30;
             this.iconButtonSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSave.Location = new System.Drawing.Point(162, 126);
-            this.iconButtonSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButtonSave.Location = new System.Drawing.Point(122, 103);
+            this.iconButtonSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButtonSave.Name = "iconButtonSave";
-            this.iconButtonSave.Size = new System.Drawing.Size(304, 75);
+            this.iconButtonSave.Size = new System.Drawing.Size(228, 61);
             this.iconButtonSave.TabIndex = 35;
             this.iconButtonSave.Text = "Guardar";
             this.iconButtonSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -358,10 +353,10 @@ namespace UI
             this.iconButtonUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonUpdate.IconSize = 30;
             this.iconButtonUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonUpdate.Location = new System.Drawing.Point(162, 238);
-            this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.iconButtonUpdate.Location = new System.Drawing.Point(122, 194);
+            this.iconButtonUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconButtonUpdate.Name = "iconButtonUpdate";
-            this.iconButtonUpdate.Size = new System.Drawing.Size(304, 75);
+            this.iconButtonUpdate.Size = new System.Drawing.Size(228, 61);
             this.iconButtonUpdate.TabIndex = 34;
             this.iconButtonUpdate.Text = "Actualizar tipo de anestesia";
             this.iconButtonUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -371,23 +366,22 @@ namespace UI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(839, 166);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(629, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 41;
             this.label1.Text = "label1";
             this.label1.Visible = false;
             // 
             // FormTypesOfAnesthesia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1715, 1039);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1286, 844);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormTypesOfAnesthesia";
             this.Text = "FormTypesOfAnesthesia";
             this.Load += new System.EventHandler(this.FormTypesOfAnesthesia_Load);

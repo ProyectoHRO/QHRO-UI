@@ -97,6 +97,12 @@
     <Compile Include="Doctors.Designer.cs">
       <DependentUpon>Doctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEditInterventios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditInterventios.Designer.cs">
+      <DependentUpon>FormEditInterventios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDiffers.resx">
       <DependentUpon>FormDiffers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditInterventios.resx">
+      <DependentUpon>FormEditInterventios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>

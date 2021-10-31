@@ -26,10 +26,10 @@ namespace UI
 
         public bool Activate { get; set; }
         int initx = 4;
-        int inity = 140;
+        int inity = 101;
+
         IconButton createButton(string name, string text)
         {
-            
             IconButton btn = new IconButton();
             btn.Text = text;
             btn.Name = name;
@@ -39,7 +39,7 @@ namespace UI
             }
             else if(text=="Anestesistas")
             {
-                btn.IconChar = FontAwesome.Sharp.IconChar.Syringe;
+                btn.IconChar = FontAwesome.Sharp.IconChar.UserMd;
             }
             else if (text == "Pacientes")
             {
@@ -81,7 +81,14 @@ namespace UI
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
             }
-            
+            else if(text=="Anestesia")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.Syringe;
+            }
+            //else if (text == "Editar programaciones")
+            //{
+            //    btn.IconChar = FontAwesome.Sharp.IconChar.BriefcaseMedical;
+            //}
             btn.IconSize = 38;
             btn.IconColor = Color.White;
             btn.Font = new Font("Arial", 12f);
@@ -174,6 +181,14 @@ namespace UI
             {
                 openChildForm(new FormsSchedules());
             }
+            if(btn.Name=="iconButtonAnestesia")
+            {
+                openChildForm(new FormTypesOfAnesthesia());
+            }
+            //if (btn.Name == "iconButtonEditar programaciones")
+            //{
+            //    openChildForm(new FormEditInterventios());
+            //}
         }
         public Form1(string userLog, int role, int serviceId, int idUser)
         {
