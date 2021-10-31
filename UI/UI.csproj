@@ -145,6 +145,12 @@
     <Compile Include="FormsSchedules.Designer.cs">
       <DependentUpon>FormsSchedules.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTypesOfAnesthesia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTypesOfAnesthesia.Designer.cs">
+      <DependentUpon>FormTypesOfAnesthesia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUserPermits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +264,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsSchedules.resx">
       <DependentUpon>FormsSchedules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTypesOfAnesthesia.resx">
+      <DependentUpon>FormTypesOfAnesthesia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUserPermits.resx">
       <DependentUpon>FormUserPermits.cs</DependentUpon>
