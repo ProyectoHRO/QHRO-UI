@@ -26,5 +26,10 @@ namespace QHRO_WEB.Controllers
         {
             return View();
         }
+
+        public ActionResult No_Historia()
+        {
+            return View();
+        }
     }
 }
