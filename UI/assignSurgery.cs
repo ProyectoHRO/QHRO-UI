@@ -16,6 +16,7 @@ namespace UI
         private ClassOperatingRoom operatingRooms = new ClassOperatingRoom();
         private Surgeries surgeriesLogic = new Surgeries();
         private ClassMail mail = new ClassMail();
+        private ClassAnesthesia anesthesia = new ClassAnesthesia();
         private ClassDoctor doctorss = new ClassDoctor();
         int userId;
         public assignSurgery(int idUser)
@@ -41,9 +42,20 @@ namespace UI
                 dataGridView1.Refresh();
             }
         }
+
+        void listAnesthesiaTypes()
+        {
+            DataTable anesthesiaList = anesthesia.getAnesthesia();
+            foreach (DataRow item in anesthesiaList.Rows)
+            {
+                listBoxAnesthesiaId.Items.Add(Convert.ToInt32(item.Field<int>(0)));
+                checkedListBoxAnesthesiaTypes.Items.Add(item.Field<string>(1).ToString());
+            }
+        }
         private void assignSurgery_Load(object sender, EventArgs e)
         {
             ListRequestedSugreries();
+            listAnesthesiaTypes();
             DataTable infoOperatingRooms = operatingRooms.listoperatingRooms();
             comboBoxOperatingRooms.ValueMember = "idquirofano";
             comboBoxOperatingRooms.DisplayMember = "no_quirofano";
@@ -123,6 +135,24 @@ namespace UI
 
         private void iconButtonConfirm_Click(object sender, EventArgs e)
         {
+
+            if (checkedListBoxAnesthesiaTypes.CheckedItems.Count != 0)
+            {
+                string allTypes = "";
+                for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                {
+                    if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                    {
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                    }
+                    else
+                    {
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + " - ";
+                    }
+                }
+                labelAnesthesiaTypesAsigned.Text = allTypes;
+            }
+
             List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
             ClassDtoAssistants assistant;
             for (int i = 0; i < listBoxIds.Items.Count; i++)
@@ -146,7 +176,7 @@ namespace UI
 
             string response = surgeriesLogic.assignSurgery(
                 userId,
-                comboBoxAnesthesiaType.Text,
+                labelAnesthesiaTypesAsigned.Text,
                 comboBoxSurgeryType.Text,
                 dateTimeSurgeryDate.Value.Date,
                 comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
@@ -219,6 +249,16 @@ namespace UI
             {
                 MessageBox.Show("Cancelado");
             }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+
+            
         }
     }
 }

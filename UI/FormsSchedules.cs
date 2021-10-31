@@ -63,7 +63,6 @@ namespace UI
             surgerieId = Convert.ToInt32(dataGridViewSchedule.Rows[e.RowIndex].Cells[0].Value);
             pacientName = dataGridViewSchedule.Rows[e.RowIndex].Cells[4].Value.ToString();
             hour = dataGridViewSchedule.Rows[e.RowIndex].Cells[1].Value.ToString();
-            label2.Text = hour.ToString();
         }
 
         private void iconButtonReSchedule_Click(object sender, EventArgs e)

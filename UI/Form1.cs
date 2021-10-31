@@ -347,5 +347,10 @@ namespace UI
         {
 
         }
+
+        private void panelSlideMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
