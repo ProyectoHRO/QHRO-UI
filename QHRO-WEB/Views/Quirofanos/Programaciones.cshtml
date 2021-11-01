@@ -4,8 +4,23 @@
 }
 
 @*Vista cirugias programadas y emergencia*@
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
+    </script>
+</head>
 
 <div class="container" id="reloadContent">
+
+    <div class="row mb-3">
+        <div class="col-sm-11"></div>
+        <div class="col-sm-1">
+            <button type="button" class="btn btn btn-success" onclick="reloadData()"><i class="fas fa-redo-alt"></i></button>
+        </div>
+
+    </div>
+
     <script>
         function reloadData() {
             $(document).ready(function () {
@@ -61,7 +76,6 @@
                     }
                 </tbody>
             </table>
-            <button type="button" class="btn btn-outline-success" onclick="reloadData()">Reload</button>
         </div>
     </div>
 
