@@ -187,7 +187,7 @@ namespace UI
             }
             if (btn.Name == "iconButtonEditar programaciones")
             {
-                openChildForm(new FormEditInterventios());
+                openChildForm(new FormEditInterventios(userId));
             }
         }
         public Form1(string userLog, int role, int serviceId, int idUser)

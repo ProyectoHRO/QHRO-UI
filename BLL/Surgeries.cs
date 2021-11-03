@@ -19,6 +19,7 @@ namespace BLL
             return surgeries.getDailyReport(date);
         }
 
+       
         public DataTable getSurgeriesByHistoryNumber(string historyNumber)
         {
             return surgeries.getSurgeriesByHistoryNumber(historyNumber);

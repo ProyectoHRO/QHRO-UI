@@ -26,8 +26,47 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+        
+        public DataTable GetUnfinishedSurgeries()
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarCirugiasSinFinalizar";
+            command.CommandType = CommandType.StoredProcedure;
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            connection.CloseConnection();
+            return tableData;
+        }
 
-
+        public void updateSurgerieAnesthetist(
+            int surgerieId,
+            int anesthetistId,
+            string anesType
+            )
+        {
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ActualizarCirugiaAnes";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            command.Parameters.AddWithValue("@idanestesia", anesthetistId);
+            command.Parameters.AddWithValue("@tipo_anestesia", anesType);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            connection.CloseConnection();
+        }
+        
+        public DataTable GetSurgeriesWithoutAnesthetist()
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarCirugiasSinAnestecia";
+            command.CommandType = CommandType.StoredProcedure;
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            connection.CloseConnection();
+            return tableData;
+        }
         public DataTable GetDailySurgeriesByRoom(int roomNumber)
         {
             tableData = new DataTable();
@@ -67,7 +106,33 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
-       
+        public DataTable getInfoAnesthetist(int surgerieId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerInfoAnestesista";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+        public DataTable getInfoUnfinishiedSurgerie(int surgerieId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerInfoCirugiaSinFinalizar";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
         public DataTable getSurgeriesByHour(DateTime surgeryDate, string hour, int opRoomId)
         {
             tableData = new DataTable();
@@ -206,6 +271,8 @@ namespace DAL
             return response;
         }
 
+
+
         public DataTable getAssistantsBySurgerie(int surgerieId)
         {
             tableData = new DataTable();
@@ -284,7 +351,37 @@ namespace DAL
             command.Parameters.Clear();
             connection.CloseConnection();
             return response;
-        }  
+        }
+        public void UpdateSurgerie(
+           int surgerieId,
+           string surgeryType,
+           DateTime surgeryDate,
+           int opRoomId,
+           int programationId,
+           string relevance,
+           string interventionDetail,
+           string time,
+           DataTable assistantDetail,
+           DataTable doctorDetail
+           )
+        {
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ActualizarCirugia";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            command.Parameters.AddWithValue("@tipo_cirugia", surgeryType);
+            command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
+            command.Parameters.AddWithValue("@idquirofano", opRoomId);
+            command.Parameters.AddWithValue("@id_programaciones", programationId);
+            command.Parameters.AddWithValue("@relevancia", relevance);
+            command.Parameters.AddWithValue("@detalleIntervencion", interventionDetail);
+            command.Parameters.AddWithValue("@hora", time);
+            command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
+            command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            connection.CloseConnection();
+        }
         public string AssignSurgeryAnesthetist(
          int userId,
          string anesthesiaType,
