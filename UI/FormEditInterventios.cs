@@ -16,5 +16,10 @@ namespace UI
         {
             InitializeComponent();
         }
+
+        private void tableLayoutPanel14_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
