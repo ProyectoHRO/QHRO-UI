@@ -93,6 +93,74 @@ namespace BLL
         {
             return surgeries.finishSurgerie(idSurgerie);
         }
+        
+             public string assignSurgeryBasic(
+                  int userId,
+            string surgeryType,
+            DateTime surgeryDate,
+            int opRoomId,
+            int programationId,
+            string relevance,
+            string interventionDetail,
+            string surgeryTime,
+            string time, List<ClassDtoAssistants> assistantsList, List<ClassDtoDoctors> doctorsList)
+        {
+            string response = "";
+            DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, time, opRoomId);
+            if (infoSurgeries.Rows.Count < 1)
+            {
+                DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
+                foreach (ClassDtoAssistants item in assistantsList)
+                {
+                    dataAssistants.Rows.Add(item.AssistandId);
+                }
+                DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
+                foreach (ClassDtoDoctors item in doctorsList)
+                {
+                    dataDoctors.Rows.Add(item.DoctorId);
+                }
+                response = surgeries.sp_assignSurgeryBasic(
+                    userId,
+                    surgeryType,
+                    surgeryDate.Date,
+                    opRoomId,
+                    programationId,
+                    relevance,
+                    interventionDetail,
+                    surgeryTime,
+                    dataAssistants,
+                    dataDoctors
+                    );
+            }
+            else
+            {
+                response = "Ya se encuentra asignada una intervención a las: " + time + " en el quirófano: " + opRoomId;
+
+            }
+
+            return response;
+
+
+        }
+        public string assignSurgeryAnesthetist(
+                  int userId,
+         string anesthesiaType,
+         int anesthetistId,
+         int programationId)
+         {
+            string response = "";
+            
+                response = surgeries.AssignSurgeryAnesthetist(
+                    userId,
+                    anesthesiaType,
+                    anesthetistId,
+                    programationId
+                    );
+          
+
+            return response;
+
+        }
         public string assignSurgery(int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate,string surgeryTime, int opRoomId, 
             int anesthetistId, int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
         {

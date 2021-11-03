@@ -85,10 +85,10 @@ namespace UI
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.Syringe;
             }
-            //else if (text == "Editar programaciones")
-            //{
-            //    btn.IconChar = FontAwesome.Sharp.IconChar.BriefcaseMedical;
-            //}
+            else if (text == "Editar programaciones")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.BriefcaseMedical;
+            }
             btn.IconSize = 38;
             btn.IconColor = Color.White;
             btn.Font = new Font("Arial", 12f);
@@ -185,10 +185,10 @@ namespace UI
             {
                 openChildForm(new FormTypesOfAnesthesia());
             }
-            //if (btn.Name == "iconButtonEditar programaciones")
-            //{
-            //    openChildForm(new FormEditInterventios());
-            //}
+            if (btn.Name == "iconButtonEditar programaciones")
+            {
+                openChildForm(new FormEditInterventios());
+            }
         }
         public Form1(string userLog, int role, int serviceId, int idUser)
         {

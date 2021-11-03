@@ -284,8 +284,68 @@ namespace DAL
             command.Parameters.Clear();
             connection.CloseConnection();
             return response;
+        }  
+        public string AssignSurgeryAnesthetist(
+         int userId,
+         string anesthesiaType,
+         int anesthetistId,
+         int programationId
+         )
+        {
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "sp_assignSurgeryAnesthethist";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
+            command.Parameters.AddWithValue("@tipo_anestesia", anesthesiaType);
+            command.Parameters.AddWithValue("@idanestesia", anesthetistId);
+            command.Parameters.AddWithValue("@id_programaciones", programationId);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
         }
+        
 
+        public string sp_assignSurgeryBasic(
+         int userId,
+         
+            string surgeryType,
+            DateTime surgeryDate,
+            int opRoomId,
+            int programationId,
+            string relevance,
+            string interventionDetail,
+            string time,
+            DataTable assistantDetail,
+            DataTable doctorDetail
+         )
+        {
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "sp_assignSurgeryBasic";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
+            command.Parameters.AddWithValue("@tipo_cirugia", surgeryType);
+            command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
+            command.Parameters.AddWithValue("@idquirofano", opRoomId);
+            command.Parameters.AddWithValue("@id_programaciones", programationId);
+            command.Parameters.AddWithValue("@relevancia", relevance);
+            command.Parameters.AddWithValue("@detalleIntervencion", interventionDetail);
+            command.Parameters.AddWithValue("@hora", time);
+            command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
+            command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
+        }
 
         public string requestSurgery(
             int userId,

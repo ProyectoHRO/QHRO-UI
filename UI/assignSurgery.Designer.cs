@@ -29,10 +29,10 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxpatientData = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,7 +48,6 @@ namespace UI
             this.panel2 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.labelfirstName = new System.Windows.Forms.Label();
-            this.labelsecondName = new System.Windows.Forms.Label();
             this.comboBoxSurgeryType = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
@@ -64,6 +63,7 @@ namespace UI
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
+            this.labelsecondName = new System.Windows.Forms.Label();
             this.listViewAssistants = new System.Windows.Forms.ListView();
             this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -91,16 +91,16 @@ namespace UI
             this.groupBoxDocsData = new System.Windows.Forms.GroupBox();
             this.iconButtonDeleteDoctor = new FontAwesome.Sharp.IconButton();
             this.groupBoxAnesthetistData = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.iconButtonAddAnesthetist = new FontAwesome.Sharp.IconButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxAnestethistName = new System.Windows.Forms.TextBox();
-            this.labelIdAnesthetist = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.checkedListBoxAnesthesiaTypes = new System.Windows.Forms.CheckedListBox();
-            this.labelAnesthesiaTypesAsigned = new System.Windows.Forms.Label();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
+            this.checkedListBoxAnesthesiaTypes = new System.Windows.Forms.CheckedListBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxAnestethistName = new System.Windows.Forms.TextBox();
+            this.iconButtonAddAnesthetist = new FontAwesome.Sharp.IconButton();
+            this.labelIdAnesthetist = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.labelAnesthesiaTypesAsigned = new System.Windows.Forms.Label();
             this.groupBoxpatientData.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -119,10 +119,10 @@ namespace UI
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBoxDocsData.SuspendLayout();
             this.groupBoxAnesthetistData.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxpatientData
@@ -134,9 +134,9 @@ namespace UI
             this.groupBoxpatientData.Enabled = false;
             this.groupBoxpatientData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxpatientData.Location = new System.Drawing.Point(10, 272);
-            this.groupBoxpatientData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxpatientData.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxpatientData.Name = "groupBoxpatientData";
-            this.groupBoxpatientData.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxpatientData.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxpatientData.Size = new System.Drawing.Size(1265, 167);
             this.groupBoxpatientData.TabIndex = 26;
             this.groupBoxpatientData.TabStop = false;
@@ -179,14 +179,14 @@ namespace UI
             this.tableLayoutPanel3.Controls.Add(this.comboBoxSurgeryType, 3, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel10, 3, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.13274F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.43363F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.43363F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(823, 129);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(822, 129);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label4
@@ -258,7 +258,7 @@ namespace UI
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.labelhistoryNumber);
             this.panel1.Location = new System.Drawing.Point(332, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(124, 32);
             this.panel1.TabIndex = 23;
@@ -294,7 +294,7 @@ namespace UI
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.labelfirstName);
             this.panel2.Location = new System.Drawing.Point(332, 61);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(124, 28);
             this.panel2.TabIndex = 23;
@@ -324,18 +324,6 @@ namespace UI
             this.labelfirstName.TabIndex = 1;
             this.labelfirstName.Text = "Tipo de cirugía";
             // 
-            // labelsecondName
-            // 
-            this.labelsecondName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.labelsecondName.AutoSize = true;
-            this.labelsecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelsecondName.Location = new System.Drawing.Point(2, 2);
-            this.labelsecondName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelsecondName.Name = "labelsecondName";
-            this.labelsecondName.Size = new System.Drawing.Size(134, 20);
-            this.labelsecondName.TabIndex = 2;
-            this.labelsecondName.Text = "Tipo de anestesia";
-            // 
             // comboBoxSurgeryType
             // 
             this.comboBoxSurgeryType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -344,9 +332,9 @@ namespace UI
             this.comboBoxSurgeryType.Items.AddRange(new object[] {
             "Selectiva",
             "Emergencia"});
-            this.comboBoxSurgeryType.Location = new System.Drawing.Point(461, 61);
+            this.comboBoxSurgeryType.Location = new System.Drawing.Point(461, 65);
             this.comboBoxSurgeryType.Name = "comboBoxSurgeryType";
-            this.comboBoxSurgeryType.Size = new System.Drawing.Size(359, 28);
+            this.comboBoxSurgeryType.Size = new System.Drawing.Size(358, 28);
             this.comboBoxSurgeryType.TabIndex = 25;
             // 
             // tableLayoutPanel10
@@ -363,8 +351,8 @@ namespace UI
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(359, 52);
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(358, 52);
             this.tableLayoutPanel10.TabIndex = 37;
             // 
             // tableLayoutPanel11
@@ -383,7 +371,7 @@ namespace UI
             this.tableLayoutPanel11.Controls.Add(this.label3, 2, 0);
             this.tableLayoutPanel11.Controls.Add(this.comboBoxHour, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.label10, 0, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(151, 3);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(150, 3);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -398,7 +386,7 @@ namespace UI
             this.comboBoxTime.Items.AddRange(new object[] {
             "A.M",
             "P.M"});
-            this.comboBoxTime.Location = new System.Drawing.Point(152, 9);
+            this.comboBoxTime.Location = new System.Drawing.Point(152, 12);
             this.comboBoxTime.Name = "comboBoxTime";
             this.comboBoxTime.Size = new System.Drawing.Size(50, 28);
             this.comboBoxTime.TabIndex = 3;
@@ -469,7 +457,7 @@ namespace UI
             "57",
             "58",
             "59"});
-            this.comboBoxMin.Location = new System.Drawing.Point(101, 9);
+            this.comboBoxMin.Location = new System.Drawing.Point(101, 12);
             this.comboBoxMin.Name = "comboBoxMin";
             this.comboBoxMin.Size = new System.Drawing.Size(45, 28);
             this.comboBoxMin.TabIndex = 2;
@@ -504,7 +492,7 @@ namespace UI
             "10",
             "11",
             "12"});
-            this.comboBoxHour.Location = new System.Drawing.Point(45, 9);
+            this.comboBoxHour.Location = new System.Drawing.Point(45, 12);
             this.comboBoxHour.Name = "comboBoxHour";
             this.comboBoxHour.Size = new System.Drawing.Size(35, 28);
             this.comboBoxHour.TabIndex = 0;
@@ -526,7 +514,7 @@ namespace UI
             this.dateTimeSurgeryDate.Location = new System.Drawing.Point(3, 13);
             this.dateTimeSurgeryDate.Name = "dateTimeSurgeryDate";
             this.dateTimeSurgeryDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimeSurgeryDate.Size = new System.Drawing.Size(142, 26);
+            this.dateTimeSurgeryDate.Size = new System.Drawing.Size(141, 26);
             this.dateTimeSurgeryDate.TabIndex = 26;
             this.dateTimeSurgeryDate.Value = new System.DateTime(2021, 10, 27, 0, 0, 0, 0);
             // 
@@ -541,12 +529,12 @@ namespace UI
             this.tableLayoutPanel5.Controls.Add(this.comboBoxRelevance, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.label9, 0, 1);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(830, 3);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(829, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(418, 128);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(419, 128);
             this.tableLayoutPanel5.TabIndex = 19;
             // 
             // textBoxDiagnosis
@@ -555,11 +543,11 @@ namespace UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDiagnosis.Location = new System.Drawing.Point(100, 2);
-            this.textBoxDiagnosis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDiagnosis.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDiagnosis.MaxLength = 150;
             this.textBoxDiagnosis.Multiline = true;
             this.textBoxDiagnosis.Name = "textBoxDiagnosis";
-            this.textBoxDiagnosis.Size = new System.Drawing.Size(316, 78);
+            this.textBoxDiagnosis.Size = new System.Drawing.Size(317, 78);
             this.textBoxDiagnosis.TabIndex = 34;
             // 
             // comboBoxRelevance
@@ -570,9 +558,9 @@ namespace UI
             this.comboBoxRelevance.Items.AddRange(new object[] {
             "Mayor",
             "Menor"});
-            this.comboBoxRelevance.Location = new System.Drawing.Point(101, 92);
+            this.comboBoxRelevance.Location = new System.Drawing.Point(101, 96);
             this.comboBoxRelevance.Name = "comboBoxRelevance";
-            this.comboBoxRelevance.Size = new System.Drawing.Size(314, 28);
+            this.comboBoxRelevance.Size = new System.Drawing.Size(315, 28);
             this.comboBoxRelevance.TabIndex = 35;
             // 
             // label8
@@ -610,6 +598,18 @@ namespace UI
             this.labelID.TabIndex = 18;
             this.labelID.Text = "label10";
             this.labelID.Visible = false;
+            // 
+            // labelsecondName
+            // 
+            this.labelsecondName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelsecondName.AutoSize = true;
+            this.labelsecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelsecondName.Location = new System.Drawing.Point(2, 2);
+            this.labelsecondName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelsecondName.Name = "labelsecondName";
+            this.labelsecondName.Size = new System.Drawing.Size(134, 20);
+            this.labelsecondName.TabIndex = 2;
+            this.labelsecondName.Text = "Tipo de anestesia";
             // 
             // listViewAssistants
             // 
@@ -686,7 +686,7 @@ namespace UI
             this.iconButtonAddDoctor.IconSize = 30;
             this.iconButtonAddDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAddDoctor.Location = new System.Drawing.Point(476, 195);
-            this.iconButtonAddDoctor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonAddDoctor.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonAddDoctor.Name = "iconButtonAddDoctor";
             this.iconButtonAddDoctor.Size = new System.Drawing.Size(133, 38);
             this.iconButtonAddDoctor.TabIndex = 28;
@@ -752,7 +752,7 @@ namespace UI
             this.comboBoxOperatingRooms.Items.AddRange(new object[] {
             "General",
             "Epidural"});
-            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(135, 9);
+            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(135, 12);
             this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
             this.comboBoxOperatingRooms.Size = new System.Drawing.Size(126, 28);
             this.comboBoxOperatingRooms.TabIndex = 27;
@@ -781,7 +781,7 @@ namespace UI
             this.listBoxAnesthesiaId.FormattingEnabled = true;
             this.listBoxAnesthesiaId.ItemHeight = 20;
             this.listBoxAnesthesiaId.Location = new System.Drawing.Point(111, 215);
-            this.listBoxAnesthesiaId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxAnesthesiaId.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxAnesthesiaId.Name = "listBoxAnesthesiaId";
             this.listBoxAnesthesiaId.Size = new System.Drawing.Size(56, 24);
             this.listBoxAnesthesiaId.TabIndex = 36;
@@ -812,7 +812,7 @@ namespace UI
             this.iconButtonDeleteAll.IconSize = 30;
             this.iconButtonDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonDeleteAll.Location = new System.Drawing.Point(355, 193);
-            this.iconButtonDeleteAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonDeleteAll.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonDeleteAll.Name = "iconButtonDeleteAll";
             this.iconButtonDeleteAll.Size = new System.Drawing.Size(119, 38);
             this.iconButtonDeleteAll.TabIndex = 34;
@@ -836,7 +836,7 @@ namespace UI
             this.iconButtonAddAssistant.IconSize = 30;
             this.iconButtonAddAssistant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAddAssistant.Location = new System.Drawing.Point(478, 193);
-            this.iconButtonAddAssistant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonAddAssistant.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonAddAssistant.Name = "iconButtonAddAssistant";
             this.iconButtonAddAssistant.Size = new System.Drawing.Size(133, 38);
             this.iconButtonAddAssistant.TabIndex = 33;
@@ -863,7 +863,7 @@ namespace UI
             this.iconButtonConfirm.IconSize = 55;
             this.iconButtonConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonConfirm.Location = new System.Drawing.Point(280, 2);
-            this.iconButtonConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonConfirm.Name = "iconButtonConfirm";
             this.iconButtonConfirm.Size = new System.Drawing.Size(334, 79);
             this.iconButtonConfirm.TabIndex = 34;
@@ -939,7 +939,7 @@ namespace UI
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 347F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 426F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1256, 426);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
@@ -992,7 +992,7 @@ namespace UI
             this.iconButtonDeleteDoctor.IconSize = 30;
             this.iconButtonDeleteDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonDeleteDoctor.Location = new System.Drawing.Point(353, 196);
-            this.iconButtonDeleteDoctor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonDeleteDoctor.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonDeleteDoctor.Name = "iconButtonDeleteDoctor";
             this.iconButtonDeleteDoctor.Size = new System.Drawing.Size(119, 38);
             this.iconButtonDeleteDoctor.TabIndex = 34;
@@ -1017,155 +1017,6 @@ namespace UI
             this.groupBoxAnesthetistData.TabStop = false;
             this.groupBoxAnesthetistData.Text = "Anestesia";
             this.groupBoxAnesthetistData.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.71257F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.28743F));
-            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.textBoxAnestethistName, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.iconButtonAddAnesthetist, 1, 1);
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(295, 121);
-            this.tableLayoutPanel8.TabIndex = 38;
-            // 
-            // iconButtonAddAnesthetist
-            // 
-            this.iconButtonAddAnesthetist.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconButtonAddAnesthetist.BackColor = System.Drawing.Color.White;
-            this.iconButtonAddAnesthetist.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonAddAnesthetist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonAddAnesthetist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonAddAnesthetist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonAddAnesthetist.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonAddAnesthetist.IconChar = FontAwesome.Sharp.IconChar.SearchPlus;
-            this.iconButtonAddAnesthetist.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonAddAnesthetist.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonAddAnesthetist.IconSize = 30;
-            this.iconButtonAddAnesthetist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAddAnesthetist.Location = new System.Drawing.Point(174, 71);
-            this.iconButtonAddAnesthetist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconButtonAddAnesthetist.Name = "iconButtonAddAnesthetist";
-            this.iconButtonAddAnesthetist.Size = new System.Drawing.Size(119, 38);
-            this.iconButtonAddAnesthetist.TabIndex = 34;
-            this.iconButtonAddAnesthetist.Text = "Agregar";
-            this.iconButtonAddAnesthetist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonAddAnesthetist.UseVisualStyleBackColor = false;
-            this.iconButtonAddAnesthetist.Click += new System.EventHandler(this.iconButtonAddAnesthetist_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 36);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Anestesista Asignado:";
-            // 
-            // textBoxAnestethistName
-            // 
-            this.textBoxAnestethistName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxAnestethistName.Location = new System.Drawing.Point(131, 17);
-            this.textBoxAnestethistName.Name = "textBoxAnestethistName";
-            this.textBoxAnestethistName.ReadOnly = true;
-            this.textBoxAnestethistName.Size = new System.Drawing.Size(161, 26);
-            this.textBoxAnestethistName.TabIndex = 4;
-            // 
-            // labelIdAnesthetist
-            // 
-            this.labelIdAnesthetist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelIdAnesthetist.AutoSize = true;
-            this.labelIdAnesthetist.Location = new System.Drawing.Point(506, 13);
-            this.labelIdAnesthetist.Name = "labelIdAnesthetist";
-            this.labelIdAnesthetist.Size = new System.Drawing.Size(106, 20);
-            this.labelIdAnesthetist.TabIndex = 3;
-            this.labelIdAnesthetist.Text = "LabelAnesthetist";
-            this.labelIdAnesthetist.Visible = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle34;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(10, 54);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle36.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle36;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1264, 214);
-            this.dataGridView1.TabIndex = 25;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // checkedListBoxAnesthesiaTypes
-            // 
-            this.checkedListBoxAnesthesiaTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBoxAnesthesiaTypes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBoxAnesthesiaTypes.FormattingEnabled = true;
-            this.checkedListBoxAnesthesiaTypes.Location = new System.Drawing.Point(2, 26);
-            this.checkedListBoxAnesthesiaTypes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.checkedListBoxAnesthesiaTypes.Name = "checkedListBoxAnesthesiaTypes";
-            this.checkedListBoxAnesthesiaTypes.Size = new System.Drawing.Size(292, 88);
-            this.checkedListBoxAnesthesiaTypes.TabIndex = 38;
-            // 
-            // labelAnesthesiaTypesAsigned
-            // 
-            this.labelAnesthesiaTypesAsigned.AutoSize = true;
-            this.labelAnesthesiaTypesAsigned.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAnesthesiaTypesAsigned.Location = new System.Drawing.Point(453, 905);
-            this.labelAnesthesiaTypesAsigned.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelAnesthesiaTypesAsigned.Name = "labelAnesthesiaTypesAsigned";
-            this.labelAnesthesiaTypesAsigned.Size = new System.Drawing.Size(52, 20);
-            this.labelAnesthesiaTypesAsigned.TabIndex = 39;
-            this.labelAnesthesiaTypesAsigned.Text = "label11";
-            this.labelAnesthesiaTypesAsigned.Visible = false;
             // 
             // tableLayoutPanel12
             // 
@@ -1200,6 +1051,155 @@ namespace UI
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanel13.Size = new System.Drawing.Size(296, 121);
             this.tableLayoutPanel13.TabIndex = 39;
+            // 
+            // checkedListBoxAnesthesiaTypes
+            // 
+            this.checkedListBoxAnesthesiaTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkedListBoxAnesthesiaTypes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBoxAnesthesiaTypes.FormattingEnabled = true;
+            this.checkedListBoxAnesthesiaTypes.Location = new System.Drawing.Point(2, 26);
+            this.checkedListBoxAnesthesiaTypes.Margin = new System.Windows.Forms.Padding(2);
+            this.checkedListBoxAnesthesiaTypes.Name = "checkedListBoxAnesthesiaTypes";
+            this.checkedListBoxAnesthesiaTypes.Size = new System.Drawing.Size(292, 88);
+            this.checkedListBoxAnesthesiaTypes.TabIndex = 38;
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel8.ColumnCount = 2;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.71257F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.28743F));
+            this.tableLayoutPanel8.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.textBoxAnestethistName, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.iconButtonAddAnesthetist, 1, 1);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(295, 121);
+            this.tableLayoutPanel8.TabIndex = 38;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 36);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Anestesista Asignado:";
+            // 
+            // textBoxAnestethistName
+            // 
+            this.textBoxAnestethistName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAnestethistName.Location = new System.Drawing.Point(131, 17);
+            this.textBoxAnestethistName.Name = "textBoxAnestethistName";
+            this.textBoxAnestethistName.ReadOnly = true;
+            this.textBoxAnestethistName.Size = new System.Drawing.Size(161, 26);
+            this.textBoxAnestethistName.TabIndex = 4;
+            // 
+            // iconButtonAddAnesthetist
+            // 
+            this.iconButtonAddAnesthetist.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.iconButtonAddAnesthetist.BackColor = System.Drawing.Color.White;
+            this.iconButtonAddAnesthetist.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonAddAnesthetist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonAddAnesthetist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonAddAnesthetist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonAddAnesthetist.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonAddAnesthetist.IconChar = FontAwesome.Sharp.IconChar.SearchPlus;
+            this.iconButtonAddAnesthetist.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonAddAnesthetist.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonAddAnesthetist.IconSize = 30;
+            this.iconButtonAddAnesthetist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButtonAddAnesthetist.Location = new System.Drawing.Point(174, 71);
+            this.iconButtonAddAnesthetist.Margin = new System.Windows.Forms.Padding(2);
+            this.iconButtonAddAnesthetist.Name = "iconButtonAddAnesthetist";
+            this.iconButtonAddAnesthetist.Size = new System.Drawing.Size(119, 38);
+            this.iconButtonAddAnesthetist.TabIndex = 34;
+            this.iconButtonAddAnesthetist.Text = "Agregar";
+            this.iconButtonAddAnesthetist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonAddAnesthetist.UseVisualStyleBackColor = false;
+            this.iconButtonAddAnesthetist.Click += new System.EventHandler(this.iconButtonAddAnesthetist_Click);
+            // 
+            // labelIdAnesthetist
+            // 
+            this.labelIdAnesthetist.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelIdAnesthetist.AutoSize = true;
+            this.labelIdAnesthetist.Location = new System.Drawing.Point(506, 13);
+            this.labelIdAnesthetist.Name = "labelIdAnesthetist";
+            this.labelIdAnesthetist.Size = new System.Drawing.Size(106, 20);
+            this.labelIdAnesthetist.TabIndex = 3;
+            this.labelIdAnesthetist.Text = "LabelAnesthetist";
+            this.labelIdAnesthetist.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.GridColor = System.Drawing.Color.White;
+            this.dataGridView1.Location = new System.Drawing.Point(10, 54);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1264, 214);
+            this.dataGridView1.TabIndex = 25;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // labelAnesthesiaTypesAsigned
+            // 
+            this.labelAnesthesiaTypesAsigned.AutoSize = true;
+            this.labelAnesthesiaTypesAsigned.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAnesthesiaTypesAsigned.Location = new System.Drawing.Point(453, 905);
+            this.labelAnesthesiaTypesAsigned.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelAnesthesiaTypesAsigned.Name = "labelAnesthesiaTypesAsigned";
+            this.labelAnesthesiaTypesAsigned.Size = new System.Drawing.Size(52, 20);
+            this.labelAnesthesiaTypesAsigned.TabIndex = 39;
+            this.labelAnesthesiaTypesAsigned.Text = "label11";
+            this.labelAnesthesiaTypesAsigned.Visible = false;
             // 
             // assignSurgery
             // 
@@ -1242,12 +1242,12 @@ namespace UI
             this.groupBoxDocsData.ResumeLayout(false);
             this.groupBoxAnesthetistData.ResumeLayout(false);
             this.groupBoxAnesthetistData.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
