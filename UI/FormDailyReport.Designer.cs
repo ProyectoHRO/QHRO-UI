@@ -77,7 +77,7 @@ namespace UI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(523, 17);
+            this.label1.Location = new System.Drawing.Point(620, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(188, 23);
             this.label1.TabIndex = 25;
@@ -142,7 +142,7 @@ namespace UI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(523, 17);
+            this.label2.Location = new System.Drawing.Point(631, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(177, 23);
             this.label2.TabIndex = 26;
