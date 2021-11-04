@@ -225,13 +225,14 @@ namespace DAL
 
 
 
-        public DataTable reScheduleSurgerie(int surgerieId, DateTime date)
+        public DataTable reScheduleSurgerie(int surgerieId, int roomId, DateTime date)
         {
             tableData = new DataTable();
             command.Connection = connection.OpenConnection();
             command.CommandText = "ReprogramarCirugia";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@fecha", date);
+            command.Parameters.AddWithValue("@idquirofano", roomId);
             command.Parameters.AddWithValue("@idcirugia", surgerieId);
             read = command.ExecuteReader();
             tableData.Load(read);

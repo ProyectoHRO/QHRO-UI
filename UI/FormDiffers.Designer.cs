@@ -40,6 +40,8 @@ namespace UI
             this.dateTimePickerNewDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxOperatingRooms = new System.Windows.Forms.ComboBox();
+            this.labelNumberRoom = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +58,7 @@ namespace UI
             // 
             this.labelDiff.AutoSize = true;
             this.labelDiff.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDiff.Location = new System.Drawing.Point(329, 151);
+            this.labelDiff.Location = new System.Drawing.Point(207, 138);
             this.labelDiff.Name = "labelDiff";
             this.labelDiff.Size = new System.Drawing.Size(49, 20);
             this.labelDiff.TabIndex = 1;
@@ -66,7 +68,7 @@ namespace UI
             // textBoxDetail
             // 
             this.textBoxDetail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDetail.Location = new System.Drawing.Point(396, 151);
+            this.textBoxDetail.Location = new System.Drawing.Point(274, 138);
             this.textBoxDetail.Multiline = true;
             this.textBoxDetail.Name = "textBoxDetail";
             this.textBoxDetail.Size = new System.Drawing.Size(403, 150);
@@ -77,7 +79,7 @@ namespace UI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(329, 119);
+            this.label3.Location = new System.Drawing.Point(207, 106);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 3;
@@ -86,7 +88,7 @@ namespace UI
             // textBoxName
             // 
             this.textBoxName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(396, 119);
+            this.textBoxName.Location = new System.Drawing.Point(274, 106);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(403, 26);
             this.textBoxName.TabIndex = 4;
@@ -145,7 +147,7 @@ namespace UI
             // 
             this.NewDate.AutoSize = true;
             this.NewDate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewDate.Location = new System.Drawing.Point(307, 313);
+            this.NewDate.Location = new System.Drawing.Point(185, 300);
             this.NewDate.Name = "NewDate";
             this.NewDate.Size = new System.Drawing.Size(83, 20);
             this.NewDate.TabIndex = 37;
@@ -155,7 +157,7 @@ namespace UI
             // dateTimePickerNewDate
             // 
             this.dateTimePickerNewDate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerNewDate.Location = new System.Drawing.Point(396, 313);
+            this.dateTimePickerNewDate.Location = new System.Drawing.Point(274, 300);
             this.dateTimePickerNewDate.Name = "dateTimePickerNewDate";
             this.dateTimePickerNewDate.Size = new System.Drawing.Size(403, 26);
             this.dateTimePickerNewDate.TabIndex = 38;
@@ -164,7 +166,7 @@ namespace UI
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(396, 345);
+            this.dateTimePicker1.Location = new System.Drawing.Point(274, 332);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(403, 26);
             this.dateTimePicker1.TabIndex = 40;
@@ -174,18 +176,39 @@ namespace UI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(307, 345);
+            this.label4.Location = new System.Drawing.Point(185, 332);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 39;
             this.label4.Text = "Nueva hora";
             this.label4.Visible = false;
             // 
+            // comboBoxOperatingRooms
+            // 
+            this.comboBoxOperatingRooms.FormattingEnabled = true;
+            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(873, 186);
+            this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
+            this.comboBoxOperatingRooms.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxOperatingRooms.TabIndex = 41;
+            this.comboBoxOperatingRooms.Visible = false;
+            // 
+            // labelNumberRoom
+            // 
+            this.labelNumberRoom.AutoSize = true;
+            this.labelNumberRoom.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumberRoom.Location = new System.Drawing.Point(732, 184);
+            this.labelNumberRoom.Name = "labelNumberRoom";
+            this.labelNumberRoom.Size = new System.Drawing.Size(135, 20);
+            this.labelNumberRoom.TabIndex = 42;
+            this.labelNumberRoom.Text = "Numero de quirofano";
+            // 
             // FormDiffers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1190, 424);
+            this.Controls.Add(this.labelNumberRoom);
+            this.Controls.Add(this.comboBoxOperatingRooms);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePickerNewDate);
@@ -220,5 +243,7 @@ namespace UI
         private System.Windows.Forms.DateTimePicker dateTimePickerNewDate;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxOperatingRooms;
+        private System.Windows.Forms.Label labelNumberRoom;
     }
 }
