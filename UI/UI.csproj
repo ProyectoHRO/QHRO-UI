@@ -329,6 +329,7 @@
     <EmbeddedResource Include="Reports\ReportDoctor.rdlc" />
     <EmbeddedResource Include="Reports\ReportPacientDiagnosis.rdlc" />
     <EmbeddedResource Include="Reports\ReportSurgeriesBdate.rdlc" />
+    <EmbeddedResource Include="Reports\ReportSurgeriesAnesthesiaBdate .rdlc" />
     <EmbeddedResource Include="Reports\ReportSurgeriesServicesBdate.rdlc" />
     <EmbeddedResource Include="RequestSurgery.resx">
       <DependentUpon>RequestSurgery.cs</DependentUpon>

@@ -29,59 +29,61 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconButtonDiff = new FontAwesome.Sharp.IconButton();
-            this.reportViewerDiff = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dateTimePickerDiff = new System.Windows.Forms.DateTimePicker();
+            this.iconButtonSurgeriesServicesBdates = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxServiceName = new System.Windows.Forms.TextBox();
+            this.reportViewerSurgeriesServiceBdates = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // label2
+            // iconButtonSurgeriesServicesBdates
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(686, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 23);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Anestesias";
+            this.iconButtonSurgeriesServicesBdates.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSurgeriesServicesBdates.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonSurgeriesServicesBdates.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonSurgeriesServicesBdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSurgeriesServicesBdates.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSurgeriesServicesBdates.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
+            this.iconButtonSurgeriesServicesBdates.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonSurgeriesServicesBdates.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSurgeriesServicesBdates.IconSize = 32;
+            this.iconButtonSurgeriesServicesBdates.Location = new System.Drawing.Point(642, 25);
+            this.iconButtonSurgeriesServicesBdates.Name = "iconButtonSurgeriesServicesBdates";
+            this.iconButtonSurgeriesServicesBdates.Size = new System.Drawing.Size(191, 49);
+            this.iconButtonSurgeriesServicesBdates.TabIndex = 9;
+            this.iconButtonSurgeriesServicesBdates.Text = "Establecer fechas";
+            this.iconButtonSurgeriesServicesBdates.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonSurgeriesServicesBdates.UseVisualStyleBackColor = true;
             // 
-            // iconButtonDiff
+            // label1
             // 
-            this.iconButtonDiff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.iconButtonDiff.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonDiff.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonDiff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonDiff.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonDiff.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.iconButtonDiff.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonDiff.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonDiff.IconSize = 32;
-            this.iconButtonDiff.Location = new System.Drawing.Point(690, 84);
-            this.iconButtonDiff.Name = "iconButtonDiff";
-            this.iconButtonDiff.Size = new System.Drawing.Size(134, 43);
-            this.iconButtonDiff.TabIndex = 29;
-            this.iconButtonDiff.Text = "Generar";
-            this.iconButtonDiff.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonDiff.UseVisualStyleBackColor = true;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(354, 39);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Anestesia:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // reportViewerDiff
+            // textBoxServiceName
             // 
-            this.reportViewerDiff.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBoxServiceName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBoxServiceName.Location = new System.Drawing.Point(429, 36);
+            this.textBoxServiceName.Name = "textBoxServiceName";
+            this.textBoxServiceName.Size = new System.Drawing.Size(207, 26);
+            this.textBoxServiceName.TabIndex = 7;
+            // 
+            // reportViewerSurgeriesServiceBdates
+            // 
+            this.reportViewerSurgeriesServiceBdates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.reportViewerDiff.Location = new System.Drawing.Point(22, 136);
-            this.reportViewerDiff.Name = "reportViewerDiff";
-            this.reportViewerDiff.ServerReport.BearerToken = null;
-            this.reportViewerDiff.Size = new System.Drawing.Size(1242, 771);
-            this.reportViewerDiff.TabIndex = 28;
-            // 
-            // dateTimePickerDiff
-            // 
-            this.dateTimePickerDiff.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePickerDiff.Location = new System.Drawing.Point(403, 90);
-            this.dateTimePickerDiff.Name = "dateTimePickerDiff";
-            this.dateTimePickerDiff.Size = new System.Drawing.Size(265, 26);
-            this.dateTimePickerDiff.TabIndex = 27;
+            this.reportViewerSurgeriesServiceBdates.Location = new System.Drawing.Point(12, 80);
+            this.reportViewerSurgeriesServiceBdates.Name = "reportViewerSurgeriesServiceBdates";
+            this.reportViewerSurgeriesServiceBdates.ServerReport.BearerToken = null;
+            this.reportViewerSurgeriesServiceBdates.Size = new System.Drawing.Size(1262, 842);
+            this.reportViewerSurgeriesServiceBdates.TabIndex = 6;
             // 
             // FormAnesthesiaReport
             // 
@@ -89,10 +91,10 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1286, 947);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.iconButtonDiff);
-            this.Controls.Add(this.reportViewerDiff);
-            this.Controls.Add(this.dateTimePickerDiff);
+            this.Controls.Add(this.iconButtonSurgeriesServicesBdates);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxServiceName);
+            this.Controls.Add(this.reportViewerSurgeriesServiceBdates);
             this.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -105,9 +107,9 @@ namespace UI
 
         #endregion
 
-        private System.Windows.Forms.Label label2;
-        private FontAwesome.Sharp.IconButton iconButtonDiff;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewerDiff;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDiff;
+        private FontAwesome.Sharp.IconButton iconButtonSurgeriesServicesBdates;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxServiceName;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerSurgeriesServiceBdates;
     }
 }
