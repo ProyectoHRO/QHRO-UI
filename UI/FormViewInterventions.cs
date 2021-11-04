@@ -15,6 +15,7 @@ namespace UI
     {
         private Surgeries surgeries = new Surgeries();
         private ClassServices services = new ClassServices();
+        private ClassAnesthesia anesthesia = new ClassAnesthesia();
         private ClassOperatingRoom operatingRooms = new ClassOperatingRoom();
         public FormViewInterventions()
         {
@@ -319,6 +320,99 @@ namespace UI
                 this.reportViewerSurgeriesByPatient.RefreshReport();
             }
            
+        }
+
+        string anesthesiaName="";
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (textBoxAnesthesiaName.Text != "")
+            {
+                DataTable infoAnesthesia = anesthesia.getAnesthesiaByName(textBoxAnesthesiaName.Text);
+                if (infoAnesthesia.Rows.Count < 1)
+                {
+                    MessageBox.Show("No se encuentra el tipo de anestesia, intentalo de nuevo");
+                }
+                else
+                {
+                    getDates getDate = new getDates();
+                    getDate.ShowDialog();
+                    DateTime firstDate = getDate.firstDate;
+                    DateTime secondDate = getDate.secondDate;
+                    DataTable infoSurgeries = surgeries.getSurgeriesByAnesthesiaByDates(firstDate, secondDate, textBoxAnesthesiaName.Text);
+                  
+                    if (infoSurgeries.Rows.Count < 1)
+                    {
+                        MessageBox.Show("No hay datos");
+                    }
+                    else
+                    {
+
+                        List<ClassDailyReport> listSurgerie = new List<ClassDailyReport>();
+                        ClassDailyReport surgerie;
+
+                        foreach (DataRow item in infoSurgeries.Rows)
+                        {
+                            int idSurgery = 0;
+                            string docName = "";
+                            string specialties = "";
+                            surgerie = new ClassDailyReport();
+                            idSurgery = Convert.ToInt32(item.Field<int>(0));
+                            surgerie.No_Historia = item.Field<string>(1).ToString();
+                            surgerie.Nombre = item.Field<string>(2).ToString();
+                            surgerie.Sexo = item.Field<string>(3).ToString();
+                            surgerie.Edad = Convert.ToInt16(item.Field<short>(4));
+                            surgerie.Servicio = item.Field<string>(5).ToString();
+                            surgerie.Operacion_Realizada = item.Field<string>(6).ToString();
+                            surgerie.Tipo_Anestesia = item.Field<string>(7).ToString();
+                            anesthesiaName = surgerie.Tipo_Anestesia;
+                            DataTable getSurgeries = surgeries.getDoctorsByIdSurgerie(idSurgery);
+                            if (getSurgeries.Rows.Count < 2)
+                            {
+                                foreach (DataRow itemDoc in getSurgeries.Rows)
+                                {
+                                    surgerie.Cirujano = itemDoc.Field<string>(1).ToString();
+                                    surgerie.Especialidad = itemDoc.Field<string>(2).ToString();
+                                }
+                            }
+                            else
+                            {
+                                foreach (DataRow itemDoc in getSurgeries.Rows)
+                                {
+                                    docName = ' ' + docName + itemDoc.Field<string>(1).ToString() + " / ";
+                                    specialties = ' ' + specialties + itemDoc.Field<string>(2).ToString() + " / ";
+                                }
+                                surgerie.Cirujano = docName.TrimEnd(' ');
+                                surgerie.Cirujano = surgerie.Cirujano.TrimEnd('/');
+                                surgerie.Especialidad = specialties.TrimEnd(' ');
+                                surgerie.Especialidad = surgerie.Especialidad.TrimEnd('/');
+                            }
+                            surgerie.Tipo_Cirugia = item.Field<string>(8).ToString();
+                            surgerie.Tiempo = item.Field<System.DateTime>(9).ToString("dd/MM/yyyy");
+                            listSurgerie.Add(surgerie);
+                        }
+                        ReportDataSource Report;
+                        Report = new ReportDataSource("DataSetSurgeriesServicesBdate", listSurgerie);
+                        this.reportViewerAnesthesiaByDates.ProcessingMode = ProcessingMode.Local;
+                        this.reportViewerAnesthesiaByDates.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportSurgeriesAnesthesiaBdate.rdlc";
+                        this.reportViewerAnesthesiaByDates.LocalReport.DataSources.Clear();
+                        Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                        {
+                             new Microsoft.Reporting.WinForms.ReportParameter("anesthesiaType",anesthesiaName),
+                            //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
+                            //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
+                            //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
+                        };
+                        this.reportViewerAnesthesiaByDates.LocalReport.SetParameters(rParams);
+                        this.reportViewerAnesthesiaByDates.LocalReport.DataSources.Add(Report);
+                        this.reportViewerAnesthesiaByDates.RefreshReport();
+
+                    }
+
+
+
+                }
+
+            }
         }
     }
 }

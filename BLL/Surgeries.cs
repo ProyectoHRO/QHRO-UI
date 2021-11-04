@@ -36,7 +36,7 @@ namespace BLL
 
         public DataTable getSurgeriesByAnesthesiaByDates(DateTime firstDate, DateTime secondDate, string anesthesia)
         {
-            return surgeries.getSurgeriesByAnesthesiaByDates(firstDate, secondDate, anesthesia);
+            return surgeries.GetSurgeriesByAnesthesiaByDates(firstDate, secondDate, anesthesia);
         }
 
 

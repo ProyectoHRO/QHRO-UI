@@ -48,11 +48,17 @@ namespace UI
             this.textBoxSurgeriesByPatient = new System.Windows.Forms.TextBox();
             this.iconButtonSurgeriesByPatient = new FontAwesome.Sharp.IconButton();
             this.reportViewerSurgeriesByPatient = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.iconButtonSurgeriesAnesthesiaBdates = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxAnesthesiaName = new System.Windows.Forms.TextBox();
+            this.reportViewerAnesthesiaByDates = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -64,6 +70,7 @@ namespace UI
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(-2, 1);
             this.tabControl1.Name = "tabControl1";
@@ -309,6 +316,70 @@ namespace UI
             this.reportViewerSurgeriesByPatient.Size = new System.Drawing.Size(1262, 842);
             this.reportViewerSurgeriesByPatient.TabIndex = 4;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.iconButtonSurgeriesAnesthesiaBdates);
+            this.tabPage5.Controls.Add(this.label4);
+            this.tabPage5.Controls.Add(this.textBoxAnesthesiaName);
+            this.tabPage5.Controls.Add(this.reportViewerAnesthesiaByDates);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1282, 915);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Intervenciones por anestesia entre dos fechas";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // iconButtonSurgeriesAnesthesiaBdates
+            // 
+            this.iconButtonSurgeriesAnesthesiaBdates.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.iconButtonSurgeriesAnesthesiaBdates.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.iconButtonSurgeriesAnesthesiaBdates.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            this.iconButtonSurgeriesAnesthesiaBdates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonSurgeriesAnesthesiaBdates.ForeColor = System.Drawing.Color.Black;
+            this.iconButtonSurgeriesAnesthesiaBdates.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
+            this.iconButtonSurgeriesAnesthesiaBdates.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            this.iconButtonSurgeriesAnesthesiaBdates.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonSurgeriesAnesthesiaBdates.IconSize = 32;
+            this.iconButtonSurgeriesAnesthesiaBdates.Location = new System.Drawing.Point(640, 9);
+            this.iconButtonSurgeriesAnesthesiaBdates.Name = "iconButtonSurgeriesAnesthesiaBdates";
+            this.iconButtonSurgeriesAnesthesiaBdates.Size = new System.Drawing.Size(191, 49);
+            this.iconButtonSurgeriesAnesthesiaBdates.TabIndex = 13;
+            this.iconButtonSurgeriesAnesthesiaBdates.Text = "Establecer fechas";
+            this.iconButtonSurgeriesAnesthesiaBdates.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButtonSurgeriesAnesthesiaBdates.UseVisualStyleBackColor = true;
+            this.iconButtonSurgeriesAnesthesiaBdates.Click += new System.EventHandler(this.iconButton1_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(352, 23);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Anestesia:";
+            // 
+            // textBoxAnesthesiaName
+            // 
+            this.textBoxAnesthesiaName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBoxAnesthesiaName.Location = new System.Drawing.Point(427, 20);
+            this.textBoxAnesthesiaName.Name = "textBoxAnesthesiaName";
+            this.textBoxAnesthesiaName.Size = new System.Drawing.Size(207, 26);
+            this.textBoxAnesthesiaName.TabIndex = 11;
+            // 
+            // reportViewerAnesthesiaByDates
+            // 
+            this.reportViewerAnesthesiaByDates.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.reportViewerAnesthesiaByDates.Location = new System.Drawing.Point(10, 64);
+            this.reportViewerAnesthesiaByDates.Name = "reportViewerAnesthesiaByDates";
+            this.reportViewerAnesthesiaByDates.ServerReport.BearerToken = null;
+            this.reportViewerAnesthesiaByDates.Size = new System.Drawing.Size(1262, 842);
+            this.reportViewerAnesthesiaByDates.TabIndex = 10;
+            // 
             // FormViewInterventions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,6 +398,8 @@ namespace UI
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -352,5 +425,10 @@ namespace UI
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton iconButtonSurgeriesQBdates;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TabPage tabPage5;
+        private FontAwesome.Sharp.IconButton iconButtonSurgeriesAnesthesiaBdates;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxAnesthesiaName;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerAnesthesiaByDates;
     }
 }

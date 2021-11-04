@@ -179,7 +179,8 @@ namespace DAL
             return tableData;
         }
 
-        public DataTable getSurgeriesByAnesthesiaByDates(DateTime firstDate, DateTime secondDate, string anesthesia)
+
+        public DataTable GetSurgeriesByAnesthesiaByDates(DateTime firstDate, DateTime secondDate, string anesthesia)
         {
             tableData = new DataTable();
             command.Connection = connection.OpenConnection();
