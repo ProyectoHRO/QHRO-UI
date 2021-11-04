@@ -61,12 +61,12 @@ namespace BLL
         }
 
 
-        public string reSchedule(int idSurgerie, DateTime date)
+        public string reSchedule(int idSurgerie, int idRoom, DateTime date)
         {
 
             try
             {
-                surgeries.reScheduleSurgerie(idSurgerie, date);
+                surgeries.reScheduleSurgerie(idSurgerie, idRoom, date);
                 return "Cirugia reprogramada con exito";
             }
             catch (Exception error)

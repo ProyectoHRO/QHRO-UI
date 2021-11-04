@@ -93,7 +93,8 @@ namespace UI
                 finalMin = response[1];
                 DateTime f1 = Convert.ToDateTime(initHour +":" + initMin + ":00");
                 DateTime f2 = Convert.ToDateTime(finalHour+":"+finalMin+":00");
-                Double hours = Convert.ToDouble(f2.Subtract(f1).TotalHours);
+                Decimal hours = Convert.ToDecimal(f2.Subtract(f1).TotalHours);
+                hours = decimal.Round(hours, 2, MidpointRounding.AwayFromZero);
                 dailie.Tiempo = Convert.ToString(hours+" Horas");
 
                 listDailies.Add(dailie);

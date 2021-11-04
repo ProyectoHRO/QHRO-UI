@@ -77,7 +77,7 @@ namespace UI
                     surgerie.Especialidad = surgerie.Especialidad.TrimEnd('/');
                 }
                 surgerie.Tipo_Cirugia = item.Field<string>(8).ToString();
-                surgerie.Tiempo = item.Field<System.DateTime>(9).ToString();
+                surgerie.Tiempo = item.Field<System.DateTime>(9).ToString("dd/MM/yyyy");
                 listSurgerie.Add(surgerie);
             }
             ReportDataSource Report;
@@ -154,7 +154,7 @@ namespace UI
                             surgerie.Especialidad = surgerie.Especialidad.TrimEnd('/');
                         }
                         surgerie.Tipo_Cirugia = item.Field<string>(8).ToString();
-                        surgerie.Tiempo = item.Field<System.DateTime>(9).ToString();
+                        surgerie.Tiempo = item.Field<System.DateTime>(9).ToString("dd/MM/yyyy");
                         listSurgerie.Add(surgerie);
                     }
                     ReportDataSource Report;
@@ -227,7 +227,7 @@ namespace UI
                     surgerie.Especialidad = surgerie.Especialidad.TrimEnd('/');
                 }
                 surgerie.Tipo_Cirugia = item.Field<string>(9).ToString();
-                surgerie.Tiempo = item.Field<System.DateTime>(10).ToString();
+                surgerie.Tiempo = item.Field<System.DateTime>(10).ToString("dd/MM/yyyy" );
                 listSurgerie.Add(surgerie);
             }
             ReportDataSource Report;
