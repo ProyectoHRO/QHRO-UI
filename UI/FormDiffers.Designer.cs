@@ -201,6 +201,7 @@ namespace UI
             this.labelNumberRoom.Size = new System.Drawing.Size(135, 20);
             this.labelNumberRoom.TabIndex = 42;
             this.labelNumberRoom.Text = "Numero de quirofano";
+            this.labelNumberRoom.Visible = false;
             // 
             // FormDiffers
             // 

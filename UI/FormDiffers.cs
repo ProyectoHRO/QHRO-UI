@@ -30,6 +30,7 @@ namespace UI
                 comboBoxOperatingRooms.DataSource = infoOperatingRooms; ;
                 NewDate.Visible = true;
                 dateTimePickerNewDate.Visible = true;
+                labelNumberRoom.Visible = true;
                 comboBoxOperatingRooms.Visible = true;
                 label1.Text = "Reprogramar";
             }
@@ -38,6 +39,8 @@ namespace UI
                 label1.Text = "Diferir";
                 labelDiff.Visible = true;
                 textBoxDetail.Visible = true;
+                labelNumberRoom.Visible = false;
+                comboBoxOperatingRooms.Visible = false;
             }
         }
 
