@@ -77,42 +77,42 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.05547in</Width>
+                  <Width>2.33592cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.85433in</Width>
+                  <Width>4.36502cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.68636in</Width>
+                  <Width>1.39838cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.52426in</Width>
+                  <Width>0.98665cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.92594in</Width>
+                  <Width>2.00691cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.53011in</Width>
+                  <Width>3.5415cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.87386in</Width>
+                  <Width>1.87463cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.37386in</Width>
+                  <Width>3.14463cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.20719in</Width>
+                  <Width>2.72129cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.20719in</Width>
+                  <Width>2.72129cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.20719in</Width>
+                  <Width>2.72129cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.48958in</Height>
+                  <Height>0.90427cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -511,7 +511,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.29573cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -873,50 +873,16 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSetSurgeriesServicesBdate</DataSetName>
-            <Top>1.16542in</Top>
-            <Left>0.13417in</Left>
-            <Height>0.73958in</Height>
-            <Width>12.44576in</Width>
+            <Top>2.54528cm</Top>
+            <Left>2.00455cm</Left>
+            <Height>1.2cm</Height>
+            <Width>27.8175cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="serviceName">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!serviceName.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>serviceName</rd:DefaultName>
-            <Top>0.33208in</Top>
-            <Left>4.07861in</Left>
-            <Height>0.21875in</Height>
-            <Width>3.52084in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox22">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -950,6 +916,36 @@
             <Left>1.45708in</Left>
             <Height>0.21875in</Height>
             <Width>2.5625in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="anesthesiaType">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=Parameters!anesthesiaType.Value</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>anesthesiaType</rd:DefaultName>
+            <Top>0.79911cm</Top>
+            <Left>10.80666cm</Left>
+            <Height>0.6cm</Height>
+            <Width>4.77542cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
               <Border>
@@ -962,7 +958,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>5.68853cm</Height>
+        <Height>4cm</Height>
         <Style />
       </Body>
       <Width>33cm</Width>
@@ -1213,7 +1209,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.74625cm</Height>
+          <Height>2.24896cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1299,10 +1295,8 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="serviceName">
+    <ReportParameter Name="anesthesiaType">
       <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>
@@ -1314,7 +1308,7 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>serviceName</ParameterName>
+          <ParameterName>anesthesiaType</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

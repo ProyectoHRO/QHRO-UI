@@ -97,12 +97,6 @@
     <Compile Include="Doctors.Designer.cs">
       <DependentUpon>Doctors.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAnesthesiaReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAnesthesiaReport.Designer.cs">
-      <DependentUpon>FormAnesthesiaReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormEditInterventios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,9 +250,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAnesthesiaReport.resx">
-      <DependentUpon>FormAnesthesiaReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormDailyReport.resx">
       <DependentUpon>FormDailyReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -329,7 +320,7 @@
     <EmbeddedResource Include="Reports\ReportDoctor.rdlc" />
     <EmbeddedResource Include="Reports\ReportPacientDiagnosis.rdlc" />
     <EmbeddedResource Include="Reports\ReportSurgeriesBdate.rdlc" />
-    <EmbeddedResource Include="Reports\ReportSurgeriesAnesthesiaBdate .rdlc" />
+    <EmbeddedResource Include="Reports\ReportSurgeriesAnesthesiaBdate.rdlc" />
     <EmbeddedResource Include="Reports\ReportSurgeriesServicesBdate.rdlc" />
     <EmbeddedResource Include="RequestSurgery.resx">
       <DependentUpon>RequestSurgery.cs</DependentUpon>

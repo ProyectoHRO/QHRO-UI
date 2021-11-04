@@ -27,6 +27,11 @@ namespace BLL
             return anesthesia.GetAnesthesiaById(id);
         }
 
+        public DataTable getAnesthesiaByName(string name)
+        {
+            return anesthesia.GetAnesthesiaByAnesthesiaTypeReport(name);
+        }
+
         public string newAnesthesiaType(string AnesthesiaType)
         {
             try

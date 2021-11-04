@@ -370,9 +370,6 @@ namespace UI
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            panelReportsMenu.Visible = false;
-            statePanel = 0;
-            openChildForm(new FormAnesthesiaReport());
         }
     }
 }
