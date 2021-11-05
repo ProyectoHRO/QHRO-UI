@@ -465,6 +465,12 @@ namespace DAL
         public string requestSurgery(
             int userId,
             string interventionDetail,
+            string firstName,
+            string secondName,
+            string firstSurname,
+            string secondSurname,
+            short age,
+            string gender,
             int patientId,
             int serviceId)
         {
@@ -474,7 +480,13 @@ namespace DAL
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@idusuario", userId);
             command.Parameters.AddWithValue("@diagnostico", interventionDetail);
-            command.Parameters.AddWithValue("@idpaciente", patientId);
+            command.Parameters.AddWithValue("@primer_nombre", firstName);
+            command.Parameters.AddWithValue("@segundo_nombre", secondName);
+            command.Parameters.AddWithValue("@primer_apellido", firstSurname);
+            command.Parameters.AddWithValue("@segundo_apellido", secondSurname);
+            command.Parameters.AddWithValue("@edad", age);
+            command.Parameters.AddWithValue("@genero", gender);
+            command.Parameters.AddWithValue("@id", patientId);
             command.Parameters.AddWithValue("@idservicio", serviceId);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
@@ -492,7 +504,6 @@ namespace DAL
             string historyNumber,
             string firstName,
             string secondName,
-            string thirdName,
             string firstSurname,
             string secondSurname,
             short age,
@@ -509,7 +520,6 @@ namespace DAL
             command.Parameters.AddWithValue("@no_historia", historyNumber);
             command.Parameters.AddWithValue("@primerNombre", firstName);
             command.Parameters.AddWithValue("@segundoNombre", secondName);
-            command.Parameters.AddWithValue("@tecerNombre", thirdName);
             command.Parameters.AddWithValue("@primerApellido", firstSurname);
             command.Parameters.AddWithValue("@segundoApellido", secondSurname);
             command.Parameters.AddWithValue("@edad", age);

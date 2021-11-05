@@ -17,6 +17,8 @@ namespace DAL
         }
         private SqlConnection connection = new SqlConnection(getString());
 
+        private SqlConnection connection2 = new SqlConnection("Server=192.168.1.101; Database=RecepcionV2; User Id=sa; Password=Hospital0;");
+
         public SqlConnection OpenConnection()
         {
             if (connection.State == ConnectionState.Closed)
@@ -31,5 +33,18 @@ namespace DAL
             return connection;
         }
 
+        public SqlConnection OpenConnection2()
+        {
+            if (connection2.State == ConnectionState.Closed)
+                connection2.Open();
+            return connection2;
+        }
+
+        public SqlConnection CloseConnection2()
+        {
+            if (connection2.State == ConnectionState.Open)
+                connection2.Close();
+            return connection2;
+        }
     }
 }

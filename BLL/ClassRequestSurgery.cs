@@ -93,18 +93,37 @@ namespace BLL
 
         }
 
-
-        public string makeSurgeryRequest(int userId,string interventionDetail, int patientId, int serviceId)
+        public string makeSurgeryRequest(
+            int userId,
+            string interventionDetail,
+            string firstName,
+            string secondName,
+            string firstSurname,
+            string secondSurname,
+            short age,
+            string gender,
+            int patientId,
+            int serviceId)
         {
             string response = "";
-            response=surgeries.requestSurgery( userId,interventionDetail,patientId,serviceId);
+            response=surgeries.requestSurgery( 
+                userId,
+                interventionDetail,
+                firstName,
+                secondName,
+                firstSurname,
+                secondSurname,
+                age,
+                gender,
+                patientId,
+                serviceId);
             return response;
         }
-        public string makeSurgeryRequestAndPatient(int userId,string interventionDetail, int serviceId,string historyNumber, string firstName, string secondName, string thirdName, string firstSurname
+        public string makeSurgeryRequestAndPatient(int userId,string interventionDetail, int serviceId,string historyNumber, string firstName, string secondName, string firstSurname
             ,string secondSurname, short age, string gender)
         {
             string response = "";
-            response=surgeries.requestSurgeryAndPatient(userId,interventionDetail, serviceId,historyNumber,firstName,secondName,thirdName,firstSurname,secondSurname,age,gender);
+            response=surgeries.requestSurgeryAndPatient(userId,interventionDetail, serviceId,historyNumber,firstName,secondName,firstSurname,secondSurname,age,gender);
             return response;
         }
     }

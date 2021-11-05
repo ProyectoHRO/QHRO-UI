@@ -13,6 +13,7 @@ namespace UI
     public partial class RequestSurgery : Form
     {
         private ClassPatient patients=new ClassPatient();
+        private ClassPHro patientsHro = new ClassPHro();
         private ClassRequestSurgery requestSurgery = new ClassRequestSurgery();
         int serviceId;
         int userId;
@@ -25,41 +26,51 @@ namespace UI
             else
                 serviceId = 22;    
         }
+        int band =0;
         void listPatients(string param)
         {
-            DataTable getPatient = patients.getPatientsByHistoryNumber(param);
-            if (getPatient.Rows.Count==1)
+            DataTable infoPatientsHro = patientsHro.getPatientsByHistoryNumber(param);
+            string historyNumber = "";
+            if (infoPatientsHro.Rows.Count<1)
             {
-                groupBoxpatientData.Enabled = false;
-                iconButtonRequest.Visible = true;
-                foreach (DataRow item in getPatient.Rows)
-                {
-                    labelID.Text = item.Field<int>(0).ToString();
-                    textBoxhistoryNumber.Text = item.Field<string>(1);
-                    textBoxfirstName.Text = item.Field<string>(2);
-                    textBoxsecondName.Text = item.Field<string>(3);
-                    textBoxthirdName.Text = item.Field<string>(4);
-                    textBoxfirstSurname.Text = item.Field<string>(5);
-                    textBoxsecondSurname.Text = item.Field<string>(6);
-                    textBoxAge.Text = item.Field<short>(7).ToString();
-                    comboBoxGender.Text = item.Field<string>(8);
-                }
-               
+                MessageBox.Show("No se encuentra el paciente en el sistema");
             }
             else
             {
-                if (textBoxSearch.Text != "Buscar paciente por No. Historia")
+                foreach (DataRow item in infoPatientsHro.Rows)
                 {
-                    if (MessageBox.Show("No existe ningun paciente con ese numero de historia, desea crearlo?", "No se encuentra", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    historyNumber = item.Field<string>(0);
+                    textBoxhistoryNumber.Text = item.Field<string>(0);
+                    textBoxfirstName.Text = item.Field<string>(1);
+                    textBoxsecondName.Text = item.Field<string>(2);
+                    textBoxfirstSurname.Text = item.Field<string>(3);
+                    textBoxsecondSurname.Text = item.Field<string>(4);
+                    string sex= item.Field<string>(5);
+                    if (sex=="0")
                     {
-                        ClearTexts();
-                        textBoxhistoryNumber.Text = textBoxSearch.Text;
+                        comboBoxGender.Text="Masculino";
+                    }
+                    else if(sex=="1")
+                    {
+                        comboBoxGender.Text= "Femenino";
+                    }
+                    textBoxAge.Text = item.Field<int>(6).ToString();
+                }
+                DataTable getPatient = patients.getPatientsByHistoryNumber(historyNumber);
+                if (getPatient.Rows.Count < 1)
+                {
+                    band = 1;
+                }
+                else
+                {
+                    band = 2;
+                    foreach (DataRow item in getPatient.Rows)
+                    {
+                        labelID.Text = item.Field<int>(0).ToString();
 
-                        groupBoxpatientData.Enabled = true;
-                        iconButtonCreateAndRequest.Visible = true;
                     }
                 }
-              
+                iconButtonRequest.Visible = true;
             }
         }
 
@@ -116,11 +127,29 @@ namespace UI
         {
             if (textBoxDiagnosis.Text!="")
             {
-                string response = requestSurgery.makeSurgeryRequest(userId,textBoxDiagnosis.Text, Convert.ToInt32(labelID.Text), serviceId);
-                MessageBox.Show(response);
-                iconButtonRequest.Enabled = false;
-                iconButtonRequest.Visible = false;
-                ClearTexts();
+                if (band==1)
+                {
+                    string response = requestSurgery.makeSurgeryRequestAndPatient(userId, textBoxDiagnosis.Text, 3, textBoxhistoryNumber.Text,textBoxfirstName.Text, textBoxsecondName.Text,
+                    textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text), comboBoxGender.Text);
+                    MessageBox.Show(response);
+                }
+                else if (band == 2)
+                {
+                    string response = requestSurgery.makeSurgeryRequest(
+                        userId, 
+                        textBoxDiagnosis.Text,
+                        textBoxfirstName.Text, 
+                        textBoxsecondName.Text,
+                    textBoxfirstSurname.Text,
+                    textBoxsecondSurname.Text,
+                    Convert.ToInt16(textBoxAge.Text),
+                    comboBoxGender.Text,
+                       Convert.ToInt32(labelID.Text), 
+                       serviceId);
+                    MessageBox.Show(response);
+                }
+                
+                this.Close();
             }
             else
             {
@@ -136,17 +165,12 @@ namespace UI
 
         private void iconButtonCreateAndRequest_Click(object sender, EventArgs e)
         {
-            if (textBoxhistoryNumber.Text != "" && textBoxfirstName.Text != "" && textBoxfirstSurname.Text != "" && textBoxDiagnosis.Text != "")
-            {
-                string response = requestSurgery.makeSurgeryRequestAndPatient(userId,textBoxDiagnosis.Text,3,textBoxhistoryNumber.Text,textBoxfirstName.Text,textBoxsecondName.Text,textBoxthirdName.Text,
-                    textBoxfirstSurname.Text, textBoxsecondSurname.Text,Convert.ToInt16(textBoxAge.Text), comboBoxGender.Text);
-                MessageBox.Show(response);
-                iconButtonRequest.Enabled = false;
-                iconButtonRequest.Visible = false;
-                ClearTexts();
-            }
-            else
-                MessageBox.Show("Porfavor llene los campos requeridos");
+ 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

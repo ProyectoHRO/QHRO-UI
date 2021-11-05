@@ -44,6 +44,7 @@
     <Compile Include="Anesthesia.cs" />
     <Compile Include="Anesthetist.cs" />
     <Compile Include="Assistant.cs" />
+    <Compile Include="ClassPatientHro.cs" />
     <Compile Include="Connection.cs" />
     <Compile Include="Doctor.cs" />
     <Compile Include="OperatingRooms.cs" />
