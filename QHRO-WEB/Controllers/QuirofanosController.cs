@@ -10,6 +10,7 @@ namespace QHRO_WEB.Controllers
     {
         private ClassReports reports = new ClassReports();
         // GET: Quirofanos
+        [Authorize]
         public ActionResult Estado()
         {
             var Status = reports.StatusOperatingRooms();
@@ -21,12 +22,12 @@ namespace QHRO_WEB.Controllers
             var schedule = reports.dailySchedule();
             return View(schedule.ToList());
         }
-
+        [Authorize]
         public ActionResult Solicitar()
         {
             return View();
         }
-
+        [Authorize]
         public ActionResult No_Historia()
         {
             return View();

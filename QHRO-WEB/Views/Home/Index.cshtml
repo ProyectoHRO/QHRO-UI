@@ -5,7 +5,15 @@
 <div class="container">
     <div class="row text-center login-page">
         <div class="col-md-12 login-form">
-            <form action="  " method=" ">
+            @{
+                if (!string.IsNullOrEmpty(ViewBag.Message))
+                {
+                    //el mensaje tiene un valor
+                    <div class="alert alert-warning">@ViewBag.Message</div>
+                }
+            }
+            <br />
+            <form action="/Home/Login" method="POST">
                 <div class="row">
                     <div class="col-md-12 login-form-header">
                         <p class="login-form-font-header">Quirófanos<span>HRO</span><p>
@@ -19,7 +27,7 @@
                         <input name="password" class="enter" type="password" placeholder="Contraseña" required />
                     </div>
                 </div>
-                   
+
                 <div class="row">
                     <div class="col-md-12 login-btn">
                         <button class="btn enterbtn btn-info">Entrar</button>

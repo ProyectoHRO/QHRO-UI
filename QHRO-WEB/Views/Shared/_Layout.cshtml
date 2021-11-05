@@ -27,26 +27,37 @@
         </div>
         <ul class="nav-lista">
             <li>
-                <a href="/Quirofanos/Programaciones">
-                    <i class='bx bxs-calendar'></i>
-                    <span class="links_name">Programaciones</span>
-                </a>
-                <span class="tooltip">Intervenciones</span>
-            </li>
+                    <a href="/Quirofanos/Programaciones">
+                        <i class='bx bxs-calendar'></i>
+                        <span class="links_name">Programaciones</span>
+                    </a>
+                    <span class="tooltip">Intervenciones</span>
+                </li>
             <li>
-                <a href="/Quirofanos/Solicitar">
-                    <i class='bx bx-edit'></i>
-                    <span class="links_name">Solicitar cirugía</span>
-                </a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (Session["idPermit"] != null)
+                    {
+                        <a href="/Quirofanos/Solicitar">
+                            <i class='bx bx-edit'></i>
+                            <span class="links_name">Solicitar cirugía</span>
+                        </a>
 
-                <span class="tooltip">Solicitar cirugía</span>
+                        <span class="tooltip">Solicitar cirugía</span>
+                    }
+                }
+
             </li>
             <li>
-                <a href="/Quirofanos/Estado">
-                    <i class='bx bxs-institution'></i>
-                    <span class="links_name">Quirófanos</span>
-                </a>
-                <span class="tooltip">Quirófanos</span>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a href="/Quirofanos/Estado">
+                        <i class='bx bxs-institution'></i>
+                        <span class="links_name">Quirófanos</span>
+                    </a>
+                    <span class="tooltip">Quirófanos</span>
+                }
+
             </li>
             <li>
                 <a href="#">
@@ -57,7 +68,7 @@
                 <span class="tooltip">A cerca de</span>
             </li>
             <li class="profile">
-                <i class='bx bx-log-out' id="log_out"></i>
+                <a class='bx bx-log-out' id="log_out" href="/Home/Logout"></a>
             </li>
         </ul>
     </div>
