@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+
 namespace BLL
 {
     public class ClassReports
     {
         private Surgeries surgeries = new Surgeries();
         private ClassOperatingRoom Operatigrooms = new ClassOperatingRoom();
+        private ClassGetStrings GetStrings = new ClassGetStrings();
 
         public List<ClassDailySurgeries> dailySchedule() {
 
@@ -100,6 +102,56 @@ namespace BLL
                 ORList.Add(Rooms);
             }
             return ORList;
+        }
+
+        public void ChangeStatusOperatingRoom()
+        {
+            DataTable dialySurgeries = surgeries.getDailySurgeries();
+
+            foreach(DataRow item in dialySurgeries.Rows)
+            {
+                string hora = item.Field<string>(1).ToString();
+                string numberQ = item.Field<string>(2).ToString();
+
+                string[] timeSep = GetStrings.getStrings(hora, new char[] { ':', ' '});
+                string h = timeSep[0];
+                string m = timeSep[1];
+                string AorP = timeSep[2];
+                if (AorP == "A.M")
+                {
+                    if (h=="12")
+                    {
+                        h = ((Convert.ToInt32(h) % 12) + 12).ToString();
+                    }
+                }
+                else if (AorP == "P.M")
+                {
+                    h = ((Convert.ToInt32(h) % 12) + 12).ToString();
+                }
+
+                DateTime f1 = Convert.ToDateTime(h + ":" + m + ":00");
+                DateTime f2 = DateTime.Now;
+
+                int i = TimeSpan.Compare(f1.TimeOfDay, f2.TimeOfDay);
+
+                if (i < 0)
+                {
+                    DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
+
+                    foreach (DataRow OpRoom in infoOperatingRooms.Rows)
+                    {
+                        int IdQ = OpRoom.Field<int>(0);
+                        string numQ = OpRoom.Field<string>(1).ToString();
+
+                        if ((numQ==numberQ))
+                        {
+                            string resp = Operatigrooms.editoperatingRoom(numQ, "Ocupado", true, IdQ);
+
+                        }
+                    }
+
+                }
+            }
         }
     }
 }
