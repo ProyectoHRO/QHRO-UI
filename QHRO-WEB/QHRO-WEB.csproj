@@ -175,6 +175,7 @@
     <Content Include="Views\Quirofanos\Solicitar.cshtml" />
     <Content Include="Views\Prograat.cshtml" />
     <Content Include="Views\Quirofanos\No_Historia.cshtml" />
+    <Content Include="Views\Quirofanos\programacionesInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

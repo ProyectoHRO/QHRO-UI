@@ -8,13 +8,25 @@ namespace QHRO_WEB.Controllers
 {
     public class QuirofanosController : Controller
     {
+      
         private ClassReports reports = new ClassReports();
 
         public ActionResult Programaciones()
         {
-            var schedule = reports.dailySchedule();
+            return View();
+        }
+
+        public JsonResult fetchData()
+        {
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(reports.dailySchedule());
             reports.ChangeStatusOperatingRoom();
-            return View(schedule.ToList());
+            return Json(json, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult programacionesInfo()
+        {
+
+            return View();
         }
         // GET: Quirofanos
         [Authorize]

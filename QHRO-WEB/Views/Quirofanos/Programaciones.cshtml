@@ -1,82 +1,82 @@
-﻿@model IEnumerable<BLL.ClassDailySurgeries>
-@{
-    ViewBag.Title = "Programaciones";
-}
+﻿
+    @{
+        ViewBag.Title = "Programaciones";
+        string[] tableHeader = new string[] { "Hora", "Qx", "No_Historia", "Nombre", "Edad", "Procedimiento", "Servicio", "Cirujano", "Anestesista", "Asistentes" };
+    }
 
-@*Vista cirugias programadas y emergencia*@
-<head>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous">
-    </script>
-</head>
+    @*Vista cirugias programadas y emergencia*@
 
-<div class="container" id="reloadContent">
 
-    <div class="row mb-3">
-        <div class="col-sm-11"></div>
-        <div class="col-sm-1">
-            <button type="button" class="btn btn btn-success" onclick="reloadData()"><i class="fas fa-redo-alt"></i></button>
-        </div>
+    <div class="container" id="">
 
-    </div>
-
-    <script>
-        function reloadData() {
-            $(document).ready(function () {
-                $('#reloadContent').load('/Quirofanos/Programaciones');
-            })
-        }
-
-        $(document).ready(function () {
-            var refreshId = setInterval(function () {
-                $('#reloadContent').load('/Quirofanos/Programaciones');
-            }, 1000);
-        });
-    </script>
-
-    <div class="row mb-3">
-        <div class="col-1">
-
-        </div>
-        <div class="col-11" style="margin-top:35px">
-            <div class="text-center">
-                <h1>Programaciones</h1>
+        <div class="row mb-3">
+            <div class="col-sm-11"></div>
+            <div class="col-sm-1">
+                <button type="button" class="btn btn btn-success" id="btnfilltable"><i class="fas fa-redo-alt"></i></button>
             </div>
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Qx</th>
-                        <th scope="col">No_Historia</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Procedimiento</th>
-                        <th scope="col">Servicio</th>
-                        <th scope="col">Cirujano</th>
-                        <th scope="col">Anestesista</th>
-                        <th scope="col">Asistentes</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <th scope="row">@item.Hora</th>
-                            <td>@item.Qx</td>
-                            <td>@item.No_Historia</td>
-                            <td>@item.Nombre</td>
-                            <td>@item.Edad</td>
-                            <td>@item.Procedimiento</td>
-                            <td>@item.Servicio</td>
-                            <td>@item.Cirujano</td>
-                            <td>@item.Anestesista</td>
-                            <td>@item.Asistentes</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
 
-</div>
+        </div>
+
+        <script>
+            //function reloadData() {
+            //    $(document).ready(function () {
+            //        $('#reloadContent').load('/Quirofanos/Programaciones');
+            //    })
+            //}
+            $(document).ready(function () {
+                var refreshId = setInterval(function () {
+
+                    $.ajax({
+                        url: "/Quirofanos/fetchData",
+                        method: "GET",
+                        success: function (data) {
+
+                            data = JSON.parse(data);
+                            console.log(data);
+                            $('tbody').empty();
+                            for (var i = 0; i < data.length; i++) {
+                                $('tbody').append('<tr><td>' + data[i].Hora + '</td><td>' + data[i].Qx + '</td><td>' + data[i].No_Historia + '</td><td>' + data[i].Nombre + '</td><td>' + data[i].Edad + '</td><td>' + data[i].Procedimiento + '</td><td>' + data[i].Servicio + '</td><td>' + data[i].Cirujano + '</td><td>' + data[i].Anestesista + '</td><td>' + data[i].Asistentes + '</td></tr>');
+                            }
+                        },
+                        error: function (er) {
+                            console.log(data);
+                        }
+                    });
+                }, 1000);
+            });
+            //$(document).ready(function () {
+            //    $('#btnfilltable').on('click', function () {
+
+            //    });
+            //});
+        </script>
+
+        <div class="row mb-3" id="">
+            <div class="col-1">
+
+            </div>
+            <div class="col-11" style="margin-top:35px">
+                <div class="text-center">
+                    <h1>Programaciones</h1>
+                </div>
+
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            @{
+                                foreach (string columnHead in tableHeader)
+                                {
+                                <th scope="col">@columnHead</th>
+                                }
+                               }
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    
+                </table>
+            </div>
+        </div>
+
+    </div>

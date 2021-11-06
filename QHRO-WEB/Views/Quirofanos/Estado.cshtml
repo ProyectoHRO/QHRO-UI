@@ -14,26 +14,11 @@
 <div class="container" id="reloadContent" style="padding-top:25px">
 
     <div class="row mb-3">
-        <div class="col-sm-11"></div>
-        <div class="col-sm-1">
-            <button type="button" class="btn btn btn-success" onclick="reloadData()"><i class="fas fa-redo-alt"></i></button>
-        </div>
-
+        <div class="col-sm-12"></div>
+       
+        
     </div>
-    <script>
-        function reloadData() {
-            $(document).ready(function () {
-                $('#reloadContent').load('/Quirofanos/Estado');
-            })
-        }
-
-        $(document).ready(function () {
-            var refreshId = setInterval(function () {
-                $('#reloadContent').load('/Quirofanos/Estado');
-            }, 60000);
-        });
-
-    </script>
+   
     <v class="row mb-3">
         <div class="row row-cols-1 row-cols-md-8 g-4">
 

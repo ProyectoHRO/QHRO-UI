@@ -119,9 +119,9 @@ namespace BLL
                 string AorP = timeSep[2];
                 if (AorP == "A.M")
                 {
-                    if (h=="12")
+                    if (h == "12")
                     {
-                        h = ((Convert.ToInt32(h) % 12) + 12).ToString();
+                        h = "00";
                     }
                 }
                 else if (AorP == "P.M")
@@ -130,11 +130,15 @@ namespace BLL
                 }
 
                 DateTime f1 = Convert.ToDateTime(h + ":" + m + ":00");
-                DateTime f2 = DateTime.Now;
+                string f2 = f1.ToString("HH:mm");
+                string f3 = DateTime.Now.ToString("HH:mm");
+                TimeSpan t1 = TimeSpan.Parse(f2);
+                TimeSpan t2 = TimeSpan.Parse(f3);
+                int i = TimeSpan.Compare(t1, t2);
 
-                int i = TimeSpan.Compare(f1.TimeOfDay, f2.TimeOfDay);
+        
 
-                if (i < 0)
+                if (i == 0)
                 {
                     DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
 
@@ -143,14 +147,17 @@ namespace BLL
                         int IdQ = OpRoom.Field<int>(0);
                         string numQ = OpRoom.Field<string>(1).ToString();
 
-                        if ((numQ==numberQ))
+                        if ((numQ == numberQ))
                         {
                             string resp = Operatigrooms.editoperatingRoom(numQ, "Ocupado", true, IdQ);
 
                         }
                     }
-
                 }
+                else
+                {
+                }
+               
             }
         }
     }
