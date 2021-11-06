@@ -74,6 +74,10 @@ namespace UI
             // 
             // dataGridViewSchedule
             // 
+            this.dataGridViewSchedule.AllowUserToAddRows = false;
+            this.dataGridViewSchedule.AllowUserToDeleteRows = false;
+            this.dataGridViewSchedule.AllowUserToResizeColumns = false;
+            this.dataGridViewSchedule.AllowUserToResizeRows = false;
             this.dataGridViewSchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -102,6 +106,7 @@ namespace UI
             this.dataGridViewSchedule.GridColor = System.Drawing.Color.White;
             this.dataGridViewSchedule.Location = new System.Drawing.Point(11, 58);
             this.dataGridViewSchedule.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSchedule.MultiSelect = false;
             this.dataGridViewSchedule.Name = "dataGridViewSchedule";
             this.dataGridViewSchedule.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

@@ -85,6 +85,9 @@ namespace UI
             // 
             // dataGridViewSearchPerson
             // 
+            this.dataGridViewSearchPerson.AllowUserToAddRows = false;
+            this.dataGridViewSearchPerson.AllowUserToDeleteRows = false;
+            this.dataGridViewSearchPerson.AllowUserToResizeRows = false;
             this.dataGridViewSearchPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -113,6 +116,7 @@ namespace UI
             this.dataGridViewSearchPerson.GridColor = System.Drawing.Color.White;
             this.dataGridViewSearchPerson.Location = new System.Drawing.Point(11, 101);
             this.dataGridViewSearchPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSearchPerson.MultiSelect = false;
             this.dataGridViewSearchPerson.Name = "dataGridViewSearchPerson";
             this.dataGridViewSearchPerson.ReadOnly = true;
             this.dataGridViewSearchPerson.RowHeadersVisible = false;

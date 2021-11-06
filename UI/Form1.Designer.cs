@@ -38,59 +38,23 @@ namespace UI
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelSlideMenu = new System.Windows.Forms.Panel();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.panel26 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel16 = new System.Windows.Forms.Panel();
             this.iconButtonAbout = new FontAwesome.Sharp.IconButton();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel13 = new System.Windows.Forms.Panel();
             this.panelReportsMenu = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.panel10 = new System.Windows.Forms.Panel();
             this.iconButtonSurgerys = new FontAwesome.Sharp.IconButton();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.iconButtonReports = new FontAwesome.Sharp.IconButton();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.iconButtonReports = new FontAwesome.Sharp.IconButton();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaximized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMinimized)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSlideMenu.SuspendLayout();
-            this.panel27.SuspendLayout();
-            this.panel28.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.panel20.SuspendLayout();
-            this.panel21.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
             this.panelReportsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,103 +170,17 @@ namespace UI
             // panelSlideMenu
             // 
             this.panelSlideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            this.panelSlideMenu.Controls.Add(this.panel27);
-            this.panelSlideMenu.Controls.Add(this.panel12);
             this.panelSlideMenu.Controls.Add(this.label2);
             this.panelSlideMenu.Controls.Add(this.iconPictureBox1);
-            this.panelSlideMenu.Controls.Add(this.panel20);
-            this.panelSlideMenu.Controls.Add(this.panel17);
-            this.panelSlideMenu.Controls.Add(this.panel16);
             this.panelSlideMenu.Controls.Add(this.iconButtonAbout);
-            this.panelSlideMenu.Controls.Add(this.panel15);
-            this.panelSlideMenu.Controls.Add(this.panel14);
-            this.panelSlideMenu.Controls.Add(this.panel13);
             this.panelSlideMenu.Controls.Add(this.panelReportsMenu);
             this.panelSlideMenu.Controls.Add(this.iconButtonReports);
-            this.panelSlideMenu.Controls.Add(this.panel8);
-            this.panelSlideMenu.Controls.Add(this.panel7);
-            this.panelSlideMenu.Controls.Add(this.panel6);
-            this.panelSlideMenu.Controls.Add(this.panel5);
-            this.panelSlideMenu.Controls.Add(this.panel4);
-            this.panelSlideMenu.Controls.Add(this.panel3);
-            this.panelSlideMenu.Controls.Add(this.panel2);
-            this.panelSlideMenu.Controls.Add(this.panel1);
             this.panelSlideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSlideMenu.Location = new System.Drawing.Point(0, 50);
             this.panelSlideMenu.Name = "panelSlideMenu";
             this.panelSlideMenu.Size = new System.Drawing.Size(250, 910);
             this.panelSlideMenu.TabIndex = 1;
             this.panelSlideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSlideMenu_Paint);
-            // 
-            // panel27
-            // 
-            this.panel27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel27.Controls.Add(this.panel28);
-            this.panel27.Controls.Add(this.panel30);
-            this.panel27.Location = new System.Drawing.Point(0, 803);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(3, 45);
-            this.panel27.TabIndex = 32;
-            // 
-            // panel28
-            // 
-            this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel28.Controls.Add(this.panel29);
-            this.panel28.Location = new System.Drawing.Point(14, 0);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(3, 45);
-            this.panel28.TabIndex = 30;
-            // 
-            // panel29
-            // 
-            this.panel29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel29.Location = new System.Drawing.Point(9, 31);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(3, 45);
-            this.panel29.TabIndex = 29;
-            // 
-            // panel30
-            // 
-            this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel30.Location = new System.Drawing.Point(9, 31);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(3, 45);
-            this.panel30.TabIndex = 29;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel12.Controls.Add(this.panel24);
-            this.panel12.Controls.Add(this.panel26);
-            this.panel12.Location = new System.Drawing.Point(0, 752);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(3, 45);
-            this.panel12.TabIndex = 31;
-            // 
-            // panel24
-            // 
-            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel24.Controls.Add(this.panel25);
-            this.panel24.Location = new System.Drawing.Point(14, 0);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(3, 45);
-            this.panel24.TabIndex = 30;
-            // 
-            // panel25
-            // 
-            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel25.Location = new System.Drawing.Point(9, 31);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(3, 45);
-            this.panel25.TabIndex = 29;
-            // 
-            // panel26
-            // 
-            this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel26.Location = new System.Drawing.Point(9, 31);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(3, 45);
-            this.panel26.TabIndex = 29;
             // 
             // label2
             // 
@@ -330,84 +208,6 @@ namespace UI
             this.iconPictureBox1.TabStop = false;
             this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
-            // panel20
-            // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel20.Controls.Add(this.panel21);
-            this.panel20.Controls.Add(this.panel23);
-            this.panel20.Location = new System.Drawing.Point(0, 701);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(3, 45);
-            this.panel20.TabIndex = 29;
-            // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel21.Controls.Add(this.panel22);
-            this.panel21.Location = new System.Drawing.Point(14, 0);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(3, 45);
-            this.panel21.TabIndex = 30;
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel22.Location = new System.Drawing.Point(9, 31);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(3, 45);
-            this.panel22.TabIndex = 29;
-            // 
-            // panel23
-            // 
-            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel23.Location = new System.Drawing.Point(9, 31);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(3, 45);
-            this.panel23.TabIndex = 29;
-            // 
-            // panel17
-            // 
-            this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel17.Controls.Add(this.panel18);
-            this.panel17.Controls.Add(this.panel9);
-            this.panel17.Location = new System.Drawing.Point(0, 651);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(3, 45);
-            this.panel17.TabIndex = 28;
-            // 
-            // panel18
-            // 
-            this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel18.Controls.Add(this.panel19);
-            this.panel18.Location = new System.Drawing.Point(14, 0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(3, 45);
-            this.panel18.TabIndex = 30;
-            // 
-            // panel19
-            // 
-            this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel19.Location = new System.Drawing.Point(9, 31);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(3, 45);
-            this.panel19.TabIndex = 29;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel9.Location = new System.Drawing.Point(9, 31);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(3, 45);
-            this.panel9.TabIndex = 29;
-            // 
-            // panel16
-            // 
-            this.panel16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel16.Location = new System.Drawing.Point(0, 601);
-            this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(3, 45);
-            this.panel16.TabIndex = 26;
-            // 
             // iconButtonAbout
             // 
             this.iconButtonAbout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -421,38 +221,14 @@ namespace UI
             this.iconButtonAbout.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAbout.IconSize = 25;
             this.iconButtonAbout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAbout.Location = new System.Drawing.Point(4, 880);
+            this.iconButtonAbout.Location = new System.Drawing.Point(0, 880);
             this.iconButtonAbout.Name = "iconButtonAbout";
-            this.iconButtonAbout.Size = new System.Drawing.Size(247, 30);
+            this.iconButtonAbout.Size = new System.Drawing.Size(251, 30);
             this.iconButtonAbout.TabIndex = 25;
             this.iconButtonAbout.Text = "Acerca de";
             this.iconButtonAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonAbout.UseVisualStyleBackColor = true;
-            // 
-            // panel15
-            // 
-            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel15.Location = new System.Drawing.Point(0, 880);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(3, 30);
-            this.panel15.TabIndex = 24;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel14.Location = new System.Drawing.Point(0, 550);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(3, 45);
-            this.panel14.TabIndex = 22;
-            // 
-            // panel13
-            // 
-            this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel13.Location = new System.Drawing.Point(0, 501);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(3, 45);
-            this.panel13.TabIndex = 20;
+            this.iconButtonAbout.Click += new System.EventHandler(this.iconButtonAbout_Click);
             // 
             // panelReportsMenu
             // 
@@ -526,6 +302,16 @@ namespace UI
             this.panel11.Size = new System.Drawing.Size(10, 45);
             this.panel11.TabIndex = 19;
             // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(250, 50);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1286, 910);
+            this.panelContainer.TabIndex = 2;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
+            // 
             // iconButtonReports
             // 
             this.iconButtonReports.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -539,89 +325,15 @@ namespace UI
             this.iconButtonReports.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonReports.IconSize = 38;
             this.iconButtonReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonReports.Location = new System.Drawing.Point(4, 101);
+            this.iconButtonReports.Location = new System.Drawing.Point(0, 101);
             this.iconButtonReports.Name = "iconButtonReports";
-            this.iconButtonReports.Size = new System.Drawing.Size(247, 45);
+            this.iconButtonReports.Size = new System.Drawing.Size(251, 45);
             this.iconButtonReports.TabIndex = 18;
             this.iconButtonReports.Text = "Reportes";
             this.iconButtonReports.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonReports.UseVisualStyleBackColor = true;
             this.iconButtonReports.Visible = false;
             this.iconButtonReports.Click += new System.EventHandler(this.iconButtonReports_Click);
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel8.Location = new System.Drawing.Point(0, 451);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(3, 45);
-            this.panel8.TabIndex = 15;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel7.Location = new System.Drawing.Point(0, 401);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(3, 45);
-            this.panel7.TabIndex = 13;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel6.Location = new System.Drawing.Point(0, 351);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(3, 45);
-            this.panel6.TabIndex = 11;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel5.Location = new System.Drawing.Point(0, 301);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(3, 45);
-            this.panel5.TabIndex = 9;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel4.Location = new System.Drawing.Point(0, 251);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(3, 45);
-            this.panel4.TabIndex = 6;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel3.Location = new System.Drawing.Point(0, 201);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(3, 45);
-            this.panel3.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel2.Location = new System.Drawing.Point(0, 151);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(3, 45);
-            this.panel2.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel1.Location = new System.Drawing.Point(0, 101);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(3, 45);
-            this.panel1.TabIndex = 0;
-            // 
-            // panelContainer
-            // 
-            this.panelContainer.BackColor = System.Drawing.Color.White;
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(250, 50);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1286, 910);
-            this.panelContainer.TabIndex = 2;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // Form1
             // 
@@ -645,15 +357,7 @@ namespace UI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSlideMenu.ResumeLayout(false);
             this.panelSlideMenu.PerformLayout();
-            this.panel27.ResumeLayout(false);
-            this.panel28.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel24.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.panel20.ResumeLayout(false);
-            this.panel21.ResumeLayout(false);
-            this.panel17.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
             this.panelReportsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -669,7 +373,6 @@ namespace UI
         private System.Windows.Forms.PictureBox pictureBoxMaximized;
         private System.Windows.Forms.PictureBox pictureBoxNormal;
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton iconButtonReports;
         private System.Windows.Forms.Panel panelReportsMenu;
         private FontAwesome.Sharp.IconButton iconButtonSurgerys;
         private System.Windows.Forms.Panel panel11;
@@ -680,33 +383,6 @@ namespace UI
         private FontAwesome.Sharp.IconButton iconButtonAbout;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Panel panel30;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Panel panel20;
-        private System.Windows.Forms.Panel panel21;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel panel18;
-        private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
+        private FontAwesome.Sharp.IconButton iconButtonReports;
     }
 }

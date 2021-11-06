@@ -40,7 +40,6 @@ namespace UI
             this.dataGridViewOperatingRooms = new System.Windows.Forms.DataGridView();
             this.groupBoxoperatingroomData = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxNumber = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNumber = new System.Windows.Forms.Label();
@@ -49,15 +48,16 @@ namespace UI
             this.comboStatus = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBoxCurrentState = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOperatingRooms)).BeginInit();
             this.groupBoxoperatingroomData.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -163,6 +163,9 @@ namespace UI
             // 
             // dataGridViewOperatingRooms
             // 
+            this.dataGridViewOperatingRooms.AllowUserToAddRows = false;
+            this.dataGridViewOperatingRooms.AllowUserToDeleteRows = false;
+            this.dataGridViewOperatingRooms.AllowUserToResizeRows = false;
             this.dataGridViewOperatingRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -191,6 +194,7 @@ namespace UI
             this.dataGridViewOperatingRooms.GridColor = System.Drawing.Color.White;
             this.dataGridViewOperatingRooms.Location = new System.Drawing.Point(2, 2);
             this.dataGridViewOperatingRooms.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewOperatingRooms.MultiSelect = false;
             this.dataGridViewOperatingRooms.Name = "dataGridViewOperatingRooms";
             this.dataGridViewOperatingRooms.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -252,25 +256,6 @@ namespace UI
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.90909F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(614, 175);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.iconButtonSave, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.iconButtonUpdate, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.iconButtonNew, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(360, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.77778F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.22222F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(352, 272);
-            this.tableLayoutPanel3.TabIndex = 34;
             // 
             // textBoxNumber
             // 
@@ -370,6 +355,39 @@ namespace UI
             this.labelID.Text = "ID";
             this.labelID.Visible = false;
             // 
+            // comboBoxCurrentState
+            // 
+            this.comboBoxCurrentState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxCurrentState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCurrentState.FormattingEnabled = true;
+            this.comboBoxCurrentState.Items.AddRange(new object[] {
+            "Disponible",
+            "Mantenimiento",
+            "Ocupado"});
+            this.comboBoxCurrentState.Location = new System.Drawing.Point(166, 125);
+            this.comboBoxCurrentState.Name = "comboBoxCurrentState";
+            this.comboBoxCurrentState.Size = new System.Drawing.Size(166, 28);
+            this.comboBoxCurrentState.TabIndex = 35;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.iconButtonSave, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.iconButtonUpdate, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.iconButtonNew, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(360, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.77778F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.22222F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(352, 272);
+            this.tableLayoutPanel3.TabIndex = 34;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -386,20 +404,6 @@ namespace UI
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1176, 574);
             this.tableLayoutPanel2.TabIndex = 33;
-            // 
-            // comboBoxCurrentState
-            // 
-            this.comboBoxCurrentState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxCurrentState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCurrentState.FormattingEnabled = true;
-            this.comboBoxCurrentState.Items.AddRange(new object[] {
-            "Disponible",
-            "Mantenimiento",
-            "Ocupado"});
-            this.comboBoxCurrentState.Location = new System.Drawing.Point(166, 128);
-            this.comboBoxCurrentState.Name = "comboBoxCurrentState";
-            this.comboBoxCurrentState.Size = new System.Drawing.Size(166, 28);
-            this.comboBoxCurrentState.TabIndex = 35;
             // 
             // tableLayoutPanel4
             // 
@@ -452,9 +456,9 @@ namespace UI
             this.groupBoxoperatingroomData.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);

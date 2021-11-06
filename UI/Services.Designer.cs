@@ -40,11 +40,11 @@ namespace UI
             this.labelServiceName = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.labelID = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.iconButtonNew = new FontAwesome.Sharp.IconButton();
             this.iconButtonSave = new FontAwesome.Sharp.IconButton();
             this.iconButtonUpdate = new FontAwesome.Sharp.IconButton();
-            this.labelID = new System.Windows.Forms.Label();
             this.iconButtonList = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -155,6 +155,16 @@ namespace UI
             this.label4.Text = "ID";
             this.label4.Visible = false;
             // 
+            // labelID
+            // 
+            this.labelID.AutoSize = true;
+            this.labelID.Location = new System.Drawing.Point(43, 466);
+            this.labelID.Name = "labelID";
+            this.labelID.Size = new System.Drawing.Size(52, 20);
+            this.labelID.TabIndex = 20;
+            this.labelID.Text = "label10";
+            this.labelID.Visible = false;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -251,16 +261,6 @@ namespace UI
             this.iconButtonUpdate.UseVisualStyleBackColor = false;
             this.iconButtonUpdate.Click += new System.EventHandler(this.iconButtonUpdate_Click);
             // 
-            // labelID
-            // 
-            this.labelID.AutoSize = true;
-            this.labelID.Location = new System.Drawing.Point(43, 466);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(52, 20);
-            this.labelID.TabIndex = 20;
-            this.labelID.Text = "label10";
-            this.labelID.Visible = false;
-            // 
             // iconButtonList
             // 
             this.iconButtonList.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -315,6 +315,9 @@ namespace UI
             // 
             // dataGridViewOperatingRooms
             // 
+            this.dataGridViewOperatingRooms.AllowUserToAddRows = false;
+            this.dataGridViewOperatingRooms.AllowUserToDeleteRows = false;
+            this.dataGridViewOperatingRooms.AllowUserToResizeRows = false;
             this.dataGridViewOperatingRooms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -343,6 +346,7 @@ namespace UI
             this.dataGridViewOperatingRooms.GridColor = System.Drawing.Color.White;
             this.dataGridViewOperatingRooms.Location = new System.Drawing.Point(2, 2);
             this.dataGridViewOperatingRooms.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewOperatingRooms.MultiSelect = false;
             this.dataGridViewOperatingRooms.Name = "dataGridViewOperatingRooms";
             this.dataGridViewOperatingRooms.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

@@ -97,6 +97,12 @@
     <Compile Include="Doctors.Designer.cs">
       <DependentUpon>Doctors.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAbout.Designer.cs">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditInterventios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="FormDiffers.Designer.cs">
       <DependentUpon>FormDiffers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmergencies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmergencies.Designer.cs">
+      <DependentUpon>FormEmergencies.cs</DependentUpon>
     </Compile>
     <Compile Include="FormForgotPassword.cs">
       <SubType>Form</SubType>
@@ -150,6 +162,12 @@
     </Compile>
     <Compile Include="FormSearch.Designer.cs">
       <DependentUpon>FormSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSpecialtiesDoctors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSpecialtiesDoctors.Designer.cs">
+      <DependentUpon>FormSpecialtiesDoctors.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsSchedules.cs">
       <SubType>Form</SubType>
@@ -256,6 +274,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAbout.resx">
+      <DependentUpon>FormAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDailyReport.resx">
       <DependentUpon>FormDailyReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -264,6 +285,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditInterventios.resx">
       <DependentUpon>FormEditInterventios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmergencies.resx">
+      <DependentUpon>FormEmergencies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormForgotPassword.resx">
       <DependentUpon>FormForgotPassword.cs</DependentUpon>
@@ -279,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSpecialtiesDoctors.resx">
+      <DependentUpon>FormSpecialtiesDoctors.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsSchedules.resx">
       <DependentUpon>FormsSchedules.cs</DependentUpon>

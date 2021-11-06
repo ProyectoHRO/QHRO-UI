@@ -25,7 +25,7 @@ namespace UI
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         public bool Activate { get; set; }
-        int initx = 4;
+        int initx = 0;
         int inity = 101;
 
         IconButton createButton(string name, string text)
@@ -89,18 +89,27 @@ namespace UI
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.BriefcaseMedical;
             }
+            else if (text == "Emergencias")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.Ambulance;
+            }
+            else if (text == "Especialidades de doctores")
+            {
+                btn.IconChar = FontAwesome.Sharp.IconChar.UserMd;
+            }
             btn.IconSize = 38;
             btn.IconColor = Color.White;
             btn.Font = new Font("Arial", 12f);
             btn.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn.ImageAlign = ContentAlignment.MiddleLeft;
             btn.TextAlign = ContentAlignment.MiddleCenter;
-            btn.Size=new Size(247, 45);
+            btn.Size=new Size(251, 45);
             btn.Location = new System.Drawing.Point(initx, inity+50);
             btn.ForeColor = System.Drawing.Color.White;
             btn.Click += new EventHandler(this.buttonClick);
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
+            btn.Cursor = Cursors.Hand;
             inity = inity + 50;
             return btn;
         }
@@ -189,6 +198,14 @@ namespace UI
             {
                 openChildForm(new FormEditInterventios(userId));
             }
+            if (btn.Name == "iconButtonEmergencias")
+            {
+                openChildForm(new FormEmergencies());
+            }
+            if (btn.Name == "iconButtonEspecialidades de doctores")
+            {
+                openChildForm(new FormSpecialtiesDoctors());
+            }
         }
         public Form1(string userLog, int role, int serviceId, int idUser)
         {
@@ -264,7 +281,7 @@ namespace UI
        
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Desea cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("¿Desea cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
                 Application.Restart();
@@ -370,6 +387,13 @@ namespace UI
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void iconButtonAbout_Click(object sender, EventArgs e)
+        {
+            panelReportsMenu.Visible = false;
+            statePanel = 0;
+            openChildForm(new FormAbout());
         }
     }
 }
