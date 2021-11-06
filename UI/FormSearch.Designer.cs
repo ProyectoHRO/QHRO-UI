@@ -136,6 +136,7 @@ namespace UI
             // comboBoxFilterDoctor
             // 
             this.comboBoxFilterDoctor.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxFilterDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilterDoctor.FormattingEnabled = true;
             this.comboBoxFilterDoctor.Items.AddRange(new object[] {
             "DPI",
@@ -213,6 +214,7 @@ namespace UI
             // comboBoxAnesthetist
             // 
             this.comboBoxAnesthetist.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxAnesthetist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAnesthetist.FormattingEnabled = true;
             this.comboBoxAnesthetist.Items.AddRange(new object[] {
             "DPI",
@@ -289,6 +291,7 @@ namespace UI
             // comboBoxAssistant
             // 
             this.comboBoxAssistant.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxAssistant.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxAssistant.FormattingEnabled = true;
             this.comboBoxAssistant.Items.AddRange(new object[] {
             "DPI",
@@ -354,6 +357,7 @@ namespace UI
             // comboBoxPatient
             // 
             this.comboBoxPatient.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.comboBoxPatient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPatient.FormattingEnabled = true;
             this.comboBoxPatient.Items.AddRange(new object[] {
             "No. Historia",

@@ -876,7 +876,7 @@
             <Top>2.54528cm</Top>
             <Left>2.00455cm</Left>
             <Height>1.2cm</Height>
-            <Width>27.8175cm</Width>
+            <Width>27.81751cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1072,7 +1072,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value />
+                      <Value>=Parameters!date1.Value</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                       </Style>
@@ -1140,7 +1140,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value />
+                      <Value>=Parameters!date2.Value</Value>
                       <Style>
                         <FontSize>12pt</FontSize>
                       </Style>
@@ -1251,7 +1251,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value />
+                      <Value>=Parameters!dateNow.Value</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1299,6 +1299,22 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="dateNow">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="date1">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="date2">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -1309,6 +1325,21 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>anesthesiaType</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>dateNow</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>date1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>date2</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

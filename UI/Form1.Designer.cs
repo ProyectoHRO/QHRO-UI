@@ -76,8 +76,6 @@ namespace UI
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.panel31 = new System.Windows.Forms.Panel();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaximized)).BeginInit();
@@ -460,15 +458,13 @@ namespace UI
             // 
             this.panelReportsMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(93)))), ((int)(((byte)(118)))));
             this.panelReportsMenu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelReportsMenu.Controls.Add(this.iconButton1);
-            this.panelReportsMenu.Controls.Add(this.panel31);
             this.panelReportsMenu.Controls.Add(this.iconButton3);
             this.panelReportsMenu.Controls.Add(this.panel10);
             this.panelReportsMenu.Controls.Add(this.iconButtonSurgerys);
             this.panelReportsMenu.Controls.Add(this.panel11);
             this.panelReportsMenu.Location = new System.Drawing.Point(30, 141);
             this.panelReportsMenu.Name = "panelReportsMenu";
-            this.panelReportsMenu.Size = new System.Drawing.Size(221, 155);
+            this.panelReportsMenu.Size = new System.Drawing.Size(221, 105);
             this.panelReportsMenu.TabIndex = 19;
             this.panelReportsMenu.Visible = false;
             // 
@@ -627,35 +623,6 @@ namespace UI
             this.panelContainer.TabIndex = 2;
             this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
-            // iconButton1
-            // 
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.White;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.White;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 38;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(3, 105);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(216, 45);
-            this.iconButton1.TabIndex = 26;
-            this.iconButton1.Text = "Reporte anestesia";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // panel31
-            // 
-            this.panel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.panel31.Location = new System.Drawing.Point(-1, 105);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(10, 45);
-            this.panel31.TabIndex = 25;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,7 +708,5 @@ namespace UI
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Panel panel31;
     }
 }

@@ -86,14 +86,15 @@ namespace UI
             this.reportViewerSurgeriesBdates.ProcessingMode = ProcessingMode.Local;
             this.reportViewerSurgeriesBdates.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportSurgeriesBdate.rdlc";
             this.reportViewerSurgeriesBdates.LocalReport.DataSources.Clear();
-            //Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
-            //{
-            //    new Microsoft.Reporting.WinForms.ReportParameter("fechaHoy",DateTime.Now.ToString()),
-            //    //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
-            //    //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
-            //    //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
-            //};
-            //this.reportViewerSurgeriesBdates.LocalReport.SetParameters(rParams);
+            Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+            {
+                new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate   .Year.ToString()),
+                //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
+                //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
+            };
+            this.reportViewerSurgeriesBdates.LocalReport.SetParameters(rParams);
             this.reportViewerSurgeriesBdates.LocalReport.DataSources.Add(Report);
             this.reportViewerSurgeriesBdates.RefreshReport();
         }
@@ -166,8 +167,9 @@ namespace UI
                     Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                     {
                     new Microsoft.Reporting.WinForms.ReportParameter("serviceName",serviceName),
-                        //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
-                        //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate.Year.ToString()),
                         //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
                     };
                     this.reportViewerSurgeriesServiceBdates.LocalReport.SetParameters(rParams);
@@ -239,8 +241,9 @@ namespace UI
             Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                     new Microsoft.Reporting.WinForms.ReportParameter("QuiNumber",Qx),
-                //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
-                //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
+                  new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate   .Year.ToString()),
                 //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
             };
             this.reportViewerSurgeriesQBdates.LocalReport.SetParameters(rParams);
@@ -311,9 +314,8 @@ namespace UI
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
                     new Microsoft.Reporting.WinForms.ReportParameter("pacientName",name),
-                    //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
-                    //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
-                    //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
+                     new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+               
                 };
                 this.reportViewerSurgeriesByPatient.LocalReport.SetParameters(rParams);
                 this.reportViewerSurgeriesByPatient.LocalReport.DataSources.Add(Report);
@@ -398,9 +400,10 @@ namespace UI
                         Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                         {
                              new Microsoft.Reporting.WinForms.ReportParameter("anesthesiaType",anesthesiaName),
-                            //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
-                            //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
-                            //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
+                             new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                             new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
+                             new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate   .Year.ToString()),
+
                         };
                         this.reportViewerAnesthesiaByDates.LocalReport.SetParameters(rParams);
                         this.reportViewerAnesthesiaByDates.LocalReport.DataSources.Add(Report);

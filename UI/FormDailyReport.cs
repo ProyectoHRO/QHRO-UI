@@ -158,21 +158,28 @@ namespace UI
                 }
                 listDiffs.Add(diffs);
             }
-            ReportDataSource Report;
-            Report = new ReportDataSource("DataSetDailyDiff", listDiffs);
-            this.reportViewerDiff.ProcessingMode = ProcessingMode.Local;
-            this.reportViewerDiff.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportDiff.rdlc";
-            this.reportViewerDiff.LocalReport.DataSources.Clear();
-            //Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
-            //{
-            //    new Microsoft.Reporting.WinForms.ReportParameter("fechaHoy",DateTime.Now.ToString()),
-            //    //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
-            //    //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
-            //    //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
-            //};
-            //this.reportViewerDailies.LocalReport.SetParameters(rParams);
-            this.reportViewerDiff.LocalReport.DataSources.Add(Report);
-            this.reportViewerDiff.RefreshReport();
+            try
+            {
+                ReportDataSource Report;
+                Report = new ReportDataSource("DataSetDailyDiff", listDiffs);
+                this.reportViewerDiff.ProcessingMode = ProcessingMode.Local;
+                this.reportViewerDiff.LocalReport.ReportEmbeddedResource = @"UI.Reports.ReportDiff.rdlc";
+                this.reportViewerDiff.LocalReport.DataSources.Clear();
+                Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                {
+                new Microsoft.Reporting.WinForms.ReportParameter("fechaHoy",DateTime.Now.ToString()),
+                    //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
+                    //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
+                    //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
+                };
+                this.reportViewerDiff.LocalReport.SetParameters(rParams);
+                this.reportViewerDiff.LocalReport.DataSources.Add(Report);
+                this.reportViewerDiff.RefreshReport();
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void reportViewerDailies_Load(object sender, EventArgs e)

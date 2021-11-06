@@ -466,27 +466,25 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox12">
+            <Textbox Name="dateNow">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value />
+                      <Value>=Parameters!dateNow.Value</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
+                  <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>0.15104in</Top>
-              <Left>4.10938in</Left>
-              <Height>0.25in</Height>
-              <Width>1.96874in</Width>
+              <rd:DefaultName>dateNow</rd:DefaultName>
+              <Top>0.38364cm</Top>
+              <Left>10.65953cm</Left>
+              <Height>0.6cm</Height>
+              <Width>4.9477cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -539,6 +537,12 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
+    <ReportParameter Name="dateNow">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -569,6 +573,11 @@
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>nombreTipoAsistente</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>dateNow</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>

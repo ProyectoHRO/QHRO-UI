@@ -99,7 +99,8 @@ namespace UI
                 new Microsoft.Reporting.WinForms.ReportParameter("cui",cui),
                 new Microsoft.Reporting.WinForms.ReportParameter("numero",number),
                 new Microsoft.Reporting.WinForms.ReportParameter("correo",email),
-                new Microsoft.Reporting.WinForms.ReportParameter("especialidad",specialty)
+                new Microsoft.Reporting.WinForms.ReportParameter("especialidad",specialty),
+                new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString())
                     };
                     this.reportViewerDoctor.LocalReport.SetParameters(rParams);
                     this.reportViewerDoctor.LocalReport.DataSources.Add(Report);
@@ -162,7 +163,8 @@ namespace UI
                 new Microsoft.Reporting.WinForms.ReportParameter("nombreAnestesista",name),
                 new Microsoft.Reporting.WinForms.ReportParameter("cui",cui),
                 new Microsoft.Reporting.WinForms.ReportParameter("numero",number),
-                new Microsoft.Reporting.WinForms.ReportParameter("correo",email)
+                new Microsoft.Reporting.WinForms.ReportParameter("correo",email),
+                new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString())
                     };
                     this.reportViewerAnesthetist.LocalReport.SetParameters(rParams);
                     this.reportViewerAnesthetist.LocalReport.DataSources.Add(Report);
@@ -238,7 +240,8 @@ namespace UI
                 new Microsoft.Reporting.WinForms.ReportParameter("cui",cui),
                 new Microsoft.Reporting.WinForms.ReportParameter("numero",number),
                 new Microsoft.Reporting.WinForms.ReportParameter("correo",email),
-                new Microsoft.Reporting.WinForms.ReportParameter("nombreTipoAsistente",typeAssistantName)
+                new Microsoft.Reporting.WinForms.ReportParameter("nombreTipoAsistente",typeAssistantName),
+                new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString())
                     };
                     this.reportViewerAssistant.LocalReport.SetParameters(rParams);
                     this.reportViewerAssistant.LocalReport.DataSources.Add(Report);
@@ -328,6 +331,7 @@ namespace UI
                 new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
                 new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
+                 new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString())
                     };
                     this.reportViewerPacientDiagnosis.LocalReport.SetParameters(rParams);
                     this.reportViewerPacientDiagnosis.LocalReport.DataSources.Add(Report);
