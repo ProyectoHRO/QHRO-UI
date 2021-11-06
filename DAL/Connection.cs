@@ -17,7 +17,8 @@ namespace DAL
         }
         private SqlConnection connection = new SqlConnection(getString());
 
-        private SqlConnection connection2 = new SqlConnection("Server=192.168.1.101; Database=RecepcionV2; User Id=sa; Password=Hospital0;");
+        //private SqlConnection connection2 = new SqlConnection("Server=192.168.1.101; Database=RecepcionV2; User Id=sa; Password=Hospital0;");
+        private SqlConnection connection2 = new SqlConnection("Server=DESKTOP-HA661DP; Database=hroTest; User Id=sa; Password=Database123;");
 
         public SqlConnection OpenConnection()
         {

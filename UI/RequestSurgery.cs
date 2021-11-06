@@ -31,7 +31,7 @@ namespace UI
         {
             DataTable infoPatientsHro = patientsHro.getPatientsByHistoryNumber(param);
             string historyNumber = "";
-            if (infoPatientsHro.Rows.Count<1)
+            if (infoPatientsHro.Rows.Count < 1)
             {
                 MessageBox.Show("No se encuentra el paciente en el sistema");
             }
@@ -45,14 +45,14 @@ namespace UI
                     textBoxsecondName.Text = item.Field<string>(2);
                     textBoxfirstSurname.Text = item.Field<string>(3);
                     textBoxsecondSurname.Text = item.Field<string>(4);
-                    string sex= item.Field<string>(5);
-                    if (sex=="0")
+                    string sex = item.Field<string>(5);
+                    if (sex == "0")
                     {
-                        comboBoxGender.Text="Masculino";
+                        comboBoxGender.Text = "Masculino";
                     }
-                    else if(sex=="1")
+                    else if (sex == "1")
                     {
-                        comboBoxGender.Text= "Femenino";
+                        comboBoxGender.Text = "Femenino";
                     }
                     textBoxAge.Text = item.Field<int>(6).ToString();
                 }
@@ -129,7 +129,7 @@ namespace UI
             {
                 if (band==1)
                 {
-                    string response = requestSurgery.makeSurgeryRequestAndPatient(userId, textBoxDiagnosis.Text, 3, textBoxhistoryNumber.Text,textBoxfirstName.Text, textBoxsecondName.Text,
+                    string response = requestSurgery.makeSurgeryRequestAndPatient(userId, textBoxDiagnosis.Text, serviceId, textBoxhistoryNumber.Text,textBoxfirstName.Text, textBoxsecondName.Text,
                     textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text), comboBoxGender.Text);
                     MessageBox.Show(response);
                 }

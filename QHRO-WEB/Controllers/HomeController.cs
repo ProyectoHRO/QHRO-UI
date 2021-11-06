@@ -46,7 +46,8 @@ namespace QHRO_WEB.Controllers
                 }
 
                 queryResult = user.Login(usuario,password);
-
+                
+        
                 if (queryResult.Contains("incorrectos"))
                 {
                     return RedirectToAction("Index", new { message = "Inicio de sesión no valido" });
@@ -90,7 +91,15 @@ namespace QHRO_WEB.Controllers
                                 idPermit = 7;
                             }
                         }
+                        Session["idUser"] = idUser;
+                    if (serviceId == 0)
+                    {
+                    }
+                    else
+                    {
                         Session["serviceId"] = serviceId;
+                    }
+                      
                         if (idPermit==7)
                         {
                             Session["idPermit"] = idPermit;

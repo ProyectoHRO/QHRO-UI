@@ -114,7 +114,7 @@ namespace BLL
             string time, List<ClassDtoAssistants> assistantsList, List<ClassDtoDoctors> doctorsList)
         {
             string response = "";
-            DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, time, opRoomId);
+            DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, surgeryTime, opRoomId);
             if (infoSurgeries.Rows.Count < 1)
             {
                 DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
@@ -173,7 +173,7 @@ namespace BLL
             int anesthetistId, int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
         {
             string response = "";
-            DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, time, opRoomId);
+            DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, surgeryTime, opRoomId);
             if (infoSurgeries.Rows.Count<1)
             {
                 DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };

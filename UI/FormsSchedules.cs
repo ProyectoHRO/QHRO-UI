@@ -15,7 +15,7 @@ namespace UI
         private ClassReports reports =new ClassReports();
         private Surgeries surgeries = new Surgeries();
         private ClassGetStrings stringsClass = new ClassGetStrings();
-        private 
+        private ClassOperatingRoom Operatigrooms = new ClassOperatingRoom();
         string pacientName = "";
         int formClosed;
         int surgerieId;
@@ -54,7 +54,7 @@ namespace UI
         {
 
         }
-
+        string qx;
         private void dataGridViewSchedule_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             iconButtonDiffer.Enabled = true;
@@ -63,6 +63,7 @@ namespace UI
             surgerieId = Convert.ToInt32(dataGridViewSchedule.Rows[e.RowIndex].Cells[0].Value);
             pacientName = dataGridViewSchedule.Rows[e.RowIndex].Cells[4].Value.ToString();
             hour = dataGridViewSchedule.Rows[e.RowIndex].Cells[1].Value.ToString();
+            qx = dataGridViewSchedule.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
 
         private void iconButtonReSchedule_Click(object sender, EventArgs e)
@@ -75,45 +76,55 @@ namespace UI
         private void iconButtonFinish_Click(object sender, EventArgs e)
         {
             string[] response;
-            string initHour="";
-            string initMin="";
-            if (hour.Contains("P"))
+            string hora = hour;
+            string[] timeSep = stringsClass.getStrings(hora, new char[] { ':', ' ' });
+            string h = timeSep[0];
+            string m = timeSep[1];
+            string AorP = timeSep[2];
+            if (AorP == "A.M")
             {
-                response = stringsClass.getStrings(hour, new char[] { ':', ' ', 'P', 'A', '.', 'M' });
-                initHour = ((Convert.ToInt32(response[0]) % 12) + 12).ToString();
-                initMin = response[1];
-            }
-            if (hour.Contains("A"))
-            {
-                response = stringsClass.getStrings(hour, new char[] { ':', ' ', 'P', 'A', '.', 'M' });
-                initHour = response[0];
-                initMin = response[1];
-            }
-
-            DateTime f1 = Convert.ToDateTime(initHour + ":" + initMin + ":00");
-            DateTime f2 = Convert.ToDateTime(DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString()+ ":00");
-
-            if (f2.Hour > f1.Hour)
-            {
-                MessageBox.Show(surgeries.finishSurgerie(surgerieId));
-                loadData();
-            }
-            else if(f2.Hour== f1.Hour)
-            {
-                if (f2.Minute > f1.Minute)
+                if (h == "12")
                 {
-                    MessageBox.Show(surgeries.finishSurgerie(surgerieId));
-                    loadData();
-                }
-                else
-                {
-                    MessageBox.Show("No puedes finalizar una cirugía que aun no ha comenzado.");
+                    h = "00";
                 }
             }
-            else
+            else if (AorP == "P.M")
+            {
+                h = ((Convert.ToInt32(h) % 12) + 12).ToString();
+            }
+
+            DateTime f1 = Convert.ToDateTime(h + ":" + m + ":00");
+            string f2 = f1.ToString("HH:mm");
+            string f3 = DateTime.Now.ToString("HH:mm");
+            TimeSpan t1 = TimeSpan.Parse(f2);
+            TimeSpan t2 = TimeSpan.Parse(f3);
+
+            int i = TimeSpan.Compare(t1, t2);
+
+
+            if (i>0)
             {
                 MessageBox.Show("No puedes finalizar una cirugía que aun no ha comenzado.");
             }
+            else
+            {
+                MessageBox.Show(surgeries.finishSurgerie(surgerieId));
+                DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
+
+                foreach (DataRow OpRoom in infoOperatingRooms.Rows)
+                {
+                    int IdQ = OpRoom.Field<int>(0);
+                    string numQ = OpRoom.Field<string>(1).ToString();
+
+                    if ((numQ == qx))
+                    {
+                        string resp = Operatigrooms.editoperatingRoom(numQ, "Mantenimiento", true, IdQ);
+
+                    }
+                }
+                loadData();
+            }
+         
         }
 
         private void FormsSchedules_Activated(object sender, EventArgs e)

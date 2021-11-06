@@ -10,19 +10,27 @@
     <section class="d-flex justify-content-center" style="margin-top:30px">
         <div class="card col-sm-6 p-3">
             <div class="mb-3">
+                @{
+                    if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        //el mensaje tiene un valor
+                        <div class="alert alert-warning">@ViewBag.Message</div>
+                    }
+                }
+                <br />
                 <h4>Solicitar Cirugia</h4>
             </div>
             <div class="mb-2">
-                <form action="/Quirofanos/No_Historia">
+                <form action="/Quirofanos/No_Historia" method="post"> 
                     <div class="mb-2">
                         <i class='bx bx-book-open blackiconcolor'></i>
                         <label style="color:red">*</label>
                         <label for="Historial">No.Historia:</label>
-                        <input type="text" class="form-control" name="noHistorial" id="noHistorial" placeholder="Historial">
+                        <input type="text" class="form-control" name="noHistorial" required id="noHistorial" placeholder="Historial">
                     </div>
 
                     <div class="row">
-                        <button type="button" class="btn btn-primary btn-lg btn-block">Ingresar</button>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Ingresar</button>
                     </div>
                 </form>
             </div>
