@@ -122,12 +122,12 @@ namespace UI
             string resp = operatingroom.editoperatingRoom(textBoxNumber.Text, comboBoxCurrentState.Text, status, id);
             if (resp.ToUpper().Contains("ERROR"))
             {
-                MessageBox.Show(resp, "Error al actualizar datos del paciente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(resp, "Error al actualizar datos del quirofano", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             else
             {
-                MessageBox.Show(resp, "Datos del paciente actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(resp, "Datos del quirofano actualizados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 listoperatingRooms();
             }
         }
