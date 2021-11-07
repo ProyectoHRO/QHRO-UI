@@ -200,7 +200,7 @@ namespace UI
             }
             if (btn.Name == "iconButtonEmergencias")
             {
-                openChildForm(new FormEmergencies());
+                openChildForm(new FormEmergencies(userId,idService));
             }
             if (btn.Name == "iconButtonEspecialidades de doctores")
             {

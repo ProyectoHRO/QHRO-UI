@@ -174,6 +174,188 @@ namespace BLL
             return response;
 
         }
+
+        public string EmergencyBasic(
+
+                int pacientId,
+               int serviceId,
+               int surgeryId,
+                int userId,
+                string finalHour,
+            DateTime finalDate,
+                string anesthesiaType,
+                string surgeryType,
+                DateTime surgeryDate,
+                string surgeryTime,
+                int opRoomId,
+           int anesthetistId,
+           string relevance,
+           string interventionDetail,
+           List<ClassDtoAssistants> assistantsList,
+           List<ClassDtoDoctors> doctorsList)
+        {
+            string response = "";
+
+            DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
+            foreach (ClassDtoAssistants item in assistantsList)
+            {
+                dataAssistants.Rows.Add(item.AssistandId);
+            }
+            DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
+            foreach (ClassDtoDoctors item in doctorsList)
+            {
+                dataDoctors.Rows.Add(item.DoctorId);
+            }
+            response = surgeries.EmergencyBasic(
+                pacientId,
+                serviceId,
+                surgeryId,
+                userId,
+                finalHour,
+                finalDate,
+                anesthesiaType,
+                surgeryType,
+                surgeryDate,
+                opRoomId,
+                anesthetistId,
+                relevance,
+                interventionDetail,
+                surgeryTime,
+                dataAssistants,
+                dataDoctors
+                );
+
+            return response;
+
+        }
+        
+
+        public string EmergencyAndPatientNew(
+                string firstName,
+                string secondName,
+                string firstSurname,
+                string secondSurname,
+                short age,
+                string gender,
+                int serviceId,
+                int surgeryId,
+                 int userId,
+                 string finalHour,
+             DateTime finalDate,
+                 string anesthesiaType,
+                 string surgeryType,
+                 DateTime surgeryDate,
+                 string surgeryTime,
+                 int opRoomId,
+            int anesthetistId,
+            string relevance,
+            string interventionDetail,
+            List<ClassDtoAssistants> assistantsList,
+            List<ClassDtoDoctors> doctorsList)
+        {
+            string response = "";
+
+            DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
+            foreach (ClassDtoAssistants item in assistantsList)
+            {
+                dataAssistants.Rows.Add(item.AssistandId);
+            }
+            DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
+            foreach (ClassDtoDoctors item in doctorsList)
+            {
+                dataDoctors.Rows.Add(item.DoctorId);
+            }
+            response = surgeries.EmergencyAndPatientNew(
+                firstName,
+                secondName,
+                firstSurname,
+                secondSurname,
+                age,
+                gender,
+                serviceId,
+                surgeryId,
+                userId,
+                finalHour,
+                finalDate,
+                anesthesiaType,
+                surgeryType,
+                surgeryDate,
+                opRoomId,
+                anesthetistId,
+                relevance,
+                interventionDetail,
+                surgeryTime,
+                dataAssistants,
+                dataDoctors
+                );
+
+            return response;
+
+        }
+        public string EmergencyBasicAndPatient(
+                string historyNumber,
+                string firstName,
+                string secondName,
+                string firstSurname,
+                string secondSurname,
+                short age,
+                string gender,
+                int serviceId,
+                int surgeryId,
+                 int userId,
+                 string finalHour,
+             DateTime finalDate,
+                 string anesthesiaType,
+                 string surgeryType,
+                 DateTime surgeryDate,
+                 string surgeryTime, 
+                 int opRoomId,
+            int anesthetistId,
+            string relevance, 
+            string interventionDetail, 
+            List<ClassDtoAssistants> assistantsList, 
+            List<ClassDtoDoctors> doctorsList)
+        {
+            string response = "";
+            
+                DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
+                foreach (ClassDtoAssistants item in assistantsList)
+                {
+                    dataAssistants.Rows.Add(item.AssistandId);
+                }
+                DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
+                foreach (ClassDtoDoctors item in doctorsList)
+                {
+                    dataDoctors.Rows.Add(item.DoctorId);
+                }
+                response = surgeries.EmergencyAndPatient(
+                    historyNumber,
+                    firstName,
+                    secondName,
+                    firstSurname,
+                    secondSurname,
+                    age,
+                    gender,
+                    serviceId,
+                    surgeryId,
+                    userId,
+                    finalHour,
+                    finalDate,
+                    anesthesiaType,
+                    surgeryType,
+                    surgeryDate,
+                    opRoomId,
+                    anesthetistId,
+                    relevance,
+                    interventionDetail,
+                    surgeryTime,
+                    dataAssistants,
+                    dataDoctors
+                    );
+
+            return response;
+
+        }
         public string assignSurgery(int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate,string surgeryTime, int opRoomId, 
             int anesthetistId, int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
         {

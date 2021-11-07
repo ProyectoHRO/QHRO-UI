@@ -25,9 +25,11 @@ namespace UI
         private ClassRequestSurgery requestSurgery = new ClassRequestSurgery();
         int userId;
         int serviceId;
-        public FormEmergencies()
+        public FormEmergencies(int IdUser, int idService)
         {
             InitializeComponent();
+            userId = IdUser;
+            serviceId = idService;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -166,7 +168,6 @@ namespace UI
                     foreach (DataRow item in getPatient.Rows)
                     {
                         labelDpacient.Text = item.Field<int>(0).ToString();
-
                     }
                 }
             }
@@ -259,6 +260,246 @@ namespace UI
             selectP.ShowDialog();
             textBoxAnestethistName.Text = selectP.name;
             labelIdAnesthetist.Text = selectP.id.ToString();
+        }
+
+        private void iconButtonConfirm_Click(object sender, EventArgs e)
+        {
+            if (band==3)
+            {
+                string allTypes = "";
+                for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                {
+                    if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                    {
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                    }
+                    else
+                    {
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "-";
+                    }
+                }
+                string anesTypes = allTypes;
+
+                string finalHour = "";
+
+                if (comboBoxFinalTime.Text == "A.M")
+                {
+                    if (comboBoFinalHour.Text == "12")
+                    {
+                        finalHour = "00";
+                    }
+                }
+                else if (comboBoxFinalTime.Text == "P.M")
+                {
+                    finalHour = ((Convert.ToInt32(comboBoFinalHour.Text) % 12) + 12).ToString();
+                }
+
+                string finalTime = finalHour + ":" + comboBoxFinalMin.Text + ":00";
+
+
+                List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
+                ClassDtoAssistants assistant;
+                for (int i = 0; i < listBoxIds.Items.Count; i++)
+                {
+                    listBoxIds.SelectedIndex = i;
+                    assistant = new ClassDtoAssistants();
+                    assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
+                    assistantsList.Add(assistant);
+                }
+
+                List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                ClassDtoDoctors doctors;
+                for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                {
+                    listBoxDocId.SelectedIndex = i;
+                    doctors = new ClassDtoDoctors();
+                    doctors.DoctorId = Convert.ToInt32(listBoxDocId.SelectedItem);
+                    doctorsList.Add(doctors);
+                }
+
+
+                string response = surgeriesLogic.EmergencyAndPatientNew(
+                    textBoxfirstName.Text,
+                    textBoxsecondName.Text,
+                    textBoxfirstSurname.Text,
+                    textBoxsecondSurname.Text,
+                    Convert.ToInt16(textBoxAge.Text),
+                    comboBoxGender.Text,
+                    serviceId,
+                    Convert.ToInt32(labelID.Text),
+                    userId,
+                    finalTime,
+                    dateTimePickerFinalDate.Value,
+                    anesTypes,
+                    comboBoxSurgeryType.Text,
+                    dateTimeSurgeryDate.Value.Date,
+                    comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
+                    Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
+                    Convert.ToInt32(labelIdAnesthetist.Text),
+                    comboBoxRelevance.Text,
+                    textBoxDiagnosis.Text,
+                    assistantsList,
+                    doctorsList);
+                MessageBox.Show(response);
+
+                this.Close();
+            }
+            if (band==1)
+            {
+                string allTypes = "";
+                for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                {
+                    if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                    {
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                    }
+                    else
+                    {
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "-";
+                    }
+                }
+                string anesTypes = allTypes;
+
+                string finalHour = "";
+
+                if (comboBoxFinalTime.Text == "A.M")
+                {
+                    if (comboBoFinalHour.Text == "12")
+                    {
+                        finalHour = "00";
+                    }
+                }
+                else if (comboBoxFinalTime.Text == "P.M")
+                {
+                    finalHour = ((Convert.ToInt32(comboBoFinalHour.Text) % 12) + 12).ToString();
+                }
+
+                string finalTime = finalHour + ":" + comboBoxFinalMin.Text + ":00";
+
+
+                List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
+                ClassDtoAssistants assistant;
+                for (int i = 0; i < listBoxIds.Items.Count; i++)
+                {
+                    listBoxIds.SelectedIndex = i;
+                    assistant = new ClassDtoAssistants();
+                    assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
+                    assistantsList.Add(assistant);
+                }
+
+                List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                ClassDtoDoctors doctors;
+                for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                {
+                    listBoxDocId.SelectedIndex = i;
+                    doctors = new ClassDtoDoctors();
+                    doctors.DoctorId = Convert.ToInt32(listBoxDocId.SelectedItem);
+                    doctorsList.Add(doctors);
+                }
+
+
+                string response = surgeriesLogic.EmergencyBasicAndPatient(
+                    textBoxhistoryNumber.Text,
+                    textBoxfirstName.Text,
+                    textBoxsecondName.Text,
+                    textBoxfirstSurname.Text,
+                    textBoxsecondSurname.Text,
+                    Convert.ToInt16(textBoxAge.Text),
+                    comboBoxGender.Text,
+                    serviceId,
+                    Convert.ToInt32(labelID.Text),
+                    userId,
+                    finalTime,
+                    dateTimePickerFinalDate.Value,
+                    anesTypes,
+                    comboBoxSurgeryType.Text,
+                    dateTimeSurgeryDate.Value.Date,
+                    comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
+                    Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
+                    Convert.ToInt32(labelIdAnesthetist.Text),
+                    comboBoxRelevance.Text,
+                    textBoxDiagnosis.Text,
+                    assistantsList,
+                    doctorsList);
+                MessageBox.Show(response);
+
+                this.Close();
+            }
+            if (band==2)
+            {
+                string allTypes = "";
+                for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                {
+                    if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                    {
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                    }
+                    else
+                    {
+                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "-";
+                    }
+                }
+                string anesTypes = allTypes;
+
+                string finalHour = "";
+
+                if (comboBoxFinalTime.Text == "A.M")
+                {
+                    if (comboBoFinalHour.Text == "12")
+                    {
+                        finalHour = "00";
+                    }
+                }
+                else if (comboBoxFinalTime.Text == "P.M")
+                {
+                    finalHour = ((Convert.ToInt32(comboBoFinalHour.Text) % 12) + 12).ToString();
+                }
+
+                string finalTime = finalHour + ":" + comboBoxFinalMin.Text + ":00";
+
+
+                List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
+                ClassDtoAssistants assistant;
+                for (int i = 0; i < listBoxIds.Items.Count; i++)
+                {
+                    listBoxIds.SelectedIndex = i;
+                    assistant = new ClassDtoAssistants();
+                    assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
+                    assistantsList.Add(assistant);
+                }
+
+                List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                ClassDtoDoctors doctors;
+                for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                {
+                    listBoxDocId.SelectedIndex = i;
+                    doctors = new ClassDtoDoctors();
+                    doctors.DoctorId = Convert.ToInt32(listBoxDocId.SelectedItem);
+                    doctorsList.Add(doctors);
+                }
+
+
+                string response = surgeriesLogic.EmergencyBasic(
+                    Convert.ToInt32(labelDpacient.Text),
+                    serviceId,
+                    Convert.ToInt32(labelID.Text),
+                    userId,
+                    finalTime,
+                    dateTimePickerFinalDate.Value,
+                    anesTypes,
+                    comboBoxSurgeryType.Text,
+                    dateTimeSurgeryDate.Value.Date,
+                    comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
+                    Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
+                    Convert.ToInt32(labelIdAnesthetist.Text),
+                    comboBoxRelevance.Text,
+                    textBoxDiagnosis.Text,
+                    assistantsList,
+                    doctorsList);
+                MessageBox.Show(response);
+
+                this.Close();
+            }
         }
     }
 }
