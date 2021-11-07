@@ -62,6 +62,7 @@
     <Compile Include="ClassReports.cs" />
     <Compile Include="ClassRequestSurgery.cs" />
     <Compile Include="ClassServices.cs" />
+    <Compile Include="ClassSpecialitie.cs" />
     <Compile Include="ClassStatusOperatingRooms.cs" />
     <Compile Include="ClassUsers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -14,6 +14,7 @@ namespace UI
     public partial class Doctors : Form
     {
         private ClassDoctor doctors = new ClassDoctor();
+        private ClassSpecialitie specialitie = new ClassSpecialitie();
         int userId;
         public Doctors(int idUser)
         {
@@ -39,6 +40,7 @@ namespace UI
             dataGridView1.AutoResizeColumns();
             dataGridView1.AutoResizeRows();
         }
+
         private void buttonList_Click(object sender, EventArgs e)
         {
             
@@ -109,7 +111,11 @@ namespace UI
             iconButtonSave.Enabled = false;
             iconButtonUpdate.Enabled = false;
             listDoctors();
-            listDoctors();
+            DataTable infoSpecialities = specialitie.getSpecialities();
+            comboBoxSpecialty.ValueMember = "id_especialidad";
+            comboBoxSpecialty.DisplayMember = "nombre_especialidad";
+            comboBoxSpecialty.DataSource = infoSpecialities;
+            comboBoxSpecialty.Text = " ";
         }
         public void regeXp(string re, TextBox tb, PictureBox pc)
         {
@@ -225,7 +231,7 @@ namespace UI
                     else if (comboStatus.SelectedIndex == 2)
                         status = false;
                     string resp = doctors.updateDoctor(userId,textCui.Text, textFirstName.Text, textSecondName.Text, textThirdName.Text, textFirstLastName.Text,
-                        textSecondLastName.Text, textPhone.Text, textEmail.Text, status, comboBoxSpecialty.Text,Convert.ToInt32(labelID.Text));
+                        textSecondLastName.Text, textPhone.Text, textEmail.Text, status, comboBoxSpecialty.Text, Convert.ToInt32(labelID.Text));
                     if (resp.ToUpper().Contains("ERROR"))
                         MessageBox.Show(resp, "Error al Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else
