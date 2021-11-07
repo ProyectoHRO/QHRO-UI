@@ -92,7 +92,20 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
-        
+
+        public DataTable GetEmergencySurgeries()
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerCirugiasDeEmergencia";
+            command.CommandType = CommandType.StoredProcedure;
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            connection.CloseConnection();
+            return tableData;
+        }
+
+
         public DataTable getDoctorsBySurgeries(int surgerieId)
         {
             tableData = new DataTable();

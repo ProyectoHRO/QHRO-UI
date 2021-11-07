@@ -80,8 +80,9 @@ namespace UI
                 groupBoxDocsData.Enabled = true;
                 groupBoxAssistantsData.Enabled = true;
                 groupBoxAnesthetistData.Enabled = true;
-                groupBoxQuirfonanoData.Enabled = true;
                 iconButtonConfirm.Enabled = true;
+                groupBoxQuirfonanoData.Enabled = true;
+                
             }
             catch (Exception)
             {

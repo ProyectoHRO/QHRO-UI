@@ -33,7 +33,15 @@ namespace UI
             string historyNumber = "";
             if (infoPatientsHro.Rows.Count < 1)
             {
-                MessageBox.Show("No se encuentra el paciente en el sistema");
+                if (MessageBox.Show("No se encuentra el numero de historia, ¿Desea crearlo ahora mismo?", "Alerta",
+                MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    textBoxhistoryNumber.Enabled = false;
+                    groupBoxpatientData.Enabled = true;
+                    iconButtonCreateAndRequest.Visible = true;
+                    iconButtonRequest.Visible = false;
+
+                }
             }
             else
             {
@@ -165,7 +173,17 @@ namespace UI
 
         private void iconButtonCreateAndRequest_Click(object sender, EventArgs e)
         {
- 
+            if (textBoxDiagnosis.Text != "")
+            {
+                string response = requestSurgery.makeSurgeryRequestAndPatient(userId, textBoxDiagnosis.Text, serviceId,"NULL", textBoxfirstName.Text, textBoxsecondName.Text,
+                textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text), comboBoxGender.Text);
+                MessageBox.Show(response);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Porfavor llene el cambio de diagnostico");
+            }
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)

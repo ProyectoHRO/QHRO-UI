@@ -14,6 +14,11 @@ namespace BLL
         {
             surgeries = new Surgery();
         }
+
+        public DataTable GetEmergencySurgeries()
+        {
+            return surgeries.GetEmergencySurgeries();
+        }
         public DataTable getDailyReport(DateTime date)
         {
             return surgeries.getDailyReport(date);
