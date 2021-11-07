@@ -43,6 +43,7 @@ namespace UI
         {
             FormDiffers fDiffers = new FormDiffers(2, surgerieId,pacientName);
             fDiffers.Show();
+            loadData();
         }
 
         private void FormsSchedules_Load(object sender, EventArgs e)
