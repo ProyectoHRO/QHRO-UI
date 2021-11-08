@@ -28,6 +28,9 @@ namespace UI
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
+            DateTime dateTime = new DateTime(0000, 00, 00);
+            this.firstDate = dateTime;
+            this.secondDate = dateTime;
             this.Close();
         }
     }
