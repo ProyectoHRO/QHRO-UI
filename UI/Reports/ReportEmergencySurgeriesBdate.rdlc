@@ -7,11 +7,11 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>3facf675-24a8-471e-ab92-5897dd1b79c5</rd:DataSourceID>
+      <rd:DataSourceID>f01333b3-5f99-4898-800d-1dcc304c2bf8</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetSurgeriesServicesBdate">
+    <DataSet Name="DataSetEmergencyInterventionsBday">
       <Query>
         <DataSourceName>BLL</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -73,123 +73,46 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Textbox Name="serviceName">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!serviceName.Value</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>serviceName</rd:DefaultName>
-            <Top>0.33208in</Top>
-            <Left>4.07861in</Left>
-            <Height>0.21875in</Height>
-            <Width>3.52084in</Width>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox22">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Intervenciones en servicio: </Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Right</TextAlign>
-                </Style>
-              </Paragraph>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value />
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox22</rd:DefaultName>
-            <Top>0.33208in</Top>
-            <Left>1.45708in</Left>
-            <Height>0.21875in</Height>
-            <Width>2.5625in</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>2.80776cm</Width>
+                  <Width>1.09462in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.87587in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>0.68403in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>0.52045in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>0.92101in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.73785in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>0.96267in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.37934in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.87042cm</Width>
+                  <Width>1.19184in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>0.96267in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>0.96267in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.10271cm</Height>
+                  <Height>0.52604in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -263,7 +186,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox7">
+                        <Textbox Name="Textbox5">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -281,8 +204,52 @@
                                 <TextAlign>Center</TextAlign>
                               </Style>
                             </Paragraph>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <rd:DefaultName>Textbox5</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox9">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Edad</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox9</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -305,7 +272,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Edad</Value>
+                                  <Value>Servicio</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -333,14 +300,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox15">
+                        <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Servicio</Value>
+                                  <Value>Operacion Realizada</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -352,7 +319,42 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox15</rd:DefaultName>
+                          <rd:DefaultName>Textbox7</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox13">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tipo Anestesia</Value>
+                                  <Style>
+                                    <FontSize>12pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox13</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -375,7 +377,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Operacion Realizada</Value>
+                                  <Value>Cirujano</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -410,7 +412,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Tipo Anestesia</Value>
+                                  <Value>Especialidad</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -445,7 +447,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Cirujano</Value>
+                                  <Value>Tipo Cirugia</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -473,14 +475,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox24">
+                        <Textbox Name="Textbox2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Especialidad</Value>
+                                  <Value>Fecha Cirugía</Value>
                                   <Style>
                                     <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -492,77 +494,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox24</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox26">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Tipo Cirugia</Value>
-                                  <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox26</rd:DefaultName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
-                          </Style>
-                        </Textbox>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell>
-                      <CellContents>
-                        <Textbox Name="Textbox28">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value>Tiempo</Value>
-                                  <Style>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Bold</FontWeight>
-                                  </Style>
-                                </TextRun>
-                              </TextRuns>
-                              <Style>
-                                <TextAlign>Center</TextAlign>
-                              </Style>
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox28</rd:DefaultName>
+                          <rd:DefaultName>Textbox2</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -579,7 +511,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.50521in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -793,7 +725,7 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Cirujano">
+                        <Textbox Name="Cirujano1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
@@ -807,7 +739,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Cirujano</rd:DefaultName>
+                          <rd:DefaultName>Cirujano1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -940,12 +872,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetSurgeriesServicesBdate</DataSetName>
-            <Top>2.54528cm</Top>
-            <Left>2.00455cm</Left>
-            <Height>1.70271cm</Height>
-            <Width>28.17818cm</Width>
-            <ZIndex>2</ZIndex>
+            <DataSetName>DataSetEmergencyInterventionsBday</DataSetName>
+            <Top>0.23833in</Top>
+            <Left>0.38417in</Left>
+            <Height>1.03125in</Height>
+            <Width>12.29302in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -953,13 +884,13 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>5.68853cm</Height>
+        <Height>4.15397cm</Height>
         <Style />
       </Body>
       <Width>33cm</Width>
       <Page>
         <PageHeader>
-          <Height>3.24592cm</Height>
+          <Height>3.22864cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -984,7 +915,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Historial de cirugías por servicio</Value>
+                      <Value>Historial de cirugías</Value>
                       <Style>
                         <FontSize>14pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -997,10 +928,10 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.55409in</Top>
-              <Left>3.54514in</Left>
+              <Top>0.42362in</Top>
+              <Left>5.3864in</Left>
               <Height>0.6441in</Height>
-              <Width>3.48139in</Width>
+              <Width>3.10639in</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -1015,8 +946,8 @@
               <Source>Embedded</Source>
               <Value>Logo</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.74965cm</Top>
-              <Left>4.50455cm</Left>
+              <Top>0.7585cm</Top>
+              <Left>9.41945cm</Left>
               <Height>2.29375cm</Height>
               <Width>2.80776cm</Width>
               <ZIndex>1</ZIndex>
@@ -1045,8 +976,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.63904in</Top>
-              <Left>9.70964in</Left>
+              <Top>0.64612in</Top>
+              <Left>9.80692in</Left>
               <Height>0.25in</Height>
               <Width>0.72791in</Width>
               <ZIndex>2</ZIndex>
@@ -1079,8 +1010,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>fechaHoy</rd:DefaultName>
-              <Top>0.63904in</Top>
-              <Left>10.507in</Left>
+              <Top>0.64612in</Top>
+              <Left>10.60428in</Left>
               <Height>0.25in</Height>
               <Width>2.07292in</Width>
               <ZIndex>3</ZIndex>
@@ -1113,8 +1044,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.95848in</Top>
-              <Left>9.70964in</Left>
+              <Top>0.96556in</Top>
+              <Left>9.80692in</Left>
               <Height>0.25in</Height>
               <Width>0.72791in</Width>
               <ZIndex>4</ZIndex>
@@ -1147,8 +1078,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>fechaHoy</rd:DefaultName>
-              <Top>0.95848in</Top>
-              <Left>10.507in</Left>
+              <Top>0.96556in</Top>
+              <Left>10.60428in</Left>
               <Height>0.25in</Height>
               <Width>2.07292in</Width>
               <ZIndex>5</ZIndex>
@@ -1181,8 +1112,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.29154in</Top>
-              <Left>10.88933in</Left>
+              <Top>0.29862in</Top>
+              <Left>10.98661in</Left>
               <Height>0.25in</Height>
               <Width>0.72791in</Width>
               <ZIndex>6</ZIndex>
@@ -1225,8 +1156,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>0.25in</Top>
-              <Left>8.46833in</Left>
+              <Top>0.21875in</Top>
+              <Left>8.56561in</Left>
               <Height>0.25in</Height>
               <Width>2.07291in</Width>
               <Style>
@@ -1239,7 +1170,7 @@
                 <PaddingBottom>2pt</PaddingBottom>
               </Style>
             </Textbox>
-            <Textbox Name="Textbox14">
+            <Textbox Name="dateNow">
               <CanGrow>true</CanGrow>
               <KeepTogether>true</KeepTogether>
               <Paragraphs>
@@ -1250,16 +1181,14 @@
                       <Style />
                     </TextRun>
                   </TextRuns>
-                  <Style>
-                    <TextAlign>Left</TextAlign>
-                  </Style>
+                  <Style />
                 </Paragraph>
               </Paragraphs>
-              <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>0.25in</Top>
-              <Left>10.61118in</Left>
-              <Height>0.25in</Height>
-              <Width>1.96874in</Width>
+              <rd:DefaultName>dateNow</rd:DefaultName>
+              <Top>0.55563cm</Top>
+              <Left>27.3097cm</Left>
+              <Height>0.6cm</Height>
+              <Width>4.89036cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>
@@ -1290,12 +1219,6 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="serviceName">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
     <ReportParameter Name="dateNow">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
@@ -1323,20 +1246,15 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>serviceName</ParameterName>
+          <ParameterName>dateNow</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>dateNow</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
           <ParameterName>date1</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>3</ColumnIndex>
+          <ColumnIndex>2</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>date2</ParameterName>
         </CellDefinition>
@@ -1758,5 +1676,5 @@ UGOcUZOyexkRrdnQS76P/7RXr78kon/yvV5b/1Jf+U6dUYqILiSi1QOb+JyIDLsjwRkJAAAAAKD/4Yya
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>e8cfa24a-65b9-43f8-b61b-b53bd4467709</rd:ReportID>
+  <rd:ReportID>8447709a-15ba-465f-97a3-dcfb6bba798f</rd:ReportID>
 </Report>

@@ -360,6 +360,21 @@ namespace DAL
             return tableData;
         }
 
+        public DataTable GetEmercencySurgeriesByDates(DateTime firstDate, DateTime secondDate)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarIntervencionesDeEmergenciaEntreDosFechas";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha1", firstDate);
+            command.Parameters.AddWithValue("@fecha2 ", secondDate);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
 
         public DataTable GetSurgeriesByAnesthesiaByDates(DateTime firstDate, DateTime secondDate, string anesthesia)
         {

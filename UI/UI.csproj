@@ -348,6 +348,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\DailyReport.rdlc" />
+    <EmbeddedResource Include="Reports\ReportEmergencySurgeriesBdate.rdlc" />
     <EmbeddedResource Include="Reports\ReportSurgeriesByHistoryNumber.rdlc" />
     <EmbeddedResource Include="Reports\ReportSurgeriesQBdate.rdlc" />
     <EmbeddedResource Include="Reports\ReportAnesthetist.rdlc" />

@@ -39,6 +39,11 @@ namespace BLL
             return surgeries.getSurgeriesByServiceByDates(firstDate, secondDate, serviceName);
         }
 
+        public DataTable getEmercencySurgeriesByDates(DateTime firstDate, DateTime secondDate)
+        {
+            return surgeries.GetEmercencySurgeriesByDates(firstDate, secondDate);
+        }
+
         public DataTable getSurgeriesByAnesthesiaByDates(DateTime firstDate, DateTime secondDate, string anesthesia)
         {
             return surgeries.GetSurgeriesByAnesthesiaByDates(firstDate, secondDate, anesthesia);

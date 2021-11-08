@@ -127,12 +127,12 @@ namespace UI
             // 
             this.labelService.AutoSize = true;
             this.labelService.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelService.Location = new System.Drawing.Point(304, 25);
+            this.labelService.Location = new System.Drawing.Point(256, 31);
             this.labelService.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelService.Name = "labelService";
-            this.labelService.Size = new System.Drawing.Size(115, 31);
+            this.labelService.Size = new System.Drawing.Size(232, 31);
             this.labelService.TabIndex = 38;
-            this.labelService.Text = "services";
+            this.labelService.Text = "Establecer fechas";
             // 
             // getDates
             // 
