@@ -105,9 +105,10 @@ namespace UI
             this.reportViewerDailies.ProcessingMode = ProcessingMode.Local;
             this.reportViewerDailies.LocalReport.ReportEmbeddedResource = @"UI.Reports.DailyReport.rdlc";
             this.reportViewerDailies.LocalReport.DataSources.Clear();
+            DateTime now = DateTime.Now;
             Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
-                new Microsoft.Reporting.WinForms.ReportParameter("fechaHoy",DateTime.Now.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("fechaHoy", now.Day+ "/" + now.Month+"/"+ now.Year),
                 //new Microsoft.Reporting.WinForms.ReportParameter("nombrePaciente",name),
                 //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
                 //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
