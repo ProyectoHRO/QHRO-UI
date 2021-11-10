@@ -100,7 +100,7 @@ namespace UI
                 this.reportViewerSurgeriesBdates.LocalReport.DataSources.Clear();
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
-                new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString("dd/MM/yyyy, HH:mm:ss")),
                 new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate   .Year.ToString()),
                     //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
@@ -185,7 +185,7 @@ namespace UI
                         Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                         {
                     new Microsoft.Reporting.WinForms.ReportParameter("serviceName",serviceName),
-                    new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                    new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString("dd/MM/yyyy, HH:mm:ss")),
                     new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
                     new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate.Year.ToString()),
                             //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
@@ -265,7 +265,7 @@ namespace UI
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
                     new Microsoft.Reporting.WinForms.ReportParameter("QuiNumber",Qx),
-                  new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                  new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString("dd/MM/yyyy, HH:mm:ss")),
                     new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
                     new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate   .Year.ToString()),
                     //new Microsoft.Reporting.WinForms.ReportParameter("genero",gender),
@@ -343,8 +343,7 @@ namespace UI
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
                     new Microsoft.Reporting.WinForms.ReportParameter("pacientName",name),
-                     new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
-               
+                    new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString("dd/MM/yyyy, HH:mm:ss")),
                 };
                 this.reportViewerSurgeriesByPatient.LocalReport.SetParameters(rParams);
                 this.reportViewerSurgeriesByPatient.LocalReport.DataSources.Add(Report);
@@ -431,7 +430,7 @@ namespace UI
                             Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                             {
                              new Microsoft.Reporting.WinForms.ReportParameter("anesthesiaType",anesthesiaName),
-                             new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                             new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString("dd/MM/yyyy, HH:mm:ss")),
                              new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
                              new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate   .Year.ToString()),
 
@@ -513,7 +512,7 @@ namespace UI
                 this.reportViewerEmergency.LocalReport.DataSources.Clear();
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                 {
-                new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("dateNow",DateTime.Now.ToString("dd/MM/yyyy, HH:mm:ss")),
                 new Microsoft.Reporting.WinForms.ReportParameter("date1", firstDate.Day.ToString() + '/' +firstDate.Month.ToString() + '/' + firstDate.Year.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("date2",secondDate.Day.ToString() + '/' +secondDate.Month.ToString() + '/' + secondDate   .Year.ToString()),
                     //new Microsoft.Reporting.WinForms.ReportParameter("edad",age.ToString()),
