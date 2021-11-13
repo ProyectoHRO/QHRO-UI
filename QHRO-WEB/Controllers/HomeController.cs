@@ -20,6 +20,7 @@ namespace QHRO_WEB.Controllers
         }
         string hash = "@HR0";
         string queryResult;
+        int idRole;
         int idUser;
         int logCount;
         bool confirmation;
@@ -59,6 +60,7 @@ namespace QHRO_WEB.Controllers
                     foreach (DataRow item in userData.Rows)
                     {
                         idUser = Convert.ToInt32(item.Field<int>(0));
+                        idRole = Convert.ToInt32(item.Field<int>(5));
                         lastConnection = Convert.ToDateTime(item.Field<System.DateTime>(8));
                         confirmation = item.Field<bool>(9);
                         logCount = Convert.ToInt32(item.Field<int>(10));
@@ -92,18 +94,27 @@ namespace QHRO_WEB.Controllers
                             }
                         }
                         Session["idUser"] = idUser;
-                    if (serviceId == 0)
-                    {
-                    }
-                    else
-                    {
-                        Session["serviceId"] = serviceId;
-                    }
-                      
-                        if (idPermit==7)
+                        if (serviceId == 0)
                         {
-                            Session["idPermit"] = idPermit;
                         }
+                        else
+                        {
+                            Session["serviceId"] = serviceId;
+                        }
+                        if (idRole==1)
+                        {
+                            Session["idPermit"] = 7;
+                        }
+                        else
+                        {
+                            if (idPermit == 7)
+                            {
+                                Session["idPermit"] = idPermit;
+                            }
+                        }
+                   
+                      
+                     
                         return RedirectToAction("Programaciones", "Quirofanos");
                     }
                 }

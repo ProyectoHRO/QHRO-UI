@@ -87,7 +87,7 @@ namespace UI
             textBoxhistoryNumber.Text = "";
             textBoxfirstName.Text = "";
             textBoxsecondName.Text = "";
-            textBoxthirdName.Text = "";
+            //textBoxthirdName.Text = "";
             textBoxfirstSurname.Text = "";
             textBoxsecondSurname.Text = "";
             textBoxAge.Text = "";
