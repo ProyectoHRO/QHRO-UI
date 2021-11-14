@@ -1,7 +1,7 @@
 ﻿
     @{
         ViewBag.Title = "Programaciones";
-        string[] tableHeader = new string[] { "Hora", "Qx", "No_Historia", "Nombre", "Edad", "Procedimiento", "Servicio", "Cirujano", "Anestesista", "Asistentes" };
+        string[] tableHeader = new string[] { "Hora", "Qx", "No_Historia", "Nombre", "Edad", "Procedimiento", "Servicio", "Cirujano", "Anestesiólogo", "Enfermería" };
     }
 
     @*Vista cirugias programadas y emergencia*@
@@ -35,7 +35,7 @@
                             console.log(data);
                             $('tbody').empty();
                             for (var i = 0; i < data.length; i++) {
-                                $('tbody').append('<tr><td>' + data[i].Hora + '</td><td>' + data[i].Qx + '</td><td>' + data[i].No_Historia + '</td><td>' + data[i].Nombre + '</td><td>' + data[i].Edad + '</td><td>' + data[i].Procedimiento + '</td><td>' + data[i].Servicio + '</td><td>' + data[i].Cirujano + '</td><td>' + data[i].Anestesista + '</td><td>' + data[i].Asistentes + '</td></tr>');
+                                $('tbody').append('<tr><td>' + data[i].Hora + '</td><td>' + data[i].Qx + '</td><td>' + data[i].No_Historia + '</td><td>' + data[i].Nombre + '</td><td>' + data[i].Edad + '</td><td>' + data[i].Procedimiento + '</td><td>' + data[i].Servicio + '</td><td>' + data[i].Cirujano + '</td><td>' + data[i].Anestesiólogo + '</td><td>' + data[i].Enfermería + '</td></tr>');
                             }
                         },
                         error: function (er) {

@@ -25,8 +25,8 @@ namespace BLL
 
         public string Cirujano { get; set; }
 
-        public string Anestesista { get; set; }
+        public string Anestesiólogo { get; set; }
 
-        public string Asistentes { get; set; }
+        public string Enfermería { get; set; }
     }
 }

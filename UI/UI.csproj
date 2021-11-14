@@ -157,6 +157,12 @@
     <Compile Include="FormProfile.Designer.cs">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReschedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReschedule.Designer.cs">
+      <DependentUpon>FormReschedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,12 @@
     </Compile>
     <Compile Include="Patient.Designer.cs">
       <DependentUpon>Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostOperation.Designer.cs">
+      <DependentUpon>PostOperation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -301,6 +313,9 @@
     <EmbeddedResource Include="FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReschedule.resx">
+      <DependentUpon>FormReschedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Patient.resx">
       <DependentUpon>Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostOperation.resx">
+      <DependentUpon>PostOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

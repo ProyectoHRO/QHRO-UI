@@ -436,15 +436,28 @@ namespace DAL
             return tableData;
         }
 
+        public DataTable GetSurgeriesById(int idSurgerie)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerCirugiaPorId";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", idSurgerie);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
 
-
-        public DataTable reScheduleSurgerie(int surgerieId, int roomId, DateTime date)
+        public DataTable reScheduleSurgerie(int surgerieId, int roomId, DateTime date, string time)
         {
             tableData = new DataTable();
             command.Connection = connection.OpenConnection();
             command.CommandText = "ReprogramarCirugia";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@fecha", date);
+            command.Parameters.AddWithValue("@hora", time);
             command.Parameters.AddWithValue("@idquirofano", roomId);
             command.Parameters.AddWithValue("@idcirugia", surgerieId);
             read = command.ExecuteReader();
@@ -729,5 +742,19 @@ namespace DAL
             return response;
         }
 
+        public void UpdateSurgerieData(int surgerieId, string anesthesiaType, string Proce)
+        {
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ActualizarDatosPostOperatorios";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            command.Parameters.AddWithValue("@tipo_anestesia", anesthesiaType);
+            command.Parameters.AddWithValue("@procedimiento", Proce);
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            connection.CloseConnection();
+        }
     }
+
 }
+

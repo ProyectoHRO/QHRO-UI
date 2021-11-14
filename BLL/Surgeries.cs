@@ -30,6 +30,11 @@ namespace BLL
             return surgeries.getSurgeriesByHistoryNumber(historyNumber);
         }
 
+        public DataTable getSurgeriesById(int idSurgerie)
+        {
+            return surgeries.GetSurgeriesById(idSurgerie);
+        }
+
         public DataTable getSurgeriesByDates(DateTime firstDate, DateTime secondDate)
         {
             return surgeries.getSurgeriesByDates(firstDate,secondDate);
@@ -78,12 +83,12 @@ namespace BLL
         }
 
 
-        public string reSchedule(int idSurgerie, int idRoom, DateTime date)
+        public string reSchedule(int idSurgerie, int idRoom, DateTime date, string time)
         {
 
             try
             {
-                surgeries.reScheduleSurgerie(idSurgerie, idRoom, date);
+                surgeries.reScheduleSurgerie(idSurgerie, idRoom, date, time);
                 return "Cirugia reprogramada con exito";
             }
             catch (Exception error)
@@ -402,5 +407,20 @@ namespace BLL
             return response;
             
         }
+
+
+        public string updateSurgerieData(int surgerieId, string anesthesiaType, string Proce)
+        {
+            try
+            {
+                surgeries.UpdateSurgerieData(surgerieId, anesthesiaType, Proce);
+                return "DATOS ACTUALIZADOS";
+            }
+            catch (Exception error)
+            {
+                return "ERROR: " + error.Message;
+            }
+        }
+
     }
 }

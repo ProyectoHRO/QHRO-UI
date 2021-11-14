@@ -486,7 +486,7 @@ namespace UI
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.27596F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.72404F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 230F));
             this.tableLayoutPanel15.Controls.Add(this.label11, 1, 0);
             this.tableLayoutPanel15.Controls.Add(this.iconPictureBox1, 0, 1);
             this.tableLayoutPanel15.Controls.Add(this.textBoxSearch, 1, 1);
@@ -531,7 +531,7 @@ namespace UI
             this.textBoxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearch.Location = new System.Drawing.Point(45, 34);
             this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(327, 26);
+            this.textBoxSearch.Size = new System.Drawing.Size(325, 26);
             this.textBoxSearch.TabIndex = 2;
             this.textBoxSearch.Text = "Buscar paciente por No. Historia";
             // 
@@ -549,10 +549,10 @@ namespace UI
             this.iconButtonSearchNames.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonSearchNames.IconSize = 30;
             this.iconButtonSearchNames.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonSearchNames.Location = new System.Drawing.Point(385, 31);
+            this.iconButtonSearchNames.Location = new System.Drawing.Point(383, 31);
             this.iconButtonSearchNames.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonSearchNames.Name = "iconButtonSearchNames";
-            this.iconButtonSearchNames.Size = new System.Drawing.Size(225, 32);
+            this.iconButtonSearchNames.Size = new System.Drawing.Size(227, 32);
             this.iconButtonSearchNames.TabIndex = 30;
             this.iconButtonSearchNames.Text = "Buscar";
             this.iconButtonSearchNames.UseVisualStyleBackColor = false;
@@ -843,11 +843,11 @@ namespace UI
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 12);
+            this.label2.Location = new System.Drawing.Point(13, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 36);
+            this.label2.Size = new System.Drawing.Size(112, 36);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Anestesista Asignado:";
+            this.label2.Text = "Anestesiólogo asignado:";
             // 
             // textBoxAnestethistName
             // 
@@ -927,7 +927,7 @@ namespace UI
             this.groupBoxAssistantsData.Size = new System.Drawing.Size(616, 245);
             this.groupBoxAssistantsData.TabIndex = 31;
             this.groupBoxAssistantsData.TabStop = false;
-            this.groupBoxAssistantsData.Text = "Ayudantes asignados";
+            this.groupBoxAssistantsData.Text = "Enfermería asignada";
             // 
             // listBoxAnesthesiaId
             // 
