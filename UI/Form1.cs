@@ -37,7 +37,7 @@ namespace UI
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.UserMd;
             }
-            else if(text=="Anestesistas")
+            else if(text=="Anestesiólogos")
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.UserMd;
             }
@@ -45,7 +45,7 @@ namespace UI
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.Bed;
             }
-            else if (text == "Asistentes")
+            else if (text == "Enfermería")
             {
                 btn.IconChar = FontAwesome.Sharp.IconChar.UserNurse;
             }
@@ -146,7 +146,7 @@ namespace UI
             {
                 openChildForm(new Doctors(userId));
             }
-            if (btn.Name == "iconButtonAnestesistas")
+            if (btn.Name == "iconButtonAnestesiólogos")
             {
                 openChildForm(new Anesthetist(userId));
             }
@@ -154,7 +154,7 @@ namespace UI
             {
                 openChildForm(new Patient());
             }
-            if (btn.Name == "iconButtonAsistentes")
+            if (btn.Name == "iconButtonEnfermería")
             {
                 openChildForm(new Assistant(userId));
             }

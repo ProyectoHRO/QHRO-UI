@@ -149,7 +149,7 @@ namespace UI
             this.groupBoxanesthetistData.Size = new System.Drawing.Size(1069, 233);
             this.groupBoxanesthetistData.TabIndex = 17;
             this.groupBoxanesthetistData.TabStop = false;
-            this.groupBoxanesthetistData.Text = "Datos del anestesista";
+            this.groupBoxanesthetistData.Text = "Datos del anestesiólogo";
             this.groupBoxanesthetistData.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label1

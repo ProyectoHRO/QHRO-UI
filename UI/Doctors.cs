@@ -202,6 +202,7 @@ namespace UI
                 textEmail.Clear();
                 textPhone.Clear();
                 textCui.Clear();
+                listDoctors();
                 comboStatus.SelectedIndex = 0;
                 iconButtonSave.Enabled = false;
                 iconButtonNew.Enabled = true;

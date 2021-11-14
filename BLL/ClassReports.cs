@@ -48,13 +48,13 @@ namespace BLL
                     surgerie.Cirujano = docName.TrimEnd(' ');
                     surgerie.Cirujano = surgerie.Cirujano.TrimEnd('/');
                 }
-                surgerie.Anestesista = item.Field<string>(8).ToString();
+                surgerie.Anestesiólogo = item.Field<string>(8).ToString();
                 DataTable infoAssistants = surgeries.getAssistantsBySurgerie(surgerie.IdCirugia);
                 if (infoAssistants.Rows.Count < 2)
                 {
                     foreach (DataRow itemAssistant in infoAssistants.Rows)
                     {
-                        surgerie.Asistentes = itemAssistant.Field<string>(1).ToString();
+                        surgerie.Enfermería = itemAssistant.Field<string>(1).ToString();
                     }
                 }
                 else
@@ -63,7 +63,7 @@ namespace BLL
                     {
                         assistantName = assistantName + itemAssistant.Field<string>(1).ToString() + '/';
                     }
-                    surgerie.Asistentes = assistantName.TrimEnd('/');
+                    surgerie.Enfermería = assistantName.TrimEnd('/');
                 }
                 surgeriesList.Add(surgerie);
             }

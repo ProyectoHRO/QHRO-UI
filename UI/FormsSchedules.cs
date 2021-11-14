@@ -41,8 +41,8 @@ namespace UI
 
         private void iconButtonDiffer_Click(object sender, EventArgs e)
         {
-            FormDiffers fDiffers = new FormDiffers(2, surgerieId,pacientName);
-            fDiffers.Show();
+            FormDiffers fDiffers = new FormDiffers(surgerieId,pacientName);
+            fDiffers.ShowDialog();
             loadData();
         }
 
@@ -56,6 +56,7 @@ namespace UI
 
         }
         string qx;
+        string proc;
         private void dataGridViewSchedule_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             iconButtonDiffer.Enabled = true;
@@ -65,17 +66,19 @@ namespace UI
             pacientName = dataGridViewSchedule.Rows[e.RowIndex].Cells[4].Value.ToString();
             hour = dataGridViewSchedule.Rows[e.RowIndex].Cells[1].Value.ToString();
             qx = dataGridViewSchedule.Rows[e.RowIndex].Cells[2].Value.ToString();
+            proc = dataGridViewSchedule.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 
         private void iconButtonReSchedule_Click(object sender, EventArgs e)
         {
-            FormDiffers fDiffers = new FormDiffers(1, surgerieId, pacientName);
-            fDiffers.Show();
+            FormReschedule formReschedule = new FormReschedule(surgerieId, pacientName);
+            formReschedule.ShowDialog();
             loadData();
         }
 
         private void iconButtonFinish_Click(object sender, EventArgs e)
         {
+
             string[] response;
             string hora = hour;
             string[] timeSep = stringsClass.getStrings(hora, new char[] { ':', ' ' });
@@ -103,12 +106,20 @@ namespace UI
             int i = TimeSpan.Compare(t1, t2);
 
 
-            if (i>0)
+            if (i > 0)
             {
                 MessageBox.Show("No puedes finalizar una cirugía que aun no ha comenzado.");
             }
             else
             {
+
+                if (MessageBox.Show("¿Desea añadir datos postoperatorios?", "Finalizar",
+                    MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    PostOperation p = new PostOperation(surgerieId, proc, hour);
+                    p.ShowDialog();
+                }
+
                 MessageBox.Show(surgeries.finishSurgerie(surgerieId));
                 DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
 
@@ -125,7 +136,7 @@ namespace UI
                 }
                 loadData();
             }
-         
+
         }
 
         private void FormsSchedules_Activated(object sender, EventArgs e)
