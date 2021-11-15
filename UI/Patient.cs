@@ -126,12 +126,7 @@ namespace UI
         private void dataGridView1_CellMouseClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
-            {
-                labelStatus.Visible = true;
-                comboBoxStatus.Visible = true;
-                groupBoxpatientData.Enabled = true;
-                iconButtonUpdate.Enabled = true;
-                iconButtonSave.Enabled = false;
+            {             
                 labelID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textBoxhistoryNumber.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textBoxfirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -145,6 +140,11 @@ namespace UI
                     comboBoxStatus.Text = "Activo";
                 else if (dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() == "False")
                     comboBoxStatus.Text = "Inactivo";
+                labelStatus.Visible = true;
+                comboBoxStatus.Visible = true;
+                groupBoxpatientData.Enabled = true;
+                iconButtonUpdate.Enabled = true;
+                iconButtonSave.Enabled = false;
             }
             catch (Exception)
             {

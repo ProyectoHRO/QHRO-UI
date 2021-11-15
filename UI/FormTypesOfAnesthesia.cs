@@ -90,15 +90,16 @@ namespace UI
 
         private void dataGridTypesAnesthesia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            groupBoxAnesthesia.Enabled = true;
-            iconButtonNew.Enabled = true;
-            iconButtonSave.Enabled = false;
-            iconButtonUpdate.Enabled = true;
+            
             bool status;
             try
             {
                 labelID.Text = dataGridTypesAnesthesia.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textBoxNameAnesthesia.Text = dataGridTypesAnesthesia.Rows[e.RowIndex].Cells[1].Value.ToString();
+                groupBoxAnesthesia.Enabled = true;
+                iconButtonNew.Enabled = true;
+                iconButtonSave.Enabled = false;
+                iconButtonUpdate.Enabled = true;
             }
             catch (Exception)
             {

@@ -21,7 +21,6 @@ namespace UI
             InitializeComponent();
             userId = idUser;
         }
-
         void listAnesthetists()
         {
             dataGridView1.DataSource = anes.listAnesthetist();
@@ -57,6 +56,12 @@ namespace UI
 
         private void Anesthetist_Load(object sender, EventArgs e)
         {
+            foreach (DataGridViewColumn column in dataGridView1.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+
             groupBoxanesthetistData.Enabled = false;
             iconButtonUpdate.Enabled = false;
             iconButtonSave.Enabled = false;
@@ -136,11 +141,7 @@ namespace UI
         {
             try
             {
-                labelStatus.Visible = true;
-                comboBoxStatus.Visible = true;
-                groupBoxanesthetistData.Enabled = true;
-                iconButtonUpdate.Enabled = true;
-                iconButtonSave.Enabled = false;
+                
                 ID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textBoxDPI.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 textBoxfirstName.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -154,6 +155,12 @@ namespace UI
                     comboBoxStatus.Text = "Activo";
                 else if (dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString() == "False")
                     comboBoxStatus.Text = "Inactivo";
+
+                labelStatus.Visible = true;
+                comboBoxStatus.Visible = true;
+                groupBoxanesthetistData.Enabled = true;
+                iconButtonUpdate.Enabled = true;
+                iconButtonSave.Enabled = false;
 
             }
             catch (Exception)
@@ -398,6 +405,21 @@ namespace UI
                 //el resto de teclas pulsadas se desactivan
                 e.Handled = true;
             }
+        }
+
+        private void dataGridView1_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
