@@ -110,15 +110,17 @@ namespace UI
 
         private void dataGridViewOperatingRooms_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            groupBoxServices.Enabled = true;
-            iconButtonNew.Enabled = true;
-            iconButtonSave.Enabled = false;
-            iconButtonUpdate.Enabled = true;
+            
             bool status;
             try
             {
                 labelID.Text = dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textBoxNameService.Text= dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                groupBoxServices.Enabled = true;
+                iconButtonNew.Enabled = true;
+                iconButtonSave.Enabled = false;
+                iconButtonUpdate.Enabled = true;
             }
             catch (Exception)
             {

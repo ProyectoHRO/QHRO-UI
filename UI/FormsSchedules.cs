@@ -60,25 +60,33 @@ namespace UI
         string proc;
         private void dataGridViewSchedule_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            iconButtonDiffer.Enabled = true;
-            iconButtonReSchedule.Enabled = true;
-            iconButtonFinish.Enabled = true;
-            surgerieId = Convert.ToInt32(dataGridViewSchedule.Rows[e.RowIndex].Cells[0].Value);
-            pacientName = dataGridViewSchedule.Rows[e.RowIndex].Cells[4].Value.ToString();
-            hour = dataGridViewSchedule.Rows[e.RowIndex].Cells[1].Value.ToString();
-
-            qx = dataGridViewSchedule.Rows[e.RowIndex].Cells[2].Value.ToString();
-            DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
-            foreach (DataRow OpRoom in infoOperatingRooms.Rows)
+            try
             {
-                string numQ = OpRoom.Field<string>(1).ToString();
+                
+                surgerieId = Convert.ToInt32(dataGridViewSchedule.Rows[e.RowIndex].Cells[0].Value);
+                pacientName = dataGridViewSchedule.Rows[e.RowIndex].Cells[4].Value.ToString();
+                hour = dataGridViewSchedule.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-                if ((numQ == qx))
+                qx = dataGridViewSchedule.Rows[e.RowIndex].Cells[2].Value.ToString();
+                DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
+                foreach (DataRow OpRoom in infoOperatingRooms.Rows)
                 {
-                    IdQ = OpRoom.Field<int>(0);
+                    string numQ = OpRoom.Field<string>(1).ToString();
+
+                    if ((numQ == qx))
+                    {
+                        IdQ = OpRoom.Field<int>(0);
+                    }
                 }
+                proc = dataGridViewSchedule.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                iconButtonDiffer.Enabled = true;
+                iconButtonReSchedule.Enabled = true;
+                iconButtonFinish.Enabled = true;
             }
-            proc = dataGridViewSchedule.Rows[e.RowIndex].Cells[6].Value.ToString();
+            catch (Exception)
+            {
+            }
         }
 
         private void iconButtonReSchedule_Click(object sender, EventArgs e)

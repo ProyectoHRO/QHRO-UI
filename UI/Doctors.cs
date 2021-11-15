@@ -74,13 +74,7 @@ namespace UI
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            groupBoxDoctorsData.Enabled = true;
-            iconButtonNew.Enabled = true;
-            iconButtonSave.Enabled = false;
-            iconButtonUpdate.Enabled = true;
-            comboStatus.Visible = true;
-            labelStatus.Visible = true;
+        {         
             bool status;
             try
             {
@@ -99,6 +93,13 @@ namespace UI
                 else
                     comboStatus.SelectedIndex = 2;
                 comboBoxSpecialty.Text = dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString();
+
+                groupBoxDoctorsData.Enabled = true;
+                iconButtonNew.Enabled = true;
+                iconButtonSave.Enabled = false;
+                iconButtonUpdate.Enabled = true;
+                comboStatus.Visible = true;
+                labelStatus.Visible = true;
             }
             catch (Exception)
             {

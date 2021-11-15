@@ -88,12 +88,7 @@ namespace UI
         private void dataGridViewOperatingRooms_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
-            {
-                labelStatus.Visible = true;
-                comboStatus.Visible = true;
-                groupBoxoperatingroomData.Enabled = true;
-                iconButtonUpdate.Enabled = true;
-                iconButtonSave.Enabled = false;
+            {              
                 labelID.Text = dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textBoxNumber.Text = dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[1].Value.ToString();
                 comboBoxCurrentState.Text = dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -102,6 +97,12 @@ namespace UI
                     comboStatus.Text = "Activo";
                 else if (dataGridViewOperatingRooms.Rows[e.RowIndex].Cells[3].Value.ToString() == "False")
                     comboStatus.Text = "Inactivo";
+
+                labelStatus.Visible = true;
+                comboStatus.Visible = true;
+                groupBoxoperatingroomData.Enabled = true;
+                iconButtonUpdate.Enabled = true;
+                iconButtonSave.Enabled = false;
             }
 
             catch (Exception)

@@ -105,80 +105,93 @@ namespace UI
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectionMode = 1;
-            iconButtonConfirm.Enabled = true;
-            groupBoxpatientData.Enabled = false;
-            groupBoxAnesthetistData.Enabled = true;
-            groupBoxAnesthetistData.Visible = true;
-            groupBoxDocsData.Enabled = false;
-            groupBoxAssistantsData.Enabled = false;
-            groupBoxDocsData.Visible = false;
-            groupBoxAssistantsData.Visible = false;
-            groupBoxQuirfonanoData.Enabled = false;
-            labelID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            DataTable infoAnesthetist = surgeries.getInfoAnesthetist(Convert.ToInt32(labelID.Text));
-            foreach (DataRow item in infoAnesthetist.Rows)
+            try
             {
-                textBoxHistory.Text = item.Field<string>(0).ToString();
-                textBoxName.Text = item.Field<string>(1).ToString();
-                textBoxLastName.Text = item.Field<string>(2).ToString();
-                string surgeryType= item.Field<string>(3).ToString();
-                if (surgeryType== "Selectiva")
+                iconButtonConfirm.Enabled = true;             
+                labelID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                DataTable infoAnesthetist = surgeries.getInfoAnesthetist(Convert.ToInt32(labelID.Text));
+                foreach (DataRow item in infoAnesthetist.Rows)
                 {
-                    comboBoxSurgeryType.SelectedIndex = 0;
+                    textBoxHistory.Text = item.Field<string>(0).ToString();
+                    textBoxName.Text = item.Field<string>(1).ToString();
+                    textBoxLastName.Text = item.Field<string>(2).ToString();
+                    string surgeryType = item.Field<string>(3).ToString();
+                    if (surgeryType == "Selectiva")
+                    {
+                        comboBoxSurgeryType.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        comboBoxSurgeryType.SelectedIndex = 1;
+                    }
+                    textBoxDiagnosis.Text = item.Field<string>(4).ToString();
+                    string surgeryRelevance = item.Field<string>(5).ToString();
+                    if (surgeryRelevance == "Mayor")
+                    {
+                        comboBoxRelevance.SelectedIndex = 0;
+                    }
+                    else
+                    {
+                        comboBoxRelevance.SelectedIndex = 1;
+                    }
+                    dateTimeSurgeryDate.Value = Convert.ToDateTime(item.Field<System.DateTime>(6));
+                    time = item.Field<string>(7).ToString();
+                    string[] response = strings.getStrings(time, new char[] { ':', ' ' });
+                    comboBoxHour.Text = response[0];
+                    comboBoxMin.Text = response[1];
+                    comboBoxTime.Text = response[2];
+                    comboBoxOperatingRooms.SelectedValue = item.Field<int>(8);
+                    labelIdProgram.Text = item.Field<int>(9).ToString();
+
+                    groupBoxpatientData.Enabled = false;
+                    groupBoxAnesthetistData.Enabled = true;
+                    groupBoxAnesthetistData.Visible = true;
+                    groupBoxDocsData.Enabled = false;
+                    groupBoxAssistantsData.Enabled = false;
+                    groupBoxDocsData.Visible = false;
+                    groupBoxAssistantsData.Visible = false;
+                    groupBoxQuirfonanoData.Enabled = false;
                 }
-                else
-                {
-                    comboBoxSurgeryType.SelectedIndex = 1;
-                }
-                textBoxDiagnosis.Text= item.Field<string>(4).ToString();
-                string surgeryRelevance= item.Field<string>(5).ToString();
-                if (surgeryRelevance == "Mayor")
-                {
-                    comboBoxRelevance.SelectedIndex = 0;
-                }
-                else
-                {
-                    comboBoxRelevance.SelectedIndex = 1;
-                }
-                dateTimeSurgeryDate.Value = Convert.ToDateTime(item.Field<System.DateTime>(6));
-                time = item.Field<string>(7).ToString();
-                string[] response = strings.getStrings(time, new char[] { ':', ' '});
-                comboBoxHour.Text = response[0];
-                comboBoxMin.Text = response[1];
-                comboBoxTime.Text = response[2];
-                comboBoxOperatingRooms.SelectedValue = item.Field<int>(8);
-                labelIdProgram.Text = item.Field<int>(9).ToString();
-                
+            }
+            catch (Exception)
+            {
             }
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectionMode = 2;
-            comboBoxHour.SelectedItem = null;
-            comboBoxMin.SelectedItem = null;
-            comboBoxTime.SelectedItem = null;
-            comboBoxSurgeryType.SelectedItem = null;
-            comboBoxRelevance.SelectedItem = null;
-            comboBoxOperatingRooms.SelectedValue = 1;
-            textBoxDiagnosis.Clear();
-            iconButtonConfirm.Enabled = true;
-            groupBoxAnesthetistData.Enabled = false;
-            groupBoxDocsData.Enabled = true;
-            groupBoxAssistantsData.Enabled = true;
-            groupBoxQuirfonanoData.Enabled = true;
-            groupBoxpatientData.Enabled = true;
-            groupBoxDocsData.Visible = true;
-            groupBoxAssistantsData.Visible = true;
-            groupBoxAnesthetistData.Visible = false;
-            labelID.Text = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
-            DataTable infoUnfinishied = surgeries.getInfoUnfinishiedSurgerie(Convert.ToInt32(labelID.Text));
-            foreach (DataRow item in infoUnfinishied.Rows)
+            try
             {
-                textBoxHistory.Text = item.Field<string>(0).ToString();
-                textBoxName.Text = item.Field<string>(1).ToString();
-                textBoxLastName.Text = item.Field<string>(2).ToString();
-                labelIdProgram.Text = item.Field<int>(3).ToString();
+                labelID.Text = dataGridView2.Rows[e.RowIndex].Cells[0].Value.ToString();
+                DataTable infoUnfinishied = surgeries.getInfoUnfinishiedSurgerie(Convert.ToInt32(labelID.Text));
+                foreach (DataRow item in infoUnfinishied.Rows)
+                {
+                    textBoxHistory.Text = item.Field<string>(0).ToString();
+                    textBoxName.Text = item.Field<string>(1).ToString();
+                    textBoxLastName.Text = item.Field<string>(2).ToString();
+                    labelIdProgram.Text = item.Field<int>(3).ToString();
+                }
+
+                comboBoxHour.SelectedItem = null;
+                comboBoxMin.SelectedItem = null;
+                comboBoxTime.SelectedItem = null;
+                comboBoxSurgeryType.SelectedItem = null;
+                comboBoxRelevance.SelectedItem = null;
+                comboBoxOperatingRooms.SelectedValue = 1;
+                textBoxDiagnosis.Clear();
+                iconButtonConfirm.Enabled = true;
+                groupBoxAnesthetistData.Enabled = false;
+                groupBoxDocsData.Enabled = true;
+                groupBoxAssistantsData.Enabled = true;
+                groupBoxQuirfonanoData.Enabled = true;
+                groupBoxpatientData.Enabled = true;
+                groupBoxDocsData.Visible = true;
+                groupBoxAssistantsData.Visible = true;
+                groupBoxAnesthetistData.Visible = false;
+            }
+            catch (Exception)
+            {
             }
         }
 

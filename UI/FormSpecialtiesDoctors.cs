@@ -78,15 +78,16 @@ namespace UI
 
         private void dataGridViewSpecialties_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            groupBoxSpecialities.Enabled = true;
-            iconButtonNew.Enabled = true;
-            iconButtonSave.Enabled = false;
-            iconButtonUpdate.Enabled = true;
+            
             bool status;
             try
             {
                 labelID.Text = dataGridViewSpecialties.Rows[e.RowIndex].Cells[0].Value.ToString();
                 textBoxNameSpecialties.Text = dataGridViewSpecialties.Rows[e.RowIndex].Cells[1].Value.ToString();
+                iconButtonUpdate.Enabled = true;
+                groupBoxSpecialities.Enabled = true;
+                iconButtonNew.Enabled = true;
+                iconButtonSave.Enabled = false;
             }
             catch (Exception)
             {

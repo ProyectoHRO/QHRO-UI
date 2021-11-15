@@ -73,21 +73,23 @@ namespace UI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+            try
+            {
                 labelID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 dateTimeSurgeryDate.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
                 string hora = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                string[] response = strings.getStrings(hora,new char[] { ':', ' '});
+                string[] response = strings.getStrings(hora, new char[] { ':', ' ' });
                 if (response[0].StartsWith("0"))
                 {
-                string[] response1 = strings.getStrings(response[0], new char[] { '0' });
-                comboBoxHour.Text = response1[0];
+                    string[] response1 = strings.getStrings(response[0], new char[] { '0' });
+                    comboBoxHour.Text = response1[0];
                 }
                 else
                 {
-                comboBoxHour.Text = response[0];
+                    comboBoxHour.Text = response[0];
                 }
-               
+
                 comboBoxMin.Text = response[1];
                 if (response[2].Contains("A"))
                 {
@@ -97,13 +99,17 @@ namespace UI
                 {
                     comboBoxTime.SelectedIndex = 1;
                 }
-                
+
                 Qx = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[3].Value);
                 comboBoxOperatingRooms.SelectedValue = Qx;
                 textBoxSearch.Enabled = true;
                 iconButtonSearchNames.Enabled = true;
-            tableLayoutPanel17.Enabled = false;
-               
+                tableLayoutPanel17.Enabled = false;
+
+            }
+            catch (Exception)
+            {
+            }
         }
 
         int band = 0;

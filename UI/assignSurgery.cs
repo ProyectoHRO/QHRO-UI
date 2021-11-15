@@ -291,8 +291,7 @@ namespace UI
                 if (listViewAssistants.Items.Count > 0)
                 {
                     listBoxIds.Items.RemoveAt(listViewAssistants.SelectedIndices[0]);
-                    listViewAssistants.Items.Remove(listViewAssistants.SelectedItems[0]);
-                 
+                    listViewAssistants.Items.Remove(listViewAssistants.SelectedItems[0]);                
                 }
                    
             }
@@ -346,11 +345,6 @@ namespace UI
         }
 
         private void checkedListBoxAnesthesiaTypes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

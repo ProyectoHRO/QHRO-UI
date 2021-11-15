@@ -364,7 +364,7 @@ namespace UI
             "Disponible",
             "Mantenimiento",
             "Ocupado"});
-            this.comboBoxCurrentState.Location = new System.Drawing.Point(166, 125);
+            this.comboBoxCurrentState.Location = new System.Drawing.Point(166, 128);
             this.comboBoxCurrentState.Name = "comboBoxCurrentState";
             this.comboBoxCurrentState.Size = new System.Drawing.Size(166, 28);
             this.comboBoxCurrentState.TabIndex = 35;

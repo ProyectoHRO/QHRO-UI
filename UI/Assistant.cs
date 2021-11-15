@@ -87,12 +87,7 @@ namespace UI
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            labelStatus.Visible = true;
-            comboStatus.Visible = true;
-            groupBoxAssistantData.Enabled = true;
-            iconButtonNew.Enabled = true;
-            iconButtonSave.Enabled = false;
-            iconButtonUpdate.Enabled = true;
+            
             bool status;
             try
             {
@@ -111,6 +106,14 @@ namespace UI
                     comboStatus.SelectedIndex = 2;
                 comboTypeAssistant.SelectedValue = dataGridView2.Rows[e.RowIndex].Cells[10].Value;
                 textCui.Text = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                labelStatus.Visible = true;
+                comboStatus.Visible = true;
+                groupBoxAssistantData.Enabled = true;
+                iconButtonNew.Enabled = true;
+                iconButtonSave.Enabled = false;
+                iconButtonUpdate.Enabled = true;
+
             }
             catch (Exception)
             {
