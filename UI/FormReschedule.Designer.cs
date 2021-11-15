@@ -42,6 +42,8 @@ namespace UI
             this.label5 = new System.Windows.Forms.Label();
             this.iconButtonCancel = new FontAwesome.Sharp.IconButton();
             this.iconButtonContinue = new FontAwesome.Sharp.IconButton();
+            this.labelchangeHour = new System.Windows.Forms.Label();
+            this.labelchangeRoom = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -97,6 +99,7 @@ namespace UI
             // 
             this.comboBoxHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxHour.Enabled = false;
             this.comboBoxHour.FormattingEnabled = true;
             this.comboBoxHour.Items.AddRange(new object[] {
             "1",
@@ -120,6 +123,7 @@ namespace UI
             // 
             this.comboBoxMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxMin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMin.Enabled = false;
             this.comboBoxMin.FormattingEnabled = true;
             this.comboBoxMin.Items.AddRange(new object[] {
             "00",
@@ -191,6 +195,7 @@ namespace UI
             // 
             this.comboBoxTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxTime.Enabled = false;
             this.comboBoxTime.FormattingEnabled = true;
             this.comboBoxTime.Items.AddRange(new object[] {
             "A.M",
@@ -213,6 +218,7 @@ namespace UI
             // 
             // comboBoxOperatingRooms
             // 
+            this.comboBoxOperatingRooms.Enabled = false;
             this.comboBoxOperatingRooms.FormattingEnabled = true;
             this.comboBoxOperatingRooms.Location = new System.Drawing.Point(514, 246);
             this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
@@ -279,11 +285,37 @@ namespace UI
             this.iconButtonContinue.UseVisualStyleBackColor = false;
             this.iconButtonContinue.Click += new System.EventHandler(this.iconButtonContinue_Click);
             // 
+            // labelchangeHour
+            // 
+            this.labelchangeHour.AutoSize = true;
+            this.labelchangeHour.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelchangeHour.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelchangeHour.Location = new System.Drawing.Point(712, 179);
+            this.labelchangeHour.Name = "labelchangeHour";
+            this.labelchangeHour.Size = new System.Drawing.Size(88, 20);
+            this.labelchangeHour.TabIndex = 49;
+            this.labelchangeHour.Text = "Cambiar hora";
+            this.labelchangeHour.Click += new System.EventHandler(this.labelchangeHour_Click);
+            // 
+            // labelchangeRoom
+            // 
+            this.labelchangeRoom.AutoSize = true;
+            this.labelchangeRoom.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelchangeRoom.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.labelchangeRoom.Location = new System.Drawing.Point(712, 247);
+            this.labelchangeRoom.Name = "labelchangeRoom";
+            this.labelchangeRoom.Size = new System.Drawing.Size(117, 20);
+            this.labelchangeRoom.TabIndex = 50;
+            this.labelchangeRoom.Text = "Cambiar quirófano";
+            this.labelchangeRoom.Click += new System.EventHandler(this.labelchangeRoom_Click);
+            // 
             // FormReschedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1174, 385);
+            this.Controls.Add(this.labelchangeRoom);
+            this.Controls.Add(this.labelchangeHour);
             this.Controls.Add(this.iconButtonCancel);
             this.Controls.Add(this.iconButtonContinue);
             this.Controls.Add(this.label5);
@@ -322,5 +354,7 @@ namespace UI
         private System.Windows.Forms.Label label5;
         private FontAwesome.Sharp.IconButton iconButtonContinue;
         private FontAwesome.Sharp.IconButton iconButtonCancel;
+        private System.Windows.Forms.Label labelchangeHour;
+        private System.Windows.Forms.Label labelchangeRoom;
     }
 }

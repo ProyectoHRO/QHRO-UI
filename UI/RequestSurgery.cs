@@ -31,54 +31,63 @@ namespace UI
         {
             DataTable infoPatientsHro = patientsHro.getPatientsByHistoryNumber(param);
             string historyNumber = "";
-            if (infoPatientsHro.Rows.Count < 1)
-            {
-                if (MessageBox.Show("No se encuentra el numero de historia, ¿Desea crearlo ahora mismo?", "Alerta",
-                MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    textBoxhistoryNumber.Enabled = false;
-                    groupBoxpatientData.Enabled = true;
-                    iconButtonCreateAndRequest.Visible = true;
-                    iconButtonRequest.Visible = false;
 
-                }
+            if (textBoxSearch.Text== "Buscar paciente por No. Historia")
+            {
+                MessageBox.Show("Por favcor ingrese un número de historia", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                foreach (DataRow item in infoPatientsHro.Rows)
+                if (infoPatientsHro.Rows.Count < 1)
                 {
-                    historyNumber = item.Field<string>(0);
-                    textBoxhistoryNumber.Text = item.Field<string>(0);
-                    textBoxfirstName.Text = item.Field<string>(1);
-                    textBoxsecondName.Text = item.Field<string>(2);
-                    textBoxfirstSurname.Text = item.Field<string>(3);
-                    textBoxsecondSurname.Text = item.Field<string>(4);
-                    string sex = item.Field<string>(5);
-                    if (sex == "0")
-                    {
-                        comboBoxGender.Text = "Masculino";
-                    }
-                    else if (sex == "1")
-                    {
-                        comboBoxGender.Text = "Femenino";
-                    }
-                    textBoxAge.Text = item.Field<int>(6).ToString();
-                }
-                DataTable getPatient = patients.getPatientsByHistoryNumber(historyNumber);
-                if (getPatient.Rows.Count < 1)
-                {
-                    band = 1;
+                    MessageBox.Show("No se encuentra el numero de historia", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //if (MessageBox.Show("No se encuentra el numero de historia, ¿Desea crearlo ahora mismo?", "Alerta",
+                    //MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    //{
+                    //    textBoxhistoryNumber.Enabled = false;
+                    //    groupBoxpatientData.Enabled = true;
+                    //    iconButtonCreateAndRequest.Visible = true;
+                    //    iconButtonRequest.Visible = false;
+
+                    //}
                 }
                 else
                 {
-                    band = 2;
-                    foreach (DataRow item in getPatient.Rows)
+                    foreach (DataRow item in infoPatientsHro.Rows)
                     {
-                        labelID.Text = item.Field<int>(0).ToString();
-
+                        historyNumber = item.Field<string>(0);
+                        textBoxhistoryNumber.Text = item.Field<string>(0);
+                        textBoxfirstName.Text = item.Field<string>(1);
+                        textBoxsecondName.Text = item.Field<string>(2);
+                        textBoxfirstSurname.Text = item.Field<string>(3);
+                        textBoxsecondSurname.Text = item.Field<string>(4);
+                        string sex = item.Field<string>(5);
+                        if (sex == "0")
+                        {
+                            comboBoxGender.Text = "Masculino";
+                        }
+                        else if (sex == "1")
+                        {
+                            comboBoxGender.Text = "Femenino";
+                        }
+                        textBoxAge.Text = item.Field<int>(6).ToString();
                     }
+                    DataTable getPatient = patients.getPatientsByHistoryNumber(historyNumber);
+                    if (getPatient.Rows.Count < 1)
+                    {
+                        band = 1;
+                    }
+                    else
+                    {
+                        band = 2;
+                        foreach (DataRow item in getPatient.Rows)
+                        {
+                            labelID.Text = item.Field<int>(0).ToString();
+
+                        }
+                    }
+                    iconButtonRequest.Visible = true;
                 }
-                iconButtonRequest.Visible = true;
             }
         }
 
@@ -161,7 +170,7 @@ namespace UI
             }
             else
             {
-                MessageBox.Show("Porfavor llene el cambio de diagnostico");
+                MessageBox.Show("Por favor especifique el diagnostico", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

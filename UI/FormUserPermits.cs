@@ -129,7 +129,7 @@ namespace UI
                 DataTable infoUser = users.GetUserByUserName(textBoxSearch.Text);
                 if (infoUser.Rows.Count < 1)
                 {
-                    MessageBox.Show("El usuario no esta registrado");
+                    MessageBox.Show("El usuario no esta registrado", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -150,7 +150,7 @@ namespace UI
                 DataTable getuser = users.getUserByEmail(textBoxSearch.Text);
                 if (getuser.Rows.Count < 1)
                 {
-                    MessageBox.Show("El correo no esta registrado");
+                    MessageBox.Show("El correo no esta registrado", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -192,7 +192,7 @@ namespace UI
                 }
                 string response = users.assignPermits( userId, Convert.ToInt32(labelId.Text),
                   permitsList);
-                MessageBox.Show(response);
+                MessageBox.Show(response," ", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             else
             {

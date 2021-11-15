@@ -19,6 +19,7 @@ namespace UI
         string pacientName = "";
         int formClosed;
         int surgerieId;
+        int IdQ;
         string hour;
         public FormsSchedules()
         {
@@ -65,13 +66,24 @@ namespace UI
             surgerieId = Convert.ToInt32(dataGridViewSchedule.Rows[e.RowIndex].Cells[0].Value);
             pacientName = dataGridViewSchedule.Rows[e.RowIndex].Cells[4].Value.ToString();
             hour = dataGridViewSchedule.Rows[e.RowIndex].Cells[1].Value.ToString();
+
             qx = dataGridViewSchedule.Rows[e.RowIndex].Cells[2].Value.ToString();
+            DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
+            foreach (DataRow OpRoom in infoOperatingRooms.Rows)
+            {
+                string numQ = OpRoom.Field<string>(1).ToString();
+
+                if ((numQ == qx))
+                {
+                    IdQ = OpRoom.Field<int>(0);
+                }
+            }
             proc = dataGridViewSchedule.Rows[e.RowIndex].Cells[6].Value.ToString();
         }
 
         private void iconButtonReSchedule_Click(object sender, EventArgs e)
         {
-            FormReschedule formReschedule = new FormReschedule(surgerieId, pacientName);
+            FormReschedule formReschedule = new FormReschedule(surgerieId, pacientName, qx, hour, IdQ);
             formReschedule.ShowDialog();
             loadData();
         }
@@ -108,7 +120,7 @@ namespace UI
 
             if (i > 0)
             {
-                MessageBox.Show("No puedes finalizar una cirugía que aun no ha comenzado.");
+                MessageBox.Show("No puedes finalizar una cirugía que aun no ha comenzado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
