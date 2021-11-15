@@ -26,9 +26,17 @@ namespace UI
 
         private void iconButtonContinue_Click(object sender, EventArgs e)
         {
+            if (textBoxDetail.Text=="")
+            {
+                MessageBox.Show("Por favor especifique el motivo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
                 string resp = surgeries.diffSurgerie(idSurgerie, textBoxDetail.Text);
                 MessageBox.Show(resp);
                 this.Close();
+            }
+                
         }
 
         private void iconButtonCancel_Click(object sender, EventArgs e)
