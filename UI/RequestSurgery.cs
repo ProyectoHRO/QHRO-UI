@@ -31,6 +31,7 @@ namespace UI
         {
             DataTable infoPatientsHro = patientsHro.getPatientsByHistoryNumber(param);
             string historyNumber = "";
+            int edad;
 
             if (textBoxSearch.Text== "Buscar paciente por No. Historia")
             {
