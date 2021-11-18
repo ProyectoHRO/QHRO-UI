@@ -25,25 +25,7 @@ namespace UI
 
         void confirmPerson()
         {
-            if (dataGridViewSearchPerson.Rows.Count < 2)
-            {
-                id = Convert.ToInt32(dataGridViewSearchPerson.Rows[0].Cells[0].Value);
-              
-                    name = dataGridViewSearchPerson.Rows[0].Cells[2].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[3].Value.ToString() + ' ' +
-                  dataGridViewSearchPerson.Rows[0].Cells[4].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[0].Cells[5].Value.ToString() + ' ' +
-                      dataGridViewSearchPerson.Rows[0].Cells[6].Value.ToString();
-              
-                if (typePerson != 1 && typePerson != 2)
-                {
-                    int type = Convert.ToInt32(dataGridViewSearchPerson.Rows[0].Cells[9].Value);
-                    if (type == 1)
-                        assistantType = "Instrumentista";
-                    else
-                        assistantType = "Circulante";
-                }
-               
-            }
-            else
+          
                 this.Close();
         }
         void listAnesthetist(DataTable anesthetist)
@@ -212,10 +194,9 @@ namespace UI
         private void dataGridViewSearchPerson_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             iconButtonContinue.Enabled = true;
-            try
-            {
+           
                 id = Convert.ToInt32(dataGridViewSearchPerson.Rows[e.RowIndex].Cells[0].Value);
-              
+            label2.Text = id.ToString();
                     name = dataGridViewSearchPerson.Rows[e.RowIndex].Cells[2].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[e.RowIndex].Cells[3].Value.ToString() + ' ' +
                   dataGridViewSearchPerson.Rows[e.RowIndex].Cells[4].Value.ToString() + ' ' + dataGridViewSearchPerson.Rows[e.RowIndex].Cells[5].Value.ToString() + ' ' +
                       dataGridViewSearchPerson.Rows[e.RowIndex].Cells[6].Value.ToString();
@@ -229,11 +210,7 @@ namespace UI
                         assistantType = "Circulante";
                 }
               
-            }
-            catch (Exception)
-            {
-
-            }
+         
         }
 
         private void iconButtonContinue_Click(object sender, EventArgs e)
@@ -260,7 +237,7 @@ namespace UI
 
         private void iconButtonCancel_Click(object sender, EventArgs e)
         {
-            id = 0;
+              id = 0;
               this.Close();
         }
 

@@ -41,6 +41,7 @@ namespace UI
             this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSearchPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -229,12 +230,22 @@ namespace UI
             this.iconPictureBox1.TabIndex = 38;
             this.iconPictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(49, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 16);
+            this.label2.TabIndex = 39;
+            this.label2.Text = "label2";
+            // 
             // selectPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(227)))));
             this.ClientSize = new System.Drawing.Size(1190, 424);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.iconButtonSearch);
@@ -269,5 +280,6 @@ namespace UI
         private FontAwesome.Sharp.IconButton iconButtonSearch;
         private System.Windows.Forms.Panel panel3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

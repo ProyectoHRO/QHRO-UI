@@ -22,8 +22,8 @@ namespace DAL
         private SqlConnection connection2 = new SqlConnection("Server=25.12.40.132; Database=RecepcionV2; User Id=sa; Password=Hospital0;");
         //private SqlConnection connection2 = new SqlConnection("Server=192.168.1.101; Database=RecepcionV2; User Id=sa; Password=Hospital0;");
 
-        //private SqlConnection connection = new SqlConnection("Server=DESKTOP-9P0EO1T; Database=HROBD; Trusted_Connection=True;");
-        // private SqlConnection connection2 = new SqlConnection("Server=DESKTOP-9P0EO1T; Database=hroTest; Trusted_Connection=True;");
+        //private SqlConnection connection = new SqlConnection("Server=DESKTOP-HA661DP; Database=HROBD; Trusted_Connection=True;");
+         //private SqlConnection connection2 = new SqlConnection("Server=DESKTOP-HA661DP; Database=hroTest; Trusted_Connection=True;");
 
         public SqlConnection OpenConnection()
         {

@@ -30,12 +30,20 @@
         </div>
         <ul class="nav-lista">
             <li>
-                    <a href="/Quirofanos/Programaciones">
-                        <i class='bx bxs-calendar'></i>
-                        <span class="links_name">Programaciones</span>
-                    </a>
-                    <span class="tooltip">Programaciones</span>
-                </li>
+                <a href="/Quirofanos/Programaciones">
+                    <i class='bx bxs-calendar'></i>
+                    <span class="links_name">Programaciones</span>
+                </a>
+                <span class="tooltip">Programaciones</span>
+            </li>
+            <li>
+                <a href="/Quirofanos/Estado">
+                    <i class='bx bxs-institution'></i>
+                    <span class="links_name">Quirófanos</span>
+                </a>
+                <span class="tooltip">Quirófanos</span>
+
+            </li>
             <li>
                 @if (User.Identity.IsAuthenticated)
                 {
@@ -51,25 +59,8 @@
                 }
 
             </li>
-            <li>
-                @if (User.Identity.IsAuthenticated)
-                {
-                    <a href="/Quirofanos/Estado">
-                        <i class='bx bxs-institution'></i>
-                        <span class="links_name">Quirófanos</span>
-                    </a>
-                    <span class="tooltip">Quirófanos</span>
-                }
 
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-info-circle'></i>
-                    <span class="links_name">A cerca de</span>
-                </a>
-
-                <span class="tooltip">A cerca de</span>
-            </li>
+          
             <li class="profile">
                 <a class='bx bx-log-out' id="log_out" href="/Home/Logout"></a>
             </li>

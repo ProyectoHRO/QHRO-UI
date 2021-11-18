@@ -93,8 +93,16 @@ namespace UI
         {
             selectPerson selectP = new selectPerson(1);
             selectP.ShowDialog();
-            textBoxAnestethistName.Text = selectP.name;
-            labelIdAnesthetist.Text = selectP.id.ToString();
+            if (selectP.id != 0)
+            {
+                textBoxAnestethistName.Text = selectP.name;
+                labelIdAnesthetist.Text = selectP.id.ToString();
+            }
+            else
+            {
+
+            }
+           
         }
 
         private void iconButtonAddDoctor_Click(object sender, EventArgs e)
