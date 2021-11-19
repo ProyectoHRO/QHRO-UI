@@ -29,10 +29,10 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBoxanesthetistData = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -91,7 +91,7 @@ namespace UI
             this.groupBoxanesthetistData.Name = "groupBoxanesthetistData";
             this.groupBoxanesthetistData.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxanesthetistData.Size = new System.Drawing.Size(1069, 233);
-            this.groupBoxanesthetistData.TabIndex = 17;
+            this.groupBoxanesthetistData.TabIndex = 29;
             this.groupBoxanesthetistData.TabStop = false;
             this.groupBoxanesthetistData.Text = "Datos del anestesiólogo";
             this.groupBoxanesthetistData.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -156,7 +156,7 @@ namespace UI
             this.comboBoxStatus.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(336, 28);
-            this.comboBoxStatus.TabIndex = 17;
+            this.comboBoxStatus.TabIndex = 10;
             // 
             // panel4
             // 
@@ -166,7 +166,7 @@ namespace UI
             this.panel4.Location = new System.Drawing.Point(621, 75);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(334, 30);
-            this.panel4.TabIndex = 23;
+            this.panel4.TabIndex = 8;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // boxValidateMail
@@ -188,7 +188,7 @@ namespace UI
             this.textBoxEmail.MaxLength = 50;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(299, 26);
-            this.textBoxEmail.TabIndex = 16;
+            this.textBoxEmail.TabIndex = 9;
             this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // panel3
@@ -260,7 +260,7 @@ namespace UI
             this.textBoxphoneNumber.MaxLength = 8;
             this.textBoxphoneNumber.Name = "textBoxphoneNumber";
             this.textBoxphoneNumber.Size = new System.Drawing.Size(336, 26);
-            this.textBoxphoneNumber.TabIndex = 15;
+            this.textBoxphoneNumber.TabIndex = 7;
             this.textBoxphoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxphoneNumber_KeyPress);
             // 
             // labelsecondSurname
@@ -296,7 +296,7 @@ namespace UI
             this.textBoxsecondSurname.MaxLength = 30;
             this.textBoxsecondSurname.Name = "textBoxsecondSurname";
             this.textBoxsecondSurname.Size = new System.Drawing.Size(336, 26);
-            this.textBoxsecondSurname.TabIndex = 14;
+            this.textBoxsecondSurname.TabIndex = 6;
             this.textBoxsecondSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxsecondSurname_KeyPress);
             // 
             // labelEmail
@@ -320,7 +320,7 @@ namespace UI
             this.textBoxfirstSurname.MaxLength = 30;
             this.textBoxfirstSurname.Name = "textBoxfirstSurname";
             this.textBoxfirstSurname.Size = new System.Drawing.Size(271, 26);
-            this.textBoxfirstSurname.TabIndex = 13;
+            this.textBoxfirstSurname.TabIndex = 5;
             this.textBoxfirstSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxfirstSurname_KeyPress);
             // 
             // textBoxDPI
@@ -332,7 +332,7 @@ namespace UI
             this.textBoxDPI.MaxLength = 13;
             this.textBoxDPI.Name = "textBoxDPI";
             this.textBoxDPI.Size = new System.Drawing.Size(271, 26);
-            this.textBoxDPI.TabIndex = 9;
+            this.textBoxDPI.TabIndex = 1;
             this.textBoxDPI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDPI_KeyPress);
             // 
             // textBoxfirstName
@@ -344,7 +344,7 @@ namespace UI
             this.textBoxfirstName.MaxLength = 30;
             this.textBoxfirstName.Name = "textBoxfirstName";
             this.textBoxfirstName.Size = new System.Drawing.Size(271, 26);
-            this.textBoxfirstName.TabIndex = 10;
+            this.textBoxfirstName.TabIndex = 2;
             this.textBoxfirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxfirstName_KeyPress);
             // 
             // textBoxthirdName
@@ -356,7 +356,7 @@ namespace UI
             this.textBoxthirdName.MaxLength = 30;
             this.textBoxthirdName.Name = "textBoxthirdName";
             this.textBoxthirdName.Size = new System.Drawing.Size(271, 26);
-            this.textBoxthirdName.TabIndex = 12;
+            this.textBoxthirdName.TabIndex = 4;
             this.textBoxthirdName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxthirdName_KeyPress);
             // 
             // textBoxsecondName
@@ -368,7 +368,7 @@ namespace UI
             this.textBoxsecondName.MaxLength = 30;
             this.textBoxsecondName.Name = "textBoxsecondName";
             this.textBoxsecondName.Size = new System.Drawing.Size(271, 26);
-            this.textBoxsecondName.TabIndex = 11;
+            this.textBoxsecondName.TabIndex = 3;
             this.textBoxsecondName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxsecondName_KeyPress);
             // 
             // labelStatus
@@ -569,7 +569,7 @@ namespace UI
             this.iconButtonNew.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonNew.Name = "iconButtonNew";
             this.iconButtonNew.Size = new System.Drawing.Size(120, 40);
-            this.iconButtonNew.TabIndex = 19;
+            this.iconButtonNew.TabIndex = 1;
             this.iconButtonNew.Text = "Nuevo";
             this.iconButtonNew.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonNew.UseVisualStyleBackColor = false;
@@ -582,55 +582,55 @@ namespace UI
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 283);
+            this.dataGridView1.Location = new System.Drawing.Point(9, 304);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1264, 459);
-            this.dataGridView1.TabIndex = 26;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick_1);
+            this.dataGridView1.Size = new System.Drawing.Size(1268, 632);
+            this.dataGridView1.TabIndex = 50;
             // 
             // Anesthetist
             // 
