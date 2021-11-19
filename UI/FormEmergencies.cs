@@ -507,5 +507,17 @@ namespace UI
                 this.Close();
             }
         }
+
+        private void textBoxSearch_Enter(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text == "Buscar paciente por No. Historia")
+                textBoxSearch.Text = "";
+        }
+
+        private void textBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text == "")
+               textBoxSearch.Text = "Buscar paciente por No. Historia";
+        }
     }
 }
