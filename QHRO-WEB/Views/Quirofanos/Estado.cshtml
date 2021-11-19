@@ -15,56 +15,48 @@
 
     <div class="row mb-3">
         <div class="col-sm-12"></div>
-       
-        
+
+
     </div>
-   
-    <v class="row mb-3">
-        <div class="row row-cols-1 row-cols-md-8 g-4">
+    <script>
+        $(document).ready(function () {
+            var refreshId = setInterval(function () {
 
-            @foreach (var item in Model)
-            {
-                string numbenQ = item.Qx;
-                string nameQ = item.Nombre;
-                string procQ = item.Procedimiento;
-                string statusQ = item.estado_actual;
-                string colorQ = "";
-                switch (statusQ)
-                {
-                    case "Disponible":
-                        colorQ = "#78f712";
-                        break;
+                $.ajax({
+                    url: "/Quirofanos/fetchQData",
+                    method: "GET",
+                    success: function (data) {
 
-                    case "Mantenimiento":
-                        colorQ = "blue";
-                        break;
-
-                    case "Ocupado":
-                        colorQ = "red";
-                        break;
-
-                    default: break;
-                }
-                <div class="col-md-3">
-                    <div class="card quiro border border-dark rounded">
-                        <div class="text-center">
-                            <h3 class="card-title">@item.Qx</h3>
-                        </div>
-                        <div class="text-center">
-                            <i class="fas fa-procedures fa-5x" style="color:@colorQ"></i>
-                        </div>
-                        <div class="text-center">
-                            <h5 class="card-title"> Estado:</h5>
-                            <h5 class="card-title">@item.estado_actual </h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">@item.Nombre</li>
-                                <li class="list-group-item">@item.Procedimiento</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            }
+                        data = JSON.parse(data);
+                        console.log(data);
+                        $('#qr').empty();
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].estado_actual == 'Disponible') {
+                                $('#qr').append('<div class="col-md-3"><div class= "card quiro border border-dark rounded  " ><div class="text-center"><h3 class="card-title">' + data[i].Qx + '</h3></div><div class="text-center"><i class="fas fa-procedures fa-5x" style="color:#78f712"></i></div> <div class="text-center"><h5 class="card-title"> Estado:</h5><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"></li><li class="list-group-item"></li></ul></div></div></div>');
+                            }
+                            else if (data[i].estado_actual == 'Mantenimiento') {
+                                $('#qr').append('<div class="col-md-3"><div class= "card quiro border border-dark rounded  " ><div class="text-center"><h3 class="card-title">' + data[i].Qx + '</h3></div><div class="text-center"><i class="fas fa-procedures fa-5x" style="color:blue"></i></div> <div class="text-center"><h5 class="card-title"> Estado:</h5><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"></li><li class="list-group-item"></li></ul></div></div></div>');
+                            }
+                            else if (data[i].estado_actual == 'Ocupado') {
+                                if (data[i].Nombre == null && data[i].Procedimiento == null) {
+                                    $('#qr').append('<div class="col-md-3"><div class= "card quiro border border-dark rounded  " ><div class="text-center"><h3 class="card-title">' + data[i].Qx + '</h3></div><div class="text-center"><i class="fas fa-procedures fa-5x" style="color:red"></i></div> <div class="text-center"><h5 class="card-title"> Estado:</h5><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"></li><li class="list-group-item"></li></ul></div></div></div>');
+                                } else {
+                                    $('#qr').append('<div class="col-md-3"><div class= "card quiro border border-dark rounded  " ><div class="text-center"><h3 class="card-title">' + data[i].Qx + '</h3></div><div class="text-center"><i class="fas fa-procedures fa-5x" style="color:red"></i></div> <div class="text-center"><h5 class="card-title"> Estado:</h5><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item">' + data[i].Nombre + '</li><li class="list-group-item">' + data[i].Procedimiento + '</li></ul></div></div></div>');
+                                }
+                                
+                            }
+                        }
+                    },
+                    error: function (er) {
+                        console.log(data);
+                    }
+                });
+            }, 1000);
+        });
+    </script>
+    <div class="row mb-3">
+        <div class=" row row-cols-1 row-cols-md-8 g-4 " id="qr">
+           
         </div>
+    </div>
 </div>

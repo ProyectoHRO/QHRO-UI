@@ -26,17 +26,22 @@ namespace QHRO_WEB.Controllers
             return Json(json, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult fetchQData()
+        {
+            var json = Newtonsoft.Json.JsonConvert.SerializeObject(reports.StatusOperatingRooms());
+            return Json(json, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult programacionesInfo()
         {
 
             return View();
         }
         // GET: Quirofanos
-        [Authorize]
         public ActionResult Estado()
         {
-            var Status = reports.StatusOperatingRooms();
-            return View(Status.ToList());
+            //var Status = reports.StatusOperatingRooms();
+            return View();
         }
 
         [Authorize]
