@@ -54,6 +54,7 @@ namespace UI
         }
         private void assignSurgery_Load(object sender, EventArgs e)
         {
+            dateTimeSurgeryDate.Value = DateTime.Now.Date;
             ListRequestedSugreries();
             listAnesthesiaTypes();
             DataTable infoOperatingRooms = operatingRooms.listoperatingRooms();

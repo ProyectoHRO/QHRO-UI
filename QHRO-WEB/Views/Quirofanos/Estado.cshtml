@@ -5,14 +5,12 @@
 
 @*Vista Cartas en vivo*@
 <head>
-    <script 
-     src="https://code.jquery.com/jquery-3.6.0.js" 
-     integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-     crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous">
     </script>
 </head>
 <div class="container" id="reloadContent" style="padding-top:15px">
-
     <div class="row mb-3">
         <div class="col-sm-3">
             <div style="font-size: 30px; ">
@@ -23,7 +21,7 @@
                     var mes = (m < 10) ? '0' + m : m;
                     var yy = today.getYear();
                     var year = (yy < 1000) ? yy + 1900 : yy;
-                    document.write('Fecha: ' + today.getDate(), '/' + mes, '/' + year );
+                    document.write('Fecha: ' + today.getDate(), '/' + mes, '/' + year);
                     //]]>
                 </script>
             </div>
@@ -52,7 +50,10 @@
         </div>
     </div>
     <script>
+       
+        //actualizar
         $(document).ready(function () {
+
             var refreshId = setInterval(function () {
 
                 $.ajax({
@@ -87,9 +88,14 @@
             }, 1000);
         });
     </script>
+
+
     <div class="row mb-3">
-        <div class=" row row-cols-1 row-cols-md-8 g-4 " id="qr">
+        <div class="hijo row row-cols-1 row-cols-md-8 g-4 " id="qr">
 
         </div>
     </div>
+
+
+
 </div>

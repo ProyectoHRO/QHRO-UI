@@ -67,44 +67,7 @@
     margin-top: 20px;
 }
 
-
-
-footer{
-    background-color: #222222;
-    padding: 60px 0px;
+.padre {
+    background: red;
+    overflow: hidden;
 }
-
-    footer .menu li a {
-        color: #b1aca1;
-        padding: 10px;
-        text-decoration: none;
-    }
-
-        footer .menu li a:hover {
-            color: #7dabdb;
-        }
-
-.i.bx.bxs-calendar,
-.i.bx.bx-edit,
-.i.bx.bxs-institution,
-.i.bx.bxs-info-circle {
-    color: #b1aca1;
-    font-size: 20px;
-    padding: 10px;
-    
-}
-
-.i.bx.bxs-calendar:hover,
-.i.bx.bx-edit:hover,
-.i.bx.bxs-institution:hover,
-.i.bx.bxs-info-circle:hover {
-    color: #6794c2;
-}
-
-.copyright {
-    background-color: #f0f0f0;
-}
-
-    .copyright p {
-        margin: 15px 0px;
-    }
