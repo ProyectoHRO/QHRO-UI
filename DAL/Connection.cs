@@ -15,11 +15,11 @@ namespace DAL
         {
             return Settings.Default.HROBDConnectionString;
         }
-        private SqlConnection connection = new SqlConnection("Server=192.168.1.10; Database=HROBD; User Id=sa; Password=Hospital0;");
-        private SqlConnection connection2 = new SqlConnection("Server=192.168.1.101; Database=RecepcionV2; User Id=sa; Password=Hospital0;");
+        //private SqlConnection connection = new SqlConnection("Server=192.168.1.10; Database=HROBD; User Id=sa; Password=Hospital0;");
+        //private SqlConnection connection2 = new SqlConnection("Server=192.168.1.101; Database=RecepcionV2; User Id=sa; Password=Hospital0;");
         //Cadenas del hospital
-        //private SqlConnection connection = new SqlConnection("Server=25.12.40.132; Database=HROBD; User Id=hroadmin; Password=database123;");
-        //private SqlConnection connection2 = new SqlConnection("Server=25.12.40.132; Database=RecepcionV2; User Id=sa; Password=Hospital0;");
+        private SqlConnection connection = new SqlConnection("Server=LAPTOP-I3GV05RI\\SQL2019; Database=HROBD; Trusted_Connection=True;");
+        private SqlConnection connection2 = new SqlConnection("Server=LAPTOP-I3GV05RI\\SQL2019; Database=HROBD; Trusted_Connection=True;");
 
 
         //private SqlConnection connection = new SqlConnection("Server=DESKTOP-HA661DP; Database=HROBD; Trusted_Connection=True;");

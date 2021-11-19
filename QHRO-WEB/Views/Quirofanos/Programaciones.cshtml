@@ -6,16 +6,10 @@
 
     @*Vista cirugias programadas y emergencia*@
 
-
+    
     <div class="container-fluid" id="" style="width:90%" >
 
-        <div class="row mb-3">
-            <div class="col-sm-11"></div>
-            <div class="col-sm-1">
-                <button type="button" class="btn btn btn-success" id="btnfilltable"><i class="fas fa-redo-alt"></i></button>
-            </div>
-
-        </div>
+       
 
         <script>
             //function reloadData() {
@@ -54,8 +48,47 @@
         <div class="row mb-3" id="">
            
             <div class="col-12" style="margin-top:35px">
-                <div class="text-center">
-                    <h1>Programaciones</h1>
+                <div class="row mb-3">
+                    <div class="row mb-3">
+                        <div class="col-sm-3">
+                            <div style="font-size: 30px; ">
+                                <script type="text/javascript">
+                                    //<![CDATA[
+                                    var today = new Date();
+                                    var m = today.getMonth() + 1;
+                                    var mes = (m < 10) ? '0' + m : m;
+                                    var yy = today.getYear();
+                                    var year = (yy < 1000) ? yy + 1900 : yy;
+                                    document.write('Fecha: ' + today.getDate(), '/' + mes, '/' + year);
+                                    //]]>
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-sm-7">
+                            <div class="text-center">
+                                <h1>Programaciones</h1>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <script type="text/javascript">
+                                function startTime() {
+                                    today = new Date();
+                                    h = today.getHours();
+                                    m = today.getMinutes();
+                                    s = today.getSeconds();
+                                    m = checkTime(m);
+                                    s = checkTime(s);
+                                    document.getElementById('reloj').innerHTML = h + ":" + m + ":" + s;
+                                    t = setTimeout('startTime()', 500);
+                                }
+                                function checkTime(i) { if (i < 10) { i = "0" + i; } return i; }
+                                window.onload = function () { startTime(); }
+                            </script>
+                            <button type="button" class="btn btn btn-success" id="btnfilltable"><i class="fas fa-redo-alt"></i></button>
+                            <div id="reloj" style="font-size:30px; float:left; margin-right:15%;"></div>
+
+                        </div>
+                    </div>
                 </div>
 
                 <table class="table table-bordered">
@@ -64,15 +97,14 @@
                             @{
                                 foreach (string columnHead in tableHeader)
                                 {
-                                <th scope="col">@columnHead</th>
+                                    <th scope="col">@columnHead</th>
                                 }
-                               }
+                            }
                         </tr>
                     </thead>
                     <tbody>
-
                     </tbody>
-                    
+
                 </table>
             </div>
         </div>
