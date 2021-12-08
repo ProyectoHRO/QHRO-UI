@@ -199,8 +199,8 @@ namespace UI
         {
             selectPerson selectP = new selectPerson(1);
             selectP.ShowDialog();
-            textBoxAnestethistName.Text = selectP.name;
-            labelIdAnesthetist.Text = selectP.id.ToString();
+            //textBoxAnestethistName.Text = selectP.name;
+            //labelIdAnesthetist.Text = selectP.id.ToString();
         }
 
         private void iconButtonConfirm_Click(object sender, EventArgs e)
@@ -220,8 +220,8 @@ namespace UI
                     }
                 }
                 string anesType= allTypes;
-                string message = surgeries.updateSurgerieAnesthetist(Convert.ToInt32(labelID.Text),Convert.ToInt32(labelIdAnesthetist.Text), anesType);
-                MessageBox.Show(message);
+                //string message = surgeries.updateSurgerieAnesthetist(Convert.ToInt32(labelID.Text),Convert.ToInt32(labelIdAnesthetist.Text), anesType);
+                //MessageBox.Show(message);
                
             }else if (selectionMode == 2)
             {

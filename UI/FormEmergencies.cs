@@ -264,8 +264,8 @@ namespace UI
 
             selectPerson selectP = new selectPerson(1);
             selectP.ShowDialog();
-            textBoxAnestethistName.Text = selectP.name;
-            labelIdAnesthetist.Text = selectP.id.ToString();
+            //textBoxAnestethistName.Text = selectP.name;
+            //labelIdAnesthetist.Text = selectP.id.ToString();
         }
 
         private void iconButtonConfirm_Click(object sender, EventArgs e)
@@ -341,7 +341,7 @@ namespace UI
                     dateTimeSurgeryDate.Value.Date,
                     comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
                     Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
-                    Convert.ToInt32(labelIdAnesthetist.Text),
+                    //Convert.ToInt32(labelIdAnesthetist.Text),
                     comboBoxRelevance.Text,
                     textBoxDiagnosis.Text,
                     assistantsList,
@@ -422,7 +422,7 @@ namespace UI
                     dateTimeSurgeryDate.Value.Date,
                     comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
                     Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
-                    Convert.ToInt32(labelIdAnesthetist.Text),
+                    //Convert.ToInt32(labelIdAnesthetist.Text),
                     comboBoxRelevance.Text,
                     textBoxDiagnosis.Text,
                     assistantsList,
@@ -497,7 +497,7 @@ namespace UI
                     dateTimeSurgeryDate.Value.Date,
                     comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
                     Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
-                    Convert.ToInt32(labelIdAnesthetist.Text),
+                    //Convert.ToInt32(labelIdAnesthetist.Text),
                     comboBoxRelevance.Text,
                     textBoxDiagnosis.Text,
                     assistantsList,
@@ -518,6 +518,11 @@ namespace UI
         {
             if (textBoxSearch.Text == "")
                textBoxSearch.Text = "Buscar paciente por No. Historia";
+        }
+
+        private void iconButtonConfirm_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
