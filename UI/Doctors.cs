@@ -358,5 +358,10 @@ namespace UI
                 e.Handled = true;
             }
         }
+
+        private void boxValidateMail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

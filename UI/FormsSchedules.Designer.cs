@@ -41,6 +41,7 @@ namespace UI
             this.iconButtonReSchedule = new FontAwesome.Sharp.IconButton();
             this.iconButtonDiffer = new FontAwesome.Sharp.IconButton();
             this.iconButtonFinish = new FontAwesome.Sharp.IconButton();
+            this.dateTimeSurgeryDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSchedule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,7 +105,7 @@ namespace UI
             this.dataGridViewSchedule.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewSchedule.EnableHeadersVisualStyles = false;
             this.dataGridViewSchedule.GridColor = System.Drawing.Color.White;
-            this.dataGridViewSchedule.Location = new System.Drawing.Point(11, 58);
+            this.dataGridViewSchedule.Location = new System.Drawing.Point(11, 112);
             this.dataGridViewSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSchedule.MultiSelect = false;
             this.dataGridViewSchedule.Name = "dataGridViewSchedule";
@@ -125,7 +126,7 @@ namespace UI
             this.dataGridViewSchedule.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewSchedule.RowTemplate.Height = 24;
             this.dataGridViewSchedule.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSchedule.Size = new System.Drawing.Size(1264, 780);
+            this.dataGridViewSchedule.Size = new System.Drawing.Size(1264, 726);
             this.dataGridViewSchedule.TabIndex = 35;
             this.dataGridViewSchedule.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSchedule_CellClick);
             this.dataGridViewSchedule.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -206,12 +207,25 @@ namespace UI
             this.iconButtonFinish.UseVisualStyleBackColor = false;
             this.iconButtonFinish.Click += new System.EventHandler(this.iconButtonFinish_Click);
             // 
+            // dateTimeSurgeryDate
+            // 
+            this.dateTimeSurgeryDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateTimeSurgeryDate.CustomFormat = "";
+            this.dateTimeSurgeryDate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeSurgeryDate.Location = new System.Drawing.Point(480, 71);
+            this.dateTimeSurgeryDate.Name = "dateTimeSurgeryDate";
+            this.dateTimeSurgeryDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dateTimeSurgeryDate.Size = new System.Drawing.Size(286, 26);
+            this.dateTimeSurgeryDate.TabIndex = 39;
+            this.dateTimeSurgeryDate.Value = new System.DateTime(2021, 11, 18, 0, 0, 0, 0);
+            // 
             // FormsSchedules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1286, 947);
+            this.Controls.Add(this.dateTimeSurgeryDate);
             this.Controls.Add(this.iconButtonFinish);
             this.Controls.Add(this.iconButtonReSchedule);
             this.Controls.Add(this.iconButtonDiffer);
@@ -238,5 +252,6 @@ namespace UI
         private FontAwesome.Sharp.IconButton iconButtonDiffer;
         private FontAwesome.Sharp.IconButton iconButtonReSchedule;
         private FontAwesome.Sharp.IconButton iconButtonFinish;
+        private System.Windows.Forms.DateTimePicker dateTimeSurgeryDate;
     }
 }

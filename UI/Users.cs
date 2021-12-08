@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using BLL;
 namespace UI
 {
@@ -49,64 +50,83 @@ namespace UI
 
         private void iconButtonCreateAndRequest_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(comboBoxRole.SelectedValue) == 4)
+            int state = 0;
+            if (label6.Text == "v")
             {
-                //ToUpper().Contains("ERROR")
-                 userName= users.addUser(textBoxEmail.Text,Convert.ToInt32(comboBoxRole.SelectedValue),Convert.ToInt32(comboBoxServices.SelectedValue));
+                state = 1;
             }
-            else
+            if (state ==1)
             {
-                userName=users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), 0);
-            }
-            if (userName.ToUpper().Contains("ERROR"))
-            {
-                MessageBox.Show(userName);
-            }
-            else
-            {
-                string password = "";
-                char delimiter = ':';
-                string[] newphrase = userName.Split(delimiter);
-
-                byte[] data = UTF8Encoding.UTF8.GetBytes("QUIROFANOSHRO"+newphrase[1]);
-                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                if (Convert.ToInt32(comboBoxRole.SelectedValue) == 4)
                 {
-                    byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
-                    using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
-                    {
-                        ICryptoTransform transform = tripleDES.CreateEncryptor();
-                        byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
-                        password = Convert.ToBase64String(results, 0, results.Length);
-                    }
+                    //ToUpper().Contains("ERROR")
+                    userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), Convert.ToInt32(comboBoxServices.SelectedValue));
                 }
-
-                users.makeUserPass(Convert.ToInt32(newphrase[1]), password);
-
-                MessageBox.Show(mail.MakeMail(textBoxEmail.Text, "NOMBRE DE USUARIO: " + newphrase[0] + "\nCONTRASEÑA: QUIROFANOSHRO" + newphrase[1], "INFORMACIÓN DE USUARIO", "Usuario creado correctamente, porfavor verificar correo "));
-                if (MessageBox.Show("¿Desea asignar permisos?", "Asignar permisos",
-               MessageBoxButtons.YesNo) == DialogResult.Yes)
+                else
                 {
-                    groupBoxAssignPermits.Visible = true;
-                    DataTable getuser = users.getUserByEmail(textBoxEmail.Text);
-                    if (getuser.Rows.Count < 1)
+                    userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), 0);
+                }
+                if (userName.ToUpper().Contains("ERROR"))
+                {
+                    MessageBox.Show(userName);
+                }
+                else
+                {
+                    string password = "";
+                    char delimiter = ':';
+                    string[] newphrase = userName.Split(delimiter);
+
+                    byte[] data = UTF8Encoding.UTF8.GetBytes("QUIROFANOSHRO" + newphrase[1]);
+                    using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
                     {
-                        MessageBox.Show("El correo no esta registrado");
+                        byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                        using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                        {
+                            ICryptoTransform transform = tripleDES.CreateEncryptor();
+                            byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                            password = Convert.ToBase64String(results, 0, results.Length);
+                        }
+                    }
+
+                    users.makeUserPass(Convert.ToInt32(newphrase[1]), password);
+
+                    MessageBox.Show(mail.MakeMail(textBoxEmail.Text, "NOMBRE DE USUARIO: " + newphrase[0] + "\nCONTRASEÑA: QUIROFANOSHRO" + newphrase[1], "INFORMACIÓN DE USUARIO", "Usuario creado correctamente, porfavor verificar correo "));
+                    if (MessageBox.Show("¿Desea asignar permisos?", "Asignar permisos",
+                   MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        groupBoxAssignPermits.Visible = true;
+                        DataTable getuser = users.getUserByEmail(textBoxEmail.Text);
+                        if (getuser.Rows.Count < 1)
+                        {
+                            MessageBox.Show("El correo no esta registrado");
+                        }
+                        else
+                        {
+                            foreach (DataRow item in getuser.Rows)
+                            {
+                                labelId.Text = item.Field<int>(0).ToString();
+                                textBoxUser.Text = item.Field<string>(1).ToString();
+                                textBoxMail.Text = item.Field<string>(12).ToString();
+                                textBoxMail.Enabled = false;
+                                textBoxUser.Enabled = false;
+                            }
+
+                        }
                     }
                     else
                     {
-                        foreach (DataRow item in getuser.Rows)
-                        {
-                            labelId.Text = item.Field<int>(0).ToString();
-                            textBoxUser.Text = item.Field<string>(1).ToString();
-                            textBoxMail.Text = item.Field<string>(12).ToString();
-                            textBoxMail.Enabled = false;
-                            textBoxUser.Enabled = false;
-                        }
-                      
+                        this.Close();
+                        state = 0;
                     }
+
                 }
-               
+                state = 0;
             }
+            else
+            {
+                MessageBox.Show("Correo inválido");
+            }
+            
             
         }
 
@@ -143,11 +163,38 @@ namespace UI
             string response = users.assignPermits( userId, Convert.ToInt32(labelId.Text),
               permitsList);
             MessageBox.Show(response);
+            this.Close();
+        }
+        public void regeXp(string re, TextBox tb, PictureBox pc)
+        {
+            Regex regex = new Regex(re);
+            if (regex.IsMatch(tb.Text))
+            {
+                pc.Image = Properties.Resources.check;
+                label6.Text = "v";
+            }
+            else
+            {
+                pc.Image = Properties.Resources.x;
+                label6.Text = "f";
+            }
         }
 
         private void textBoxEmail_TextChanged(object sender, EventArgs e)
         {
-            //expresion regular ^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$
+            regeXp(@"^[aA-zZ0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[aA-zZ0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[aA-zZ0-9](?:[aA-zZ0-9-]*[aA-zZ0-9])?\.)+[aA-zZ0-9](?:[aA-zZ0-9-]*[aA-zZ0-9])?$", textBoxEmail, boxValidateMail);
+        }
+
+        private void textBoxSearch_Leave(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text == "")
+                textBoxSearch.Text = "BUSCAR";
+        }
+
+        private void textBoxSearch_Enter(object sender, EventArgs e)
+        {
+            if (textBoxSearch.Text == "BUSCAR")
+                textBoxSearch.Text = "";
         }
     }
 }
