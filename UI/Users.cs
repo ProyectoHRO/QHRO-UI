@@ -27,7 +27,18 @@ namespace UI
             InitializeComponent();
             userId = idUser;
         }
-       
+        void listUsers()
+        {
+            DataTable usersList = users.GetUsers();
+            dataGridViewUsers.DataSource = usersList;
+            dataGridViewUsers.Columns[0].HeaderText = "Usuario";
+            dataGridViewUsers.Columns[1].HeaderText = "Nombre";
+            dataGridViewUsers.Columns[2].HeaderText = "Correo";
+            dataGridViewUsers.Columns[3].HeaderText = "Servicio";
+            dataGridViewUsers.Columns[4].HeaderText = "Ultima conexion";
+            dataGridViewUsers.AutoResizeColumns();
+            dataGridViewUsers.Refresh();
+        }
         private void Users_Load(object sender, EventArgs e)
         {
             DataTable infoRoles = users.GetRoles();
@@ -46,6 +57,8 @@ namespace UI
                 listBoxIdPermits.Items.Add(Convert.ToInt32(item.Field<int>(0)));
                 checkedListBoxPermits.Items.Add(item.Field<string>(1).ToString());
             }
+
+            listUsers();
         }
 
         private void iconButtonCreateAndRequest_Click(object sender, EventArgs e)
@@ -55,72 +68,79 @@ namespace UI
             {
                 state = 1;
             }
-            if (state ==1)
+            if ((state == 1))
             {
-                if (Convert.ToInt32(comboBoxRole.SelectedValue) == 4)
+                if ((textBoxName.Text != "") && (textBoxLastName.Text != ""))
                 {
-                    //ToUpper().Contains("ERROR")
-                    userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), Convert.ToInt32(comboBoxServices.SelectedValue), textBoxName.Text, textBoxLastName.Text);
-                }
-                else
-                {
-                    userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), 0, textBoxName.Text, textBoxLastName.Text);
-                }
-                if (userName.ToUpper().Contains("ERROR"))
-                {
-                    MessageBox.Show(userName);
-                }
-                else
-                {
-                    string password = "";
-                    char delimiter = ':';
-                    string[] newphrase = userName.Split(delimiter);
-
-                    byte[] data = UTF8Encoding.UTF8.GetBytes("QUIROFANOSHRO" + newphrase[1]);
-                    using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                    if (Convert.ToInt32(comboBoxRole.SelectedValue) == 4)
                     {
-                        byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
-                        using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
-                        {
-                            ICryptoTransform transform = tripleDES.CreateEncryptor();
-                            byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
-                            password = Convert.ToBase64String(results, 0, results.Length);
-                        }
-                    }
-
-                    users.makeUserPass(Convert.ToInt32(newphrase[1]), password);
-
-                    MessageBox.Show(mail.MakeMail(textBoxEmail.Text, "NOMBRE DE USUARIO: " + newphrase[0] + "\nCONTRASEÑA: QUIROFANOSHRO" + newphrase[1], "INFORMACIÓN DE USUARIO", "Usuario creado correctamente, porfavor verificar correo "));
-                    if (MessageBox.Show("¿Desea asignar permisos?", "Asignar permisos",
-                   MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-                        groupBoxAssignPermits.Visible = true;
-                        DataTable getuser = users.getUserByEmail(textBoxEmail.Text);
-                        if (getuser.Rows.Count < 1)
-                        {
-                            MessageBox.Show("El correo no esta registrado");
-                        }
-                        else
-                        {
-                            foreach (DataRow item in getuser.Rows)
-                            {
-                                labelId.Text = item.Field<int>(0).ToString();
-                                textBoxUser.Text = item.Field<string>(1).ToString();
-                                textBoxMail.Text = item.Field<string>(12).ToString();
-                                textBoxMail.Enabled = false;
-                                textBoxUser.Enabled = false;
-                            }
-
-                        }
+                        //ToUpper().Contains("ERROR")
+                        userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), Convert.ToInt32(comboBoxServices.SelectedValue), textBoxName.Text, textBoxLastName.Text);
                     }
                     else
                     {
-                        this.Close();
-                        state = 0;
+                        userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), 0, textBoxName.Text, textBoxLastName.Text);
                     }
+                    if (userName.ToUpper().Contains("ERROR"))
+                    {
+                        MessageBox.Show(userName);
+                    }
+                    else
+                    {
+                        string password = "";
+                        char delimiter = ':';
+                        string[] newphrase = userName.Split(delimiter);
 
+                        byte[] data = UTF8Encoding.UTF8.GetBytes("QUIROFANOSHRO" + newphrase[1]);
+                        using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                        {
+                            byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                            using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                            {
+                                ICryptoTransform transform = tripleDES.CreateEncryptor();
+                                byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                                password = Convert.ToBase64String(results, 0, results.Length);
+                            }
+                        }
+
+                        users.makeUserPass(Convert.ToInt32(newphrase[1]), password);
+
+                        MessageBox.Show(mail.MakeMail(textBoxEmail.Text, "NOMBRE DE USUARIO: " + newphrase[0] + "\nCONTRASEÑA: QUIROFANOSHRO" + newphrase[1], "INFORMACIÓN DE USUARIO", "Usuario creado correctamente, porfavor verificar correo "));
+                        if (MessageBox.Show("¿Desea asignar permisos?", "Asignar permisos",
+                       MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            groupBoxAssignPermits.Visible = true;
+                            DataTable getuser = users.getUserByEmail(textBoxEmail.Text);
+                            if (getuser.Rows.Count < 1)
+                            {
+                                MessageBox.Show("El correo no esta registrado");
+                            }
+                            else
+                            {
+                                foreach (DataRow item in getuser.Rows)
+                                {
+                                    labelId.Text = item.Field<int>(0).ToString();
+                                    textBoxUser.Text = item.Field<string>(1).ToString();
+                                    textBoxMail.Text = item.Field<string>(12).ToString();
+                                    textBoxMail.Enabled = false;
+                                    textBoxUser.Enabled = false;
+                                }
+
+                            }
+                        }
+                        else
+                        {
+                            this.Close();
+                            state = 0;
+                        }
+
+                    }
+                    state = 0;
                 }
-                state = 0;
+                else
+                {
+                    MessageBox.Show("Falta nombre o apellido");
+                }
             }
             else
             {
@@ -195,6 +215,50 @@ namespace UI
         {
             if (textBoxSearch.Text == "BUSCAR")
                 textBoxSearch.Text = "";
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iconButtonSearch_Click(object sender, EventArgs e)
+        {
+            
+
+            if(comboBoxFilter.Text=="Usuario")
+            {
+                DataTable infoUser = users.GetUsersbyUser(textBoxSearch.Text);
+                dataGridViewUsers.DataSource = infoUser;
+                dataGridViewUsers.Columns[0].HeaderText = "Usuario";
+                dataGridViewUsers.Columns[1].HeaderText = "Nombre";
+                dataGridViewUsers.Columns[2].HeaderText = "Correo";
+                dataGridViewUsers.Columns[3].HeaderText = "Servicio";
+                dataGridViewUsers.Columns[4].HeaderText = "Ultima conexion";
+                dataGridViewUsers.AutoResizeColumns();
+                dataGridViewUsers.Refresh();
+            }
+            else if (comboBoxFilter.Text == "Correo")
+            {
+                DataTable infoUser = users.getUserByEmail(textBoxSearch.Text);
+                dataGridViewUsers.DataSource = infoUser;
+                dataGridViewUsers.Columns[0].HeaderText = "Usuario";
+                dataGridViewUsers.Columns[1].HeaderText = "Nombre";
+                dataGridViewUsers.Columns[2].HeaderText = "Correo";
+                dataGridViewUsers.Columns[3].HeaderText = "Servicio";
+                dataGridViewUsers.Columns[4].HeaderText = "Ultima conexion";
+                dataGridViewUsers.AutoResizeColumns();
+                dataGridViewUsers.Refresh();
+            }
+            else if(comboBoxFilter.Text=="")
+            {
+                MessageBox.Show("Por favor seleccione un filtro");
+            }
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            listUsers();
         }
     }
 }

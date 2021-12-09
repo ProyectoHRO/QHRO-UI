@@ -31,8 +31,19 @@ namespace BLL
             return users.GetRoles();
         }
 
+        public DataTable GetUsers()
+        {
+            return users.GetUsers();
+        }
+        public DataTable GetUsersbyUser(string usuario)
+        {
+            return users.GetUserByUser(usuario);
+        }
 
-       
+        public DataTable GetUsersbyEmail(string correo)
+        {
+            return users.GetUserByEmail(correo);
+        }
         public DataTable GetUserByUserName(string userName)
         {
             return users.GetDataUsersByUserName(userName);
@@ -63,7 +74,7 @@ namespace BLL
 
         public DataTable getUserByEmail(string email)
         {
-            return users.getUserMail(email);
+            return users.GetUserByEmail(email);
         }
 
         public DataTable getPermitsByUserId(int userId)

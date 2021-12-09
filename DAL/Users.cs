@@ -83,6 +83,46 @@ namespace DAL
             return tableData;
         }
 
+        public DataTable GetUsers()
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostarUsuarios";
+            command.CommandType = CommandType.StoredProcedure;
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            connection.CloseConnection();
+            return tableData;
+        }
+
+        public DataTable GetUserByUser(string usuario)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarUsuariosPorUsuario";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@usuario", usuario);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
+        public DataTable GetUserByEmail(string correo)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarUsuariosPorCorreo";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@correo", correo);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+
         public void addLoginCount(int iduser, int logCount, DateTime lastConnection) 
         {
             command.Connection = connection.OpenConnection();
