@@ -99,7 +99,9 @@ namespace DAL
         public string makeUser(
             string email,
             int roleId,
-            int serviceId)
+            int serviceId,
+            string name,
+            string lastName)
         {
             string response = "";
             command.Connection = connection.OpenConnection();
@@ -108,6 +110,8 @@ namespace DAL
             command.Parameters.AddWithValue("@correo", email);
             command.Parameters.AddWithValue("@idrol", roleId);
             command.Parameters.AddWithValue("@idServicio", serviceId);
+            command.Parameters.AddWithValue("@nombre", name);
+            command.Parameters.AddWithValue("@apellidos", lastName);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();

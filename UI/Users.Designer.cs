@@ -33,12 +33,20 @@ namespace UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.boxValidateMail = new System.Windows.Forms.PictureBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.comboBoxServices = new System.Windows.Forms.ComboBox();
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.iconButtonCreateUser = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBoxAssignPermits = new System.Windows.Forms.GroupBox();
@@ -60,22 +68,16 @@ namespace UI
             this.tabControlNewUser = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.iconButtonSearch = new FontAwesome.Sharp.IconButton();
             this.comboBoxFilter = new System.Windows.Forms.ComboBox();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.dataGridViewUsers = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.boxValidateMail = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.boxValidateMail)).BeginInit();
             this.groupBoxAssignPermits.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -84,10 +86,8 @@ namespace UI
             this.tabControlNewUser.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).BeginInit();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.boxValidateMail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -106,6 +106,16 @@ namespace UI
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Usuario";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(799, 7);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 20);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "label6";
+            this.label6.Visible = false;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -113,7 +123,7 @@ namespace UI
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.94444F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.05556F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 95F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 336F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 337F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxServices, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxRole, 1, 1);
@@ -133,6 +143,41 @@ namespace UI
             this.tableLayoutPanel1.Size = new System.Drawing.Size(849, 171);
             this.tableLayoutPanel1.TabIndex = 34;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.92661F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.073395F));
+            this.tableLayoutPanel4.Controls.Add(this.boxValidateMail, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxEmail, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(73, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(340, 53);
+            this.tableLayoutPanel4.TabIndex = 35;
+            // 
+            // boxValidateMail
+            // 
+            this.boxValidateMail.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.boxValidateMail.Location = new System.Drawing.Point(315, 15);
+            this.boxValidateMail.Name = "boxValidateMail";
+            this.boxValidateMail.Size = new System.Drawing.Size(22, 23);
+            this.boxValidateMail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.boxValidateMail.TabIndex = 35;
+            this.boxValidateMail.TabStop = false;
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEmail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail.Location = new System.Drawing.Point(3, 13);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(306, 26);
+            this.textBoxEmail.TabIndex = 0;
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
+            // 
             // comboBoxServices
             // 
             this.comboBoxServices.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -140,7 +185,7 @@ namespace UI
             this.comboBoxServices.FormattingEnabled = true;
             this.comboBoxServices.Location = new System.Drawing.Point(73, 130);
             this.comboBoxServices.Name = "comboBoxServices";
-            this.comboBoxServices.Size = new System.Drawing.Size(341, 28);
+            this.comboBoxServices.Size = new System.Drawing.Size(340, 28);
             this.comboBoxServices.TabIndex = 38;
             this.comboBoxServices.Visible = false;
             // 
@@ -151,7 +196,7 @@ namespace UI
             this.comboBoxRole.FormattingEnabled = true;
             this.comboBoxRole.Location = new System.Drawing.Point(73, 74);
             this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(341, 28);
+            this.comboBoxRole.Size = new System.Drawing.Size(340, 28);
             this.comboBoxRole.TabIndex = 33;
             this.comboBoxRole.SelectedIndexChanged += new System.EventHandler(this.comboBoxRole_SelectedIndexChanged);
             // 
@@ -178,15 +223,56 @@ namespace UI
             this.label3.Text = "Servicios";
             this.label3.Visible = false;
             // 
-            // textBoxEmail
+            // label2
             // 
-            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxEmail.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(3, 13);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(307, 26);
-            this.textBoxEmail.TabIndex = 0;
-            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(451, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Nombre";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(38, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 20);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Rol";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(442, 78);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 20);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Apellidos";
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxName.Location = new System.Drawing.Point(514, 16);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(332, 26);
+            this.textBoxName.TabIndex = 41;
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLastName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxLastName.Location = new System.Drawing.Point(514, 75);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(332, 26);
+            this.textBoxLastName.TabIndex = 42;
             // 
             // iconButtonCreateUser
             // 
@@ -399,9 +485,9 @@ namespace UI
             // 
             this.checkedListBoxPermits.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBoxPermits.FormattingEnabled = true;
-            this.checkedListBoxPermits.Location = new System.Drawing.Point(471, 6);
+            this.checkedListBoxPermits.Location = new System.Drawing.Point(471, 12);
             this.checkedListBoxPermits.Name = "checkedListBoxPermits";
-            this.checkedListBoxPermits.Size = new System.Drawing.Size(463, 184);
+            this.checkedListBoxPermits.Size = new System.Drawing.Size(463, 172);
             this.checkedListBoxPermits.TabIndex = 40;
             // 
             // iconButtonGrant
@@ -471,6 +557,52 @@ namespace UI
             this.tabPage2.Size = new System.Drawing.Size(1254, 890);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Usuarios";
+            // 
+            // dataGridViewUsers
+            // 
+            this.dataGridViewUsers.AllowUserToAddRows = false;
+            this.dataGridViewUsers.AllowUserToDeleteRows = false;
+            this.dataGridViewUsers.AllowUserToResizeRows = false;
+            this.dataGridViewUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewUsers.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewUsers.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewUsers.GridColor = System.Drawing.Color.White;
+            this.dataGridViewUsers.Location = new System.Drawing.Point(5, 122);
+            this.dataGridViewUsers.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewUsers.MultiSelect = false;
+            this.dataGridViewUsers.Name = "dataGridViewUsers";
+            this.dataGridViewUsers.ReadOnly = true;
+            this.dataGridViewUsers.RowHeadersVisible = false;
+            this.dataGridViewUsers.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            this.dataGridViewUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewUsers.RowTemplate.Height = 24;
+            this.dataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewUsers.Size = new System.Drawing.Size(1244, 763);
+            this.dataGridViewUsers.TabIndex = 44;
             // 
             // iconPictureBox1
             // 
@@ -549,138 +681,6 @@ namespace UI
             this.textBoxSearch.Enter += new System.EventHandler(this.textBoxSearch_Enter);
             this.textBoxSearch.Leave += new System.EventHandler(this.textBoxSearch_Leave);
             // 
-            // dataGridViewUsers
-            // 
-            this.dataGridViewUsers.AllowUserToAddRows = false;
-            this.dataGridViewUsers.AllowUserToDeleteRows = false;
-            this.dataGridViewUsers.AllowUserToResizeRows = false;
-            this.dataGridViewUsers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewUsers.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridViewUsers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewUsers.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewUsers.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewUsers.GridColor = System.Drawing.Color.White;
-            this.dataGridViewUsers.Location = new System.Drawing.Point(5, 122);
-            this.dataGridViewUsers.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewUsers.MultiSelect = false;
-            this.dataGridViewUsers.Name = "dataGridViewUsers";
-            this.dataGridViewUsers.ReadOnly = true;
-            this.dataGridViewUsers.RowHeadersVisible = false;
-            this.dataGridViewUsers.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            this.dataGridViewUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewUsers.RowTemplate.Height = 24;
-            this.dataGridViewUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsers.Size = new System.Drawing.Size(1244, 763);
-            this.dataGridViewUsers.TabIndex = 44;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.92661F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.073395F));
-            this.tableLayoutPanel4.Controls.Add(this.boxValidateMail, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.textBoxEmail, 0, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(73, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(341, 53);
-            this.tableLayoutPanel4.TabIndex = 35;
-            // 
-            // boxValidateMail
-            // 
-            this.boxValidateMail.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.boxValidateMail.Location = new System.Drawing.Point(316, 15);
-            this.boxValidateMail.Name = "boxValidateMail";
-            this.boxValidateMail.Size = new System.Drawing.Size(22, 23);
-            this.boxValidateMail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.boxValidateMail.TabIndex = 35;
-            this.boxValidateMail.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(799, 7);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 20);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "label6";
-            this.label6.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(452, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "Nombre";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(38, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 20);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Rol";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(443, 78);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 20);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "Apellidos";
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(515, 16);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(331, 26);
-            this.textBoxName.TabIndex = 41;
-            // 
-            // textBoxLastName
-            // 
-            this.textBoxLastName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxLastName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLastName.Location = new System.Drawing.Point(515, 75);
-            this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(331, 26);
-            this.textBoxLastName.TabIndex = 42;
-            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -696,6 +696,9 @@ namespace UI
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.boxValidateMail)).EndInit();
             this.groupBoxAssignPermits.ResumeLayout(false);
             this.groupBoxAssignPermits.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -710,11 +713,8 @@ namespace UI
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsers)).EndInit();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.boxValidateMail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -60,11 +60,11 @@ namespace UI
                 if (Convert.ToInt32(comboBoxRole.SelectedValue) == 4)
                 {
                     //ToUpper().Contains("ERROR")
-                    userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), Convert.ToInt32(comboBoxServices.SelectedValue));
+                    userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), Convert.ToInt32(comboBoxServices.SelectedValue), textBoxName.Text, textBoxLastName.Text);
                 }
                 else
                 {
-                    userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), 0);
+                    userName = users.addUser(textBoxEmail.Text, Convert.ToInt32(comboBoxRole.SelectedValue), 0, textBoxName.Text, textBoxLastName.Text);
                 }
                 if (userName.ToUpper().Contains("ERROR"))
                 {

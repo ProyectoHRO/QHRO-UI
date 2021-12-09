@@ -119,7 +119,7 @@ namespace BLL
             }
         }
 
-        public string addUser(string email, int roleId, int serviceId)
+        public string addUser(string email, int roleId, int serviceId, string name, string lastName)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace BLL
                 DataTable getuser = users.getUserMail(email);
                 if (getuser.Rows.Count < 1)
                 {
-                    string response = users.makeUser(email, roleId, serviceId);
+                    string response = users.makeUser(email, roleId, serviceId, name, lastName);
                     return response;
                 }
                 else
