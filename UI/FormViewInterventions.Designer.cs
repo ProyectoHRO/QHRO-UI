@@ -34,6 +34,7 @@ namespace UI
             this.iconButtonSurgeriesBdates = new FontAwesome.Sharp.IconButton();
             this.reportViewerSurgeriesBdates = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBoxServices = new System.Windows.Forms.ComboBox();
             this.iconButtonSurgeriesServicesBdates = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.reportViewerSurgeriesServiceBdates = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -48,14 +49,13 @@ namespace UI
             this.iconButtonSurgeriesByPatient = new FontAwesome.Sharp.IconButton();
             this.reportViewerSurgeriesByPatient = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.comboBoxAnesthesia = new System.Windows.Forms.ComboBox();
             this.iconButtonSurgeriesAnesthesiaBdates = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.reportViewerAnesthesiaByDates = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.iconButtonEmergencySurgeriesBdates = new FontAwesome.Sharp.IconButton();
             this.reportViewerEmergency = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.comboBoxServices = new System.Windows.Forms.ComboBox();
-            this.comboBoxAnesthesia = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -125,6 +125,7 @@ namespace UI
             this.reportViewerSurgeriesBdates.ServerReport.BearerToken = null;
             this.reportViewerSurgeriesBdates.Size = new System.Drawing.Size(1262, 842);
             this.reportViewerSurgeriesBdates.TabIndex = 0;
+            this.reportViewerSurgeriesBdates.Load += new System.EventHandler(this.reportViewerSurgeriesBdates_Load);
             // 
             // tabPage2
             // 
@@ -139,6 +140,14 @@ namespace UI
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Intervenciones por servicio";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxServices
+            // 
+            this.comboBoxServices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxServices.Location = new System.Drawing.Point(427, 19);
+            this.comboBoxServices.Name = "comboBoxServices";
+            this.comboBoxServices.Size = new System.Drawing.Size(207, 28);
+            this.comboBoxServices.TabIndex = 0;
             // 
             // iconButtonSurgeriesServicesBdates
             // 
@@ -191,7 +200,7 @@ namespace UI
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1279, 915);
+            this.tabPage3.Size = new System.Drawing.Size(1282, 915);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Intervenciones por quirófano";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -257,7 +266,7 @@ namespace UI
             this.tabPage4.Location = new System.Drawing.Point(4, 29);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1279, 915);
+            this.tabPage4.Size = new System.Drawing.Size(1282, 915);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Intervenciones por paciente";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -327,6 +336,15 @@ namespace UI
             this.tabPage5.Text = "Intervenciones por anestesia";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // comboBoxAnesthesia
+            // 
+            this.comboBoxAnesthesia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAnesthesia.FormattingEnabled = true;
+            this.comboBoxAnesthesia.Location = new System.Drawing.Point(429, 20);
+            this.comboBoxAnesthesia.Name = "comboBoxAnesthesia";
+            this.comboBoxAnesthesia.Size = new System.Drawing.Size(207, 28);
+            this.comboBoxAnesthesia.TabIndex = 14;
+            // 
             // iconButtonSurgeriesAnesthesiaBdates
             // 
             this.iconButtonSurgeriesAnesthesiaBdates.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -376,7 +394,7 @@ namespace UI
             this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1279, 915);
+            this.tabPage6.Size = new System.Drawing.Size(1282, 915);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Intervenciones de emergencia";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -412,23 +430,6 @@ namespace UI
             this.reportViewerEmergency.Size = new System.Drawing.Size(1262, 842);
             this.reportViewerEmergency.TabIndex = 2;
             this.reportViewerEmergency.Load += new System.EventHandler(this.reportViewer1_Load);
-            // 
-            // comboBoxServices
-            // 
-            this.comboBoxServices.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxServices.Location = new System.Drawing.Point(427, 19);
-            this.comboBoxServices.Name = "comboBoxServices";
-            this.comboBoxServices.Size = new System.Drawing.Size(207, 28);
-            this.comboBoxServices.TabIndex = 0;
-            // 
-            // comboBoxAnesthesia
-            // 
-            this.comboBoxAnesthesia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAnesthesia.FormattingEnabled = true;
-            this.comboBoxAnesthesia.Location = new System.Drawing.Point(429, 20);
-            this.comboBoxAnesthesia.Name = "comboBoxAnesthesia";
-            this.comboBoxAnesthesia.Size = new System.Drawing.Size(207, 28);
-            this.comboBoxAnesthesia.TabIndex = 14;
             // 
             // FormViewInterventions
             // 

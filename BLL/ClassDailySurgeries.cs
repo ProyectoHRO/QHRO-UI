@@ -28,5 +28,6 @@ namespace BLL
         public string Anestesiólogo { get; set; }
 
         public string Enfermería { get; set; }
+
     }
 }

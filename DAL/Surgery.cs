@@ -15,18 +15,22 @@ namespace DAL
         DataTable tableData;
         SqlCommand command = new SqlCommand();
 
-        public DataTable GetDailySurgeries()
+        public DataTable GetDailySurgeries(string date)
         {
+
             tableData = new DataTable();
             command.Connection = connection.OpenConnection();
             command.CommandText = "VerCirugiasDiarias";
             command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@fecha", date);
             read = command.ExecuteReader();
             tableData.Load(read);
+            command.Parameters.Clear();
             connection.CloseConnection();
             return tableData;
         }
-        
+
+
         public DataTable GetUnfinishedSurgeries()
         {
             tableData = new DataTable();

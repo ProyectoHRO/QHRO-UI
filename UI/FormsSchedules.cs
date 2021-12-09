@@ -12,7 +12,7 @@ namespace UI
 {
     public partial class FormsSchedules : Form
     {
-        private ClassReports reports =new ClassReports();
+        private ClassReports reports = new ClassReports();
         private Surgeries surgeries = new Surgeries();
         private ClassGetStrings stringsClass = new ClassGetStrings();
         private ClassOperatingRoom Operatigrooms = new ClassOperatingRoom();
@@ -21,35 +21,41 @@ namespace UI
         int surgerieId;
         int IdQ;
         string hour;
+        string today, dateSelected;
         public FormsSchedules()
         {
             InitializeComponent();
         }
 
-        public void loadData()
+        public void loadData(string fecha)
         {
-            dataGridViewSchedule.DataSource = reports.dailySchedule();
+
+            dataGridViewSchedule.DataSource = reports.dailySchedule(fecha);
             dataGridViewSchedule.Columns[0].Visible = false;
             dataGridViewSchedule.AutoResizeColumns();
             dataGridViewSchedule.AutoResizeRows();
             dataGridViewSchedule.Refresh();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labelDate.Text = DateTime.Now.ToLongDateString();
+            
         }
 
         private void iconButtonDiffer_Click(object sender, EventArgs e)
         {
-            FormDiffers fDiffers = new FormDiffers(surgerieId,pacientName);
+            FormDiffers fDiffers = new FormDiffers(surgerieId, pacientName);
             fDiffers.ShowDialog();
-            loadData();
+            loadData(today);
         }
 
         private void FormsSchedules_Load(object sender, EventArgs e)
         {
-            loadData();
+            dateTimeSurgeryDate.Value = DateTime.Now;
+            today = DateTime.Now.ToString("yyyy/MM/dd");
+            labelDate.Text = DateTime.Now.ToLongDateString();
+            loadData(today);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -93,7 +99,7 @@ namespace UI
         {
             FormReschedule formReschedule = new FormReschedule(surgerieId, pacientName, qx, hour, IdQ);
             formReschedule.ShowDialog();
-            loadData();
+            loadData(today);
         }
 
         private void iconButtonFinish_Click(object sender, EventArgs e)
@@ -154,7 +160,7 @@ namespace UI
 
                     }
                 }
-                loadData();
+                loadData(today);
             }
 
         }
@@ -162,6 +168,13 @@ namespace UI
         private void FormsSchedules_Activated(object sender, EventArgs e)
         {
            
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            dateSelected = dateTimeSurgeryDate.Value.ToString("yyyy/MM/dd");
+            labelDate.Text = dateTimeSurgeryDate.Value.ToLongDateString();
+            loadData(dateSelected);
         }
     }
 }

@@ -12,12 +12,11 @@ namespace BLL
         private Surgeries surgeries = new Surgeries();
         private ClassOperatingRoom Operatigrooms = new ClassOperatingRoom();
         private ClassGetStrings GetStrings = new ClassGetStrings();
-
-        public List<ClassDailySurgeries> dailySchedule() {
+        public List<ClassDailySurgeries> dailySchedule(string fecha) {
 
             List<ClassDailySurgeries> surgeriesList = new List<ClassDailySurgeries>();
             ClassDailySurgeries surgerie = new ClassDailySurgeries();
-            DataTable surgeriesData = surgeries.getDailySurgeries();
+            DataTable surgeriesData = surgeries.getDailySurgeries(fecha);
             foreach (DataRow item in surgeriesData.Rows)
             {
                 string docName = "";
@@ -106,7 +105,8 @@ namespace BLL
 
         public void ChangeStatusOperatingRoom()
         {
-            DataTable dialySurgeries = surgeries.getDailySurgeries();
+            string Day = DateTime.Now.ToString("yyyy-MM-dd");
+            DataTable dialySurgeries = surgeries.getDailySurgeries(Day);
 
             foreach(DataRow item in dialySurgeries.Rows)
             {

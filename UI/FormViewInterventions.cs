@@ -531,5 +531,10 @@ namespace UI
         {
 
         }
+
+        private void reportViewerSurgeriesBdates_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

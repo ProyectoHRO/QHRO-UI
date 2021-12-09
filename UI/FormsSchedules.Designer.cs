@@ -42,6 +42,7 @@ namespace UI
             this.iconButtonDiffer = new FontAwesome.Sharp.IconButton();
             this.iconButtonFinish = new FontAwesome.Sharp.IconButton();
             this.dateTimeSurgeryDate = new System.Windows.Forms.DateTimePicker();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSchedule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,12 +213,25 @@ namespace UI
             this.dateTimeSurgeryDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTimeSurgeryDate.CustomFormat = "";
             this.dateTimeSurgeryDate.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeSurgeryDate.Location = new System.Drawing.Point(480, 71);
+            this.dateTimeSurgeryDate.Location = new System.Drawing.Point(306, 72);
             this.dateTimeSurgeryDate.Name = "dateTimeSurgeryDate";
             this.dateTimeSurgeryDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dateTimeSurgeryDate.Size = new System.Drawing.Size(286, 26);
             this.dateTimeSurgeryDate.TabIndex = 39;
             this.dateTimeSurgeryDate.Value = new System.DateTime(2021, 11, 18, 0, 0, 0, 0);
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.Location = new System.Drawing.Point(856, 72);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(95, 26);
+            this.iconButton1.TabIndex = 40;
+            this.iconButton1.Text = "Ver";
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
             // 
             // FormsSchedules
             // 
@@ -225,6 +239,7 @@ namespace UI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1286, 947);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.dateTimeSurgeryDate);
             this.Controls.Add(this.iconButtonFinish);
             this.Controls.Add(this.iconButtonReSchedule);
@@ -253,5 +268,6 @@ namespace UI
         private FontAwesome.Sharp.IconButton iconButtonReSchedule;
         private FontAwesome.Sharp.IconButton iconButtonFinish;
         private System.Windows.Forms.DateTimePicker dateTimeSurgeryDate;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
