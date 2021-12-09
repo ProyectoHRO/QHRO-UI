@@ -99,7 +99,7 @@ namespace UI
             "",
             "Activo",
             "Inactivo"});
-            this.comboStatus.Location = new System.Drawing.Point(663, 112);
+            this.comboStatus.Location = new System.Drawing.Point(663, 115);
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(323, 28);
             this.comboStatus.TabIndex = 10;
@@ -482,7 +482,7 @@ namespace UI
             "Medico y cirujano",
             "Cirujano Plastico",
             "Pediatra"});
-            this.comboBoxSpecialty.Location = new System.Drawing.Point(663, 150);
+            this.comboBoxSpecialty.Location = new System.Drawing.Point(663, 153);
             this.comboBoxSpecialty.Name = "comboBoxSpecialty";
             this.comboBoxSpecialty.Size = new System.Drawing.Size(323, 28);
             this.comboBoxSpecialty.TabIndex = 11;

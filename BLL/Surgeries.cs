@@ -63,9 +63,9 @@ namespace BLL
         {
             return surgeries.getDailyDiff(date);
         }
-        public DataTable getDailySurgeries()
+        public DataTable getDailySurgeries(string date)
         {
-            return surgeries.GetDailySurgeries();
+            return surgeries.GetDailySurgeries(date);
         }
 
         public DataTable getDialySurgeriesByOperatingRoom(int id)

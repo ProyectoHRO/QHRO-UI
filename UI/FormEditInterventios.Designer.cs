@@ -69,6 +69,7 @@ namespace UI
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.iconButtonConfirm = new FontAwesome.Sharp.IconButton();
             this.groupBoxAssistantsData = new System.Windows.Forms.GroupBox();
+            this.labelIdProgram = new System.Windows.Forms.Label();
             this.listBoxAnesthesiaId = new System.Windows.Forms.ListBox();
             this.listBoxDocId = new System.Windows.Forms.ListBox();
             this.iconButtonDeleteAll = new FontAwesome.Sharp.IconButton();
@@ -106,7 +107,6 @@ namespace UI
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
-            this.labelIdProgram = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel14.SuspendLayout();
@@ -431,11 +431,11 @@ namespace UI
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.06897F));
             this.tableLayoutPanel15.Controls.Add(this.labelsecondName, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.checkedListBoxAnesthesiaTypes, 1, 0);
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 282);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 283);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 1;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(406, 135);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(406, 134);
             this.tableLayoutPanel15.TabIndex = 39;
             // 
             // labelsecondName
@@ -487,7 +487,7 @@ namespace UI
             this.groupBoxQuirfonanoData.Controls.Add(this.groupBox5);
             this.groupBoxQuirfonanoData.Enabled = false;
             this.groupBoxQuirfonanoData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxQuirfonanoData.Location = new System.Drawing.Point(3, 311);
+            this.groupBoxQuirfonanoData.Location = new System.Drawing.Point(3, 312);
             this.groupBoxQuirfonanoData.Name = "groupBoxQuirfonanoData";
             this.groupBoxQuirfonanoData.Size = new System.Drawing.Size(406, 76);
             this.groupBoxQuirfonanoData.TabIndex = 30;
@@ -529,7 +529,7 @@ namespace UI
             this.comboBoxOperatingRooms.Items.AddRange(new object[] {
             "General",
             "Epidural"});
-            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(202, 9);
+            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(202, 12);
             this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
             this.comboBoxOperatingRooms.Size = new System.Drawing.Size(193, 28);
             this.comboBoxOperatingRooms.TabIndex = 27;
@@ -700,6 +700,15 @@ namespace UI
             this.groupBoxAssistantsData.TabIndex = 31;
             this.groupBoxAssistantsData.TabStop = false;
             this.groupBoxAssistantsData.Text = "Enfermería asignada";
+            // 
+            // labelIdProgram
+            // 
+            this.labelIdProgram.AutoSize = true;
+            this.labelIdProgram.Location = new System.Drawing.Point(73, 222);
+            this.labelIdProgram.Name = "labelIdProgram";
+            this.labelIdProgram.Size = new System.Drawing.Size(50, 20);
+            this.labelIdProgram.TabIndex = 33;
+            this.labelIdProgram.Text = "label10";
             // 
             // listBoxAnesthesiaId
             // 
@@ -924,7 +933,7 @@ namespace UI
             this.comboBoxTime.Items.AddRange(new object[] {
             "A.M",
             "P.M"});
-            this.comboBoxTime.Location = new System.Drawing.Point(240, 5);
+            this.comboBoxTime.Location = new System.Drawing.Point(240, 8);
             this.comboBoxTime.Name = "comboBoxTime";
             this.comboBoxTime.Size = new System.Drawing.Size(115, 28);
             this.comboBoxTime.TabIndex = 3;
@@ -995,7 +1004,7 @@ namespace UI
             "57",
             "58",
             "59"});
-            this.comboBoxMin.Location = new System.Drawing.Point(127, 5);
+            this.comboBoxMin.Location = new System.Drawing.Point(127, 8);
             this.comboBoxMin.Name = "comboBoxMin";
             this.comboBoxMin.Size = new System.Drawing.Size(107, 28);
             this.comboBoxMin.TabIndex = 2;
@@ -1030,7 +1039,7 @@ namespace UI
             "10",
             "11",
             "12"});
-            this.comboBoxHour.Location = new System.Drawing.Point(3, 5);
+            this.comboBoxHour.Location = new System.Drawing.Point(3, 8);
             this.comboBoxHour.Name = "comboBoxHour";
             this.comboBoxHour.Size = new System.Drawing.Size(85, 28);
             this.comboBoxHour.TabIndex = 0;
@@ -1178,7 +1187,7 @@ namespace UI
             this.comboBoxSurgeryType.Items.AddRange(new object[] {
             "Electiva",
             "Emergencia"});
-            this.comboBoxSurgeryType.Location = new System.Drawing.Point(461, 97);
+            this.comboBoxSurgeryType.Location = new System.Drawing.Point(461, 100);
             this.comboBoxSurgeryType.Name = "comboBoxSurgeryType";
             this.comboBoxSurgeryType.Size = new System.Drawing.Size(358, 28);
             this.comboBoxSurgeryType.TabIndex = 25;
@@ -1223,7 +1232,7 @@ namespace UI
             this.comboBoxRelevance.Items.AddRange(new object[] {
             "Mayor",
             "Menor"});
-            this.comboBoxRelevance.Location = new System.Drawing.Point(101, 92);
+            this.comboBoxRelevance.Location = new System.Drawing.Point(101, 96);
             this.comboBoxRelevance.Name = "comboBoxRelevance";
             this.comboBoxRelevance.Size = new System.Drawing.Size(315, 28);
             this.comboBoxRelevance.TabIndex = 35;
@@ -1263,15 +1272,6 @@ namespace UI
             this.labelID.TabIndex = 18;
             this.labelID.Text = "label10";
             this.labelID.Visible = false;
-            // 
-            // labelIdProgram
-            // 
-            this.labelIdProgram.AutoSize = true;
-            this.labelIdProgram.Location = new System.Drawing.Point(73, 222);
-            this.labelIdProgram.Name = "labelIdProgram";
-            this.labelIdProgram.Size = new System.Drawing.Size(50, 20);
-            this.labelIdProgram.TabIndex = 33;
-            this.labelIdProgram.Text = "label10";
             // 
             // FormEditInterventios
             // 
