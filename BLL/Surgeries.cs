@@ -23,8 +23,11 @@ namespace BLL
         {
             return surgeries.getDailyReport(date);
         }
+        public DataTable ObtenerDoctoresAsignados(int surgerieId)
+        {
+            return surgeries.obtenerDoctoresAsignados(surgerieId);
+        }
 
-       
         public DataTable getSurgeriesByHistoryNumber(string historyNumber)
         {
             return surgeries.getSurgeriesByHistoryNumber(historyNumber);
@@ -82,6 +85,15 @@ namespace BLL
             return surgeries.getAssistantsBySurgerie(id);
         }
 
+        public DataTable getAnesthetistBySurgerie(int id)
+        {
+            return surgeries.getAnesthetistBySurgerie(id);
+        }
+
+        public DataTable getAnesthetistNameBySurgerie(int id)
+        {
+            return surgeries.getAnesthetistNameBySurgerie(id);
+        }
 
         public string reSchedule(int idSurgerie, int idRoom, DateTime date, string time)
         {
@@ -118,32 +130,22 @@ namespace BLL
         }
         
              public string assignSurgeryBasic(
-                  int userId,
-            string surgeryType,
-            DateTime surgeryDate,
-            int opRoomId,
-            int programationId,
-            string relevance,
-            string interventionDetail,
-            string surgeryTime,
-            string time, List<ClassDtoAssistants> assistantsList, List<ClassDtoDoctors> doctorsList)
+                  int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate, string surgeryTime, int opRoomId
+            , int programationId, string relevance, string interventionDetail, string time,
+            List<ClassDTOAnesthethist> anesList, int surgerieId)
         {
             string response = "";
             DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, surgeryTime, opRoomId);
             if (infoSurgeries.Rows.Count < 1)
             {
-                DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
-                foreach (ClassDtoAssistants item in assistantsList)
+                DataTable dataAnes = new DataTable() { Columns = { "anesthetistId" } };
+                foreach (ClassDTOAnesthethist item in anesList)
                 {
-                    dataAssistants.Rows.Add(item.AssistandId);
-                }
-                DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
-                foreach (ClassDtoDoctors item in doctorsList)
-                {
-                    dataDoctors.Rows.Add(item.DoctorId);
+                    dataAnes.Rows.Add(item.IdAnesthetist);
                 }
                 response = surgeries.sp_assignSurgeryBasic(
                     userId,
+                    anesthesiaType,
                     surgeryType,
                     surgeryDate.Date,
                     opRoomId,
@@ -151,8 +153,8 @@ namespace BLL
                     relevance,
                     interventionDetail,
                     surgeryTime,
-                    dataAssistants,
-                    dataDoctors
+                    dataAnes,
+                    surgerieId
                     );
             }
             else
@@ -366,8 +368,9 @@ namespace BLL
             return response;
 
         }
-        public string assignSurgery(int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate,string surgeryTime, int opRoomId, 
-            int anesthetistId, int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,List<ClassDtoDoctors> doctorsList)
+        public string assignSurgery(int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate,string surgeryTime, int opRoomId
+            , int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,
+            List<ClassDTOAnesthethist> anesList,int surgerieId)
         {
             string response = "";
             DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, surgeryTime, opRoomId);
@@ -378,10 +381,10 @@ namespace BLL
                 {
                     dataAssistants.Rows.Add(item.AssistandId);
                 }
-                DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
-                foreach (ClassDtoDoctors item in doctorsList)
+                DataTable dataAnes = new DataTable() { Columns = { "anesthetistId" } };
+                foreach (ClassDTOAnesthethist item in anesList)
                 {
-                    dataDoctors.Rows.Add(item.DoctorId);
+                    dataAnes.Rows.Add(item.IdAnesthetist);
                 }
                 response = surgeries.AssignSurgery(
                     userId,
@@ -389,13 +392,13 @@ namespace BLL
                     surgeryType,
                     surgeryDate.Date,
                     opRoomId,
-                    anesthetistId,
                     programationId,
                     relevance,
                     interventionDetail,
                     surgeryTime,
                     dataAssistants,
-                    dataDoctors
+                    dataAnes,
+                    surgerieId
                     );
             }
             else

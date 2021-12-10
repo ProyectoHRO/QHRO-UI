@@ -301,6 +301,20 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+
+        public DataTable obtenerDoctoresAsignados(int surgerieId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerDocsAsignado";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
         public DataTable getInfoAnesthetist(int surgerieId)
         {
             tableData = new DataTable();
@@ -528,6 +542,34 @@ namespace DAL
             return tableData;
         }
 
+        public DataTable getAnesthetistBySurgerie(int surgerieId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerAnestesiologoPorCirugia";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
+        
+
+         public DataTable getAnesthetistNameBySurgerie(int surgerieId)
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerAnestesiologoPorId";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idAnestesiologo", surgerieId);
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return tableData;
+        }
         public DataTable getDailyReport(DateTime surgeryDate)
         {
             tableData = new DataTable();
@@ -560,13 +602,13 @@ namespace DAL
             string surgeryType,
             DateTime surgeryDate,
             int opRoomId,
-            int anesthetistId,
             int programationId,
             string relevance,
             string interventionDetail,
             string time,
             DataTable assistantDetail,
-            DataTable doctorDetail
+            DataTable anesDetail,
+            int surgerieId
             )
         {
             string response = "";
@@ -578,13 +620,13 @@ namespace DAL
             command.Parameters.AddWithValue("@tipo_cirugia", surgeryType);
             command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
             command.Parameters.AddWithValue("@idquirofano", opRoomId);
-            command.Parameters.AddWithValue("@idanestesia", anesthetistId);
             command.Parameters.AddWithValue("@id_programaciones", programationId);
             command.Parameters.AddWithValue("@relevancia", relevance);
             command.Parameters.AddWithValue("@detalleIntervencion", interventionDetail);
             command.Parameters.AddWithValue("@hora", time);
             command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
-            command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
+            command.Parameters.AddWithValue("@detalleAnestesista", anesDetail);
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar,250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();
@@ -649,17 +691,17 @@ namespace DAL
         
 
         public string sp_assignSurgeryBasic(
-         int userId,
-         
+        int userId,
+            string anesthesiaType,
             string surgeryType,
             DateTime surgeryDate,
             int opRoomId,
-            int programationId,
+            int programationId, 
             string relevance,
             string interventionDetail,
             string time,
-            DataTable assistantDetail,
-            DataTable doctorDetail
+            DataTable anesDetail,
+            int surgerieId
          )
         {
             string response = "";
@@ -667,6 +709,7 @@ namespace DAL
             command.CommandText = "sp_assignSurgeryBasic";
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@idusuario", userId);
+            command.Parameters.AddWithValue("@tipo_anestesia", anesthesiaType);
             command.Parameters.AddWithValue("@tipo_cirugia", surgeryType);
             command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
             command.Parameters.AddWithValue("@idquirofano", opRoomId);
@@ -674,8 +717,8 @@ namespace DAL
             command.Parameters.AddWithValue("@relevancia", relevance);
             command.Parameters.AddWithValue("@detalleIntervencion", interventionDetail);
             command.Parameters.AddWithValue("@hora", time);
-            command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
-            command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
+            command.Parameters.AddWithValue("@detalleAnestesista", anesDetail);
+            command.Parameters.AddWithValue("@idcirugia", surgerieId);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();

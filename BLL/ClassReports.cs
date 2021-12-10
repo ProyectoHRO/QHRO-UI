@@ -22,6 +22,7 @@ namespace BLL
             {
                 string docName = "";
                 string assistantName = "";
+                string anesName = "";
                 surgerie = new ClassDailySurgeries();
                 surgerie.IdCirugia = Convert.ToInt32(item.Field<int>(0));
                 surgerie.Hora = item.Field<string>(1).ToString();
@@ -48,7 +49,6 @@ namespace BLL
                     surgerie.Cirujano = docName.TrimEnd(' ');
                     surgerie.Cirujano = surgerie.Cirujano.TrimEnd('/');
                 }
-                surgerie.Anestesiólogo = item.Field<string>(8).ToString();
                 DataTable infoAssistants = surgeries.getAssistantsBySurgerie(surgerie.IdCirugia);
                 if (infoAssistants.Rows.Count < 2)
                 {
@@ -64,6 +64,34 @@ namespace BLL
                         assistantName = assistantName + itemAssistant.Field<string>(1).ToString() + '/';
                     }
                     surgerie.Enfermería = assistantName.TrimEnd('/');
+                }
+
+                DataTable infoAnestesistas = surgeries.getAnesthetistBySurgerie(surgerie.IdCirugia);
+                if (infoAnestesistas.Rows.Count < 2)
+                {
+                    
+                    foreach (DataRow itemAnesthetist in infoAnestesistas.Rows)
+                    {
+                        DataTable nombreAnestesista = surgeries.getAnesthetistNameBySurgerie(Convert.ToInt32(itemAnesthetist.Field<int>(0))); ;
+                        foreach (DataRow itemAnestesia in nombreAnestesista.Rows)
+                        {
+                            surgerie.Anestesiólogo = itemAnestesia.Field<string>(0).ToString();
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    foreach (DataRow itemAnesthetist in infoAnestesistas.Rows)
+                    {
+                        DataTable nombreAnestesista = surgeries.getAnesthetistNameBySurgerie(Convert.ToInt32(itemAnesthetist.Field<int>(0))); ;
+                        foreach (DataRow itemAnestesia in nombreAnestesista.Rows)
+                        {
+                            anesName = anesName + itemAnestesia.Field<string>(0).ToString() + '/';
+
+                        }
+                        surgerie.Anestesiólogo = anesName.TrimEnd('/');
+                    }
                 }
                 surgeriesList.Add(surgerie);
             }

@@ -167,10 +167,13 @@ namespace UI
                     else if (band == 2)
                     {
                         List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
-                        DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
-                        foreach (ClassDtoDoctors item in doctorsList)
+                        ClassDtoDoctors doctors;
+                        for (int i = 0; i < listBox1.Items.Count; i++)
                         {
-                            dataDoctors.Rows.Add(item.DoctorId);
+                            listBox1.SelectedIndex = i;
+                            doctors = new ClassDtoDoctors();
+                            doctors.DoctorId = Convert.ToInt32(listBox1.SelectedItem);
+                            doctorsList.Add(doctors);
                         }
                         string response = requestSurgery.makeSurgeryRequest(
                             userId,

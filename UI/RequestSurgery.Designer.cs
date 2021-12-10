@@ -711,7 +711,6 @@ namespace UI
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(106, 116);
             this.listBox1.TabIndex = 32;
-            this.listBox1.Visible = false;
             // 
             // RequestSurgery
             // 
