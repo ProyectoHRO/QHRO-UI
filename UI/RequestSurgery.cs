@@ -88,6 +88,7 @@ namespace UI
                         }
                     }
                     iconButtonRequest.Visible = true;
+                    textBoxDiagnosis.Enabled = true;
                 }
             }
         }
@@ -145,29 +146,58 @@ namespace UI
         {
             if (textBoxDiagnosis.Text!="")
             {
-                if (band==1)
+                if (listBox1.Items.Count>0)
                 {
-                    string response = requestSurgery.makeSurgeryRequestAndPatient(userId, textBoxDiagnosis.Text, serviceId, textBoxhistoryNumber.Text,textBoxfirstName.Text, textBoxsecondName.Text,
-                    textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text), comboBoxGender.Text);
-                    MessageBox.Show(response);
+                    if (band == 1)
+                    {
+
+                        List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                        ClassDtoDoctors doctors;
+                        for (int i = 0; i < listBox1.Items.Count; i++)
+                        {
+                            listBox1.SelectedIndex = i;
+                            doctors = new ClassDtoDoctors();
+                            doctors.DoctorId = Convert.ToInt32(listBox1.SelectedItem);
+                            doctorsList.Add(doctors);
+                        }
+                        string response = requestSurgery.makeSurgeryRequestAndPatientWithDoctors(userId, textBoxDiagnosis.Text, serviceId, textBoxhistoryNumber.Text, textBoxfirstName.Text, textBoxsecondName.Text,
+                        textBoxfirstSurname.Text, textBoxsecondSurname.Text, Convert.ToInt16(textBoxAge.Text), comboBoxGender.Text, doctorsList);
+                        MessageBox.Show(response);
+                    }
+                    else if (band == 2)
+                    {
+                        List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                        DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
+                        foreach (ClassDtoDoctors item in doctorsList)
+                        {
+                            dataDoctors.Rows.Add(item.DoctorId);
+                        }
+                        string response = requestSurgery.makeSurgeryRequest(
+                            userId,
+                            textBoxDiagnosis.Text,
+                            textBoxfirstName.Text,
+                            textBoxsecondName.Text,
+                        textBoxfirstSurname.Text,
+                        textBoxsecondSurname.Text,
+                        Convert.ToInt16(textBoxAge.Text),
+                        comboBoxGender.Text,
+                           Convert.ToInt32(labelID.Text),
+                           serviceId, 
+                           doctorsList);
+                        MessageBox.Show(response);
+                    }
+
+                    this.Close();
                 }
-                else if (band == 2)
+                else
                 {
-                    string response = requestSurgery.makeSurgeryRequest(
-                        userId, 
-                        textBoxDiagnosis.Text,
-                        textBoxfirstName.Text, 
-                        textBoxsecondName.Text,
-                    textBoxfirstSurname.Text,
-                    textBoxsecondSurname.Text,
-                    Convert.ToInt16(textBoxAge.Text),
-                    comboBoxGender.Text,
-                       Convert.ToInt32(labelID.Text), 
-                       serviceId);
-                    MessageBox.Show(response);
+                    MessageBox.Show("Porfavor asigne al personal médico");
+                  
+                        
+                    
                 }
-                
-                this.Close();
+               
+             
             }
             else
             {
@@ -178,7 +208,11 @@ namespace UI
         private void textBoxDiagnosis_TextChanged(object sender, EventArgs e)
         {
             if (textBoxDiagnosis.Text != "")
+            {
                 iconButtonRequest.Enabled = true;
+                groupBoxDocsData.Enabled = true;
+            }
+                
         }
 
         private void iconButtonCreateAndRequest_Click(object sender, EventArgs e)
@@ -199,6 +233,42 @@ namespace UI
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void iconButtonAddDoctor_Click(object sender, EventArgs e)
+        {
+            selectPerson selectP = new selectPerson(2);
+            selectP.ShowDialog();
+            if (selectP.id != 0)
+            {
+                listBox1.Items.Add(selectP.id);
+                ListViewItem item = new ListViewItem(selectP.name.ToString());
+                listViewDoctors.Items.Add(item);
+            }
+            else
+            {
+
+            }
+        }
+
+        private void iconButtonDeleteDoctor_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea eliminar al doctor?", "Confirmar",
+               MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MessageBox.Show("Doctor eliminado");
+                if (listViewDoctors.Items.Count > 0)
+                {
+                    listBox1.Items.RemoveAt(listViewDoctors.SelectedIndices[0]);
+                    listViewDoctors.Items.Remove(listViewDoctors.SelectedItems[0]);
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Cancelado");
+            }
         }
     }
 }

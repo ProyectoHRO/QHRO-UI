@@ -41,6 +41,18 @@ namespace DAL
             return tableData;
         }
 
+        public DataTable ObtenerCirugiasSinLlenar()
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "ObtenerCirugiasALlenar";
+            command.CommandType = CommandType.StoredProcedure;
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            connection.CloseConnection();
+            return tableData;
+        }
+
         public void updateSurgerieAnesthetist(
             int surgerieId,
             int anesthetistId,
@@ -683,7 +695,8 @@ namespace DAL
             short age,
             string gender,
             int patientId,
-            int serviceId)
+            int serviceId,
+            DataTable doctorDetail)
         {
             string response="";
             command.Connection = connection.OpenConnection();
@@ -699,6 +712,7 @@ namespace DAL
             command.Parameters.AddWithValue("@genero", gender);
             command.Parameters.AddWithValue("@id", patientId);
             command.Parameters.AddWithValue("@idservicio", serviceId);
+            command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();
@@ -735,6 +749,44 @@ namespace DAL
             command.Parameters.AddWithValue("@segundoApellido", secondSurname);
             command.Parameters.AddWithValue("@edad", age);
             command.Parameters.AddWithValue("@genero", gender);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
+        }
+
+        public string requestSurgeryAndPatientWithDoctors(
+           int userId,
+           string interventionDetail,
+           int serviceId,
+           string historyNumber,
+           string firstName,
+           string secondName,
+           string firstSurname,
+           string secondSurname,
+           short age,
+           string gender,
+           DataTable doctorDetail
+           )
+        {
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "AsignarCirugiaYPaciente";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idusuario", userId);
+            command.Parameters.AddWithValue("@diagnostico", interventionDetail);
+            command.Parameters.AddWithValue("@idservicio", serviceId);
+            command.Parameters.AddWithValue("@no_historia", historyNumber);
+            command.Parameters.AddWithValue("@primerNombre", firstName);
+            command.Parameters.AddWithValue("@segundoNombre", secondName);
+            command.Parameters.AddWithValue("@primerApellido", firstSurname);
+            command.Parameters.AddWithValue("@segundoApellido", secondSurname);
+            command.Parameters.AddWithValue("@edad", age);
+            command.Parameters.AddWithValue("@genero", gender); 
+            command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();

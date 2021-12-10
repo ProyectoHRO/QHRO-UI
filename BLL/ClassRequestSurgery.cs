@@ -22,7 +22,7 @@ namespace BLL
 
         public DataTable getRequestedSurgeries()
         {
-            return surgeries.GetRequestedSurgeries();
+            return surgeries.ObtenerCirugiasSinLlenar();
         }
 
         public DataTable getInfoAnesthetist(int surgerieId)
@@ -103,10 +103,16 @@ namespace BLL
             short age,
             string gender,
             int patientId,
-            int serviceId)
+            int serviceId,
+            List<ClassDtoDoctors> doctorsList)
         {
             string response = "";
-            response=surgeries.requestSurgery( 
+            DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
+            foreach (ClassDtoDoctors item in doctorsList)
+            {
+                dataDoctors.Rows.Add(item.DoctorId);
+            }
+            response =surgeries.requestSurgery( 
                 userId,
                 interventionDetail,
                 firstName,
@@ -116,7 +122,8 @@ namespace BLL
                 age,
                 gender,
                 patientId,
-                serviceId);
+                serviceId,
+                dataDoctors);
             return response;
         }
         public string makeSurgeryRequestAndPatient(int userId,string interventionDetail, int serviceId,string historyNumber, string firstName, string secondName, string firstSurname
@@ -124,6 +131,20 @@ namespace BLL
         {
             string response = "";
             response=surgeries.requestSurgeryAndPatient(userId,interventionDetail, serviceId,historyNumber,firstName,secondName,firstSurname,secondSurname,age,gender);
+            return response;
+        }
+
+        public string makeSurgeryRequestAndPatientWithDoctors(int userId, string interventionDetail, int serviceId, string historyNumber, string firstName, string secondName, string firstSurname
+           , string secondSurname, short age, string gender, List<ClassDtoDoctors> doctorsList)
+        {
+            string response = "";
+            DataTable dataDoctors = new DataTable() { Columns = { "doctorId" } };
+            foreach (ClassDtoDoctors item in doctorsList)
+            {
+                dataDoctors.Rows.Add(item.DoctorId);
+            }
+            response = surgeries.requestSurgeryAndPatientWithDoctors(userId, 
+                interventionDetail, serviceId, historyNumber, firstName, secondName, firstSurname, secondSurname, age, gender, dataDoctors);
             return response;
         }
     }

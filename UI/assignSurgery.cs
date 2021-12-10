@@ -36,7 +36,7 @@ namespace UI
             else
             {
                 dataGridView1.DataSource = surgeries.getRequestedSurgeries();
-                dataGridView1.Columns[0].Visible = false;
+                //dataGridView1.Columns[0].Visible = false;
                 dataGridView1.AutoResizeColumns();
                 dataGridView1.AutoResizeRows();
                 dataGridView1.Refresh();
