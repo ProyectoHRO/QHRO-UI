@@ -62,7 +62,16 @@
 
           
             <li class="profile">
-                <a class='bx bx-log-out' id="log_out" href="/Home/Logout"></a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a class='bx bx-log-out' id="log_out" href="/Home/Logout" style="color:white; font-size:30px; left:20px"></a>
+                }
+
+                else
+                {
+                    <a class='bx bx-log-in' id="log_out" href="/Home/Logout" style="color:white; font-size:30px; left:20px"></a>
+                }
+
             </li>
         </ul>
     </div>
