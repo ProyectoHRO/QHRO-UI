@@ -13,9 +13,21 @@ namespace QHRO_WEB.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index(string message = "")
+        private ClassUsers users =new ClassUsers();
+        public ActionResult Index(string message = "", string idUser="", string username="", string message1="")
         {
             ViewBag.Message = message;
+            ViewBag.Message1 = message1;
+            if (idUser!="")
+            {
+                ViewBag.idUser = idUser;
+            }
+           
+            if (username != "")
+            {
+                ViewBag.username = username;
+            }
+                    
             return View();
         }
         string hash = "@HR0";
@@ -30,7 +42,7 @@ namespace QHRO_WEB.Controllers
         [HttpPost]
         public ActionResult Login(string usuario, string password)
         {
-          
+            string pass = password;
             if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(password))
             {
                  ClassUsers user = new ClassUsers();
@@ -69,7 +81,10 @@ namespace QHRO_WEB.Controllers
                     }
                     if (confirmation == false)
                     {
-                        return RedirectToAction("Index", new { message = "Inicio de sesión no valido" });
+                        
+                        return RedirectToAction("Index", new { idUser = idUser,
+                            username = usuario,
+                            message = "Usuario no confirmado" }); ;
                     }
                     else
                     {
@@ -77,7 +92,7 @@ namespace QHRO_WEB.Controllers
                         {
 
                             ClassMail mails = new ClassMail();
-                            mails.MakeMail(mail, "Has iniciado sesión por primera vez en el sistema de quirófanos. \n Con el usuario: " + user + " \n A las: " + DateTime.Now.ToString(), "PRIMER INICIO DE SESIÓN SISTEMA DE QUIRÓFANOS", "");
+                            mails.MakeMail(mail, "Has iniciado sesión por primera vez en el sistema de quirófanos. \n Con el usuario: " + usuario + " y contraseña: "+ pass + "\n A las: " + DateTime.Now.ToString(), "PRIMER INICIO DE SESIÓN SISTEMA DE QUIRÓFANOS", "");
                         }
 
                         logCount++;
@@ -125,6 +140,41 @@ namespace QHRO_WEB.Controllers
 
             }
 
+        }
+
+
+        public ActionResult ConfirmUser(int idUser, string username, string password, string passwordConfirm)
+        {
+            if (password==passwordConfirm) {
+                byte[] data = UTF8Encoding.UTF8.GetBytes(password);
+                using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
+                {
+                    byte[] keys = md5.ComputeHash(UTF8Encoding.UTF8.GetBytes(hash));
+                    using (TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider() { Key = keys, Mode = CipherMode.ECB, Padding = PaddingMode.PKCS7 })
+                    {
+                        ICryptoTransform transform = tripleDES.CreateEncryptor();
+                        byte[] results = transform.TransformFinalBlock(data, 0, data.Length);
+                        password = Convert.ToBase64String(results, 0, results.Length);
+                    }
+                }
+
+                string response = users.ConfirmUser(idUser, username, password, DateTime.Now);
+                if (response.ToUpper().Contains("ERROR"))
+                {
+                    return RedirectToAction("Index", new { message = response });
+                }
+                else
+                {
+                    return RedirectToAction("Index", new { message = response });
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", new {
+                    idUser = idUser,
+                    username = username,
+                    message = "Usuario no confirmado", message1=" Las contraseñas no coinciden" });
+            }
         }
         [Authorize]
         public ActionResult Logout()

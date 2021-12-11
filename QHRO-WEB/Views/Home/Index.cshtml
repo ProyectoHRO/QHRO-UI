@@ -1,5 +1,6 @@
 ﻿@{
     ViewBag.Title = "";
+    bool validar = false;
 }
 
 <div class="container">
@@ -8,32 +9,83 @@
             @{
                 if (!string.IsNullOrEmpty(ViewBag.Message))
                 {
+                    if (!string.IsNullOrEmpty(ViewBag.Message1))
+                    {
+                        <div class="alert alert-warning">@ViewBag.Message @ViewBag.Message1</div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning">@ViewBag.Message</div>
+                    }
                     //el mensaje tiene un valor
-                    <div class="alert alert-warning">@ViewBag.Message</div>
-                }
-            }
-            <br />
-            <form action="/Home/Login" method="POST">
-                <div class="row">
-                    <div class="col-md-12 login-form-header">
-                        <p class="login-form-font-header">Quirófanos<span>HRO</span><p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12 login-from-row">
-                        <input name="usuario" class="enter" type="text" placeholder="Usuario" required />
-                    </div>
-                    <div class="col-md-12 login-from-row">
-                        <input name="password" class="enter" type="password" placeholder="Contraseña" required />
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-12 login-btn">
-                        <button class="btn enterbtn btn-info">Entrar</button>
+                    if (ViewBag.Message == "Usuario no confirmado")
+                    {
+                        validar = true;
+                        <form action="/Home/ConfirmUser" method="POST">
+                            <div class="row">
+                                <div class="col-md-12  login-form-header">
+                                    <p class="login-form-font-header">Quirófanos<span>HRO</span><p>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 invisible  login-from-row">
+                                    <input name="idUser" class="enter" type="number" value="@ViewBag.idUser" required />
+
+                                </div>
+                                <h5>Confirmar usuario</h5>
+                                <div class="col-md-12 login-from-row">
+                                    <input name="username" class="enter" type="text" value="@ViewBag.username" placeholder="Usuario" required />
+                                </div>
+                                <div class="col-md-12 login-from-row">
+                                    <input name="password" class="enter" type="password" placeholder="Contraseña" required />
+                                </div>
+
+                                <div class="col-md-12 login-from-row">
+                                    <input name="passwordConfirm" class="enter" type="password" placeholder="Confirmar Contraseña" required />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12 login-btn">
+                                    <button class="btn enterbtn btn-info">Confirmar Usuario</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    }
+                }
+
+
+
+            }
+            @if (validar == false)
+            {
+                <br />
+                <form action="/Home/Login" method="POST">
+                    <div class="row">
+                        <div class="col-md-12 login-form-header">
+                            <p class="login-form-font-header">Quirófanos<span>HRO</span><p>
+                        </div>
                     </div>
-                </div>
-            </form>
+                    <div class="row">
+                        <div class="col-md-12 login-from-row">
+                            <input name="usuario" class="enter" type="text" placeholder="Usuario" required />
+                        </div>
+                        <div class="col-md-12 login-from-row">
+                            <input name="password" class="enter" type="password" placeholder="Contraseña" required />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 login-btn">
+                            <button class="btn enterbtn btn-info">Entrar</button>
+                        </div>
+                    </div>
+                </form>
+            }
+
         </div>
     </div>
 </div>  

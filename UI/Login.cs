@@ -117,6 +117,7 @@ namespace UI
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+
             byte[] data = UTF8Encoding.UTF8.GetBytes(txtPassword.Text);
             using (MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider())
             {
@@ -164,7 +165,7 @@ namespace UI
                 {
                     if (logCount == 0)
                     {
-                        mails.MakeMail(mail, "Has iniciado sesión por primera vez en el sistema de quirófanos. \n Con el usuario: " + txtUser.Text + " \n A las: " + DateTime.Now.ToString(), "PRIMER INICIO DE SESIÓN SISTEMA DE QUIRÓFANOS", "");
+                        mails.MakeMail(mail, "Has iniciado sesión por primera vez en el sistema de quirófanos. \n Con el usuario: " + txtUser.Text + " y contraseña: " + txtPassword.Text + "\n A las: " + DateTime.Now.ToString(), "PRIMER INICIO DE SESIÓN SISTEMA DE QUIRÓFANOS", "");
                     }
 
                     logCount++;
