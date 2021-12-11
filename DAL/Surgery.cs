@@ -129,6 +129,28 @@ namespace DAL
             connection.CloseConnection();
             return response;
         }
+
+
+        public string AssignAssists(
+        int surgeryId,
+        DataTable assistantDetail
+       )
+        {
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "AsignAssistants";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@idcirugia", surgeryId);
+            command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
+            command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
+            command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@mensaje"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
+        }
+
         public string EmergencyAndPatient(
         string historyNumber,
         string firstName,
@@ -242,6 +264,18 @@ namespace DAL
         {
             tableData = new DataTable();
             command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarCirugiasSinEnfermeria";
+            command.CommandType = CommandType.StoredProcedure;
+            read = command.ExecuteReader();
+            tableData.Load(read);
+            connection.CloseConnection();
+            return tableData;
+        }
+
+        public DataTable GetSurgeriesWithoutAssistList()
+        {
+            tableData = new DataTable();
+            command.Connection = connection.OpenConnection();
             command.CommandText = "MostrarCirugiasSinAnestecia";
             command.CommandType = CommandType.StoredProcedure;
             read = command.ExecuteReader();
@@ -249,6 +283,7 @@ namespace DAL
             connection.CloseConnection();
             return tableData;
         }
+
         public DataTable GetDailySurgeriesByRoom(int roomNumber)
         {
             tableData = new DataTable();

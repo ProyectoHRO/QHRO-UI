@@ -39,6 +39,12 @@ namespace BLL
             return surgeries.GetSurgeriesWithoutAnesthetist();
         }
 
+        public DataTable GetSurgeriesWithoutAssisttist()
+        {
+            return surgeries.GetSurgeriesWithoutAssistList();
+        }
+
+
         public string updateSurgerieAnesthetist(int surgerieId, int anesthetistId, string anesType)
         {
             try

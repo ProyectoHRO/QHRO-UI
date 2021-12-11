@@ -50,7 +50,7 @@
         </div>
     </div>
     <script>
-       
+
         //actualizar
         $(document).ready(function () {
 
@@ -66,16 +66,16 @@
                         $('#qr').empty();
                         for (var i = 0; i < data.length; i++) {
                             if (data[i].estado_actual == 'Disponible') {
-                                $('#qr').append('<div class="col-md-3"><div class= "card quiro border border-dark rounded" style="width:300px;" ><div class="text-center"><h3 class="card-title">' + data[i].Qx + '</h3></div><div class="text-center"><i class="fas fa-procedures fa-5x" style="color:#78f712"></i></div> <div class="text-center"><h5 class="card-title"> Estado:</h5><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"></li><li class="list-group-item"></li></ul></div></div></div>');
+                                $('#qr').append('<div class="row mb-3" style="max-width: 500px;  margin-left:15px;"><div></div><div class="card quiro mb-3" style="max-width: 500px;"><div class="row no-gutters"><div class="col-md-4" style="width:150px;"><div class="text-center"><h3 class="card-title">Q' + data[i].Qx + '</h3></div><div class="iconcenter text-center"><i class="fas fa-procedures fa-5x" style="color: #78f712"></i></div></div><div class="col-md-8"><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"><h2 class="card-title" style="margin-top:40px">' + data[i].estado_actual + '</h2></li><li class="list-group-item"></li></ul></div></div></div></div></div>');
                             }
                             else if (data[i].estado_actual == 'Mantenimiento') {
-                                $('#qr').append('<div class="col-md-3"><div class= "card quiro border border-dark rounded " style="width:300px;" ><div class="text-center"><h3 class="card-title">' + data[i].Qx + '</h3></div><div class="text-center"><i class="fas fa-procedures fa-5x" style="color:blue"></i></div> <div class="text-center"><h5 class="card-title"> Estado:</h5><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"></li><li class="list-group-item"></li></ul></div></div></div>');
+                                $('#qr').append('<div class="row mb-3" style="max-width: 500px;  margin-left:15px;"><div></div><div class="card quiro mb-3" style="max-width: 500px;"><div class="row no-gutters"><div class="col-md-4" style="width:150px;"><div class="text-center"><h3 class="card-title">Q' + data[i].Qx + '</h3></div><div class="iconcenter text-center"><i class="fas fa-procedures fa-5x" style="color: blue"></i></div></div><div class="col-md-8"><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"><h3 class="card-title" style="margin-top:40px;">' + data[i].estado_actual + '</h3></li><li class="list-group-item"></li></ul></div></div></div></div></div>');
                             }
                             else if (data[i].estado_actual == 'Ocupado') {
                                 if (data[i].Nombre == null && data[i].Procedimiento == null) {
-                                    $('#qr').append('<div class="col-md-3"><div class= "card quiro border border-dark rounded  " style="width:300px;"><div class="text-center"><h3 class="card-title">' + data[i].Qx + '</h3></div><div class="text-center"><i class="fas fa-procedures fa-5x" style="color:red"></i></div> <div class="text-center"><h5 class="card-title"> Estado:</h5><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"></li><li class="list-group-item"></li></ul></div></div></div>');
+                                    $('#qr').append('<div class="row mb-3" style="max-width: 500px; margin-left:15px;"><div></div><div class="card quiro mb-3" style="max-width: 500px;"><div class="row no-gutters"><div class="col-md-4" style="width:150px;"><div class="text-center"><h3 class="card-title">Q' + data[i].Qx + '</h3></div><div class="iconcenter text-center"><i class="fas fa-procedures fa-5x" style="color: red"></i></div></div><div class="col-md-8"><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item"><h2 class="card-title" style="margin-top:40px">' + data[i].estado_actual + '</h2></li><li class="list-group-item"></li></ul></div></div></div></div></div >');
                                 } else {
-                                    $('#qr').append('<div class="col-md-3"><div class= "card quiro border border-dark rounded " style="width:300px;" ><div class="text-center"><h3 class="card-title">' + data[i].Qx + '</h3></div><div class="text-center"><i class="fas fa-procedures fa-5x" style="color:red"></i></div> <div class="text-center"><h5 class="card-title"> Estado:</h5><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item">' + data[i].Nombre + '</li><li class="list-group-item">' + data[i].Procedimiento + '</li></ul></div></div></div>');
+                                    $('#qr').append('< div class= "row mb-3" style="max-width: 500px;  margin-left:15px;"><div></div><div class="card quiro mb-3" style="max-width: 500px;"><div class="row no-gutters"><div class="col-md-4" style="width:150px;"><div class="text-center"><h3 class="card-title">Q' + data[i].Qx + '</h3></div><div class="iconcenter text-center"><i class="fas fa-procedures fa-5x" style="color: #78f712"></i></div><h5 class="card-title">' + data[i].estado_actual + '</h5></div><div class="col-md-8"><div class="card-body"><ul class="list-group list-group-flush"><li class="list-group-item">Paciente: ' + data[i].Nombre + '</li><li class="list-group-item">Procedimiento: ' + data[i].Procedimiento + '</li></ul></div></div></div></div></div >');
                                 }
 
                             }
@@ -90,7 +90,7 @@
     </script>
 
 
-    <div class="row mb-3">
+    <div class="row mb-3" style="width:1800px;">
         <div class="hijo row row-cols-1 row-cols-md-8 g-4 " id="qr">
 
         </div>

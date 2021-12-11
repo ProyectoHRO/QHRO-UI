@@ -77,6 +77,23 @@ namespace DAL
             return tableData;
         }
 
+        public string GetAssistantById(int id)
+        {
+
+            string response = "";
+            command.Connection = connection.OpenConnection();
+            command.CommandText = "MostrarASistentePorId";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", id);
+            command.Parameters.Add("@correo", SqlDbType.NVarChar, 250);
+            command.Parameters["@correo"].Direction = ParameterDirection.Output;
+            command.ExecuteNonQuery();
+            response = Convert.ToString(command.Parameters["@correo"].Value);
+            command.Parameters.Clear();
+            connection.CloseConnection();
+            return response;
+        }
+
         public void InsertAssistant(
             int userId,
             string firstName,

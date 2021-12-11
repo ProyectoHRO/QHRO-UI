@@ -39,7 +39,8 @@ namespace UI
 
         private void FormEmergencies_Load(object sender, EventArgs e)
         {
-
+            dateTimeSurgeryDate.Value = DateTime.Now;
+            dateTimePickerFinalDate.Value = DateTime.Now;
             DataTable surgeriesInfo = surgeries.GetEmergencySurgeries();
 
             if (surgeriesInfo.Rows.Count < 1)
@@ -78,6 +79,7 @@ namespace UI
             {
                 labelID.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 dateTimeSurgeryDate.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
+                dateTimePickerFinalDate.Value = Convert.ToDateTime(dataGridView1.Rows[e.RowIndex].Cells[1].Value);
                 string hora = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 string[] response = strings.getStrings(hora, new char[] { ':', ' ' });
                 if (response[0].StartsWith("0"))

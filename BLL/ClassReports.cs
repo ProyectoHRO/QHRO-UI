@@ -134,59 +134,66 @@ namespace BLL
 
         public void ChangeStatusOperatingRoom()
         {
-            string day = DateTime.Now.ToString("yyyy/MM/dd");
-            DataTable dialySurgeries = surgeries.getDailySurgeries(day);
-
-            foreach(DataRow item in dialySurgeries.Rows)
+            try
             {
-                string hora = item.Field<string>(1).ToString();
-                string numberQ = item.Field<string>(2).ToString();
+                string day = DateTime.Now.ToString("yyyy/MM/dd");
+                DataTable dialySurgeries = surgeries.getDailySurgeries(day);
 
-                string[] timeSep = GetStrings.getStrings(hora, new char[] { ':', ' '});
-                string h = timeSep[0];
-                string m = timeSep[1];
-                string AorP = timeSep[2];
-                if (AorP == "A.M")
+                foreach (DataRow item in dialySurgeries.Rows)
                 {
-                    if (h == "12")
+                    string hora = item.Field<string>(1).ToString();
+                    string numberQ = item.Field<string>(2).ToString();
+
+                    string[] timeSep = GetStrings.getStrings(hora, new char[] { ':', ' ' });
+                    string h = timeSep[0];
+                    string m = timeSep[1];
+                    string AorP = timeSep[2];
+                    if (AorP == "A.M")
                     {
-                        h = "00";
-                    }
-                }
-                else if (AorP == "P.M")
-                {
-                    h = ((Convert.ToInt32(h) % 12) + 12).ToString();
-                }
-
-                DateTime f1 = Convert.ToDateTime(h + ":" + m + ":00");
-                string f2 = f1.ToString("HH:mm");
-                string f3 = DateTime.Now.ToString("HH:mm");
-                TimeSpan t1 = TimeSpan.Parse(f2);
-                TimeSpan t2 = TimeSpan.Parse(f3);
-                int i = TimeSpan.Compare(t1, t2);
-
-        
-
-                if (i == 0)
-                {
-                    DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
-
-                    foreach (DataRow OpRoom in infoOperatingRooms.Rows)
-                    {
-                        int IdQ = OpRoom.Field<int>(0);
-                        string numQ = OpRoom.Field<string>(1).ToString();
-
-                        if ((numQ == numberQ))
+                        if (h == "12")
                         {
-                            string resp = Operatigrooms.editoperatingRoom(numQ, "Ocupado", true, IdQ);
-
+                            h = "00";
                         }
                     }
+                    else if (AorP == "P.M")
+                    {
+                        h = ((Convert.ToInt32(h) % 12) + 12).ToString();
+                    }
+
+                    DateTime f1 = Convert.ToDateTime(h + ":" + m + ":00");
+                    string f2 = f1.ToString("HH:mm");
+                    string f3 = DateTime.Now.ToString("HH:mm");
+                    TimeSpan t1 = TimeSpan.Parse(f2);
+                    TimeSpan t2 = TimeSpan.Parse(f3);
+                    int i = TimeSpan.Compare(t1, t2);
+
+
+
+                    if (i == 0)
+                    {
+                        DataTable infoOperatingRooms = Operatigrooms.listoperatingRooms();
+
+                        foreach (DataRow OpRoom in infoOperatingRooms.Rows)
+                        {
+                            int IdQ = OpRoom.Field<int>(0);
+                            string numQ = OpRoom.Field<string>(1).ToString();
+
+                            if ((numQ == numberQ))
+                            {
+                                string resp = Operatigrooms.editoperatingRoom(numQ, "Ocupado", true, IdQ);
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                    }
+
                 }
-                else
-                {
-                }
-               
+            }
+            catch (Exception)
+            {
+
             }
         }
     }

@@ -27,6 +27,12 @@ namespace BLL
             return assistants.GetTypeAssistantById(id);
         }
 
+        public string getAssistantById(int id)
+        {
+            return assistants.GetAssistantById(id);
+        }
+
+
         public DataTable getAssistantByName(string name)
         {
             return assistants.GetAssistantByName(name);

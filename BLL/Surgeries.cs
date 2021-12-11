@@ -383,6 +383,28 @@ namespace BLL
             return response;
 
         }
+
+        public string AssignAssist(
+                int surgeryId,
+            List<ClassDtoAssistants> assistantsList)
+        {
+            string response = "";
+
+            DataTable dataAssistants = new DataTable() { Columns = { "assistantId" } };
+            foreach (ClassDtoAssistants item in assistantsList)
+            {
+                dataAssistants.Rows.Add(item.AssistandId);
+            }
+            
+            response = surgeries.AssignAssists(
+                    surgeryId,
+                    dataAssistants
+                    );
+
+            return response;
+
+        }
+
         public string assignSurgery(int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate,string surgeryTime, int opRoomId
             , int programationId,string relevance,string interventionDetail,string time,List<ClassDtoAssistants> assistantsList,
             List<ClassDTOAnesthethist> anesList,int surgerieId)

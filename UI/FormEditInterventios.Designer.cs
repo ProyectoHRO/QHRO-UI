@@ -29,31 +29,16 @@ namespace UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.groupBoxAnesthetistData = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.iconButtonAddAnesthetist = new FontAwesome.Sharp.IconButton();
-            this.iconButtonDeleteAnesthetist = new FontAwesome.Sharp.IconButton();
-            this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelsecondName = new System.Windows.Forms.Label();
-            this.checkedListBoxAnesthesiaTypes = new System.Windows.Forms.CheckedListBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxQuirfonanoData = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
@@ -63,8 +48,6 @@ namespace UI
             this.groupBoxDocsData = new System.Windows.Forms.GroupBox();
             this.listViewDoctors = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.iconButtonAddDoctor = new FontAwesome.Sharp.IconButton();
-            this.iconButtonDeleteDoctor = new FontAwesome.Sharp.IconButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.iconButtonConfirm = new FontAwesome.Sharp.IconButton();
@@ -108,13 +91,9 @@ namespace UI
             this.label9 = new System.Windows.Forms.Label();
             this.labelID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tableLayoutPanel14.SuspendLayout();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.groupBoxAnesthetistData.SuspendLayout();
-            this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBoxQuirfonanoData.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -142,49 +121,50 @@ namespace UI
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(2, 2);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(620, 245);
+            this.dataGridView1.Size = new System.Drawing.Size(1254, 245);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label7
             // 
@@ -197,93 +177,26 @@ namespace UI
             this.label7.TabIndex = 40;
             this.label7.Text = "Programaciones pendientes";
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Navy;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView2.GridColor = System.Drawing.Color.White;
-            this.dataGridView2.Location = new System.Drawing.Point(636, 2);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(133)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(620, 245);
-            this.dataGridView2.TabIndex = 41;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
-            // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(121, 72);
+            this.label11.Location = new System.Drawing.Point(509, 54);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(242, 22);
+            this.label11.Size = new System.Drawing.Size(236, 22);
             this.label11.TabIndex = 42;
-            this.label11.Text = "Pendiente de anestesista";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1001, 72);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(166, 22);
-            this.label12.TabIndex = 43;
-            this.label12.Text = "Pendiente varios";
+            this.label11.Text = "Pendiente de enfermería";
             // 
             // tableLayoutPanel14
             // 
             this.tableLayoutPanel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel14.ColumnCount = 3;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.60254F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.7949126F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.52305F));
+            this.tableLayoutPanel14.ColumnCount = 1;
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel14.Controls.Add(this.dataGridView1, 0, 0);
-            this.tableLayoutPanel14.Controls.Add(this.dataGridView2, 2, 0);
             this.tableLayoutPanel14.Location = new System.Drawing.Point(13, 94);
             this.tableLayoutPanel14.Name = "tableLayoutPanel14";
             this.tableLayoutPanel14.RowCount = 1;
@@ -307,161 +220,18 @@ namespace UI
             this.tableLayoutPanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel1, 1, 0);
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1256, 426);
             this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.groupBoxAnesthetistData, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel15, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(421, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(412, 420);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // groupBoxAnesthetistData
-            // 
-            this.groupBoxAnesthetistData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBoxAnesthetistData.Controls.Add(this.listView1);
-            this.groupBoxAnesthetistData.Controls.Add(this.iconButtonAddAnesthetist);
-            this.groupBoxAnesthetistData.Controls.Add(this.iconButtonDeleteAnesthetist);
-            this.groupBoxAnesthetistData.Enabled = false;
-            this.groupBoxAnesthetistData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAnesthetistData.Location = new System.Drawing.Point(3, 3);
-            this.groupBoxAnesthetistData.Name = "groupBoxAnesthetistData";
-            this.groupBoxAnesthetistData.Size = new System.Drawing.Size(406, 246);
-            this.groupBoxAnesthetistData.TabIndex = 38;
-            this.groupBoxAnesthetistData.TabStop = false;
-            this.groupBoxAnesthetistData.Text = "Anestesiólogos asignados";
-            // 
-            // listView1
-            // 
-            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(7, 25);
-            this.listView1.MultiSelect = false;
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(392, 165);
-            this.listView1.TabIndex = 35;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Nombre";
-            this.columnHeader2.Width = 200;
-            // 
-            // iconButtonAddAnesthetist
-            // 
-            this.iconButtonAddAnesthetist.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconButtonAddAnesthetist.BackColor = System.Drawing.Color.White;
-            this.iconButtonAddAnesthetist.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonAddAnesthetist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonAddAnesthetist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonAddAnesthetist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonAddAnesthetist.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonAddAnesthetist.IconChar = FontAwesome.Sharp.IconChar.SearchPlus;
-            this.iconButtonAddAnesthetist.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonAddAnesthetist.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonAddAnesthetist.IconSize = 30;
-            this.iconButtonAddAnesthetist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAddAnesthetist.Location = new System.Drawing.Point(266, 195);
-            this.iconButtonAddAnesthetist.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButtonAddAnesthetist.Name = "iconButtonAddAnesthetist";
-            this.iconButtonAddAnesthetist.Size = new System.Drawing.Size(133, 38);
-            this.iconButtonAddAnesthetist.TabIndex = 28;
-            this.iconButtonAddAnesthetist.Text = "Seleccionar";
-            this.iconButtonAddAnesthetist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonAddAnesthetist.UseVisualStyleBackColor = false;
-            // 
-            // iconButtonDeleteAnesthetist
-            // 
-            this.iconButtonDeleteAnesthetist.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconButtonDeleteAnesthetist.BackColor = System.Drawing.Color.White;
-            this.iconButtonDeleteAnesthetist.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonDeleteAnesthetist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonDeleteAnesthetist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonDeleteAnesthetist.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonDeleteAnesthetist.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonDeleteAnesthetist.IconChar = FontAwesome.Sharp.IconChar.MinusCircle;
-            this.iconButtonDeleteAnesthetist.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonDeleteAnesthetist.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonDeleteAnesthetist.IconSize = 30;
-            this.iconButtonDeleteAnesthetist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonDeleteAnesthetist.Location = new System.Drawing.Point(143, 196);
-            this.iconButtonDeleteAnesthetist.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButtonDeleteAnesthetist.Name = "iconButtonDeleteAnesthetist";
-            this.iconButtonDeleteAnesthetist.Size = new System.Drawing.Size(119, 38);
-            this.iconButtonDeleteAnesthetist.TabIndex = 34;
-            this.iconButtonDeleteAnesthetist.Text = "Eliminar";
-            this.iconButtonDeleteAnesthetist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonDeleteAnesthetist.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel15
-            // 
-            this.tableLayoutPanel15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel15.ColumnCount = 2;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.93103F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.06897F));
-            this.tableLayoutPanel15.Controls.Add(this.labelsecondName, 0, 0);
-            this.tableLayoutPanel15.Controls.Add(this.checkedListBoxAnesthesiaTypes, 1, 0);
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 283);
-            this.tableLayoutPanel15.Name = "tableLayoutPanel15";
-            this.tableLayoutPanel15.RowCount = 1;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(406, 134);
-            this.tableLayoutPanel15.TabIndex = 39;
-            // 
-            // labelsecondName
-            // 
-            this.labelsecondName.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelsecondName.AutoSize = true;
-            this.labelsecondName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelsecondName.Location = new System.Drawing.Point(17, 57);
-            this.labelsecondName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelsecondName.Name = "labelsecondName";
-            this.labelsecondName.Size = new System.Drawing.Size(134, 20);
-            this.labelsecondName.TabIndex = 2;
-            this.labelsecondName.Text = "Tipo de anestesia";
-            // 
-            // checkedListBoxAnesthesiaTypes
-            // 
-            this.checkedListBoxAnesthesiaTypes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBoxAnesthesiaTypes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBoxAnesthesiaTypes.FormattingEnabled = true;
-            this.checkedListBoxAnesthesiaTypes.Location = new System.Drawing.Point(155, 2);
-            this.checkedListBoxAnesthesiaTypes.Margin = new System.Windows.Forms.Padding(2);
-            this.checkedListBoxAnesthesiaTypes.Name = "checkedListBoxAnesthesiaTypes";
-            this.checkedListBoxAnesthesiaTypes.Size = new System.Drawing.Size(249, 130);
-            this.checkedListBoxAnesthesiaTypes.TabIndex = 38;
             // 
             // tableLayoutPanel2
             // 
@@ -477,7 +247,7 @@ namespace UI
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(412, 420);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(622, 420);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // groupBoxQuirfonanoData
@@ -489,7 +259,7 @@ namespace UI
             this.groupBoxQuirfonanoData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxQuirfonanoData.Location = new System.Drawing.Point(3, 312);
             this.groupBoxQuirfonanoData.Name = "groupBoxQuirfonanoData";
-            this.groupBoxQuirfonanoData.Size = new System.Drawing.Size(406, 76);
+            this.groupBoxQuirfonanoData.Size = new System.Drawing.Size(616, 76);
             this.groupBoxQuirfonanoData.TabIndex = 30;
             this.groupBoxQuirfonanoData.TabStop = false;
             this.groupBoxQuirfonanoData.Text = "Asignar quirófano";
@@ -507,7 +277,7 @@ namespace UI
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(398, 46);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(608, 46);
             this.tableLayoutPanel9.TabIndex = 2;
             // 
             // label1
@@ -517,7 +287,7 @@ namespace UI
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 18);
+            this.label1.Size = new System.Drawing.Size(298, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seleccione quirófano:";
             // 
@@ -529,9 +299,9 @@ namespace UI
             this.comboBoxOperatingRooms.Items.AddRange(new object[] {
             "General",
             "Epidural"});
-            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(202, 12);
+            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(307, 9);
             this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
-            this.comboBoxOperatingRooms.Size = new System.Drawing.Size(193, 28);
+            this.comboBoxOperatingRooms.Size = new System.Drawing.Size(298, 28);
             this.comboBoxOperatingRooms.TabIndex = 27;
             // 
             // groupBox5
@@ -547,13 +317,11 @@ namespace UI
             this.groupBoxDocsData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxDocsData.Controls.Add(this.listViewDoctors);
-            this.groupBoxDocsData.Controls.Add(this.iconButtonAddDoctor);
-            this.groupBoxDocsData.Controls.Add(this.iconButtonDeleteDoctor);
             this.groupBoxDocsData.Enabled = false;
             this.groupBoxDocsData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDocsData.Location = new System.Drawing.Point(3, 3);
             this.groupBoxDocsData.Name = "groupBoxDocsData";
-            this.groupBoxDocsData.Size = new System.Drawing.Size(406, 246);
+            this.groupBoxDocsData.Size = new System.Drawing.Size(616, 246);
             this.groupBoxDocsData.TabIndex = 38;
             this.groupBoxDocsData.TabStop = false;
             this.groupBoxDocsData.Text = "Doctores asignados";
@@ -569,7 +337,7 @@ namespace UI
             this.listViewDoctors.Location = new System.Drawing.Point(7, 25);
             this.listViewDoctors.MultiSelect = false;
             this.listViewDoctors.Name = "listViewDoctors";
-            this.listViewDoctors.Size = new System.Drawing.Size(392, 165);
+            this.listViewDoctors.Size = new System.Drawing.Size(602, 215);
             this.listViewDoctors.TabIndex = 35;
             this.listViewDoctors.UseCompatibleStateImageBehavior = false;
             this.listViewDoctors.View = System.Windows.Forms.View.Details;
@@ -579,52 +347,6 @@ namespace UI
             this.columnHeader1.Text = "Nombre";
             this.columnHeader1.Width = 200;
             // 
-            // iconButtonAddDoctor
-            // 
-            this.iconButtonAddDoctor.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconButtonAddDoctor.BackColor = System.Drawing.Color.White;
-            this.iconButtonAddDoctor.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonAddDoctor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonAddDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonAddDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonAddDoctor.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonAddDoctor.IconChar = FontAwesome.Sharp.IconChar.SearchPlus;
-            this.iconButtonAddDoctor.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonAddDoctor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonAddDoctor.IconSize = 30;
-            this.iconButtonAddDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAddDoctor.Location = new System.Drawing.Point(266, 195);
-            this.iconButtonAddDoctor.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButtonAddDoctor.Name = "iconButtonAddDoctor";
-            this.iconButtonAddDoctor.Size = new System.Drawing.Size(133, 38);
-            this.iconButtonAddDoctor.TabIndex = 28;
-            this.iconButtonAddDoctor.Text = "Seleccionar";
-            this.iconButtonAddDoctor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonAddDoctor.UseVisualStyleBackColor = false;
-            // 
-            // iconButtonDeleteDoctor
-            // 
-            this.iconButtonDeleteDoctor.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.iconButtonDeleteDoctor.BackColor = System.Drawing.Color.White;
-            this.iconButtonDeleteDoctor.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
-            this.iconButtonDeleteDoctor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(173)))), ((int)(((byte)(221)))));
-            this.iconButtonDeleteDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButtonDeleteDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButtonDeleteDoctor.ForeColor = System.Drawing.Color.Black;
-            this.iconButtonDeleteDoctor.IconChar = FontAwesome.Sharp.IconChar.MinusCircle;
-            this.iconButtonDeleteDoctor.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(21)))), ((int)(((byte)(120)))));
-            this.iconButtonDeleteDoctor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButtonDeleteDoctor.IconSize = 30;
-            this.iconButtonDeleteDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonDeleteDoctor.Location = new System.Drawing.Point(143, 196);
-            this.iconButtonDeleteDoctor.Margin = new System.Windows.Forms.Padding(2);
-            this.iconButtonDeleteDoctor.Name = "iconButtonDeleteDoctor";
-            this.iconButtonDeleteDoctor.Size = new System.Drawing.Size(119, 38);
-            this.iconButtonDeleteDoctor.TabIndex = 34;
-            this.iconButtonDeleteDoctor.Text = "Eliminar";
-            this.iconButtonDeleteDoctor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButtonDeleteDoctor.UseVisualStyleBackColor = false;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -633,12 +355,12 @@ namespace UI
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel7, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.groupBoxAssistantsData, 0, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(839, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(631, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(414, 420);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(622, 420);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -652,7 +374,7 @@ namespace UI
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 83F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(408, 83);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(616, 83);
             this.tableLayoutPanel7.TabIndex = 32;
             // 
             // iconButtonConfirm
@@ -675,7 +397,7 @@ namespace UI
             this.iconButtonConfirm.Location = new System.Drawing.Point(2, 2);
             this.iconButtonConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonConfirm.Name = "iconButtonConfirm";
-            this.iconButtonConfirm.Size = new System.Drawing.Size(404, 79);
+            this.iconButtonConfirm.Size = new System.Drawing.Size(612, 79);
             this.iconButtonConfirm.TabIndex = 34;
             this.iconButtonConfirm.Text = "Confirmar cirugía";
             this.iconButtonConfirm.UseVisualStyleBackColor = false;
@@ -696,7 +418,7 @@ namespace UI
             this.groupBoxAssistantsData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAssistantsData.Location = new System.Drawing.Point(3, 3);
             this.groupBoxAssistantsData.Name = "groupBoxAssistantsData";
-            this.groupBoxAssistantsData.Size = new System.Drawing.Size(408, 245);
+            this.groupBoxAssistantsData.Size = new System.Drawing.Size(616, 245);
             this.groupBoxAssistantsData.TabIndex = 31;
             this.groupBoxAssistantsData.TabStop = false;
             this.groupBoxAssistantsData.Text = "Enfermería asignada";
@@ -709,6 +431,7 @@ namespace UI
             this.labelIdProgram.Size = new System.Drawing.Size(50, 20);
             this.labelIdProgram.TabIndex = 33;
             this.labelIdProgram.Text = "label10";
+            this.labelIdProgram.Visible = false;
             // 
             // listBoxAnesthesiaId
             // 
@@ -745,7 +468,7 @@ namespace UI
             this.iconButtonDeleteAll.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonDeleteAll.IconSize = 30;
             this.iconButtonDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonDeleteAll.Location = new System.Drawing.Point(147, 193);
+            this.iconButtonDeleteAll.Location = new System.Drawing.Point(355, 193);
             this.iconButtonDeleteAll.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonDeleteAll.Name = "iconButtonDeleteAll";
             this.iconButtonDeleteAll.Size = new System.Drawing.Size(119, 38);
@@ -768,7 +491,7 @@ namespace UI
             this.iconButtonAddAssistant.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButtonAddAssistant.IconSize = 30;
             this.iconButtonAddAssistant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButtonAddAssistant.Location = new System.Drawing.Point(270, 193);
+            this.iconButtonAddAssistant.Location = new System.Drawing.Point(478, 193);
             this.iconButtonAddAssistant.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonAddAssistant.Name = "iconButtonAddAssistant";
             this.iconButtonAddAssistant.Size = new System.Drawing.Size(133, 38);
@@ -776,6 +499,7 @@ namespace UI
             this.iconButtonAddAssistant.Text = "Seleccionar";
             this.iconButtonAddAssistant.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonAddAssistant.UseVisualStyleBackColor = false;
+            this.iconButtonAddAssistant.Click += new System.EventHandler(this.iconButtonAddAssistant_Click_1);
             // 
             // listBoxIds
             // 
@@ -800,7 +524,7 @@ namespace UI
             this.listViewAssistants.Location = new System.Drawing.Point(6, 25);
             this.listViewAssistants.MultiSelect = false;
             this.listViewAssistants.Name = "listViewAssistants";
-            this.listViewAssistants.Size = new System.Drawing.Size(397, 163);
+            this.listViewAssistants.Size = new System.Drawing.Size(605, 163);
             this.listViewAssistants.TabIndex = 27;
             this.listViewAssistants.UseCompatibleStateImageBehavior = false;
             this.listViewAssistants.View = System.Windows.Forms.View.Details;
@@ -933,7 +657,7 @@ namespace UI
             this.comboBoxTime.Items.AddRange(new object[] {
             "A.M",
             "P.M"});
-            this.comboBoxTime.Location = new System.Drawing.Point(240, 8);
+            this.comboBoxTime.Location = new System.Drawing.Point(240, 5);
             this.comboBoxTime.Name = "comboBoxTime";
             this.comboBoxTime.Size = new System.Drawing.Size(115, 28);
             this.comboBoxTime.TabIndex = 3;
@@ -1004,7 +728,7 @@ namespace UI
             "57",
             "58",
             "59"});
-            this.comboBoxMin.Location = new System.Drawing.Point(127, 8);
+            this.comboBoxMin.Location = new System.Drawing.Point(127, 5);
             this.comboBoxMin.Name = "comboBoxMin";
             this.comboBoxMin.Size = new System.Drawing.Size(107, 28);
             this.comboBoxMin.TabIndex = 2;
@@ -1039,7 +763,7 @@ namespace UI
             "10",
             "11",
             "12"});
-            this.comboBoxHour.Location = new System.Drawing.Point(3, 8);
+            this.comboBoxHour.Location = new System.Drawing.Point(3, 5);
             this.comboBoxHour.Name = "comboBoxHour";
             this.comboBoxHour.Size = new System.Drawing.Size(85, 28);
             this.comboBoxHour.TabIndex = 0;
@@ -1187,7 +911,7 @@ namespace UI
             this.comboBoxSurgeryType.Items.AddRange(new object[] {
             "Electiva",
             "Emergencia"});
-            this.comboBoxSurgeryType.Location = new System.Drawing.Point(461, 100);
+            this.comboBoxSurgeryType.Location = new System.Drawing.Point(461, 97);
             this.comboBoxSurgeryType.Name = "comboBoxSurgeryType";
             this.comboBoxSurgeryType.Size = new System.Drawing.Size(358, 28);
             this.comboBoxSurgeryType.TabIndex = 25;
@@ -1232,7 +956,7 @@ namespace UI
             this.comboBoxRelevance.Items.AddRange(new object[] {
             "Mayor",
             "Menor"});
-            this.comboBoxRelevance.Location = new System.Drawing.Point(101, 96);
+            this.comboBoxRelevance.Location = new System.Drawing.Point(101, 92);
             this.comboBoxRelevance.Name = "comboBoxRelevance";
             this.comboBoxRelevance.Size = new System.Drawing.Size(315, 28);
             this.comboBoxRelevance.TabIndex = 35;
@@ -1281,7 +1005,6 @@ namespace UI
             this.ClientSize = new System.Drawing.Size(1286, 997);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.groupBoxpatientData);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.tableLayoutPanel14);
             this.Controls.Add(this.label7);
@@ -1290,14 +1013,9 @@ namespace UI
             this.Text = "EditPrograms";
             this.Load += new System.EventHandler(this.FormEditInterventios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tableLayoutPanel14.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.groupBoxAnesthetistData.ResumeLayout(false);
-            this.tableLayoutPanel15.ResumeLayout(false);
-            this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.groupBoxQuirfonanoData.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -1328,21 +1046,10 @@ namespace UI
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBoxAnesthetistData;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private FontAwesome.Sharp.IconButton iconButtonAddAnesthetist;
-        private FontAwesome.Sharp.IconButton iconButtonDeleteAnesthetist;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
-        private System.Windows.Forms.Label labelsecondName;
-        private System.Windows.Forms.CheckedListBox checkedListBoxAnesthesiaTypes;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.GroupBox groupBoxQuirfonanoData;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
@@ -1352,8 +1059,6 @@ namespace UI
         private System.Windows.Forms.GroupBox groupBoxDocsData;
         private System.Windows.Forms.ListView listViewDoctors;
         private System.Windows.Forms.ColumnHeader columnHeader1;
-        private FontAwesome.Sharp.IconButton iconButtonAddDoctor;
-        private FontAwesome.Sharp.IconButton iconButtonDeleteDoctor;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private FontAwesome.Sharp.IconButton iconButtonConfirm;

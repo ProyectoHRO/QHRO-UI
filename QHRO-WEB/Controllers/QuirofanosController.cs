@@ -117,76 +117,76 @@ namespace QHRO_WEB.Controllers
           
             if (Session["idUser"]!=null)
             {
-                if (Session["serviceId"]!=null)
-                {
-                    if (band == "1")
-                    {
-                        string response = requestSurgery.makeSurgeryRequestAndPatient(
-                            Convert.ToInt32(Session["idUser"]), 
-                            diagnosis, 
-                            Convert.ToInt32(Session["serviceId"]), 
-                            historyNumber,
-                            firstName,
-                            secondName,
-                            firstSurname,
-                            secondSurname, 
-                            Convert.ToInt16(age),
-                            gender
-                        );
-                        return RedirectToAction("Solicitar", new { message = response });
-                    }
-                    else if (band == "2")
-                    {
-                        string response = requestSurgery.makeSurgeryRequest(
-                             Convert.ToInt32(Session["idUser"]),
-                            diagnosis,
-                            firstName,
-                            secondName,
-                            firstSurname,
-                            secondSurname,
-                            Convert.ToInt16(age),
-                            gender,
-                           Convert.ToInt32(idPatient),
-                           Convert.ToInt32(Session["serviceId"])
-                           );
-                        return RedirectToAction("Solicitar", new { message = response });
-                    }
-                }
-                else
-                {
-                    if (band == "1")
-                    {
+                //if (Session["serviceId"]!=null)
+                //{
+                //    if (band == "1")
+                //    {
+                //        string response = requestSurgery.makeSurgeryRequestAndPatient(
+                //            Convert.ToInt32(Session["idUser"]), 
+                //            diagnosis, 
+                //            Convert.ToInt32(Session["serviceId"]), 
+                //            historyNumber,
+                //            firstName,
+                //            secondName,
+                //            firstSurname,
+                //            secondSurname, 
+                //            Convert.ToInt16(age),
+                //            gender
+                //        );
+                //        return RedirectToAction("Solicitar", new { message = response });
+                //    }
+                //    else if (band == "2")
+                //    {
+                //        string response = requestSurgery.makeSurgeryRequest(
+                //             Convert.ToInt32(Session["idUser"]),
+                //            diagnosis,
+                //            firstName,
+                //            secondName,
+                //            firstSurname,
+                //            secondSurname,
+                //            Convert.ToInt16(age),
+                //            gender,
+                //           Convert.ToInt32(idPatient),
+                //           Convert.ToInt32(Session["serviceId"])
+                //           );
+                //        return RedirectToAction("Solicitar", new { message = response });
+                //    }
+                //}
+                //else
+                //{
+                //    if (band == "1")
+                //    {
 
-                        string response = requestSurgery.makeSurgeryRequestAndPatient(
-                             Convert.ToInt32(Session["idUser"]),
-                            diagnosis,
-                            23,
-                            historyNumber,
-                            firstName,
-                            secondName,
-                            firstSurname,
-                            secondSurname,
-                            Convert.ToInt16(age),
-                            gender
-                        );
-                        return RedirectToAction("Solicitar", new { message = response });
-                    }
-                    else if (band == "2")
-                    {
-                        string response = requestSurgery.makeSurgeryRequest(
-                           Convert.ToInt32(Session["idUser"]),
-                            diagnosis,
-                            firstName,
-                            secondName,
-                            firstSurname,
-                            secondSurname,
-                            Convert.ToInt16(age),
-                            gender,
-                           Convert.ToInt32(idPatient),
-                           23);
-                        return RedirectToAction("Solicitar", new { message = response });
-                    }
-                }
+                //        string response = requestSurgery.makeSurgeryRequestAndPatient(
+                //             Convert.ToInt32(Session["idUser"]),
+                //            diagnosis,
+                //            23,
+                //            historyNumber,
+                //            firstName,
+                //            secondName,
+                //            firstSurname,
+                //            secondSurname,
+                //            Convert.ToInt16(age),
+                //            gender
+                //        );
+                //        return RedirectToAction("Solicitar", new { message = response });
+                //    }
+                //    else if (band == "2")
+                //    {
+                //        string response = requestSurgery.makeSurgeryRequest(
+                //           Convert.ToInt32(Session["idUser"]),
+                //            diagnosis,
+                //            firstName,
+                //            secondName,
+                //            firstSurname,
+                //            secondSurname,
+                //            Convert.ToInt16(age),
+                //            gender,
+                //           Convert.ToInt32(idPatient),
+                //           23);
+                //        return RedirectToAction("Solicitar", new { message = response });
+                //    }
+                //}
              
                 return RedirectToAction("Solicitar", new { message = "Ha ocurrido un error, por favor inténtalo de nuevo." });
             }
