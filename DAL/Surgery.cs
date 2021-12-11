@@ -87,12 +87,12 @@ namespace DAL
         string surgeryType,
         DateTime surgeryDate,
         int opRoomId,
-        int anesthetistId,
         string relevance,
         string interventionDetail,
         string time,
         DataTable assistantDetail,
-        DataTable doctorDetail
+        DataTable doctorDetail,
+        DataTable anesDetail
        )
         {
             string response = "";
@@ -115,12 +115,12 @@ namespace DAL
             command.Parameters.AddWithValue("@tipo_cirugia", surgeryType);
             command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
             command.Parameters.AddWithValue("@idquirofano", opRoomId);
-            command.Parameters.AddWithValue("@idanestesia", anesthetistId);
             command.Parameters.AddWithValue("@relevancia", relevance);
             command.Parameters.AddWithValue("@detalleIntervencion", interventionDetail);
             command.Parameters.AddWithValue("@hora", time);
             command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
             command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
+            command.Parameters.AddWithValue("@detalleAnestesista", anesDetail);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();
@@ -146,12 +146,12 @@ namespace DAL
         string surgeryType,
         DateTime surgeryDate,
         int opRoomId,
-        int anesthetistId,
         string relevance,
         string interventionDetail,
         string time,
         DataTable assistantDetail,
-        DataTable doctorDetail
+        DataTable doctorDetail,
+        DataTable anesDetail
        )
         {
             string response = "";
@@ -175,12 +175,12 @@ namespace DAL
             command.Parameters.AddWithValue("@tipo_cirugia", surgeryType);
             command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
             command.Parameters.AddWithValue("@idquirofano", opRoomId);
-            command.Parameters.AddWithValue("@idanestesia", anesthetistId);
             command.Parameters.AddWithValue("@relevancia", relevance);
             command.Parameters.AddWithValue("@detalleIntervencion", interventionDetail);
             command.Parameters.AddWithValue("@hora", time);
             command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
             command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
+            command.Parameters.AddWithValue("@detalleAnestesista", anesDetail);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();
@@ -201,12 +201,12 @@ namespace DAL
             string surgeryType,
             DateTime surgeryDate,
             int opRoomId,
-            int anesthetistId,
             string relevance,
             string interventionDetail,
             string time,
             DataTable assistantDetail,
-            DataTable doctorDetail
+            DataTable doctorDetail,
+            DataTable anesDetail
            )
         {
             string response = "";
@@ -223,12 +223,12 @@ namespace DAL
             command.Parameters.AddWithValue("@tipo_cirugia", surgeryType);
             command.Parameters.AddWithValue("@fecha_cirugia", surgeryDate);
             command.Parameters.AddWithValue("@idquirofano", opRoomId);
-            command.Parameters.AddWithValue("@idanestesia", anesthetistId);
             command.Parameters.AddWithValue("@relevancia", relevance);
             command.Parameters.AddWithValue("@detalleIntervencion", interventionDetail);
             command.Parameters.AddWithValue("@hora", time);
             command.Parameters.AddWithValue("@detalleAsistente", assistantDetail);
-            command.Parameters.AddWithValue("@detalleDoctor", doctorDetail);
+            command.Parameters.AddWithValue("@detalleDoctor", doctorDetail); 
+            command.Parameters.AddWithValue("@detalleAnestesista", anesDetail);
             command.Parameters.Add("@mensaje", SqlDbType.NVarChar, 250);
             command.Parameters["@mensaje"].Direction = ParameterDirection.Output;
             command.ExecuteNonQuery();

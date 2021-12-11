@@ -40,7 +40,7 @@ namespace BLL
 
         public DataTable getSurgeriesByDates(DateTime firstDate, DateTime secondDate)
         {
-            return surgeries.getSurgeriesByDates(firstDate,secondDate);
+            return surgeries.getSurgeriesByDates(firstDate, secondDate);
         }
         public DataTable getSurgeriesByServiceByDates(DateTime firstDate, DateTime secondDate, string serviceName)
         {
@@ -60,7 +60,7 @@ namespace BLL
 
         public DataTable getSurgeriesByQuiByDates(DateTime firstDate, DateTime secondDate, string quiNumber)
         {
-            return surgeries.getSurgeriesByQuiByDates(firstDate, secondDate,quiNumber);
+            return surgeries.getSurgeriesByQuiByDates(firstDate, secondDate, quiNumber);
         }
         public DataTable getDailyDiff(DateTime date)
         {
@@ -128,11 +128,11 @@ namespace BLL
         {
             return surgeries.finishSurgerie(idSurgerie);
         }
-        
-             public string assignSurgeryBasic(
-                  int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate, string surgeryTime, int opRoomId
-            , int programationId, string relevance, string interventionDetail, string time,
-            List<ClassDTOAnesthethist> anesList, int surgerieId)
+
+        public string assignSurgeryBasic(
+             int userId, string anesthesiaType, string surgeryType, DateTime surgeryDate, string surgeryTime, int opRoomId
+       , int programationId, string relevance, string interventionDetail, string time,
+       List<ClassDTOAnesthethist> anesList, int surgerieId)
         {
             string response = "";
             DataTable infoSurgeries = surgeries.getSurgeriesByHour(surgeryDate, surgeryTime, opRoomId);
@@ -172,16 +172,16 @@ namespace BLL
          string anesthesiaType,
          int anesthetistId,
          int programationId)
-         {
+        {
             string response = "";
-            
-                response = surgeries.AssignSurgeryAnesthetist(
-                    userId,
-                    anesthesiaType,
-                    anesthetistId,
-                    programationId
-                    );
-          
+
+            response = surgeries.AssignSurgeryAnesthetist(
+                userId,
+                anesthesiaType,
+                anesthetistId,
+                programationId
+                );
+
 
             return response;
 
@@ -200,11 +200,11 @@ namespace BLL
                 DateTime surgeryDate,
                 string surgeryTime,
                 int opRoomId,
-           int anesthetistId,
            string relevance,
            string interventionDetail,
            List<ClassDtoAssistants> assistantsList,
-           List<ClassDtoDoctors> doctorsList)
+           List<ClassDtoDoctors> doctorsList,
+           List<ClassDTOAnesthethist> anesList)
         {
             string response = "";
 
@@ -218,6 +218,11 @@ namespace BLL
             {
                 dataDoctors.Rows.Add(item.DoctorId);
             }
+            DataTable dataAnes = new DataTable() { Columns = { "anesthetistId" } };
+            foreach (ClassDTOAnesthethist item in anesList)
+            {
+                dataAnes.Rows.Add(item.IdAnesthetist);
+            }
             response = surgeries.EmergencyBasic(
                 pacientId,
                 serviceId,
@@ -229,12 +234,12 @@ namespace BLL
                 surgeryType,
                 surgeryDate,
                 opRoomId,
-                anesthetistId,
                 relevance,
                 interventionDetail,
                 surgeryTime,
                 dataAssistants,
-                dataDoctors
+                dataDoctors,
+                dataAnes
                 );
 
             return response;
@@ -259,11 +264,11 @@ namespace BLL
                  DateTime surgeryDate,
                  string surgeryTime,
                  int opRoomId,
-            int anesthetistId,
             string relevance,
             string interventionDetail,
             List<ClassDtoAssistants> assistantsList,
-            List<ClassDtoDoctors> doctorsList)
+            List<ClassDtoDoctors> doctorsList,
+            List<ClassDTOAnesthethist> anesList)
         {
             string response = "";
 
@@ -276,6 +281,11 @@ namespace BLL
             foreach (ClassDtoDoctors item in doctorsList)
             {
                 dataDoctors.Rows.Add(item.DoctorId);
+            }
+            DataTable dataAnes = new DataTable() { Columns = { "anesthetistId" } };
+            foreach (ClassDTOAnesthethist item in anesList)
+            {
+                dataAnes.Rows.Add(item.IdAnesthetist);
             }
             response = surgeries.EmergencyAndPatientNew(
                 firstName,
@@ -293,12 +303,12 @@ namespace BLL
                 surgeryType,
                 surgeryDate,
                 opRoomId,
-                anesthetistId,
                 relevance,
                 interventionDetail,
                 surgeryTime,
                 dataAssistants,
-                dataDoctors
+                dataDoctors,
+                dataAnes
                 );
 
             return response;
@@ -322,11 +332,11 @@ namespace BLL
                  DateTime surgeryDate,
                  string surgeryTime, 
                  int opRoomId,
-            int anesthetistId,
             string relevance, 
             string interventionDetail, 
             List<ClassDtoAssistants> assistantsList, 
-            List<ClassDtoDoctors> doctorsList)
+            List<ClassDtoDoctors> doctorsList,
+            List<ClassDTOAnesthethist> anesList)
         {
             string response = "";
             
@@ -340,7 +350,12 @@ namespace BLL
                 {
                     dataDoctors.Rows.Add(item.DoctorId);
                 }
-                response = surgeries.EmergencyAndPatient(
+                DataTable dataAnes = new DataTable() { Columns = { "anesthetistId" } };
+                foreach (ClassDTOAnesthethist item in anesList)
+                {
+                    dataAnes.Rows.Add(item.IdAnesthetist);
+                }
+            response = surgeries.EmergencyAndPatient(
                     historyNumber,
                     firstName,
                     secondName,
@@ -357,12 +372,12 @@ namespace BLL
                     surgeryType,
                     surgeryDate,
                     opRoomId,
-                    anesthetistId,
                     relevance,
                     interventionDetail,
                     surgeryTime,
                     dataAssistants,
-                    dataDoctors
+                    dataDoctors,
+                    dataAnes
                     );
 
             return response;
