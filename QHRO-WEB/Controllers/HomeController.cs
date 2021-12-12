@@ -111,6 +111,7 @@ namespace QHRO_WEB.Controllers
                         Session["idUser"] = idUser;
                         if (serviceId == 0)
                         {
+                            Session["serviceId"] = 23;
                         }
                         else
                         {
@@ -182,6 +183,9 @@ namespace QHRO_WEB.Controllers
             FormsAuthentication.SignOut();
             Session["serviceId"] = null;
             Session["idPermit"] = null;
+            Session["dataPaciente"] = null;
+            Session["listadoDocts"] = null;
+            Session["userName"] = null;
             return RedirectToAction("Index");
         }
         public ActionResult Nuevo()

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "obtenerDoctores";
+    
+}
+
+<div class="container">
+    <section class="d-flex justify-content-center" style="margin-top:30px">
+        <div class="card col-sm-6 p-3">
+            <div class="mb-3">
+                @{
+                    if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+                        //el mensaje tiene un valor
+                        <div class="alert alert-warning">@ViewBag.Message</div>
+                    }
+                }
+                <br />
+                <h4>Buscar Doctor</h4>
+                <h5>Ingrese primer nombre o primer apellido</h5>
+            </div>
+            <div class="mb-2">
+                <form action="/Quirofanos/buscarDoctor" method="post">
+                    <div class="mb-2">
+                        <i class='bx bx-book-open blackiconcolor'></i>
+                        <label style="color:red">*</label>
+                        <label for="Historial">Nombre o apellido:</label>
+                        <input type="text" class="form-control" name="nombreApellido" required placeholder="Ingresa un nombre o un apellido">
+                    </div>
+
+                    <div class="row">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+</div>

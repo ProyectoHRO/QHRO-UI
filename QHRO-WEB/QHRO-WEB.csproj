@@ -175,6 +175,10 @@
     <Content Include="Views\Quirofanos\Solicitar.cshtml" />
     <Content Include="Views\Quirofanos\No_Historia.cshtml" />
     <Content Include="Views\Quirofanos\programacionesInfo.cshtml" />
+    <Content Include="Views\Quirofanos\obtenerDoctores.cshtml" />
+    <Content Include="Views\Quirofanos\buscarDoctor.cshtml" />
+    <Content Include="Views\Quirofanos\agregarDoctor.cshtml" />
+    <Content Include="Views\Quirofanos\eliminarDoctor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

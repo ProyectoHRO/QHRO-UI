@@ -13,7 +13,9 @@ namespace QHRO_WEB.Controllers
         private ClassReports reports = new ClassReports();
         private ClassPHro patientsHro = new ClassPHro();
         private ClassRequestSurgery requestSurgery = new ClassRequestSurgery();
+        private ClassDoctor doctors = new ClassDoctor();
         string nombreUsuario="";
+        
 
         public ActionResult Programaciones(string userName="")
         {
@@ -64,7 +66,7 @@ namespace QHRO_WEB.Controllers
             string historyNumber = "";
             if (infoPatientsHro.Rows.Count < 1)
             {
-                return RedirectToAction("Solicitar", new { message = "Inicio de sesión no valido" });
+                return RedirectToAction("Solicitar", new { message = "No se encuentra el número de historia" });
             }
             else
             {
@@ -120,81 +122,31 @@ namespace QHRO_WEB.Controllers
             string idPatient
             )
         {
-          
+
+
             if (Session["idUser"]!=null)
             {
-                //if (Session["serviceId"]!=null)
-                //{
-                //    if (band == "1")
-                //    {
-                //        string response = requestSurgery.makeSurgeryRequestAndPatient(
-                //            Convert.ToInt32(Session["idUser"]), 
-                //            diagnosis, 
-                //            Convert.ToInt32(Session["serviceId"]), 
-                //            historyNumber,
-                //            firstName,
-                //            secondName,
-                //            firstSurname,
-                //            secondSurname, 
-                //            Convert.ToInt16(age),
-                //            gender
-                //        );
-                //        return RedirectToAction("Solicitar", new { message = response });
-                //    }
-                //    else if (band == "2")
-                //    {
-                //        string response = requestSurgery.makeSurgeryRequest(
-                //             Convert.ToInt32(Session["idUser"]),
-                //            diagnosis,
-                //            firstName,
-                //            secondName,
-                //            firstSurname,
-                //            secondSurname,
-                //            Convert.ToInt16(age),
-                //            gender,
-                //           Convert.ToInt32(idPatient),
-                //           Convert.ToInt32(Session["serviceId"])
-                //           );
-                //        return RedirectToAction("Solicitar", new { message = response });
-                //    }
-                //}
-                //else
-                //{
-                //    if (band == "1")
-                //    {
 
-                //        string response = requestSurgery.makeSurgeryRequestAndPatient(
-                //             Convert.ToInt32(Session["idUser"]),
-                //            diagnosis,
-                //            23,
-                //            historyNumber,
-                //            firstName,
-                //            secondName,
-                //            firstSurname,
-                //            secondSurname,
-                //            Convert.ToInt16(age),
-                //            gender
-                //        );
-                //        return RedirectToAction("Solicitar", new { message = response });
-                //    }
-                //    else if (band == "2")
-                //    {
-                //        string response = requestSurgery.makeSurgeryRequest(
-                //           Convert.ToInt32(Session["idUser"]),
-                //            diagnosis,
-                //            firstName,
-                //            secondName,
-                //            firstSurname,
-                //            secondSurname,
-                //            Convert.ToInt16(age),
-                //            gender,
-                //           Convert.ToInt32(idPatient),
-                //           23);
-                //        return RedirectToAction("Solicitar", new { message = response });
-                //    }
-                //}
-             
-                return RedirectToAction("Solicitar", new { message = "Ha ocurrido un error, por favor inténtalo de nuevo." });
+                ClassPacientInfo patientInfo = new ClassPacientInfo();
+                patientInfo.HistoryNumber = historyNumber;
+                patientInfo.FirstName = firstName;
+                patientInfo.SecondName = secondName;
+                patientInfo.FirstSurname = firstSurname;
+                patientInfo.SecondSurname = secondSurname;
+                patientInfo.Age = age;
+                patientInfo.Gender = gender;
+                patientInfo.Diagnosis = diagnosis;
+                patientInfo.Band = band;
+                patientInfo.IdPatient = idPatient;
+                Session["dataPaciente"] = patientInfo;
+                List<ClassDoctorsWeb> listadoDoctores = new List<ClassDoctorsWeb>();
+                Session["listadoDocts"] = listadoDoctores;
+
+
+
+
+
+                return RedirectToAction("obtenerDoctores");
             }
             else
             {
@@ -203,6 +155,127 @@ namespace QHRO_WEB.Controllers
             
 
             return RedirectToAction("Solicitar", new { message = "Ha ocurrido un error, por favor inténtalo de nuevo." });
+        }
+
+        public ActionResult obtenerDoctores()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult buscarDoctor(string nombreApellido)
+        {
+            DataTable doctorsInfo = doctors.getDoctorByName(nombreApellido);
+            List<ClassDoctorsWeb> listadoDocts = new List<ClassDoctorsWeb>();
+            ClassDoctorsWeb doc;
+            foreach (DataRow item in doctorsInfo.Rows)
+            {
+                doc = new ClassDoctorsWeb();
+                doc.IdDoctor = Convert.ToInt32(item.Field<int>(0));
+                doc.DoctorName = item.Field<string>(2).ToString() + " " + item.Field<string>(5).ToString();
+                listadoDocts.Add(doc);
+            }
+            ViewBag.doctors = listadoDocts;
+            return View();
+        }
+
+
+        public ActionResult agregarDoctor(int idDoctor, string doctorName)
+        {
+            List<ClassDoctorsWeb> listado = Session["listadoDocts"] as List<ClassDoctorsWeb>;
+            ClassDoctorsWeb doctor = new ClassDoctorsWeb();
+            doctor.IdDoctor = idDoctor;
+            doctor.DoctorName = doctorName;
+            listado.Add(doctor);
+            Session["listadoDocts"] = listado;
+            return View();
+        }
+
+        public ActionResult eliminarDoctor(int idDoctor)
+        {
+            List<ClassDoctorsWeb> listado = Session["listadoDocts"] as List<ClassDoctorsWeb>;
+            ClassDoctorsWeb doctorData;
+            int listadoIndex=0;
+            for (int i = 0; i < listado.Count; i++)
+            {
+                if (idDoctor == listado[i].IdDoctor)
+                {
+                    listadoIndex = i;
+                }
+            }
+
+            listado.RemoveAt(listadoIndex);
+            Session["listadoDocts"] = listado;
+            if (listado.Count < 1)
+            {
+                return RedirectToAction("obtenerDoctores");
+            }
+            return View();
+        }
+
+
+        public ActionResult solicitarCirugia()
+        {
+            List<ClassDoctorsWeb> listado = Session["listadoDocts"] as List<ClassDoctorsWeb>;
+            ClassPacientInfo infoPaciente = Session["dataPaciente"] as ClassPacientInfo;
+            string response = "";
+            if (listado.Count > 0)
+            {
+                if (Convert.ToInt32(infoPaciente.Band) == 1)
+                {
+
+                    List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                    ClassDtoDoctors doctors;
+                    foreach (ClassDoctorsWeb item in listado)
+                    {
+                        doctors = new ClassDtoDoctors();
+                        doctors.DoctorId = item.IdDoctor;
+                        doctorsList.Add(doctors);
+                    }
+                    response = requestSurgery.makeSurgeryRequestAndPatientWithDoctors(
+                        Convert.ToInt32(Session["idUser"]),
+                        infoPaciente.Diagnosis,
+                        Convert.ToInt32(Session["serviceId"]),
+                        infoPaciente.HistoryNumber,
+                        infoPaciente.FirstName,
+                        infoPaciente.SecondName,
+                    infoPaciente.FirstSurname,
+                    infoPaciente.SecondSurname,
+                    Convert.ToInt16(infoPaciente.Age),
+                    infoPaciente.Gender,
+                    doctorsList);
+                }
+                else if (Convert.ToInt32(infoPaciente.Band) == 2)
+                {
+                    List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                    ClassDtoDoctors doctors;
+                    foreach (ClassDoctorsWeb item in listado)
+                    {
+                        doctors = new ClassDtoDoctors();
+                        doctors.DoctorId = item.IdDoctor;
+                        doctorsList.Add(doctors);
+                    }
+                    response = requestSurgery.makeSurgeryRequest(
+                        Convert.ToInt32(Session["idUser"]),
+                        infoPaciente.Diagnosis,
+                        infoPaciente.FirstName,
+                        infoPaciente.SecondName,
+                    infoPaciente.FirstSurname,
+                    infoPaciente.SecondSurname,
+                    Convert.ToInt16(infoPaciente.Age),
+                    infoPaciente.Gender,
+                       Convert.ToInt32(infoPaciente.IdPatient),
+                       Convert.ToInt32(Session["serviceId"]),
+                       doctorsList);
+                }
+
+                return RedirectToAction("Solicitar", new { message = response });
+            }
+            else
+            {
+                return RedirectToAction("Solicitar", new { message = "Por favor asigne personal médico" });
+            }
+            return View();
         }
     }
 }

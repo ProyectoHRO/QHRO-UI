@@ -131,9 +131,9 @@ namespace UI
             this.groupBoxpatientData.Enabled = false;
             this.groupBoxpatientData.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxpatientData.Location = new System.Drawing.Point(10, 272);
-            this.groupBoxpatientData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxpatientData.Margin = new System.Windows.Forms.Padding(2);
             this.groupBoxpatientData.Name = "groupBoxpatientData";
-            this.groupBoxpatientData.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBoxpatientData.Padding = new System.Windows.Forms.Padding(2);
             this.groupBoxpatientData.Size = new System.Drawing.Size(1265, 167);
             this.groupBoxpatientData.TabIndex = 26;
             this.groupBoxpatientData.TabStop = false;
@@ -178,7 +178,7 @@ namespace UI
             this.tableLayoutPanel3.Controls.Add(this.panel2, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.comboBoxSurgeryType, 3, 2);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 4);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.9845F));
@@ -241,7 +241,7 @@ namespace UI
             this.comboBoxTime.Items.AddRange(new object[] {
             "A.M",
             "P.M"});
-            this.comboBoxTime.Location = new System.Drawing.Point(240, 5);
+            this.comboBoxTime.Location = new System.Drawing.Point(240, 8);
             this.comboBoxTime.Name = "comboBoxTime";
             this.comboBoxTime.Size = new System.Drawing.Size(115, 28);
             this.comboBoxTime.TabIndex = 3;
@@ -312,7 +312,7 @@ namespace UI
             "57",
             "58",
             "59"});
-            this.comboBoxMin.Location = new System.Drawing.Point(127, 5);
+            this.comboBoxMin.Location = new System.Drawing.Point(127, 8);
             this.comboBoxMin.Name = "comboBoxMin";
             this.comboBoxMin.Size = new System.Drawing.Size(107, 28);
             this.comboBoxMin.TabIndex = 2;
@@ -347,7 +347,7 @@ namespace UI
             "10",
             "11",
             "12"});
-            this.comboBoxHour.Location = new System.Drawing.Point(3, 5);
+            this.comboBoxHour.Location = new System.Drawing.Point(3, 8);
             this.comboBoxHour.Name = "comboBoxHour";
             this.comboBoxHour.Size = new System.Drawing.Size(85, 28);
             this.comboBoxHour.TabIndex = 0;
@@ -421,7 +421,7 @@ namespace UI
             this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.labelhistoryNumber);
             this.panel1.Location = new System.Drawing.Point(332, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(124, 32);
             this.panel1.TabIndex = 23;
@@ -457,7 +457,7 @@ namespace UI
             this.panel2.Controls.Add(this.label14);
             this.panel2.Controls.Add(this.labelfirstName);
             this.panel2.Location = new System.Drawing.Point(332, 97);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(124, 28);
             this.panel2.TabIndex = 23;
@@ -495,7 +495,7 @@ namespace UI
             this.comboBoxSurgeryType.Items.AddRange(new object[] {
             "Electiva",
             "Emergencia"});
-            this.comboBoxSurgeryType.Location = new System.Drawing.Point(461, 97);
+            this.comboBoxSurgeryType.Location = new System.Drawing.Point(461, 100);
             this.comboBoxSurgeryType.Name = "comboBoxSurgeryType";
             this.comboBoxSurgeryType.Size = new System.Drawing.Size(358, 28);
             this.comboBoxSurgeryType.TabIndex = 25;
@@ -525,7 +525,7 @@ namespace UI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDiagnosis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDiagnosis.Location = new System.Drawing.Point(100, 2);
-            this.textBoxDiagnosis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDiagnosis.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDiagnosis.MaxLength = 150;
             this.textBoxDiagnosis.Multiline = true;
             this.textBoxDiagnosis.Name = "textBoxDiagnosis";
@@ -540,7 +540,7 @@ namespace UI
             this.comboBoxRelevance.Items.AddRange(new object[] {
             "Mayor",
             "Menor"});
-            this.comboBoxRelevance.Location = new System.Drawing.Point(101, 92);
+            this.comboBoxRelevance.Location = new System.Drawing.Point(101, 96);
             this.comboBoxRelevance.Name = "comboBoxRelevance";
             this.comboBoxRelevance.Size = new System.Drawing.Size(315, 28);
             this.comboBoxRelevance.TabIndex = 35;
@@ -668,13 +668,14 @@ namespace UI
             this.iconButtonAddDoctor.IconSize = 30;
             this.iconButtonAddDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAddDoctor.Location = new System.Drawing.Point(267, 195);
-            this.iconButtonAddDoctor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonAddDoctor.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonAddDoctor.Name = "iconButtonAddDoctor";
             this.iconButtonAddDoctor.Size = new System.Drawing.Size(133, 38);
             this.iconButtonAddDoctor.TabIndex = 28;
             this.iconButtonAddDoctor.Text = "Seleccionar";
             this.iconButtonAddDoctor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonAddDoctor.UseVisualStyleBackColor = false;
+            this.iconButtonAddDoctor.Visible = false;
             this.iconButtonAddDoctor.Click += new System.EventHandler(this.iconButtonAddDoctor_Click);
             // 
             // groupBox5
@@ -734,7 +735,7 @@ namespace UI
             this.comboBoxOperatingRooms.Items.AddRange(new object[] {
             "General",
             "Epidural"});
-            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(202, 9);
+            this.comboBoxOperatingRooms.Location = new System.Drawing.Point(202, 12);
             this.comboBoxOperatingRooms.Name = "comboBoxOperatingRooms";
             this.comboBoxOperatingRooms.Size = new System.Drawing.Size(194, 28);
             this.comboBoxOperatingRooms.TabIndex = 27;
@@ -763,7 +764,7 @@ namespace UI
             this.listBoxAnesthesiaId.FormattingEnabled = true;
             this.listBoxAnesthesiaId.ItemHeight = 20;
             this.listBoxAnesthesiaId.Location = new System.Drawing.Point(58, 196);
-            this.listBoxAnesthesiaId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxAnesthesiaId.Margin = new System.Windows.Forms.Padding(2);
             this.listBoxAnesthesiaId.Name = "listBoxAnesthesiaId";
             this.listBoxAnesthesiaId.Size = new System.Drawing.Size(56, 24);
             this.listBoxAnesthesiaId.TabIndex = 36;
@@ -794,7 +795,7 @@ namespace UI
             this.iconButtonDeleteAll.IconSize = 30;
             this.iconButtonDeleteAll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonDeleteAll.Location = new System.Drawing.Point(147, 193);
-            this.iconButtonDeleteAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonDeleteAll.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonDeleteAll.Name = "iconButtonDeleteAll";
             this.iconButtonDeleteAll.Size = new System.Drawing.Size(119, 38);
             this.iconButtonDeleteAll.TabIndex = 34;
@@ -818,7 +819,7 @@ namespace UI
             this.iconButtonAddAssistant.IconSize = 30;
             this.iconButtonAddAssistant.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAddAssistant.Location = new System.Drawing.Point(270, 193);
-            this.iconButtonAddAssistant.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonAddAssistant.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonAddAssistant.Name = "iconButtonAddAssistant";
             this.iconButtonAddAssistant.Size = new System.Drawing.Size(133, 38);
             this.iconButtonAddAssistant.TabIndex = 33;
@@ -845,7 +846,7 @@ namespace UI
             this.iconButtonConfirm.IconSize = 55;
             this.iconButtonConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonConfirm.Location = new System.Drawing.Point(2, 2);
-            this.iconButtonConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonConfirm.Name = "iconButtonConfirm";
             this.iconButtonConfirm.Size = new System.Drawing.Size(404, 79);
             this.iconButtonConfirm.TabIndex = 34;
@@ -993,7 +994,7 @@ namespace UI
             this.iconButtonAddAnesthetist.IconSize = 30;
             this.iconButtonAddAnesthetist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonAddAnesthetist.Location = new System.Drawing.Point(267, 195);
-            this.iconButtonAddAnesthetist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonAddAnesthetist.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonAddAnesthetist.Name = "iconButtonAddAnesthetist";
             this.iconButtonAddAnesthetist.Size = new System.Drawing.Size(133, 38);
             this.iconButtonAddAnesthetist.TabIndex = 28;
@@ -1017,7 +1018,7 @@ namespace UI
             this.iconButtonDeleteAnesthetist.IconSize = 30;
             this.iconButtonDeleteAnesthetist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonDeleteAnesthetist.Location = new System.Drawing.Point(144, 196);
-            this.iconButtonDeleteAnesthetist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonDeleteAnesthetist.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonDeleteAnesthetist.Name = "iconButtonDeleteAnesthetist";
             this.iconButtonDeleteAnesthetist.Size = new System.Drawing.Size(119, 38);
             this.iconButtonDeleteAnesthetist.TabIndex = 34;
@@ -1051,7 +1052,7 @@ namespace UI
             this.checkedListBoxAnesthesiaTypes.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedListBoxAnesthesiaTypes.FormattingEnabled = true;
             this.checkedListBoxAnesthesiaTypes.Location = new System.Drawing.Point(155, 2);
-            this.checkedListBoxAnesthesiaTypes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkedListBoxAnesthesiaTypes.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBoxAnesthesiaTypes.Name = "checkedListBoxAnesthesiaTypes";
             this.checkedListBoxAnesthesiaTypes.Size = new System.Drawing.Size(249, 130);
             this.checkedListBoxAnesthesiaTypes.TabIndex = 38;
@@ -1105,13 +1106,14 @@ namespace UI
             this.iconButtonDeleteDoctor.IconSize = 30;
             this.iconButtonDeleteDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButtonDeleteDoctor.Location = new System.Drawing.Point(144, 196);
-            this.iconButtonDeleteDoctor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconButtonDeleteDoctor.Margin = new System.Windows.Forms.Padding(2);
             this.iconButtonDeleteDoctor.Name = "iconButtonDeleteDoctor";
             this.iconButtonDeleteDoctor.Size = new System.Drawing.Size(119, 38);
             this.iconButtonDeleteDoctor.TabIndex = 34;
             this.iconButtonDeleteDoctor.Text = "Eliminar";
             this.iconButtonDeleteDoctor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButtonDeleteDoctor.UseVisualStyleBackColor = false;
+            this.iconButtonDeleteDoctor.Visible = false;
             this.iconButtonDeleteDoctor.Click += new System.EventHandler(this.iconButtonDeleteDoctor_Click);
             // 
             // dataGridView1
@@ -1144,7 +1146,7 @@ namespace UI
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(10, 54);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -1184,7 +1186,7 @@ namespace UI
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(674, 877);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(91, 69);
             this.listBox1.TabIndex = 40;

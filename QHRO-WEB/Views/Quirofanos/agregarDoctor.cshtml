@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "agregarDoctor";
+}
+
+<div class="container">
+   
+    <section>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (BLL.ClassDoctorsWeb item in Session["listadoDocts"] as List<BLL.ClassDoctorsWeb>)
+                {
+                    <tr>
+                        <td>@item.DoctorName</td>
+                        <td><a href="@Url.Action("eliminarDoctor", "Quirofanos",new {idDoctor=item.IdDoctor})">Eliminar Doctor</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        <a href="@Url.Action("obtenerDoctores", "Quirofanos")">Agregar otro doctor</a>
+        <a href="@Url.Action("solicitarCirugia", "Quirofanos")">Solicitar Cirugía</a>
+    </section>
+</div>

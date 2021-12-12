@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "buscarDoctor";
+}
+
+<div class="container">
+    <
+    <section>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                @foreach (BLL.ClassDoctorsWeb item in ViewBag.doctors)
+                {
+                <tr>
+                    <td>@item.DoctorName</td>
+                    <td>
+                        <a href="@Url.Action("agregarDoctor", "Quirofanos",new {idDoctor=item.IdDoctor , doctorName=item.DoctorName})">Agregar Doctor</a>
+                    </td>
+                </tr>
+                    
+                }
+
+            </tbody>
+        </table>
+    </section>
+</div>

@@ -49,6 +49,7 @@
     <Compile Include="ClassDailySurgeries.cs" />
     <Compile Include="ClassDiagnosis.cs" />
     <Compile Include="ClassDoctor.cs" />
+    <Compile Include="ClassDoctorsWeb.cs" />
     <Compile Include="ClassDTOAnesthethist.cs" />
     <Compile Include="ClassDtoAssistants.cs" />
     <Compile Include="ClassDtoDoctors.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="ClassGetStrings.cs" />
     <Compile Include="ClassMail.cs" />
     <Compile Include="ClassOperatingRoom.cs" />
+    <Compile Include="ClassPacientInfo.cs" />
     <Compile Include="ClassPatient.cs" />
     <Compile Include="ClassPHro.cs" />
     <Compile Include="ClassQuiReport.cs" />
