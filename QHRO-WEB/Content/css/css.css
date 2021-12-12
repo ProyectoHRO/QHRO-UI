@@ -8,6 +8,11 @@
     font-family: "Poppins", sans-serif;
 }
 
+
+body {
+    background-color: black;
+}
+
 .sidebars {
     position: fixed;
     left: 0;
@@ -267,10 +272,59 @@
     }
 }
 
-.card {
-    color: white;
-    background-color: #4585AA;
+.darkModeSwitch {
+    background: #3494b1;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: space-between;
 }
 
+    .darkModeSwitch span {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        display: block;
+        color: #fff;
+        background: none;
+    }
+
+    .darkModeSwitch::after {
+        display: block;
+        background: #fffbf5;
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        right: unset;
+        border-radius: 3rem;
+        transition: all .5s ease;
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, .5);
+        content: "";
+    }
+
+    .darkModeSwitch.active {
+        background: #fdd384;
+    }
+
+        .darkModeSwitch.active::after {
+            left: unset;
+            right: 0;
+        }
+.card.quiro {
+    background-color: black;
+    color: white;
+    border:white 1px solid;
+}
+
+.list-group-item{
+    background-color:black;
+    color:white;
+}
 
 

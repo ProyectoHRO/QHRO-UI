@@ -62,16 +62,23 @@
 
           
             <li class="profile">
+                
+            <div style="width:200px; margin-left: 45px; color:white; margin-top:10px">
+                @if (Session["userName"] != null)
+                {
+                    <div class="">@Session["userName"]</div>
+                }
+            </div>
+            <div style="width:50px">
                 @if (User.Identity.IsAuthenticated)
                 {
                     <a class='bx bx-log-out' id="log_out" href="/Home/Logout" style="color:white; font-size:30px; left:20px"></a>
                 }
-
                 else
                 {
                     <a class='bx bx-log-in' id="log_out" href="/Home/Logout" style="color:white; font-size:30px; left:20px"></a>
                 }
-
+            </div>
             </li>
         </ul>
     </div>

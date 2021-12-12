@@ -127,10 +127,10 @@ namespace QHRO_WEB.Controllers
                                 Session["idPermit"] = idPermit;
                             }
                         }
-                   
-                      
-                     
-                        return RedirectToAction("Programaciones", "Quirofanos");
+
+
+                        Session["userName"] = usuario;
+                        return RedirectToAction("Programaciones", "Quirofanos", new {userName=usuario});
                     }
                 }
             }

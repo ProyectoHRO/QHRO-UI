@@ -1,5 +1,6 @@
 ﻿
     @{
+
         ViewBag.Title = "Programaciones";
         string[] tableHeader = new string[] { "Hora", "Qx", "No_Historia", "Nombre", "Edad", "Procedimiento", "Servicio", "Cirujano", "Anestesiólogo", "Enfermería" };
     }
@@ -51,7 +52,7 @@
                 <div class="row mb-3">
                     <div class="row mb-3">
                         <div class="col-sm-3">
-                            <div style="font-size: 30px; ">
+                            <div style="font-size: 30px; color:white;">
                                 <script type="text/javascript">
                                     //<![CDATA[
                                     var today = new Date();
@@ -66,7 +67,7 @@
                         </div>
                         <div class="col-sm-7">
                             <div class="text-center">
-                                <h1>Programaciones</h1>
+                                <h1 style="color:white;">Programaciones</h1>
                             </div>
                         </div>
                         <div class="col-sm-2">
@@ -85,13 +86,13 @@
                                 window.onload = function () { startTime(); }
                             </script>
                             <button type="button" class="btn btn btn-success" id="btnfilltable"><i class="fas fa-redo-alt"></i></button>
-                            <div id="reloj" style="font-size:30px; float:left; margin-right:15%;"></div>
+                            <div id="reloj" style="font-size:30px; float:left; margin-right:15%; color:white;"></div>
 
                         </div>
                     </div>
                 </div>
 
-                <table class="table table-bordered">
+                <table class="table table-hover table-dark">
                     <thead class="thead-dark">
                         <tr>
                             @{

@@ -13,9 +13,12 @@ namespace QHRO_WEB.Controllers
         private ClassReports reports = new ClassReports();
         private ClassPHro patientsHro = new ClassPHro();
         private ClassRequestSurgery requestSurgery = new ClassRequestSurgery();
+        string nombreUsuario="";
 
-        public ActionResult Programaciones()
+        public ActionResult Programaciones(string userName="")
         {
+            nombreUsuario = userName;
+            ViewBag.userName = nombreUsuario;
             return View();
         }
 
@@ -41,6 +44,7 @@ namespace QHRO_WEB.Controllers
         public ActionResult Estado()
         {
             //var Status = reports.StatusOperatingRooms();
+            ViewBag.userName = nombreUsuario;
             return View();
         }
 
@@ -48,12 +52,14 @@ namespace QHRO_WEB.Controllers
         public ActionResult Solicitar(string message="")
         {
             ViewBag.message = message;
+            ViewBag.userName = nombreUsuario;
             return View();
         }
         [Authorize]
         [HttpPost]
         public ActionResult No_Historia(string noHistorial)
         {
+            ViewBag.userName = nombreUsuario;
             DataTable infoPatientsHro = patientsHro.getPatientsByHistoryNumber(noHistorial);
             string historyNumber = "";
             if (infoPatientsHro.Rows.Count < 1)
