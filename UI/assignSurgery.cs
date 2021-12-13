@@ -164,280 +164,320 @@ namespace UI
 
         private void iconButtonConfirm_Click(object sender, EventArgs e)
         {
-            if (listBoxIds.Items.Count>0)
+            if (dateTimeSurgeryDate.Value != null)
             {
-                string allTypes = "";
-                for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                if((comboBoxHour.Text!="")&&(comboBoxMin.Text!="")&&(comboBoxTime.Text!=""))
                 {
-                    if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                    if(comboBoxRelevance.Text!="")
                     {
-                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                        if(comboBoxSurgeryType.Text!="")
+                        {
+                            if(textBoxDiagnosis.Text!="")
+                            {
+                                DialogResult result = MessageBox.Show("¿Desea confirmar la cirugía?", "Confirmar cirugía", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                                if (result == DialogResult.Yes)
+                                {
+                                    if (listBoxIds.Items.Count > 0)
+                                    {
+                                        string allTypes = "";
+                                        for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                                        {
+                                            if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                                            {
+                                                allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                                            }
+                                            else
+                                            {
+                                                allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "/";
+                                            }
+                                        }
+                                        labelAnesthesiaTypesAsigned.Text = allTypes;
+
+
+                                        List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
+                                        ClassDtoAssistants assistant;
+                                        for (int i = 0; i < listBoxIds.Items.Count; i++)
+                                        {
+                                            listBoxIds.SelectedIndex = i;
+                                            assistant = new ClassDtoAssistants();
+                                            assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
+                                            assistantsList.Add(assistant);
+                                        }
+
+                                        List<ClassDTOAnesthethist> anesList = new List<ClassDTOAnesthethist>();
+                                        ClassDTOAnesthethist anes;
+                                        for (int i = 0; i < listBox1.Items.Count; i++)
+                                        {
+                                            listBox1.SelectedIndex = i;
+                                            anes = new ClassDTOAnesthethist();
+                                            anes.IdAnesthetist = Convert.ToInt32(listBox1.SelectedItem);
+                                            anesList.Add(anes);
+                                        }
+
+
+                                        string response = surgeriesLogic.assignSurgery(
+                                            userId,
+                                            labelAnesthesiaTypesAsigned.Text,
+                                            comboBoxSurgeryType.Text,
+                                            dateTimeSurgeryDate.Value.Date,
+                                            comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
+                                            Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
+                                            Convert.ToInt32(programationId),
+                                            comboBoxRelevance.Text,
+                                            textBoxDiagnosis.Text,
+                                           comboBoxHour.Text,
+                                            assistantsList,
+                                            anesList,
+                                            Convert.ToInt32(labelID.Text));
+                                        if (response == "Se ha asignado la cirugía con éxito!")
+                                        {
+                                            for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                                            {
+                                                listBoxDocId.SelectedIndex = i;
+                                                string getMail = doctorss.getDoctorsById(Convert.ToInt32(listBoxDocId.SelectedItem));
+                                                response = mail.MakeMail(getMail,
+                                                    "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.Day.ToString() + "/" + dateTimeSurgeryDate.Value.Month.ToString() + "/" + dateTimeSurgeryDate.Value.Year.ToString() + " a las: " + comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text
+                                                   + " \n Del paciente: " + textBoxName.Text + " " + textBoxLastName.Text + " con numero de historia: " + textBoxHistory.Text, "Intervención", "Se ha asignado la cirugía con éxito!");
+                                            }
+                                            MessageBox.Show(response);
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show(response);
+                                        }
+
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        string allTypes = "";
+                                        for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                                        {
+                                            if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                                            {
+                                                allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                                            }
+                                            else
+                                            {
+                                                allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "/";
+                                            }
+                                        }
+                                        labelAnesthesiaTypesAsigned.Text = allTypes;
+                                        List<ClassDTOAnesthethist> anesList = new List<ClassDTOAnesthethist>();
+                                        ClassDTOAnesthethist anes;
+                                        for (int i = 0; i < listBox1.Items.Count; i++)
+                                        {
+                                            listBox1.SelectedIndex = i;
+                                            anes = new ClassDTOAnesthethist();
+                                            anes.IdAnesthetist = Convert.ToInt32(listBox1.SelectedItem);
+                                            anesList.Add(anes);
+                                        }
+
+
+                                        string response = surgeriesLogic.assignSurgeryBasic(
+                                            userId,
+                                            labelAnesthesiaTypesAsigned.Text,
+                                            comboBoxSurgeryType.Text,
+                                            dateTimeSurgeryDate.Value.Date,
+                                            comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
+                                            Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
+                                            Convert.ToInt32(programationId),
+                                            comboBoxRelevance.Text,
+                                            textBoxDiagnosis.Text,
+                                           comboBoxHour.Text,
+                                            anesList,
+                                            Convert.ToInt32(labelID.Text));
+                                        if (response == "Se ha asignado la cirugía con éxito!")
+                                        {
+                                            for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                                            {
+                                                listBoxDocId.SelectedIndex = i;
+                                                string getMail = doctorss.getDoctorsById(Convert.ToInt32(listBoxDocId.SelectedItem));
+                                                response = mail.MakeMail(getMail,
+                                                    "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.Day.ToString() + "/" + dateTimeSurgeryDate.Value.Month.ToString() + "/" + dateTimeSurgeryDate.Value.Year.ToString() + " a las: " + comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text
+                                                   + " \n Del paciente: " + textBoxName.Text + " " + textBoxLastName.Text + " con numero de historia: " + textBoxHistory.Text, "Intervención", "Se ha asignado la cirugía con éxito!");
+                                            }
+                                            MessageBox.Show(response);
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show(response);
+                                        }
+
+                                        this.Close();
+                                    }
+                                    //if ((listBoxDocId.Items.Count > 0 && listBoxIds.Items.Count > 0) && ((listBoxAnesthesiaId.Items.Count > 0 && listBoxIds.Items.Count > 0) && checkedListBoxAnesthesiaTypes.CheckedItems.Count == 0))
+                                    //{
+
+                                    //    List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
+                                    //    ClassDtoAssistants assistant;
+                                    //    for (int i = 0; i < listBoxIds.Items.Count; i++)
+                                    //    {
+                                    //        listBoxIds.SelectedIndex = i;
+                                    //        assistant = new ClassDtoAssistants();
+                                    //        assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
+                                    //        assistantsList.Add(assistant);
+                                    //    }
+
+                                    //    List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                                    //    ClassDtoDoctors doctors;
+                                    //    for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                                    //    {
+                                    //        listBoxDocId.SelectedIndex = i;
+                                    //        doctors = new ClassDtoDoctors();
+                                    //        doctors.DoctorId = Convert.ToInt32(listBoxDocId.SelectedItem);
+                                    //        doctorsList.Add(doctors);
+                                    //    }
+
+
+                                    //    string response = surgeriesLogic.assignSurgeryBasic(
+                                    //        userId,
+                                    //        comboBoxSurgeryType.Text,
+                                    //        dateTimeSurgeryDate.Value.Date,
+                                    //        Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
+                                    //            Convert.ToInt32(labelID.Text),
+                                    //            comboBoxRelevance.Text,
+                                    //            textBoxDiagnosis.Text,
+                                    //        comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
+
+
+                                    //       comboBoxHour.Text,
+                                    //        assistantsList,
+                                    //        doctorsList);
+
+                                    //    MessageBox.Show(response);
+
+
+                                    //    this.Close();
+                                    //}// anestesistas
+                                    //else if (/*textBoxAnestethistName.Text!="" &&*/ checkedListBoxAnesthesiaTypes.CheckedItems.Count != 0 && (listBoxDocId.Items.Count == 0 && listBoxIds.Items.Count == 0))
+                                    //{
+                                    //    string allTypes = "";
+                                    //    for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                                    //    {
+                                    //        if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                                    //        {
+                                    //            allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                                    //        }
+                                    //        else
+                                    //        {
+                                    //            allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "/";
+                                    //        }
+                                    //    }
+                                    //    labelAnesthesiaTypesAsigned.Text = allTypes;
+                                    //    //anestesista
+                                    //    //string response = surgeriesLogic.assignSurgeryAnesthetist(
+                                    //    //  userId,
+                                    //    //  labelAnesthesiaTypesAsigned.Text,
+                                    //    //  //Convert.ToInt32(labelIdAnesthetist.Text),
+                                    //    //  Convert.ToInt32(labelID.Text)
+                                    //    //  );
+                                    //    //MessageBox.Show(response);
+
+                                    //    this.Close();
+                                    //}
+                                    //else
+                                    //{
+                                    //    if (textBoxDiagnosis.Text != "" && comboBoxRelevance.Text != "" && comboBoxSurgeryType.Text != "")
+                                    //    {
+
+                                    //        string allTypes = "";
+                                    //        for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
+                                    //        {
+                                    //            if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
+                                    //            {
+                                    //                allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
+                                    //            }
+                                    //            else
+                                    //            {
+                                    //                allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "/";
+                                    //            }
+                                    //        }
+                                    //        labelAnesthesiaTypesAsigned.Text = allTypes;
+
+
+                                    //        List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
+                                    //        ClassDtoAssistants assistant;
+                                    //        for (int i = 0; i < listBoxIds.Items.Count; i++)
+                                    //        {
+                                    //            listBoxIds.SelectedIndex = i;
+                                    //            assistant = new ClassDtoAssistants();
+                                    //            assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
+                                    //            assistantsList.Add(assistant);
+                                    //        }
+
+                                    //        List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
+                                    //        ClassDtoDoctors doctors;
+                                    //        for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                                    //        {
+                                    //            listBoxDocId.SelectedIndex = i;
+                                    //            doctors = new ClassDtoDoctors();
+                                    //            doctors.DoctorId = Convert.ToInt32(listBoxDocId.SelectedItem);
+                                    //            doctorsList.Add(doctors);
+                                    //        }
+
+
+                                    //        //string response = surgeriesLogic.assignSurgery(
+                                    //        //    userId,
+                                    //        //    labelAnesthesiaTypesAsigned.Text,
+                                    //        //    comboBoxSurgeryType.Text,
+                                    //        //    dateTimeSurgeryDate.Value.Date,
+                                    //        //    comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
+                                    //        //    Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
+                                    //        //    //Convert.ToInt32(labelIdAnesthetist.Text),
+                                    //        //    Convert.ToInt32(labelID.Text),
+                                    //        //    comboBoxRelevance.Text,
+                                    //        //    textBoxDiagnosis.Text,
+                                    //        //   comboBoxHour.Text,
+                                    //        //    assistantsList,
+                                    //        //    doctorsList);
+                                    //        //if (response == "Se ha asignado la cirugía con éxito!")
+                                    //        //{
+                                    //        //    for (int i = 0; i < listBoxDocId.Items.Count; i++)
+                                    //        //    {
+                                    //        //        listBoxDocId.SelectedIndex = i;
+                                    //        //        string getMail = doctorss.getDoctorsById(Convert.ToInt32(listBoxDocId.SelectedItem));
+                                    //        //        response = mail.MakeMail(getMail,
+                                    //        //            "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.Day.ToString() + "/" + dateTimeSurgeryDate.Value.Month.ToString() + "/" + dateTimeSurgeryDate.Value.Year.ToString() + " a las: " + comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text
+                                    //        //           + " \n Del paciente: " + textBoxName.Text + " " + textBoxLastName.Text + " con numero de historia: " + textBoxHistory.Text, "Intervención", "Se ha asignado la cirugía con éxito!");
+                                    //        //    }
+                                    //        //    MessageBox.Show(response);
+                                    //        //}
+                                    //        //else
+                                    //        //{
+                                    //        //    MessageBox.Show(response);
+                                    //        //}
+
+                                    //        this.Close();
+                                    //    }
+                                    //}
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Por favor llene el campo Procedimiento");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Por favor seleccione Tipo de cirugía");
+                        }
                     }
                     else
                     {
-                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "/";
+                        MessageBox.Show("Por favor seleccione la relevancia de la cirugía");
                     }
-                }
-                labelAnesthesiaTypesAsigned.Text = allTypes;
-
-
-                List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
-                ClassDtoAssistants assistant;
-                for (int i = 0; i < listBoxIds.Items.Count; i++)
-                {
-                    listBoxIds.SelectedIndex = i;
-                    assistant = new ClassDtoAssistants();
-                    assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
-                    assistantsList.Add(assistant);
-                }
-
-                List<ClassDTOAnesthethist> anesList = new List<ClassDTOAnesthethist>();
-                ClassDTOAnesthethist anes;
-                for (int i = 0; i < listBox1.Items.Count; i++)
-                {
-                    listBox1.SelectedIndex = i;
-                    anes = new ClassDTOAnesthethist();
-                    anes.IdAnesthetist = Convert.ToInt32(listBox1.SelectedItem);
-                    anesList.Add(anes);
-                }
-
-
-                string response = surgeriesLogic.assignSurgery(
-                    userId,
-                    labelAnesthesiaTypesAsigned.Text,
-                    comboBoxSurgeryType.Text,
-                    dateTimeSurgeryDate.Value.Date,
-                    comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
-                    Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
-                    Convert.ToInt32(programationId),
-                    comboBoxRelevance.Text,
-                    textBoxDiagnosis.Text,
-                   comboBoxHour.Text,
-                    assistantsList,                    
-                    anesList,
-                    Convert.ToInt32(labelID.Text));
-                if (response == "Se ha asignado la cirugía con éxito!")
-                {
-                    for (int i = 0; i < listBoxDocId.Items.Count; i++)
-                    {
-                        listBoxDocId.SelectedIndex = i;
-                        string getMail = doctorss.getDoctorsById(Convert.ToInt32(listBoxDocId.SelectedItem));
-                        response = mail.MakeMail(getMail,
-                            "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.Day.ToString() + "/" + dateTimeSurgeryDate.Value.Month.ToString() + "/" + dateTimeSurgeryDate.Value.Year.ToString() + " a las: " + comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text
-                           + " \n Del paciente: " + textBoxName.Text + " " + textBoxLastName.Text + " con numero de historia: " + textBoxHistory.Text, "Intervención", "Se ha asignado la cirugía con éxito!");
-                    }
-                    MessageBox.Show(response);
                 }
                 else
                 {
-                    MessageBox.Show(response);
+                    MessageBox.Show("Por favor verifique la hora");
                 }
-
-                this.Close();
             }
             else
             {
-                string allTypes = "";
-                for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
-                {
-                    if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
-                    {
-                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
-                    }
-                    else
-                    {
-                        allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "/";
-                    }
-                }
-                labelAnesthesiaTypesAsigned.Text = allTypes;
-                List<ClassDTOAnesthethist> anesList = new List<ClassDTOAnesthethist>();
-                ClassDTOAnesthethist anes;
-                for (int i = 0; i < listBox1.Items.Count; i++)
-                {
-                    listBox1.SelectedIndex = i;
-                    anes = new ClassDTOAnesthethist();
-                    anes.IdAnesthetist = Convert.ToInt32(listBox1.SelectedItem);
-                    anesList.Add(anes);
-                }
-
-
-                string response = surgeriesLogic.assignSurgeryBasic(
-                    userId,
-                    labelAnesthesiaTypesAsigned.Text,
-                    comboBoxSurgeryType.Text,
-                    dateTimeSurgeryDate.Value.Date,
-                    comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
-                    Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
-                    Convert.ToInt32(programationId),
-                    comboBoxRelevance.Text,
-                    textBoxDiagnosis.Text,
-                   comboBoxHour.Text,
-                    anesList,
-                    Convert.ToInt32(labelID.Text));
-                if (response == "Se ha asignado la cirugía con éxito!")
-                {
-                    for (int i = 0; i < listBoxDocId.Items.Count; i++)
-                    {
-                        listBoxDocId.SelectedIndex = i;
-                        string getMail = doctorss.getDoctorsById(Convert.ToInt32(listBoxDocId.SelectedItem));
-                        response = mail.MakeMail(getMail,
-                            "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.Day.ToString() + "/" + dateTimeSurgeryDate.Value.Month.ToString() + "/" + dateTimeSurgeryDate.Value.Year.ToString() + " a las: " + comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text
-                           + " \n Del paciente: " + textBoxName.Text + " " + textBoxLastName.Text + " con numero de historia: " + textBoxHistory.Text, "Intervención", "Se ha asignado la cirugía con éxito!");
-                    }
-                    MessageBox.Show(response);
-                }
-                else
-                {
-                    MessageBox.Show(response);
-                }
-
-                this.Close();
+                MessageBox.Show("Por favor seleccione una fecha");
             }
-            //if ((listBoxDocId.Items.Count > 0 && listBoxIds.Items.Count > 0) && ((listBoxAnesthesiaId.Items.Count > 0 && listBoxIds.Items.Count > 0) && checkedListBoxAnesthesiaTypes.CheckedItems.Count == 0))
-            //{
 
-            //    List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
-            //    ClassDtoAssistants assistant;
-            //    for (int i = 0; i < listBoxIds.Items.Count; i++)
-            //    {
-            //        listBoxIds.SelectedIndex = i;
-            //        assistant = new ClassDtoAssistants();
-            //        assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
-            //        assistantsList.Add(assistant);
-            //    }
-
-            //    List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
-            //    ClassDtoDoctors doctors;
-            //    for (int i = 0; i < listBoxDocId.Items.Count; i++)
-            //    {
-            //        listBoxDocId.SelectedIndex = i;
-            //        doctors = new ClassDtoDoctors();
-            //        doctors.DoctorId = Convert.ToInt32(listBoxDocId.SelectedItem);
-            //        doctorsList.Add(doctors);
-            //    }
-
-
-            //    string response = surgeriesLogic.assignSurgeryBasic(
-            //        userId,
-            //        comboBoxSurgeryType.Text,
-            //        dateTimeSurgeryDate.Value.Date,
-            //        Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
-            //            Convert.ToInt32(labelID.Text),
-            //            comboBoxRelevance.Text,
-            //            textBoxDiagnosis.Text,
-            //        comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
-
-
-            //       comboBoxHour.Text,
-            //        assistantsList,
-            //        doctorsList);
-
-            //    MessageBox.Show(response);
-
-
-            //    this.Close();
-            //}// anestesistas
-            //else if (/*textBoxAnestethistName.Text!="" &&*/ checkedListBoxAnesthesiaTypes.CheckedItems.Count != 0 && (listBoxDocId.Items.Count == 0 && listBoxIds.Items.Count == 0))
-            //{
-            //    string allTypes = "";
-            //    for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
-            //    {
-            //        if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
-            //        {
-            //            allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
-            //        }
-            //        else
-            //        {
-            //            allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "/";
-            //        }
-            //    }
-            //    labelAnesthesiaTypesAsigned.Text = allTypes;
-            //    //anestesista
-            //    //string response = surgeriesLogic.assignSurgeryAnesthetist(
-            //    //  userId,
-            //    //  labelAnesthesiaTypesAsigned.Text,
-            //    //  //Convert.ToInt32(labelIdAnesthetist.Text),
-            //    //  Convert.ToInt32(labelID.Text)
-            //    //  );
-            //    //MessageBox.Show(response);
-
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    if (textBoxDiagnosis.Text != "" && comboBoxRelevance.Text != "" && comboBoxSurgeryType.Text != "")
-            //    {
-
-            //        string allTypes = "";
-            //        for (int i = 0; i < checkedListBoxAnesthesiaTypes.CheckedItems.Count; i++)
-            //        {
-            //            if (i == (checkedListBoxAnesthesiaTypes.CheckedItems.Count - 1))
-            //            {
-            //                allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString();
-            //            }
-            //            else
-            //            {
-            //                allTypes = allTypes + checkedListBoxAnesthesiaTypes.CheckedItems[i].ToString() + "/";
-            //            }
-            //        }
-            //        labelAnesthesiaTypesAsigned.Text = allTypes;
-
-
-            //        List<ClassDtoAssistants> assistantsList = new List<ClassDtoAssistants>();
-            //        ClassDtoAssistants assistant;
-            //        for (int i = 0; i < listBoxIds.Items.Count; i++)
-            //        {
-            //            listBoxIds.SelectedIndex = i;
-            //            assistant = new ClassDtoAssistants();
-            //            assistant.AssistandId = Convert.ToInt32(listBoxIds.SelectedItem);
-            //            assistantsList.Add(assistant);
-            //        }
-
-            //        List<ClassDtoDoctors> doctorsList = new List<ClassDtoDoctors>();
-            //        ClassDtoDoctors doctors;
-            //        for (int i = 0; i < listBoxDocId.Items.Count; i++)
-            //        {
-            //            listBoxDocId.SelectedIndex = i;
-            //            doctors = new ClassDtoDoctors();
-            //            doctors.DoctorId = Convert.ToInt32(listBoxDocId.SelectedItem);
-            //            doctorsList.Add(doctors);
-            //        }
-
-
-            //        //string response = surgeriesLogic.assignSurgery(
-            //        //    userId,
-            //        //    labelAnesthesiaTypesAsigned.Text,
-            //        //    comboBoxSurgeryType.Text,
-            //        //    dateTimeSurgeryDate.Value.Date,
-            //        //    comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text,
-            //        //    Convert.ToInt32(comboBoxOperatingRooms.SelectedValue),
-            //        //    //Convert.ToInt32(labelIdAnesthetist.Text),
-            //        //    Convert.ToInt32(labelID.Text),
-            //        //    comboBoxRelevance.Text,
-            //        //    textBoxDiagnosis.Text,
-            //        //   comboBoxHour.Text,
-            //        //    assistantsList,
-            //        //    doctorsList);
-            //        //if (response == "Se ha asignado la cirugía con éxito!")
-            //        //{
-            //        //    for (int i = 0; i < listBoxDocId.Items.Count; i++)
-            //        //    {
-            //        //        listBoxDocId.SelectedIndex = i;
-            //        //        string getMail = doctorss.getDoctorsById(Convert.ToInt32(listBoxDocId.SelectedItem));
-            //        //        response = mail.MakeMail(getMail,
-            //        //            "Se le ha asignado para una intervención el día: " + dateTimeSurgeryDate.Value.Day.ToString() + "/" + dateTimeSurgeryDate.Value.Month.ToString() + "/" + dateTimeSurgeryDate.Value.Year.ToString() + " a las: " + comboBoxHour.Text + ':' + comboBoxMin.Text + ' ' + comboBoxTime.Text
-            //        //           + " \n Del paciente: " + textBoxName.Text + " " + textBoxLastName.Text + " con numero de historia: " + textBoxHistory.Text, "Intervención", "Se ha asignado la cirugía con éxito!");
-            //        //    }
-            //        //    MessageBox.Show(response);
-            //        //}
-            //        //else
-            //        //{
-            //        //    MessageBox.Show(response);
-            //        //}
-
-            //        this.Close();
-            //    }
-            //}
         }
 
         private void iconButtonDeleteAll_Click(object sender, EventArgs e)
@@ -451,7 +491,7 @@ namespace UI
                     listBoxIds.Items.RemoveAt(listViewAssistants.SelectedIndices[0]);
                     listViewAssistants.Items.Remove(listViewAssistants.SelectedItems[0]);                
                 }
-                   
+                  
             }
             else
             {

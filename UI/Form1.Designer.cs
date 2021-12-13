@@ -46,8 +46,8 @@ namespace UI
             this.panel10 = new System.Windows.Forms.Panel();
             this.iconButtonSurgerys = new FontAwesome.Sharp.IconButton();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.panelContainer = new System.Windows.Forms.Panel();
             this.iconButtonReports = new FontAwesome.Sharp.IconButton();
+            this.panelContainer = new System.Windows.Forms.Panel();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNormal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMaximized)).BeginInit();
@@ -81,7 +81,7 @@ namespace UI
             this.pictureBoxNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxNormal.Image = global::UI.Properties.Resources.res;
-            this.pictureBoxNormal.Location = new System.Drawing.Point(1468, 12);
+            this.pictureBoxNormal.Location = new System.Drawing.Point(1468, 11);
             this.pictureBoxNormal.Name = "pictureBoxNormal";
             this.pictureBoxNormal.Size = new System.Drawing.Size(25, 25);
             this.pictureBoxNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -302,16 +302,6 @@ namespace UI
             this.panel11.Size = new System.Drawing.Size(10, 45);
             this.panel11.TabIndex = 19;
             // 
-            // panelContainer
-            // 
-            this.panelContainer.BackColor = System.Drawing.Color.White;
-            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(250, 50);
-            this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1286, 910);
-            this.panelContainer.TabIndex = 2;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
-            // 
             // iconButtonReports
             // 
             this.iconButtonReports.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -334,6 +324,16 @@ namespace UI
             this.iconButtonReports.UseVisualStyleBackColor = true;
             this.iconButtonReports.Visible = false;
             this.iconButtonReports.Click += new System.EventHandler(this.iconButtonReports_Click);
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(250, 50);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1286, 910);
+            this.panelContainer.TabIndex = 2;
+            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // Form1
             // 
