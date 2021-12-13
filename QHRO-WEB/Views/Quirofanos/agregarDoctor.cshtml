@@ -3,7 +3,7 @@
     ViewBag.Title = "agregarDoctor";
 }
 
-<div class="container">
+<div class="container" style="margin-top:40px;">
    
     <section>
         <table class="table table-dark">
@@ -16,15 +16,17 @@
             <tbody>
                 @foreach (BLL.ClassDoctorsWeb item in Session["listadoDocts"] as List<BLL.ClassDoctorsWeb>)
                 {
-                    <tr>
-                        <td>@item.DoctorName</td>
-                        <td><a href="@Url.Action("eliminarDoctor", "Quirofanos",new {idDoctor=item.IdDoctor})">Eliminar Doctor</a></td>
-                    </tr>
+                <tr>
+                    <td>@item.DoctorName</td>
+                    
+                    <td><button type="button" class="btn btn-outline-danger"><a style="color: white; text-decoration: none" href="@Url.Action("eliminarDoctor", "Quirofanos",new {idDoctor=item.IdDoctor})">Eliminar Doctor</a></button> </td>
+                </tr>
                 }
 
             </tbody>
         </table>
-        <a href="@Url.Action("obtenerDoctores", "Quirofanos")">Agregar otro doctor</a>
-        <a href="@Url.Action("solicitarCirugia", "Quirofanos")">Solicitar Cirugía</a>
+        <button type="button" class="btn btn-outline-success"><a style="color: white; text-decoration: none"href="@Url.Action("obtenerDoctores", "Quirofanos")">Agregar otro doctor</a></button>
+        <button type="button" class="btn btn-success"><a style="color: white; text-decoration: none"href="@Url.Action("solicitarCirugia", "Quirofanos")">Solicitar Cirugía</a></button>
+        
     </section>
 </div>
